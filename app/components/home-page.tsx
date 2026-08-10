@@ -114,7 +114,7 @@ export function HomePage() {
           footer={(
             <>
               <strong>Book one or multiple experiences.</strong>
-              <QuoteModalTrigger><span>Get a Quote ↗︎</span></QuoteModalTrigger>
+              <QuoteModalTrigger><span>Plan Your Event ↗︎</span></QuoteModalTrigger>
             </>
           )}
         />

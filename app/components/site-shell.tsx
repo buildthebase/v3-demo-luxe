@@ -60,7 +60,7 @@ export function SiteShell({
         </div>
         <div className="foundation-footer-actions">
           <Link className="foundation-footer-cta" href="/contact">
-            Start a conversation <span aria-hidden="true">↗︎</span>
+            Plan Your Event <span aria-hidden="true">↗︎</span>
           </Link>
           <InstagramLinks className="foundation-footer-instagram" />
         </div>

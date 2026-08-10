@@ -233,7 +233,7 @@ export const pageContentBriefs: PageContentBrief[] = [
   },
   {
     path: "/experiences/seating-rentals",
-    purpose: "Present Seating Rentals as a curated, architectural rental experience.",
+    purpose: "Present Seating Rentals as a focused collection of practical, premium essentials for intimate celebrations and outdoor events.",
     requiredRequirements: ["booking-inclusions", "service-duration", "setup-teardown", "outdoor-events", "rental-delivery-setup", "multi-service-coordination", "travel-service-area", "liability-insurance"],
     proofPriority: ["real inventory photography", "room transformations", "delivery and setup examples"],
     doNotInvent: sharedDoNotInvent,

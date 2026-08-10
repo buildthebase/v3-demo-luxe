@@ -27,14 +27,12 @@ export function ExperiencesHero({
           Luxe Event Co. provides mobile coffee bars, live dessert carts, seating,
           and event rentals for weddings, corporate events, brand activations, and
           private celebrations across Toronto and the GTA. Book Luxe Coffee Bar,
-          Luxe Sweet Cart, or <span className="experiences-hero-seating-name">
-            Luxe Seating Rentals
-          </span>{" "}
-          independently, or coordinate all three through one team.
+          Luxe Sweet Cart, or Luxe Seating Rentals independently, or coordinate all
+          three through one team.
         </p>
         <div className="experiences-hero-actions">
           <a href="#experience-coffee" data-event-name="experience_select">
-            Build Your Experience <span aria-hidden="true">↓︎</span>
+            Explore Experiences <span aria-hidden="true">↓︎</span>
           </a>
           <QuoteModalTrigger data-event-name="inquiry_start">
             Plan Your Event <span aria-hidden="true">↗︎</span>
@@ -72,23 +70,18 @@ export function ExperiencesBookingClarity() {
         <div>
           <dt>Can each experience be booked independently?</dt>
           <dd>
-            Yes. Luxe Coffee Bar, Luxe Sweet Cart, and Luxe Seating Rentals each
-            maintain their own identity, service direction, and dedicated inquiry
-            path. Separate specialist vendors can also be appropriate when the client
-            already has a coordination plan and wants to select every category
-            independently.
+            Absolutely. Luxe Coffee Bar, Luxe Sweet Cart and Luxe Seating Rentals can
+            each be booked individually, or combined to create a complete event
+            experience.
           </dd>
         </div>
         <div>
           <dt>Can coffee, dessert, and rentals be coordinated through one provider?</dt>
           <dd className="experiences-booking-answer">
             <p>
-              Yes. Luxe Event Co. is the parent company behind all three experiences, so
-              Luxe Coffee Bar, Luxe Sweet Cart, and Luxe Seating Rentals can be planned
-              through one inquiry and proposal journey while each service keeps its
-              own specialist scope. One coordinated provider is useful when timing,
-              placement, presentation, access, and responsibilities need to be reviewed
-              together.
+              Yes. Coffee, dessert and rentals can all be coordinated through one
+              inquiry, creating a simpler planning process and a cohesive experience
+              for your event.
             </p>
           </dd>
         </div>
@@ -120,14 +113,12 @@ export function ExperiencesBookingClarity() {
       </ul>
       <aside
         className="experiences-booking-shared"
-        aria-label="Shared booking and pricing guidance"
+        aria-label="Shared booking guidance"
       >
         <p>
-          The right model depends on the services required, who will manage vendor
-          handoffs, and how much operational overlap the event contains. Combining
-          services can affect the overall quote because staffing, equipment, delivery,
-          setup, travel, timing, and shared logistics are scoped together; it does not
-          create an automatic discount or surcharge.
+          Every event is different. We’ll help you choose the right mix of services
+          and coordinate the details, creating a smoother planning experience from
+          start to finish.
         </p>
       </aside>
     </section>
@@ -207,7 +198,7 @@ export function ExperienceNeedComparison() {
           className="experiences-comparison-cta-link"
           data-event-name="inquiry_start"
         >
-          Begin your proposal <span aria-hidden="true">↗︎</span>
+          Plan Your Event <span aria-hidden="true">↗︎</span>
         </QuoteModalTrigger>
       </div>
     </section>
@@ -227,7 +218,7 @@ export function ExperiencesEventTypes() {
         {eventTypes.map((event, index) => (
           <Link href={`/events/${event.slug}`} key={event.slug}>
             <span>{String(index + 1).padStart(2, "0")}</span>
-            <strong>{event.name}</strong>
+            <h3>{event.name}</h3>
             <small>{event.summary}</small>
             <b aria-hidden="true">↗︎</b>
           </Link>

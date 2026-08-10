@@ -61,7 +61,7 @@ function CorporateHero() {
         </p>
         <div className="corporate-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">
-            Plan a Corporate Event <span aria-hidden="true">↗︎</span>
+            Plan Your Event <span aria-hidden="true">↗︎</span>
           </QuoteModalTrigger>
           <a href="#corporate-capabilities">
             Explore Corporate Capabilities <span aria-hidden="true">↓︎</span>

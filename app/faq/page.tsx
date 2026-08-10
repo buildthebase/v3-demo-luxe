@@ -67,7 +67,7 @@ function FaqHero() {
         </p>
         <div className="faq-hub-hero-actions">
           <Link href="/contact" data-event-name="inquiry_start">
-            Ask About Your Event <span aria-hidden="true">↗︎</span>
+            Plan Your Event <span aria-hidden="true">↗︎</span>
           </Link>
           <a href="#faq-categories">
             Find an Answer <span aria-hidden="true">↓︎</span>
@@ -143,7 +143,7 @@ function FaqInquiry() {
         </p>
       </div>
       <Link href="/contact" data-event-name="inquiry_start">
-        Ask About Your Event <span aria-hidden="true">↗︎</span>
+        Plan Your Event <span aria-hidden="true">↗︎</span>
       </Link>
     </section>
   );

@@ -146,7 +146,7 @@
 .foundation-shell .private-page .private-contexts h3.private-context-title {
   width: 100%;
   max-width: none;
-  margin: auto 0 24px;
+  margin: 0 0 24px;
   color: var(--private-paper);
   font-size: clamp(1.625rem, 2.1vw, 2rem);
   font-weight: 400;
@@ -431,10 +431,6 @@
   .foundation-shell .private-page .private-contexts li:nth-child(6) {
     min-height: 0;
     border-left: 0;
-  }
-
-  .foundation-shell .private-page .private-contexts h3.private-context-title {
-    margin-top: 48px;
   }
 
   .foundation-shell .private-page .private-contexts li + li {

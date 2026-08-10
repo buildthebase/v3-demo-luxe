@@ -186,7 +186,7 @@ export const inquiryContexts: Record<string, InquiryContext> = {
     heading: "Plan an experience with Luxe.",
     description:
       "Tell us what you are planning and which details matter most. We will use that context to guide the right next conversation.",
-    cta: "Begin your inquiry",
+    cta: "Plan Your Event",
     href: "/contact",
   },
   experiences: {
@@ -194,7 +194,7 @@ export const inquiryContexts: Record<string, InquiryContext> = {
     heading: "Bring the experiences together.",
     description:
       "Begin with one service or describe the complete atmosphere. Luxe will take care of the rest.",
-    cta: "Plan your Luxe experience",
+    cta: "Plan Your Event",
     href: "/contact",
   },
   events: {
@@ -202,7 +202,7 @@ export const inquiryContexts: Record<string, InquiryContext> = {
     heading: "Plan your special event.",
     description:
       "Share the occasion, location, guest count, timing, and the kind of atmosphere you want to create. Luxe will use that context to guide the right combination of experiences.",
-    cta: "Find Your Event Experience",
+    cta: "Plan Your Event",
     href: "/contact",
   },
   "coffee-bar": {
@@ -218,7 +218,7 @@ export const inquiryContexts: Record<string, InquiryContext> = {
     heading: "Plan your dessert experience.",
     description:
       "Tell us about the occasion, guest count, dessert direction, presentation, and details you would like personalized.",
-    cta: "Inquire About a Dessert Experience",
+    cta: "Plan Your Event",
     href: "/contact",
   },
   "seating-rentals": {
@@ -226,7 +226,7 @@ export const inquiryContexts: Record<string, InquiryContext> = {
     heading: "Discuss your seating.",
     description:
       "Share the venue, guest count, event format, desired atmosphere, and the rental elements needed to complete the setting.",
-    cta: "Discuss Your Rental Requirements",
+    cta: "Plan Your Event",
     href: "/contact",
   },
   weddings: {
@@ -234,7 +234,7 @@ export const inquiryContexts: Record<string, InquiryContext> = {
     heading: "Plan your wedding experience.",
     description:
       "Tell us where coffee, dessert, and intentional seating could support the flow, atmosphere, and hospitality of the day.",
-    cta: "Begin a wedding inquiry",
+    cta: "Plan Your Event",
     href: "/contact",
   },
   "corporate-events": {
@@ -242,7 +242,7 @@ export const inquiryContexts: Record<string, InquiryContext> = {
     heading: "Discuss a corporate event.",
     description:
       "Share the audience, schedule, venue, service needs, and brand requirements so Luxe can prepare a polished event direction.",
-    cta: "Discuss a Corporate Event",
+    cta: "Plan Your Event",
     href: "/contact",
   },
   "brand-activations": {
@@ -250,7 +250,7 @@ export const inquiryContexts: Record<string, InquiryContext> = {
     heading: "Create a branded experience.",
     description:
       "Tell us about the campaign, audience, timing, service format, and branded details that need to carry through the moment.",
-    cta: "Create a Branded Experience",
+    cta: "Plan Your Event",
     href: "/contact",
   },
   "baby-showers": {
@@ -258,7 +258,7 @@ export const inquiryContexts: Record<string, InquiryContext> = {
     heading: "Plan a baby shower with Luxe.",
     description:
       "Share the date, venue, estimated guest count, and the coffee, dessert, seating, or rental experiences you are considering.",
-    cta: "Plan a Baby Shower",
+    cta: "Plan Your Event",
     href: "/contact",
   },
   "bridal-showers": {
@@ -266,7 +266,7 @@ export const inquiryContexts: Record<string, InquiryContext> = {
     heading: "Plan a bridal shower experience.",
     description:
       "Tell us how coffee, dessert, and the setting can come together around the host, guests, and atmosphere.",
-    cta: "Plan a Bridal Shower",
+    cta: "Plan Your Event",
     href: "/contact",
   },
   birthdays: {
@@ -274,7 +274,7 @@ export const inquiryContexts: Record<string, InquiryContext> = {
     heading: "Plan a birthday experience.",
     description:
       "Share the guest count, setting, preferred experiences, and personal details that should shape the celebration.",
-    cta: "Plan a Birthday Experience",
+    cta: "Plan Your Event",
     href: "/contact",
   },
   "private-events": {
@@ -282,7 +282,7 @@ export const inquiryContexts: Record<string, InquiryContext> = {
     heading: "Plan your private event in Toronto and the GTA.",
     description:
       "Tell us what you are celebrating and how coffee, dessert, or refined rentals could support the occasion.",
-    cta: "Discuss Your Event",
+    cta: "Plan Your Event",
     href: "/contact",
   },
 };

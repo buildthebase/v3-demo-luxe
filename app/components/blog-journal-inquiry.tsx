@@ -8,7 +8,7 @@ export function BlogJournalInquiry() {
         <h2 id="blog-inquiry-title">Bring the conversation to your event.</h2>
       </div>
       <Link href="/contact" data-event-name="inquiry_start">
-        Start planning <span aria-hidden="true">↗︎</span>
+        Plan Your Event <span aria-hidden="true">↗︎</span>
       </Link>
     </section>
   );

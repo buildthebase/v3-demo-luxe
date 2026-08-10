@@ -32,10 +32,10 @@ const seatingRentalsSchema = createServicePageSchema({
   serviceName: "Luxe Seating Rentals",
   serviceType: "Event seating and rental service",
   serviceDescription:
-    "A refined event rental service connecting chairs, tables, cocktail tables, tents, linens, and lighting to event layout, comfort, and guest experience.",
+    "Practical, premium event rentals for intimate celebrations, outdoor weddings, showers, birthdays, and private events across Toronto and the GTA.",
   pageName: pageMetadata[seatingRentalsPath].title,
   pageDescription:
-    "Explore confirmed Luxe Seating Rentals categories, indoor and outdoor applications, layout planning, service areas, quote requirements, and complementary event experiences.",
+    "Explore white resin chairs, 6-ft tables, cocktail tables, event tents, linens, tent walls, lighting, and an 18-ft dance floor, plus coordinated setup and complementary Luxe experiences.",
   areaServed: createAreaServed(rentalServiceAreas),
 });
 
@@ -43,22 +43,23 @@ function SeatingHero() {
   return (
     <header className="seating-hero" id="page-overview">
       <div className="seating-hero-copy">
-        <p className="foundation-eyebrow">EVENT SEATING RENTALS IN TORONTO &amp; THE GTA</p>
-        <h1 aria-label="Luxury event seating rentals, designed around the room.">
-          <span>Luxury event seating rentals,</span>
-          <span>designed around the room.</span>
+        <p className="foundation-eyebrow">EVENT RENTALS IN TORONTO &amp; THE GTA</p>
+        <h1 aria-label="Event rentals for intimate celebrations, outdoor weddings, and beautifully planned gatherings.">
+          <span>Event rentals for intimate celebrations,</span>
+          <span>outdoor weddings, and beautifully planned gatherings.</span>
         </h1>
         <p>
-          Elevated seating solutions designed around venue footprint, event flow, and
-          guest comfort for weddings, corporate functions, brand activations, and
-          private celebrations across Toronto.
+          From white resin chairs and tables to tents, linens, cocktail tables,
+          lighting, and a dance floor, Luxe provides the essential pieces for intimate
+          celebrations and outdoor weddings, with coordinated delivery, setup, and the
+          option to add Luxe Coffee Bar and Luxe Sweet Cart.
         </p>
         <div className="seating-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">
-            PLAN YOUR SEATING RENTALS <span aria-hidden="true">↗︎</span>
+            Plan Your Event <span aria-hidden="true">↗︎</span>
           </QuoteModalTrigger>
           <a href="#rental-categories">
-            EXPLORE SEATING OPTIONS <span aria-hidden="true">↓︎</span>
+            EXPLORE RENTAL OPTIONS <span aria-hidden="true">↓︎</span>
           </a>
         </div>
       </div>
@@ -67,22 +68,25 @@ function SeatingHero() {
         <span />
         <i />
         <i />
-        <b>Layout / comfort / flow</b>
+        <b>Gather / dine / celebrate</b>
       </div>
       <div className="coffee-hero-proof-heading">
         <h2 id="seating-hero-proof-title">
-          Every rental plan is shaped around the venue, guest count, and event flow.
+          <span>Seating rentals.</span>
+          <span>Mobile coffee bar.</span>
+          <span>Dessert cart.</span>
+          <span>All in one place.</span>
         </h2>
       </div>
       <dl
         className="sweet-hero-proof seating-hero-proof"
         aria-labelledby="seating-hero-proof-title"
       >
-        <div><dt>6</dt><dd><strong>Rental categories</strong></dd></div>
-        <div><dt>Indoor + outdoor</dt><dd><strong>Flexible settings</strong></dd></div>
-        <div><dt>$5M</dt><dd><strong>Liability coverage</strong></dd></div>
-        <div><dt>Guest-led</dt><dd><strong>Layout planning</strong></dd></div>
-        <div><dt>Coordinated</dt><dd><strong>Delivery and setup</strong></dd></div>
+        <div><dt>300</dt><dd><strong>White resin chairs</strong></dd></div>
+        <div><dt>25</dt><dd><strong>6-ft tables</strong></dd></div>
+        <div><dt>6</dt><dd><strong>Event tents</strong></dd></div>
+        <div><dt>18' × 18'</dt><dd><strong>Dance floor</strong></dd></div>
+        <div><dt>One inquiry</dt><dd><strong>Rentals, coffee &amp; dessert</strong></dd></div>
       </dl>
     </header>
   );
@@ -94,24 +98,25 @@ function SeatingOverview() {
       id="seating-overview"
       ariaLabelledBy="seating-overview-title"
       legacyClassName="seating-overview"
-      title={<>Premium Lounge &amp; Event Furniture Rentals</>}
-      lead={<>Seating is planned around how guests gather, move through the space, and experience the event.</>}
+      title={<>Essential Rentals for Celebrations &amp; Outdoor Events</>}
+      lead={<>A focused collection of the core pieces most intimate and mid-sized events actually need.</>}
       copy={
         <>
           <p>
-            Luxe Seating Rentals provides curated furniture collections, custom spatial
-            layouts, and white-glove on-site setup to elevate{" "}
+            Luxe Seating Rentals provides chairs, tables, cocktail tables, tents,
+            linens, lighting, tent walls, and a dance floor for{" "}
             <Link href="/events/weddings">weddings</Link>,{" "}
-            <Link href="/events/corporate-events">corporate events</Link>,{" "}
-            <Link href="/events/brand-activations">brand activations</Link>,{" "}
-            showers, and{" "}
+            <Link href="/events/baby-showers">baby showers</Link>,{" "}
+            <Link href="/events/bridal-showers">bridal showers</Link>, birthdays,
+            backyard gatherings, and{" "}
             <Link href="/events/private-events">private celebrations</Link> across
             Toronto and the GTA.
           </p>
           <p>
-            Every setup begins with understanding your venue layout and guest flow.
-            Factors like venue access, delivery schedules, service zones, and design
-            aesthetic directly shape your tailored furniture plan.
+            Because Luxe Seating Rentals, Luxe Coffee Bar, and Luxe Sweet Cart are part
+            of one company, you can coordinate tents, tables, chairs, linens, lighting,
+            coffee, and dessert through one inquiry instead of managing several
+            separate vendors.
           </p>
           <p className="seating-overview-handoff">
             Luxe Seating Rentals can be booked independently or coordinated with{" "}
@@ -139,12 +144,17 @@ function RentalCategories() {
     >
       <header>
         <p className="foundation-label">Confirmed rental categories</p>
-        <h2 id="seating-inventory-title">Event Seating &amp; Rental Options</h2>
-        <p className="seating-inventory-subtitle">Six elements. One spatial conversation.</p>
+        <h2 className="foundation-wide-heading" id="seating-inventory-title">
+          Event Seating &amp; Rental Options
+        </h2>
+        <p className="seating-inventory-subtitle">
+          Premium chair, table, and tent rentals for celebrations across Toronto and
+          the GTA.
+        </p>
         <p>
-          The categories below are confirmed. Specific pieces, dimensions,
-          quantities, finishes, and availability remain dependent on the approved
-          inventory schedule and event date.
+          Browse the core inventory available for ceremonies, showers, birthdays,
+          backyard events, outdoor celebrations, and intimate weddings. Quantities
+          remain subject to availability for your date.
         </p>
       </header>
       <div className="seating-inventory-grid">
@@ -165,8 +175,10 @@ function LayoutInspiration() {
   return (
     <section className="seating-studies" aria-labelledby="seating-studies-title">
       <header>
-        <p className="foundation-label">Styling and layout inspiration</p>
-        <h2 id="seating-studies-title">Event Seating Layouts &amp; Floor Planning</h2>
+        <p className="foundation-label">Rental layout guidance</p>
+        <h2 className="foundation-wide-heading" id="seating-studies-title">
+          Planning How the Rentals Fit
+        </h2>
       </header>
       <div>
         {layoutStudies.map((study) => (
@@ -192,7 +204,7 @@ function RentalOperations() {
     >
       <header>
         <p className="foundation-label">Delivery, setup, and teardown</p>
-        <h2 id="seating-operations-title">Furniture Rental Delivery &amp; Event Logistics</h2>
+        <h2 id="seating-operations-title">Rental Delivery, Setup &amp; Pickup</h2>
         <p className="seating-operations-subtitle">
           Delivery, setup, and teardown are confirmed for each event.
         </p>
@@ -221,7 +233,7 @@ function IndoorOutdoorApplications() {
     <section className="seating-applications" aria-labelledby="seating-applications-title">
       <header>
         <p className="foundation-label">Indoor and outdoor applications</p>
-        <h2 id="seating-applications-title">Venue Logistics &amp; Event Planning</h2>
+        <h2 id="seating-applications-title">Indoor &amp; Outdoor Rental Planning</h2>
         <p className="seating-applications-subtitle">
           Every setting calls for a different approach.
         </p>
@@ -231,19 +243,18 @@ function IndoorOutdoorApplications() {
           <span>Interior</span>
           <h3>Indoor venue planning and site logistics</h3>
           <p>
-            Indoor setups prioritize seamless venue integration. We review room
-            dimensions, loading dock access, elevator clearances, floor protection
-            requirements, fire routes, and load-in schedules prior to confirming your
-            layout.
+            For indoor events, room dimensions, access, delivery timing, and the areas
+            available for guest seating, dining, displays, and service help determine
+            the right quantities and placement of our rentals.
           </p>
         </article>
         <article>
           <span>Exterior</span>
           <h3>Outdoor event planning and weather contingency</h3>
           <p>
-            Outdoor setups require custom environmental planning. We evaluate ground
-            surface conditions, site delivery access, wind exposure, tenting
-            compatibility, and rain contingency options before confirming your layout.
+            For backyard and outdoor events, we review the available footprint, ground
+            surface, access, tent size, and space needed for tables, chairs, service,
+            and the dance floor before confirming the rental setup.
           </p>
         </article>
       </div>
@@ -256,14 +267,14 @@ function RentalEvents() {
     <section className="seating-events" aria-labelledby="seating-events-title">
       <header>
         <p className="foundation-label">Recommended by occasion</p>
-        <h2 id="seating-events-title">
-          <span>Every event calls for a different</span>
-          <span>seating and rental plan.</span>
+        <h2 className="foundation-wide-heading" id="seating-events-title">
+          <span>Rentals made for the celebrations</span>
+          <span>we know how to support.</span>
         </h2>
       </header>
       <div>
         {rentalEventLinks.map((event, index) => (
-          <Link href={event.href} key={event.href}>
+          <Link href={event.href} key={`${event.href}-${event.label}`}>
             <span>{String(index + 1).padStart(2, "0")}</span>
             <h3>{event.label}</h3>
             <small>{event.context}</small>
@@ -280,10 +291,10 @@ function RentalGallery() {
     <section className="seating-gallery" aria-labelledby="seating-gallery-title">
       <header>
         <p className="foundation-label">Rental gallery</p>
-        <h2 id="seating-gallery-title">Event seating and rentals, seen as part of the room.</h2>
+        <h2 id="seating-gallery-title">The rental setup, seen as part of the celebration.</h2>
         <p>
-          Full-room views, guest flow, and material details show how each selection
-          contributes to the setting as a whole.
+          Full-setting views will show how chairs, tables, tents, linens, lighting,
+          and the dance floor come together in real indoor and outdoor celebrations.
         </p>
       </header>
       <div className="seating-gallery-grid" data-asset-status="awaiting-approved-photography">
@@ -315,7 +326,7 @@ function RentalPricing() {
         question={rentalPricingAnswer.question}
         answer={rentalPricingAnswer.answer}
         href="/contact"
-        linkLabel="Request a rental proposal"
+        linkLabel="Plan Your Event"
       />
     </section>
   );
@@ -329,22 +340,22 @@ function RentalCombinations() {
     >
       <header>
         <p className="foundation-label">Within the Luxe family</p>
-        <h2 id="seating-combinations-title">Seating can bring the full event together.</h2>
+        <h2 id="seating-combinations-title">One Team for the Core Rentals, Coffee &amp; Dessert</h2>
       </header>
       <div>
         <Link href="/experiences/coffee-bar">
           <h3>Luxe Coffee Bar</h3>
           <p>
-            Coordinate seating, cocktail tables, and guest flow around the coffee
-            service so the bar feels integrated into the event space.
+            Add a staffed mobile coffee experience to your rental plan through the same
+            Luxe inquiry, with placement coordinated around tables, tents, and guests.
           </p>
           <b aria-hidden="true">Explore Coffee Bar ↗︎</b>
         </Link>
         <Link href="/experiences/sweet-cart">
           <h3>Luxe Sweet Cart</h3>
           <p>
-            Plan seating and circulation around the Sweet Cart so guests can gather,
-            queue, and move comfortably through the room.
+            Add a live dessert cart to a shower, birthday, backyard event, or intimate
+            wedding without coordinating a separate company.
           </p>
           <b aria-hidden="true">Explore Sweet Cart ↗︎</b>
         </Link>

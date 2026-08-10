@@ -99,62 +99,32 @@ function CoffeeHero() {
         <i />
         <b>Crafted in the room</b>
       </div>
-      <div className="coffee-hero-proof-heading">
+      <div className="sweet-hero-proof-heading">
         <p className="foundation-label">Confirmed capacity and service planning</p>
-        <h2 id="coffee-hero-proof-title">
+        <h2 id="coffee-hero-proof-title" className="foundation-wide-heading">
           The service plan follows the room, menu, and guest flow.
         </h2>
       </div>
-      <dl className="coffee-hero-proof" aria-labelledby="coffee-hero-proof-title">
+      <dl className="sweet-hero-proof" aria-labelledby="coffee-hero-proof-title">
         <div>
           <dt>Up to 500</dt>
-          <dd>
-            <strong>Guest capacity</strong>
-            <span>
-              Confirmed capacity reaches up to 500 guests. Menu complexity,
-              duration, staffing, and event flow shape the service plan.
-            </span>
-          </dd>
+          <dd><strong>Guest capacity</strong></dd>
         </div>
         <div>
           <dt>Up to 3</dt>
-          <dd>
-            <strong>Simultaneous setups</strong>
-            <span>
-              Up to three simultaneous setups may support suitable multi-site,
-              multi-station, or distributed events, subject to availability and scope.
-            </span>
-          </dd>
+          <dd><strong>Simultaneous setups</strong></dd>
         </div>
         <div>
           <dt>$5M</dt>
-          <dd>
-            <strong>Liability insurance</strong>
-            <span>
-              Luxe maintains $5 million in liability insurance for venue,
-              planner, and procurement requirements.
-            </span>
-          </dd>
+          <dd><strong>Liability insurance</strong></dd>
         </div>
         <div>
           <dt>Included</dt>
-          <dd>
-            <strong>Setup and takedown</strong>
-            <span>
-              Setup and takedown are included. Exact access and timing are
-              coordinated with the venue and event schedule.
-            </span>
-          </dd>
+          <dd><strong>Setup and takedown</strong></dd>
         </div>
         <div>
           <dt>Confirmed</dt>
-          <dd>
-            <strong>Space, power, &amp; water</strong>
-            <span>
-              Requirements vary by format, menu, venue, and setting. Luxe confirms
-              the footprint and utility access after reviewing the event details.
-            </span>
-          </dd>
+          <dd><strong>Space, power, &amp; water</strong></dd>
         </div>
       </dl>
     </header>
@@ -192,11 +162,10 @@ function CoffeeOverview() {
             Luxe Coffee Bar can be booked independently or coordinated with{" "}
             <Link href="/experiences/sweet-cart">Luxe Sweet Cart</Link> and{" "}
             <Link href="/experiences/seating-rentals">Luxe Seating Rentals</Link>{" "}
-            through one{" "}
+            through one coordinated inquiry. {" "}
             <QuoteModalTrigger className="coffee-overview-inquiry">
-              Luxe Event Co. inquiry
+              Plan Your Coffee Bar
             </QuoteModalTrigger>
-            .
           </p>
         </>
       }
@@ -211,8 +180,8 @@ function CoffeeFormats() {
   return (
     <section className="coffee-formats" id="coffee-formats" aria-labelledby="coffee-formats-title">
       <header>
-        <p className="foundation-label">Two complete expressions</p>
-        <h2 id="coffee-formats-title">Choose Your Mobile Coffee Experience</h2>
+        <p className="foundation-label">Two distinct experiences</p>
+        <h2 id="coffee-formats-title">Café Cart or Signature Coffee Bar?</h2>
       </header>
       <div className="coffee-format-pair">
         {coffeeFormats.map((format) => (
@@ -222,9 +191,10 @@ function CoffeeFormats() {
               <i />
             </div>
             <div className="coffee-format-copy">
+              <p className="coffee-format-label">{format.formatLabel}</p>
               <h3>{format.displayName}</h3>
               <p className="coffee-format-description">
-                {format.statement} {format.description}
+                <strong>{format.statement}</strong>
               </p>
               <dl>
                 <div>
@@ -269,9 +239,9 @@ function CoffeeInclusions() {
             Everything needed for a complete coffee service.
           </p>
           <p>
-            Full barista service, iced drinks, specialty syrups, oat and almond milk
-            alternatives, and matcha options are thoughtfully included, never treated
-            as hidden add-ons.
+            Full barista service, hot and iced beverages, specialty syrups, milk
+            alternatives and premium non-coffee options are thoughtfully included in
+            your experience.
           </p>
         </div>
       </header>
@@ -346,7 +316,7 @@ function CoffeeMenu() {
         <div>
           <p className="foundation-label">Seasonal collections</p>
           <h3>Seasonal Specialty Drinks</h3>
-          <p className="coffee-seasonal-subtitle">A menu that moves with the calendar.</p>
+          <p className="coffee-seasonal-subtitle">Seasonal selections may vary.</p>
         </div>
         <div className="coffee-seasonal-grid">
           {seasonalCoffeeCollections.map((collection) => (
@@ -391,7 +361,7 @@ function CoffeeOperations() {
           </>
         }
         href="/contact"
-        linkLabel="Request a coffee-service proposal"
+        linkLabel="Plan Your Coffee Bar"
         headingId="coffee-pricing-question"
       />
       <aside>
@@ -431,7 +401,7 @@ function CoffeeEvents() {
         {coffeeEventLinks.map((event, index) => (
           <Link href={event.href} key={event.href}>
             <span>{String(index + 1).padStart(2, "0")}</span>
-            <strong>{event.label}</strong>
+            <h3>{event.label}</h3>
             <small>{event.context}</small>
             <b aria-hidden="true">↗︎</b>
           </Link>

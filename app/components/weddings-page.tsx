@@ -47,7 +47,7 @@ function WeddingHero() {
         </p>
         <div className="wedding-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">
-            Plan Your Wedding Experience <span aria-hidden="true">↗︎</span>
+            Plan Your Event <span aria-hidden="true">↗︎</span>
           </QuoteModalTrigger>
           <a href="#wedding-day">
             Explore the Wedding Day <span aria-hidden="true">↓︎</span>

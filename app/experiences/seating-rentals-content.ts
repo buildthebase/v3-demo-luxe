@@ -4,76 +4,76 @@ export const rentalCategories = [
   {
     id: "chairs",
     number: "01",
-    name: "Event and wedding chair rentals",
-    role: "Comfort, proportion, and placement",
+    name: "White Resin Chairs",
+    role: "300 chairs available",
     description:
-      "Selected for ceremonies, reception dining, and lounge setups. Chair styles, quantities, finishes, and date availability are tailored to your guest count and design vision.",
+      "White resin chairs for wedding ceremonies and receptions, baby and bridal showers, birthdays, and private celebrations.",
   },
   {
     id: "tables",
     number: "02",
-    name: "Dining and service table rentals",
-    role: "The foundation for dining, service, and display",
+    name: "6-ft Rectangular Tables",
+    role: "25 tables available",
     description:
-      "Proportioned to fit your venue dimensions and floor plan. Available in custom shapes and sizes for seated dinners, grazing tables, bar stations, and feature displays.",
+      "Rectangular tables for guest seating, dining, food displays, gifts, and practical event setups. Coordinating linens are also available.",
   },
   {
     id: "cocktail-tables",
     number: "03",
-    name: "Cocktail and high-top table rentals",
-    role: "Natural gathering points",
+    name: "Cocktail Tables",
+    role: "10 high-top tables available",
     description:
-      "Dynamic high-top rentals designed to encourage guest mingling and smooth room flow. Ideal for cocktail receptions, corporate networking, and brand activations.",
+      "High-top cocktail tables for arrivals, mingling, and standing service, with black or white cocktail-table linens.",
   },
   {
     id: "tents",
     number: "04",
-    name: "Outdoor event tent rentals",
-    role: "Shelter tailored to your setting",
+    name: "Event Tents",
+    role: "Six tents across three sizes",
     description:
-      "Sleek outdoor tenting options engineered for backyard celebrations, lawn weddings, and outdoor corporate events. Customized for site access, footprint, and weather contingency plans across Toronto and the GTA.",
+      "Three 20' × 20' tents (one clear-top)\nOne 15' × 15' tent\nTwo 10' × 10' tents\nAvailable for outdoor events.",
   },
   {
-    id: "linens",
+    id: "dance-floor",
     number: "05",
-    name: "Event linen and fabric rentals",
-    role: "Color, texture, and finish",
+    name: "Dance Floor",
+    role: "18' × 18' dance floor",
     description:
-      "High-end table linens, runners, and napkins that unify your color palette across dining tables, high-tops, and bar setups. Available in premium textures and custom finishes.",
+      "A dedicated dance floor sized for intimate weddings, birthdays, engagements, and private celebrations.",
   },
   {
-    id: "lighting",
+    id: "finishing",
     number: "06",
-    name: "Venue and event lighting setup",
-    role: "Atmosphere, visibility, and focus",
+    name: "Linens, Tent Walls & Lighting",
+    role: "Finishing pieces for a complete setup",
     description:
-      "Ambient and accent lighting installations designed to highlight key focal points, seating lounges, and feature setups while setting the evening atmosphere.",
+      "Table linens, black or white cocktail-table linens, tent walls, and tent lighting to complete indoor and outdoor rental setups.",
   },
 ] as const;
 
 export const layoutStudies = [
   {
     number: "01",
-    title: "Ceremony layout and seating design",
-    lead: "A thoughtful ceremony setup keeps full attention on the moment.",
+    title: "Chair and table quantities",
+    lead: "Start with the guest count and how the event will be used.",
     description:
-      "We calculate aisle widths, chair spacing, and speaker sightlines while ensuring smooth guest access and transitions into reception spaces.",
+      "We can help estimate how many chairs, 6-ft tables, and cocktail tables make sense for your ceremony, shower, dinner, or celebration.",
     tone: "ceremony",
   },
   {
     number: "02",
-    title: "Reception flow and floor planning",
-    lead: "Your reception layout should feel spacious even at full capacity.",
+    title: "Rental placement and flow",
+    lead: "The core rentals should fit the room without crowding it.",
     description:
-      "We balance table positioning with catering service paths, focal stage views, and dance floor access so guests dine and mingle effortlessly.",
+      "Using venue or site dimensions, we help plan the placement of our tables, chairs, cocktail tables, and dance floor around comfortable guest movement.",
     tone: "reception",
   },
   {
     number: "03",
-    title: "Cocktail hour and social-space layouts",
-    lead: "Social spaces and cocktail hours require intuitive room flow.",
+    title: "Tent and outdoor layouts",
+    lead: "Outdoor rentals begin with the available footprint.",
     description:
-      "Strategic placement of high-top tables, bar zones, and lounge seating encourages natural movement for guest arrivals and networking.",
+      "We review how our tent sizes and rental pieces can work within the site, including practical spacing for entrances, tables, service, and dancing.",
     tone: "social",
   },
 ] as const;
@@ -91,7 +91,7 @@ export const rentalOperations = [
     title: "Setup",
     status: "Defined within the proposal",
     description:
-      "On-site placement executed according to your approved floor plan. Our crew handles complete furniture arrangement to ensure your layout is event-ready on time.",
+      "On-site placement is completed according to the agreed rental layout. Our crew arranges the selected chairs, tables, cocktail tables, dance floor, and tent elements included in the setup scope.",
   },
   {
     number: "03",
@@ -106,37 +106,32 @@ export const rentalEventLinks = [
   {
     href: "/events/weddings",
     label: "Weddings",
-    context: "Ceremony seating, reception layouts, cocktail moments, tents, linens, and lighting.",
-  },
-  {
-    href: "/events/corporate-events",
-    label: "Corporate Events",
-    context: "Structured rooms for receptions, conferences, employee events, and client hospitality.",
-  },
-  {
-    href: "/events/brand-activations",
-    label: "Brand Activations",
-    context: "Furniture and spatial planning that support guest flow, product focus, and branded service.",
+    context: "Ceremony seating and intimate weddings of approximately 100–150 guests, with tables, tents, linens, lighting, cocktail tables, and a dance floor.",
   },
   {
     href: "/events/baby-showers",
     label: "Baby Showers",
-    context: "Comfortable seating and refined tables for intimate indoor or outdoor gatherings.",
+    context: "Chairs, tables, linens, and optional tenting for indoor or backyard showers, including typical gatherings of roughly 30–80 guests.",
   },
   {
     href: "/events/bridal-showers",
     label: "Bridal Showers",
-    context: "A cohesive room shaped around dining, gifting, coffee, and dessert service.",
+    context: "Guest seating, dining and display tables, cocktail tables, and linens for showers of roughly 30–80 guests, with coffee and dessert available through Luxe.",
   },
   {
     href: "/events/birthdays",
     label: "Birthdays",
-    context: "Flexible layouts for milestone dinners, standing celebrations, and outdoor events.",
+    context: "Flexible rental setups for family celebrations, milestone parties, and outdoor gatherings.",
   },
   {
     href: "/events/private-events",
-    label: "Private Events",
-    context: "Setting support for engagements, anniversaries, graduations, and family celebrations.",
+    label: "Backyard & Outdoor Events",
+    context: "Tents, walls, lighting, tables, chairs, linens, cocktail tables, and a dance floor in one coordinated rental plan.",
+  },
+  {
+    href: "/events/private-events",
+    label: "Engagements & Private Events",
+    context: "Practical rental support for engagements, anniversaries, graduations, and family gatherings.",
   },
 ] as const;
 
@@ -155,8 +150,8 @@ export const rentalGalleryPreview = [
   },
   {
     number: "03",
-    label: "Materials and finishing details",
-    note: "A closer view of the finishes and details that complete the setting.",
+    label: "Linens, lighting and finishing details",
+    note: "A closer view of the practical finishing pieces that complete the setup.",
     tone: "detail",
   },
 ] as const;
@@ -176,7 +171,7 @@ export const seatingRentalFaqs = [
   {
     question: "What is included with an event-rental service?",
     answer:
-      "Luxe begins with the confirmed rental categories: chairs, tables, cocktail tables, tents, linens, and lighting. The proposal then defines the selected inventory and any agreed delivery, placement, setup, takedown, or pickup responsibilities. Specific models, materials, colours, dimensions, quantities, availability, and operating scope are confirmed for the event rather than assumed to be universally included.",
+      "Luxe offers 300 white resin chairs, 25 six-foot rectangular tables, 10 cocktail tables, six tents across three sizes, an 18-foot by 18-foot dance floor, table and cocktail linens, tent walls, and tent lighting. Your proposal confirms the selected items, quantities, availability, and any agreed delivery, placement, setup, takedown, or pickup responsibilities.",
   },
   {
     question: "Does Luxe deliver rentals?",
@@ -201,7 +196,7 @@ export const seatingRentalFaqs = [
   {
     question: "Can rentals be styled to match the event?",
     answer:
-      "Yes, within the confirmed inventory. Chair, table, cocktail-table, tent, linen, and lighting selections can be planned with the event palette, layout, and other Luxe experiences. Styling still has to support quantities, dimensions, availability, sightlines, accessibility, guest flow, venue rules, surface conditions, delivery access, and any agreed setup responsibilities; exact items and finishes are confirmed in the proposal.",
+      "Yes, within the confirmed inventory. Black or white cocktail-table linens, linens for the 6-ft tables, tent walls, and tent lighting can help the setup feel cohesive. The rental plan can also be coordinated with Luxe Coffee Bar and Luxe Sweet Cart for one consistent event experience.",
   },
   {
     question: "Which areas does Luxe serve?",

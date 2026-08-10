@@ -1,4 +1,8 @@
 /* Coffee Bar heading alignment and supporting-copy hierarchy. */
+.foundation-shell .coffee-page > .coffee-overview::before {
+  background-color: var(--surface-chapter-taupe);
+}
+
 .coffee-formats > header {
   grid-template-columns: 1fr;
   justify-items: center;
@@ -8,14 +12,11 @@
 /* The proof statement sits in a full-width desktop panel. Give it enough
  * measure to balance over two lines while keeping the panel alignment exact. */
 @media (min-width: 961px) {
-  .foundation-shell .coffee-page .coffee-hero-proof-heading h2#coffee-hero-proof-title {
+  .foundation-shell .coffee-page .sweet-hero-proof-heading h2#coffee-hero-proof-title {
     width: 100% !important;
-    max-width: 25ch !important;
-    font-size: var(--luxe-type-h2) !important;
-    line-height: .98 !important;
-    letter-spacing: -.055em !important;
-    margin-inline: auto;
-    text-align: center;
+    max-width: 100% !important;
+    white-space: normal !important;
+    text-wrap: balance;
   }
 }
 

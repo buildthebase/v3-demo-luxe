@@ -68,7 +68,7 @@ function GalleryHero() {
         </p>
         <div className="gallery-hero-actions">
           <Link href="/contact" data-event-name="inquiry_start">
-            Start Planning Your Event <span aria-hidden="true">↗︎</span>
+            Plan Your Event <span aria-hidden="true">↗︎</span>
           </Link>
         </div>
       </div>
@@ -93,7 +93,7 @@ function GalleryInquiry() {
         </p>
       </div>
       <Link href="/contact" data-event-name="inquiry_start">
-        Start Planning Your Event <span aria-hidden="true">↗︎</span>
+        Plan Your Event <span aria-hidden="true">↗︎</span>
       </Link>
     </section>
   );

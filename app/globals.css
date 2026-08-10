@@ -8536,9 +8536,11 @@ body .foundation-shell main:is(
   letter-spacing: 0.14em;
 }
 
-.experiences-event-list a > strong {
+.experiences-event-list a > h3 {
+  margin: 0;
   font-size: 1.15rem;
   font-weight: 500;
+  line-height: inherit;
 }
 
 .experiences-event-list a > small {
@@ -12674,7 +12676,7 @@ body .foundation-shell main:is(
 }
 
 .coffee-format-copy h3 {
-  order: 1;
+  order: 2;
   max-width: 18ch;
   margin: 0 0 var(--space-5);
   color: var(--surface-dark-copy);
@@ -12690,12 +12692,33 @@ body .foundation-shell main:is(
 }
 
 .coffee-format-copy .coffee-format-description {
-  order: 2;
+  order: 3;
   max-width: 37rem;
   margin: 0;
   color: var(--surface-dark-copy-muted);
   font-size: var(--type-body);
   line-height: 1.6;
+}
+
+.coffee-format-label {
+  order: 1;
+  margin: 0 0 var(--space-3);
+  color: var(--color-luxe-gold-ink);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.coffee-format-description strong {
+  display: block;
+}
+
+.coffee-format-description strong {
+  color: var(--surface-dark-copy);
+  font-size: clamp(1.05rem, 0.98rem + 0.3vw, 1.28rem);
+  font-weight: 500;
+  line-height: 1.45;
 }
 
 .coffee-format-copy dl {
@@ -13747,8 +13770,9 @@ body .foundation-shell main:is(
   }
 
   .coffee-format-copy h3 {
-    max-width: 20ch;
-    font-size: clamp(2rem, 9vw, 3.1rem);
+    max-width: none;
+    font-size: clamp(1.84rem, 8.28vw, 2.852rem);
+    white-space: nowrap;
   }
 
   .coffee-format-copy dl > div {
@@ -22929,6 +22953,13 @@ font-size: var(--type-body);;
   line-height: 1;
 }
 
+@media (min-width: 1101px) {
+  .coffee-inclusions-groups h3 {
+    font-size: clamp(1.84rem, 2.576vw, 2.99rem);
+    white-space: nowrap;
+  }
+}
+
 .coffee-inclusions-groups article ul {
   position: relative;
   z-index: 1;
@@ -25758,7 +25789,7 @@ transparent 0.7px);
   }
 }
 @media (max-width: 700px) {
-  .sweet-page .sweet-hero-proof {
+  :is(.sweet-page, .coffee-page) .sweet-hero-proof {
     display: grid;
     width: 100%;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -25777,8 +25808,8 @@ transparent 0.7px);
     color: var(--color-luxe-black);
   }
 
-  .sweet-page .sweet-hero-proof > div,
-  .sweet-page .sweet-hero-proof > div:last-child {
+  :is(.sweet-page, .coffee-page) .sweet-hero-proof > div,
+  :is(.sweet-page, .coffee-page) .sweet-hero-proof > div:last-child {
     display: grid;
     min-width: 0;
     min-height: 0;
@@ -25794,19 +25825,19 @@ transparent 0.7px);
     text-align: center;
   }
 
-  .sweet-page
+  :is(.sweet-page, .coffee-page)
     .sweet-hero-proof
     > div:nth-child(odd):not(:last-child) {
     border-right: 1px solid var(--color-rule);
   }
 
-  .sweet-page .sweet-hero-proof > div:last-child {
+  :is(.sweet-page, .coffee-page) .sweet-hero-proof > div:last-child {
     grid-column: 1 / -1;
     border-right: 0;
     border-bottom: 0;
   }
 
-  .sweet-page .sweet-hero-proof dt {
+  :is(.sweet-page, .coffee-page) .sweet-hero-proof dt {
     display: block;
     width: 100%;
     min-height: 0;
@@ -25819,7 +25850,7 @@ transparent 0.7px);
     text-align: center;
   }
 
-  .sweet-page .sweet-hero-proof dd {
+  :is(.sweet-page, .coffee-page) .sweet-hero-proof dd {
     display: block;
     width: 100%;
     min-width: 0;
@@ -25827,7 +25858,7 @@ transparent 0.7px);
     text-align: center;
   }
 
-  .sweet-page .sweet-hero-proof dd strong {
+  :is(.sweet-page, .coffee-page) .sweet-hero-proof dd strong {
     display: block;
     width: 100%;
     min-height: 0;
@@ -25896,6 +25927,10 @@ transparent 0.7px);
 /* Main seasonal heading */
 .coffee-page .coffee-seasonal h3 {
   color: var(--color-luxe-black);
+}
+
+.coffee-page .coffee-seasonal .coffee-seasonal-subtitle {
+  color: var(--color-text-secondary);
 }
 
 /* Oversized background word */

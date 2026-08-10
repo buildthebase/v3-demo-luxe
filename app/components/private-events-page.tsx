@@ -45,7 +45,7 @@ function PrivateEventsHero() {
         </p>
         <div className="private-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">
-            Discuss Your Event <span aria-hidden="true">↗︎</span>
+            Plan Your Event <span aria-hidden="true">↗︎</span>
           </QuoteModalTrigger>
           <a href="#private-occasions">
             Explore the Occasions <span aria-hidden="true">↓︎</span>
@@ -100,8 +100,9 @@ function PrivateEventContexts() {
     <section className="private-contexts" id="private-occasions" aria-labelledby="private-contexts-title">
       <header>
         <h2 id="private-contexts-title">
-          <span>Private events for engagements, graduations,</span>
-          <span>holidays, and milestones</span>
+          <span>Private events for engagements,</span>
+          <span>graduations, holidays,</span>
+          <span>and milestones</span>
         </h2>
         <p>
           From intimate family celebrations to major cultural gatherings, we

@@ -4,28 +4,28 @@ export const coffeeFormats = [
   {
     id: "cafe-cart",
     name: entityNames.coffeeExperiences.cafeCart.canonicalName,
-    displayName: "Luxe Café Cart: Compact Espresso Bar",
+    displayName: entityNames.coffeeExperiences.cafeCart.canonicalName,
     shortName: entityNames.coffeeExperiences.cafeCart.contextualName,
-    statement: "An intimate mobile café experience designed for boutique gatherings.",
-    description:
-      "Perfect when you want warm, handcrafted barista service without overpowering the layout of the room.",
+    formatLabel: "Compact café experience",
+    statement:
+      "Our more compact café experience for smaller, intimate events and spaces.",
     eventFit:
-      "Intimate gatherings, bridal and baby showers, private dinners, and focused hospitality moments.",
+      "Smaller celebrations, bridal and baby showers, private dinners, intimate gatherings, and tighter venues.",
     presence:
-      "Compact, flexible footprint designed to sit naturally within indoor or outdoor event spaces.",
+      "A compact, flexible footprint that sits naturally within indoor or outdoor spaces.",
   },
   {
     id: "signature-bar",
     name: entityNames.coffeeExperiences.signatureCoffeeBar.canonicalName,
-    displayName: "Luxe Signature Coffee Bar: Full-Service Event Bar",
+    displayName: entityNames.coffeeExperiences.signatureCoffeeBar.canonicalName,
     shortName: entityNames.coffeeExperiences.signatureCoffeeBar.contextualName,
-    statement: "A full-service mobile espresso bar built for scale and visual impact.",
-    description:
-      "Designed for weddings, corporate functions, and brand activations where coffee service serves as a focal point for guest interaction.",
+    formatLabel: "Full premium setup",
+    statement:
+      "Our full premium setup for larger events and a higher-impact presentation.",
     eventFit:
-      "Weddings, corporate conferences, brand activations, galas, and high-capacity celebrations.",
+      "Larger events, weddings, corporate functions, conferences, brand activations, galas, and high-capacity celebrations.",
     presence:
-      "Statement-making, high-impact bar presence tailored for active guest flow and higher volume.",
+      "A statement-making bar presence tailored for higher volume and greater visual impact.",
   },
 ] as const;
 
@@ -175,7 +175,7 @@ export const coffeeFaqs = [
   {
     question: "What is the difference between the two coffee experiences?",
     answer:
-      "The Café Cart is appropriate when the event needs an intimate, focused café point that sits quietly within the setting. The full-service Signature Coffee Bar is appropriate when coffee should have a larger footprint and a more prominent hospitality role. Both are complete, staffed Luxe experiences; guest count, service duration, venue, menu, available space, and desired visibility determine the better fit.",
+      "The Luxe Café Cart is our more compact café experience for smaller, intimate events and spaces. The Luxe Signature Coffee Bar is our full premium setup for larger events, weddings, corporate functions, and occasions that call for a higher-impact presentation. Both are complete, staffed Luxe experiences; guest count, service duration, venue, menu, available space, and desired visibility determine the better fit.",
   },
   {
     question: "How does a coffee cart compare with traditional coffee catering?",

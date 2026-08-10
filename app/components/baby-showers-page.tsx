@@ -50,7 +50,7 @@ function BabyShowerHero() {
         </p>
         <div className="baby-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">
-            Plan a Baby Shower <span aria-hidden="true">↗︎</span>
+            Plan Your Event <span aria-hidden="true">↗︎</span>
           </QuoteModalTrigger>
           <a href="#baby-overview">
             Explore the Experience <span aria-hidden="true">↓︎</span>

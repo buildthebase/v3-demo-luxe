@@ -27,12 +27,59 @@
 }
 
 .foundation-shell .seating-events > header h2 {
-  max-width: none;
+  width: 100% !important;
+  max-width: none !important;
+  margin-inline: auto !important;
+  text-align: center !important;
+}
+
+/* Match the light internal-page hero texture used across the site. */
+.foundation-shell .seating-page > .seating-hero::before {
+  background-color: var(--color-luxe-ivory);
+  background-image: radial-gradient(
+    rgb(23 22 20 / 5.3%) 0.55px,
+    transparent 0.7px
+  );
+  background-size: 4px 4px;
+}
+
+.foundation-shell .seating-page #seating-hero-proof-title span {
+  display: block;
 }
 
 /* Match the Coffee Bar proof panel: a centered, balanced two-line statement
  * with no artificial narrow-column wrap on desktop. */
 @media (min-width: 961px) {
+  .foundation-shell .seating-events > header h2 span {
+    display: block;
+    white-space: nowrap;
+  }
+
+  /* Keep the longer, inventory-specific hero title inside its copy column. */
+  .foundation-shell .seating-page .seating-hero {
+    grid-template-columns: minmax(0, 0.96fr) minmax(25rem, 1.04fr);
+    column-gap: clamp(2rem, 4vw, 4rem);
+  }
+
+  .foundation-shell .seating-page .seating-hero-copy h1 {
+    width: 100%;
+    max-width: 100%;
+    font-size: var(--type-internal-page-h1) !important;
+    line-height: 0.88 !important;
+    letter-spacing: -0.065em !important;
+    overflow-wrap: normal;
+    text-wrap: balance;
+  }
+
+  .foundation-shell .seating-page .seating-hero-copy h1 span {
+    display: inline;
+    white-space: normal;
+  }
+
+  .foundation-shell .seating-page .seating-hero-copy h1 span + span::before {
+    content: " ";
+  }
+
   .foundation-shell .seating-page .coffee-hero-proof-heading h2#seating-hero-proof-title {
     width: 100% !important;
     max-width: 30ch !important;
@@ -45,10 +92,91 @@
 }
 
 @media (min-width: 961px) {
-  .foundation-shell .seating-events > header h2 span {
-    display: block;
+  /* Center the inventory and layout headers as complete editorial units. */
+  .foundation-shell .seating-page .seating-inventory > header,
+  .foundation-shell .seating-page .seating-studies > header {
+    grid-template-columns: minmax(0, 1fr) !important;
+    justify-items: center !important;
+    text-align: center !important;
+  }
+
+  .foundation-shell .seating-page .seating-inventory > header > *,
+  .foundation-shell .seating-page .seating-studies > header > * {
+    grid-column: 1 !important;
+    margin-inline: auto !important;
+  }
+
+  .foundation-shell .seating-page .seating-inventory > header h2#seating-inventory-title {
+    width: auto !important;
+    max-width: none !important;
+    white-space: nowrap !important;
+    text-wrap: nowrap;
+  }
+
+  .foundation-shell .seating-page .seating-studies > header h2#seating-studies-title {
+    width: auto !important;
+    max-width: none !important;
+    white-space: nowrap !important;
+    text-wrap: nowrap;
+  }
+
+  .foundation-shell .seating-page .seating-inventory > header .seating-inventory-subtitle {
+    max-width: 62rem;
+  }
+
+  .foundation-shell .seating-page .seating-inventory > header > p:last-child {
+    max-width: 52rem;
+  }
+
+  /* Align inventory names, proof lines, and descriptions across each row. */
+  .foundation-shell .seating-page .seating-inventory-grid h3 {
+    min-height: 2.16em;
+  }
+
+  .foundation-shell .seating-page .seating-inventory-grid strong {
+    min-height: 2.8rem;
     white-space: nowrap;
   }
+
+  .foundation-shell .seating-page .seating-inventory-grid p {
+    min-height: 6.4em;
+  }
+
+  .foundation-shell .seating-page .seating-item-tents p {
+    white-space: pre-line;
+  }
+
+  /* Keep the application titles to two lines at desktop widths. */
+  .foundation-shell .seating-page .seating-applications h3 {
+    max-width: 20ch;
+    margin-top: clamp(9rem, 16vw, 13.5rem);
+    font-size: clamp(2.4rem, 3.1vw, 3.7rem);
+  }
+
+  /* Keep the third operations-card title on one line. */
+  .foundation-shell .seating-page .seating-operation-grid h3 {
+    width: 100%;
+    max-width: none !important;
+    font-size: clamp(2rem, 2.25vw, 2.7rem);
+  }
+
+  .foundation-shell .seating-page .seating-operation-grid article:last-child h3 {
+    white-space: nowrap;
+  }
+
+  .foundation-shell .seating-page .seating-events > header {
+    grid-template-columns: minmax(0, 1fr) !important;
+    justify-items: center !important;
+    text-align: center !important;
+  }
+
+  .foundation-shell .seating-page .seating-events > header > * {
+    grid-column: 1 !important;
+    width: 100% !important;
+    margin-inline: auto !important;
+    text-align: center !important;
+  }
+
 }
 
 @media (max-width: 960px) {
@@ -63,6 +191,10 @@
 }
 
 @media (max-width: 700px) {
+  .foundation-shell main.seating-page #page-overview .seating-hero-copy h1 {
+    font-size: clamp(1.87rem, 8.18vw, 2.73rem) !important;
+  }
+
   .foundation-shell .seating-page .seating-overview-content {
     border-top: 0;
   }

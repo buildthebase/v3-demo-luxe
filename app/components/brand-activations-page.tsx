@@ -47,7 +47,7 @@ function ActivationHero() {
         </p>
         <div className="activation-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">
-            Create a Branded Experience <span aria-hidden="true">↗︎</span>
+            Plan Your Event <span aria-hidden="true">↗︎</span>
           </QuoteModalTrigger>
           <a href="#activation-system">
             Explore Brand Possibilities <span aria-hidden="true">↓︎</span>

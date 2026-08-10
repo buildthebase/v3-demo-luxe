@@ -66,6 +66,8 @@ export const dessertSauces = [
   "Caramel",
   "Strawberry",
   "Pure Maple Syrup",
+  "Lotus Biscoff",
+  "Pistachio Cream",
 ] as const;
 
 export const standardToppings = [
@@ -89,6 +91,7 @@ export const premiumToppings = [
   "Kinder Bueno",
   "Crushed Pistachios",
   "Crushed Pecans",
+  "Knafeh",
 ] as const;
 
 export const sweetCustomization = [
@@ -180,7 +183,7 @@ export const sweetCartFaqs = [
   {
     question: "Which desserts are available?",
     answer:
-      "Luxe Sweet Cart offers Mini Dutch Pancakes, Belgian Waffles on a Stick, and Mini Donuts. A Soft Serve Ice Cream Cart is available as an optional enhancement.",
+      "The signature Luxe Churro Bar features fresh churros prepared live and served warm. Luxe Sweet Cart also offers Mini Dutch Pancakes, Belgian Waffles on a Stick, and Mini Donuts. Vanilla or Chocolate soft serve can be added as an optional enhancement to a dessert experience.",
   },
   {
     question: "Are desserts prepared on-site?",
@@ -205,12 +208,12 @@ export const sweetCartFaqs = [
   {
     question: "Which sauces and toppings are included?",
     answer:
-      "Every dessert experience includes premium sauces and a selection of standard toppings. The available sauce collection includes Belgian milk chocolate, Belgian white chocolate, Nutella, caramel, strawberry, and pure maple syrup. The final included selection is confirmed for the event.",
+      "Every dessert experience includes premium sauces and a selection of standard toppings. The available sauce collection includes Belgian milk chocolate, Belgian white chocolate, Nutella, caramel, strawberry, pure maple syrup, Lotus Biscoff, and pistachio cream. The final included selection is confirmed for the event.",
   },
   {
     question: "Are premium toppings available?",
     answer:
-      "Yes. Premium toppings such as fresh strawberries, blueberries, KitKat Bites, Kinder Bueno, crushed pistachios, and crushed pecans are available as enhancements.",
+      "Yes. Premium toppings such as fresh strawberries, blueberries, KitKat Bites, Kinder Bueno, crushed pistachios, crushed pecans, and knafeh are available as enhancements.",
   },
   {
     question: "Can toppings be customized?",
@@ -230,7 +233,7 @@ export const sweetCartFaqs = [
   {
     question: "Is soft serve available?",
     answer:
-      "Yes. A Soft Serve Ice Cream Cart is available as an optional add-on to a Sweet Cart experience.",
+      "Yes. Vanilla or Chocolate soft serve can be added as an optional enhancement to a selected Sweet Cart dessert experience; it is not offered as a standalone cart or service.",
   },
   {
     question: "Can the Sweet Cart setup be branded?",

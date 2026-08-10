@@ -29,12 +29,12 @@ export const pageMetadata = {
   "/experiences/sweet-cart": {
     title: "Dessert Cart Experiences in Toronto | Luxe Sweet Cart",
     description:
-      "Create a live dessert moment for Toronto and GTA events with mini pancakes, waffles, donuts, toppings, and a cart styled around the occasion.",
+      "Discover the signature Luxe Churro Bar and live dessert carts for Toronto and GTA events, with warm sweets prepared and finished for guests on-site.",
   },
   "/experiences/seating-rentals": {
-    title: "Event Seating Rentals Toronto & GTA | Luxe Seating Rentals",
+    title: "Chair, Table & Tent Rentals Toronto | Luxe Seating Rentals",
     description:
-      "Explore chairs, tables, tents, linens, and lighting for Toronto and GTA events, with clear guidance on layouts, quote requirements, delivery, and setup.",
+      "Rent white resin chairs, 6-ft tables, cocktail tables, tents, linens, lighting and a dance floor for weddings, showers and private events in Toronto and the GTA.",
   },
   "/events": {
     title: "Toronto Event Services | Coffee, Dessert & Rentals | Luxe",

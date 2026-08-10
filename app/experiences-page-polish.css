@@ -5,10 +5,6 @@
     font-size: var(--type-heading-sm) !important;
   }
 
-  .foundation-shell .experiences-page .experiences-hero-seating-name {
-    display: block;
-  }
-
   .foundation-shell .experiences-page .experiences-booking-proof > li:nth-child(1) {
     order: 1;
   }

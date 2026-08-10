@@ -60,10 +60,10 @@ const sweetCartSchema = createServicePageSchema({
   serviceName: "Luxe Sweet Cart",
   serviceType: "Interactive dessert cart catering",
   serviceDescription:
-    "A live, interactive dessert cart experience with on-site preparation for weddings, corporate events, showers, activations, and private events.",
+    "A live, interactive dessert cart experience featuring the signature Luxe Churro Bar and made-to-order sweets for weddings, corporate events, showers, activations, and private events.",
   pageName: pageMetadata[sweetCartPath].title,
   pageDescription:
-    "Explore freshly prepared mini pancakes, waffles, mini donuts, cart collections, sauces, toppings, customization, and event applications.",
+    "Explore the flagship Luxe Churro Bar, freshly prepared mini pancakes, waffles, mini donuts, cart collections, and event applications.",
   faqs: sweetCartFaqs,
 });
 
@@ -84,7 +84,7 @@ function SweetHero() {
         </p>
         <div className="sweet-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">
-            Inquire About a Dessert Experience <span aria-hidden="true">↗︎</span>
+            Plan Your Event <span aria-hidden="true">↗︎</span>
           </QuoteModalTrigger>
           <a href="#dessert-experiences">
             Explore the Dessert Menu <span aria-hidden="true">↓︎</span>
@@ -149,8 +149,8 @@ function SweetPositioning() {
         <>
           <p>
             Dessert-cart catering is a staffed mobile dessert service where mini
-            pancakes, Belgian waffles, mini donuts, and other selected sweets are
-            prepared, finished, and served for guests on-site. Luxe Sweet Cart
+            churros, mini pancakes, Belgian waffles, mini donuts, and other selected
+            sweets are prepared, finished, and served for guests on-site. Luxe Sweet Cart
             provides luxury dessert cart catering for{" "}
             <Link href="/events/weddings">weddings</Link>,{" "}
             <Link href="/events/corporate-events">corporate events</Link>,{" "}
@@ -170,11 +170,11 @@ function SweetPositioning() {
             Luxe Sweet Cart can be booked independently or coordinated with{" "}
             <Link href="/experiences/coffee-bar">Luxe Coffee Bar</Link> and{" "}
             <Link href="/experiences/seating-rentals">Luxe Seating Rentals</Link>{" "}
-            through one{" "}
+            through the{" "}
             <QuoteModalTrigger className="sweet-positioning-inquiry">
-              Luxe Event Co. inquiry
+              Plan Your Event
             </QuoteModalTrigger>
-            .
+            {" "}inquiry.
           </p>
         </>
       }
@@ -236,15 +236,62 @@ function DessertExperiences() {
           </article>
         ))}
       </div>
+    </section>
+  );
+}
+
+function ChurroBarFeature() {
+  return (
+    <section className="sweet-churro-feature" aria-labelledby="sweet-churro-title">
+      <div className="sweet-churro-feature-art" aria-hidden="true">
+        <span />
+        <span />
+        <span />
+        <i>Prepared live</i>
+      </div>
+      <div className="sweet-churro-feature-copy">
+        <h3 id="sweet-churro-title">Luxe Churro Bar</h3>
+        <p className="sweet-churro-feature-positioning">
+          Our flagship dessert experience.
+        </p>
+        <p className="sweet-churro-feature-lead">
+          Fresh, golden churros prepared live and served warm, then finished to
+          order with premium sauces and toppings. The Luxe Churro Bar combines
+          live dessert preparation with an elevated cart presentation to create
+          an interactive experience guests can gather around.
+        </p>
+        <p className="sweet-churro-feature-events">
+          Perfect for weddings, corporate events, baby showers, birthdays, brand
+          activations, and private celebrations.
+        </p>
+        <QuoteModalTrigger
+          className="sweet-churro-feature-action"
+          data-event-name="inquiry_start"
+        >
+          Plan Your Event <span aria-hidden="true">↗︎</span>
+        </QuoteModalTrigger>
+      </div>
+    </section>
+  );
+}
+
+function SweetSoftServe() {
+  return (
+    <section className="sweet-enhancement" aria-label="Optional dessert enhancement">
       <aside className="sweet-soft-serve">
         <div aria-hidden="true"><i /><i /><i /></div>
         <div className="sweet-soft-serve-copy">
-          <p className="foundation-label">Optional enhancement</p>
-          <h3>Soft Serve Ice Cream Cart</h3>
+          <p className="foundation-label">Optional dessert add-on</p>
+          <h3>Add Soft Serve to Your Dessert Experience</h3>
           <p>
-            Incorporate a premium soft serve ice cream cart into your Sweet Cart menu to
-            create an elevated, nostalgic treat for summer weddings, outdoor
-            activations, and private parties.
+            Add a classic soft serve moment to your selected dessert experience for
+            an elevated, nostalgic finish. Soft serve is available in Vanilla and
+            Chocolate.
+          </p>
+          <p className="sweet-soft-serve-flavours">
+            <strong>Available flavours</strong>
+            <span>Vanilla</span>
+            <span>Chocolate</span>
           </p>
         </div>
       </aside>
@@ -386,7 +433,7 @@ function SweetOperations() {
           </>
         }
         href="/contact"
-        linkLabel="Request a dessert-service proposal"
+        linkLabel="Plan Your Event"
       />
       <aside>
         <p>
@@ -413,7 +460,7 @@ function SweetEvents() {
         {sweetEventLinks.map((event, index) => (
           <Link href={event.href} key={event.href}>
             <span>{String(index + 1).padStart(2, "0")}</span>
-            <strong>{event.label}</strong><small>{event.context}</small><b aria-hidden="true">↗︎</b>
+            <h3>{event.label}</h3><small>{event.context}</small><b aria-hidden="true">↗︎</b>
           </Link>
         ))}
       </div>
@@ -506,6 +553,8 @@ export function SweetCartPage() {
         <SweetPositioning />
         <SweetCollections />
         <DessertExperiences />
+        <ChurroBarFeature />
+        <SweetSoftServe />
         <SweetInclusions />
         <SweetPantry />
         <SweetCustomization />

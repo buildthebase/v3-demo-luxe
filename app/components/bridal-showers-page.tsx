@@ -75,7 +75,7 @@ function BridalHero() {
         </p>
         <div className="bridal-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">
-            PLAN A BRIDAL SHOWER <span aria-hidden="true">↗︎</span>
+            Plan Your Event <span aria-hidden="true">↗︎</span>
           </QuoteModalTrigger>
           <a href="#bridal-experiences">
             EXPLORE THE EXPERIENCE <span aria-hidden="true">↓︎</span>
@@ -331,7 +331,7 @@ function BridalFaq() {
       </header>
       <FaqAccordion items={bridalShowerFaqs} indicatorElement="i" showNumbers={false} />
       <Link href="/faq">Review Luxe Booking FAQs <span aria-hidden="true">↗︎</span></Link>
-      <Link href="/contact">Start a Bridal Shower Inquiry <span aria-hidden="true">↗︎</span></Link>
+      <Link href="/contact">Plan Your Event <span aria-hidden="true">↗︎</span></Link>
     </section>
   );
 }
