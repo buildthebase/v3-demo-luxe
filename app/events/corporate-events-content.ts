@@ -27,7 +27,7 @@ export const corporateEventApplications = [
     number: "05",
     title: "Networking events",
     description:
-      "Pair espresso service and sweet bites with cocktail tables and lounge seating to encourage natural movement and organic conversation.",
+      "Pair espresso service and sweet bites to create a natural hospitality point for conversation and connection.",
   },
   {
     number: "06",
@@ -45,7 +45,7 @@ export const corporateEventApplications = [
     number: "08",
     title: "Real estate and development events",
     description:
-      "Sophisticated pop-up coffee and lounge seating for sales centre grand openings, broker previews, groundbreaking ceremonies, and tenant events.",
+      "Sophisticated pop-up coffee for sales centre grand openings, broker previews, groundbreaking ceremonies, and tenant events.",
   },
   {
     number: "09",
@@ -78,13 +78,13 @@ export const corporateExperienceRoles = [
   },
   {
     number: "03",
-    label: "The room",
-    name: "Luxe Seating Rentals",
+    label: "Request-specific rentals",
+    name: "Select Luxe Rentals",
     href: "/experiences/seating-rentals",
-    statement: "Rental support for comfort, layout, and flow.",
+    statement: "Core rental pieces considered only when the inventory fits.",
     description:
-      "High-top cocktail tables, lounge furniture, dining setups, tents, linens, and ambient lighting designed to optimize room layout and guest circulation.",
-    fact: "Inventory, quantities, delivery, setup, teardown, access, and fees are confirmed for the event rather than assumed universally.",
+      "White resin chairs, 6-ft tables, cocktail tables, linens, and tenting may be considered for suitable celebrations, but Luxe does not offer a broad conference-furniture catalogue.",
+    fact: "Availability, quantities, delivery, setup, teardown, access, and fees must be confirmed for the request.",
   },
 ] as const;
 
@@ -147,7 +147,7 @@ export const corporatePlanningSteps = [
     number: "02",
     title: "Build the service plan",
     description:
-      "We design a custom proposal recommending the optimal mix of coffee bars, dessert stations, and lounge rentals for your event.",
+      "We prepare a proposal around the confirmed Coffee Bar, Sweet Cart, branding, staffing, and service requirements.",
   },
   {
     number: "03",
@@ -217,9 +217,9 @@ export const corporateFaqs = [
       "Coffee experiences can typically serve up to 500 guests, while dessert experiences can typically serve up to 400 guests. Capacity is not based on guest count alone; the menu, duration, staffing, equipment, venue, guest flow, and number of setups determine the final service plan.",
   },
   {
-    question: "Can coffee, dessert, and rentals be combined?",
+    question: "Can coffee and dessert be combined, and are rentals available?",
     answer:
-      "Yes. Luxe Coffee Bar, Luxe Sweet Cart, and Luxe Seating Rentals can be booked independently or coordinated through one Luxe Event Co. inquiry and proposal journey. The selected services are shaped around the event rather than sold as a fixed package.",
+      "Luxe Coffee Bar and Luxe Sweet Cart can be booked independently or coordinated through one inquiry. Select white resin chairs, 6-ft tables, cocktail tables, linens, or tenting may be considered only when the focused Luxe Seating Rentals inventory suits the request; Luxe does not provide a broad corporate or conference furniture catalogue.",
   },
   {
     question: "How should coffee catering be planned for a corporate event?",

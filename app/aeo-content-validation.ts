@@ -75,8 +75,8 @@ export const confirmedOperationalFacts = [
     source: "approved business configuration",
   },
   {
-    topic: "Menus and rental categories",
-    fact: "Only the named menu selections and six confirmed rental categories are presented as available; final scope is proposal-dependent.",
+    topic: "Menus and focused rental inventory",
+    fact: "Named menu selections and the client-confirmed item-level rental inventory are presented as available; date-specific availability and operational scope remain proposal-dependent.",
     source: "approved service configuration",
   },
 ] as const;
@@ -146,10 +146,10 @@ export const clientConfirmationRequirements = [
   {
     topic: "Rental operations",
     confirmationNeeded:
-      "Inventory quantities and dimensions plus delivery, setup, teardown, pickup, damage, substitution, and change policies.",
+      "Delivery, setup, teardown, pickup, damage, substitution, change, weather, and outdoor policies for the confirmed inventory.",
     affectedPages: ["/experiences/seating-rentals", "/faq"],
     currentPublicTreatment:
-      "Confirmed categories are visible; quantities, responsibilities, timing, and policy terms remain proposal- or contract-defined.",
+      "Confirmed items, quantities, dimensions, and tent types are visible; operational responsibilities, timing, fees, and policy terms remain proposal- or contract-defined.",
   },
   {
     topic: "Multi-day and recurring service",

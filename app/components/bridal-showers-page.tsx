@@ -53,7 +53,7 @@ const bridalShowerServices: readonly SignatureExperience[] = signatureExperience
       ...experience,
       tagline: "A composed setting",
       description:
-        "Boutique chairs, high-top cocktail tables, dining setups, custom linens, and ambient lighting designed to style your venue for photos and gift openings.",
+        "White resin chairs, 6-ft tables, cocktail tables, available linens, and tent lighting for guest seating, dining, photos, and gift openings.",
     };
   },
 );
@@ -70,8 +70,8 @@ function BridalHero() {
         </h1>
         <p>
           Elevate your celebration with artisanal espresso, ceremonial matcha,
-          live dessert carts, and boutique seating rentals designed to create a
-          beautiful focal point for the bride-to-be.
+          live dessert carts, and focused chair and table rentals for a polished,
+          welcoming bridal shower.
         </p>
         <div className="bridal-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">

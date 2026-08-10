@@ -22,7 +22,7 @@ export const eventHubEntries: EventHubEntry[] = [
     cue: "The full celebration",
     statement: "Hospitality carried through the celebration.",
     summary:
-      "Curated mobile coffee, live desserts, and boutique seating rentals designed around your ceremony, cocktail hour, reception, and late-night service.",
+      "Mobile coffee, live desserts, and focused chair, table, tent, linen, and dance-floor rentals for ceremonies, receptions, and outdoor weddings.",
   },
   {
     slug: "corporate-events",
@@ -31,7 +31,7 @@ export const eventHubEntries: EventHubEntry[] = [
     cue: "Purposeful hospitality",
     statement: "Service shaped around the schedule.",
     summary:
-      "For conferences, product launches, and corporate galas, Luxe aligns coffee bars, dessert stations, and seating with your itinerary and brand aesthetic.",
+      "For conferences, product launches, and corporate galas, Luxe aligns coffee bars and dessert stations with your itinerary and brand aesthetic.",
   },
   {
     slug: "brand-activations",
@@ -40,7 +40,7 @@ export const eventHubEntries: EventHubEntry[] = [
     cue: "The brief, made tangible",
     statement: "An experience guests can see, taste, and remember.",
     summary:
-      "Custom branded coffee, live dessert setups, and curated furniture that translate your campaign details into an engaging, shareable guest experience.",
+      "Custom branded coffee and live dessert setups translate your campaign details into an engaging, shareable guest experience.",
   },
   {
     slug: "baby-showers",
@@ -49,7 +49,7 @@ export const eventHubEntries: EventHubEntry[] = [
     cue: "A beautiful beginning",
     statement: "A welcoming setting for family and friends.",
     summary:
-      "Specialty drinks, freshly prepared desserts, and relaxed seating options designed to create a warm, memorable afternoon for the parents-to-be.",
+      "Specialty drinks, freshly prepared desserts, and practical chair and table rentals designed for a warm, memorable afternoon.",
   },
   {
     slug: "bridal-showers",
@@ -67,7 +67,7 @@ export const eventHubEntries: EventHubEntry[] = [
     cue: "A milestone, made personal",
     statement: "Built around the guest of honour.",
     summary:
-      "Customized espresso menus, interactive dessert carts, and party seating curated to reflect the birthday guest of honor and event scale.",
+      "Customized espresso menus, interactive dessert carts, and confirmed chair and table rentals suited to the birthday and guest count.",
   },
   {
     slug: "private-events",

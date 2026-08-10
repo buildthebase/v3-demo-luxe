@@ -22,7 +22,7 @@ export const firstPartyEvidenceInventory = [
       "/experiences/seating-rentals",
     ],
     boundary:
-      "Coffee and dessert inclusions are confirmed; rental inclusions are limited to confirmed categories and proposal-defined responsibilities.",
+      "Coffee and dessert inclusions are confirmed. Rental items, quantities, dimensions, tent types, and linen colours are confirmed, while operational responsibilities remain proposal-defined.",
   },
   {
     evidence: "Actual menus",
@@ -154,9 +154,9 @@ export const evidenceAnswerPairings = [
   },
   {
     route: "/experiences/seating-rentals",
-    answerSurface: "Rental categories, quote inputs, delivery, setup, and outdoor use",
+    answerSurface: "Focused rental inventory, quote inputs, delivery, setup, and outdoor suitability",
     proofSurface:
-      "Six confirmed categories plus explicit proposal and policy boundaries",
+      "Confirmed item-level inventory and quantities plus explicit proposal and policy boundaries",
   },
   {
     route: "/events/corporate-events",

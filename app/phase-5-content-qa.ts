@@ -57,6 +57,18 @@ export const contentQaCanonicalFacts = {
     coffeeSimultaneousSetups: 3,
     sweetCartSimultaneousSetups: 3,
   },
+  seatingRentals: {
+    whiteResinChairs: 300,
+    sixFootRectangularTables: 25,
+    cocktailTables: 10,
+    tents: {
+      twentyByTwenty: { vinylTop: 2, clearTop: 1 },
+      fifteenByFifteen: 1,
+      tenByTen: 2,
+    },
+    danceFloor: "18 ft × 18 ft",
+    finishingItems: ["Table linens", "Black and white cocktail-table linens", "Tent walls", "Tent lighting"],
+  },
   approvedClientNames: credibilityOrganizations
     .filter((organization) => organization.permission === "approved")
     .map((organization) => organization.name),

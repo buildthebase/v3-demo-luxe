@@ -6,7 +6,7 @@ const weddingExperienceDescriptions: Record<SignatureExperience["id"], string> =
   dessert:
     "Fresh on-site dessert preparation and custom cart styling that creates an engaging, delicious focal point for your guests.",
   seating:
-    "Curated chairs, tables, cocktail setups, linens, and lounge furniture arranged to elevate your ceremony, reception, or outdoor layout.",
+    "White resin chairs, 6-ft tables, cocktail tables, linens, tents, tent lighting, and a dance floor for ceremonies, receptions, and outdoor weddings.",
 };
 
 const weddingExperienceLabels: Record<SignatureExperience["id"], string> = {
@@ -103,7 +103,7 @@ export const weddingCustomization = [
     number: "04",
     title: "Seating and room details",
     description:
-      "Match chair finishes, cocktail table height, table linens, and lounge arrangements directly to your venue floor plan and aesthetic.",
+      "Coordinate the confirmed white resin chairs, 6-ft tables, cocktail tables, and linen options with the venue dimensions and rental layout.",
   },
 ] as const;
 
@@ -112,19 +112,19 @@ export const weddingLogistics = [
     number: "01",
     title: "Planner and venue coordination",
     description:
-      "We directly align load-in times, floor plans, and service schedules with your wedding planner, venue coordinator, and catering team.",
+      "Share planner and venue contacts where relevant so access, placement, and service details can be reviewed for the confirmed scope.",
   },
   {
     number: "02",
     title: "Setup, teardown, and pickup",
     description:
-      "Complete setup and strike included for all coffee bars and sweet carts. Rental delivery and teardown windows are strictly scheduled around venue curfew.",
+      "Coffee Bar and Sweet Cart setup and takedown are included. Rental delivery, setup, teardown, pickup, timing, and fees are confirmed separately in the proposal.",
   },
   {
     number: "03",
     title: "Venue requirements",
     description:
-      "We verify electrical draw, water needs, loading dock access, floor protection, and weather contingency plans long before wedding day.",
+      "Power, water, access, floor protection, surface conditions, and weather considerations are reviewed according to the confirmed experiences and venue.",
   },
   {
     number: "04",

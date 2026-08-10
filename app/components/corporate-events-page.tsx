@@ -26,13 +26,13 @@ import { SiteShell } from "./site-shell";
 const corporatePath = "/events/corporate-events";
 const corporateSchema = createServicePageSchema({
   path: corporatePath,
-  serviceName: "Corporate coffee, dessert, and event rental experiences",
+  serviceName: "Corporate coffee and dessert experiences",
   serviceType: "Corporate coffee catering and event experiences",
   serviceDescription:
-    "Coffee, matcha, live dessert, and event rental support for corporate events across Toronto, the GTA, and select Southern Ontario destinations.",
+    "Coffee, matcha, and live dessert experiences for corporate events across Toronto, the GTA, and select Southern Ontario destinations.",
   pageName: pageMetadata[corporatePath].title,
   pageDescription:
-    "Plan coffee, matcha, live dessert, and rental support for corporate events across Toronto and the GTA.",
+    "Plan coffee, matcha, and live dessert service for corporate events across Toronto and the GTA.",
   faqs: corporateFaqs,
 });
 
@@ -55,9 +55,9 @@ function CorporateHero() {
           <span>ready for business.</span>
         </h1>
         <p>
-          Polished mobile coffee bars, matcha stations, live desserts, and seating
-          rentals tailored for corporate conferences, workplace activations,
-          client appreciation events, and trade shows.
+          Polished mobile coffee bars, matcha stations, and live desserts tailored for
+          corporate conferences, workplace activations, client appreciation events,
+          and trade shows.
         </p>
         <div className="corporate-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">
@@ -115,11 +115,9 @@ function CorporateOverview() {
       <div>
         <p>
           Luxe Event Co. coordinates{" "}
-          <Link href="/experiences/coffee-bar">high-volume coffee bars</Link>,{" "}
-          <Link href="/experiences/sweet-cart">dessert stations</Link>, and{" "}
-          <Link href="/experiences/seating-rentals">event seating</Link> for
-          corporate functions where on-time service, brand presentation, and
-          smooth guest flow are critical.
+          <Link href="/experiences/coffee-bar">high-volume coffee bars</Link> and{" "}
+          <Link href="/experiences/sweet-cart">dessert stations</Link> for corporate
+          functions where timely service, brand presentation, and guest flow matter.
         </p>
         <p>
           Book our services individually or package them into a single proposal.

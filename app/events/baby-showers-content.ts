@@ -28,7 +28,7 @@ export const babyShowerExperiences = [
     label: "SEATING AND RENTALS",
     name: "Luxe Seating Rentals",
     description:
-      "Boutique chairs, dining tables, lounge furniture, linens, and ambient lighting designed to organize the venue layout.",
+      "White resin chairs, 6-ft tables, cocktail tables, linens, and optional tenting for indoor or backyard showers.",
     href: "/experiences/seating-rentals",
     image: imageAssets.experiences.seatingRentals,
   },
@@ -40,7 +40,7 @@ export const babyShowerCombinations = [
     occasion: "A WELCOMING START",
     title: "Coffee Bar + Seating",
     description:
-      "A warm arrival experience pairing handcrafted espresso drinks and iced matchas with comfortable lounge seating for guests to connect and settle in.",
+      "A warm arrival pairing handcrafted espresso drinks and iced matchas with the chairs and tables needed for guests to connect and settle in.",
     href: "/contact",
     experienceIds: ["coffee", "seating"],
   },
@@ -58,7 +58,7 @@ export const babyShowerCombinations = [
     occasion: "THE COMPLETE GATHERING",
     title: "Coffee + Dessert + Rentals",
     description:
-      "Full-service event hospitality bringing specialty coffee, live dessert carts, and complete venue seating together through a single coordinated plan.",
+      "Coordinate specialty coffee, a live dessert cart, and the confirmed chairs, tables, linens, or tenting needed for the shower through one Luxe inquiry.",
     href: "/contact",
     experienceIds: ["coffee", "dessert", "seating"],
   },
@@ -81,7 +81,7 @@ export const babyShowerStyling = [
     number: "03",
     title: "Seating and room details",
     description:
-      "Arrange tables, lounge seating, linens, and lighting around key focus points like photo backdrops, gift stations, and game areas.",
+      "Arrange white resin chairs, 6-ft tables, cocktail tables, and linens around guest seating, gifts, food displays, and games.",
   },
 ] as const;
 
@@ -96,7 +96,7 @@ export const babyShowerSettings = [
     number: "02",
     title: "Outdoor baby showers",
     description:
-      "Complete outdoor hospitality including espresso bars, live dessert carts, pop-up tents, tables, and ambient lighting planned with weather contingencies and level surface requirements in mind.",
+      "Outdoor requests can combine espresso bars, live dessert carts, tents, tables, and tent lighting, subject to site, surface, access, and weather review.",
   },
 ] as const;
 

@@ -83,11 +83,11 @@ export const activationServiceMedia = [
   },
   {
     number: "03",
-    name: "Rentals and Styling",
-    href: "/experiences/seating-rentals",
-    statement: "Activation rentals and event styling that extend the visual system.",
+    name: "Combined Hospitality",
+    href: "/contact",
+    statement: "Coffee and dessert coordinated through one campaign inquiry.",
     description:
-      "Boutique seating, high-top cocktail tables, custom linens, and curated decor designed to extend your brand identity across the entire venue space.",
+      "Coordinate branded beverage and live dessert service without implying a custom furniture, decor, or full event-design scope.",
   },
 ] as const;
 

@@ -41,9 +41,8 @@ function ActivationHero() {
           <span>for Toronto campaigns.</span>
         </h1>
         <p>
-          Custom branded coffee carts, matcha bars, live dessert stations, and lounge
-          seating designed for marketing agencies, retail pop-ups, PR launches, and
-          experiential campaigns.
+          Custom branded coffee carts, matcha bars, and live dessert stations designed
+          for marketing agencies, retail pop-ups, PR launches, and experiential campaigns.
         </p>
         <div className="activation-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">
@@ -113,10 +112,9 @@ function ActivationOverview() {
         </p>
         <p>
           Incorporate custom menu formulations, branded signage, vinyl cart graphics,
-          and matching lounge rentals. <Link href="/experiences/coffee-bar">Luxe Coffee Bar</Link>,{" "}
-          <Link href="/experiences/sweet-cart">Luxe Sweet Cart</Link>, and{" "}
-          <Link href="/experiences/seating-rentals">Luxe Seating Rentals</Link> can be
-          booked individually or packaged into a single activation plan.
+          and coordinated service presentation. <Link href="/experiences/coffee-bar">Luxe Coffee Bar</Link>{" "}
+          and <Link href="/experiences/sweet-cart">Luxe Sweet Cart</Link> can be booked
+          individually or coordinated through a single activation inquiry.
         </p>
       </div>
     </section>
@@ -188,8 +186,8 @@ function ActivationServices() {
           <span>that fits your campaign</span>
         </h2>
         <p>
-          Select from mobile espresso bars, live dessert stations, or boutique rental
-          furniture, each offering a distinct guest touchpoint.
+          Select mobile espresso bars, live dessert stations, or a coordinated
+          combination of both for the campaign.
         </p>
       </header>
       <div>

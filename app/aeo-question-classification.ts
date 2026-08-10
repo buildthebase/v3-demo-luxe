@@ -609,12 +609,11 @@ export const questionClassifications: QuestionClassification[] = [
     questionId: "rental-inventory-layout",
     icps: [
       "wedding-clients",
-      "corporate-clients",
       "private-event-clients",
       "industry-partners",
     ],
     services: ["Luxe Seating Rentals"],
-    eventTypes: ["All event types"],
+    eventTypes: ["Weddings", "Baby showers", "Bridal showers", "Birthdays", "Backyard and outdoor events", "Engagements", "Private celebrations"],
     searchIntents: ["Informational", "Comparison", "Local"],
     funnelStages: ["Discovery", "Understanding", "Planning", "Vendor evaluation"],
     geographicIntent: {
@@ -625,9 +624,9 @@ export const questionClassifications: QuestionClassification[] = [
     commercialImportance: "critical",
     operationalImportance: "high",
     firstPartyEvidence: {
-      status: "partial",
-      available: ["Approved rental categories", "Event-specific inventory confirmation"],
-      limitation: "Exact products, quantities, dimensions, finishes, and availability are not approved for publication.",
+      status: "confirmed",
+      available: ["Approved item-level rental inventory", "Confirmed quantities, dimensions, tent-top types, and linen colours"],
+      limitation: "Date-specific availability, substitutions, and operational policies remain subject to confirmation.",
     },
     destination: {
       primaryPath: "/experiences/seating-rentals",
@@ -637,23 +636,22 @@ export const questionClassifications: QuestionClassification[] = [
     answerStatus: "partially answered",
     placement: "conversion page",
     futureResourcePotential:
-      "A browsable inventory resource is appropriate only when the catalogue is complete, accurate, and maintainable.",
+      "A browsable focused-inventory guide is appropriate when date-specific availability and maintenance ownership are defined.",
   },
   {
     questionId: "rental-delivery-setup-responsibility",
     icps: [
       "wedding-clients",
-      "corporate-clients",
       "private-event-clients",
       "industry-partners",
     ],
     services: ["Luxe Seating Rentals"],
-    eventTypes: ["All event types"],
+    eventTypes: ["Weddings", "Showers", "Birthdays", "Backyard and outdoor events", "Engagements", "Private celebrations"],
     searchIntents: ["Logistical", "Transactional", "Troubleshooting"],
     funnelStages: ["Planning", "Cost investigation", "Vendor evaluation", "Booking preparation"],
     geographicIntent: {
       level: "implicit local",
-      markets: ["Toronto", "GTA", "Southern Ontario"],
+      markets: ["Toronto", "GTA"],
       note: "Delivery scope is location-sensitive but remains booking-specific.",
     },
     commercialImportance: "critical",

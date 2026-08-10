@@ -55,14 +55,14 @@ const homeSignatureExperiences: readonly SignatureExperience[] = [
   },
   {
     ...signatureExperiences[2],
-    name: "Luxe Seating Rentals: Wedding & Event Furniture Rentals",
+    name: "Luxe Seating Rentals: Chair, Table & Tent Rentals",
     headingLead: "Luxe Seating Rentals:",
-    headingDetail: "Wedding & Event Furniture Rentals",
+    headingDetail: "Chair, Table & Tent Rentals",
     description:
-      "High-quality chair rentals, dining tables, cocktail tables, event tents, linens, and venue lighting planned around your ceremony, reception, lounge, or outdoor setting.",
+      "White resin chairs, 6-ft tables, cocktail tables, event tents, linens, tent lighting, and a dance floor for weddings and private celebrations.",
     image: {
       ...signatureExperiences[2].image,
-      alt: "Luxe wedding chairs and event furniture rentals arranged for an outdoor Toronto reception",
+      alt: "Luxe white resin chairs and event tables arranged for an outdoor Toronto wedding reception",
     },
   },
 ];

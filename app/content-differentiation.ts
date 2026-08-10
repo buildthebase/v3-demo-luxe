@@ -119,8 +119,8 @@ export const contentRequirements: ContentRequirement[] = [
     type: "operational",
     status: "deferred",
     source: "both",
-    requirement: "Define rental delivery, setup, pickup, teardown, access, timing, and travel rules for chairs, tables, cocktail tables, tents, linens, and lighting.",
-    validationNote: "The intake confirms rental categories but not logistics policy.",
+    requirement: "Keep delivery, setup, pickup, teardown, access, timing, weather, and travel language proposal-defined for the confirmed chairs, tables, cocktail tables, tents, linens, dance floor, tent walls, and lighting.",
+    validationNote: "The intake confirms the item-level inventory and quantities but not a universal logistics or weather policy.",
   },
   {
     slug: "multi-service-coordination",
@@ -233,7 +233,7 @@ export const pageContentBriefs: PageContentBrief[] = [
   },
   {
     path: "/experiences/seating-rentals",
-    purpose: "Present Seating Rentals as a focused collection of practical, premium essentials for intimate celebrations and outdoor events.",
+    purpose: "Present Seating Rentals as a focused collection of practical, premium essentials for weddings, showers, backyard and outdoor events, birthdays, engagements, and private celebrations.",
     requiredRequirements: ["booking-inclusions", "service-duration", "setup-teardown", "outdoor-events", "rental-delivery-setup", "multi-service-coordination", "travel-service-area", "liability-insurance"],
     proofPriority: ["real inventory photography", "room transformations", "delivery and setup examples"],
     doNotInvent: sharedDoNotInvent,

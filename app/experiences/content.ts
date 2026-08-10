@@ -62,15 +62,15 @@ export const experienceHubFeatures: readonly ExperienceHubFeature[] = [
     searchDescriptor: "Event Seating and Rentals",
     statement: "Define the room and its flow",
     description:
-      "Luxe Seating Rentals considers how guests arrive, gather, dine, and move through the event, with rental elements selected around the room rather than presented as an inventory catalogue.",
+      "Luxe Seating Rentals offers a focused collection of confirmed essentials, with quantities and placement considered around the venue, tent, and guest count.",
     details: [
       "Chairs and tables",
       "Cocktail tables",
       "Tents and linens",
       "Lighting and event setup considerations",
     ],
-    fact: "Room first",
-    factLabel: "layout-led rental planning",
+    fact: "Core pieces",
+    factLabel: "focused rental inventory",
     href: "/experiences/seating-rentals",
     cta: "Explore Luxe Seating Rentals",
   },
@@ -114,12 +114,12 @@ export const experienceHubCombinations: readonly CombinedExperience[] = [
     experienceIds: ["coffee", "dessert"],
   },
   {
-    id: "corporate-reception",
-    occasion: "Corporate reception",
-    title: "Espresso Bar + Seating Rentals",
+    id: "backyard-celebration",
+    occasion: "Backyard celebration",
+    title: "Coffee Bar + Seating Rentals",
     description:
-      "Polished beverage hospitality supported by welcoming lounge spaces designed for networking and conversation.",
-    href: "/events/corporate-events",
+      "Mobile coffee with the tables, chairs, tenting, and linens needed for a welcoming outdoor gathering.",
+    href: "/events/private-events",
     experienceIds: ["coffee", "seating"],
   },
   {

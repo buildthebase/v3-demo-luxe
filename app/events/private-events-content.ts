@@ -69,7 +69,7 @@ export const privateEventExperiences = [
     image: imageAssets.experiences.seatingRentals,
     href: "/experiences/seating-rentals",
     description:
-      "Boutique seating, high-top cocktail tables, dining setups, linens, tents, and ambient lighting designed to elevate the flow and comfort of your indoor or outdoor venue. Rental inventory, delivery logistics, load-in timing, and full setup/teardown services are detailed during planning.",
+      "White resin chairs, 6-ft tables, cocktail tables, linens, tents, tent lighting, and a dance floor for suitable indoor, backyard, and outdoor celebrations. Availability and any delivery, setup, teardown, or pickup responsibilities are confirmed in the proposal.",
   },
 ] satisfies readonly SignatureExperience[];
 
@@ -90,7 +90,7 @@ export const privateEventPersonalization = [
     number: "03",
     title: "Seating and room details",
     description:
-      "Boutique seating, high-top cocktail tables, dining setups, linens, tents, and ambient lighting can be planned around the venue, guest flow, and comfort.",
+      "The confirmed chairs, tables, cocktail tables, linens, tents, tent lighting, and dance floor can be considered around the venue dimensions and guest count.",
   },
 ] as const;
 

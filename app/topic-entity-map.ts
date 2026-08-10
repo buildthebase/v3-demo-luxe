@@ -49,12 +49,14 @@ export const serviceEntities: TopicEntity[] = [
   ["belgian-waffles-on-a-stick", "Belgian waffles on a stick", "sweet-cart"],
   ["mini-donuts", "Mini donuts", "sweet-cart"],
   ["soft-serve", "Soft serve", "sweet-cart"],
-  ["chairs", "Chairs", "seating-rentals"],
-  ["tables", "Tables", "seating-rentals"],
+  ["white-resin-chairs", "White resin chairs", "seating-rentals"],
+  ["six-foot-rectangular-tables", "6-ft rectangular tables", "seating-rentals"],
   ["cocktail-tables", "Cocktail tables", "seating-rentals"],
-  ["tents", "Tents", "seating-rentals"],
+  ["event-tents", "20-ft, 15-ft, and 10-ft event tents", "seating-rentals"],
   ["linens", "Linens", "seating-rentals"],
-  ["lighting", "Lighting", "seating-rentals"],
+  ["tent-walls", "Tent walls", "seating-rentals"],
+  ["tent-lighting", "Tent lighting", "seating-rentals"],
+  ["dance-floor", "18-ft by 18-ft dance floor", "seating-rentals"],
   ["event-setup-and-teardown", "Event setup and teardown", "luxe-event-co"],
   ["custom-branding", "Custom branding", "luxe-event-co"],
   ["signage", "Signage", "luxe-event-co"],
@@ -145,7 +147,7 @@ const serviceSlugsByDivision = new Map<string, string[]>([
 const eventSlugsByDivision = new Map<string, string[]>([
   ["coffee-bar", ["weddings", "corporate-events", "brand-activations", "baby-showers", "bridal-showers", "birthdays", "private-events", "grand-openings", "conferences", "product-launches", "employee-appreciation", "client-appreciation", "trade-shows", "holiday-parties"]],
   ["sweet-cart", ["weddings", "corporate-events", "brand-activations", "baby-showers", "bridal-showers", "birthdays", "private-events", "grand-openings", "conferences", "product-launches", "employee-appreciation", "client-appreciation", "trade-shows", "holiday-parties", "engagements", "anniversaries", "graduations"]],
-  ["seating-rentals", ["weddings", "corporate-events", "brand-activations", "baby-showers", "bridal-showers", "birthdays", "private-events", "engagements", "anniversaries", "graduations"]],
+  ["seating-rentals", ["weddings", "baby-showers", "bridal-showers", "birthdays", "private-events", "engagements", "anniversaries", "graduations"]],
 ]);
 
 export const topicRelationships: TopicRelationship[] = [

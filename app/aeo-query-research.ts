@@ -520,7 +520,6 @@ export const questionClusters: QuestionCluster[] = [
     category: "operational",
     audiences: [
       "wedding-clients",
-      "corporate-clients",
       "private-event-clients",
       "industry-partners",
     ],
@@ -616,7 +615,7 @@ export const questionClusters: QuestionCluster[] = [
       "How far in advance should I book?",
       "Can you hold a date while details are still being finalized?",
       "When are final guest count and selections due?",
-      "Do custom branding or large rentals require more lead time?",
+      "Do custom branding or larger rental orders require more lead time?",
     ],
     vocabulary: ["book ahead", "availability", "reserve the date", "retainer", "lead time", "final details"],
     evidence: [
@@ -709,7 +708,6 @@ export const questionClusters: QuestionCluster[] = [
     category: "informational",
     audiences: [
       "wedding-clients",
-      "corporate-clients",
       "private-event-clients",
       "industry-partners",
     ],
@@ -744,7 +742,6 @@ export const questionClusters: QuestionCluster[] = [
     category: "operational",
     audiences: [
       "wedding-clients",
-      "corporate-clients",
       "private-event-clients",
       "industry-partners",
     ],
@@ -778,7 +775,7 @@ export const questionClusters: QuestionCluster[] = [
   {
     id: "rental-risk-and-changes",
     category: "commercial",
-    audiences: ["wedding-clients", "corporate-clients", "private-event-clients", "industry-partners"],
+    audiences: ["wedding-clients", "private-event-clients", "industry-partners"],
     canonicalQuestion:
       "What happens when quantities change, items are unused, damaged, lost, cancelled, or exposed to weather?",
     naturalVariants: [

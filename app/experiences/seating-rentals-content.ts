@@ -30,8 +30,15 @@ export const rentalCategories = [
     number: "04",
     name: "Event Tents",
     role: "Six tents across three sizes",
-    description:
-      "Three 20' × 20' tents (one clear-top)\nOne 15' × 15' tent\nTwo 10' × 10' tents\nAvailable for outdoor events.",
+    items: [
+      {
+        label: "Three 20' × 20' tents",
+        subitems: ["Two vinyl-top tents", "One clear-top tent"],
+      },
+      { label: "One 15' × 15' tent" },
+      { label: "Two 10' × 10' tents" },
+    ],
+    description: "Available for outdoor events, subject to site and weather review.",
   },
   {
     id: "dance-floor",
@@ -159,19 +166,18 @@ export const rentalGalleryPreview = [
 export const rentalServiceAreas = [
   "Greater Toronto Area",
   ...approvedBusinessIdentity.primaryServiceAreas,
-  "Southern Ontario",
 ] as const;
 
 export const seatingRentalFaqs = [
   {
     question: "How are chairs and tables priced?",
     answer:
-      "Seating and table rental pricing is determined by your selected items, quantities, event date, venue location, delivery access, and setup scope. To ensure complete clarity, every Luxe proposal provides transparent, itemized pricing that accounts for all inventory and on-site logistics with no hidden fees.",
+      "Seating and table rental pricing is determined by the selected items, quantities, event date, venue location, delivery access, and agreed service scope. The proposal itemizes the confirmed rental and operational charges for the booking.",
   },
   {
     question: "What is included with an event-rental service?",
     answer:
-      "Luxe offers 300 white resin chairs, 25 six-foot rectangular tables, 10 cocktail tables, six tents across three sizes, an 18-foot by 18-foot dance floor, table and cocktail linens, tent walls, and tent lighting. Your proposal confirms the selected items, quantities, availability, and any agreed delivery, placement, setup, takedown, or pickup responsibilities.",
+      "Luxe offers 300 white resin chairs, 25 six-foot rectangular tables, 10 cocktail tables, three 20-foot by 20-foot tents with two vinyl tops and one clear top, one 15-foot by 15-foot tent, two 10-foot by 10-foot tents, an 18-foot by 18-foot dance floor, table and cocktail linens, tent walls, and tent lighting. Your proposal confirms availability and any agreed delivery, placement, setup, takedown, or pickup responsibilities.",
   },
   {
     question: "Does Luxe deliver rentals?",
@@ -181,7 +187,7 @@ export const seatingRentalFaqs = [
   {
     question: "Is rental setup included?",
     answer:
-      "Delivery-only service transfers the confirmed inventory at the agreed place and time, leaving placement or installation to the responsible event team. Delivery with setup adds agreed placement or installation responsibilities and is more appropriate when the inventory, quantity, floor plan, access, or schedule requires managed execution. Setup is not universally included; the proposal must identify the selected model, responsibilities, labour, timing, and fees.",
+      "Setup is not universally included. The proposal states whether delivery, placement, or installation is available for the selected inventory and identifies the agreed responsibilities, labour, timing, access requirements, and fees.",
   },
   {
     question: "Is rental teardown included?",
@@ -201,7 +207,7 @@ export const seatingRentalFaqs = [
   {
     question: "Which areas does Luxe serve?",
     answer:
-      "Luxe serves Toronto and the Greater Toronto Area, including Scarborough, Etobicoke, North York, Markham, Vaughan, Richmond Hill, Aurora, Newmarket, King City, Thornhill, Mississauga, Brampton, Oakville, Burlington, Milton, Pickering, Ajax, Whitby, and Oshawa. Select larger events throughout Southern Ontario may also be available.",
+      "Luxe primarily serves Toronto and the Greater Toronto Area, including Scarborough, Etobicoke, North York, Markham, Vaughan, Richmond Hill, Aurora, Newmarket, King City, Thornhill, Mississauga, Brampton, Oakville, Burlington, Milton, Pickering, Ajax, Whitby, and Oshawa. Rental requests outside the primary area are reviewed individually, and availability or travel terms are not confirmed until the proposal is approved.",
   },
   {
     question: "Are travel or delivery fees applicable?",

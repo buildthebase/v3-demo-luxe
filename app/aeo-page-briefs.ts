@@ -254,8 +254,8 @@ export const pageAeoBriefs: PageAeoBrief[] = [
   {
     path: "/experiences/seating-rentals",
     pageName: "Seating Rentals",
-    pageRole: "Own confirmed rental categories, styling and layout decisions, delivery versus setup responsibilities, quote factors, and delivery feasibility.",
-    primaryIcps: ["wedding-clients", "corporate-clients", "private-event-clients", "industry-partners"],
+    pageRole: "Own the confirmed focused inventory, rental-specific quantity and placement guidance, proposal-defined operational responsibilities, quote factors, and delivery feasibility.",
+    primaryIcps: ["wedding-clients", "private-event-clients", "industry-partners"],
     primaryQuestionThemes: [
       "What is included with event-rental service?",
       "How do delivery, setup, teardown, and pricing responsibilities differ?",
@@ -264,9 +264,9 @@ export const pageAeoBriefs: PageAeoBrief[] = [
     secondaryQuestionThemes: ["Which rentals support outdoor events?", "Where may rental delivery be available?"],
     searchIntents: ["Informational", "Commercial investigation", "Comparison", "Logistical", "Local"],
     requiredAnswers: [
-      "Publish only confirmed categories and qualify exact styles, quantities, dimensions, finishes, and availability.",
-      "Compare delivery-only with delivery and setup and state all proposal responsibilities.",
-      "Explain styling, service area, and location feasibility without inventing a catalogue or delivery radius.",
+      "Publish the confirmed item-level inventory, quantities, dimensions, tent-top types, and linen colours while qualifying date-specific availability.",
+      "Keep delivery, setup, teardown, pickup, weather, timing, responsibilities, labour, and fees proposal-defined.",
+      "Explain rental-specific quantities and placement without claiming full event planning, a broad furniture catalogue, or a universal delivery radius.",
     ],
     requiredFirstPartyEvidence: [
       "Approved rental categories",
@@ -277,7 +277,9 @@ export const pageAeoBriefs: PageAeoBrief[] = [
     requiredInternalLinks: [
       { href: "/experiences", purpose: "Return to the division comparison." },
       { href: "/events/weddings", purpose: "Apply rentals to weddings." },
-      { href: "/events/corporate-events", purpose: "Apply rentals to corporate events." },
+      { href: "/events/baby-showers", purpose: "Apply rentals to baby showers." },
+      { href: "/events/bridal-showers", purpose: "Apply rentals to bridal showers." },
+      { href: "/events/birthdays", purpose: "Apply rentals to birthdays." },
       { href: "/events/private-events", purpose: "Apply rentals to private and outdoor events." },
       { href: "/faq", purpose: "Move shared travel and venue requirements to FAQ." },
       { href: "/contact", purpose: "Request a rental quote." },
@@ -295,8 +297,8 @@ export const pageAeoBriefs: PageAeoBrief[] = [
     ],
     futureResources: [
       {
-        topic: "Rental inventory and layout catalogue",
-        evidenceGate: "Approved styles, dimensions, finishes, quantities, availability, photography, and maintained ownership.",
+        topic: "Focused rental inventory and placement guide",
+        evidenceGate: "Confirmed inventory, date-specific availability rules, photography, and maintained ownership.",
       },
       {
         topic: "Rental delivery and responsibility guide",
@@ -420,7 +422,7 @@ export const pageAeoBriefs: PageAeoBrief[] = [
     secondaryQuestionThemes: ["Can services be branded?", "Can multi-day or recurring programs be planned?"],
     searchIntents: ["Commercial investigation", "Transactional", "Logistical", "Comparison"],
     requiredAnswers: [
-      "Explain corporate applications and planning inputs across all three divisions.",
+      "Explain corporate applications and planning inputs around Coffee Bar and Sweet Cart, with rentals treated only as request-specific support when confirmed inventory fits.",
       "State confirmed simultaneous scale and qualify multi-day and recurring requests.",
       "Provide accurate insurance and procurement guidance without inventing documentation workflows.",
     ],
@@ -434,7 +436,6 @@ export const pageAeoBriefs: PageAeoBrief[] = [
     requiredInternalLinks: [
       { href: "/experiences/coffee-bar", purpose: "Review corporate Coffee Bar capability." },
       { href: "/experiences/sweet-cart", purpose: "Review corporate dessert capability." },
-      { href: "/experiences/seating-rentals", purpose: "Review corporate rental capability." },
       { href: "/events/brand-activations", purpose: "Move the full branding workflow." },
       { href: "/faq", purpose: "Move shared booking and logistics answers." },
       { href: "/contact", purpose: "Submit the corporate brief." },
@@ -484,7 +485,6 @@ export const pageAeoBriefs: PageAeoBrief[] = [
     requiredInternalLinks: [
       { href: "/experiences/coffee-bar", purpose: "Review beverage capability." },
       { href: "/experiences/sweet-cart", purpose: "Review dessert capability." },
-      { href: "/experiences/seating-rentals", purpose: "Review setting and rental capability." },
       { href: "/events/corporate-events", purpose: "Review broader corporate applications." },
       { href: "/faq", purpose: "Move shared operations and travel answers." },
       { href: "/contact", purpose: "Submit the campaign brief." },

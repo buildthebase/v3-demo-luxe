@@ -222,10 +222,10 @@ export const galleryGroups: readonly GalleryGroup[] = [
   {
     id: "corporate-room-support",
     number: "06",
-    title: "Corporate event seating and reception rentals",
-    context: "Seating Rentals / Corporate Events",
+    title: "Cocktail tables for a corporate reception",
+    context: "Request-Specific Rentals / Corporate Events",
     description:
-      "Reception layouts, cocktail tables, seating, and lighting can support conversation, circulation, and the intended flow of a corporate gathering.",
+      "Confirmed cocktail tables may support conversation and circulation when the available inventory fits a corporate reception request.",
     tags: ["seating-rentals", "corporate"],
     tone: "seating",
     links: [
@@ -235,8 +235,8 @@ export const galleryGroups: readonly GalleryGroup[] = [
     media: [
       {
         id: "corporate-rental-layout",
-        alt: "Luxe cocktail tables and seating arranged for a corporate reception",
-        caption: "A corporate layout captured in use, with clear evidence of placement, circulation, and guest interaction.",
+        alt: "Luxe cocktail tables arranged for a corporate reception",
+        caption: "A request-specific cocktail-table layout captured in use, with clear evidence of placement and guest interaction.",
         width: 1600,
         height: 1067,
         sizes: "(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 38vw",

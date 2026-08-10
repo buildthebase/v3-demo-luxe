@@ -51,7 +51,7 @@ export const signatureExperiences: SignatureExperience[] = [
     label: "Seating",
     name: "Luxe Seating Rentals",
     description:
-      "Chairs, tables, cocktail tables, tents, linens, and lighting planned around the ceremony, reception, lounge, or outdoor setting.",
+      "White resin chairs, 6-ft tables, cocktail tables, tents, linens, tent lighting, and a dance floor for weddings and private celebrations.",
     href: "/experiences/seating-rentals",
     image: imageAssets.experiences.seatingRentals,
   },
@@ -102,12 +102,12 @@ export const combinedExperiences: CombinedExperience[] = [
     experienceIds: ["coffee", "dessert"],
   },
   {
-    id: "corporate-reception",
-    occasion: "Corporate reception",
-    title: "Coffee Bar + Seating",
+    id: "backyard-celebration",
+    occasion: "Backyard celebration",
+    title: "Coffee Bar + Rentals",
     description:
-      "Professional barista service supported by high-top tables and lounge seating designed to encourage networking.",
-    href: "/events/corporate-events",
+      "Mobile coffee paired with the core tables, chairs, tenting, and linens needed for a polished outdoor gathering.",
+    href: "/events/private-events",
     experienceIds: ["coffee", "seating"],
   },
   {
@@ -115,7 +115,7 @@ export const combinedExperiences: CombinedExperience[] = [
     occasion: "Wedding",
     title: "Coffee + Dessert + Rentals",
     description:
-      "Full-service specialty coffee, fresh-made desserts, and curated seating rentals tailored to your wedding layout and schedule.",
+      "Specialty coffee, fresh-made desserts, and focused chair, table, tent, linen, and dance-floor rentals coordinated for the wedding.",
     href: "/events/weddings",
     experienceIds: ["coffee", "dessert", "seating"],
   },
@@ -223,7 +223,7 @@ export const inquiryContexts: Record<string, InquiryContext> = {
   },
   "seating-rentals": {
     eyebrow: "Shape the room",
-    heading: "Discuss your seating.",
+    heading: "Plan your rentals with Luxe.",
     description:
       "Share the venue, guest count, event format, desired atmosphere, and the rental elements needed to complete the setting.",
     cta: "Plan Your Event",

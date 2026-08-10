@@ -74,7 +74,7 @@ export const experiencesHubLinkPlan: PageLinkPlan = {
 const eventApplicationsByExperience: Record<string, string[]> = {
   "coffee-bar": ["weddings", "corporate-events", "brand-activations", "baby-showers", "bridal-showers", "birthdays", "private-events"],
   "sweet-cart": ["weddings", "corporate-events", "brand-activations", "baby-showers", "bridal-showers", "birthdays", "private-events"],
-  "seating-rentals": ["weddings", "corporate-events", "brand-activations", "baby-showers", "bridal-showers", "birthdays", "private-events"],
+  "seating-rentals": ["weddings", "baby-showers", "bridal-showers", "birthdays", "private-events"],
 };
 
 export const experienceLinkPlans: PageLinkPlan[] = experiences.map((experience) => {
@@ -112,8 +112,8 @@ export const eventsHubLinkPlan: PageLinkPlan = {
 
 const relevantExperienceSlugsByEvent: Record<string, string[]> = {
   weddings: ["coffee-bar", "sweet-cart", "seating-rentals"],
-  "corporate-events": ["coffee-bar", "sweet-cart", "seating-rentals"],
-  "brand-activations": ["coffee-bar", "sweet-cart", "seating-rentals"],
+  "corporate-events": ["coffee-bar", "sweet-cart"],
+  "brand-activations": ["coffee-bar", "sweet-cart"],
   "baby-showers": ["coffee-bar", "sweet-cart", "seating-rentals"],
   "bridal-showers": ["coffee-bar", "sweet-cart", "seating-rentals"],
   birthdays: ["coffee-bar", "sweet-cart", "seating-rentals"],

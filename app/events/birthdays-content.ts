@@ -57,7 +57,7 @@ export const birthdayExperiences = [
     image: imageAssets.experiences.seatingRentals,
     href: "/experiences/seating-rentals",
     description:
-      "Boutique seating, high-top cocktail tables, dining setups, linens, tents, and ambient lighting designed to complement your venue space and guest flow.",
+      "White resin chairs, 6-ft tables, cocktail tables, linens, tents, tent lighting, and a dance floor for suitable birthday and backyard celebrations.",
   },
 ] satisfies readonly SignatureExperience[];
 
@@ -102,7 +102,7 @@ export const birthdayCombinations = [
     title: "The complete birthday setting",
     experiences: "Coffee + Dessert + Rentals",
     description:
-      "Our all-inclusive package combining barista coffee, live dessert stations, and lounge or table rentals coordinated through a single seamless inquiry.",
+      "Coordinate barista coffee, a live dessert station, and confirmed chair, table, linen, or tent rentals through one Luxe inquiry.",
   },
 ] as const;
 
@@ -121,7 +121,7 @@ export const birthdayPlanning = [
   {
     title: "The experiences",
     description:
-      "Let us know if you prefer our mobile espresso bar, ceremonial matcha service, live dessert cart, seating rentals, or an all-inclusive combination.",
+      "Let us know if you are considering the mobile espresso bar, ceremonial matcha service, live dessert cart, confirmed seating rentals, or a coordinated combination.",
   },
   {
     title: "The venue and service needs",
@@ -131,7 +131,7 @@ export const birthdayPlanning = [
   {
     title: "The personal direction",
     description:
-      "Tell us about favorite drink flavors, dessert toppings, color schemes, custom signage wording, or specific rental styles you envision.",
+      "Tell us about favourite drink flavours, dessert toppings, colour schemes, custom signage wording, and the confirmed rental items or quantities you need.",
   },
 ] as const;
 

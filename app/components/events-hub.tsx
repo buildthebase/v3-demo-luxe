@@ -23,9 +23,9 @@ export function EventsHero({
         </h1>
         <p>
           From weddings and corporate functions to brand activations and private
-          celebrations, Luxe curates mobile espresso bars, live dessert carts,
-          and boutique seating rentals tailored specifically to your venue and
-          occasion.
+          celebrations, Luxe offers mobile espresso bars and live dessert carts,
+          plus focused seating rentals for weddings, showers, birthdays, backyard
+          events, and private gatherings.
         </p>
         <div className="events-hero-actions">
           <a href="#event-pathways" data-event-name="event_type_select">

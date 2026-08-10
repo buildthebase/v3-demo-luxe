@@ -443,11 +443,10 @@ const questionMapPlans: QuestionMapPlan[] = [
     primaryPage: "/experiences/seating-rentals",
     secondarySupportingPage: "/events",
     proposedAnswer:
-      "Luxe can consider chairs, tables, cocktail tables, tents, linens, and lighting around the event's seating, dining, networking, presentation, or outdoor needs. Exact items, dimensions, finishes, quantities, and availability are confirmed for the date and layout rather than presented as a fixed public catalogue.",
+      "Luxe offers 300 white resin chairs, 25 six-foot rectangular tables, 10 cocktail tables, black and white cocktail-table linens, linens for the six-foot tables, three 20-foot by 20-foot tents with two vinyl tops and one clear top, one 15-foot by 15-foot tent, two 10-foot by 10-foot tents, an 18-foot by 18-foot dance floor, tent walls, and tent lighting. Date-specific availability and suitability are confirmed for the request.",
     outstandingEvidence: [
-      "Approved item-level inventory",
-      "Current quantities, dimensions, finishes, and images",
       "Ownership and process for keeping availability current",
+      "Approved substitution and inventory-change policy",
     ],
     internalLinks: [
       {
@@ -816,7 +815,6 @@ const serviceDiscoveryQuestionMap: AeoQuestionMapRecord[] = [
     secondarySupportingPage: "/experiences",
     icp: [
       "wedding-clients",
-      "corporate-clients",
       "private-event-clients",
       "industry-partners",
     ],
@@ -1179,7 +1177,6 @@ const eventPlanningQuestionMap: AeoQuestionMapRecord[] = [
     secondarySupportingPage: "/experiences/seating-rentals",
     icp: [
       "wedding-clients",
-      "corporate-clients",
       "private-event-clients",
       "industry-partners",
     ],
@@ -1244,21 +1241,19 @@ const eventPlanningQuestionMap: AeoQuestionMapRecord[] = [
   }),
   createEventPlanningQuestionRecord({
     id: "event-planning-complete-setup",
-    question: "Which services can be combined for a complete event setup?",
+    question: "Which Luxe services can be coordinated for a core celebration setup?",
     normalizedQueryTopic: "combined coffee dessert and rental event setup",
     primaryPage: "/events",
     secondarySupportingPage: "/experiences",
     icp: [
       "wedding-clients",
-      "corporate-clients",
-      "brand-agency-clients",
       "private-event-clients",
       "industry-partners",
     ],
     funnelStage: ["Discovery", "Understanding", "Comparison", "Vendor evaluation"],
     searchIntent: ["Informational", "Commercial investigation", "Comparison"],
     proposedAnswer:
-      "Coffee can shape hospitality, dessert can create a live guest moment, and rentals can support seating, gathering, weather protection, and circulation. One, two, or all three divisions may be coordinated through Luxe Event Co. without turning them into a fixed package.",
+      "For weddings and private celebrations, Coffee Bar can shape hospitality, Sweet Cart can create a live guest moment, and the focused Seating Rentals inventory can supply core chairs, tables, cocktail tables, tents, linens, tent walls, lighting, and a dance floor. One, two, or all three divisions may be coordinated through one Luxe inquiry when the confirmed inventory and event scope fit.",
     requiredEvidence: {
       available: ["Confirmed division roles", "Independent and combined booking model"],
       outstanding: [],
@@ -1334,7 +1329,6 @@ const comparisonQuestionMap: AeoQuestionMapRecord[] = [
     secondarySupportingPage: "/events/corporate-events",
     icp: [
       "wedding-clients",
-      "corporate-clients",
       "private-event-clients",
       "industry-partners",
     ],
@@ -1523,7 +1517,7 @@ const comparisonQuestionMap: AeoQuestionMapRecord[] = [
     funnelStage: ["Comparison", "Vendor evaluation", "Booking preparation"],
     searchIntent: ["Informational", "Comparison", "Logistical"],
     proposedAnswer:
-      "Delivery-only transfers inventory at the agreed place and time, with placement handled by the responsible event team. Delivery with setup adds agreed placement or installation duties. Inventory, quantity, floor plan, access, timing, responsibilities, labour, and fees determine the required model.",
+      "No universal rental delivery or setup model is approved. The proposal states whether delivery, placement, or installation is available and identifies the agreed inventory, responsibilities, labour, access, timing, and fees.",
     requiredEvidence: {
       available: ["Proposal-led rental scope"],
       outstanding: ["Approved universal delivery and setup policy."],
@@ -1688,7 +1682,6 @@ const pricingQuestionMap: AeoQuestionMapRecord[] = [
     secondarySupportingPage: "/faq",
     icp: [
       "wedding-clients",
-      "corporate-clients",
       "private-event-clients",
       "industry-partners",
     ],
@@ -1697,8 +1690,8 @@ const pricingQuestionMap: AeoQuestionMapRecord[] = [
     proposedAnswer:
       "Pricing follows the confirmed item, quantity, date, location, rental period, availability, delivery access, setup, teardown, pickup, labour, and outdoor or installation conditions. A current inventory and logistics policy is required before publishing per-item rates.",
     requiredEvidence: {
-      available: ["Approved rental categories", "Proposal-led scope"],
-      outstanding: ["Current inventory, per-item rates, and logistics policy."],
+      available: ["Approved item-level rental inventory and quantities", "Proposal-led scope"],
+      outstanding: ["Per-item rates and approved logistics policy."],
     },
     internalLinks: [
       {
@@ -1717,7 +1710,6 @@ const pricingQuestionMap: AeoQuestionMapRecord[] = [
     secondarySupportingPage: "/faq",
     icp: [
       "wedding-clients",
-      "corporate-clients",
       "private-event-clients",
       "industry-partners",
     ],
@@ -1746,8 +1738,6 @@ const pricingQuestionMap: AeoQuestionMapRecord[] = [
     secondarySupportingPage: "/contact",
     icp: [
       "wedding-clients",
-      "corporate-clients",
-      "brand-agency-clients",
       "private-event-clients",
       "industry-partners",
     ],
@@ -1944,14 +1934,14 @@ const customizationQuestionMap: AeoQuestionMapRecord[] = [
     funnelStage: ["Understanding", "Planning", "Vendor evaluation"],
     searchIntent: ["Informational", "Commercial investigation", "Inspirational", "Logistical"],
     proposedAnswer:
-      "Confirmed chairs, tables, cocktail tables, tents, linens, and lighting can be planned with the event palette, layout, and other Luxe experiences. Styling remains subject to inventory, quantities, dimensions, availability, sightlines, accessibility, guest flow, venue rules, surface, access, and the agreed setup scope.",
+      "The confirmed white resin chairs, 6-ft tables, cocktail tables, black or white cocktail-table linens, table linens, tents, tent walls, tent lighting, and dance floor can be considered with the venue, palette, and other Luxe experiences. Luxe does not offer custom furniture or a broad range of styles and finishes. Availability, site suitability, venue rules, and any setup scope remain event-specific.",
     requiredEvidence: {
       available: [
-        "Confirmed rental categories",
-        "Layout and guest-flow planning model",
+        "Confirmed item-level rental inventory, quantities, dimensions, tent types, and linen colours",
+        "Rental-specific quantity and placement guidance",
         "Independent and combined booking model",
       ],
-      outstanding: ["Approved inventory schedule with styles, finishes, dimensions, quantities, and availability."],
+      outstanding: ["Approved date-specific availability and substitution policy."],
     },
     internalLinks: [
       {

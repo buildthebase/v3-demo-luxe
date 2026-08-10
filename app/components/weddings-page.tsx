@@ -41,7 +41,7 @@ function WeddingHero() {
           <span>planned around the big day.</span>
         </h1>
         <p>
-          Mobile espresso bars, live dessert carts, and curated seating rentals
+          Mobile espresso bars, live dessert carts, and focused seating rentals
           seamlessly coordinated around your venue timeline, guest count, and
           wedding aesthetic.
         </p>
@@ -161,7 +161,7 @@ function WeddingCustomization() {
         </h2>
         <p>
           Carry your wedding aesthetic through custom signage, drink menus,
-          cart styling, and lounge seating.
+          cart styling, linens, and selected rental details.
         </p>
       </header>
       <div>

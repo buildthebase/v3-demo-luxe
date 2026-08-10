@@ -41,7 +41,7 @@ function PrivateEventsHero() {
         <p>
           Elevate engagements, anniversaries, graduations, holiday parties, and
           intimate gatherings with custom mobile coffee bars, live dessert
-          stations, and boutique rentals tailored to your vision.
+          stations, and focused chair, table, tent, linen, and dance-floor rentals.
         </p>
         <div className="private-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">

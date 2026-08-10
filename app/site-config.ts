@@ -5,7 +5,7 @@ const organizationName = entityNames.parentBrand.currentName;
 const alternateSiteNames = entityNames.parentBrand.alternateNames;
 const canonicalBaseUrl = "https://luxeeventco.ca";
 const defaultDescription =
-  "Luxe Event Co. brings together mobile coffee, live dessert, and event rentals for weddings, corporate events, activations, and private celebrations across Toronto and the GTA.";
+  "Luxe Event Co. brings together mobile coffee and live dessert for events, plus focused seating rentals for weddings and private celebrations across Toronto and the GTA.";
 
 export const socialProfiles = {
   coffeeBar: "https://www.instagram.com/luxecoffeebar.to/",
@@ -203,16 +203,16 @@ export const experiences: Division[] = [
     name: entityNames.divisions.seatingRentals,
     label: "Seating Rentals",
     landingPath: "/experiences/seating-rentals",
-    summary: "Refined seating and structure for rooms made to gather.",
-    serviceDescription: "A intentional seating rental experience within the Luxe Event Co. event platform.",
+    summary: "Premium core rentals for celebrations made to gather.",
+    serviceDescription: "A focused seating and event rental offering within Luxe Event Co.",
     accent: "seating",
     inclusions: [],
     customization: [],
     eventApplications: [],
     faqs: [],
     searchTarget: {
-      primary: "Toronto event seating rentals",
-      secondary: ["wedding seating rentals Toronto", "corporate event furniture rentals Toronto"],
+      primary: "Toronto chair table and tent rentals",
+      secondary: ["wedding chair rentals Toronto", "backyard event tent rentals Toronto"],
     },
     gallery: [],
     inquiryCta: "Ask about Luxe Seating Rentals",
@@ -222,9 +222,10 @@ export const experiences: Division[] = [
       "Chairs",
       "Tables",
       "Cocktail tables",
-      "Tents",
-      "Linens",
-      "Lighting",
+      "20-ft, 15-ft, and 10-ft event tents",
+      "Table and cocktail-table linens",
+      "Tent walls and lighting",
+      "18-ft by 18-ft dance floor",
       "Combined rental experiences with coffee and dessert",
     ],
     capacity: 0,

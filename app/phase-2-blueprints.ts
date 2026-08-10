@@ -85,7 +85,7 @@ const blueprintDesigns: Phase2PageBlueprint[] = [
   {
     path: "/events/corporate-events",
     archetype: "event",
-    hierarchy: ["Corporate hero", "Capabilities", "Corporate applications", "Coffee and matcha", "Dessert", "Rental support", "Branding", "Scale and repeatability", "Trusted By", "Gallery or case studies", "Operational process", "Corporate FAQs", "Inquiry"],
+    hierarchy: ["Corporate hero", "Capabilities", "Corporate applications", "Coffee and matcha", "Dessert", "Branding", "Scale and repeatability", "Trusted By", "Gallery or case studies", "Operational process", "Corporate FAQs", "Inquiry"],
     surfaceSequence: ["visual", "canvas", "emphasis", "narrative", "visual", "canvas"],
     desktopComposition: "Operational proof, approved organization credibility, and capability groupings support professional evaluation.",
     mobileComposition: "Capability, scale, proof, and logistics remain explicit without compressing into tiny comparison cards.",

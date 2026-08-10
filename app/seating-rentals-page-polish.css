@@ -33,6 +33,29 @@
   text-align: center !important;
 }
 
+.foundation-shell .seating-page .seating-item-tents ul {
+  margin: 0 0 0.75rem;
+  padding-left: 1.25rem;
+  color: #4a443e;
+  font-size: clamp(1rem, 1.3vw, 1.3rem);
+  line-height: 1.6;
+  list-style: disc outside !important;
+}
+
+.foundation-shell .seating-page .seating-item-tents li + li {
+  margin-top: 0.25rem;
+}
+
+.foundation-shell .seating-page .seating-item-tents li::marker {
+  color: var(--color-luxe-black);
+}
+
+.foundation-shell .seating-page .seating-item-tents ul ul {
+  margin: 0.25rem 0 0;
+  padding-left: 1.25rem;
+  list-style-type: circle !important;
+}
+
 /* Match the light internal-page hero texture used across the site. */
 .foundation-shell .seating-page > .seating-hero::before {
   background-color: var(--color-luxe-ivory);
@@ -140,10 +163,6 @@
 
   .foundation-shell .seating-page .seating-inventory-grid p {
     min-height: 6.4em;
-  }
-
-  .foundation-shell .seating-page .seating-item-tents p {
-    white-space: pre-line;
   }
 
   /* Keep the application titles to two lines at desktop widths. */

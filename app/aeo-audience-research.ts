@@ -572,9 +572,9 @@ export const aeoContentDependencies: AeoContentDependency[] = [
   {
     slug: "rental-inventory",
     label: "Rental inventory",
-    status: "partially-confirmed",
+    status: "confirmed",
     publicationRule:
-      "Publish approved rental categories only; quantities, exact products, dimensions, finishes, and availability require confirmation.",
+      "Publish the client-confirmed item types, quantities, dimensions, tent-top types, and linen colours; keep date-specific availability and substitutions qualified.",
   },
   {
     slug: "simultaneous-setup-capability",

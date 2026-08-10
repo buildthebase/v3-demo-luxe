@@ -32,10 +32,10 @@ const seatingRentalsSchema = createServicePageSchema({
   serviceName: "Luxe Seating Rentals",
   serviceType: "Event seating and rental service",
   serviceDescription:
-    "Practical, premium event rentals for intimate celebrations, outdoor weddings, showers, birthdays, and private events across Toronto and the GTA.",
+    "A focused collection of premium seating and event rentals for weddings, showers, backyard and outdoor events, birthdays, engagements, and private celebrations across Toronto and the GTA.",
   pageName: pageMetadata[seatingRentalsPath].title,
   pageDescription:
-    "Explore white resin chairs, 6-ft tables, cocktail tables, event tents, linens, tent walls, lighting, and an 18-ft dance floor, plus coordinated setup and complementary Luxe experiences.",
+    "Explore confirmed white resin chairs, 6-ft tables, cocktail tables, six event tents, linens, tent walls, tent lighting, and an 18-ft dance floor, with event-specific service options and complementary Luxe experiences.",
   areaServed: createAreaServed(rentalServiceAreas),
 });
 
@@ -51,8 +51,8 @@ function SeatingHero() {
         <p>
           From white resin chairs and tables to tents, linens, cocktail tables,
           lighting, and a dance floor, Luxe provides the essential pieces for intimate
-          celebrations and outdoor weddings, with coordinated delivery, setup, and the
-          option to add Luxe Coffee Bar and Luxe Sweet Cart.
+          celebrations and outdoor weddings. Delivery and setup details are confirmed
+          for each proposal, with the option to add Luxe Coffee Bar and Luxe Sweet Cart.
         </p>
         <div className="seating-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">
@@ -85,7 +85,7 @@ function SeatingHero() {
         <div><dt>300</dt><dd><strong>White resin chairs</strong></dd></div>
         <div><dt>25</dt><dd><strong>6-ft tables</strong></dd></div>
         <div><dt>6</dt><dd><strong>Event tents</strong></dd></div>
-        <div><dt>18' × 18'</dt><dd><strong>Dance floor</strong></dd></div>
+        <div><dt>18&apos; × 18&apos;</dt><dd><strong>Dance floor</strong></dd></div>
         <div><dt>One inquiry</dt><dd><strong>Rentals, coffee &amp; dessert</strong></dd></div>
       </dl>
     </header>
@@ -113,10 +113,9 @@ function SeatingOverview() {
             Toronto and the GTA.
           </p>
           <p>
-            Because Luxe Seating Rentals, Luxe Coffee Bar, and Luxe Sweet Cart are part
-            of one company, you can coordinate tents, tables, chairs, linens, lighting,
-            coffee, and dessert through one inquiry instead of managing several
-            separate vendors.
+            With Luxe Seating Rentals, Luxe Coffee Bar, and Luxe Sweet Cart under one
+            roof, you can coordinate the rentals, coffee, and dessert through one team
+            and one inquiry, making the event easier to plan from the start.
           </p>
           <p className="seating-overview-handoff">
             Luxe Seating Rentals can be booked independently or coordinated with{" "}
@@ -163,6 +162,20 @@ function RentalCategories() {
             <div className="seating-item-plan" aria-hidden="true"><i /><i /><i /></div>
             <h3>{category.name}</h3>
             <strong>{category.role}</strong>
+            {"items" in category ? (
+              <ul>
+                {category.items.map((item) => (
+                  <li key={item.label}>
+                    {item.label}
+                    {"subitems" in item ? (
+                      <ul>
+                        {item.subitems.map((subitem) => <li key={subitem}>{subitem}</li>)}
+                      </ul>
+                    ) : null}
+                  </li>
+                ))}
+              </ul>
+            ) : null}
             <p>{category.description}</p>
           </article>
         ))}
@@ -206,7 +219,7 @@ function RentalOperations() {
         <p className="foundation-label">Delivery, setup, and teardown</p>
         <h2 id="seating-operations-title">Rental Delivery, Setup &amp; Pickup</h2>
         <p className="seating-operations-subtitle">
-          Delivery, setup, and teardown are confirmed for each event.
+          Available services and responsibilities are confirmed for each event.
         </p>
         <p>
           The rental proposal clearly outlines the services, timing, access
@@ -253,8 +266,9 @@ function IndoorOutdoorApplications() {
           <h3>Outdoor event planning and weather contingency</h3>
           <p>
             For backyard and outdoor events, we review the available footprint, ground
-            surface, access, tent size, and space needed for tables, chairs, service,
-            and the dance floor before confirming the rental setup.
+            surface, access, tent size, wind and weather considerations, and space needed
+            for tables, chairs, service, and the dance floor. Suitability and any
+            contingency requirements must be confirmed for the specific site and event.
           </p>
         </article>
       </div>

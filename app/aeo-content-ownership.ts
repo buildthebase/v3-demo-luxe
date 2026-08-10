@@ -52,10 +52,10 @@ export const priorityPageIntentReview: readonly ContentOwnershipRecord[] = [
   },
   {
     path: "/experiences/seating-rentals",
-    primaryIntent: "Understand and evaluate Luxe Seating Rentals.",
-    owns: ["Rental inventory", "Rental pricing factors", "Rental delivery and setup mechanics"],
-    supports: ["Outdoor planning", "Combined-service discovery"],
-    mustNotOwn: ["Complete occasion planning", "Shared booking terms", "Coffee or dessert mechanics"],
+    primaryIntent: "Evaluate Luxe's focused rental inventory for weddings and private celebrations.",
+    owns: ["Confirmed rental inventory", "Rental pricing factors", "Proposal-defined delivery and setup mechanics"],
+    supports: ["Outdoor rental suitability", "Coffee Bar and Sweet Cart coordination"],
+    mustNotOwn: ["Broad furniture catalogues", "Corporate conference furniture", "Complete occasion planning", "Shared booking terms", "Coffee or dessert mechanics"],
     competingIntentReview: "clear",
   },
   {

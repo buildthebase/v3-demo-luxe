@@ -81,7 +81,7 @@ export const bridalShowerCombinations = [
     title: "The complete setting",
     experiences: "Coffee + Dessert + Seating and rentals",
     description:
-      "Combine espresso service, fresh live desserts, and boutique venue rentals for a seamlessly coordinated, end-to-end shower experience.",
+      "Coordinate espresso service, fresh live desserts, and the confirmed chairs, tables, linens, or tenting needed for the shower through one Luxe inquiry.",
   },
 ] as const;
 

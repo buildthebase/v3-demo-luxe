@@ -80,7 +80,7 @@ function BabyShowerOverview() {
         <h2 id="baby-overview-title">A baby shower shaped in three thoughtful parts</h2>
         <p>
           Welcoming drinks set the tone, live dessert creates an interactive focal
-          point, and boutique rentals organize the space for photos, gifts, and
+          point, and confirmed chairs, tables, linens, or tenting support photos, gifts, and
           conversation.
         </p>
       </header>
@@ -105,8 +105,8 @@ function BabyShowerOverview() {
           <p>THE SETTING</p>
           <h3>Room for the celebration to unfold.</h3>
           <p>
-            Boutique lounge seating, accent tables, and crisp linens arranged to
-            anchor photo backdrops, gift areas, and comfortable conversation circles.
+            White resin chairs, 6-ft tables, cocktail tables, and linens arranged
+            around guest seating, gifts, food displays, and conversation.
           </p>
         </article>
       </div>
