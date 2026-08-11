@@ -7780,6 +7780,10 @@ body .foundation-shell main:is(
     display: block;
   }
 
+  .home-page .signature-selector-coffee .signature-selector-heading {
+    width: min(100%, 18rem);
+  }
+
   .signature-selector-copy b {
     margin-top: var(--space-4);
     padding-top: 0;

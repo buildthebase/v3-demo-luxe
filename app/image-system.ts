@@ -122,6 +122,78 @@ export const imageAssets = {
       format: "png",
     },
   },
+  home: {
+    weddingsPrivateEventsPoster: {
+      id: "home-weddings-private-events-poster",
+      src: "/images/home/luxe-weddings-private-events-poster.webp",
+      alt: "Luxe wedding and private event service shown in a vertical editorial frame",
+      width: 1080,
+      height: 1920,
+      sizes: "(max-width: 700px) calc(100vw - 2rem), 32vw",
+      status: "approved",
+      format: "webp",
+    },
+    corporateBrandActivationsPoster: {
+      id: "home-corporate-brand-activations-poster",
+      src: "/images/home/luxe-corporate-events-brand-activations-poster.webp",
+      alt: "Luxe corporate event and brand activation service shown in a vertical editorial frame",
+      width: 1080,
+      height: 1920,
+      sizes: "(max-width: 700px) calc(100vw - 2rem), 32vw",
+      status: "approved",
+      format: "webp",
+    },
+    workingWithLuxePoster: {
+      id: "home-working-with-luxe-poster",
+      src: "/images/home/luxe-working-with-luxe-poster.webp",
+      alt: "Luxe event service and guest interaction shown in a vertical editorial frame",
+      width: 1080,
+      height: 1920,
+      sizes: "(max-width: 700px) calc(100vw - 2rem), 32vw",
+      status: "approved",
+      format: "webp",
+    },
+    personalCelebrations: {
+      id: "home-personal-gatherings",
+      src: "/images/home/personal-celebrations.webp",
+      alt: "White Luxe mobile coffee cart prepared beneath greenery for a Toronto wedding or private celebration",
+      width: 1220,
+      height: 1340,
+      sizes: "(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) 45vw, 38vw",
+      status: "approved",
+      format: "webp",
+    },
+    professionalOccasions: {
+      id: "home-professional-gatherings",
+      src: "/images/home/professional-occasions.webp",
+      alt: "Guests gathered around lounge seating and floral tables at a bright Toronto corporate event reception",
+      width: 788,
+      height: 874,
+      sizes: "(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) 45vw, 38vw",
+      status: "approved",
+      format: "webp",
+    },
+    workInContext: {
+      id: "home-occasion-in-context",
+      src: "/images/home/work-in-context.webp",
+      alt: "Luxe mobile coffee bar with branded cups and pastries arranged in an arched Toronto event space",
+      width: 2400,
+      height: 1351,
+      sizes: "(max-width: 700px) calc(100vw - 40px), 88vw",
+      status: "approved",
+      format: "webp",
+    },
+    workingWithLuxe: {
+      id: "home-cohesive-service",
+      src: "/images/home/working-with-luxe.webp",
+      alt: "Rabbit mascot presenting a personalized iced drink at a themed Toronto brand event",
+      width: 768,
+      height: 1064,
+      sizes: "(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) 45vw, 42vw",
+      status: "approved",
+      format: "webp",
+    },
+  },
   experiences: {
     eventsHubHero: {
       id: "events-hub-hero-sweet-cart-guests",
@@ -525,6 +597,7 @@ export const imageAssets = {
 } as const satisfies {
   brand: Record<string, ResponsiveImageAsset>;
   credibilityLogos: Record<string, ResponsiveImageAsset>;
+  home: Record<string, ResponsiveImageAsset>;
   experiences: Record<string, ResponsiveImageAsset>;
 };
 

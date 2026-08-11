@@ -30,6 +30,7 @@ import "./event-detail-heading-polish.css";
 import "./birthday-page-polish.css";
 import "./private-events-page-polish.css";
 import "./blog.css";
+import "./mobile-button-underlines.css";
 import { siteConfig } from "./site-config";
 
 const siteUrl = siteConfig.url;

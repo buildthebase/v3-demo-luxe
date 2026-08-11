@@ -1,4 +1,5 @@
 import { eventTypes } from "./site-config";
+import { imageAssets } from "./image-system";
 
 const featuredEventSlugs = [
   "weddings",
@@ -23,21 +24,11 @@ export const homeEventImageGroups = [
     tone: "dessert",
     label: "Weddings & Private Celebrations",
     context: "Wedding coffee bar service, dessert cart rentals, and event seating shaped around meaningful moments and guest hospitality.",
-    image: {
-      id: "home-personal-gatherings",
-      src: "/images/home/personal-celebrations.webp",
-      alt: "White Luxe mobile coffee cart prepared beneath greenery for a Toronto wedding or private celebration",
-      width: 1220,
-      height: 1340,
-      sizes:
-        "(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) 45vw, 38vw",
-      status: "approved",
-      format: "webp",
-    },
+    image: imageAssets.home.personalCelebrations,
     video: {
       mp4: "/images/home/luxe-weddings-private-events.mp4",
       webm: "/images/home/luxe-weddings-private-events.webm",
-      poster: "/images/home/luxe-weddings-private-events-poster.webp",
+      poster: imageAssets.home.weddingsPrivateEventsPoster.src,
     },
   },
   {
@@ -46,21 +37,11 @@ export const homeEventImageGroups = [
     tone: "coffee",
     label: "Corporate Events & Brand Activations",
     context: "Professional mobile espresso bars, custom-branded beverage cups, and refined event spaces for corporate teams, clients, and brand launches.",
-    image: {
-      id: "home-professional-gatherings",
-      src: "/images/home/professional-occasions.webp",
-      alt: "Guests gathered around lounge seating and floral tables at a bright Toronto corporate event reception",
-      width: 788,
-      height: 874,
-      sizes:
-        "(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) 45vw, 38vw",
-      status: "approved",
-      format: "webp",
-    },
+    image: imageAssets.home.professionalOccasions,
     video: {
       mp4: "/images/home/luxe-corporate-events-brand-activations.mp4",
       webm: "/images/home/luxe-corporate-events-brand-activations.webm",
-      poster: "/images/home/luxe-corporate-events-brand-activations-poster.webp",
+      poster: imageAssets.home.corporateBrandActivationsPoster.src,
     },
   },
 ] as const;
@@ -146,16 +127,7 @@ export const homeImageSlots = [
     label: "The whole occasion",
     context: "Hospitality, presentation, and the surrounding space brought together as one experience.",
     tone: "seating",
-    image: {
-      id: "home-occasion-in-context",
-      src: "/images/home/work-in-context.webp",
-      alt: "Luxe mobile coffee bar with branded cups and pastries arranged in an arched Toronto event space",
-      width: 2400,
-      height: 1351,
-      sizes: "(max-width: 700px) calc(100vw - 40px), 88vw",
-      status: "approved",
-      format: "webp",
-    },
+    image: imageAssets.home.workInContext,
   },
 ] as const;
 
@@ -164,21 +136,11 @@ export const homeWorkingImage = {
   label: "Connected from beginning to end",
   context: "The details remain aligned through planning, service, and delivery.",
   tone: "combined",
-  image: {
-    id: "home-cohesive-service",
-    src: "/images/home/working-with-luxe.webp",
-    alt: "Rabbit mascot presenting a personalized iced drink at a themed Toronto brand event",
-    width: 768,
-    height: 1064,
-    sizes:
-      "(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) 45vw, 42vw",
-    status: "approved",
-    format: "webp",
-  },
+  image: imageAssets.home.workingWithLuxe,
   video: {
     mp4: "/images/home/luxe-working-with-luxe.mp4",
     webm: "/images/home/luxe-working-with-luxe.webm",
-    poster: "/images/home/luxe-working-with-luxe-poster.webp",
+    poster: imageAssets.home.workingWithLuxePoster.src,
   },
 } as const;
 

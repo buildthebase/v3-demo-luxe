@@ -1,0 +1,48 @@
+/* Keep mobile text-button underlines tucked close to their labels. */
+@media (max-width: 760px) {
+  .foundation-shell :where(a, button, summary) {
+    text-underline-offset: 0.12em;
+  }
+
+  .foundation-shell :is(
+      .foundation-detail-panel a,
+      .foundation-empty-state a,
+      .home-text-link,
+      .home-editorial-review > nav a > span,
+      .signature-combinations-footer a > span,
+      .home-events-planning-cta a > span,
+      .events-directory-list article > a,
+      .events-text-link,
+      .experiences-booking-clarity > a,
+      .experiences-feature-footer > a,
+      .experiences-text-link,
+      .coffee-operations aside a,
+      .coffee-gallery > a,
+      .sweet-operations aside a,
+      .priority-answer a,
+      .activation-service-details > a,
+      .activation-gallery > a,
+      .activation-planning > a,
+      .activation-faq > a,
+      .corporate-branding > a,
+      .corporate-gallery > a,
+      .corporate-faq > a,
+      .corporate-planning-events-link,
+      .wedding-gallery > a,
+      .wedding-faq > a,
+      .bridal-experiences article > a,
+      .bridal-gallery > a,
+      .bridal-faq > a,
+      .baby-gallery > a,
+      .baby-faq > a,
+      .private-gallery > a,
+      .private-faq > a,
+      .birthday-gallery > a,
+      .birthday-faq > a,
+      .inquire-context-links a,
+      .blog-featured strong,
+      .blog-context-links a
+    ) {
+    padding-bottom: 0.12em;
+  }
+}
