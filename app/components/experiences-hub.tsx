@@ -4,8 +4,10 @@ import {
   experienceHubFeatures,
   type ExperienceHubFeature,
 } from "../experiences/content";
+import { imageAssets } from "../image-system";
 import { eventTypes } from "../site-config";
 import { QuoteModalTrigger } from "./quote-modal-trigger";
+import { ResponsiveImage } from "./responsive-image";
 
 export function ExperiencesHero({
   titleLines,
@@ -39,17 +41,8 @@ export function ExperiencesHero({
           </QuoteModalTrigger>
         </div>
       </div>
-      <div className="experiences-hero-world" aria-hidden="true">
-        <span className="experiences-hero-plane experiences-hero-plane-coffee">
-          <b>01</b>
-        </span>
-        <span className="experiences-hero-plane experiences-hero-plane-dessert">
-          <b>02</b>
-        </span>
-        <span className="experiences-hero-plane experiences-hero-plane-seating">
-          <b>03</b>
-        </span>
-        <i />
+      <div className="experiences-hero-world">
+        <ResponsiveImage asset={imageAssets.experiences.experiencesHero} fill />
       </div>
     </header>
   );
@@ -126,15 +119,31 @@ export function ExperiencesBookingClarity() {
 }
 
 function ExperienceFeature({ feature }: { feature: ExperienceHubFeature }) {
+  const featureImage =
+    feature.id === "coffee"
+      ? imageAssets.experiences.experiencesCoffeeBar
+      : feature.id === "dessert"
+        ? imageAssets.experiences.experiencesSweetCart
+        : imageAssets.experiences.experiencesSeatingRentals;
+
   return (
     <article
       className={`experiences-feature experiences-feature-${feature.id}`}
       id={`experience-${feature.id}`}
     >
-      <div className="experiences-feature-art" aria-hidden="true">
-        <i />
-        <i />
-        <i />
+      <div
+        className="experiences-feature-art"
+        aria-hidden={featureImage ? undefined : true}
+      >
+        {featureImage ? (
+          <ResponsiveImage asset={featureImage} fill />
+        ) : (
+          <>
+            <i />
+            <i />
+            <i />
+          </>
+        )}
       </div>
       <div className="experiences-feature-copy">
         <p className="foundation-label">{feature.eyebrow}</p>
@@ -249,20 +258,35 @@ Each experience, in its element.
         className="experiences-gallery-grid"
         data-asset-status="awaiting-approved-photography"
       >
-        {experienceGalleryPreview.map((item) => (
-          <figure className={`experiences-gallery-${item.tone}`} key={item.id}>
-            <div aria-hidden="true">
-              <i />
-              <i />
-              <i />
-            </div>
-            <figcaption>
-              <span>{item.number}</span>
-              <strong>{item.label}</strong>
-              <small>{item.context}</small>
-            </figcaption>
-          </figure>
-        ))}
+        {experienceGalleryPreview.map((item) => {
+          const galleryImage =
+            item.id === "coffee-service"
+              ? imageAssets.experiences.experiencesGalleryCoffeeInService
+              : item.id === "dessert-preparation"
+                ? imageAssets.experiences.experiencesGalleryDessertInPreparation
+                : imageAssets.experiences.experiencesGalleryCompletedSetting;
+
+          return (
+            <figure className={`experiences-gallery-${item.tone}`} key={item.id}>
+              <div aria-hidden={galleryImage ? undefined : true}>
+                {galleryImage ? (
+                  <ResponsiveImage asset={galleryImage} fill />
+                ) : (
+                  <>
+                    <i />
+                    <i />
+                    <i />
+                  </>
+                )}
+              </div>
+              <figcaption>
+                <span>{item.number}</span>
+                <strong>{item.label}</strong>
+                <small>{item.context}</small>
+              </figcaption>
+            </figure>
+          );
+        })}
       </div>
       <Link href="/gallery" className="experiences-text-link">
         Explore the Luxe event gallery <span aria-hidden="true">↗︎</span>

@@ -11,6 +11,11 @@ export type SignatureExperience = {
   description: string;
   href: string;
   image: ResponsiveImageAsset;
+  video?: {
+    mp4: string;
+    webm: string;
+    poster: string;
+  };
 };
 
 export type CombinedExperienceNode = SignatureExperience["id"] | "signage";

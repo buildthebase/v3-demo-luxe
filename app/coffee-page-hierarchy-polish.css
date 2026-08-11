@@ -1,4 +1,48 @@
 /* Coffee Bar heading alignment and supporting-copy hierarchy. */
+.foundation-shell .coffee-page .coffee-overview-media {
+  min-height: 0;
+  aspect-ratio: 941 / 1120;
+}
+
+.foundation-shell .coffee-page .coffee-overview-media::before,
+.foundation-shell .coffee-page .coffee-overview-media::after {
+  content: none;
+}
+
+.foundation-shell .coffee-page .coffee-overview-media img {
+  object-fit: cover !important;
+  object-position: center;
+}
+
+@media (min-width: 1121px) {
+  .foundation-shell .coffee-page .coffee-overview .experience-context-content {
+    margin-top: 3.5rem;
+  }
+}
+
+.foundation-shell .coffee-page .coffee-gallery-cart > div img {
+  object-fit: cover !important;
+  object-position: center;
+}
+
+.foundation-shell .coffee-page .coffee-gallery-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.foundation-shell .coffee-page .coffee-gallery-grid figure > div {
+  min-height: 0;
+  aspect-ratio: 9 / 16;
+}
+
+.foundation-shell .coffee-page :is(
+  .coffee-gallery-cart,
+  .coffee-gallery-service,
+  .coffee-gallery-drink
+) > div img {
+  object-fit: cover !important;
+  object-position: center;
+}
+
 .foundation-shell .coffee-page > .coffee-overview::before {
   background-color: var(--surface-chapter-taupe);
 }

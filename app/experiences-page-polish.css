@@ -1,4 +1,59 @@
 /* Experiences hub mobile composition refinements. */
+.foundation-shell .experiences-page .experiences-hero-world {
+  aspect-ratio: 1375 / 1144;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.foundation-shell .experiences-page .experiences-hero-world img {
+  display: block;
+}
+
+.foundation-shell .experiences-page
+  :is(
+    .experiences-feature-coffee,
+    .experiences-feature-dessert,
+    .experiences-feature-seating
+  )
+  .experiences-feature-art {
+  aspect-ratio: 1200 / 1579;
+  width: min(84%, 26rem);
+  min-height: 0;
+  justify-self: center;
+  overflow: hidden;
+  background: none;
+}
+
+.foundation-shell .experiences-page
+  :is(
+    .experiences-feature-coffee,
+    .experiences-feature-dessert,
+    .experiences-feature-seating
+  )
+  .experiences-feature-art img {
+  display: block;
+}
+
+.foundation-shell .experiences-page
+  :is(
+    .experiences-gallery-coffee,
+    .experiences-gallery-dessert,
+    .experiences-gallery-seating
+  )
+  > div {
+  background: none;
+}
+
+.foundation-shell .experiences-page
+  :is(
+    .experiences-gallery-coffee,
+    .experiences-gallery-dessert,
+    .experiences-gallery-seating
+  )
+  img {
+  display: block;
+}
+
 @media (max-width: 700px) {
   .foundation-shell .experiences-page
     .experiences-feature-copy h2:not(#luxe-sitewide-h2-scale) {

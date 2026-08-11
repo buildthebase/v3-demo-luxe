@@ -24,6 +24,69 @@ const experienceSelectorActions: Record<string, string> = {
   seating: "Gather",
 };
 
+function SignatureSelectorVideo({
+  video,
+}: {
+  video: NonNullable<SignatureExperience["video"]>;
+}) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const hasLoadedRef = useRef(false);
+
+  useEffect(() => {
+    const element = videoRef.current;
+
+    if (!element) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          if (!hasLoadedRef.current) {
+            element.load();
+            hasLoadedRef.current = true;
+          }
+
+          if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            void element.play().catch(() => undefined);
+          }
+        } else {
+          element.pause();
+          element.currentTime = 0;
+        }
+      },
+      { threshold: 0.25 },
+    );
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <video
+      ref={videoRef}
+      aria-hidden="true"
+      className="signature-selector-image"
+      loop
+      muted
+      playsInline
+      poster={video.poster}
+      preload="none"
+      style={{
+        height: "100%",
+        inset: 0,
+        objectFit: "cover",
+        position: "absolute",
+        width: "100%",
+      }}
+    >
+      <source src={video.webm} type="video/webm" />
+      <source src={video.mp4} type="video/mp4" />
+    </video>
+  );
+}
+
 export function ExperienceSelector({
   experiences = signatureExperiences,
   footer,
@@ -90,11 +153,15 @@ export function ExperienceSelector({
               key={experience.id}
             >
               <span className="signature-selector-art">
-                <ResponsiveImage
-                  asset={experience.image}
-                  className="signature-selector-image"
-                  fill
-                />
+                {experience.video ? (
+                  <SignatureSelectorVideo video={experience.video} />
+                ) : (
+                  <ResponsiveImage
+                    asset={experience.image}
+                    className="signature-selector-image"
+                    fill
+                  />
+                )}
               </span>
               <div className="signature-selector-copy">
                 <span className="signature-selector-label">{experience.label}</span>

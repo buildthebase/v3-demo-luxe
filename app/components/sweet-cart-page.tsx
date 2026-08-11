@@ -12,6 +12,7 @@ import {
   sweetGalleryPreview,
 } from "../experiences/sweet-cart-content";
 import { pageMetadata } from "../metadata-config";
+import { imageAssets } from "../image-system";
 import { sweetCartSectionNavigation } from "../page-section-navigation";
 import { createServicePageSchema, divisionServiceIds } from "../schema-builders";
 import { FaqAccordion } from "./faq-accordion";
@@ -20,6 +21,7 @@ import { JsonLd } from "./json-ld";
 import { PageSectionNavigation } from "./page-section-navigation";
 import { PriorityAnswer } from "./priority-answer";
 import { QuoteModalTrigger } from "./quote-modal-trigger";
+import { ResponsiveImage } from "./responsive-image";
 import { ContextualInquiryPanel } from "./signature-elements";
 import { SiteShell } from "./site-shell";
 
@@ -91,10 +93,8 @@ function SweetHero() {
           </a>
         </div>
       </div>
-      <div className="sweet-hero-art" aria-hidden="true">
-        <span />
-        <i />
-        <i />
+      <div className="sweet-hero-art">
+        <ResponsiveImage asset={imageAssets.experiences.sweetCartHero} fill />
         <b>Prepared on-site</b>
       </div>
 <div className="sweet-hero-proof-heading">
@@ -179,9 +179,7 @@ function SweetPositioning() {
         </>
       }
     >
-      <i />
-      <i />
-      <i />
+      <ResponsiveImage asset={imageAssets.experiences.sweetCartOverview} fill />
     </ExperienceContextSection>
   );
 }
@@ -229,7 +227,17 @@ function DessertExperiences() {
       <div className="sweet-dessert-list">
         {dessertExperiences.map((dessert) => (
           <article className={`sweet-dessert-${dessert.id}`} key={dessert.id}>
-            <div aria-hidden="true"><i /><i /></div>
+            <div aria-hidden={!['pancakes', 'waffles', 'donuts'].includes(dessert.id)}>
+              {dessert.id === "pancakes" ? (
+                <ResponsiveImage asset={imageAssets.experiences.miniDutchPancakes} fill />
+              ) : dessert.id === "waffles" ? (
+                <ResponsiveImage asset={imageAssets.experiences.belgianWaffles} fill />
+              ) : dessert.id === "donuts" ? (
+                <ResponsiveImage asset={imageAssets.experiences.miniDonuts} fill />
+              ) : (
+                <><i /><i /></>
+              )}
+            </div>
             <h3>{dessert.name}</h3>
             <p>{dessert.description}</p>
             <small>{dessert.decisionFit}</small>
@@ -485,7 +493,17 @@ function SweetGallery() {
       <div className="sweet-gallery-grid" data-asset-status="awaiting-approved-photography">
         {sweetGalleryPreview.map((item) => (
           <figure className={`sweet-gallery-${item.tone}`} key={item.number}>
-            <div aria-hidden="true"><i /><i /><i /></div>
+            <div aria-hidden={!['cart', 'preparation', 'finish'].includes(item.tone)}>
+              {item.tone === "cart" ? (
+                <ResponsiveImage asset={imageAssets.experiences.sweetCartDecor} fill />
+              ) : item.tone === "preparation" ? (
+                <ResponsiveImage asset={imageAssets.experiences.sweetCartPreparation} fill />
+              ) : item.tone === "finish" ? (
+                <ResponsiveImage asset={imageAssets.experiences.sweetCartFinish} fill />
+              ) : (
+                <><i /><i /><i /></>
+              )}
+            </div>
             <figcaption>
               <span>{item.number}</span><strong>{item.label}</strong><small>{item.note}</small>
             </figcaption>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Fragment } from "react";
+import { HomeEditorialVideo } from "./home-editorial-video";
 import { QuoteModalTrigger } from "./quote-modal-trigger";
 import { ResponsiveImage } from "./responsive-image";
 import {
@@ -15,6 +16,7 @@ import {
 function HomeEditorialImage({
   slot,
   compact = false,
+  showCaption = true,
 }: {
   slot: {
     id: string;
@@ -22,8 +24,14 @@ function HomeEditorialImage({
     context: string;
     tone: string;
     image: Parameters<typeof ResponsiveImage>[0]["asset"];
+    video?: {
+      mp4: string;
+      webm: string;
+      poster: string;
+    };
   };
   compact?: boolean;
+  showCaption?: boolean;
 }) {
   const fallback = (
     <div className="home-editorial-art" aria-hidden="true">
@@ -35,16 +43,27 @@ function HomeEditorialImage({
 
   return (
     <figure
-      className={`home-editorial-image home-image-slot-${slot.tone}${compact ? " home-editorial-image-compact" : ""}`}
+      className={`home-editorial-image home-image-slot-${slot.tone}${slot.video ? " home-editorial-image-video" : ""}${compact ? " home-editorial-image-compact" : ""}`}
       data-asset-status={slot.image.status}
     >
       <div className="home-editorial-frame">
-        <ResponsiveImage asset={slot.image} fallback={fallback} fill />
+        {slot.video ? (
+          <HomeEditorialVideo
+            label={slot.label}
+            mp4={slot.video.mp4}
+            poster={slot.video.poster}
+            webm={slot.video.webm}
+          />
+        ) : (
+          <ResponsiveImage asset={slot.image} fallback={fallback} fill />
+        )}
       </div>
-      <figcaption>
-        <strong>{slot.label}</strong>
-        <small>{slot.context}</small>
-      </figcaption>
+      {showCaption ? (
+        <figcaption>
+          <strong>{slot.label}</strong>
+          <small>{slot.context}</small>
+        </figcaption>
+      ) : null}
     </figure>
   );
 }
@@ -138,20 +157,26 @@ export function HomeEventCategories() {
       <div className="home-event-groups">
         {homeEventImageGroups.map((group, groupIndex) => (
           <Fragment key={group.id}>
-            <div className="home-event-group">
-              <HomeEditorialImage slot={group} />
-              <div className="home-event-list">
-                {group.eventSlugs.map((slug) => {
-                  const event = featuredHomeEvents.find((item) => item.slug === slug)!;
+            <div className={`home-event-group home-event-group-${group.id}`}>
+              <HomeEditorialImage showCaption={false} slot={group} />
+              <div className="home-event-copy">
+                <div className="home-event-caption">
+                  <strong>{group.label}</strong>
+                  <small>{group.context}</small>
+                </div>
+                <div className="home-event-list">
+                  {group.eventSlugs.map((slug) => {
+                    const event = featuredHomeEvents.find((item) => item.slug === slug)!;
 
-                  return (
-                    <Link href={`/events/${event.slug}`} key={event.slug}>
-                      <strong>{event.name}</strong>
-                      <small>{event.summary}</small>
-                      <b aria-hidden="true">↗︎</b>
-                    </Link>
-                  );
-                })}
+                    return (
+                      <Link href={`/events/${event.slug}`} key={event.slug}>
+                        <strong>{event.name}</strong>
+                        <small>{event.summary}</small>
+                        <b aria-hidden="true">↗︎</b>
+                      </Link>
+                    );
+                  })}
+                </div>
               </div>
             </div>
             {groupIndex === 0 ? (

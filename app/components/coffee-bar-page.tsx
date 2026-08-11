@@ -11,6 +11,7 @@ import {
   signatureCoffeeCollection,
 } from "../experiences/coffee-bar-content";
 import { pageMetadata } from "../metadata-config";
+import { imageAssets } from "../image-system";
 import { coffeeBarSectionNavigation } from "../page-section-navigation";
 import { createServicePageSchema, divisionServiceIds } from "../schema-builders";
 import { FaqAccordion } from "./faq-accordion";
@@ -19,6 +20,7 @@ import { JsonLd } from "./json-ld";
 import { PageSectionNavigation } from "./page-section-navigation";
 import { PriorityAnswer } from "./priority-answer";
 import { QuoteModalTrigger } from "./quote-modal-trigger";
+import { ResponsiveImage } from "./responsive-image";
 import { ContextualInquiryPanel } from "./signature-elements";
 import { SiteShell } from "./site-shell";
 
@@ -93,10 +95,12 @@ function CoffeeHero() {
           </a>
         </div>
       </div>
-      <div className="coffee-hero-art" aria-hidden="true">
-        <span />
-        <i />
-        <i />
+      <div className="coffee-hero-art">
+        <ResponsiveImage
+          asset={imageAssets.experiences.coffeeBarHero}
+          className="coffee-hero-photo"
+          fill
+        />
         <b>Crafted in the room</b>
       </div>
       <div className="sweet-hero-proof-heading">
@@ -170,8 +174,7 @@ function CoffeeOverview() {
         </>
       }
     >
-      <span className="coffee-overview-media-label">Coffee service photography</span>
-      <span className="coffee-overview-mark" />
+      <ResponsiveImage asset={imageAssets.experiences.coffeeBarOverview} fill />
     </ExperienceContextSection>
   );
 }
@@ -422,13 +425,20 @@ function CoffeeGallery() {
 
       <div
         className="coffee-gallery-grid"
-        data-asset-status="awaiting-approved-photography"
+        data-asset-status="approved-partial-photography"
       >
         {coffeeGalleryPreview.map((item) => (
           <figure className={`coffee-gallery-${item.tone}`} key={item.number}>
-            <div aria-hidden="true">
-              <i />
-              <i />
+            <div aria-hidden={item.tone !== "cart"}>
+              {item.tone === "cart" ? (
+                <ResponsiveImage asset={imageAssets.experiences.coffeeBarDecor} fill />
+              ) : item.tone === "service" ? (
+                <ResponsiveImage asset={imageAssets.experiences.coffeeBarCraftInService} fill />
+              ) : item.tone === "drink" ? (
+                <ResponsiveImage asset={imageAssets.experiences.coffeeBarFinishedDrink} fill />
+              ) : (
+                <><i /><i /></>
+              )}
             </div>
 
             <figcaption>

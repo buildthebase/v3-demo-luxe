@@ -403,6 +403,12 @@
   margin-top: var(--home-compact-content-gap);
 }
 
+/* Trim the stray attendee at the left edge of the Working with Luxe footage. */
+.foundation-shell .home-page .home-working-media .home-editorial-video {
+  transform: scale(1.12);
+  transform-origin: right center;
+}
+
 /* Center the event-services heading and keep it on one desktop line. */
 @media (min-width: 961px) {
   .foundation-shell .home-page .home-trust > header {

@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 
 type ExperienceContextSectionProps = {
   ariaLabelledBy: string;
+  artAriaHidden?: boolean;
   artClassName?: string;
   children: ReactNode;
   copy: ReactNode;
@@ -14,6 +15,7 @@ type ExperienceContextSectionProps = {
 
 export function ExperienceContextSection({
   ariaLabelledBy,
+  artAriaHidden = true,
   artClassName,
   children,
   copy,
@@ -34,7 +36,7 @@ export function ExperienceContextSection({
         <h2 id={ariaLabelledBy}>{title}</h2>
         <div
           className={`experience-context-art ${legacyClassName}-art${artClassName ? ` ${artClassName}` : ""}`}
-          aria-hidden="true"
+          aria-hidden={artAriaHidden}
         >
           {children}
         </div>

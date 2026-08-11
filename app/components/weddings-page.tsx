@@ -14,6 +14,7 @@ import { FaqAccordion } from "./faq-accordion";
 import { JsonLd } from "./json-ld";
 import { PageSectionNavigation } from "./page-section-navigation";
 import { QuoteModalTrigger } from "./quote-modal-trigger";
+import { ResponsiveImage } from "./responsive-image";
 import { ContextualInquiryPanel, ExperienceSelector } from "./signature-elements";
 import { SiteShell } from "./site-shell";
 
@@ -224,7 +225,13 @@ function WeddingGallery() {
       <div className="wedding-gallery-grid" data-asset-status="awaiting-approved-photography">
         {weddingGalleryPreview.map((item) => (
           <figure className={`wedding-gallery-${item.tone}`} key={item.number}>
-            <div aria-hidden="true"><i /><i /><i /></div>
+            <div>
+              {item.image ? (
+                <ResponsiveImage asset={item.image} fill />
+              ) : (
+                <span aria-hidden="true"><i /><i /><i /></span>
+              )}
+            </div>
             <figcaption>
               <strong>{item.label}</strong>
               <small>{item.note}</small>

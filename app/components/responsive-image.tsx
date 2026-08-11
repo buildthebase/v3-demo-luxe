@@ -31,6 +31,7 @@ export function ResponsiveImage({
         fetchPriority={fetchPriority}
         height={asset.height}
         loading={loading}
+        quality={asset.quality}
         sizes={asset.sizes}
         src={asset.src}
         style={{
@@ -53,6 +54,7 @@ export function ResponsiveImage({
       fetchPriority={fetchPriority}
       height={asset.height}
       loading={loading}
+      quality={asset.quality}
       sizes={asset.sizes}
       src={asset.src}
       unoptimized={asset.unoptimized}

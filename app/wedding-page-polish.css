@@ -42,7 +42,7 @@
   pointer-events: none;
 }
 
-.wedding-overview > div:first-child {
+.wedding-overview > div:first-of-type {
   position: relative;
   z-index: 1;
   grid-column: 1 / 7;
@@ -51,7 +51,7 @@
   border-top: 1px solid color-mix(in srgb, var(--color-luxe-gold-ink) 40%, transparent);
 }
 
-.wedding-overview > div:first-child::after {
+.wedding-overview > div:first-of-type::after {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -67,10 +67,12 @@
   color: var(--color-luxe-gold-ink);
 }
 
-.wedding-overview h2 {
-  max-width: 11ch;
-  margin-top: var(--space-5);
-  text-wrap: balance;
+#wedding-overview-title {
+  width: 100%;
+  max-width: none !important;
+  margin-top: clamp(1.25rem, 2vw, 2rem);
+  white-space: normal;
+  text-wrap: wrap !important;
 }
 
 .wedding-overview > div:last-child {
@@ -711,6 +713,18 @@
   font-size: clamp(0.85rem, 0.78rem + 0.28vw, 1rem);
 }
 
+.wedding-gallery-room img {
+  object-position: center 68%;
+}
+
+.wedding-gallery-dessert img {
+  object-position: center 67%;
+}
+
+.wedding-gallery-welcome img {
+  object-position: center 44%;
+}
+
 .wedding-overview > div:last-child p:last-child {
   margin-bottom: 0;
 }
@@ -740,6 +754,14 @@
   .wedding-gallery figure:first-child > div {
     min-height: clamp(28rem, 48vw, 42rem);
   }
+
+  .wedding-gallery-room > div {
+    min-height: clamp(36rem, 43.2vw, 43.2rem);
+  }
+
+  .wedding-gallery-room img {
+    filter: brightness(1.15);
+  }
 }
 
 @media (max-width: 780px) {
@@ -761,17 +783,17 @@
     width: 7rem;
   }
 
-  .wedding-overview > div:first-child,
+  .wedding-overview > div:first-of-type,
   .wedding-overview > div:last-child {
     grid-column: 1;
     grid-row: auto;
   }
 
-  .wedding-overview > div:first-child {
+  .wedding-overview > div:first-of-type {
     padding-bottom: clamp(2.5rem, 8vw, 4rem);
   }
 
-  .wedding-overview > div:first-child::after {
+  .wedding-overview > div:first-of-type::after {
     width: 5rem;
     height: 2.5rem;
   }

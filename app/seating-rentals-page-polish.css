@@ -56,6 +56,19 @@
   list-style-type: circle !important;
 }
 
+.foundation-shell .seating-page .seating-item-plan.seating-item-photo {
+  min-height: 0;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border: 1px solid rgb(140 111 72 / 24%);
+  background: var(--seating-paper);
+}
+
+.foundation-shell .seating-page .seating-item-photo img {
+  object-fit: cover !important;
+  object-position: center;
+}
+
 /* Match the light internal-page hero texture used across the site. */
 .foundation-shell .seating-page > .seating-hero::before {
   background-color: var(--color-luxe-ivory);
@@ -64,6 +77,94 @@
     transparent 0.7px
   );
   background-size: 4px 4px;
+}
+
+.foundation-shell .seating-page .seating-hero-plan.seating-hero-photo {
+  min-height: 0;
+  aspect-ratio: 1554 / 960;
+  overflow: hidden;
+  background: var(--seating-paper);
+}
+
+.foundation-shell .seating-page .seating-hero-photo img {
+  object-fit: cover !important;
+  object-position: center;
+}
+
+.foundation-shell .seating-page .seating-hero-photo > b {
+  right: 1rem;
+  bottom: 1rem;
+  padding: 0.55rem 0.7rem;
+  background: rgb(31 31 31 / 78%);
+  color: var(--color-luxe-ivory);
+}
+
+.foundation-shell .seating-page .seating-overview-media {
+  min-height: 0;
+  aspect-ratio: 941 / 1120;
+}
+
+.foundation-shell .seating-page .seating-overview-media::before,
+.foundation-shell .seating-page .seating-overview-media::after {
+  content: none;
+}
+
+.foundation-shell .seating-page .seating-overview-media img {
+  object-fit: cover !important;
+  object-position: center;
+}
+
+.foundation-shell .seating-page :is(
+  .seating-application-indoor,
+  .seating-application-outdoor
+)::before {
+  content: none;
+}
+
+.foundation-shell .seating-page .seating-application-photo {
+  position: relative;
+  aspect-ratio: 1046 / 840;
+  margin-top: var(--space-5);
+  overflow: hidden;
+  border: 1px solid rgb(140 111 72 / 24%);
+}
+
+.foundation-shell .seating-page .seating-application-photo img {
+  object-fit: cover !important;
+  object-position: center;
+}
+
+.foundation-shell .seating-page :is(
+  .seating-application-indoor,
+  .seating-application-outdoor
+) h3 {
+  margin-top: var(--space-6);
+}
+
+.foundation-shell .seating-page .seating-gallery-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: min(100%, 64rem);
+  margin-inline: auto;
+}
+
+.foundation-shell .seating-page .seating-gallery-grid figure > div {
+  min-height: 0;
+  aspect-ratio: 4 / 5;
+}
+
+.foundation-shell .seating-page .seating-gallery-photo::before {
+  content: none;
+}
+
+.foundation-shell .seating-page .seating-gallery-photo img {
+  object-fit: cover !important;
+  object-position: center;
+}
+
+@media (max-width: 700px) {
+  .foundation-shell .seating-page .seating-gallery-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .foundation-shell .seating-page #seating-hero-proof-title span {
@@ -168,7 +269,7 @@
   /* Keep the application titles to two lines at desktop widths. */
   .foundation-shell .seating-page .seating-applications h3 {
     max-width: 20ch;
-    margin-top: clamp(9rem, 16vw, 13.5rem);
+    margin-top: clamp(1.75rem, 3vw, 2.75rem);
     font-size: clamp(2.4rem, 3.1vw, 3.7rem);
   }
 

@@ -12,6 +12,15 @@
   padding-bottom: clamp(2.5rem, 4vw, 4rem);
 }
 
+.foundation-shell .events-page .events-hero-composition {
+  border: 1px solid color-mix(in srgb, var(--color-luxe-black) 22%, transparent);
+  background: var(--color-luxe-black);
+}
+
+.foundation-shell .events-page .events-hero-composition img {
+  object-position: center 48%;
+}
+
 @media (min-width: 1280px) {
   .foundation-shell .events-page .events-approach h2#events-approach-title {
     font-size: clamp(2.2rem, 2.85vw, 2.8rem) !important;

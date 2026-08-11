@@ -160,8 +160,8 @@ export const experienceGalleryPreview = [
   {
     id: "completed-setting",
     number: "03",
-    label: "The completed setting",
-    context: "Structure, material, and the room in use",
+    label: "The coffee bar, fully styled",
+    context: "Custom cart branding, fresh florals, and outdoor service ready for guests",
     tone: "seating",
   },
 ] as const;

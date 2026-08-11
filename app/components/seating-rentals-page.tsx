@@ -8,6 +8,7 @@ import {
   rentalServiceAreas,
   seatingRentalFaqs,
 } from "../experiences/seating-rentals-content";
+import { imageAssets, type ResponsiveImageAsset } from "../image-system";
 import { pageMetadata } from "../metadata-config";
 import { seatingRentalsSectionNavigation } from "../page-section-navigation";
 import {
@@ -21,11 +22,24 @@ import { JsonLd } from "./json-ld";
 import { PageSectionNavigation } from "./page-section-navigation";
 import { PriorityAnswer } from "./priority-answer";
 import { QuoteModalTrigger } from "./quote-modal-trigger";
+import { ResponsiveImage } from "./responsive-image";
 import { ContextualInquiryPanel } from "./signature-elements";
 import { SiteShell } from "./site-shell";
 
 const seatingRentalsPath = "/experiences/seating-rentals";
 const [rentalPricingAnswer, ...rentalContextualFaqs] = seatingRentalFaqs;
+const rentalCategoryImages: Record<string, ResponsiveImageAsset | undefined> = {
+  chairs: imageAssets.experiences.whiteResinChairs,
+  tables: imageAssets.experiences.sixFootRectangularTables,
+  "cocktail-tables": imageAssets.experiences.cocktailTables,
+  tents: imageAssets.experiences.eventTents,
+  "dance-floor": imageAssets.experiences.danceFloor,
+  finishing: imageAssets.experiences.rentalFinishingPieces,
+};
+const rentalGalleryImages: Record<string, ResponsiveImageAsset | undefined> = {
+  layout: imageAssets.experiences.seatingGalleryLayoutInUse,
+  detail: imageAssets.experiences.seatingGalleryFinishingDetails,
+};
 const seatingRentalsSchema = createServicePageSchema({
   path: seatingRentalsPath,
   serviceId: divisionServiceIds.seating,
@@ -63,11 +77,8 @@ function SeatingHero() {
           </a>
         </div>
       </div>
-      <div className="seating-hero-plan" aria-hidden="true">
-        <span />
-        <span />
-        <i />
-        <i />
+      <div className="seating-hero-plan seating-hero-photo">
+        <ResponsiveImage asset={imageAssets.experiences.seatingRentalsHero} fill />
         <b>Gather / dine / celebrate</b>
       </div>
       <div className="coffee-hero-proof-heading">
@@ -97,7 +108,9 @@ function SeatingOverview() {
     <ExperienceContextSection
       id="seating-overview"
       ariaLabelledBy="seating-overview-title"
+      artAriaHidden={false}
       legacyClassName="seating-overview"
+      artClassName="seating-overview-media"
       title={<>Essential Rentals for Celebrations &amp; Outdoor Events</>}
       lead={<>A focused collection of the core pieces most intimate and mid-sized events actually need.</>}
       copy={
@@ -126,9 +139,7 @@ function SeatingOverview() {
         </>
       }
     >
-      <i />
-      <i />
-      <i />
+      <ResponsiveImage asset={imageAssets.experiences.seatingRentalsOverview} fill />
     </ExperienceContextSection>
   );
 }
@@ -157,28 +168,38 @@ function RentalCategories() {
         </p>
       </header>
       <div className="seating-inventory-grid">
-        {rentalCategories.map((category) => (
-          <article className={`seating-item-${category.id}`} key={category.id}>
-            <div className="seating-item-plan" aria-hidden="true"><i /><i /><i /></div>
-            <h3>{category.name}</h3>
-            <strong>{category.role}</strong>
-            {"items" in category ? (
-              <ul>
-                {category.items.map((item) => (
-                  <li key={item.label}>
-                    {item.label}
-                    {"subitems" in item ? (
-                      <ul>
-                        {item.subitems.map((subitem) => <li key={subitem}>{subitem}</li>)}
-                      </ul>
-                    ) : null}
-                  </li>
-                ))}
-              </ul>
-            ) : null}
-            <p>{category.description}</p>
-          </article>
-        ))}
+        {rentalCategories.map((category) => {
+          const categoryImage = rentalCategoryImages[category.id];
+
+          return (
+            <article className={`seating-item-${category.id}`} key={category.id}>
+              {categoryImage ? (
+                <div className="seating-item-plan seating-item-photo">
+                  <ResponsiveImage asset={categoryImage} fill />
+                </div>
+              ) : (
+                <div className="seating-item-plan" aria-hidden="true"><i /><i /><i /></div>
+              )}
+              <h3>{category.name}</h3>
+              <strong>{category.role}</strong>
+              {"items" in category ? (
+                <ul>
+                  {category.items.map((item) => (
+                    <li key={item.label}>
+                      {item.label}
+                      {"subitems" in item ? (
+                        <ul>
+                          {item.subitems.map((subitem) => <li key={subitem}>{subitem}</li>)}
+                        </ul>
+                      ) : null}
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+              <p>{category.description}</p>
+            </article>
+          );
+        })}
       </div>
     </section>
   );
@@ -252,8 +273,11 @@ function IndoorOutdoorApplications() {
         </p>
       </header>
       <div>
-        <article>
+        <article className="seating-application-indoor">
           <span>Interior</span>
+          <div className="seating-application-photo">
+            <ResponsiveImage asset={imageAssets.experiences.seatingIndoorApplication} fill />
+          </div>
           <h3>Indoor venue planning and site logistics</h3>
           <p>
             For indoor events, room dimensions, access, delivery timing, and the areas
@@ -261,8 +285,11 @@ function IndoorOutdoorApplications() {
             the right quantities and placement of our rentals.
           </p>
         </article>
-        <article>
+        <article className="seating-application-outdoor">
           <span>Exterior</span>
+          <div className="seating-application-photo">
+            <ResponsiveImage asset={imageAssets.experiences.seatingOutdoorApplication} fill />
+          </div>
           <h3>Outdoor event planning and weather contingency</h3>
           <p>
             For backyard and outdoor events, we review the available footprint, ground
@@ -311,17 +338,30 @@ function RentalGallery() {
           and the dance floor come together in real indoor and outdoor celebrations.
         </p>
       </header>
-      <div className="seating-gallery-grid" data-asset-status="awaiting-approved-photography">
-        {rentalGalleryPreview.map((item) => (
-          <figure className={`seating-gallery-${item.tone}`} key={item.number}>
-            <div aria-hidden="true"><i /><i /><i /></div>
-            <figcaption>
-              <span>{item.number}</span>
-              <h3>{item.label}</h3>
-              <small>{item.note}</small>
-            </figcaption>
-          </figure>
-        ))}
+      <div className="seating-gallery-grid" data-asset-status="approved-photography">
+        {rentalGalleryPreview.map((item) => {
+          const galleryImage = rentalGalleryImages[item.tone];
+
+          return (
+            <figure className={`seating-gallery-${item.tone}`} key={item.number}>
+              <div
+                className={galleryImage ? "seating-gallery-photo" : undefined}
+                aria-hidden={!galleryImage}
+              >
+                {galleryImage ? (
+                  <ResponsiveImage asset={galleryImage} fill />
+                ) : (
+                  <><i /><i /><i /></>
+                )}
+              </div>
+              <figcaption>
+                <span>{item.number}</span>
+                <h3>{item.label}</h3>
+                <small>{item.note}</small>
+              </figcaption>
+            </figure>
+          );
+        })}
       </div>
       <Link href="/gallery">Explore the Luxe event gallery <span aria-hidden="true">↗︎</span></Link>
     </section>

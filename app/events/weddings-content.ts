@@ -1,4 +1,5 @@
 import { signatureExperiences, type SignatureExperience } from "../signature-elements";
+import { imageAssets } from "../image-system";
 
 const weddingExperienceDescriptions: Record<SignatureExperience["id"], string> = {
   coffee:
@@ -140,18 +141,21 @@ export const weddingGalleryPreview = [
     label: "The welcome",
     note: "Coffee service within the arrival or cocktail-hour setting.",
     tone: "welcome",
+    image: imageAssets.experiences.weddingWelcome,
   },
   {
     number: "02",
     label: "The sweet moment",
     note: "On-site dessert preparation and guest interaction.",
     tone: "dessert",
+    image: imageAssets.experiences.weddingSweetMoment,
   },
   {
     number: "03",
     label: "The room",
-    note: "Seating, tables, linens, lighting, and atmosphere in context",
+    note: "Gold seating, soft linens, garden florals, and warm light shape an intimate reception beneath the trees.",
     tone: "room",
+    image: imageAssets.experiences.weddingRoom,
   },
 ] as const;
 

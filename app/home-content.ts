@@ -34,6 +34,11 @@ export const homeEventImageGroups = [
       status: "approved",
       format: "webp",
     },
+    video: {
+      mp4: "/images/home/luxe-weddings-private-events.mp4",
+      webm: "/images/home/luxe-weddings-private-events.webm",
+      poster: "/images/home/luxe-weddings-private-events-poster.webp",
+    },
   },
   {
     id: "professional-gatherings",
@@ -51,6 +56,11 @@ export const homeEventImageGroups = [
         "(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) 45vw, 38vw",
       status: "approved",
       format: "webp",
+    },
+    video: {
+      mp4: "/images/home/luxe-corporate-events-brand-activations.mp4",
+      webm: "/images/home/luxe-corporate-events-brand-activations.webm",
+      poster: "/images/home/luxe-corporate-events-brand-activations-poster.webp",
     },
   },
 ] as const;
@@ -164,6 +174,11 @@ export const homeWorkingImage = {
       "(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) 45vw, 42vw",
     status: "approved",
     format: "webp",
+  },
+  video: {
+    mp4: "/images/home/luxe-working-with-luxe.mp4",
+    webm: "/images/home/luxe-working-with-luxe.webm",
+    poster: "/images/home/luxe-working-with-luxe-poster.webp",
   },
 } as const;
 

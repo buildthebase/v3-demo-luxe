@@ -1,9 +1,11 @@
 import Link from "next/link";
+import { imageAssets } from "../image-system";
 import {
   eventHubEntries,
   eventLedPrinciples,
   eventsGalleryPreview,
 } from "../events/content";
+import { ResponsiveImage } from "./responsive-image";
 
 export function EventsHero({
   titleLines,
@@ -36,14 +38,8 @@ export function EventsHero({
           </Link>
         </div>
       </div>
-      <div className="events-hero-composition" aria-hidden="true">
-        <span className="events-hero-orbit events-hero-orbit-one" />
-        <span className="events-hero-orbit events-hero-orbit-two" />
-        <span className="events-hero-stage">
-          <i />
-          <i />
-          <i />
-        </span>
+      <div className="events-hero-composition">
+        <ResponsiveImage asset={imageAssets.experiences.eventsHubHero} fill />
       </div>
     </header>
   );

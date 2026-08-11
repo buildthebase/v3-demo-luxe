@@ -144,12 +144,6 @@ export const rentalEventLinks = [
 
 export const rentalGalleryPreview = [
   {
-    number: "01",
-    label: "The room before guests arrive",
-    note: "A room-wide view of seating, circulation, and service zones.",
-    tone: "room",
-  },
-  {
     number: "02",
     label: "The layout in use",
     note: "A guest-ready layout showing how the setting functions in use.",
