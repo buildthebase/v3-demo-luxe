@@ -17,6 +17,7 @@ let studioBusy = false;
 let studioBusyStartedAt = 0;
 let studioBusyTimer = null;
 let activeRequestId = null;
+let activeRequestProjectId = null;
 let selectedCalendarId = null;
 let calendarMonth = new Date().toISOString().slice(0, 7);
 let calendarMode = "month";
@@ -26,6 +27,8 @@ let studioSeed = null;
 let helpContextView = "articles";
 let serverFeaturesReady = true;
 let helpDrawerOpen = false;
+let registry = null;
+let activeProjectId = null;
 
 const fallbackCalendarConfig = {
   cadencePerMonth: 2,
@@ -38,7 +41,7 @@ const fallbackCalendarConfig = {
   campaignPeriods: [],
 };
 
-const studioActions = new Set(["preview", "studio-brief", "approve-brief", "studio-outline", "approve-outline", "studio-draft", "help-ask", "help-ask-drawer", "help-repair", "help-repair-feedback", "help-repair-accept", "calendar-propose"]);
+const studioActions = new Set(["preview", "studio-brief", "approve-brief", "studio-outline", "approve-outline", "studio-draft", "help-ask", "help-ask-drawer", "help-repair", "help-repair-feedback", "help-repair-accept", "calendar-propose", "seo-google-sync", "seo-crawl", "seo-opportunities", "seo-report"]);
 const cancellableActions = new Set(["help-ask", "help-ask-drawer", "help-repair", "help-repair-feedback"]);
 const studioActivity = {
   "preview": ["Exact preview", "Preparing the Luxe article template", "Starting the local site renderer when needed, then opening this draft in its real published layout."],
@@ -53,6 +56,10 @@ const studioActivity = {
   "help-repair-feedback": ["Repair proposal", "Revising the proposed fix", "Applying your feedback to a new proposal revision. Your files remain unchanged; this attempt stops automatically within 55 seconds."],
   "help-repair-accept": ["Approved repair", "Applying and validating your change", "The CMS is creating a recoverable revision and checking the accepted fix."],
   "calendar-propose": ["Calendar planning", "Building an editorial proposal", "Checking existing articles, approved knowledge, cadence, blackout dates, and content balance."],
+  "seo-google-sync": ["Search Console", "Importing current search evidence", "Reading the selected property and storing normalized observations inside this project only."],
+  "seo-crawl": ["Technical audit", "Crawling this project", "Checking same-origin public routes, metadata, indexability, links, images, and schema expectations."],
+  "seo-opportunities": ["SEO opportunities", "Evaluating the evidence", "Creating deterministic opportunities from this project's measurements and technical findings."],
+  "seo-report": ["SEO report", "Preparing the project report", "Summarizing measurements, completed changes, findings, priorities, and data limitations."],
 };
 
 const escapeHtml = (value) => String(value ?? "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
@@ -74,6 +81,7 @@ function startStudioActivity(action) {
   const [eyebrow, title, detail] = studioActivity[action];
   const activity = document.querySelector("#studio-activity");
   studioBusy = true;
+  document.querySelector("#project-task-state").textContent = `Task · ${state?.project?.manifest?.name || "project"}`;
   studioBusyStartedAt = Date.now();
   document.body.classList.add("studio-is-busy");
   workspace.setAttribute("aria-busy", "true");
@@ -98,6 +106,7 @@ function stopStudioActivity() {
   clearInterval(studioBusyTimer);
   studioBusyTimer = null;
   studioBusy = false;
+  document.querySelector("#project-task-state").textContent = "Idle";
   document.body.classList.remove("studio-is-busy");
   workspace.setAttribute("aria-busy", "false");
   document.querySelectorAll("[data-action]").forEach((button) => {
@@ -112,6 +121,7 @@ async function runStudioAction(action, task) {
     return;
   }
   activeRequestId = crypto.randomUUID();
+  activeRequestProjectId = activeProjectId;
   startStudioActivity(action);
   const minimumVisibleTime = new Promise((resolve) => setTimeout(resolve, 500));
   try {
@@ -119,16 +129,22 @@ async function runStudioAction(action, task) {
     await minimumVisibleTime;
     return result;
   } finally {
-    activeRequestId = null;
     stopStudioActivity();
+    activeRequestId = null;
+    activeRequestProjectId = null;
   }
 }
 
-async function api(path, options = {}) {
+function scopedApiPath(path) {
+  if (!activeProjectId || !path.startsWith("/api/") || path.startsWith("/api/projects") || path === "/api/session" || path.startsWith("/api/google/")) return path;
+  return `/api/projects/${encodeURIComponent(activeProjectId)}${path.slice(4)}`;
+}
+
+async function api(path, options = {}, { global = false } = {}) {
   const headers = { ...(options.headers || {}) };
   if (options.body && !(options.body instanceof ArrayBuffer)) headers["content-type"] = "application/json";
   if (options.method && options.method !== "GET") headers["x-cms-token"] = token;
-  const response = await fetch(path, { ...options, headers });
+  const response = await fetch(global ? path : scopedApiPath(path), { ...options, headers });
   const result = await response.json().catch(() => ({}));
   if (!response.ok) {
     const error = new Error(result.error || `Request failed (${response.status})`);
@@ -148,6 +164,54 @@ async function refresh() {
     calendarProposals: Array.isArray(next.calendarProposals) ? next.calendarProposals : [],
     helpSessions: Array.isArray(next.helpSessions) ? next.helpSessions : [],
   };
+  activeProjectId = next.project.id;
+  updateProjectChrome();
+}
+
+function activeProject() {
+  return registry?.projects?.find((project) => project.projectId === activeProjectId) || null;
+}
+
+function updateProjectChrome() {
+  const project = activeProject();
+  const manifest = state?.project?.manifest || project?.manifest;
+  const name = manifest?.name || "Local CMS";
+  const domain = manifest?.canonicalBaseUrl ? new URL(manifest.canonicalBaseUrl).hostname : "No canonical domain";
+  document.querySelector("#cms-project-name").textContent = name;
+  document.querySelector("#cms-project-domain").textContent = `${domain} · ${state?.project?.adapter?.label || project?.adapter?.label || "Disconnected"}`;
+  const select = document.querySelector("#project-switcher");
+  if (select && registry) {
+    select.innerHTML = registry.projects.map((entry) => `<option value="${escapeHtml(entry.projectId)}"${entry.projectId === activeProjectId ? " selected" : ""}>${escapeHtml(entry.manifest?.name || entry.projectId)}${entry.connectionStatus === "connected" ? "" : " · disconnected"}</option>`).join("");
+  }
+  const capabilities = new Set(state?.project?.adapter?.capabilities || []);
+  const viewCapabilities = { articles: "articles", editor: "articles", links: "articles", media: "media", knowledge: "knowledge", voice: "voice", studio: "studio", calendar: "calendar" };
+  document.querySelectorAll("[data-view]").forEach((button) => {
+    const capability = viewCapabilities[button.dataset.view];
+    button.hidden = Boolean(capability && !capabilities.has(capability));
+  });
+}
+
+function resetProjectUiState() {
+  selectedSlug = null;
+  mediaTargetSlug = null;
+  activeJobId = null;
+  selectedCalendarId = null;
+  helpSessionId = null;
+  mediaLibraryPage = 1;
+  statusFilter = "all";
+}
+
+async function switchProject(projectId) {
+  if (!projectId || projectId === activeProjectId) return;
+  await api("/api/projects/activate", { method: "POST", body: JSON.stringify({ projectId }) }, { global: true });
+  activeProjectId = projectId;
+  registry = await api("/api/projects", {}, { global: true });
+  resetProjectUiState();
+  await refresh();
+  selectedSlug = state.drafts[0]?.slug || state.published[0]?.slug || null;
+  const supported = state.project.adapter.capabilities.includes("articles");
+  setView(supported ? "articles" : "seo");
+  showToast(`Switched to ${state.project.manifest.name}.`);
 }
 
 function restartNotice() {
@@ -191,6 +255,11 @@ function renderMediaAsset(asset, article) {
 }
 
 function setView(view) {
+  const required = { articles: "articles", editor: "articles", links: "articles", media: "media", knowledge: "knowledge", voice: "voice", studio: "studio", calendar: "calendar" }[view];
+  if (required && !state?.project?.adapter?.capabilities?.includes(required)) {
+    showToast(`${state.project.adapter.label} does not support this workspace.`, true);
+    view = "seo";
+  }
   if (view === "help" && activeView !== "help") helpContextView = activeView;
   else if (view !== "help") helpContextView = view;
   activeView = view;
@@ -215,7 +284,7 @@ function issueSummary(slug) {
 
 function renderArticles() {
   const articles = allArticles();
-  workspace.innerHTML = `${renderHeader("Luxe Journal", "Articles", '<button class="button primary" data-action="new-article">New article</button>')}
+  workspace.innerHTML = `${renderHeader(state.project.manifest.name, "Articles", '<button class="button primary" data-action="new-article">New article</button>')}
     <input class="search" id="article-search" type="search" placeholder="Search title, slug, category, excerpt, or body" aria-label="Search articles">
     <div class="filters">${["all", "draft", "published", "archived", "trash"].map((status) => `<button class="filter${statusFilter === status ? " active" : ""}" data-status-filter="${status}">${status[0].toUpperCase() + status.slice(1)}</button>`).join("")}</div>
     <div class="article-list" id="article-list">${renderArticleRows(articles)}</div>`;
@@ -700,17 +769,48 @@ function renderHelp() {
   requestAnimationFrame(() => { const messages = document.querySelector("#help-messages"); if (messages) messages.scrollTop = messages.scrollHeight; });
 }
 
+function renderProjects() {
+  const projects = registry?.projects || [];
+  workspace.innerHTML = `${renderHeader("Local workspace", "Projects", '<button class="button primary" data-action="project-add-reveal">Connect website</button>')}
+    <section class="project-overview panel"><div><p class="eyebrow">Strict isolation</p><h2>One workspace, separate project histories.</h2></div><p class="subtle">Articles, media, Studio threads, Help, calendars, SEO evidence, crawls, opportunities, and reports remain attached to each immutable project UUID. Disconnecting never deletes files.</p></section>
+    <section class="project-list">${projects.map((project) => {
+      const manifest = project.manifest;
+      const active = project.projectId === activeProjectId;
+      return `<article class="project-card${active ? " active" : ""}"><div class="project-card-heading"><div><p class="eyebrow">${active ? "Active project" : escapeHtml(project.connectionStatus)}</p><h2>${escapeHtml(manifest?.name || "Unavailable project")}</h2></div><span class="connection ${escapeHtml(project.connectionStatus)}">${escapeHtml(project.connectionStatus)}</span></div><dl><div><dt>Domain</dt><dd>${escapeHtml(manifest?.canonicalBaseUrl || "—")}</dd></div><div><dt>Adapter</dt><dd>${escapeHtml(project.adapter?.label || "—")}</dd></div><div><dt>Project UUID</dt><dd><code>${escapeHtml(project.projectId)}</code></dd></div><div><dt>Repository</dt><dd><code>${escapeHtml(project.root)}</code></dd></div></dl><div class="toolbar">${active ? "" : `<button class="button primary" data-action="project-activate" data-project-id="${escapeHtml(project.projectId)}">Open project</button>`}<button class="button" data-action="project-open-folder" data-project-id="${escapeHtml(project.projectId)}">Open folder</button><button class="button" data-action="project-validate" data-project-id="${escapeHtml(project.projectId)}">Validate connection</button><button class="button" data-action="project-export" data-project-id="${escapeHtml(project.projectId)}">Export bundle</button><button class="text-action" data-action="project-reconnect-reveal" data-project-id="${escapeHtml(project.projectId)}">Reconnect moved folder</button>${active ? "" : `<button class="text-action danger" data-action="project-disconnect" data-project-id="${escapeHtml(project.projectId)}">Disconnect</button>`}</div></article>`;
+    }).join("")}</section>
+    <section class="panel project-connect" id="project-connect" hidden><p class="eyebrow">Connect website</p><h2>Add a local project</h2><p class="subtle">A generic project begins with SEO auditing and measurement. Its immutable manifest allows a publishing adapter to be added later without losing history.</p><form id="project-add-form" class="field-grid">${field("Display name", "project-name", "")}${field("Canonical URL", "project-canonical", "https://")}${field("Absolute repository path", "project-root", "", { full: true })}<div class="field full"><label for="project-adapter">Adapter</label><select id="project-adapter" name="project-adapter"><option value="generic-seo-v1">Generic website SEO</option><option value="luxe-json-v1">Luxe JSON / Vinext</option></select></div><div class="toolbar full"><button class="button primary" data-action="project-add">Connect project</button><button class="button" data-action="project-add-cancel">Cancel</button></div></form></section>
+    <section class="panel project-reconnect" id="project-reconnect" hidden><p class="eyebrow">Reconnect</p><h2>Locate the moved repository</h2><form id="project-reconnect-form" class="field-grid"><input type="hidden" name="reconnect-project-id">${field("New absolute repository path", "reconnect-root", "", { full: true })}<div class="toolbar full"><button class="button primary" data-action="project-reconnect">Confirm UUID and reconnect</button><button class="button" data-action="project-reconnect-cancel">Cancel</button></div></form></section>
+    <section class="panel"><p class="eyebrow">Recovery</p><h2>Import a project bundle</h2><p class="subtle">The bundle is checksum-validated before writing. Restore the original UUID, or explicitly create an isolated clone with a new UUID.</p><form id="project-import-form" class="field-grid">${field("Absolute bundle file", "project-bundle-file", "", { full: true })}${field("Destination repository path", "project-import-root", "", { full: true })}<label class="checkbox full"><input id="project-import-clone" type="checkbox"> Create an explicit clone with a new project UUID.</label><div class="toolbar full"><button class="button" data-action="project-import-inspect">Validate bundle</button><button class="button primary" data-action="project-import">Import bundle</button></div></form><div id="project-import-result"></div></section>`;
+}
+
+function percent(value) { return `${((Number(value) || 0) * 100).toFixed(1)}%`; }
+
+function renderSeo() {
+  const seo = state.seo || { observations: [], crawlRuns: [], opportunities: [], annotations: [], reports: [], integration: {}, summary: {} };
+  const latestRun = seo.crawlRuns.at(-1);
+  const latestReport = seo.reports.at(-1);
+  const totals = seo.views?.totals || { clicks: 0, impressions: 0, ctr: 0, position: null };
+  workspace.innerHTML = `${renderHeader("Project evidence", "SEO intelligence", '<button class="button primary" data-action="seo-crawl">Run technical audit</button>')}
+    <div class="metric-grid seo-metrics"><div class="metric"><strong>${totals.clicks.toLocaleString()}</strong><span>Search clicks</span></div><div class="metric"><strong>${totals.impressions.toLocaleString()}</strong><span>Impressions</span></div><div class="metric"><strong>${percent(totals.ctr)}</strong><span>Observed CTR</span></div><div class="metric"><strong>${seo.summary.openOpportunities || 0}</strong><span>Open opportunities</span></div></div>
+    <div class="seo-layout"><div class="seo-main"><section class="panel"><div class="section-heading"><div><p class="eyebrow">Search Console</p><h2>Read-only search evidence</h2></div><span class="connection ${escapeHtml(seo.integration?.searchConsole?.status || "not-configured")}">${escapeHtml(seo.integration?.searchConsole?.status || "not configured")}</span></div><p class="subtle">Each property is bound only to this project. CSV imports use the same normalized observation model as OAuth synchronization.</p><p><strong>Property:</strong> ${escapeHtml(seo.integration?.searchConsole?.property || "Not bound")}</p><div class="toolbar"><button class="button" data-action="seo-google-connect">Connect Google</button><button class="button" data-action="seo-google-sites">Choose property</button>${seo.integration?.searchConsole?.property ? '<button class="button primary" data-action="seo-google-sync">Sync 90 days</button><button class="text-action" data-action="seo-google-unbind">Unbind from project</button>' : ""}</div><div id="seo-google-properties"></div><form id="seo-csv-form" class="seo-import"><label for="seo-csv">Or import Search Console CSV</label><input id="seo-csv" type="file" accept=".csv,text/csv"><div class="toolbar"><button class="button" data-action="seo-csv-preview">Preview import</button><button class="button primary" data-action="seo-csv-commit">Import atomically</button></div></form><div id="seo-import-result"></div></section>
+      ${seo.summary.observationCount ? `<section class="panel"><p class="eyebrow">Search views</p><h2>Comparable evidence</h2><div class="comparison-grid"><article><span>Current 28 days</span><strong>${seo.views.currentPeriod.clicks} clicks</strong><small>${escapeHtml(seo.views.currentPeriod.startDate || "—")} to ${escapeHtml(seo.views.currentPeriod.endDate || "—")}</small></article><article><span>Previous 28 days</span><strong>${seo.views.previousPeriod.clicks} clicks</strong><small>${escapeHtml(seo.views.previousPeriod.startDate || "—")} to ${escapeHtml(seo.views.previousPeriod.endDate || "—")}</small></article>${seo.views.yearOverYear.available ? `<article><span>Prior-year period</span><strong>${seo.views.yearOverYear.clicks} clicks</strong><small>${escapeHtml(seo.views.yearOverYear.startDate)} to ${escapeHtml(seo.views.yearOverYear.endDate)}</small></article>` : ""}<article><span>Branded</span><strong>${seo.views.branded.clicks} clicks</strong><small>${seo.views.branded.impressions} impressions</small></article><article><span>Non-branded</span><strong>${seo.views.nonBranded.clicks} clicks</strong><small>${seo.views.nonBranded.impressions} impressions</small></article></div><h3>Route groups</h3><div class="seo-table">${seo.views.byRouteGroup.map((row) => `<div><strong>${escapeHtml(row.label)}</strong><span>${row.clicks} clicks</span><span>${row.impressions} impressions</span><span>${percent(row.ctr)} CTR</span></div>`).join("")}</div><div class="search-segment-grid">${[["Device", seo.views.byDevice], ["Country", seo.views.byCountry], ["Search type", seo.views.bySearchType]].map(([label, rows]) => `<section><h3>${label}</h3><div class="seo-table compact">${rows.slice(0, 8).map((row) => `<div><strong>${escapeHtml(row.label)}</strong><span>${row.clicks} clicks</span><span>${row.impressions} impressions</span></div>`).join("") || '<p class="empty">No data</p>'}</div></section>`).join("")}</div>${seo.views.limitations.map((item) => `<p class="subtle">${escapeHtml(item)}</p>`).join("")}</section>` : ""}
+      <section class="panel"><div class="section-heading"><div><p class="eyebrow">Opportunity queue</p><h2>Evidence before recommendations</h2></div><button class="button" data-action="seo-opportunities">Refresh opportunities</button></div>${seo.opportunities.length ? `<div class="opportunity-list">${seo.opportunities.map((item) => `<article><div><span class="status">${escapeHtml(item.status)}</span><span class="confidence">${escapeHtml(item.confidence)} confidence</span></div><h3>${escapeHtml(item.type.replaceAll("-", " "))}</h3><a href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.url)}</a><p>${escapeHtml(item.observation)}</p><p class="subtle"><strong>Proposed:</strong> ${escapeHtml(item.proposedAction)}</p><div class="toolbar"><select data-opportunity-status="${escapeHtml(item.id)}">${["new", "reviewing", "approved", "scheduled", "in-progress", "completed", "monitoring", "rejected", "dismissed"].map((status) => `<option${item.status === status ? " selected" : ""}>${status}</option>`).join("")}</select><button class="button" data-action="seo-opportunity-save" data-opportunity-id="${escapeHtml(item.id)}">Save status</button>${item.status === "approved" && state.project.adapter.capabilities.includes("calendar") ? `<button class="button" data-action="seo-opportunity-calendar" data-opportunity-id="${escapeHtml(item.id)}">Add to calendar</button>` : ""}${item.status === "approved" && state.project.adapter.capabilities.includes("studio") ? `<button class="button" data-action="seo-opportunity-studio" data-opportunity-id="${escapeHtml(item.id)}">Start Studio brief</button>` : ""}</div></article>`).join("")}</div>` : '<p class="empty">Run a crawl or import search evidence, then generate opportunities.</p>'}</section>
+      <section class="panel"><p class="eyebrow">Change annotations</p><h2>Record what changed</h2><form id="seo-annotation-form" class="field-grid">${field("Change title", "annotation-title", "")}${field("Affected URL", "annotation-url", state.project.manifest.canonicalBaseUrl)}${field("Implemented date", "annotation-date", new Date().toISOString().slice(0, 10), { type: "date" })}${field("Notes", "annotation-notes", "", { type: "textarea", full: true })}<div class="toolbar full"><button class="button primary" data-action="seo-annotation-save">Save annotation</button></div></form></section></div>
+      <aside><section class="panel"><p class="eyebrow">Technical audit</p><h2>${latestRun ? `${latestRun.pageCount} pages checked` : "No crawl yet"}</h2><p class="subtle">${latestRun ? `${latestRun.findingCount} findings · ${formatDate(latestRun.completedAt)}` : "Begin with the configured sitemap and homepage."}</p>${latestRun?.findings?.length ? `<ul class="finding-list">${latestRun.findings.slice(0, 12).map((item) => `<li class="${escapeHtml(item.severity)}"><strong>${escapeHtml(item.ruleId)}</strong><span>${escapeHtml(item.evidence)}</span><small>${escapeHtml(item.url)}</small></li>`).join("")}</ul>` : ""}</section><section class="panel"><p class="eyebrow">Reporting</p><h2>Project-only report</h2>${field("Start date (optional)", "report-start", "", { type: "date", full: true })}${field("End date (optional)", "report-end", "", { type: "date", full: true })}<button class="button primary" data-action="seo-report">Generate report</button>${latestReport ? `<dl class="report-summary"><div><dt>Generated</dt><dd>${formatDate(latestReport.generatedAt)}</dd></div><div><dt>Clicks</dt><dd>${latestReport.totals.clicks}</dd></div><div><dt>Impressions</dt><dd>${latestReport.totals.impressions}</dd></div><div><dt>Open findings</dt><dd>${latestReport.technical.openFindings}</dd></div></dl><div class="toolbar report-exports">${["html", "csv", "json"].map((format) => `<a class="button" href="${scopedApiPath(`/api/seo/reports/export?reportId=${encodeURIComponent(latestReport.id)}&format=${format}`)}">${format}</a>`).join("")}</div>` : '<p class="subtle">Reports state limitations and never claim causation.</p>'}</section><section class="panel"><p class="eyebrow">GA4 readiness</p><h2>Prepared, not activated</h2><p class="subtle">Tracking remains disabled until consent, events, inquiry handoff, privacy, and attribution are approved.</p></section></aside></div>`;
+}
+
 function renderSettings() {
   workspace.innerHTML = `${renderHeader("Local controls", "Settings")}
     <div class="two-column"><section class="panel"><h2>Codex usage safeguard</h2><p class="subtle">The SDK uses your saved local Codex sign-in. The CMS strips API-key variables and never configures paid fallback. Codex does not expose an API for this CMS to inspect your account’s credit balance, so generation remains locked until you confirm account-level auto top-up is off.</p>
       <label class="checkbox"><input id="credits-confirmed" type="checkbox" ${state.settings.paidCreditsDisabledAcknowledged ? "checked" : ""}> I confirmed in Codex Settings → Usage that paid credits and auto top-up are disabled.</label>
       <div class="toolbar" style="margin-top:22px"><button class="button primary" data-action="save-settings">Save safeguard</button></div>
-    </section><aside><section class="panel"><h2>Local access</h2><p><strong>Host:</strong> 127.0.0.1</p><p><strong>Port:</strong> ${state.settings.port}</p><p><strong>Persistence:</strong> versioned JSON files</p><p><strong>Deployment:</strong> disabled</p>${field("Public site URL", "public-site-url", state.settings.publicSiteUrl || "http://127.0.0.1:3000", { full: true })}<p class="subtle">Exact draft previews open through the real Luxe website development server. The CMS will also detect ports 3000–3005 automatically.</p></section></aside></div>`;
+    </section><aside><section class="panel"><h2>Project configuration</h2><p><strong>Host:</strong> 127.0.0.1</p><p><strong>Port:</strong> ${state.settings.port}</p><p><strong>Persistence:</strong> project-owned files</p><p><strong>Deployment:</strong> disabled</p>${field("Public site URL", "public-site-url", state.settings.publicSiteUrl || state.project.manifest.publicSiteUrl, { full: true })}${field("Maximum pages per crawl", "crawl-max-pages", state.settings.crawlMaxPages || 250, { type: "number", full: true })}${field("Minimum impressions for opportunities", "opportunity-min-impressions", state.settings.opportunityThresholds?.minimumImpressions || 100, { type: "number", full: true })}${field("Low CTR threshold (%)", "opportunity-ctr", (state.settings.opportunityThresholds?.lowCtr || 0.02) * 100, { type: "number", full: true })}${field("Default reporting period (days)", "reporting-days", state.settings.reportingPeriodDays || 30, { type: "number", full: true })}<p class="subtle">Preview, build, crawl, and validation behaviour comes from the active project's registered adapter.</p></section><section class="panel"><p class="eyebrow">Global local setting</p><h2>Google OAuth</h2>${field("OAuth client ID", "google-client-id", state.settings.googleOAuthClientId || "", { full: true })}${field("OAuth client secret", "google-client-secret", state.settings.googleOAuthClientSecret || "", { type: "password", full: true })}<p class="subtle">Credentials stay in the gitignored local registry and are never exported with project data.</p></section></aside></div>`;
 }
 
 function render() {
   if (!state) return;
-  if (activeView === "articles") renderArticles();
+  if (activeView === "projects") renderProjects();
+  else if (activeView === "articles") renderArticles();
   else if (activeView === "editor") renderEditor();
   else if (activeView === "links") renderLinks();
   else if (activeView === "media") renderMedia();
@@ -718,6 +818,7 @@ function render() {
   else if (activeView === "voice") renderVoice();
   else if (activeView === "studio") renderStudio();
   else if (activeView === "calendar") renderCalendar();
+  else if (activeView === "seo") renderSeo();
   else if (activeView === "help") renderHelp();
   else renderSettings();
   renderHelpDrawer();
@@ -788,7 +889,7 @@ document.addEventListener("click", (event) => {
     cancelButton.disabled = true;
     cancelButton.textContent = "Cancelling…";
     withAction(async () => {
-      const result = await api("/api/codex/cancel", { method: "POST", body: JSON.stringify({ requestId: activeRequestId }) });
+      const result = await api(`/api/projects/${encodeURIComponent(activeRequestProjectId)}/codex/cancel`, { method: "POST", body: JSON.stringify({ requestId: activeRequestId }) }, { global: true });
       showToast(result.cancelled ? "Codex work cancelled. Nothing was changed." : "This step had already finished.");
     });
     return;
@@ -798,6 +899,73 @@ document.addEventListener("click", (event) => {
     return;
   }
   withAction(async () => {
+    if (action === "project-add-reveal" || action === "project-add-cancel") { document.querySelector("#project-connect").hidden = action.endsWith("cancel"); return; }
+    if (action === "project-reconnect-cancel") { document.querySelector("#project-reconnect").hidden = true; return; }
+    if (action === "project-reconnect-reveal") {
+      const form = document.querySelector("#project-reconnect-form");
+      form.elements["reconnect-project-id"].value = event.target.dataset.projectId;
+      document.querySelector("#project-reconnect").hidden = false;
+      document.querySelector("#project-reconnect").scrollIntoView({ behavior: "smooth" });
+      return;
+    }
+    if (action === "project-add") {
+      const form = new FormData(document.querySelector("#project-add-form"));
+      const result = await api("/api/projects/add", { method: "POST", body: JSON.stringify({ root: form.get("project-root"), name: form.get("project-name"), canonicalBaseUrl: form.get("project-canonical"), adapter: form.get("project-adapter") }) }, { global: true });
+      activeProjectId = result.id;
+      registry = await api("/api/projects", {}, { global: true });
+      resetProjectUiState(); await refresh(); renderProjects(); showToast("Project connected without changing its existing files."); return;
+    }
+    if (action === "project-activate") { await switchProject(event.target.dataset.projectId); return; }
+    if (action === "project-reconnect") {
+      const form = new FormData(document.querySelector("#project-reconnect-form"));
+      await api("/api/projects/reconnect", { method: "POST", body: JSON.stringify({ projectId: form.get("reconnect-project-id"), root: form.get("reconnect-root") }) }, { global: true });
+      registry = await api("/api/projects", {}, { global: true }); await refresh(); renderProjects(); showToast("Repository reconnected by immutable project UUID."); return;
+    }
+    if (action === "project-disconnect") {
+      if (!window.confirm("Disconnect this project from the local registry? No project files will be deleted.")) return;
+      await api("/api/projects/disconnect", { method: "POST", body: JSON.stringify({ projectId: event.target.dataset.projectId }) }, { global: true });
+      registry = await api("/api/projects", {}, { global: true }); renderProjects(); updateProjectChrome(); showToast("Project disconnected. No files were deleted."); return;
+    }
+    if (action === "project-open-folder") { await api(`/api/projects/${encodeURIComponent(event.target.dataset.projectId)}/open-folder`, { method: "POST", body: "{}" }, { global: true }); showToast("Project folder opened."); return; }
+    if (action === "project-validate") { const result = await api(`/api/projects/${encodeURIComponent(event.target.dataset.projectId)}/validate`, {}, { global: true }); showToast(result.valid ? "Project connection and manifest are valid." : "Project validation failed.", !result.valid); return; }
+    if (action === "project-export") { const result = await api(`/api/projects/${encodeURIComponent(event.target.dataset.projectId)}/export`, { method: "POST", body: JSON.stringify({ includeOriginals: false }) }, { global: true }); showToast(`Project bundle saved to ${result.file}`); return; }
+    if (action === "project-import-inspect" || action === "project-import") {
+      const form = new FormData(document.querySelector("#project-import-form"));
+      const file = form.get("project-bundle-file");
+      if (!file) throw new Error("Enter the absolute project bundle path.");
+      if (action === "project-import-inspect") {
+        const result = await api("/api/projects/import/inspect", { method: "POST", body: JSON.stringify({ file }) }, { global: true });
+        document.querySelector("#project-import-result").innerHTML = `<p><strong>Valid bundle</strong> · ${result.entries.length} files · project ${escapeHtml(result.projectId)} · exported ${formatDate(result.exportedAt)}</p>`;
+      } else {
+        const root = form.get("project-import-root");
+        if (!root) throw new Error("Enter a destination repository path.");
+        const result = await api("/api/projects/import", { method: "POST", body: JSON.stringify({ file, root, clone: document.querySelector("#project-import-clone").checked }) }, { global: true });
+        activeProjectId = result.projectId; registry = await api("/api/projects", {}, { global: true }); resetProjectUiState(); await refresh(); renderProjects(); showToast(result.cloned ? "Project imported as an isolated clone." : "Project restored with its original UUID.");
+      }
+      return;
+    }
+    if (action === "seo-google-connect") { const result = await api("/api/seo/google/start", { method: "POST", body: "{}" }); window.open(result.url, "_blank", "noopener,noreferrer"); return; }
+    if (action === "seo-google-sites") { const sites = await api("/api/seo/google/sites"); const target = document.querySelector("#seo-google-properties"); target.innerHTML = `<div class="property-list">${sites.map((site) => `<button class="button" data-action="seo-google-bind" data-property="${escapeHtml(site.siteUrl)}">${escapeHtml(site.siteUrl)} · ${escapeHtml(site.permissionLevel)}</button>`).join("") || "No verified properties returned."}</div>`; return; }
+    if (action === "seo-google-bind") { await api("/api/seo/google/bind", { method: "POST", body: JSON.stringify({ property: event.target.dataset.property }) }); await refresh(); renderSeo(); showToast("Search Console property bound to this project."); return; }
+    if (action === "seo-google-unbind") { if (!window.confirm("Unbind this Search Console property from the active project? Imported evidence will remain.")) return; await api("/api/seo/google/unbind", { method: "POST", body: "{}" }); await refresh(); renderSeo(); showToast("Search Console property unbound. Existing project evidence was retained."); return; }
+    if (action === "seo-google-sync") { await runStudioAction(action, () => api("/api/seo/google/sync", { method: "POST", body: "{}" })); await refresh(); renderSeo(); showToast("Search Console evidence synchronized."); return; }
+    if (action === "seo-csv-preview" || action === "seo-csv-commit") { const file = document.querySelector("#seo-csv").files[0]; if (!file) throw new Error("Choose a Search Console CSV first."); const result = await api("/api/seo/search-console/import", { method: "POST", body: JSON.stringify({ csv: await file.text(), commit: action.endsWith("commit") }) }); document.querySelector("#seo-import-result").innerHTML = `<p><strong>${result.added}</strong> new rows · <strong>${result.duplicates}</strong> duplicates${result.committed ? " · imported" : " · preview only"}</p>`; if (result.committed) { await refresh(); renderSeo(); } return; }
+    if (action === "seo-crawl") { await runStudioAction(action, () => api("/api/seo/crawl", { method: "POST", body: JSON.stringify({ maxPages: state.settings.crawlMaxPages || 250 }) })); await refresh(); renderSeo(); showToast("Technical audit completed."); return; }
+    if (action === "seo-opportunities") { await runStudioAction(action, () => api("/api/seo/opportunities/generate", { method: "POST", body: "{}" })); await refresh(); renderSeo(); showToast("Opportunity queue refreshed from project evidence."); return; }
+    if (action === "seo-opportunity-save") { const id = event.target.dataset.opportunityId; const status = document.querySelector(`[data-opportunity-status="${id}"]`).value; await api("/api/seo/opportunities/save", { method: "POST", body: JSON.stringify({ id, status }) }); await refresh(); renderSeo(); showToast("Opportunity status saved."); return; }
+    if (action === "seo-opportunity-calendar" || action === "seo-opportunity-studio") {
+      const opportunity = state.seo.opportunities.find((item) => item.id === event.target.dataset.opportunityId);
+      if (!opportunity || opportunity.status !== "approved") throw new Error("Approve this opportunity before creating project work.");
+      if (action === "seo-opportunity-calendar") {
+        const item = await api("/api/calendar/item", { method: "POST", body: JSON.stringify({ item: { title: opportunity.proposedAction, status: "planned", targetDate: "", category: "SEO", contentPillar: opportunity.type, articleSlug: "", notes: `${opportunity.observation}\n\nEvidence: ${opportunity.evidenceSource || opportunity.url}\nMetric to monitor: ${opportunity.metricToMonitor || "Review the originating evidence after implementation."}`, proposedInternalLinks: opportunity.url ? [opportunity.url] : [] } }) });
+        await api("/api/seo/opportunities/save", { method: "POST", body: JSON.stringify({ id: opportunity.id, status: "scheduled", notes: `Calendar item ${item.id}` }) });
+        selectedCalendarId = item.id; await refresh(); setView("calendar"); showToast("Approved opportunity added to this project's calendar."); return;
+      }
+      studioSeed = { prompt: `Create a grounded article brief for this approved SEO opportunity: ${opportunity.proposedAction}. Evidence: ${opportunity.observation}. Affected URL: ${opportunity.url}. Do not convert measurement evidence into publishable factual claims.`, searchIntent: opportunity.type, category: "SEO" };
+      activeJobId = null; setView("studio"); showToast("Approved opportunity transferred into Article Studio for brief review."); return;
+    }
+    if (action === "seo-annotation-save") { const form = new FormData(document.querySelector("#seo-annotation-form")); await api("/api/seo/annotations/save", { method: "POST", body: JSON.stringify({ title: form.get("annotation-title"), url: form.get("annotation-url"), implementedAt: form.get("annotation-date"), notes: form.get("annotation-notes") }) }); await refresh(); renderSeo(); showToast("Change annotation saved."); return; }
+    if (action === "seo-report") { const startDate = document.querySelector('[name="report-start"]')?.value || undefined; const endDate = document.querySelector('[name="report-end"]')?.value || undefined; await runStudioAction(action, () => api("/api/seo/reports/generate", { method: "POST", body: JSON.stringify({ startDate, endDate }) })); await refresh(); renderSeo(); showToast("Project report generated."); return; }
     if (action === "new-article") {
       const article = await api("/api/articles/new", { method: "POST", body: "{}" });
       selectedSlug = article.slug;
@@ -866,7 +1034,7 @@ document.addEventListener("click", (event) => {
     }
     if (action === "save-knowledge") { const records = collectKnowledgeRecords(); await api("/api/knowledge/save", { method: "POST", body: JSON.stringify({ records }) }); await refresh(); renderKnowledge(); showToast("Supplemental knowledge saved."); return; }
     if (action === "save-voice") { const voice = collectVoiceRules(); await api("/api/voice/save", { method: "POST", body: JSON.stringify({ voice }) }); await refresh(); renderVoice(); showToast("Brand voice rules saved."); return; }
-    if (action === "save-settings") { await api("/api/settings/save", { method: "POST", body: JSON.stringify({ settings: { paidCreditsDisabledAcknowledged: document.querySelector("#credits-confirmed").checked, publicSiteUrl: document.querySelector('[name="public-site-url"]').value.trim() } }) }); await refresh(); renderSettings(); showToast("Local settings saved."); return; }
+    if (action === "save-settings") { await api("/api/settings/save", { method: "POST", body: JSON.stringify({ settings: { paidCreditsDisabledAcknowledged: document.querySelector("#credits-confirmed").checked, publicSiteUrl: document.querySelector('[name="public-site-url"]').value.trim(), crawlMaxPages: Number(document.querySelector('[name="crawl-max-pages"]').value), opportunityThresholds: { minimumImpressions: Number(document.querySelector('[name="opportunity-min-impressions"]').value), lowCtr: Number(document.querySelector('[name="opportunity-ctr"]').value) / 100 }, reportingPeriodDays: Number(document.querySelector('[name="reporting-days"]').value), googleOAuthClientId: document.querySelector('[name="google-client-id"]').value.trim(), googleOAuthClientSecret: document.querySelector('[name="google-client-secret"]').value } }) }); await refresh(); renderSettings(); showToast("Local settings saved."); return; }
     if (action === "help-drawer-open") { helpContextView = activeView; helpDrawerOpen = true; renderHelpDrawer(); document.querySelector("#help-drawer-question")?.focus(); return; }
     if (action === "help-drawer-close") { helpDrawerOpen = false; renderHelpDrawer(); return; }
     if (action === "help-open-history") {
@@ -1018,6 +1186,10 @@ document.addEventListener("submit", (event) => {
 });
 
 document.addEventListener("change", (event) => {
+  if (event.target.id === "project-switcher") {
+    withAction(() => switchProject(event.target.value));
+    return;
+  }
   if (event.target.id === "media-target-article") {
     mediaTargetSlug = event.target.value || null;
     renderMedia();
@@ -1093,9 +1265,15 @@ document.addEventListener("click", (event) => {
 
 async function initialize() {
   try {
-    token = (await api("/api/session")).token;
+    const session = await api("/api/session", {}, { global: true });
+    token = session.token;
+    registry = session.registry;
+    const requestedProject = new URLSearchParams(location.search).get("project");
+    activeProjectId = registry.projects.some((project) => project.projectId === requestedProject) ? requestedProject : registry.activeProjectId;
+    if (activeProjectId !== registry.activeProjectId) await api("/api/projects/activate", { method: "POST", body: JSON.stringify({ projectId: activeProjectId }) }, { global: true });
     await refresh();
     selectedSlug = state.drafts[0]?.slug || state.published[0]?.slug || null;
+    if (!state.project.adapter.capabilities.includes("articles")) activeView = "seo";
     render();
   } catch (error) {
     workspace.innerHTML = `<section class="panel"><h1>CMS unavailable</h1><p>${escapeHtml(error.message)}</p></section>`;

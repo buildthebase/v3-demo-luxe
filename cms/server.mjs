@@ -5,6 +5,7 @@ import { spawn } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import crypto from "node:crypto";
+import { AsyncLocalStorage } from "node:async_hooks";
 import sharp from "sharp";
 import { Codex } from "@openai/codex-sdk";
 import {
@@ -19,56 +20,78 @@ import {
   extractPublicPageRecords,
   publicSnapshotRecords,
 } from "./public-knowledge.mjs";
+import { ADAPTERS, ProjectRegistry, ensureProjectScaffold } from "./projects.mjs";
+import { GoogleSearchConsole } from "./google-search-console.mjs";
+import { exportProjectBundle, importProjectBundle, inspectProjectBundle } from "./bundles.mjs";
+import {
+  generateOpportunities,
+  generateReport,
+  importSearchConsoleCsv,
+  runTechnicalCrawl,
+  saveAnnotation,
+  saveIntegration,
+  saveOpportunity,
+  saveSearchConsoleRows,
+  seoState,
+} from "./seo.mjs";
 
 const CMS_DIR = path.dirname(fileURLToPath(import.meta.url));
-const ROOT = path.resolve(CMS_DIR, "..");
+const DEFAULT_ROOT = path.resolve(CMS_DIR, "..");
 const STATIC_DIR = path.join(CMS_DIR, "public");
-const BLOG_MEDIA_PUBLIC_DIR = path.join(ROOT, "public", "images", "blog");
-const BLOG_DIR = path.join(ROOT, "content", "blog");
-const FILES = {
-  published: path.join(BLOG_DIR, "published", "articles.json"),
-  draft: path.join(BLOG_DIR, "drafts", "articles.json"),
-  archived: path.join(BLOG_DIR, "archived", "articles.json"),
-  trash: path.join(BLOG_DIR, ".trash", "articles.json"),
-  revisions: path.join(BLOG_DIR, ".revisions"),
-  knowledge: path.join(BLOG_DIR, "knowledge", "records.json"),
-  snapshot: path.join(BLOG_DIR, "knowledge", "website-snapshot.json"),
-  voice: path.join(BLOG_DIR, "voice.json"),
-  media: path.join(BLOG_DIR, "media", "manifest.json"),
-  originals: path.join(BLOG_DIR, "media", "originals"),
-  jobs: path.join(BLOG_DIR, "studio", "jobs.json"),
-  calendar: path.join(BLOG_DIR, "calendar", "items.json"),
-  calendarConfig: path.join(BLOG_DIR, "calendar", "config.json"),
-  calendarProposals: path.join(BLOG_DIR, "calendar", "proposals.json"),
-  helpSessions: path.join(BLOG_DIR, ".local", "help-sessions.json"),
-  settings: path.join(CMS_DIR, "settings.json"),
-  runtime: path.join(CMS_DIR, ".runtime"),
+const projectRegistry = new ProjectRegistry({ cmsDir: CMS_DIR, defaultRoot: DEFAULT_ROOT, legacySettingsFile: path.join(CMS_DIR, "settings.json") });
+const projectStore = new AsyncLocalStorage();
+const currentProject = () => {
+  const context = projectStore.getStore();
+  if (!context) throw Object.assign(new Error("A CMS project context is required."), { status: 409 });
+  return context;
 };
+const projectRoot = () => currentProject().root;
+const projectFiles = () => currentProject().files;
+const requireCapability = (capability) => {
+  if (!currentProject().adapter.capabilities.includes(capability)) {
+    throw Object.assign(new Error(`The ${currentProject().adapter.label} adapter does not support ${capability}.`), { status: 409 });
+  }
+};
+
+function effectiveSettings(projectSettings, globalSettings, manifest) {
+  return {
+    ...projectSettings,
+    host: "127.0.0.1",
+    port: globalSettings.port || 4317,
+    includedUsageOnly: true,
+    paidCreditsDisabledAcknowledged: globalSettings.paidCreditsDisabledAcknowledged === true,
+    googleOAuthClientId: globalSettings.googleOAuthClientId || "",
+    googleOAuthClientSecret: globalSettings.googleOAuthClientSecret || "",
+    publicSiteUrl: projectSettings.publicSiteUrl || manifest.localSiteUrl || manifest.publicSiteUrl,
+  };
+}
 
 const MUTATION_TOKEN = crypto.randomBytes(32).toString("hex");
 const allowedOrigins = new Set();
 const activeCodexRuns = new Map();
-let managedSiteProcess = null;
-let managedSiteUrl = null;
-let siteStartupPromise = null;
+const managedSiteProcesses = new Map();
+const managedSiteUrls = new Map();
+const siteStartupPromises = new Map();
+let googleSearchConsole;
 
 function beginCodexRun(requestId, timeoutMs) {
   const id = String(requestId || crypto.randomUUID());
+  const key = `${currentProject().id}:${id}`;
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(new Error(`Codex exceeded the ${Math.round(timeoutMs / 1000)}-second CMS limit.`)), timeoutMs);
-  activeCodexRuns.set(id, controller);
+  activeCodexRuns.set(key, controller);
   return {
     id,
     signal: controller.signal,
     finish() {
       clearTimeout(timeout);
-      activeCodexRuns.delete(id);
+      activeCodexRuns.delete(key);
     },
   };
 }
 
 function cancelCodexRun(requestId) {
-  const controller = activeCodexRuns.get(String(requestId || ""));
+  const controller = activeCodexRuns.get(`${currentProject().id}:${String(requestId || "")}`);
   if (!controller) return false;
   controller.abort(new Error("Cancelled from the CMS."));
   return true;
@@ -88,9 +111,9 @@ async function atomicWriteJson(file, value, { revision = true } = {}) {
   if (revision) {
     try {
       await access(file);
-      await mkdir(FILES.revisions, { recursive: true });
+      await mkdir(projectFiles().revisions, { recursive: true });
       const stamp = new Date().toISOString().replaceAll(":", "-");
-      await copyFile(file, path.join(FILES.revisions, `${path.basename(path.dirname(file))}-${path.basename(file, ".json")}-${stamp}.json`));
+      await copyFile(file, path.join(projectFiles().revisions, `${path.basename(path.dirname(file))}-${path.basename(file, ".json")}-${stamp}.json`));
     } catch (error) {
       if (error?.code !== "ENOENT") throw error;
     }
@@ -111,49 +134,59 @@ async function listFiles(directory, predicate, output = []) {
 }
 
 async function knownSitePaths() {
-  const pages = await listFiles(path.join(ROOT, "app"), (file) => /\/page\.(tsx|ts|jsx|js)$/.test(file));
+  if (!currentProject().adapter.capabilities.includes("articles")) return [];
+  const pages = await listFiles(projectFiles().application, (file) => /\/page\.(tsx|ts|jsx|js)$/.test(file));
   const [metadataSource, published] = await Promise.all([
-    readFile(path.join(ROOT, "app", "metadata-config.ts"), "utf8"),
-    readJson(FILES.published, []),
+    readFile(projectFiles().metadata, "utf8"),
+    readJson(projectFiles().published, []),
   ]);
   return collectPublicPaths({
     metadataSource,
-    staticPaths: pages.map((file) => routeFromPageFile(ROOT, file)).filter(Boolean),
+    staticPaths: pages.map((file) => routeFromPageFile(projectRoot(), file)).filter(Boolean),
     publishedSlugs: published.map((article) => article.slug),
   });
 }
 
 async function loadCollections() {
+  if (!currentProject().adapter.capabilities.includes("articles")) return { published: [], drafts: [], archived: [], trash: [], all: [] };
   const [published, drafts, archived, trash] = await Promise.all([
-    readJson(FILES.published, []),
-    readJson(FILES.draft, []),
-    readJson(FILES.archived, []),
-    readJson(FILES.trash, []),
+    readJson(projectFiles().published, []),
+    readJson(projectFiles().draft, []),
+    readJson(projectFiles().archived, []),
+    readJson(projectFiles().trash, []),
   ]);
   return { published, drafts, archived, trash, all: [...published, ...drafts, ...archived, ...trash] };
 }
 
 async function buildState() {
-  const [collections, voice, knowledge, snapshot, media, jobs, calendar, calendarConfig, calendarProposals, helpSessions, settings, paths] = await Promise.all([
+  const [collections, voice, knowledge, snapshot, media, jobs, calendar, calendarConfig, calendarProposals, helpSessions, projectSettings, globalSettings, paths, seo] = await Promise.all([
     loadCollections(),
-    readJson(FILES.voice, {}),
-    readJson(FILES.knowledge, []),
-    readJson(FILES.snapshot, { schemaVersion: 1, generatedAt: null, records: [] }),
-    readJson(FILES.media, []),
-    readJson(FILES.jobs, []),
-    readJson(FILES.calendar, []),
-    readJson(FILES.calendarConfig, defaultCalendarConfig()),
-    readJson(FILES.calendarProposals, []),
-    readJson(FILES.helpSessions, []),
-    readJson(FILES.settings, {}),
+    readJson(projectFiles().voice, {}),
+    readJson(projectFiles().knowledge, []),
+    readJson(projectFiles().snapshot, { schemaVersion: 1, generatedAt: null, records: [] }),
+    readJson(projectFiles().media, []),
+    readJson(projectFiles().jobs, []),
+    readJson(projectFiles().calendar, []),
+    readJson(projectFiles().calendarConfig, defaultCalendarConfig()),
+    readJson(projectFiles().calendarProposals, []),
+    readJson(projectFiles().helpSessions, []),
+    readJson(projectFiles().settings, {}),
+    projectRegistry.globalSettings(),
     knownSitePaths(),
+    seoState(currentProject()),
   ]);
   const graph = buildLinkGraph(collections.all, paths);
   const issues = Object.fromEntries(collections.all.map((article) => [
     article.slug,
     validateArticle(article, collections.all, { voice, knownPaths: paths, graph }),
   ]));
-  return { ...collections, voice, knowledge, snapshot, media, jobs, calendar, calendarConfig, calendarProposals, helpSessions, settings, knownPaths: paths, graph, issues };
+  const project = currentProject();
+  const settings = effectiveSettings(projectSettings, globalSettings, project.manifest);
+  return {
+    ...collections, voice, knowledge, snapshot, media, jobs, calendar, calendarConfig, calendarProposals, helpSessions,
+    settings, knownPaths: paths, graph, issues, seo,
+    project: { id: project.id, root: project.root, manifest: project.manifest, adapter: project.adapter },
+  };
 }
 
 function defaultCalendarConfig() {
@@ -230,10 +263,10 @@ function requireMutationToken(req) {
 
 async function writeCollections(collections) {
   await Promise.all([
-    atomicWriteJson(FILES.published, collections.published),
-    atomicWriteJson(FILES.draft, collections.drafts),
-    atomicWriteJson(FILES.archived, collections.archived),
-    atomicWriteJson(FILES.trash, collections.trash),
+    atomicWriteJson(projectFiles().published, collections.published),
+    atomicWriteJson(projectFiles().draft, collections.drafts),
+    atomicWriteJson(projectFiles().archived, collections.archived),
+    atomicWriteJson(projectFiles().trash, collections.trash),
   ]);
 }
 
@@ -304,17 +337,17 @@ async function scanKnowledge(settings) {
   }
   if (!records.length) throw Object.assign(new Error("No rendered public content could be read. The approved snapshot was not changed."), { status: 503, details: failures });
   const unique = [...new Map(records.map((record) => [record.text.toLowerCase(), record])).values()];
-  const prior = await readJson(FILES.snapshot, { records: [] });
+  const prior = await readJson(projectFiles().snapshot, { records: [] });
   const oldById = new Map((prior.records || []).map((record) => [record.id, record]));
   const newById = new Map(unique.map((record) => [record.id, record]));
   const diff = {
     added: unique.filter((record) => !oldById.has(record.id)),
     removed: (prior.records || []).filter((record) => !newById.has(record.id)),
     unchanged: unique.filter((record) => oldById.has(record.id)).length,
-    stale: [...unique, ...(await readJson(FILES.knowledge, []))].filter((record) => record.reviewDate && Date.parse(record.reviewDate) < Date.now()),
-    conflicts: (await readJson(FILES.knowledge, [])).filter((record) => (record.conflictsWith || []).length),
+    stale: [...unique, ...(await readJson(projectFiles().knowledge, []))].filter((record) => record.reviewDate && Date.parse(record.reviewDate) < Date.now()),
+    conflicts: (await readJson(projectFiles().knowledge, [])).filter((record) => (record.conflictsWith || []).length),
   };
-  await mkdir(FILES.runtime, { recursive: true });
+  await mkdir(projectFiles().runtime, { recursive: true });
   const candidate = {
     schemaVersion: 2,
     sourcePolicy: "public-rendered-content-only",
@@ -323,14 +356,14 @@ async function scanKnowledge(settings) {
     failures,
     records: unique,
   };
-  await atomicWriteJson(path.join(FILES.runtime, "knowledge-scan.json"), candidate, { revision: false });
+  await atomicWriteJson(path.join(projectFiles().runtime, "knowledge-scan.json"), candidate, { revision: false });
   return { ...diff, routesScanned: routes.length - failures.length, routeFailures: failures };
 }
 
 async function approveKnowledgeScan() {
-  const candidate = await readJson(path.join(FILES.runtime, "knowledge-scan.json"), null);
+  const candidate = await readJson(path.join(projectFiles().runtime, "knowledge-scan.json"), null);
   if (!candidate) throw Object.assign(new Error("Run a knowledge scan first."), { status: 409 });
-  await atomicWriteJson(FILES.snapshot, candidate);
+  await atomicWriteJson(projectFiles().snapshot, candidate);
   return candidate;
 }
 
@@ -351,9 +384,9 @@ async function ingestMedia(req, url) {
   const metadata = await image.metadata();
   if (!metadata.width || !metadata.height) throw Object.assign(new Error("The uploaded file is not a supported image."), { status: 415 });
   const id = `${articleSlug}-${safeFilename(filename)}-${crypto.randomBytes(4).toString("hex")}`;
-  await mkdir(FILES.originals, { recursive: true });
-  await writeFile(path.join(FILES.originals, `${id}.${metadata.format || "bin"}`), buffer, { mode: 0o600 });
-  const publicDirectory = path.join(ROOT, "public", "images", "blog", articleSlug);
+  await mkdir(projectFiles().originals, { recursive: true });
+  await writeFile(path.join(projectFiles().originals, `${id}.${metadata.format || "bin"}`), buffer, { mode: 0o600 });
+  const publicDirectory = path.join(projectRoot(), "public", "images", "blog", articleSlug);
   await mkdir(publicDirectory, { recursive: true });
   const widths = [480, 768, 1200, 1600].filter((width) => width <= metadata.width);
   if (!widths.length) widths.push(metadata.width);
@@ -384,9 +417,9 @@ async function ingestMedia(req, url) {
     social: { id: `${id}-social`, src: `/images/blog/${articleSlug}/${socialOutput}`, alt: decorative ? "" : alt.trim(), width: socialMetadata.width, height: socialMetadata.height, sizes: "1200px", status: "approved", format: "webp" },
     createdAt: new Date().toISOString(),
   };
-  const manifest = await readJson(FILES.media, []);
+  const manifest = await readJson(projectFiles().media, []);
   manifest.push(record);
-  await atomicWriteJson(FILES.media, manifest);
+  await atomicWriteJson(projectFiles().media, manifest);
   return record;
 }
 
@@ -394,7 +427,8 @@ async function publicSiteIsAvailable(url) {
   try {
     const response = await fetch(url, { signal: AbortSignal.timeout(650) });
     if (!response.ok) return false;
-    return /Luxe Event Co\.|Luxe Event Co</i.test(await response.text());
+    await response.body?.cancel();
+    return true;
   } catch {
     return false;
   }
@@ -406,7 +440,7 @@ function localPreviewPorts(configured) {
     const url = new URL(configured);
     if (["127.0.0.1", "localhost"].includes(url.hostname) && url.port) ports.push(Number(url.port));
   } catch {}
-  return [...new Set([...ports, 3000, 3001, 3002, 3003, 3004, 3005])].filter((port) => Number.isInteger(port));
+  return [...new Set([...ports, ...currentProject().manifest.previewPortRange])].filter((port) => Number.isInteger(port));
 }
 
 function wait(milliseconds) {
@@ -414,47 +448,52 @@ function wait(milliseconds) {
 }
 
 async function startManagedSitePreview(configured) {
-  if (managedSiteUrl && await publicSiteIsAvailable(managedSiteUrl)) return managedSiteUrl;
-  if (siteStartupPromise) return siteStartupPromise;
-  siteStartupPromise = (async () => {
+  requireCapability("preview");
+  const projectId = currentProject().id;
+  const existingUrl = managedSiteUrls.get(projectId);
+  if (existingUrl && await publicSiteIsAvailable(existingUrl)) return existingUrl;
+  if (siteStartupPromises.has(projectId)) return siteStartupPromises.get(projectId);
+  const startup = (async () => {
     const failures = [];
     for (const port of localPreviewPorts(configured)) {
       const url = `http://127.0.0.1:${port}`;
       if (await publicSiteIsAvailable(url)) return url;
       let output = "";
-      const command = process.platform === "win32" ? "npm.cmd" : "npm";
-      const child = spawn(command, ["run", "dev", "--", "--host", "127.0.0.1", "--port", String(port)], {
-        cwd: ROOT,
+      const configuredCommand = currentProject().manifest.developmentCommand;
+      const command = process.platform === "win32" && configuredCommand[0] === "npm" ? "npm.cmd" : configuredCommand[0];
+      const child = spawn(command, [...configuredCommand.slice(1), "--", "--host", "127.0.0.1", "--port", String(port)], {
+        cwd: projectRoot(),
         env: { ...process.env, WRANGLER_LOG_PATH: ".wrangler/wrangler.log" },
         stdio: ["ignore", "pipe", "pipe"],
       });
-      managedSiteProcess = child;
+      managedSiteProcesses.set(projectId, child);
       child.stdout.on("data", (chunk) => { output = `${output}${chunk}`.slice(-6000); });
       child.stderr.on("data", (chunk) => { output = `${output}${chunk}`.slice(-6000); });
       let exited = false;
       child.once("exit", () => { exited = true; });
       for (let attempt = 0; attempt < 100; attempt += 1) {
         if (await publicSiteIsAvailable(url)) {
-          managedSiteUrl = url;
-          process.stdout.write(`Luxe preview renderer: ${url}\n`);
+          managedSiteUrls.set(projectId, url);
+          process.stdout.write(`${currentProject().manifest.name} preview renderer: ${url}\n`);
           return url;
         }
         if (exited) break;
         await wait(250);
       }
       if (!exited) child.kill("SIGTERM");
-      if (managedSiteProcess === child) managedSiteProcess = null;
+      if (managedSiteProcesses.get(projectId) === child) managedSiteProcesses.delete(projectId);
       failures.push(output.trim().split("\n").slice(-4).join(" "));
     }
-    throw Object.assign(new Error("The CMS could not start the Luxe preview renderer automatically. Restart the CMS, then try Preview again."), {
+    throw Object.assign(new Error(`The CMS could not start the ${currentProject().manifest.name} preview renderer automatically. Restart the CMS, then try Preview again.`), {
       status: 503,
       details: failures.filter(Boolean),
     });
   })();
+  siteStartupPromises.set(projectId, startup);
   try {
-    return await siteStartupPromise;
+    return await startup;
   } finally {
-    siteStartupPromise = null;
+    siteStartupPromises.delete(projectId);
   }
 }
 
@@ -462,8 +501,8 @@ async function resolvePublicSiteUrl(settings) {
   const configured = String(settings.publicSiteUrl || "").replace(/\/$/, "");
   const candidates = [...new Set([
     configured,
-    ...[3000, 3001, 3002, 3003, 3004, 3005].map((port) => `http://127.0.0.1:${port}`),
-    ...[3000, 3001, 3002, 3003, 3004, 3005].map((port) => `http://localhost:${port}`),
+    ...currentProject().manifest.previewPortRange.map((port) => `http://127.0.0.1:${port}`),
+    ...currentProject().manifest.previewPortRange.map((port) => `http://localhost:${port}`),
   ].filter(Boolean))];
   for (const candidate of candidates) {
     if (await publicSiteIsAvailable(candidate)) return candidate;
@@ -695,7 +734,7 @@ function addUsage(left = {}, right = {}) {
 
 function codexOptions(settings) {
   return {
-    workingDirectory: ROOT,
+    workingDirectory: projectRoot(),
     sandboxMode: "read-only",
     approvalPolicy: "never",
     networkAccessEnabled: false,
@@ -790,7 +829,7 @@ ${JSON.stringify(session.messages.slice(-8))}`;
     session.usage = addUsage(session.usage, mapUsage(result.usage));
     session.messages.push({ role: "user", text: question, createdAt: new Date().toISOString() });
     session.messages.push({ role: "assistant", ...response, createdAt: new Date().toISOString() });
-    await atomicWriteJson(FILES.helpSessions, sessions);
+    await atomicWriteJson(projectFiles().helpSessions, sessions);
     return { sessionId: session.id, threadId: session.threadId, usage: session.usage, response };
   } catch (error) {
     if (activeRun.signal.aborted) throw Object.assign(new Error(activeRun.signal.reason?.message || "CMS Help was cancelled."), { status: 408 });
@@ -877,7 +916,7 @@ Return a concise proposal that a nontechnical editor can accept, decline, or sen
     if (index >= 0) session.proposals[index] = proposal;
     else session.proposals.push(proposal);
     session.messages.push({ role: "assistant", answer: `I prepared “${proposal.title}” for your review. Nothing has been changed yet.`, steps: [], references: proposal.files, caution: proposal.risk === "high" ? "This proposal is high risk and requires careful review." : "Review every proposed change before accepting.", createdAt: new Date().toISOString(), proposalId: proposal.id });
-    await atomicWriteJson(FILES.helpSessions, state.helpSessions);
+    await atomicWriteJson(projectFiles().helpSessions, state.helpSessions);
     return { sessionId: session.id, proposal, usage: session.usage };
   } catch (error) {
     if (activeRun.signal.aborted) throw Object.assign(new Error(activeRun.signal.reason?.message || "Repair generation was cancelled."), { status: 408 });
@@ -919,7 +958,7 @@ function allowedRepairFiles(diff) {
 
 function runLocalProcess(command, args, { input = "", timeoutMs = 120_000 } = {}) {
   return new Promise((resolve, reject) => {
-    const child = spawn(command, args, { cwd: ROOT, env: sanitizedCodexEnv(), stdio: ["pipe", "pipe", "pipe"] });
+    const child = spawn(command, args, { cwd: projectRoot(), env: sanitizedCodexEnv(), stdio: ["pipe", "pipe", "pipe"] });
     let stdout = "";
     let stderr = "";
     const timeout = setTimeout(() => child.kill("SIGTERM"), timeoutMs);
@@ -940,7 +979,7 @@ async function applyHelpRepair(payload) {
   if (payload.decision === "decline") {
     proposal.status = "declined";
     proposal.decidedAt = new Date().toISOString();
-    await atomicWriteJson(FILES.helpSessions, state.helpSessions);
+    await atomicWriteJson(projectFiles().helpSessions, state.helpSessions);
     return { proposal, applied: false };
   }
   if (payload.decision !== "accept") throw Object.assign(new Error("Choose accept or decline."), { status: 422 });
@@ -962,7 +1001,7 @@ async function applyHelpRepair(payload) {
     const files = allowedRepairFiles(proposal.unifiedDiff);
     const check = await runLocalProcess("git", ["apply", "--check", "--whitespace=error-all", "-"], { input: proposal.unifiedDiff });
     if (check.code !== 0) throw Object.assign(new Error(`The proposed patch no longer applies cleanly: ${check.stderr || check.stdout}`), { status: 409 });
-    const revisionDir = path.join(FILES.revisions, "help-repairs", proposal.id, `revision-${proposal.revision}`);
+    const revisionDir = path.join(projectFiles().revisions, "help-repairs", proposal.id, `revision-${proposal.revision}`);
     await mkdir(revisionDir, { recursive: true });
     await atomicWriteJson(path.join(revisionDir, "proposal.json"), proposal, { revision: false });
     const applied = await runLocalProcess("git", ["apply", "--whitespace=error-all", "-"], { input: proposal.unifiedDiff });
@@ -981,7 +1020,7 @@ async function applyHelpRepair(payload) {
   proposal.decidedAt = new Date().toISOString();
   proposal.result = result;
   session.messages.push({ role: "assistant", answer: `The approved repair “${proposal.title}” was applied successfully.`, steps: [], references: proposal.files, caution: "Review the affected screen before continuing with publication.", createdAt: new Date().toISOString() });
-  await atomicWriteJson(FILES.helpSessions, state.helpSessions);
+  await atomicWriteJson(projectFiles().helpSessions, state.helpSessions);
   return { proposal, applied: true, result };
 }
 
@@ -1014,21 +1053,21 @@ function normalizeCalendarItem(item, existing = {}) {
 }
 
 async function saveCalendarItem(payload) {
-  const items = await readJson(FILES.calendar, []);
+  const items = await readJson(projectFiles().calendar, []);
   const index = items.findIndex((item) => item.id === payload.item?.id);
   const item = normalizeCalendarItem(payload.item || {}, index >= 0 ? items[index] : {});
   if (!item.title) throw Object.assign(new Error("Calendar item title is required."), { status: 422 });
   if (index >= 0) items[index] = item;
   else items.push(item);
-  await atomicWriteJson(FILES.calendar, items);
+  await atomicWriteJson(projectFiles().calendar, items);
   return item;
 }
 
 async function deleteCalendarItem(id) {
-  const items = await readJson(FILES.calendar, []);
+  const items = await readJson(projectFiles().calendar, []);
   const next = items.filter((item) => item.id !== id);
   if (next.length === items.length) throw Object.assign(new Error("Calendar item not found."), { status: 404 });
-  await atomicWriteJson(FILES.calendar, next);
+  await atomicWriteJson(projectFiles().calendar, next);
   return { deleted: id };
 }
 
@@ -1055,7 +1094,7 @@ async function runCalendarProposal(payload) {
     const proposals = state.calendarProposals;
     const proposal = { id: crypto.randomUUID(), prompt: promptText, createdAt: new Date().toISOString(), threadId: thread.id, usage: mapUsage(result.usage), status: "pending", ...parsed };
     proposals.push(proposal);
-    await atomicWriteJson(FILES.calendarProposals, proposals);
+    await atomicWriteJson(projectFiles().calendarProposals, proposals);
     return proposal;
   } catch (error) {
     if (isUsageError(error)) throw Object.assign(new Error("Codex included usage is unavailable. No calendar changes were made."), { status: 429 });
@@ -1064,18 +1103,18 @@ async function runCalendarProposal(payload) {
 }
 
 async function approveCalendarProposal(id) {
-  const proposals = await readJson(FILES.calendarProposals, []);
+  const proposals = await readJson(projectFiles().calendarProposals, []);
   const proposal = proposals.find((candidate) => candidate.id === id);
   if (!proposal) throw Object.assign(new Error("Calendar proposal not found."), { status: 404 });
   if (proposal.status === "approved") return proposal;
-  const items = await readJson(FILES.calendar, []);
-  const config = await readJson(FILES.calendarConfig, defaultCalendarConfig());
+  const items = await readJson(projectFiles().calendar, []);
+  const config = await readJson(projectFiles().calendarConfig, defaultCalendarConfig());
   const blocked = proposal.items.filter((item) => (config.blackoutDates || []).includes(item.targetDate));
   if (blocked.length) throw Object.assign(new Error(`The proposal includes ${blocked.length} blackout date${blocked.length === 1 ? "" : "s"}. Adjust the proposal or calendar preferences before approval.`), { status: 422, details: blocked });
   for (const candidate of proposal.items) items.push(normalizeCalendarItem({ ...candidate, status: "planned", notes: candidate.rationale }));
   proposal.status = "approved";
   proposal.approvedAt = new Date().toISOString();
-  await Promise.all([atomicWriteJson(FILES.calendar, items), atomicWriteJson(FILES.calendarProposals, proposals)]);
+  await Promise.all([atomicWriteJson(projectFiles().calendar, items), atomicWriteJson(projectFiles().calendarProposals, proposals)]);
   return proposal;
 }
 
@@ -1183,13 +1222,13 @@ ${JSON.stringify(state.knownPaths)}`;
       job.articleSlug = saved.article.slug;
       job.status = "draft-created";
     }
-    await atomicWriteJson(FILES.jobs, jobs);
+    await atomicWriteJson(projectFiles().jobs, jobs);
     return job;
   } catch (error) {
     job.status = isUsageError(error) ? "paused-usage-unavailable" : "failed";
     job.error = String(error?.message || error);
     job.updatedAt = new Date().toISOString();
-    await atomicWriteJson(FILES.jobs, jobs);
+    await atomicWriteJson(projectFiles().jobs, jobs);
     throw Object.assign(new Error(job.status === "paused-usage-unavailable" ? "Codex included usage is unavailable. The job has been paused without losing progress." : `Codex generation failed: ${job.error}`), { status: job.status === "paused-usage-unavailable" ? 429 : 502 });
   }
 }
@@ -1248,7 +1287,7 @@ function normalizeStudioReview(stage, value) {
 }
 
 async function approveStudioStage(jobId, stage, value) {
-  const jobs = await readJson(FILES.jobs, []);
+  const jobs = await readJson(projectFiles().jobs, []);
   const job = jobs.find((candidate) => candidate.id === jobId);
   if (!job) throw Object.assign(new Error("Studio job not found."), { status: 404 });
   const now = new Date().toISOString();
@@ -1261,7 +1300,7 @@ async function approveStudioStage(jobId, stage, value) {
   }
   else throw Object.assign(new Error("Only brief and outline stages can be approved."), { status: 400 });
   job.updatedAt = now;
-  await atomicWriteJson(FILES.jobs, jobs);
+  await atomicWriteJson(projectFiles().jobs, jobs);
   return job;
 }
 
@@ -1291,8 +1330,8 @@ async function serveBlogMedia(req, res, pathname) {
   } catch {
     return false;
   }
-  const file = path.resolve(BLOG_MEDIA_PUBLIC_DIR, relative);
-  if (file !== BLOG_MEDIA_PUBLIC_DIR && !file.startsWith(`${BLOG_MEDIA_PUBLIC_DIR}${path.sep}`)) return false;
+  const file = path.resolve(projectFiles().publicBlogMedia, relative);
+  if (file !== projectFiles().publicBlogMedia && !file.startsWith(`${projectFiles().publicBlogMedia}${path.sep}`)) return false;
   try {
     const info = await stat(file);
     if (!info.isFile()) return false;
@@ -1320,24 +1359,15 @@ async function serveBlogMedia(req, res, pathname) {
   }
 }
 
-async function handler(req, res) {
-  if (!isLoopback(req)) return errorResponse(res, 403, "The Luxe CMS accepts loopback connections only.");
-  const settings = await readJson(FILES.settings, { host: "127.0.0.1", port: 4317 });
-  const origin = `http://${req.headers.host}`;
-  allowedOrigins.add(origin);
-  res.setHeader("content-security-policy", "default-src 'self'; img-src 'self' data: http://127.0.0.1:* http://localhost:*; style-src 'self' 'unsafe-inline'; script-src 'self'; frame-src 'self'; base-uri 'none'; form-action 'self'");
-  res.setHeader("referrer-policy", "no-referrer");
-  res.setHeader("x-frame-options", "SAMEORIGIN");
-  const requestOrigin = req.headers.origin;
-  if (requestOrigin && !allowedOrigins.has(requestOrigin)) return errorResponse(res, 403, "Origin is not allowed.");
-  const url = new URL(req.url, origin);
-
-  if (url.pathname === "/api/session" && req.method === "GET") return json(res, 200, { token: MUTATION_TOKEN, loopback: true });
+async function projectHandler(req, res, url) {
+  const projectSettings = await readJson(projectFiles().settings, {});
+  const globalSettings = await projectRegistry.globalSettings();
+  const settings = effectiveSettings(projectSettings, globalSettings, currentProject().manifest);
   if (url.pathname === "/api/state" && req.method === "GET") return json(res, 200, await buildState());
   if (url.pathname.startsWith("/api/preview/") && req.method === "GET") {
     const token = url.pathname.split("/").at(-1);
     if (!/^[a-f0-9]{48}$/.test(token || "")) return errorResponse(res, 404, "Preview not found.");
-    const preview = await readJson(path.join(FILES.runtime, "previews", `${token}.json`), null);
+    const preview = await readJson(path.join(projectFiles().runtime, "previews", `${token}.json`), null);
     if (!preview || preview.token !== token || preview.expiresAt < Date.now()) return errorResponse(res, 404, "Preview expired or unavailable.");
     res.setHeader("cache-control", "no-store");
     res.setHeader("x-robots-tag", "noindex, nofollow");
@@ -1346,7 +1376,70 @@ async function handler(req, res) {
   if (url.pathname.startsWith("/api/") && req.method !== "GET" && !requireMutationToken(req)) return errorResponse(res, 403, "Invalid CMS mutation token.");
 
   try {
-    if (url.pathname === "/api/articles/new" && req.method === "POST") return json(res, 200, createEmptyArticle());
+    const capabilityByPrefix = [
+      ["/api/articles", "articles"], ["/api/preview", "preview"], ["/api/media", "media"],
+      ["/api/knowledge", "knowledge"], ["/api/voice", "voice"], ["/api/studio", "studio"],
+      ["/api/calendar", "calendar"], ["/api/seo", "seo"],
+    ];
+    const requiredCapability = capabilityByPrefix.find(([prefix]) => url.pathname.startsWith(prefix))?.[1];
+    if (requiredCapability) requireCapability(requiredCapability);
+    if (url.pathname === "/api/validate" && req.method === "GET") {
+      const project = currentProject();
+      const content = project.adapter.capabilities.includes("articles") ? await loadCollections() : null;
+      return json(res, 200, { valid: true, projectId: project.id, adapter: project.adapter.id, capabilities: project.adapter.capabilities, articleCounts: content ? { published: content.published.length, drafts: content.drafts.length, archived: content.archived.length, trash: content.trash.length } : null });
+    }
+    if (url.pathname === "/api/export" && req.method === "POST") return json(res, 200, await exportProjectBundle(currentProject(), await readJsonBody(req)));
+    if (url.pathname === "/api/open-folder" && req.method === "POST") {
+      const child = spawn("open", [currentProject().root], { stdio: "ignore", detached: true });
+      child.unref();
+      return json(res, 200, { opened: true, root: currentProject().root });
+    }
+    if (url.pathname === "/api/seo/search-console/import" && req.method === "POST") {
+      const body = await readJsonBody(req);
+      return json(res, 200, await importSearchConsoleCsv(currentProject(), body.csv, { commit: body.commit === true }));
+    }
+    if (url.pathname === "/api/seo/google/start" && req.method === "POST") return json(res, 200, await googleSearchConsole.authorizationUrl(currentProject().id));
+    if (url.pathname === "/api/seo/google/sites" && req.method === "GET") return json(res, 200, await googleSearchConsole.sites());
+    if (url.pathname === "/api/seo/google/bind" && req.method === "POST") {
+      const { property } = await readJsonBody(req);
+      if (!String(property || "").trim()) throw Object.assign(new Error("Choose a Search Console property."), { status: 422 });
+      const integration = await saveIntegration(currentProject(), { searchConsole: { status: "connected", property: String(property), connectedAt: new Date().toISOString() } });
+      return json(res, 200, integration);
+    }
+    if (url.pathname === "/api/seo/google/unbind" && req.method === "POST") {
+      return json(res, 200, await saveIntegration(currentProject(), { searchConsole: { status: "not-configured", property: null, disconnectedAt: new Date().toISOString() } }));
+    }
+    if (url.pathname === "/api/seo/google/sync" && req.method === "POST") {
+      const integration = (await seoState(currentProject())).integration;
+      const property = integration.searchConsole?.property;
+      if (!property) throw Object.assign(new Error("Bind a Search Console property before synchronizing."), { status: 412 });
+      const body = await readJsonBody(req);
+      const endDate = body.endDate || new Date(Date.now() - 3 * 86_400_000).toISOString().slice(0, 10);
+      const startDate = body.startDate || new Date(Date.parse(`${endDate}T00:00:00Z`) - 89 * 86_400_000).toISOString().slice(0, 10);
+      const rows = await googleSearchConsole.searchAnalytics(property, { startDate, endDate });
+      return json(res, 200, await saveSearchConsoleRows(currentProject(), rows, { startDate, endDate, property }));
+    }
+    if (url.pathname === "/api/seo/crawl" && req.method === "POST") return json(res, 200, await runTechnicalCrawl(currentProject(), await readJsonBody(req)));
+    if (url.pathname === "/api/seo/opportunities/generate" && req.method === "POST") {
+      const cmsState = await buildState();
+      return json(res, 200, await generateOpportunities(currentProject(), { published: cmsState.published, graph: cmsState.graph, thresholds: projectSettings.opportunityThresholds }));
+    }
+    if (url.pathname === "/api/seo/opportunities/save" && req.method === "POST") return json(res, 200, await saveOpportunity(currentProject(), await readJsonBody(req)));
+    if (url.pathname === "/api/seo/annotations/save" && req.method === "POST") return json(res, 200, await saveAnnotation(currentProject(), await readJsonBody(req)));
+    if (url.pathname === "/api/seo/reports/generate" && req.method === "POST") return json(res, 200, await generateReport(currentProject(), await readJsonBody(req)));
+    if (url.pathname === "/api/seo/reports/export" && req.method === "GET") {
+      const format = url.searchParams.get("format");
+      const reportId = url.searchParams.get("reportId");
+      if (!["json", "html", "csv"].includes(format)) throw Object.assign(new Error("Choose a supported report format."), { status: 422 });
+      const report = (await seoState(currentProject())).reports.find((item) => item.id === reportId);
+      const file = report?.exports?.[format];
+      const exportRoot = path.resolve(projectFiles().seo, "report-exports");
+      if (!file || !path.resolve(file).startsWith(`${exportRoot}${path.sep}`)) throw Object.assign(new Error("Report export not found."), { status: 404 });
+      const info = await stat(file);
+      res.writeHead(200, { "content-type": { json: "application/json", html: "text/html; charset=utf-8", csv: "text/csv; charset=utf-8" }[format], "content-length": info.size, "content-disposition": `attachment; filename="${currentProject().manifest.name.replace(/[^a-z0-9]+/gi, "-")}-seo-report.${format}"`, "cache-control": "no-store" });
+      return createReadStream(file).pipe(res);
+    }
+    if (url.pathname === "/api/articles/new" && req.method === "POST") { requireCapability("articles"); return json(res, 200, createEmptyArticle()); }
     if (url.pathname === "/api/articles/save" && req.method === "POST") return json(res, 200, await saveArticle((await readJsonBody(req)).article));
     if (url.pathname === "/api/articles/lifecycle" && req.method === "POST") {
       const body = await readJsonBody(req);
@@ -1357,27 +1450,32 @@ async function handler(req, res) {
       const token = crypto.randomBytes(24).toString("hex");
       const expiresAt = Date.now() + 30 * 60 * 1000;
       const publicSiteUrl = await resolvePublicSiteUrl(settings);
-      await atomicWriteJson(path.join(FILES.runtime, "previews", `${token}.json`), { token, expiresAt, article }, { revision: false });
-      return json(res, 200, { url: `${publicSiteUrl}/preview/${runtimePort}/${token}/${encodeURIComponent(article.slug)}`, expiresInMinutes: 30 });
+      await atomicWriteJson(path.join(projectFiles().runtime, "previews", `${token}.json`), { token, expiresAt, article }, { revision: false });
+      return json(res, 200, { url: `${publicSiteUrl}/preview/${runtimePort}/${token}/${encodeURIComponent(article.slug)}?project=${encodeURIComponent(currentProject().id)}`, expiresInMinutes: 30, projectId: currentProject().id });
     }
     if (url.pathname === "/api/media" && req.method === "POST") return json(res, 200, await ingestMedia(req, url));
     if (url.pathname === "/api/knowledge/scan" && req.method === "POST") return json(res, 200, await scanKnowledge(settings));
     if (url.pathname === "/api/knowledge/approve" && req.method === "POST") return json(res, 200, await approveKnowledgeScan());
     if (url.pathname === "/api/knowledge/save" && req.method === "POST") {
       const { records } = await readJsonBody(req);
-      await atomicWriteJson(FILES.knowledge, records);
+      await atomicWriteJson(projectFiles().knowledge, records);
       return json(res, 200, { saved: records.length });
     }
     if (url.pathname === "/api/voice/save" && req.method === "POST") {
       const { voice } = await readJsonBody(req);
-      await atomicWriteJson(FILES.voice, voice);
+      await atomicWriteJson(projectFiles().voice, voice);
       return json(res, 200, voice);
     }
     if (url.pathname === "/api/settings/save" && req.method === "POST") {
       const body = await readJsonBody(req);
-      const next = { ...settings, ...body.settings, host: "127.0.0.1", includedUsageOnly: true };
-      await atomicWriteJson(FILES.settings, next);
-      return json(res, 200, next);
+      const globalFields = ["paidCreditsDisabledAcknowledged", "model", "reasoningEffort", "helpReasoningEffort", "googleOAuthClientId", "googleOAuthClientSecret"];
+      const globalPatch = Object.fromEntries(globalFields.filter((field) => field in (body.settings || {})).map((field) => [field, body.settings[field]]));
+      const projectPatch = Object.fromEntries(Object.entries(body.settings || {}).filter(([field]) => !globalFields.includes(field)));
+      const [nextGlobal] = await Promise.all([
+        projectRegistry.saveGlobalSettings(globalPatch),
+        atomicWriteJson(projectFiles().settings, { ...projectSettings, ...projectPatch, schemaVersion: 1 }, { revision: false }),
+      ]);
+      return json(res, 200, { ...nextGlobal, ...projectSettings, ...projectPatch });
     }
     if (url.pathname === "/api/codex/cancel" && req.method === "POST") {
       const { requestId } = await readJsonBody(req);
@@ -1393,7 +1491,7 @@ async function handler(req, res) {
       const next = { ...defaultCalendarConfig(), ...config, schemaVersion: 1 };
       for (const date of next.blackoutDates || []) normalizeCalendarItem({ title: "Blackout", targetDate: date });
       if (!Array.isArray(next.statuses) || !next.statuses.length) throw Object.assign(new Error("Add at least one calendar workflow status."), { status: 422 });
-      await atomicWriteJson(FILES.calendarConfig, next);
+      await atomicWriteJson(projectFiles().calendarConfig, next);
       return json(res, 200, next);
     }
     if (url.pathname === "/api/calendar/propose" && req.method === "POST") return json(res, 200, await runCalendarProposal(await readJsonBody(req)));
@@ -1405,7 +1503,7 @@ async function handler(req, res) {
       const body = await readJsonBody(req);
       return json(res, 200, await approveStudioStage(body.jobId, body.stage, body.value));
     }
-    if (url.pathname.startsWith("/api/")) return errorResponse(res, 404, "API route not found.");
+    if (url.pathname.startsWith("/api/")) return errorResponse(res, 404, "Project API route not found.");
     if (await serveBlogMedia(req, res, url.pathname)) return;
     if (await serveStatic(req, res, url.pathname)) return;
     errorResponse(res, 404, "Not found.");
@@ -1414,18 +1512,69 @@ async function handler(req, res) {
   }
 }
 
-const initialSettings = await readJson(FILES.settings, { host: "127.0.0.1", port: 4317 });
+async function handler(req, res) {
+  if (!isLoopback(req)) return errorResponse(res, 403, "The local CMS accepts loopback connections only.");
+  const origin = `http://${req.headers.host}`;
+  allowedOrigins.add(origin);
+  res.setHeader("content-security-policy", "default-src 'self'; img-src 'self' data: http://127.0.0.1:* http://localhost:*; style-src 'self' 'unsafe-inline'; script-src 'self'; frame-src 'self'; base-uri 'none'; form-action 'self'");
+  res.setHeader("referrer-policy", "no-referrer");
+  res.setHeader("x-frame-options", "SAMEORIGIN");
+  const requestOrigin = req.headers.origin;
+  if (requestOrigin && !allowedOrigins.has(requestOrigin)) return errorResponse(res, 403, "Origin is not allowed.");
+  const url = new URL(req.url, origin);
+
+  if (url.pathname === "/api/session" && req.method === "GET") {
+    const registry = await projectRegistry.list();
+    return json(res, 200, { token: MUTATION_TOKEN, loopback: true, registry });
+  }
+  if (url.pathname === "/api/google/oauth/callback" && req.method === "GET") {
+    try {
+      const projectId = await googleSearchConsole.callback({ code: url.searchParams.get("code"), requestState: url.searchParams.get("state") });
+      res.writeHead(302, { location: `/?project=${encodeURIComponent(projectId)}&google=connected` });
+      return res.end();
+    } catch (error) { return errorResponse(res, error.status || 500, error.message || "Google authorization failed."); }
+  }
+  if (url.pathname === "/api/projects" && req.method === "GET") return json(res, 200, await projectRegistry.list());
+  if (url.pathname.startsWith("/api/") && req.method !== "GET" && !requireMutationToken(req)) return errorResponse(res, 403, "Invalid CMS mutation token.");
+  try {
+    if (url.pathname === "/api/projects/add" && req.method === "POST") return json(res, 200, await projectRegistry.add(await readJsonBody(req)));
+    if (url.pathname === "/api/projects/activate" && req.method === "POST") return json(res, 200, await projectRegistry.activate((await readJsonBody(req)).projectId));
+    if (url.pathname === "/api/projects/reconnect" && req.method === "POST") return json(res, 200, await projectRegistry.reconnect(await readJsonBody(req)));
+    if (url.pathname === "/api/projects/disconnect" && req.method === "POST") return json(res, 200, await projectRegistry.disconnect((await readJsonBody(req)).projectId));
+    if (url.pathname === "/api/projects/import/inspect" && req.method === "POST") return json(res, 200, await inspectProjectBundle((await readJsonBody(req)).file));
+    if (url.pathname === "/api/projects/import" && req.method === "POST") {
+      const body = await readJsonBody(req);
+      const imported = await importProjectBundle(body.file, body.root, { clone: body.clone === true });
+      const context = await projectRegistry.add({ root: imported.root });
+      return json(res, 200, { ...imported, context });
+    }
+
+    const registry = await projectRegistry.list();
+    const scoped = url.pathname.match(/^\/api\/projects\/([^/]+)(\/.*)?$/);
+    const projectId = scoped ? decodeURIComponent(scoped[1]) : registry.activeProjectId;
+    const context = await projectRegistry.context(projectId);
+    await ensureProjectScaffold(context);
+    if (scoped) url.pathname = `/api${scoped[2] || "/state"}`;
+    return projectStore.run(context, () => projectHandler(req, res, url));
+  } catch (error) {
+    errorResponse(res, error.status || 500, error.message || "Unexpected CMS error.", error.details);
+  }
+}
+
+await projectRegistry.bootstrap();
+const initialSettings = await projectRegistry.globalSettings();
 const runtimePort = Number(process.env.LUXE_CMS_PORT) || initialSettings.port || 4317;
+googleSearchConsole = new GoogleSearchConsole({ registry: projectRegistry, runtimePort });
 const server = http.createServer((req, res) => void handler(req, res));
 server.listen(runtimePort, "127.0.0.1", () => {
-  process.stdout.write(`Luxe Blog CMS: http://127.0.0.1:${runtimePort}\n`);
+  process.stdout.write(`Local multi-project CMS: http://127.0.0.1:${runtimePort}\n`);
   if (!initialSettings.paidCreditsDisabledAcknowledged) {
     process.stdout.write("Article Studio is locked until paid-credit auto top-up is confirmed disabled in Settings.\n");
   }
 });
 
 function stopLocalServers() {
-  if (managedSiteProcess && !managedSiteProcess.killed) managedSiteProcess.kill("SIGTERM");
+  for (const process of managedSiteProcesses.values()) if (!process.killed) process.kill("SIGTERM");
   server.close();
 }
 

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex,nofollow">
-    <title>Luxe Journal CMS</title>
+    <title>Local Editorial & SEO CMS</title>
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
@@ -14,12 +14,13 @@
           <strong>Luxe</strong>
           <small>Event Co.</small>
         </div>
-        <div class="cms-title"><span>The Luxe Journal</span><small>Editorial workspace</small></div>
+        <div class="cms-title"><span id="cms-project-name">Editorial workspace</span><small id="cms-project-domain">Preparing project…</small></div>
       </div>
-      <div class="local-state"><i></i> Local only · 127.0.0.1</div>
+      <div class="project-controls"><label for="project-switcher">Project</label><select id="project-switcher" aria-label="Active CMS project"></select><span class="project-task-state" id="project-task-state">Idle</span><div class="local-state"><i></i> Local only · 127.0.0.1</div></div>
     </header>
     <div class="app-shell">
       <nav class="sidebar" aria-label="CMS sections">
+        <button class="nav-button" data-view="projects">Projects</button>
         <button class="nav-button active" data-view="articles">Articles</button>
         <button class="nav-button" data-view="editor">Editor</button>
         <button class="nav-button" data-view="links">Links</button>
@@ -28,6 +29,7 @@
         <button class="nav-button" data-view="voice">Brand voice</button>
         <button class="nav-button" data-view="studio">Article Studio</button>
         <button class="nav-button" data-view="calendar">Content calendar</button>
+        <button class="nav-button" data-view="seo">SEO intelligence</button>
         <button class="nav-button" data-view="help">CMS help</button>
         <button class="nav-button" data-view="settings">Settings</button>
       </nav>

@@ -47,3 +47,6 @@ next-env.d.ts
 /content/blog/.local/
 /content/blog/media/originals/
 /cms/.runtime/
+/cms/.local/
+/.cms-local/
+/.cms-migration/
