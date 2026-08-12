@@ -46,9 +46,9 @@ export const siteConfig = {
   },
   socialProfiles,
   searchConsole: {
-    googleVerificationToken: null as string | null,
-    bingVerificationToken: null as string | null,
-    status: "not-configured" as const,
+    googleVerificationEnvironmentVariable: "GOOGLE_SITE_VERIFICATION",
+    bingVerificationEnvironmentVariable: "BING_SITE_VERIFICATION",
+    status: "environment-configured" as const,
   },
   indexNow: {
     endpoint: "https://api.indexnow.org/indexnow",
@@ -56,9 +56,11 @@ export const siteConfig = {
     status: "optional-not-enabled" as const,
   },
   analytics: {
-    provider: null as string | null,
-    measurementId: null as string | null,
-    status: "not-configured" as const,
+    providers: ["Google Analytics 4", "Meta Pixel"],
+    gaMeasurementIdEnvironmentVariable: "NEXT_PUBLIC_GA_MEASUREMENT_ID",
+    metaPixelIdEnvironmentVariable: "NEXT_PUBLIC_META_PIXEL_ID",
+    metaDomainVerificationEnvironmentVariable: "META_DOMAIN_VERIFICATION",
+    status: "environment-configured" as const,
   },
   inquiry: {
     platformName: null as string | null,

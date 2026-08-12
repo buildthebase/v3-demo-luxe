@@ -92,6 +92,26 @@ actions tied to the current ChatGPT user. Leave public content anonymous.
 - `npm test`: build the starter and verify its rendered loading skeleton
 - `npm run db:generate`: generate Drizzle migrations after schema changes
 
+## Analytics and platform verification
+
+The production site supports GA4, Meta Pixel, Google Search Console, Bing
+Webmaster Tools, and Meta domain verification through deployment environment
+variables. Tracking scripts are omitted unless their IDs pass the expected
+format validation.
+
+```dotenv
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_META_PIXEL_ID=123456789012345
+GOOGLE_SITE_VERIFICATION=google-verification-token
+BING_SITE_VERIFICATION=bing-verification-token
+META_DOMAIN_VERIFICATION=meta-verification-token
+```
+
+GA4 and Meta both receive page views across client-side navigation. Inquiry,
+phone, and email clicks are sent as the existing privacy-safe measurement
+events; Meta also receives its standard `Contact` event. No form values or
+direct personal information are sent.
+
 ## Learn More
 
 - [vinext Documentation](https://github.com/cloudflare/vinext)

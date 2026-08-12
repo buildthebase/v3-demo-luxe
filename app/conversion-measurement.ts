@@ -242,7 +242,7 @@ export const measurementRules = [
 ] as const;
 
 export const measurementDependencies = [
-  "Analytics provider and property are not yet selected.",
+  "Production GA4 and Meta Pixel identifiers must be configured in the hosting environment.",
   "Consent and privacy configuration must be approved before non-essential analytics are enabled.",
   "The production inquiry-platform URL and handoff method are not yet confirmed.",
   "A reliable confirmation return is dependent on the third-party platform.",

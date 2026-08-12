@@ -32,11 +32,20 @@ import "./private-events-page-polish.css";
 import "./blog.css";
 import "./mobile-button-underlines.css";
 import { siteConfig } from "./site-config";
+import { Analytics } from "./analytics";
 
 const siteUrl = siteConfig.url;
 const googleThumbnailUrl = `${siteUrl}${siteConfig.brandAssets.googleThumbnail.src}`;
 const title = siteConfig.defaultMetadata.title;
 const description = siteConfig.defaultMetadata.description;
+const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim();
+const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID?.trim();
+const validGaMeasurementId = /^G-[A-Z0-9]+$/i.test(gaMeasurementId ?? "")
+  ? gaMeasurementId
+  : undefined;
+const validMetaPixelId = /^\d{5,20}$/.test(metaPixelId ?? "")
+  ? metaPixelId
+  : undefined;
 const defaultSocialImage = {
   url: siteConfig.brandAssets.defaultSocialImage.src,
   width: siteConfig.brandAssets.defaultSocialImage.width,
@@ -73,13 +82,19 @@ export const metadata: Metadata = {
       },
     ],
   },
-  verification: siteConfig.searchConsole.googleVerificationToken
-    ? { google: siteConfig.searchConsole.googleVerificationToken }
+  verification: process.env.GOOGLE_SITE_VERIFICATION?.trim()
+    ? { google: process.env.GOOGLE_SITE_VERIFICATION.trim() }
     : undefined,
   other: {
     thumbnail: googleThumbnailUrl,
-    ...(siteConfig.searchConsole.bingVerificationToken
-      ? { "msvalidate.01": siteConfig.searchConsole.bingVerificationToken }
+    ...(process.env.BING_SITE_VERIFICATION?.trim()
+      ? { "msvalidate.01": process.env.BING_SITE_VERIFICATION.trim() }
+      : {}),
+    ...(process.env.META_DOMAIN_VERIFICATION?.trim()
+      ? {
+          "facebook-domain-verification":
+            process.env.META_DOMAIN_VERIFICATION.trim(),
+        }
       : {}),
   },
   robots: {
@@ -119,6 +134,23 @@ export default function RootLayout({
     <html lang={siteConfig.language} className={sans.variable}>
       <body>
         {children}
+        <Analytics
+          gaMeasurementId={validGaMeasurementId}
+          metaPixelId={validMetaPixelId}
+        />
+        {validMetaPixelId ? (
+          <noscript>
+            {/* A native image is required for Meta's JavaScript-disabled fallback. */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              alt=""
+              height="1"
+              width="1"
+              style={{ display: "none" }}
+              src={`https://www.facebook.com/tr?id=${validMetaPixelId}&ev=PageView&noscript=1`}
+            />
+          </noscript>
+        ) : null}
       </body>
     </html>
   );
