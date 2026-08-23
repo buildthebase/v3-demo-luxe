@@ -110,6 +110,8 @@ export function projectPaths(root, manifest, { luxeSettingsFile } = {}) {
     settings: manifest.adapter === "luxe-json-v1" && luxeSettingsFile ? luxeSettingsFile : path.join(local, "settings.json"),
     runtime: path.join(local, "runtime"),
     seo: path.join(local, "seo"),
+    database: path.join(local, "cms.sqlite"),
+    backups: path.join(local, "backups"),
     publicBlogMedia: publicMedia,
     application: within(root, path.join(root, manifest.applicationDirectory)),
     metadata: within(root, path.join(root, manifest.metadataFile)),

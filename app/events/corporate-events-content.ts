@@ -63,8 +63,8 @@ export const corporateExperienceRoles = [
     href: "/experiences/coffee-bar",
     statement: "A complete café service built around the schedule.",
     description:
-      "Professional baristas serving specialty espresso classics, iced matchas, signature seasonal drinks, and premium non-coffee options tailored for fast-paced corporate schedules.",
-    fact: "Coffee service can typically support up to 500 guests, subject to the confirmed menu, staffing, duration, venue, and service flow.",
+      "Professional baristas serving espresso-style classics, iced matchas, signature seasonal drinks, and premium non-coffee options tailored for fast-paced corporate schedules.",
+    fact: "Luxe Coffee Bar serves intimate gatherings through large-scale events, with service plans tailored to guest count, menu, venue requirements and event flow. Larger-format events can be accommodated through a customized service plan.",
   },
   {
     number: "02",
@@ -73,7 +73,7 @@ export const corporateExperienceRoles = [
     href: "/experiences/sweet-cart",
     statement: "Fresh preparation that becomes part of the event.",
     description:
-      "Interactive live dessert station serving warm mini Dutch pancakes, Belgian waffles on a stick, mini donuts, and soft serve prepared fresh on-site for your team.",
+      "Interactive live dessert station serving warm Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station, and the Luxe Churro Bar prepared fresh on-site for your team. Soft Serve Add-On is available as an enhancement.",
     fact: "Dessert service can typically support up to 400 guests, subject to the selections, staffing, duration, venue, and preparation requirements.",
   },
   {
@@ -199,7 +199,7 @@ export const corporateFaqs = [
   {
     question: "Can Luxe support multiple setups?",
     answer:
-      "Yes. The client intake confirms capacity for up to three simultaneous Coffee Bar setups and up to three simultaneous Sweet Cart setups. Every request remains subject to date availability, staffing, equipment, venue access, travel, and the confirmed service plan.",
+      "Multiple service setups are available for select events. For larger events, conferences and multi-space venues, additional Coffee Bar setups can be incorporated based on event scope, staffing, venue requirements and availability. Every request remains subject to date availability, equipment, venue access, travel, and the confirmed service plan.",
   },
   {
     question: "Can Luxe support multi-day corporate events?",
@@ -214,7 +214,7 @@ export const corporateFaqs = [
   {
     question: "What guest capacities can Luxe handle?",
     answer:
-      "Coffee experiences can typically serve up to 500 guests, while dessert experiences can typically serve up to 400 guests. Capacity is not based on guest count alone; the menu, duration, staffing, equipment, venue, guest flow, and number of setups determine the final service plan.",
+      "Luxe Coffee Bar serves intimate gatherings through large-scale events, with service plans tailored to guest count, menu, venue requirements and event flow. Larger-format events can be accommodated through a customized service plan.",
   },
   {
     question: "Can coffee and dessert be combined, and are rentals available?",

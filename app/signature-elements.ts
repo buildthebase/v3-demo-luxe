@@ -36,7 +36,7 @@ export const signatureExperiences: SignatureExperience[] = [
     label: "Coffee",
     name: "Luxe Coffee Bar",
     description:
-      "Mobile espresso, matcha, and specialty beverage service for arrivals, cocktail hour, reception, or late-night hospitality.",
+      "Premium mobile coffee service, matcha, and specialty beverage service for arrivals, cocktail hour, reception, or late-night hospitality.",
     href: "/experiences/coffee-bar",
     image: imageAssets.experiences.coffeeBar,
   },

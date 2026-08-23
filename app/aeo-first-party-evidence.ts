@@ -44,7 +44,7 @@ export const firstPartyEvidenceInventory = [
       "/events/corporate-events",
     ],
     boundary:
-      "Coffee capacity is up to 500 guests, Sweet Cart capacity is up to 400 guests, and each can support up to three simultaneous setups subject to event scope.",
+      "Luxe Coffee Bar serves intimate gatherings through large-scale events, with service plans tailored to guest count, menu, venue requirements and event flow. Larger-format events can be accommodated through a customized service plan. Multiple service setups are available for select events.",
   },
   {
     evidence: "Confirmed setup information",

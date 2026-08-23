@@ -36,7 +36,7 @@ const bridalShowerServices: readonly SignatureExperience[] = signatureExperience
         ...experience,
         tagline: "A café-style welcome",
         description:
-          "Professional baristas serve espresso classics, signature lattes, ceremonial matcha, and iced specialty drinks to delight guests throughout the celebration.",
+          "Professional baristas serve espresso-style classics, signature lattes, Premium Matcha, and iced specialty drinks to delight guests throughout the celebration.",
       };
     }
 
@@ -45,7 +45,7 @@ const bridalShowerServices: readonly SignatureExperience[] = signatureExperience
         ...experience,
         tagline: "A live sweet moment",
         description:
-          "Fresh mini Dutch pancakes, Belgian waffle pops, mini donuts, and soft serve prepared live on-site to create a sweet interactive highlight.",
+          "Fresh Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station, and the Luxe Churro Bar prepared live on-site to create a sweet interactive highlight. Soft Serve Add-On is available as an enhancement.",
       };
     }
 
@@ -69,7 +69,7 @@ function BridalHero() {
           <span>in Toronto and the GTA.</span>
         </h1>
         <p>
-          Elevate your celebration with artisanal espresso, ceremonial matcha,
+          Elevate your celebration with specialty coffee beverages, Premium Matcha,
           live dessert carts, and focused chair and table rentals for a polished,
           welcoming bridal shower.
         </p>
@@ -154,7 +154,7 @@ function BridalMoments() {
           <p>Guest arrival</p>
           <h3>A café-style welcome.</h3>
           <p>
-            Greet arriving guests with handcrafted espresso drinks, iced
+            Greet arriving guests with espresso-style classics and signature beverages, iced
             matchas, and signature lattes for a warm, interactive start to the
             celebration.
           </p>
@@ -174,8 +174,9 @@ function BridalMoments() {
           <h3>Dessert becomes part of the celebration.</h3>
           <p>
             Treat guests to interactive live dessert stations serving warm
-            mini Dutch pancakes, waffle pops, mini donuts, or creamy soft
-            serve.
+            Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station,
+            or the Luxe Churro Bar. Soft Serve Add-On is available as an
+            enhancement.
           </p>
         </article>
         <article>

@@ -71,7 +71,7 @@ export const activationServiceMedia = [
     href: "/experiences/coffee-bar",
     statement: "Branded coffee and matcha service guests can hold and share.",
     description:
-      "Artisanal espresso, ceremonial matcha, seasonal iced drinks, and custom branded cups crafted to encourage guest social sharing and direct engagement.",
+      "Espresso-style classics and signature beverages, Premium Matcha, seasonal iced drinks, and custom branded cups crafted to encourage guest social sharing and direct engagement.",
   },
   {
     number: "02",
@@ -79,7 +79,7 @@ export const activationServiceMedia = [
     href: "/experiences/sweet-cart",
     statement: "Interactive branded dessert service prepared in the moment.",
     description:
-      "Fresh-made mini Dutch pancakes, Belgian waffles on a stick, mini donuts, and soft serve prepared live to drive guest interaction and foot traffic.",
+      "Fresh-made Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station, and the Luxe Churro Bar prepared live to drive guest interaction and foot traffic. Soft Serve Add-On is available as an enhancement.",
   },
   {
     number: "03",

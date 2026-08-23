@@ -1,11 +1,31 @@
 {
   "schemaVersion": 1,
   "version": "1.0.0",
-  "tone": ["considered", "clear", "editorial", "warm", "precise"],
-  "approvedTerms": ["Luxe Coffee Bar", "Luxe Sweet Cart", "Luxe Seating Rentals", "Toronto and the GTA"],
+  "tone": [
+    "considered",
+    "clear",
+    "editorial",
+    "warm",
+    "precise"
+  ],
+  "approvedTerms": [
+    "Luxe Coffee Bar",
+    "Luxe Sweet Cart",
+    "Luxe Seating Rentals",
+    "Toronto and the GTA"
+  ],
   "requiredPhrases": [],
-  "excludedWords": ["game-changing", "revolutionary", "unforgettable magic", "best-in-class"],
-  "prohibitedClaims": ["guaranteed results", "Toronto's best", "number one event company"],
+  "excludedWords": [
+    "game-changing",
+    "revolutionary",
+    "unforgettable magic",
+    "best-in-class"
+  ],
+  "prohibitedClaims": [
+    "guaranteed results",
+    "Toronto's best",
+    "number one event company"
+  ],
   "canadianSpelling": true,
   "headingGuidance": "Use descriptive headings that answer a planning question without keyword stuffing.",
   "sentenceGuidance": "Prefer clear, measured sentences and factual hospitality language.",

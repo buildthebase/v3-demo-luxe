@@ -96,7 +96,7 @@ export const galleryGroups: readonly GalleryGroup[] = [
     title: "Live dessert cart experiences",
     context: "Luxe Sweet Cart",
     description:
-      "See made-to-order mini pancakes, Belgian waffles, mini donuts, toppings, cart presentation, and guest-facing dessert service.",
+      "See made-to-order Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station, the Luxe Churro Bar, toppings, cart presentation, and guest-facing dessert service.",
     tags: [
       "sweet-cart",
       "weddings",

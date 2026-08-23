@@ -32,7 +32,7 @@ export const weddingMoments = [
     fitLabel: "Best fit",
     fit: "Café Cart",
     description:
-      "Greet early-arriving guests and the wedding party with handcrafted espresso, iced matchas, and warm signature drinks as they arrive before the ceremony.",
+      "Greet early-arriving guests and the wedding party with espresso-style classics and signature beverages, iced matchas, and warm signature drinks as they arrive before the ceremony.",
   },
   {
     number: "02",
@@ -50,7 +50,7 @@ export const weddingMoments = [
     fitLabel: "Can include",
     fit: "Coffee Bar",
     description:
-      "Complement dinner service, speeches, and evening dancing with artisanal espresso drinks, herbal teas, and custom non-coffee options.",
+      "Complement dinner service, speeches, and evening dancing with specialty coffee beverages, herbal teas, and custom non-coffee options.",
   },
   {
     number: "04",
@@ -59,7 +59,7 @@ export const weddingMoments = [
     fitLabel: "Best fit",
     fit: "Sweet Cart",
     description:
-      "Interactive live dessert station featuring fresh mini Dutch pancakes, Belgian waffles on a stick, mini donuts, and soft serve prepared fresh in front of your guests.",
+      "Interactive live dessert station featuring fresh Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station, and the Luxe Churro Bar prepared fresh in front of your guests. Soft Serve Add-On is available as an enhancement.",
   },
   {
     number: "05",
@@ -68,7 +68,7 @@ export const weddingMoments = [
     fitLabel: "Can include",
     fit: "Coffee Bar or Sweet Cart",
     description:
-      "Re-energize the dance floor with late-night espresso shots or freshly baked warm treats, providing a memorable second-wind hospitality moment.",
+      "Re-energize the dance floor with late-night specialty coffee beverages or freshly baked warm treats, providing a memorable second-wind hospitality moment.",
   },
   {
     number: "06",
@@ -77,7 +77,7 @@ export const weddingMoments = [
     fitLabel: "Optional",
     fit: "Coffee Bar",
     description:
-      "Keep the celebration going during your farewell brunch or day-after gift opening with full-service espresso catering for family and close friends.",
+      "Keep the celebration going during your farewell brunch or day-after gift opening with premium mobile coffee service for family and close friends.",
   },
 ] as const;
 

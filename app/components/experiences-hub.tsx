@@ -88,7 +88,7 @@ export function ExperiencesBookingClarity() {
           <span>liability insurance</span>
         </li>
         <li>
-          <strong>Up to 500{" "}</strong>
+          <strong>250+{" "}</strong>
           <span>coffee-service guests</span>
         </li>
         <li>
@@ -96,8 +96,8 @@ export function ExperiencesBookingClarity() {
           <span>dessert-service guests</span>
         </li>
         <li>
-          <strong>Three{" "}</strong>
-          <span>simultaneous coffee and dessert setups</span>
+          <strong>Multiple{" "}</strong>
+          <span>service setups available for select events</span>
         </li>
         <li>
           <strong>Southern Ontario{" "}</strong>

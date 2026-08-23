@@ -14,7 +14,7 @@ export const bridalShowerExperiences = [
     href: "/experiences/coffee-bar",
     title: "Colour, craft, and a menu guests remember.",
     description:
-      "Matcha, signature drinks, seasonal collections, premium non-coffee beverages, and milk alternatives can shape a focused menu around the shower and its guests.",
+      "Matcha, signature drinks, seasonal and custom beverages, premium non-coffee options, and milk alternatives can shape a focused menu around the shower and its guests.",
     tone: "matcha",
   },
   {
@@ -23,7 +23,7 @@ export const bridalShowerExperiences = [
     href: "/experiences/sweet-cart",
     title: "Dessert becomes part of the scene.",
     description:
-      "Mini Dutch pancakes, Belgian waffles on a stick, mini donuts, and optional soft serve can be prepared on-site with confirmed sauces, toppings, signage, and presentation details.",
+      "Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station, and the Luxe Churro Bar can be prepared on-site with confirmed sauces, toppings, signage, and presentation details. Soft Serve Add-On is available as an enhancement.",
     tone: "dessert",
   },
   {
@@ -43,7 +43,7 @@ export const bridalShowerDetails = [
     label: "The menu",
     title: "Menus and drinks",
     description:
-      "Tailor your drink menu with custom signature lattes, ceremonial matcha, seasonal specials, alternative milks, and personalized menu displays.",
+      "Tailor your drink menu with custom signature lattes, Premium Matcha, seasonal specials, alternative milks, and personalized menu displays.",
   },
   {
     number: "02",
@@ -74,7 +74,7 @@ export const bridalShowerCombinations = [
     title: "The interactive centrepiece",
     experiences: "Signature Coffee Bar + Sweet Cart",
     description:
-      "Pair handcrafted beverages with a live dessert station to create two engaging focal points that drive guest interaction.",
+      "Pair specialty coffee beverages with a live dessert station to create two engaging focal points that drive guest interaction.",
   },
   {
     number: "03",
@@ -117,7 +117,7 @@ export const bridalShowerPlanning = [
     number: "02",
     title: "Experience preferences",
     description:
-      "Select whether a mobile coffee bar, ceremonial matcha, live dessert cart, seating rentals, or a coordinated combination suits your vision.",
+      "Select whether premium mobile coffee service, Premium Matcha, live dessert cart, seating rentals, or a coordinated combination suits your vision.",
   },
   {
     number: "03",
@@ -142,12 +142,12 @@ export const bridalShowerFaqs = [
   {
     question: "Can matcha and specialty beverages be included?",
     answer:
-      "Yes. Matcha, two signature coffee drinks, one premium non-coffee beverage, hot and iced service, dairy, and premium milk alternatives are part of the confirmed Coffee Bar offering. Seasonal and custom menu possibilities are reviewed around the event.",
+      "Yes. A curated selection of café classics, signature beverages and premium non-coffee options is tailored to your selected experience. Hot and iced service, whole milk and premium milk alternatives are available as part of the Coffee Bar experience. Seasonal and custom menu possibilities are reviewed around the event.",
   },
   {
     question: "Which desserts work well for bridal showers?",
     answer:
-      "Mini Dutch pancakes, Belgian waffles on a stick, and mini donuts all work well when the host wants a freshly prepared, guest-facing dessert moment. Soft serve is an optional enhancement. The best choice depends on the shower schedule, guest count, desired presentation, menu around it, and the service flow confirmed in the proposal.",
+      "Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station, and the Luxe Churro Bar all work well when the host wants a freshly prepared, guest-facing dessert moment. Soft Serve Add-On is an enhancement. The best choice depends on the shower schedule, guest count, desired presentation, menu around it, and the service flow confirmed in the proposal.",
   },
   {
     question: "Can coffee and dessert be booked together?",

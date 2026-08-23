@@ -86,7 +86,7 @@ export function HomePositioning() {
           <li>
             <Link href="#experience-selector-coffee">
               <strong>Luxe Coffee Bar</strong>
-              <span>Handcrafted espresso &amp; signature sips</span>
+              <span>Specialty coffee beverages &amp; signature sips</span>
             </Link>
           </li>
           <li>

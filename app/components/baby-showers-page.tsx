@@ -44,7 +44,7 @@ function BabyShowerHero() {
           <span>in Toronto.</span>
         </h1>
         <p>
-          Specialty espresso bars, iced matcha, live dessert carts, and boutique
+          Premium mobile coffee service, iced matcha, live dessert carts, and boutique
           seating rentals designed to create a warm, memorable celebration for
           parents-to-be across Toronto and the GTA.
         </p>
@@ -89,7 +89,7 @@ function BabyShowerOverview() {
           <p>WELCOME</p>
           <h3>A warm beginning.</h3>
           <p>
-            Greet arriving family and friends with handcrafted specialty espresso,
+            Greet arriving family and friends with barista-served specialty coffee,
             lavender lattes, and iced matcha for a relaxed, welcoming arrival.
           </p>
         </article>

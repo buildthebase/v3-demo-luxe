@@ -7,7 +7,6 @@ import {
   coffeeGalleryPreview,
   espressoClassics,
   nonCoffeeCollection,
-  seasonalCoffeeCollections,
   signatureCoffeeCollection,
 } from "../experiences/coffee-bar-content";
 import { pageMetadata } from "../metadata-config";
@@ -83,7 +82,7 @@ function CoffeeHero() {
         </h1>
         <p>
           A complete mobile café experience shaped around the event, with professional
-          baristas, handcrafted beverages, intentional presentation, and hospitality
+          baristas, specialty coffee beverages, intentional presentation, and hospitality
           that becomes part of the room.
         </p>
         <div className="coffee-hero-actions">
@@ -111,12 +110,12 @@ function CoffeeHero() {
       </div>
       <dl className="sweet-hero-proof" aria-labelledby="coffee-hero-proof-title">
         <div>
-          <dt>Up to 500</dt>
+          <dt>250+</dt>
           <dd><strong>Guest capacity</strong></dd>
         </div>
         <div>
-          <dt>Up to 3</dt>
-          <dd><strong>Simultaneous setups</strong></dd>
+          <dt>Multiple</dt>
+          <dd><strong>Service setups available for select events</strong></dd>
         </div>
         <div>
           <dt>$5M</dt>
@@ -127,10 +126,18 @@ function CoffeeHero() {
           <dd><strong>Setup and takedown</strong></dd>
         </div>
         <div>
-          <dt>Confirmed</dt>
+          <dt>Planned</dt>
           <dd><strong>Space, power, &amp; water</strong></dd>
         </div>
       </dl>
+      <aside className="coffee-hero-proof-notes" aria-label="Coffee Bar service planning guidance">
+        <p>
+          Luxe Coffee Bar serves intimate gatherings through large-scale events, with service plans tailored to guest count, menu, venue requirements and event flow. Larger-format events can be accommodated through a customized service plan.
+        </p>
+        <p>
+          For larger events, conferences and multi-space venues, additional Coffee Bar setups can be incorporated based on event scope, staffing, venue requirements and availability.
+        </p>
+      </aside>
     </header>
   );
 }
@@ -148,7 +155,7 @@ function CoffeeOverview() {
         <>
           <p>
             A mobile coffee bar brings commercial espresso equipment, skilled baristas,
-            and a handcrafted beverage menu directly to your venue. Luxe Coffee Bar
+            and specialty coffee beverages directly to your venue. Luxe Coffee Bar
             provides elevated mobile café catering for{" "}
             <Link href="/events/weddings">weddings</Link>,{" "}
             <Link href="/events/corporate-events">corporate events</Link>,{" "}
@@ -235,16 +242,16 @@ function CoffeeInclusions() {
       data-evidence-status="confirmed-first-party"
     >
       <header>
-        <p className="foundation-label">Confirmed inclusions</p>
+        <p className="foundation-label">Coffee Bar experience</p>
         <h2 id="coffee-inclusions-title">Complete Mobile Coffee Catering Inclusions</h2>
         <div className="coffee-inclusions-intro">
           <p>
-            Everything needed for a complete coffee service.
+            A curated selection of café classics, signature beverages and premium
+            non-coffee options tailored to your selected experience.
           </p>
           <p>
-            Full barista service, hot and iced beverages, specialty syrups, milk
-            alternatives and premium non-coffee options are thoughtfully included in
-            your experience.
+            Hot and iced service, whole milk and premium milk alternatives are
+            available as part of the Coffee Bar experience.
           </p>
         </div>
       </header>
@@ -279,16 +286,19 @@ function CoffeeMenu() {
     >
       <header>
         <p className="foundation-label">The beverage language</p>
-        <h2 id="coffee-menu-title">Handcrafted Espresso, Matcha &amp; Beverage Menu</h2>
+        <h2 id="coffee-menu-title">Espresso-style Classics, Matcha &amp; Specialty Beverages</h2>
         <p className="coffee-menu-tagline">
           <span>Classic at the foundation.</span>{" "}
           <span>Personal in expression.</span>
         </p>
         <div className="coffee-menu-intro">
           <p>
-            Every menu begins with four espresso classics, then makes room for
-            signature drinks, matcha, and a premium non-coffee selection. Hot and iced
-            service and dairy and premium milk alternatives are included.
+            A curated selection of café classics, signature beverages and premium
+            non-coffee options tailored to your selected experience.
+          </p>
+          <p>
+            Hot and iced service, whole milk and premium milk alternatives are
+            available as part of the Coffee Bar experience.
           </p>
         </div>
       </header>
@@ -309,7 +319,7 @@ function CoffeeMenu() {
         </article>
         <article data-category="matcha" tabIndex={0}>
           <span className="coffee-menu-icon coffee-menu-icon-leaf" aria-hidden="true"><i /></span>
-          <h3>Ceremonial Matcha &amp; Non-Coffee</h3>
+          <h3>Premium Matcha &amp; Non-Coffee</h3>
           <ul>
             {nonCoffeeCollection.map((drink) => <li key={drink}>{drink}</li>)}
           </ul>
@@ -317,20 +327,9 @@ function CoffeeMenu() {
       </div>
       <div className="coffee-seasonal">
         <div>
-          <p className="foundation-label">Seasonal collections</p>
-          <h3>Seasonal Specialty Drinks</h3>
-          <p className="coffee-seasonal-subtitle">Seasonal selections may vary.</p>
-        </div>
-        <div className="coffee-seasonal-grid">
-          {seasonalCoffeeCollections.map((collection) => (
-            <article data-season={collection.season.toLowerCase()} key={collection.season} tabIndex={0}>
-              <span className={`coffee-seasonal-icon coffee-seasonal-icon-${collection.season.toLowerCase()}`} aria-hidden="true"><i /></span>
-              <h4>{collection.season}</h4>
-              <ul>
-                {collection.drinks.map((drink) => <li key={drink}>{drink}</li>)}
-              </ul>
-            </article>
-          ))}
+          <p className="foundation-label">Seasonal menu direction</p>
+          <h3>Seasonal &amp; Custom Specialty Drinks</h3>
+          <p className="coffee-seasonal-subtitle">Select seasonal and custom beverages may be incorporated into your event menu based on availability, event theme and selected Coffee Bar experience.</p>
         </div>
       </div>
     </section>

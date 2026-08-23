@@ -49,7 +49,7 @@ export const privateEventExperiences = [
     image: imageAssets.experiences.coffeeBar,
     href: "/experiences/coffee-bar",
     description:
-      "Full-service mobile espresso bar featuring classic coffee drinks, custom signature lattes, ceremonial matcha, teas, hot chocolate, dairy alternatives, and seasonal menu items served hot or iced. Select between our versatile Café Cart or full Signature Coffee Bar based on your venue size, guest count, and party schedule.",
+      "Premium mobile coffee service featuring classic coffee drinks, custom signature lattes, Premium Matcha, teas, hot chocolate, dairy alternatives, and seasonal menu items served hot or iced. Select between our versatile Café Cart or full Signature Coffee Bar based on your venue size, guest count, and party schedule.",
   },
   {
     id: "dessert",
@@ -59,7 +59,7 @@ export const privateEventExperiences = [
     image: imageAssets.experiences.sweetCart,
     href: "/experiences/sweet-cart",
     description:
-      "Interactive live dessert catering featuring warm mini Dutch pancakes, Belgian waffle pops, and mini donuts made fresh on-site with premium sauces and toppings. Menu selections, station setup, toppings bar, and staffing levels are customized in your tailored event proposal.",
+      "Interactive live dessert catering featuring warm Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station, and the Luxe Churro Bar made fresh on-site with Premium Sauces and toppings. Menu selections, station setup, toppings bar, and staffing levels are customized in your tailored event proposal.",
   },
   {
     id: "seating",

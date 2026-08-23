@@ -23,6 +23,9 @@ import {
 import { ADAPTERS, ProjectRegistry, ensureProjectScaffold } from "./projects.mjs";
 import { GoogleSearchConsole } from "./google-search-console.mjs";
 import { exportProjectBundle, importProjectBundle, inspectProjectBundle } from "./bundles.mjs";
+import { prepareBulkLifecycle } from "./article-lifecycle.mjs";
+import { projectStorageHealth, readProjectHelpSessions, writeProjectHelpSessions } from "./storage/help-service.mjs";
+import { ProjectLockManager } from "./project-locks.mjs";
 import {
   generateOpportunities,
   generateReport,
@@ -39,6 +42,7 @@ const CMS_DIR = path.dirname(fileURLToPath(import.meta.url));
 const DEFAULT_ROOT = path.resolve(CMS_DIR, "..");
 const STATIC_DIR = path.join(CMS_DIR, "public");
 const projectRegistry = new ProjectRegistry({ cmsDir: CMS_DIR, defaultRoot: DEFAULT_ROOT, legacySettingsFile: path.join(CMS_DIR, "settings.json") });
+const projectLocks = new ProjectLockManager();
 const projectStore = new AsyncLocalStorage();
 const currentProject = () => {
   const context = projectStore.getStore();
@@ -159,7 +163,7 @@ async function loadCollections() {
 }
 
 async function buildState() {
-  const [collections, voice, knowledge, snapshot, media, jobs, calendar, calendarConfig, calendarProposals, helpSessions, projectSettings, globalSettings, paths, seo] = await Promise.all([
+  const [collections, voice, knowledge, snapshot, media, jobs, calendar, calendarConfig, calendarProposals, helpSessions, projectSettings, globalSettings, paths, seo, writerLock] = await Promise.all([
     loadCollections(),
     readJson(projectFiles().voice, {}),
     readJson(projectFiles().knowledge, []),
@@ -169,12 +173,14 @@ async function buildState() {
     readJson(projectFiles().calendar, []),
     readJson(projectFiles().calendarConfig, defaultCalendarConfig()),
     readJson(projectFiles().calendarProposals, []),
-    readJson(projectFiles().helpSessions, []),
+    readProjectHelpSessions(currentProject()),
     readJson(projectFiles().settings, {}),
     projectRegistry.globalSettings(),
     knownSitePaths(),
     seoState(currentProject()),
+    projectLocks.status(currentProject()),
   ]);
+  const storage = await projectStorageHealth(currentProject());
   const graph = buildLinkGraph(collections.all, paths);
   const issues = Object.fromEntries(collections.all.map((article) => [
     article.slug,
@@ -184,7 +190,7 @@ async function buildState() {
   const settings = effectiveSettings(projectSettings, globalSettings, project.manifest);
   return {
     ...collections, voice, knowledge, snapshot, media, jobs, calendar, calendarConfig, calendarProposals, helpSessions,
-    settings, knownPaths: paths, graph, issues, seo,
+    settings, knownPaths: paths, graph, issues, seo, storage, writerLock,
     project: { id: project.id, root: project.root, manifest: project.manifest, adapter: project.adapter },
   };
 }
@@ -270,6 +276,30 @@ async function writeCollections(collections) {
   ]);
 }
 
+function proposalItemId(proposal, item, index) {
+  return item.id || crypto.createHash("sha256").update(`${proposal.id}:${index}:${item.title}:${item.targetDate || ""}`).digest("hex").slice(0, 20);
+}
+
+async function syncProposalArticleState(article) {
+  const proposals = await readJson(projectFiles().calendarProposals, []);
+  let changed = false;
+  for (const proposal of proposals) {
+    proposal.items = (proposal.items || []).map((item, index) => {
+      const matches = item.articleSlug === article.slug || (!item.articleSlug && item.title === article.title);
+      if (!matches) return item;
+      changed = true;
+      return {
+        ...item,
+        id: proposalItemId(proposal, item, index),
+        articleSlug: article.slug,
+        articleStatus: article.status,
+        articleStatusUpdatedAt: new Date().toISOString(),
+      };
+    });
+  }
+  if (changed) await atomicWriteJson(projectFiles().calendarProposals, proposals);
+}
+
 function removeArticle(collections, slug) {
   for (const key of ["published", "drafts", "archived", "trash"]) {
     collections[key] = collections[key].filter((article) => article.slug !== slug);
@@ -294,6 +324,7 @@ async function saveArticle(article) {
     throw Object.assign(new Error("Publishing is blocked by validation errors."), { status: 422, details: issues });
   }
   await writeCollections(collections);
+  await syncProposalArticleState(clean);
   return { article: clean, previousStatus: previous?.status || null, issues };
 }
 
@@ -315,6 +346,20 @@ async function lifecycle(slug, action, options = {}) {
   }
   if (action === "restore") return saveArticle({ ...article, originalSlug: article.slug, status: "draft", archiveDisposition: undefined, redirectTo: undefined });
   throw Object.assign(new Error("Unknown lifecycle action."), { status: 400 });
+}
+
+async function bulkLifecycle(slugs, action, options = {}) {
+  const collections = await loadCollections();
+  const state = await buildState();
+  const prepared = prepareBulkLifecycle(collections.all, slugs, action, { ...options, voice: state.voice, knownPaths: state.knownPaths });
+  const next = { published: [], drafts: [], archived: [], trash: [] };
+  for (const article of prepared.articles) {
+    const key = article.status === "published" ? "published" : article.status === "archived" ? "archived" : article.status === "trash" ? "trash" : "drafts";
+    next[key].push(article);
+  }
+  await writeCollections(next);
+  await Promise.all(prepared.updated.map((article) => syncProposalArticleState(article)));
+  return { updated: prepared.updated.map((article) => ({ slug: article.slug, title: article.title, status: article.status })), issues: prepared.issues };
 }
 
 async function scanKnowledge(settings) {
@@ -829,7 +874,7 @@ ${JSON.stringify(session.messages.slice(-8))}`;
     session.usage = addUsage(session.usage, mapUsage(result.usage));
     session.messages.push({ role: "user", text: question, createdAt: new Date().toISOString() });
     session.messages.push({ role: "assistant", ...response, createdAt: new Date().toISOString() });
-    await atomicWriteJson(projectFiles().helpSessions, sessions);
+    await writeProjectHelpSessions(currentProject(), sessions);
     return { sessionId: session.id, threadId: session.threadId, usage: session.usage, response };
   } catch (error) {
     if (activeRun.signal.aborted) throw Object.assign(new Error(activeRun.signal.reason?.message || "CMS Help was cancelled."), { status: 408 });
@@ -916,7 +961,7 @@ Return a concise proposal that a nontechnical editor can accept, decline, or sen
     if (index >= 0) session.proposals[index] = proposal;
     else session.proposals.push(proposal);
     session.messages.push({ role: "assistant", answer: `I prepared “${proposal.title}” for your review. Nothing has been changed yet.`, steps: [], references: proposal.files, caution: proposal.risk === "high" ? "This proposal is high risk and requires careful review." : "Review every proposed change before accepting.", createdAt: new Date().toISOString(), proposalId: proposal.id });
-    await atomicWriteJson(projectFiles().helpSessions, state.helpSessions);
+    await writeProjectHelpSessions(currentProject(), state.helpSessions);
     return { sessionId: session.id, proposal, usage: session.usage };
   } catch (error) {
     if (activeRun.signal.aborted) throw Object.assign(new Error(activeRun.signal.reason?.message || "Repair generation was cancelled."), { status: 408 });
@@ -979,7 +1024,7 @@ async function applyHelpRepair(payload) {
   if (payload.decision === "decline") {
     proposal.status = "declined";
     proposal.decidedAt = new Date().toISOString();
-    await atomicWriteJson(projectFiles().helpSessions, state.helpSessions);
+    await writeProjectHelpSessions(currentProject(), state.helpSessions);
     return { proposal, applied: false };
   }
   if (payload.decision !== "accept") throw Object.assign(new Error("Choose accept or decline."), { status: 422 });
@@ -1020,7 +1065,7 @@ async function applyHelpRepair(payload) {
   proposal.decidedAt = new Date().toISOString();
   proposal.result = result;
   session.messages.push({ role: "assistant", answer: `The approved repair “${proposal.title}” was applied successfully.`, steps: [], references: proposal.files, caution: "Review the affected screen before continuing with publication.", createdAt: new Date().toISOString() });
-  await atomicWriteJson(projectFiles().helpSessions, state.helpSessions);
+  await writeProjectHelpSessions(currentProject(), state.helpSessions);
   return { proposal, applied: true, result };
 }
 
@@ -1047,6 +1092,8 @@ function normalizeCalendarItem(item, existing = {}) {
     articleSlug: String(item.articleSlug || existing.articleSlug || "").trim(),
     notes: String(item.notes || existing.notes || "").trim(),
     proposedInternalLinks: Array.isArray(item.proposedInternalLinks) ? item.proposedInternalLinks : (existing.proposedInternalLinks || []),
+    sourceProposalId: String(item.sourceProposalId || existing.sourceProposalId || ""),
+    sourceProposalItemId: String(item.sourceProposalItemId || existing.sourceProposalItemId || ""),
     createdAt: existing.createdAt || now,
     updatedAt: now,
   };
@@ -1065,9 +1112,24 @@ async function saveCalendarItem(payload) {
 
 async function deleteCalendarItem(id) {
   const items = await readJson(projectFiles().calendar, []);
+  const removed = items.find((item) => item.id === id);
   const next = items.filter((item) => item.id !== id);
   if (next.length === items.length) throw Object.assign(new Error("Calendar item not found."), { status: 404 });
-  await atomicWriteJson(projectFiles().calendar, next);
+  const proposals = await readJson(projectFiles().calendarProposals, []);
+  let proposalsChanged = false;
+  if (removed?.sourceProposalId) {
+    const proposal = proposals.find((candidate) => candidate.id === removed.sourceProposalId);
+    const proposalItem = proposal?.items?.find((candidate) => candidate.id === removed.sourceProposalItemId);
+    if (proposalItem) {
+      proposalItem.calendarStatus = "removed";
+      proposalItem.calendarRemovedAt = new Date().toISOString();
+      proposalsChanged = true;
+    }
+  }
+  await Promise.all([
+    atomicWriteJson(projectFiles().calendar, next),
+    ...(proposalsChanged ? [atomicWriteJson(projectFiles().calendarProposals, proposals)] : []),
+  ]);
   return { deleted: id };
 }
 
@@ -1093,6 +1155,7 @@ async function runCalendarProposal(payload) {
     const parsed = JSON.parse(result.finalResponse);
     const proposals = state.calendarProposals;
     const proposal = { id: crypto.randomUUID(), prompt: promptText, createdAt: new Date().toISOString(), threadId: thread.id, usage: mapUsage(result.usage), status: "pending", ...parsed };
+    proposal.items = (proposal.items || []).map((item, index) => ({ ...item, id: proposalItemId(proposal, item, index), calendarStatus: "proposed", articleStatus: null }));
     proposals.push(proposal);
     await atomicWriteJson(projectFiles().calendarProposals, proposals);
     return proposal;
@@ -1111,11 +1174,24 @@ async function approveCalendarProposal(id) {
   const config = await readJson(projectFiles().calendarConfig, defaultCalendarConfig());
   const blocked = proposal.items.filter((item) => (config.blackoutDates || []).includes(item.targetDate));
   if (blocked.length) throw Object.assign(new Error(`The proposal includes ${blocked.length} blackout date${blocked.length === 1 ? "" : "s"}. Adjust the proposal or calendar preferences before approval.`), { status: 422, details: blocked });
-  for (const candidate of proposal.items) items.push(normalizeCalendarItem({ ...candidate, status: "planned", notes: candidate.rationale }));
+  proposal.items = (proposal.items || []).map((candidate, index) => {
+    const id = proposalItemId(proposal, candidate, index);
+    items.push(normalizeCalendarItem({ ...candidate, id: undefined, status: "planned", notes: candidate.rationale, sourceProposalId: proposal.id, sourceProposalItemId: id }));
+    return { ...candidate, id, calendarStatus: "planned", calendarAddedAt: new Date().toISOString() };
+  });
   proposal.status = "approved";
   proposal.approvedAt = new Date().toISOString();
   await Promise.all([atomicWriteJson(projectFiles().calendar, items), atomicWriteJson(projectFiles().calendarProposals, proposals)]);
   return proposal;
+}
+
+async function deleteCalendarProposal(id) {
+  const proposals = await readJson(projectFiles().calendarProposals, []);
+  const proposal = proposals.find((candidate) => candidate.id === id);
+  if (!proposal) throw Object.assign(new Error("Calendar proposal not found."), { status: 404 });
+  const next = proposals.filter((candidate) => candidate.id !== id);
+  await atomicWriteJson(projectFiles().calendarProposals, next);
+  return { deleted: id, retainedCalendarItems: proposal.status === "approved" };
 }
 
 async function runCodexStage(stage, payload) {
@@ -1441,6 +1517,10 @@ async function projectHandler(req, res, url) {
     }
     if (url.pathname === "/api/articles/new" && req.method === "POST") { requireCapability("articles"); return json(res, 200, createEmptyArticle()); }
     if (url.pathname === "/api/articles/save" && req.method === "POST") return json(res, 200, await saveArticle((await readJsonBody(req)).article));
+    if (url.pathname === "/api/articles/lifecycle/bulk" && req.method === "POST") {
+      const body = await readJsonBody(req);
+      return json(res, 200, await bulkLifecycle(body.slugs, body.action, body));
+    }
     if (url.pathname === "/api/articles/lifecycle" && req.method === "POST") {
       const body = await readJsonBody(req);
       return json(res, 200, await lifecycle(body.slug, body.action, body));
@@ -1496,6 +1576,7 @@ async function projectHandler(req, res, url) {
     }
     if (url.pathname === "/api/calendar/propose" && req.method === "POST") return json(res, 200, await runCalendarProposal(await readJsonBody(req)));
     if (url.pathname === "/api/calendar/approve" && req.method === "POST") return json(res, 200, await approveCalendarProposal((await readJsonBody(req)).id));
+    if (url.pathname === "/api/calendar/proposal/delete" && req.method === "POST") return json(res, 200, await deleteCalendarProposal((await readJsonBody(req)).id));
     if (url.pathname === "/api/studio/brief" && req.method === "POST") return json(res, 200, await runCodexStage("brief", await readJsonBody(req)));
     if (url.pathname === "/api/studio/outline" && req.method === "POST") return json(res, 200, await runCodexStage("outline", await readJsonBody(req)));
     if (url.pathname === "/api/studio/draft" && req.method === "POST") return json(res, 200, await runCodexStage("draft", await readJsonBody(req)));
@@ -1554,6 +1635,7 @@ async function handler(req, res) {
     const projectId = scoped ? decodeURIComponent(scoped[1]) : registry.activeProjectId;
     const context = await projectRegistry.context(projectId);
     await ensureProjectScaffold(context);
+    if (req.method !== "GET") await projectLocks.acquire(context);
     if (scoped) url.pathname = `/api${scoped[2] || "/state"}`;
     return projectStore.run(context, () => projectHandler(req, res, url));
   } catch (error) {
@@ -1573,10 +1655,13 @@ server.listen(runtimePort, "127.0.0.1", () => {
   }
 });
 
-function stopLocalServers() {
+async function stopLocalServers() {
   for (const process of managedSiteProcesses.values()) if (!process.killed) process.kill("SIGTERM");
+  const registry = await projectRegistry.list().catch(() => ({ projects: [] }));
+  const contexts = await Promise.all((registry.projects || []).filter((entry) => entry.connectionStatus === "connected").map((entry) => projectRegistry.context(entry.projectId).catch(() => null)));
+  await projectLocks.releaseAll(contexts.filter(Boolean));
   server.close();
 }
 
-process.once("SIGINT", stopLocalServers);
-process.once("SIGTERM", stopLocalServers);
+process.once("SIGINT", () => void stopLocalServers());
+process.once("SIGTERM", () => void stopLocalServers());

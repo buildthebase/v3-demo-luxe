@@ -12,7 +12,7 @@ export const birthdayContexts = [
     number: "02",
     title: "Adult celebrations",
     description:
-      "Enhance daytime brunches, cocktail parties, private dinners, or late-night dessert hours with handcrafted espresso drinks, matcha, and live treats.",
+      "Enhance daytime brunches, cocktail parties, private dinners, or late-night dessert hours with espresso-style classics and signature beverages, Premium Matcha, and live treats.",
   },
   {
     number: "03",
@@ -37,7 +37,7 @@ export const birthdayExperiences = [
     image: imageAssets.experiences.coffeeBar,
     href: "/experiences/coffee-bar",
     description:
-      "Professional baristas craft espresso classics, ceremonial matcha, signature birthday lattes, and premium non-coffee drinks throughout your celebration.",
+      "Professional baristas serve espresso-style classics, Premium Matcha, signature birthday lattes, and specialty coffee beverages throughout your celebration.",
   },
   {
     id: "dessert",
@@ -47,7 +47,7 @@ export const birthdayExperiences = [
     image: imageAssets.experiences.sweetCart,
     href: "/experiences/sweet-cart",
     description:
-      "Interactive live dessert catering featuring warm mini Dutch pancakes, Belgian waffle pops, mini donuts, and soft serve made fresh on-site for your guests.",
+      "Interactive live dessert catering featuring warm Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station, and the Luxe Churro Bar made fresh on-site for your guests. Soft Serve Add-On is available as an enhancement.",
   },
   {
     id: "seating",
@@ -88,14 +88,14 @@ export const birthdayCombinations = [
     title: "The milestone café",
     experiences: "Signature Coffee Bar + beverage service",
     description:
-      "A dedicated specialty beverage station featuring barista-prepared espresso, matcha, and signature birthday lattes to anchor guest arrivals or late-night party hours.",
+      "A dedicated specialty beverage station featuring barista-served specialty coffee, Premium Matcha, and signature birthday lattes to anchor guest arrivals or late-night party hours.",
   },
   {
     number: "02",
     title: "The interactive sweet moment",
     experiences: "Sweet Cart + live dessert service",
     description:
-      "A live dessert station serving made-to-order mini Dutch pancakes, waffle pops, or mini donuts that doubles as an engaging visual focal point for all ages.",
+      "A live dessert station serving made-to-order Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station, or the Luxe Churro Bar that doubles as an engaging visual focal point for all ages.",
   },
   {
     number: "03",
@@ -121,7 +121,7 @@ export const birthdayPlanning = [
   {
     title: "The experiences",
     description:
-      "Let us know if you are considering the mobile espresso bar, ceremonial matcha service, live dessert cart, confirmed seating rentals, or a coordinated combination.",
+      "Let us know if you are considering premium mobile coffee service, Premium Matcha service, live dessert cart, confirmed seating rentals, or a coordinated combination.",
   },
   {
     title: "The venue and service needs",
@@ -149,12 +149,12 @@ export const birthdayFaqs = [
   {
     question: "Which non-coffee beverages are available?",
     answer:
-      "The Coffee Bar offers premium non-coffee choices including ceremonial matcha latte, strawberry matcha, chai latte, and hot chocolate. One premium non-coffee beverage is included within the confirmed Coffee Bar experience, with final menu selections made for the event.",
+      "The Coffee Bar offers premium non-coffee choices including Premium Matcha Latte, Strawberry Matcha, chai latte, and hot chocolate. The final menu selections are made for the event.",
   },
   {
     question: "Which birthday desserts are available?",
     answer:
-      "Luxe Sweet Cart offers mini Dutch pancakes, Belgian waffles on a stick, and mini donuts prepared on-site. Soft serve is an optional enhancement. Sauces, standard toppings, premium toppings, quantities, and service format are confirmed in the proposal.",
+      "Luxe Sweet Cart offers Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station, and the Luxe Churro Bar prepared on-site. Soft Serve Add-On is an enhancement. Sauces, standard toppings, premium toppings, quantities, and service format are confirmed in the proposal.",
   },
   {
     question: "Can coffee, dessert, and rentals be combined?",

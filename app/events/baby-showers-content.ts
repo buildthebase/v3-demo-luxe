@@ -8,7 +8,7 @@ export const babyShowerExperiences = [
     label: "COFFEE AND MATCHA",
     name: "Luxe Coffee Bar",
     description:
-      "Professional mobile espresso bars serving custom lattes, ceremonial matcha, and specialty iced drinks to greet guests upon arrival.",
+      "Professional mobile coffee service serving custom lattes, Premium Matcha, and specialty iced drinks to greet guests upon arrival.",
     href: "/experiences/coffee-bar",
     image: imageAssets.experiences.coffeeBar,
   },
@@ -18,7 +18,7 @@ export const babyShowerExperiences = [
     label: "LIVE DESSERT",
     name: "Luxe Sweet Cart",
     description:
-      "Interactive live dessert carts serving warm mini Dutch pancakes, Belgian waffle pops, and sweet treats prepared fresh on-site.",
+      "Interactive live dessert carts serving warm Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station, and the Luxe Churro Bar prepared fresh on-site.",
     href: "/experiences/sweet-cart",
     image: imageAssets.experiences.sweetCart,
   },
@@ -40,7 +40,7 @@ export const babyShowerCombinations = [
     occasion: "A WELCOMING START",
     title: "Coffee Bar + Seating",
     description:
-      "A warm arrival pairing handcrafted espresso drinks and iced matchas with the chairs and tables needed for guests to connect and settle in.",
+      "A warm arrival pairing espresso-style classics and signature beverages with iced matchas, chairs, and tables for guests to connect and settle in.",
     href: "/contact",
     experienceIds: ["coffee", "seating"],
   },
@@ -49,7 +49,7 @@ export const babyShowerCombinations = [
     occasion: "A SHARED FOCAL POINT",
     title: "Coffee Bar + Sweet Cart",
     description:
-      "Barista-brewed specialty coffee paired with interactive live dessert service to create two distinct, complementary tasting focal points.",
+      "Barista-served specialty coffee paired with interactive live dessert service to create two distinct, complementary tasting focal points.",
     href: "/contact",
     experienceIds: ["coffee", "dessert"],
   },
@@ -69,7 +69,7 @@ export const babyShowerStyling = [
     number: "01",
     title: "Menus and drinks",
     description:
-      "Tailored signature lattes, ceremonial matcha, seasonal drink options, dairy-free alternatives, and custom menu displays curated for your guests.",
+      "Tailored signature lattes, Premium Matcha, seasonal drink options, dairy-free alternatives, and custom menu displays curated for your guests.",
   },
   {
     number: "02",
@@ -132,7 +132,7 @@ export const babyShowerPlanning = [
     number: "02",
     title: "Experience preferences",
     description:
-      "Let us know if you prefer a mobile espresso bar, ceremonial matcha service, live dessert carts, seating rentals, or a coordinated bundle.",
+      "Let us know if you prefer premium mobile coffee service, Premium Matcha service, live dessert carts, seating rentals, or a coordinated bundle.",
   },
   {
     number: "03",
@@ -156,7 +156,7 @@ export const babyShowerFaqs = [
   {
     question: "What desserts can be prepared at a baby shower?",
     answer:
-      "Luxe Sweet Cart can prepare mini Dutch pancakes, Belgian waffles on a stick, or mini donuts on-site. Soft serve is an optional enhancement. Dessert choices, sauces, toppings, quantities, and service format are confirmed during planning.",
+      "Luxe Sweet Cart can prepare Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station, or the Luxe Churro Bar on-site. Soft Serve Add-On is an enhancement. Dessert choices, sauces, toppings, quantities, and service format are confirmed during planning.",
   },
   {
     question: "Can drinks, menus, signage, and cups be personalized?",
@@ -186,7 +186,7 @@ export const babyShowerFaqs = [
   {
     question: "How many guests can Luxe serve?",
     answer:
-      "Luxe Coffee Bar can support events of up to 500 guests, while Luxe Sweet Cart can support events of up to 400 guests. The final service plan also depends on duration, menu complexity, staffing, equipment, venue access, and guest flow.",
+      "Luxe Coffee Bar serves intimate gatherings through large-scale events, with service plans tailored to guest count, menu, venue requirements and event flow. Larger-format events can be accommodated through a customized service plan.",
   },
   {
     question: "How far in advance should a baby shower be booked?",

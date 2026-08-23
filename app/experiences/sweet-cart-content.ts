@@ -2,7 +2,7 @@ export const sweetCartCollections = [
   {
     id: "classic",
     number: "01",
-    name: "The Classic Collection",
+    name: "Classic Collection",
     character: "Sleek. Timeless. Versatile.",
     description:
       "A refined cart design made to integrate naturally into your event decor while live dessert preparation draws guests in.",
@@ -10,7 +10,7 @@ export const sweetCartCollections = [
   {
     id: "signature",
     number: "02",
-    name: "The Signature Collection",
+    name: "Signature Collection",
     character: "Bold. Elegant. A statement piece.",
     description:
       "A more prominent cart expression for events where the dessert setup is intended to become a visible part of the décor.",
@@ -22,8 +22,9 @@ export const dessertExperiences = [
     id: "pancakes",
     number: "01",
     name: "Mini Dutch Pancakes",
+    tier: "Classic",
     description:
-      "Warm, bite-sized mini pancakes finished live with your selection of gourmet sauces and toppings.",
+      "Warm, bite-sized mini pancakes finished live with your selection of Premium Sauces and toppings.",
     decisionFit:
       "An interactive guest favourite that allows everyone to customize their dessert in an easy, bowl-style serving.",
   },
@@ -31,31 +32,43 @@ export const dessertExperiences = [
     id: "waffles",
     number: "02",
     name: "Belgian Waffles on a Stick",
+    tier: "Classic",
     description:
-      "Crisp Belgian waffles prepared fresh, drizzled to order, and served in a convenient handheld format.",
+      "Crisp Belgian waffles prepared fresh, finished to order with Premium Sauces and toppings, and served in a convenient handheld format.",
     decisionFit:
       "Ideal for cocktail hours, corporate networking, and celebrations where guests are actively mingling.",
   },
   {
     id: "donuts",
     number: "03",
-    name: "Mini Donuts",
+    name: "Mini Donut Station",
+    tier: "Premium",
     description:
-      "Freshly made mini donuts dusted, glazed, and served warm directly from the cart.",
+      "Freshly made mini donuts dusted, finished, and served warm directly from the cart.",
     decisionFit:
       "A classic crowd-pleaser that pairs effortlessly with our mobile coffee service or stands alone as a feature moment.",
+  },
+  {
+    id: "churro",
+    number: "04",
+    name: "Luxe Churro Bar",
+    tier: "Signature",
+    description:
+      "Fresh, golden churros prepared live and served warm, then finished to order with premium sauces and toppings for an interactive dessert experience.",
+    decisionFit:
+      "Our newest signature live dessert experience, designed to make dessert service part of the event atmosphere.",
   },
 ] as const;
 
 export const dessertBookingIncludes = [
-  "Choice of Classic or Signature dessert cart",
+  "Selected cart style",
   "Desserts prepared fresh on-site",
-  "Drizzled premium Belgian sauces",
-  "Selection of classic toppings included",
+  "Premium Sauces",
+  "8 standard toppings and 2–3 premium sauces, curated around your selected dessert experience.",
   "Curated cart styling and setup",
   "Professional attendant service",
-  "Complete venue setup and takedown",
-  "Napkins, bowls, and serving essentials",
+  "Complete setup and takedown",
+  "Napkins, bowls and serving essentials",
   "Custom menu display and frame",
 ] as const;
 
@@ -99,7 +112,7 @@ export const sweetCustomization = [
     number: "01",
     title: "Choose the dessert direction",
     description:
-      "Select your preferred desserts, gourmet sauces, toppings, and optional soft serve. We will curate a balanced combination that delivers fast, seamless guest service.",
+      "Select your preferred desserts, Premium Sauces, toppings, and Soft Serve Add-On. Soft Serve Add-On is offered as an enhancement and is not available as a standalone service. We will curate a balanced combination that delivers fast, seamless guest service.",
   },
   {
     number: "02",
@@ -183,7 +196,12 @@ export const sweetCartFaqs = [
   {
     question: "Which desserts are available?",
     answer:
-      "The signature Luxe Churro Bar features fresh churros prepared live and served warm. Luxe Sweet Cart also offers Mini Dutch Pancakes, Belgian Waffles on a Stick, and Mini Donuts. Vanilla or Chocolate soft serve can be added as an optional enhancement to a dessert experience.",
+      "The signature Luxe Churro Bar features fresh churros prepared live and served warm. Luxe Sweet Cart also offers Mini Dutch Pancakes, Belgian Waffles on a Stick, and a Mini Donut Station. Soft Serve Add-On can be added as an enhancement to a selected dessert experience and is not available as a standalone service.",
+  },
+  {
+    question: "What is the difference between the Classic and Signature cart styles?",
+    answer:
+      "Classic and Signature refer to physical Luxe cart styles, not automatically separate dessert service packages or pricing tiers. Select the available cart design that complements your event aesthetic; cart styles are subject to availability for your event date.",
   },
   {
     question: "Are desserts prepared on-site?",
@@ -193,22 +211,22 @@ export const sweetCartFaqs = [
   {
     question: "How many attendants are included?",
     answer:
-      "Professional attendants are included, but Luxe has not approved one public or universally included headcount. The assigned team depends on guest count, dessert selection, service duration, equipment, quantities, guest-arrival pattern, placement, and venue conditions, then appears in the proposal.",
+      "Professional attendant service is included with every Luxe Sweet Cart booking. Staffing is determined by guest count, selected dessert experience and service requirements to keep preparation and guest service running smoothly.",
   },
   {
     question: "How long does dessert service last?",
     answer:
-      "Luxe has not approved one standard dessert-service duration. The operating window is confirmed from guest count, selected dessert, quantities, staffing, equipment, when guests are expected to arrive, the wider event schedule, and venue access.",
+      "Service duration is based on guest count and the selected dessert experience. Most Luxe Sweet Cart bookings include approximately 1.5–2.5 hours of live dessert service, with the exact service window confirmed in your proposal.",
   },
   {
     question: "What is the difference between a dessert cart and a dessert table?",
     answer:
-      "A dessert table usually presents a broad selection of pre-arranged sweets for self-service, which can work well when guests need quick, flexible access. A hosted Sweet Cart is appropriate when live preparation, attendant-led service, and guest interaction should become part of the event. Compare the desired selection, preparation style, timing, staffing, space, presentation, and guest flow before choosing.",
+      "A Luxe Sweet Cart is a staffed, interactive dessert experience where sweets are prepared and finished live for your guests. Traditional dessert tables generally feature pre-arranged sweets for self-service. The Sweet Cart is ideal when you want dessert service itself to become part of the event experience.",
   },
   {
     question: "Which sauces and toppings are included?",
     answer:
-      "Every dessert experience includes premium sauces and a selection of standard toppings. The available sauce collection includes Belgian milk chocolate, Belgian white chocolate, Nutella, caramel, strawberry, pure maple syrup, Lotus Biscoff, and pistachio cream. The final included selection is confirmed for the event.",
+      "Every dessert experience includes Premium Sauces and a selection of standard toppings. The available sauce collection includes Belgian milk chocolate, Belgian white chocolate, Nutella, caramel, strawberry, pure maple syrup, Lotus Biscoff, and pistachio cream. The final included selection is confirmed for the event.",
   },
   {
     question: "Are premium toppings available?",
@@ -223,7 +241,7 @@ export const sweetCartFaqs = [
   {
     question: "Can dietary restrictions and allergies be accommodated?",
     answer:
-      "Share dietary restrictions, allergies, and cross-contact concerns before the menu is finalized. Luxe reviews each request against the selected dessert, ingredients, toppings, equipment, preparation process, and event setting. No allergen-free service or accommodation is confirmed until the event requirements have been reviewed.",
+      "Please share any dietary restrictions or allergy concerns during your inquiry. Our team will review the selected ingredients, preparation process and equipment to determine what accommodations can safely be offered for your event. Because equipment and preparation areas may be shared, we cannot guarantee an allergen-free environment.",
   },
   {
     question: "Can multiple dessert types be combined?",
@@ -233,12 +251,12 @@ export const sweetCartFaqs = [
   {
     question: "Is soft serve available?",
     answer:
-      "Yes. Vanilla or Chocolate soft serve can be added as an optional enhancement to a selected Sweet Cart dessert experience; it is not offered as a standalone cart or service.",
+      "Add vanilla or chocolate soft serve to your selected Luxe Sweet Cart dessert experience. Soft serve is offered as an enhancement and is not available as a standalone service.",
   },
   {
     question: "Can the Sweet Cart setup be branded?",
     answer:
-      "Yes. The selected dessert, sauces, toppings, cart collection, menu display, custom signage, colour direction, and approved branding can be planned together. The final treatment must remain practical for on-site preparation, clear guest choices, service speed, and the confirmed event setting.",
+      "Yes. The selected dessert, Premium Sauces, toppings, cart style, menu display, custom signage, colour direction, and approved branding can be planned together. The final treatment must remain practical for on-site preparation, clear guest choices, service speed, and the confirmed event setting.",
   },
   {
     question: "How many guests can Luxe Sweet Cart serve?",
@@ -253,7 +271,7 @@ export const sweetCartFaqs = [
   {
     question: "How much space and power does the Sweet Cart require?",
     answer:
-      "Space, power, placement, and access requirements depend on the selected dessert, equipment, cart collection, staffing, and number of stations. Luxe confirms the required footprint and utilities after reviewing the venue and event plan.",
+      "Space, power, placement, and access requirements depend on the selected dessert, equipment, cart style, staffing, and number of stations. Luxe confirms the required footprint and utilities after reviewing the venue and event plan.",
   },
   {
     question: "Can the Sweet Cart operate outdoors?",

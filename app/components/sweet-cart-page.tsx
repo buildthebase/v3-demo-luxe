@@ -65,7 +65,7 @@ const sweetCartSchema = createServicePageSchema({
     "A live, interactive dessert cart experience featuring the signature Luxe Churro Bar and made-to-order sweets for weddings, corporate events, showers, activations, and private events.",
   pageName: pageMetadata[sweetCartPath].title,
   pageDescription:
-    "Explore the flagship Luxe Churro Bar, freshly prepared mini pancakes, waffles, mini donuts, cart collections, and event applications.",
+    "Explore the newest signature Luxe Churro Bar, freshly prepared Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station, cart styles, and event applications.",
   faqs: sweetCartFaqs,
 });
 
@@ -189,7 +189,10 @@ function SweetCollections() {
     <section className="sweet-collections" aria-labelledby="sweet-collections-title">
       <header>
         <p className="foundation-label">Two cart expressions</p>
-        <h2 id="sweet-collections-title">Choose your dessert cart style.</h2>
+        <h2 id="sweet-collections-title">Choose Your Cart Style</h2>
+        <p>
+          Select from our available Luxe cart designs to complement your event aesthetic. Cart styles are subject to availability for your event date.
+        </p>
       </header>
       <div>
         {sweetCartCollections.map((collection) => (
@@ -199,6 +202,7 @@ function SweetCollections() {
             </div>
             <div className="sweet-collection-copy">
               <h3>{collection.name}</h3>
+              <p className="sweet-collection-type">Physical cart style</p>
               <p><strong>{collection.character}</strong> {collection.description}</p>
             </div>
             
@@ -206,8 +210,8 @@ function SweetCollections() {
         ))}
       </div>
       <p className="sweet-collections-note">
-  *Cart availability, dessert service, styling, footprint, and venue access
-  are confirmed during inquiry.
+        Cart styles are subject to availability for your event date. Dessert service,
+        styling, footprint, and venue access are confirmed during inquiry.
 </p>
     </section>
   );
@@ -238,6 +242,7 @@ function DessertExperiences() {
                 <><i /><i /></>
               )}
             </div>
+            <p className="sweet-dessert-tier">{dessert.tier}</p>
             <h3>{dessert.name}</h3>
             <p>{dessert.description}</p>
             <small>{dessert.decisionFit}</small>
@@ -260,13 +265,10 @@ function ChurroBarFeature() {
       <div className="sweet-churro-feature-copy">
         <h3 id="sweet-churro-title">Luxe Churro Bar</h3>
         <p className="sweet-churro-feature-positioning">
-          Our flagship dessert experience.
+          Our newest signature live dessert experience.
         </p>
         <p className="sweet-churro-feature-lead">
-          Fresh, golden churros prepared live and served warm, then finished to
-          order with premium sauces and toppings. The Luxe Churro Bar combines
-          live dessert preparation with an elevated cart presentation to create
-          an interactive experience guests can gather around.
+          Fresh, golden churros prepared live and served warm, then finished to order with premium sauces and toppings for an interactive dessert experience.
         </p>
         <p className="sweet-churro-feature-events">
           Perfect for weddings, corporate events, baby showers, birthdays, brand
@@ -290,11 +292,11 @@ function SweetSoftServe() {
         <div aria-hidden="true"><i /><i /><i /></div>
         <div className="sweet-soft-serve-copy">
           <p className="foundation-label">Optional dessert add-on</p>
-          <h3>Add Soft Serve to Your Dessert Experience</h3>
+          <h3>Soft Serve Add-On</h3>
           <p>
-            Add a classic soft serve moment to your selected dessert experience for
-            an elevated, nostalgic finish. Soft serve is available in Vanilla and
-            Chocolate.
+            Add vanilla or chocolate soft serve to your selected Luxe Sweet Cart
+            dessert experience. Soft serve is offered as an enhancement and is not
+            available as a standalone service.
           </p>
           <p className="sweet-soft-serve-flavours">
             <strong>Available flavours</strong>
@@ -322,8 +324,8 @@ function SweetInclusions() {
 
         <div className="sweet-inclusions-intro">
           <p>
-            Every booking includes your choice of cart, professional attendant
-            service, fresh live preparation, artisanal sauces, classic toppings,
+            Every booking includes a selected cart style, professional attendant
+            service, fresh live preparation, Premium Sauces, standard toppings,
             luxury menu signage, serving essentials, complete setup, and takedown.
           </p>
           <p>
@@ -368,13 +370,13 @@ function SweetPantry() {
         <p className="foundation-label">Sauces and toppings</p>
         <h2 id="sweet-pantry-title">Dessert cart sauces and toppings.</h2>
         <p>
-          Customize your menu with gourmet drizzles, fresh fruits, and premium
+          Customize your menu with Premium Sauces, fresh fruits, and premium
           crunches.
         </p>
       </header>
       <div className="sweet-pantry-grid">
         <article>
-          <h3>Premium sauces</h3>
+          <h3>Premium Sauces</h3>
           <ul>{dessertSauces.map((item) => <li key={item}>{item}</li>)}</ul>
         </article>
         <article>
@@ -529,6 +531,9 @@ function SweetCombinations() {
             and seating together.
           </span>
         </h2>
+        <p>
+          Bring more of the event together with one team. Pair your Sweet Cart with Luxe Coffee Bar or select Luxe event rentals for a more coordinated guest experience.
+        </p>
       </header>
       <div>
         <Link href="/experiences/coffee-bar">

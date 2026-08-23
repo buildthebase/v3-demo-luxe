@@ -24,7 +24,7 @@ export const pageMetadata = {
   "/experiences/coffee-bar": {
     title: "Mobile Coffee Bar in Toronto | Luxe Coffee Bar",
     description:
-      "Bring a complete mobile caf\u00e9 to Toronto and GTA events with baristas, handcrafted coffee and matcha, two service formats, and tailored presentation.",
+      "Bring a complete mobile café to Toronto and GTA events with barista-served specialty coffee, Premium Matcha, two service formats, and tailored presentation.",
   },
   "/experiences/sweet-cart": {
     title: "Dessert Cart Experiences in Toronto | Luxe Sweet Cart",

@@ -75,8 +75,10 @@ test("project bundles validate checksums and preserve the immutable UUID", async
   const context = await data.registry.context(luxeId); await ensureProjectScaffold(context);
   await mkdir(path.join(data.first, ".cms", "content"), { recursive: true });
   await writeFile(path.join(data.first, ".cms", "content", "record.json"), JSON.stringify({ title: "Preserved" }));
+  await writeFile(context.files.database, "local-database-snapshot");
   const exported = await exportProjectBundle(context, { exportDirectory: path.join(data.base, "exports") });
   const bundle = await inspectProjectBundle(exported.file); assert.equal(bundle.projectId, luxeId);
+  assert.ok(bundle.entries.some((entry) => entry.path === ".cms-local/cms.sqlite"));
   const restored = path.join(data.base, "restored");
   const result = await importProjectBundle(exported.file, restored);
   assert.equal(result.projectId, luxeId);

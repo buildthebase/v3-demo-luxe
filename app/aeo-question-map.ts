@@ -150,7 +150,7 @@ const questionMapPlans: QuestionMapPlan[] = [
     primaryPage: "/experiences",
     secondarySupportingPage: "/experiences/coffee-bar",
     proposedAnswer:
-      "Coffee service can typically support up to 500 guests and dessert service up to 400, but guest count alone does not predict speed or line length. The final plan depends on menu complexity, service duration, staffing, equipment, guest arrival patterns, venue access, and the number of setups. Luxe has not approved one drinks-per-hour or wait-time promise.",
+      "Luxe Coffee Bar serves intimate gatherings through large-scale events, with service plans tailored to guest count, menu, venue requirements and event flow. Larger-format events can be accommodated through a customized service plan. Service capacity varies based on guest count, selected menu, hot-to-iced drink mix, and guest arrival patterns.",
     outstandingEvidence: [
       "Measured drinks served per hour by menu and setup",
       "Approved staffing model",
@@ -518,7 +518,7 @@ const questionMapPlans: QuestionMapPlan[] = [
     primaryPage: "/events/corporate-events",
     secondarySupportingPage: "/events/brand-activations",
     proposedAnswer:
-      "Luxe has confirmed capacity for up to three simultaneous Coffee Bar setups and up to three simultaneous Sweet Cart setups, subject to date, staffing, equipment, travel, access, and scope. Multi-day and recurring requests may be reviewed, but neither operating model is confirmed and neither may be promised.",
+      "Multiple Coffee Bar service setups are available for select events. For larger events, conferences and multi-space venues, additional Coffee Bar setups can be incorporated based on event scope, staffing, venue requirements and availability.",
     outstandingEvidence: [
       "Owner reconciliation of multi-day and recurring capability",
       "Approved staffing, reset, storage, replenishment, and travel parameters",

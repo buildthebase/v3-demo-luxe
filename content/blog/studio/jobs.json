@@ -6704,5 +6704,1425 @@
     "articleSlug": "pair-mobile-coffee-bar-live-sweet-cart",
     "briefApprovedAt": "2026-08-07T18:47:10.665Z",
     "outlineApprovedAt": "2026-08-07T18:48:31.097Z"
+  },
+  {
+    "id": "337c080b-0629-483d-8f04-486908920bd7",
+    "status": "draft-created",
+    "stage": "draft",
+    "prompt": "create an article about pairing our sweet cart with the coffee bar",
+    "inputs": {
+      "audience": "event planners",
+      "searchIntent": "luxury mobile bars for events",
+      "category": "Event Planning",
+      "geography": "Toronto and the GTA"
+    },
+    "sources": [
+      {
+        "id": "public-88b003602eae3eff",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "Dessert-cart catering is a staffed mobile dessert service where mini pancakes, Belgian waffles, mini donuts, and other selected sweets are prepared, finished, and served for guests on-site. Luxe Sweet Cart provides luxury dessert cart catering for weddings , corporate events , brand activations , bridal showers, baby showers, birthdays, and private celebrations across Toronto and the GTA.",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-82910037b9f5e1da",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "Luxe serves Toronto and the GTA, with select destination events available throughout Southern Ontario. Travel fees may apply.",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-1787ef7570998dc7",
+        "origin": "public-page",
+        "topic": "private events",
+        "category": "Public page content",
+        "text": "Elevate engagements, anniversaries, graduations, holiday parties, and intimate gatherings with custom mobile coffee bars, live dessert stations, and boutique rentals tailored to your vision.",
+        "applicablePages": [
+          "/events/private-events"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/events/private-events",
+        "sourceUrl": "https://luxeeventco.ca/events/private-events",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-53aebe0302b43396",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "Live dessert cart catering for Toronto and GTA events.",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-ff886c3999021b6a",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "Luxe Sweet Cart can be booked independently or coordinated with Luxe Coffee Bar and Luxe Seating Rentals through one Luxe Event Co. inquiry .",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-2d79b3312edfaad3",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "A classic crowd-pleaser that pairs effortlessly with our mobile coffee service or stands alone as a feature moment.",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-e33a644da8c4afa7",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "01 Weddings Cocktail hour, late-night sweets, and an interactive reception moment. ↗︎ 02 Bridal Showers Live dessert preparation, cart styling, and guest-facing service for an intimate celebration. ↗︎ 03 Baby Showers Soft presentation, live preparation, and a menu guests can gather around. ↗︎ 04 Birthdays Made-to-order desserts personalized for milestone celebrations. ↗︎ 05 Corporate Events Employee appreciation, office events, conferences, and client hospitality. ↗︎ 06 Brand Activations A tactile branded moment with signage, styling, and live guest interaction. ↗︎ 07 Private Events Engagements, anniversaries, graduations, and personal celebrations. ↗︎",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-3b872a406dffe8de",
+        "origin": "public-page",
+        "topic": "coffee bar",
+        "category": "Public page content",
+        "text": "A mobile coffee bar brings commercial espresso equipment, skilled baristas, and a handcrafted beverage menu directly to your venue. Luxe Coffee Bar provides elevated mobile café catering for weddings , corporate events , brand activations , showers, and private celebrations across Toronto and the GTA.",
+        "applicablePages": [
+          "/experiences/coffee-bar"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/coffee-bar",
+        "sourceUrl": "https://luxeeventco.ca/experiences/coffee-bar",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-f5186725e01a64fc",
+        "origin": "public-page",
+        "topic": "coffee bar",
+        "category": "Public page content",
+        "text": "Luxe Coffee Bar can be booked independently or coordinated with Luxe Sweet Cart and Luxe Seating Rentals through one Luxe Event Co. inquiry .",
+        "applicablePages": [
+          "/experiences/coffee-bar"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/coffee-bar",
+        "sourceUrl": "https://luxeeventco.ca/experiences/coffee-bar",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-8728c77442940e15",
+        "origin": "public-page",
+        "topic": "corporate events",
+        "category": "Public page content",
+        "text": "Polished mobile coffee bars, matcha stations, live desserts, and seating rentals tailored for corporate conferences, workplace activations, client appreciation events, and trade shows.",
+        "applicablePages": [
+          "/events/corporate-events"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/events/corporate-events",
+        "sourceUrl": "https://luxeeventco.ca/events/corporate-events",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-2972fe221f040312",
+        "origin": "public-page",
+        "topic": "corporate events",
+        "category": "Public page content",
+        "text": "Elevated coffee and sweet bars designed to support executive meetings, client receptions, and strategic relationship-building.",
+        "applicablePages": [
+          "/events/corporate-events"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/events/corporate-events",
+        "sourceUrl": "https://luxeeventco.ca/events/corporate-events",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-5dc4a13af55e10ff",
+        "origin": "public-page",
+        "topic": "private events",
+        "category": "Public page content",
+        "text": "Book coffee bars, live dessert carts, or seating rentals individually or seamlessly bundled.",
+        "applicablePages": [
+          "/events/private-events"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/events/private-events",
+        "sourceUrl": "https://luxeeventco.ca/events/private-events",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-5f6269b4a5087633",
+        "origin": "public-page",
+        "topic": "private events",
+        "category": "Public page content",
+        "text": "Full-service mobile espresso bar featuring classic coffee drinks, custom signature lattes, ceremonial matcha, teas, hot chocolate, dairy alternatives, and seasonal menu items served hot or iced. Select between our versatile Café Cart or full Signature Coffee Bar based on your venue size, guest count, and party schedule. Sip ↗︎",
+        "applicablePages": [
+          "/events/private-events"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/events/private-events",
+        "sourceUrl": "https://luxeeventco.ca/events/private-events",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-86f9913934d1c006",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "Bold. Elegant. A statement piece. A more prominent cart expression for events where the dessert setup is intended to become a visible part of the décor.",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-336c4753eccc0ba2",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "Because every celebration is unique, we review your specific event details and provide a fully transparent, itemized proposal with no hidden fees.",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-203122c077dec828",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "Dessert cart catering for weddings, corporate events, and celebrations.",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-a7abb361f1233a57",
+        "origin": "public-page",
+        "topic": "coffee bar",
+        "category": "Public page content",
+        "text": "A complete mobile café experience shaped around the event, with professional baristas, handcrafted beverages, intentional presentation, and hospitality that becomes part of the room.",
+        "applicablePages": [
+          "/experiences/coffee-bar"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/coffee-bar",
+        "sourceUrl": "https://luxeeventco.ca/experiences/coffee-bar",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-017659c5842a00b8",
+        "origin": "public-page",
+        "topic": "coffee bar",
+        "category": "Public page content",
+        "text": "Serving Toronto, the Greater Toronto Area & Destination Events Across Southern Ontario.",
+        "applicablePages": [
+          "/experiences/coffee-bar"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/coffee-bar",
+        "sourceUrl": "https://luxeeventco.ca/experiences/coffee-bar",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-f13b3b9974df84ff",
+        "origin": "public-page",
+        "topic": "coffee bar",
+        "category": "Public page content",
+        "text": "Based in Toronto, Luxe Event Co. provides mobile coffee bar catering across York Region, Peel, Halton, Durham, and select destination venues throughout Southern Ontario.",
+        "applicablePages": [
+          "/experiences/coffee-bar"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/coffee-bar",
+        "sourceUrl": "https://luxeeventco.ca/experiences/coffee-bar",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-3130bb0fd6afee6e",
+        "origin": "public-page",
+        "topic": "coffee bar",
+        "category": "Public page content",
+        "text": "Mobile coffee catering for weddings, corporate events, and celebrations.",
+        "applicablePages": [
+          "/experiences/coffee-bar"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/coffee-bar",
+        "sourceUrl": "https://luxeeventco.ca/experiences/coffee-bar",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-be6e5cd2bdf275c3",
+        "origin": "public-page",
+        "topic": "coffee bar",
+        "category": "Public page content",
+        "text": "Mobile coffee catering can suit weddings, office and corporate events, conferences, brand activations, showers, birthdays, and private celebrations when a staffed beverage experience supports the schedule and guest flow.",
+        "applicablePages": [
+          "/experiences/coffee-bar"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/coffee-bar",
+        "sourceUrl": "https://luxeeventco.ca/experiences/coffee-bar",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-6c8f8a91fa680791",
+        "origin": "public-page",
+        "topic": "thoughtfully hosted private events",
+        "category": "Published blog article",
+        "text": "Dessert Catering What to consider when planning a live dessert experience",
+        "applicablePages": [
+          "/blog/thoughtfully-hosted-private-events"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/blog/thoughtfully-hosted-private-events",
+        "sourceUrl": "https://luxeeventco.ca/blog/thoughtfully-hosted-private-events",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-3eea6bae8d40ef62",
+        "origin": "public-page",
+        "topic": "corporate events",
+        "category": "Public page content",
+        "text": "Luxe Event Co. coordinates high-volume coffee bars , dessert stations , and event seating for corporate functions where on-time service, brand presentation, and smooth guest flow are critical.",
+        "applicablePages": [
+          "/events/corporate-events"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/events/corporate-events",
+        "sourceUrl": "https://luxeeventco.ca/events/corporate-events",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-552b0cf2df7366f9",
+        "origin": "public-page",
+        "topic": "corporate events",
+        "category": "Public page content",
+        "text": "High-volume coffee bars and live dessert stations to power attendee arrivals, programmed session breaks, and sustained booth traffic.",
+        "applicablePages": [
+          "/events/corporate-events"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/events/corporate-events",
+        "sourceUrl": "https://luxeeventco.ca/events/corporate-events",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-2315f3719a2a0da9",
+        "origin": "public-page",
+        "topic": "corporate events",
+        "category": "Public page content",
+        "text": "Pair espresso service and sweet bites with cocktail tables and lounge seating to encourage natural movement and organic conversation.",
+        "applicablePages": [
+          "/events/corporate-events"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/events/corporate-events",
+        "sourceUrl": "https://luxeeventco.ca/events/corporate-events",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-9cd94e794865809c",
+        "origin": "public-page",
+        "topic": "corporate events",
+        "category": "Public page content",
+        "text": "Immersive beverage and dessert setups customized with branded cup sleeves, cart decals, and signage for memorable product debuts.",
+        "applicablePages": [
+          "/events/corporate-events"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/events/corporate-events",
+        "sourceUrl": "https://luxeeventco.ca/events/corporate-events",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-ec1b5651d7e620ad",
+        "origin": "public-page",
+        "topic": "corporate events",
+        "category": "Public page content",
+        "text": "Deploy multiple espresso bars and dessert carts simultaneously across your venue to eliminate guest queues during peak break times.",
+        "applicablePages": [
+          "/events/corporate-events"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/events/corporate-events",
+        "sourceUrl": "https://luxeeventco.ca/events/corporate-events",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-e8c711a8d122c6e4",
+        "origin": "public-page",
+        "topic": "corporate events",
+        "category": "Public page content",
+        "text": "Conference rhythm Coffee or dessert service aligned with programmed breaks and traffic",
+        "applicablePages": [
+          "/events/corporate-events"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/events/corporate-events",
+        "sourceUrl": "https://luxeeventco.ca/events/corporate-events",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-d2e38e4c9aa72388",
+        "origin": "public-page",
+        "topic": "corporate events",
+        "category": "Public page content",
+        "text": "We design a custom proposal recommending the optimal mix of coffee bars, dessert stations, and lounge rentals for your event.",
+        "applicablePages": [
+          "/events/corporate-events"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/events/corporate-events",
+        "sourceUrl": "https://luxeeventco.ca/events/corporate-events",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-33f78f22508b6b57",
+        "origin": "public-page",
+        "topic": "private events",
+        "category": "Public page content",
+        "text": "Private Event Coffee, Dessert & Rentals in Toronto",
+        "applicablePages": [
+          "/events/private-events"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/events/private-events",
+        "sourceUrl": "https://luxeeventco.ca/events/private-events",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-2fde87e8517c06ec",
+        "origin": "public-page",
+        "topic": "private events",
+        "category": "Public page content",
+        "text": "From morning engagement brunches to late-night anniversary dessert bars, we align our espresso catering, live sweets, and seating rentals to perfectly match your event format.",
+        "applicablePages": [
+          "/events/private-events"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/events/private-events",
+        "sourceUrl": "https://luxeeventco.ca/events/private-events",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-bd603fb0a3236858",
+        "origin": "public-page",
+        "topic": "private events",
+        "category": "Public page content",
+        "text": "Coffee bars, live desserts, and rentals for private events",
+        "applicablePages": [
+          "/events/private-events"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/events/private-events",
+        "sourceUrl": "https://luxeeventco.ca/events/private-events",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-685b90d4df547742",
+        "origin": "public-page",
+        "topic": "private events",
+        "category": "Public page content",
+        "text": "Mobile coffee bar and non-coffee drinks",
+        "applicablePages": [
+          "/events/private-events"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/events/private-events",
+        "sourceUrl": "https://luxeeventco.ca/events/private-events",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-81caece2079a58ea",
+        "origin": "public-page",
+        "topic": "private events",
+        "category": "Public page content",
+        "text": "Coffee, live dessert, signage, seating, and room details shown within the gatherings they were planned for.",
+        "applicablePages": [
+          "/events/private-events"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/events/private-events",
+        "sourceUrl": "https://luxeeventco.ca/events/private-events",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-ba33625620d2368b",
+        "origin": "public-page",
+        "topic": "experiences",
+        "category": "Public page content",
+        "text": "Luxe Event Co. provides mobile coffee bars, live dessert carts, seating, and event rentals for weddings, corporate events, brand activations, and private celebrations across Toronto and the GTA. Book Luxe Coffee Bar, Luxe Sweet Cart, or Luxe Seating Rentals independently, or coordinate all three through one team.",
+        "applicablePages": [
+          "/experiences"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences",
+        "sourceUrl": "https://luxeeventco.ca/experiences",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-7acf0de3bdf61e21",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "08 Event types",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-6b088cf366aee6d8",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "Luxe Sweet Cart / Toronto & the GTA",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-a419282d73cafd7c",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "Toronto dessert cart catering, made in the moment.",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-8679ebf6af7cc925",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "A live, made-to-order dessert experience where interactive preparation, warm cart styling, and final presentation become a memorable part of your event atmosphere.",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-4f38c7ac3932d4cb",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "Inquire About a Dessert Experience ↗︎ Explore the Dessert Menu ↓︎",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-0373097336223c46",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "Confirmed capacity and dessert-service planning",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-ef3e46883474dd07",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "Dessert cart capacity and event requirements.",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-09b1c2536cc23460",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "Dessert is prepared in view, finished to order, and presented as part of your event.",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-1980b47ee4a89006",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "Sleek. Timeless. Versatile. A refined cart design made to integrate naturally into your event decor while live dessert preparation draws guests in.",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-59e81fc901dfe8d0",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "Warm, bite-sized mini pancakes finished live with your selection of gourmet sauces and toppings.",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-fcc133ef709de7cb",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "Incorporate a premium soft serve ice cream cart into your Sweet Cart menu to create an elevated, nostalgic treat for summer weddings, outdoor activations, and private parties.",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-8a9bc4ca1242fed0",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "What is included with Luxe Sweet Cart?",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-8ee344594abe377b",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "Every booking includes your choice of cart, professional attendant service, fresh live preparation, artisanal sauces, classic toppings, luxury menu signage, serving essentials, complete setup, and takedown.",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-2f8035c0c41a340e",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "Menu selections, guest quantities, service duration, footprint logistics, power, and venue access are verified during the planning stage to guarantee smooth execution.",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-c6992be6cc6fa5e7",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "Included with your booking",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-f56763498231bf10",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "Customize your menu with gourmet drizzles, fresh fruits, and premium crunches.",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-c97cad3eed8206b2",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "Select your cart style and coordinate custom menu signage, floral accenting, and visual details to blend naturally into your event layout.",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-817461956fb5fbab",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "Add personalized vinyl decals, branded cups, or custom signage to align the cart setup with your wedding aesthetic, party theme, or corporate brand identity.",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-3153f277e4c464c8",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "01 The cart as décor Styled as part of the event setting",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-819efffa7139cec5",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "Bring coffee, dessert,",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-77d2e018c15b5666",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "Pair crafted beverages with live dessert preparation through one coordinated inquiry.",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-56b68179574a8bf2",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "Connect the dessert moment with seating, tables, tents, linens, or lighting.",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-49815962c8d72eda",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "Tell us about the occasion, guest count, dessert direction, presentation, and details you would like personalized.",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-88233bff1046acc6",
+        "origin": "public-page",
+        "topic": "sweet cart",
+        "category": "Public page content",
+        "text": "Inquire About a Dessert Experience ↗︎",
+        "applicablePages": [
+          "/experiences/sweet-cart"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/sweet-cart",
+        "sourceUrl": "https://luxeeventco.ca/experiences/sweet-cart",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-141697ade8386f73",
+        "origin": "public-page",
+        "topic": "coffee bar",
+        "category": "Public page content",
+        "text": "Mobile coffee bar catering in Toronto & the GTA.",
+        "applicablePages": [
+          "/experiences/coffee-bar"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/coffee-bar",
+        "sourceUrl": "https://luxeeventco.ca/experiences/coffee-bar",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-e3fb1b8bce336a99",
+        "origin": "public-page",
+        "topic": "coffee bar",
+        "category": "Public page content",
+        "text": "Simultaneous setups Up to three simultaneous setups may support suitable multi-site, multi-station, or distributed events, subject to availability and scope.",
+        "applicablePages": [
+          "/experiences/coffee-bar"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/coffee-bar",
+        "sourceUrl": "https://luxeeventco.ca/experiences/coffee-bar",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-d398e82d4944eace",
+        "origin": "public-page",
+        "topic": "coffee bar",
+        "category": "Public page content",
+        "text": "Setup and takedown Setup and takedown are included. Exact access and timing are coordinated with the venue and event schedule.",
+        "applicablePages": [
+          "/experiences/coffee-bar"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/coffee-bar",
+        "sourceUrl": "https://luxeeventco.ca/experiences/coffee-bar",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-eb0da06d68276713",
+        "origin": "public-page",
+        "topic": "coffee bar",
+        "category": "Public page content",
+        "text": "An intimate mobile café experience designed for boutique gatherings. Perfect when you want warm, handcrafted barista service without overpowering the layout of the room.",
+        "applicablePages": [
+          "/experiences/coffee-bar"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/coffee-bar",
+        "sourceUrl": "https://luxeeventco.ca/experiences/coffee-bar",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      },
+      {
+        "id": "public-73116f26080b9b82",
+        "origin": "public-page",
+        "topic": "coffee bar",
+        "category": "Public page content",
+        "text": "Compact, flexible footprint designed to sit naturally within indoor or outdoor event spaces.",
+        "applicablePages": [
+          "/experiences/coffee-bar"
+        ],
+        "applicableServices": [],
+        "applicableEvents": [],
+        "source": "/experiences/coffee-bar",
+        "sourceUrl": "https://luxeeventco.ca/experiences/coffee-bar",
+        "verificationStatus": "verified",
+        "effectiveDate": null,
+        "reviewDate": null,
+        "usage": "publishable",
+        "supersedes": [],
+        "conflictsWith": []
+      }
+    ],
+    "threadId": "019ff78e-9570-7560-add9-58f636298c74",
+    "model": "Codex account default",
+    "createdAt": "2026-08-12T19:59:04.272Z",
+    "updatedAt": "2026-08-12T20:03:15.433Z",
+    "usage": {
+      "inputTokens": 167550,
+      "cachedInputTokens": 0,
+      "outputTokens": 7119,
+      "reasoningOutputTokens": 675
+    },
+    "brief": {
+      "angle": "A practical editorial guide to pairing Luxe Coffee Bar with Luxe Sweet Cart as one coordinated hospitality experience. Explain how event planners can align handcrafted beverages and live, made-to-order desserts with the event schedule, guest flow, venue layout, and visual direction—from arrivals and programmed breaks to reception or late-night service.",
+      "audience": "Event planners organizing weddings, corporate events, brand activations, showers, and private celebrations in Toronto and the GTA.",
+      "searchIntent": "Commercial investigation and planning guidance for luxury mobile bars for events, with a specific focus on combining mobile coffee catering and live dessert service.",
+      "category": "Event Planning",
+      "workingTitle": "How to Pair Luxe Coffee Bar and Luxe Sweet Cart for a Considered Event Experience",
+      "sourceIds": [
+        "public-ff886c3999021b6a",
+        "public-2d79b3312edfaad3",
+        "public-3b872a406dffe8de",
+        "public-f5186725e01a64fc",
+        "public-a7abb361f1233a57",
+        "public-8679ebf6af7cc925",
+        "public-09b1c2536cc23460",
+        "public-77d2e018c15b5666",
+        "public-2315f3719a2a0da9",
+        "public-e8c711a8d122c6e4",
+        "public-2fde87e8517c06ec",
+        "public-2f8035c0c41a340e",
+        "public-c97cad3eed8206b2",
+        "public-ba33625620d2368b"
+      ],
+      "proposedInternalLinks": [
+        "/experiences/coffee-bar",
+        "/experiences/sweet-cart",
+        "/experiences",
+        "/blog/coffee-and-dessert-in-a-wedding-timeline",
+        "/blog/how-to-plan-mobile-coffee-catering",
+        "/blog/planning-a-live-dessert-experience",
+        "/blog/what-to-share-before-requesting-an-event-proposal",
+        "/inquire"
+      ],
+      "conflicts": [],
+      "qualifications": [
+        "The two services may be booked independently or coordinated through one Luxe Event Co. inquiry.",
+        "Menu selections, guest quantities, service duration, footprint logistics, power, and venue access are verified during planning.",
+        "Coffee-bar format should be selected according to venue size, guest count, and event schedule.",
+        "Setup and takedown for Luxe Coffee Bar are included, while exact access and timing are coordinated with the venue and event schedule.",
+        "Service recommendations should remain event-specific; the article should not promise a particular configuration, service capacity, queue outcome, or menu without confirmed event details."
+      ],
+      "missingInformation": []
+    },
+    "outline": {
+      "title": "How to Pair Luxe Coffee Bar and Luxe Sweet Cart for a Considered Event Experience",
+      "quickAnswerPurpose": "Answer the central planning question near the opening: pair Luxe Coffee Bar and Luxe Sweet Cart by aligning beverage and live dessert service with the event schedule, guest movement, venue layout and visual direction. Note that both experiences can be coordinated through one inquiry, while menus, quantities, duration, footprint, power and access are confirmed during planning.",
+      "takeawaysPurpose": "Summarize the article’s practical guidance: plan timing around the event format; decide whether service moments should be simultaneous or staggered; consider movement, seating and conversation in the layout; coordinate presentation across both setups; and confirm operational details before finalizing the service plan.",
+      "sections": [
+        {
+          "heading": "Why pair a mobile coffee bar with a live dessert cart?",
+          "purpose": "Introduce the pairing as a coordinated hospitality experience: professional baristas and handcrafted beverages alongside desserts prepared in view and finished to order. Establish that each service can stand alone or be coordinated through one Luxe Event Co. inquiry.",
+          "sourceIds": [
+            "public-3b872a406dffe8de",
+            "public-a7abb361f1233a57",
+            "public-8679ebf6af7cc925",
+            "public-09b1c2536cc23460",
+            "public-2d79b3312edfaad3",
+            "public-ff886c3999021b6a",
+            "public-f5186725e01a64fc"
+          ]
+        },
+        {
+          "heading": "Where should coffee and dessert sit within the event schedule?",
+          "purpose": "Help planners consider when each experience should appear. Use arrivals and programmed breaks as supported corporate examples, and morning gatherings or late-night dessert service as private-event examples, while keeping every timing recommendation specific to the event format.",
+          "sourceIds": [
+            "public-e8c711a8d122c6e4",
+            "public-2fde87e8517c06ec"
+          ]
+        },
+        {
+          "heading": "Should the services open together or at different moments?",
+          "purpose": "Frame simultaneous and staggered service as planning options rather than fixed recommendations. Explain that the right sequence depends on the schedule, guest quantities, service duration and confirmed event details.",
+          "sourceIds": [
+            "public-e8c711a8d122c6e4",
+            "public-2fde87e8517c06ec",
+            "public-2f8035c0c41a340e"
+          ]
+        },
+        {
+          "heading": "How can the layout support guest movement and conversation?",
+          "purpose": "Explain how espresso service, sweet bites and nearby seating can be considered together to encourage natural movement and conversation. Prompt planners to review the service footprint, power and venue access without promising a particular guest-flow or queue outcome.",
+          "sourceIds": [
+            "public-2315f3719a2a0da9",
+            "public-2f8035c0c41a340e"
+          ]
+        },
+        {
+          "heading": "How should the coffee bar and sweet cart relate visually?",
+          "purpose": "Show how intentional coffee-bar presentation and the Sweet Cart’s styling can become part of the room. Cover cart style, menu signage, floral accents and visual details that can be coordinated with the event layout.",
+          "sourceIds": [
+            "public-a7abb361f1233a57",
+            "public-8679ebf6af7cc925",
+            "public-c97cad3eed8206b2"
+          ]
+        },
+        {
+          "heading": "What details should planners confirm before the event?",
+          "purpose": "Provide a concise planning checklist covering menu selections, guest quantities, service duration, footprint logistics, power and venue access. Reinforce that configurations and service recommendations must be confirmed for the particular event.",
+          "sourceIds": [
+            "public-2f8035c0c41a340e"
+          ]
+        },
+        {
+          "heading": "How does one coordinated inquiry work?",
+          "purpose": "Close by clarifying that Luxe Coffee Bar and Luxe Sweet Cart may be booked independently or coordinated through one Luxe Event Co. inquiry, giving planners a clear and factual next step without implying a predetermined package.",
+          "sourceIds": [
+            "public-ff886c3999021b6a",
+            "public-f5186725e01a64fc",
+            "public-77d2e018c15b5666",
+            "public-ba33625620d2368b"
+          ]
+        }
+      ]
+    },
+    "articleSlug": "pairing-luxe-coffee-bar-with-luxe-sweet-cart",
+    "briefApprovedAt": "2026-08-12T20:00:51.036Z",
+    "outlineApprovedAt": "2026-08-12T20:02:10.596Z"
   }
 ]

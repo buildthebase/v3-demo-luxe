@@ -14674,7 +14674,7 @@ max-width: 36ch;
 
 .sweet-dessert-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   border-block: 1px solid color-mix(in srgb, var(--color-luxe-black) 30%, transparent);
 }
 
@@ -14692,6 +14692,16 @@ max-width: 36ch;
   color: var(--color-luxe-gold-ink);
   font-size: 0.67rem;
   letter-spacing: 0.14em;
+}
+
+.sweet-dessert-list .sweet-dessert-tier {
+  margin: 0;
+  color: var(--color-luxe-gold-ink);
+  font-size: 0.67rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1.2;
+  text-transform: uppercase;
 }
 
 .sweet-dessert-list article > div {

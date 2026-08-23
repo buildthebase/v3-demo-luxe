@@ -1,10 +1,11 @@
 import crypto from "node:crypto";
 import path from "node:path";
-import { mkdir, readFile, readdir, stat, writeFile } from "node:fs/promises";
+import { copyFile, mkdir, readFile, readdir, stat, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const output = path.join(root, ".cms-migration", "luxe-integrity.json");
+const snapshots = path.join(root, ".cms-migration", "snapshots");
 const included = ["content/blog", "public/images/blog", "cms/settings.json", "cms-project.json"];
 
 async function filesAt(target, results = []) {
@@ -23,7 +24,7 @@ for (const file of files) {
   const bytes = await readFile(file);
   records.push({ path: path.relative(root, file), bytes: bytes.length, sha256: crypto.createHash("sha256").update(bytes).digest("hex") });
 }
-const snapshot = { schemaVersion: 1, projectId: "e798c1f3-0e31-4965-a529-83d50770286f", generatedAt: new Date().toISOString(), fileCount: records.length, totalBytes: records.reduce((sum, record) => sum + record.bytes, 0), records };
+const snapshot = { schemaVersion: 2, projectId: "e798c1f3-0e31-4965-a529-83d50770286f", generatedAt: new Date().toISOString(), included, fileCount: records.length, totalBytes: records.reduce((sum, record) => sum + record.bytes, 0), records };
 if (process.argv.includes("--verify")) {
   const baseline = JSON.parse(await readFile(output, "utf8"));
   const prior = new Map(baseline.records.map((record) => [record.path, record]));
@@ -35,6 +36,17 @@ if (process.argv.includes("--verify")) {
     process.stderr.write(`${JSON.stringify({ added: added.map((item) => item.path), removed: removed.map((item) => item.path), changed: changed.map((item) => item.path) }, null, 2)}\n`);
     process.exitCode = 1;
   } else process.stdout.write(`CMS integrity verified: ${snapshot.fileCount} files and ${snapshot.totalBytes} bytes unchanged\n`);
+} else if (process.argv.includes("--snapshot")) {
+  const stamp = snapshot.generatedAt.replaceAll(":", "-");
+  const destination = path.join(snapshots, stamp);
+  for (const record of records) {
+    const target = path.join(destination, record.path);
+    await mkdir(path.dirname(target), { recursive: true });
+    await copyFile(path.join(root, record.path), target);
+  }
+  await mkdir(destination, { recursive: true });
+  await writeFile(path.join(destination, "inventory.json"), `${JSON.stringify(snapshot, null, 2)}\n`, { mode: 0o600 });
+  process.stdout.write(`CMS recovery snapshot: ${snapshot.fileCount} files copied to ${destination}\n`);
 } else {
   await mkdir(path.dirname(output), { recursive: true });
   await writeFile(output, `${JSON.stringify(snapshot, null, 2)}\n`, { mode: 0o600 });

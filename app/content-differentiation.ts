@@ -38,7 +38,7 @@ export const contentRequirements: ContentRequirement[] = [
     type: "operational",
     status: "confirmed",
     source: "client-intake",
-    requirement: "Record Coffee Bar capacity up to 500 guests and Sweet Cart capacity up to 400 guests; publish Seating Rentals capacity only after confirmation.",
+    requirement: "Record the 250+ Coffee Bar guest capacity and explain that larger-format events can be accommodated through a customized service plan; publish Seating Rentals capacity only after confirmation.",
     validationNote: "Capacity is not a promise of identical service speed or a substitute for event-specific planning.",
   },
   {
@@ -47,7 +47,7 @@ export const contentRequirements: ContentRequirement[] = [
     type: "operational",
     status: "confirmed",
     source: "client-intake",
-    requirement: "Use the confirmed ability to support up to three simultaneous setups where relevant to corporate, multi-site, or multi-day planning.",
+    requirement: "Use the availability of multiple Coffee Bar service setups for select events where relevant to corporate, multi-space, or multi-day planning.",
     validationNote: "Confirm staffing and date availability during inquiry.",
   },
   {

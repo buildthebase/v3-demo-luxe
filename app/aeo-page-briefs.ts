@@ -166,7 +166,7 @@ export const pageAeoBriefs: PageAeoBrief[] = [
     searchIntents: ["Informational", "Commercial investigation", "Comparison", "Logistical"],
     requiredAnswers: [
       "Define mobile espresso service and distinguish Café Cart from Signature Coffee Bar.",
-      "State confirmed inclusions, menus, 500-guest limit, and up to three simultaneous setups with qualifications.",
+      "State the 250+ guest capacity, flexible event-specific service planning, and multiple service setups for select events.",
       "Explain coffee-specific quote factors before presenting inquiry.",
     ],
     requiredFirstPartyEvidence: [

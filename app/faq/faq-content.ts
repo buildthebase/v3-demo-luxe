@@ -29,7 +29,7 @@ const sharedFaqCategories: readonly FaqCategory[] = [
         id: "available-packages",
         question: "What packages are available?",
         answer:
-          "Luxe does not use one universal event package. Luxe Coffee Bar offers the Café Cart Experience and Signature Coffee Bar Experience. Luxe Sweet Cart offers Classic and Signature cart collections with mini Dutch pancakes, Belgian waffles on a stick, mini donuts, and optional soft serve. Seating Rentals is quoted from confirmed inventory and event requirements. Any service may be available independently or combined through Luxe Event Co.",
+          "Luxe does not use one universal event package. Luxe Coffee Bar offers the Café Cart Experience and Signature Coffee Bar Experience. Luxe Sweet Cart offers Classic and Signature physical cart styles, subject to availability, with Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station, and the Luxe Churro Bar. Seating Rentals is quoted from confirmed inventory and event requirements. Any service may be available independently or combined through Luxe Event Co.",
         links: [{ href: "/experiences", label: "Compare Luxe experiences" }],
       },
       {
@@ -136,21 +136,21 @@ const sharedFaqCategories: readonly FaqCategory[] = [
         id: "space-required",
         question: "How much space is required?",
         answer:
-          "Luxe has not approved one public floor-space figure. Required space depends on the Café Cart or Signature Coffee Bar, Sweet Cart selection, equipment, menu, staffing, guest flow, rental scope, and venue access. The exact operating footprint and clearance must be confirmed for the proposed setup.",
+          "Setup requirements vary by Coffee Bar format and venue. Our team confirms electrical, water, access and setup requirements with the client or venue before the event so the appropriate service plan can be prepared.",
         links: [{ href: "/contact", label: "Review your venue setup" }],
       },
       {
         id: "power-required",
         question: "Is power required?",
         answer:
-          "Power requirements depend on the selected experience and equipment. Clients should not assume a setup can operate without electricity or from any available outlet. Luxe has not approved a universal outlet, circuit, load, or generator specification; the exact requirement must be confirmed with the venue for the proposed setup.",
+          "Setup requirements vary by Coffee Bar format and venue. Our team confirms electrical, water, access and setup requirements with the client or venue before the event so the appropriate service plan can be prepared.",
         links: [{ href: "/experiences", label: "Explore the experiences" }],
       },
       {
         id: "water-required",
         question: "Is water required?",
         answer:
-          "Water-access requirements vary by beverage or dessert setup, equipment, menu, and venue conditions. Luxe has not approved a universal supply, drainage, or self-contained-operation claim. The required potable-water and wastewater arrangement must be confirmed after the service plan is selected.",
+          "Setup requirements vary by Coffee Bar format and venue. Our team confirms electrical, water, access and setup requirements with the client or venue before the event so the appropriate service plan can be prepared.",
         links: [{ href: "/contact", label: "Confirm venue requirements" }],
       },
       {
@@ -214,7 +214,7 @@ const sharedFaqCategories: readonly FaqCategory[] = [
         id: "custom-menus",
         question: "Can menus be customized?",
         answer:
-          "Yes. Coffee menus can combine the confirmed espresso classics with signature beverages, seasonal selections, matcha, tea, chai, hot chocolate, and dairy-free milk alternatives. Dessert directions can use the approved desserts, sauces, standard toppings, premium toppings, and optional soft serve. Names and presentation can respond to the event, but the final menu must remain workable for the selected experience, guest count, equipment, ingredients, service speed, and guest flow.",
+          "Yes. Coffee menus can combine the confirmed espresso classics with signature beverages, seasonal selections, matcha, tea, chai, hot chocolate, and dairy-free milk alternatives. Dessert directions can use the approved desserts, Premium Sauces, standard toppings, premium toppings, and Soft Serve Add-On. Soft Serve Add-On is offered as an enhancement and is not available as a standalone service. Names and presentation can respond to the event, but the final menu must remain workable for the selected experience, guest count, equipment, ingredients, service speed, and guest flow.",
         links: [{ href: "/experiences", label: "Explore menu possibilities" }],
       },
       {

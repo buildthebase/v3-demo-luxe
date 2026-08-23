@@ -80,8 +80,8 @@ function ActivationHero() {
           <dd>Subject to operating review</dd>
         </div>
         <div>
-          <dt>Up to 3 + 3</dt>
-          <dd>Coffee and dessert setups</dd>
+          <dt>Multiple</dt>
+          <dd>Service setups available for select events</dd>
         </div>
         <div>
           <dt>$5 million</dt>

@@ -41,7 +41,7 @@ export const approvedAnswerValidation = aeoQuestionMap
 export const confirmedOperationalFacts = [
   {
     topic: "Coffee Bar capacity",
-    fact: "Up to 500 guests, subject to the event scope.",
+    fact: "250+ guest capacity, with larger-format events accommodated through a customized service plan.",
     source: "approved business configuration",
   },
   {

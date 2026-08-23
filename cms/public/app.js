@@ -12,6 +12,8 @@ let knowledgeUsageFilter = "all";
 let knowledgeSearchTimer = null;
 let activeView = "articles";
 let statusFilter = "all";
+let articleSearchQuery = "";
+let selectedArticleSlugs = new Set();
 let activeJobId = null;
 let studioBusy = false;
 let studioBusyStartedAt = 0;
@@ -199,6 +201,8 @@ function resetProjectUiState() {
   helpSessionId = null;
   mediaLibraryPage = 1;
   statusFilter = "all";
+  articleSearchQuery = "";
+  selectedArticleSlugs.clear();
 }
 
 async function switchProject(projectId) {
@@ -285,26 +289,58 @@ function issueSummary(slug) {
 function renderArticles() {
   const articles = allArticles();
   workspace.innerHTML = `${renderHeader(state.project.manifest.name, "Articles", '<button class="button primary" data-action="new-article">New article</button>')}
-    <input class="search" id="article-search" type="search" placeholder="Search title, slug, category, excerpt, or body" aria-label="Search articles">
+    <input class="search" id="article-search" type="search" value="${escapeHtml(articleSearchQuery)}" placeholder="Search title, slug, category, excerpt, or body" aria-label="Search articles">
     <div class="filters">${["all", "draft", "published", "archived", "trash"].map((status) => `<button class="filter${statusFilter === status ? " active" : ""}" data-status-filter="${status}">${status[0].toUpperCase() + status.slice(1)}</button>`).join("")}</div>
+    ${renderArticleBulkBar(articles)}
     <div class="article-list" id="article-list">${renderArticleRows(articles)}</div>`;
   document.querySelector("#article-search").addEventListener("input", (event) => {
-    document.querySelector("#article-list").innerHTML = renderArticleRows(articles, event.target.value);
+    articleSearchQuery = event.target.value;
+    document.querySelector("#article-list").innerHTML = renderArticleRows(articles);
+    document.querySelector("#article-bulk-bar").outerHTML = renderArticleBulkBar(articles);
   });
 }
 
-function renderArticleRows(articles, query = "") {
-  const terms = query.toLowerCase().trim().split(/\s+/).filter(Boolean);
-  const filtered = articles.filter((article) => {
+function filteredArticles(articles) {
+  const terms = articleSearchQuery.toLowerCase().trim().split(/\s+/).filter(Boolean);
+  return articles.filter((article) => {
     if (statusFilter !== "all" && article.status !== statusFilter) return false;
     if (!terms.length) return true;
     const body = JSON.stringify(article).toLowerCase();
     return terms.every((term) => body.includes(term));
   });
+}
+
+function renderArticleBulkBar(articles) {
+  const visible = filteredArticles(articles);
+  const selectedVisible = visible.filter((article) => selectedArticleSlugs.has(article.slug)).length;
+  const allVisibleSelected = visible.length > 0 && selectedVisible === visible.length;
+  return `<section class="article-bulk-bar" id="article-bulk-bar" aria-label="Bulk article actions">
+    <label class="article-select-all"><input type="checkbox" data-select-visible${allVisibleSelected ? " checked" : ""}${visible.length ? "" : " disabled"}> <span>Select visible</span></label>
+    <strong>${selectedArticleSlugs.size} selected</strong>
+    <div class="article-bulk-actions">
+      <label for="article-bulk-action">Change status</label>
+      <select id="article-bulk-action"${selectedArticleSlugs.size ? "" : " disabled"}>
+        <option value="">Choose status…</option>
+        <option value="publish">Published</option>
+        <option value="restore">Draft</option>
+        <option value="archive">Archived · retain URL, noindex</option>
+        <option value="trash">Trash</option>
+      </select>
+      <button class="button primary" data-action="article-bulk-apply"${selectedArticleSlugs.size ? "" : " disabled"}>Apply</button>
+      <button class="text-action" data-action="article-bulk-clear"${selectedArticleSlugs.size ? "" : " disabled"}>Clear</button>
+    </div>
+  </section>`;
+}
+
+function renderArticleRows(articles) {
+  const filtered = filteredArticles(articles);
   if (!filtered.length) return `<p class="empty">No articles match this view.</p>`;
-  return filtered.map((article) => `<button class="article-row" data-open-article="${escapeHtml(article.slug)}">
-    <strong>${escapeHtml(article.title)}</strong><span class="secondary">${escapeHtml(article.category)}</span><time>${formatDate(article.modifiedDate)}</time><span class="status">${escapeHtml(article.status)}</span>${issueSummary(article.slug)}
-  </button>`).join("");
+  return filtered.map((article) => `<div class="article-row${selectedArticleSlugs.has(article.slug) ? " selected" : ""}">
+    <label class="article-row-select" aria-label="Select ${escapeHtml(article.title)}"><input type="checkbox" data-select-article="${escapeHtml(article.slug)}"${selectedArticleSlugs.has(article.slug) ? " checked" : ""}></label>
+    <button class="article-row-open" data-open-article="${escapeHtml(article.slug)}">
+      <strong>${escapeHtml(article.title)}</strong><span class="secondary">${escapeHtml(article.category)}</span><time>${formatDate(article.modifiedDate)}</time><span class="status">${escapeHtml(article.status)}</span>${issueSummary(article.slug)}
+    </button>
+  </div>`).join("");
 }
 
 function field(label, name, value, { type = "text", full = false, maxlength, rows, readonly = false } = {}) {
@@ -676,12 +712,16 @@ function renderCalendarConfig() {
 }
 
 function renderCalendarProposal() {
-  const proposal = state.calendarProposals.at(-1);
-  if (!proposal) return "";
-  return `<section class="panel proposal"><div class="toolbar calendar-editor-heading"><div><p class="eyebrow">Latest Codex proposal</p><h2>${escapeHtml(proposal.summary)}</h2></div><span class="status">${escapeHtml(proposal.status)}</span></div>
-    <div class="proposal-items">${proposal.items.map((item) => `<article><time>${escapeHtml(item.targetDate)}</time><span>${escapeHtml(item.category)}</span><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.rationale)}</p>${item.risks.length ? `<small>Review: ${escapeHtml(item.risks.join(" · "))}</small>` : ""}</article>`).join("")}</div>
-    ${proposal.status === "pending" ? `<button class="button gold" data-action="calendar-approve-proposal" data-proposal-id="${proposal.id}">Approve and add all to calendar</button>` : '<p class="subtle">This proposal has been added to the calendar as planned work.</p>'}
-  </section>`;
+  const proposals = [...state.calendarProposals].sort((a, b) => String(b.createdAt).localeCompare(String(a.createdAt)));
+  if (!proposals.length) return "";
+  const currentArticles = allArticles();
+  const proposalItemState = (proposal, item) => {
+    const article = currentArticles.find((candidate) => candidate.slug === item.articleSlug || candidate.title === item.title);
+    const calendarItem = state.calendar.find((candidate) => (candidate.sourceProposalId === proposal.id && candidate.sourceProposalItemId === item.id) || (!candidate.sourceProposalId && candidate.title === item.title && candidate.targetDate === item.targetDate));
+    const calendarStatus = calendarItem ? calendarItem.status : proposal.status === "approved" ? "removed" : (item.calendarStatus || "proposed");
+    return { articleStatus: article?.status || item.articleStatus || null, calendarStatus };
+  };
+  return `<section class="panel proposal proposal-history"><div class="proposal-history-heading"><div><p class="eyebrow">Codex planning history</p><h2>Calendar proposals</h2></div><span class="status">${proposals.length}</span></div><p class="subtle">Open a dated proposal to review its ideas. Calendar and article status stays synchronized when planned work or approved articles are removed.</p><div class="proposal-list">${proposals.map((proposal, proposalIndex) => `<details class="proposal-entry"${proposalIndex === 0 ? " open" : ""}><summary><span><strong>${escapeHtml(formatDate(proposal.createdAt))}</strong><small>${escapeHtml(proposal.prompt || "Editorial calendar proposal")}</small></span><span class="status">${escapeHtml(proposal.status)}</span></summary><div class="proposal-body"><p class="proposal-summary">${escapeHtml(proposal.summary)}</p><div class="proposal-items">${(proposal.items || []).map((item) => { const itemState = proposalItemState(proposal, item); return `<article><div class="proposal-item-meta"><time>${escapeHtml(item.targetDate)}</time><span>${escapeHtml(item.category)}</span></div><h3>${escapeHtml(item.title)}</h3><div class="proposal-state"><span>Calendar · ${escapeHtml(itemState.calendarStatus)}</span>${itemState.articleStatus ? `<span>Article · ${escapeHtml(itemState.articleStatus)}</span>` : ""}</div><details class="proposal-notes"><summary>Planning notes</summary><p>${escapeHtml(item.rationale)}</p>${item.risks?.length ? `<small>Review: ${escapeHtml(item.risks.join(" · "))}</small>` : ""}</details></article>`; }).join("")}</div><div class="toolbar">${proposal.status === "pending" ? `<button class="button gold" data-action="calendar-approve-proposal" data-proposal-id="${proposal.id}">Approve and add all to calendar</button>` : '<p class="subtle">Approved items remain individually removable from the calendar.</p>'}<button class="text-action danger-text" data-action="calendar-delete-proposal" data-proposal-id="${proposal.id}">Remove proposal history</button></div></div></details>`).join("")}</div></section>`;
 }
 
 function renderCalendar() {
@@ -878,6 +918,16 @@ document.addEventListener("click", (event) => {
   }
   const filter = event.target.closest("[data-status-filter]");
   if (filter) { statusFilter = filter.dataset.statusFilter; return renderArticles(); }
+  const articleSelection = event.target.closest("[data-select-article]");
+  if (articleSelection) {
+    articleSelection.checked ? selectedArticleSlugs.add(articleSelection.dataset.selectArticle) : selectedArticleSlugs.delete(articleSelection.dataset.selectArticle);
+    return renderArticles();
+  }
+  const selectVisible = event.target.closest("[data-select-visible]");
+  if (selectVisible) {
+    for (const article of filteredArticles(allArticles())) selectVisible.checked ? selectedArticleSlugs.add(article.slug) : selectedArticleSlugs.delete(article.slug);
+    return renderArticles();
+  }
   const open = event.target.closest("[data-open-article]");
   if (open) { selectedSlug = open.dataset.openArticle; return setView("editor"); }
   const action = event.target.closest("[data-action]")?.dataset.action;
@@ -972,6 +1022,19 @@ document.addEventListener("click", (event) => {
       state.drafts.push(article);
       setView("editor");
       return;
+    }
+    if (action === "article-bulk-clear") {
+      selectedArticleSlugs.clear(); renderArticles(); return;
+    }
+    if (action === "article-bulk-apply") {
+      const lifecycleAction = document.querySelector("#article-bulk-action")?.value;
+      if (!lifecycleAction) throw new Error("Choose the status to apply.");
+      const slugs = [...selectedArticleSlugs];
+      const labels = { publish: "published", restore: "draft", archive: "archived", trash: "Trash" };
+      if (!window.confirm(`Move ${slugs.length} selected article${slugs.length === 1 ? "" : "s"} to ${labels[lifecycleAction]}? The entire change will stop if any article is blocked.`)) return;
+      const result = await api("/api/articles/lifecycle/bulk", { method: "POST", body: JSON.stringify({ slugs, action: lifecycleAction, ...(lifecycleAction === "archive" ? { archiveDisposition: "retain-noindex" } : {}) }) });
+      selectedArticleSlugs.clear();
+      await refresh(); renderArticles(); showToast(`${result.updated.length} article${result.updated.length === 1 ? "" : "s"} moved to ${labels[lifecycleAction]}.`); return;
     }
     if (["editor-block-add", "editor-block-remove", "editor-block-up", "editor-block-down", "editor-claim-add", "editor-claim-remove"].includes(action)) {
       const article = collectEditorArticle();
@@ -1119,6 +1182,15 @@ document.addEventListener("click", (event) => {
       if (!window.confirm("Delete this calendar item? This does not delete any article.")) return;
       await api("/api/calendar/delete", { method: "POST", body: JSON.stringify({ id: selectedCalendarId }) });
       selectedCalendarId = null; await refresh(); renderCalendar(); showToast("Calendar item deleted."); return;
+    }
+    if (action === "calendar-delete-proposal") {
+      const id = event.target.dataset.proposalId;
+      const proposal = state.calendarProposals.find((candidate) => candidate.id === id);
+      if (!proposal) throw new Error("Calendar proposal not found.");
+      const message = proposal.status === "approved" ? "Remove this proposal from planning history? Existing calendar items remain and can be removed individually." : "Remove this unapproved proposal from planning history?";
+      if (!window.confirm(message)) return;
+      await api("/api/calendar/proposal/delete", { method: "POST", body: JSON.stringify({ id }) });
+      await refresh(); renderCalendar(); showToast("Calendar proposal removed from history."); return;
     }
     if (action === "calendar-config-save") {
       requireCurrentServer();

@@ -84,7 +84,7 @@ function CorporateHero() {
       </div>
       <dl className="corporate-hero-proof">
         <div>
-          <dt>Up to 500</dt>
+          <dt>250+</dt>
           <dd>Coffee guests</dd>
         </div>
         <div>
@@ -92,8 +92,8 @@ function CorporateHero() {
           <dd>Dessert guests</dd>
         </div>
         <div>
-          <dt>Up to 3 + 3</dt>
-          <dd>Coffee and dessert setups</dd>
+          <dt>Multiple</dt>
+          <dd>Service setups available for select events</dd>
         </div>
         <div>
           <dt>$5 million</dt>

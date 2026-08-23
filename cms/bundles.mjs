@@ -33,6 +33,7 @@ export async function exportProjectBundle(context, { includeOriginals = false, e
     path.join(context.root, context.manifest.contentDirectory),
     path.join(context.root, context.manifest.publicMediaDirectory),
     context.files.seo,
+    context.files.database,
     context.files.settings,
   ];
   const files = [];
