@@ -84,19 +84,19 @@ function CorporateHero() {
       </div>
       <dl className="corporate-hero-proof">
         <div>
-          <dt>250+</dt>
-          <dd>Coffee guests</dd>
+          <dt>FLEXIBLE CAPACITY</dt>
+          <dd>Service planned around attendance</dd>
         </div>
         <div>
-          <dt>Up to 400</dt>
-          <dd>Dessert guests</dd>
+          <dt>MULTIPLE SETUPS</dt>
+          <dd>Available for select events</dd>
         </div>
         <div>
-          <dt>Multiple</dt>
-          <dd>Service setups available for select events</dd>
+          <dt>COFFEE + DESSERT</dt>
+          <dd>Book together or separately</dd>
         </div>
         <div>
-          <dt>$5 million</dt>
+          <dt>$5 MILLION</dt>
           <dd>Liability insurance</dd>
         </div>
       </dl>
@@ -114,15 +114,13 @@ function CorporateOverview() {
       </div>
       <div>
         <p>
-          Luxe Event Co. coordinates{" "}
-          <Link href="/experiences/coffee-bar">high-volume coffee bars</Link> and{" "}
-          <Link href="/experiences/sweet-cart">dessert stations</Link> for corporate
-          functions where timely service, brand presentation, and guest flow matter.
+          Luxe Event Co. provides premium mobile Coffee Bar and Sweet Cart experiences
+          for corporate functions where efficient service, brand presentation and guest
+          experience matter.
         </p>
         <p>
-          Book our services individually or package them into a single proposal.
-          We adapt each activation to your itinerary, venue access rules,
-          electrical specifications, and custom branding requirements.
+          Each service plan can be tailored around attendance, event schedule, venue
+          access requirements and custom branding needs.
         </p>
       </div>
     </section>
@@ -269,14 +267,14 @@ function CorporateScale() {
   return (
     <section className="corporate-scale" aria-labelledby="corporate-scale-title">
       <header>
-        <p className="foundation-label">Scale and recurring service</p>
+        <p className="foundation-label">Scale planning</p>
         <h2 id="corporate-scale-title">
-          Scale planning for single events and complex corporate programs.
+          Built to adapt to larger corporate events.
         </h2>
         <p>
-          From single-day activations to multi-day conferences and recurring
-          corporate programs, we scale our operations around your itinerary,
-          staffing needs, and venue guidelines.
+          From single-day activations to conferences and recurring workplace events,
+          Luxe can develop a service plan around attendance, schedule, venue access and
+          event requirements.
         </p>
       </header>
       <div>
@@ -296,8 +294,8 @@ function CorporateTrust() {
     <section className="corporate-trust" aria-labelledby="corporate-trust-title">
       <header>
         <p className="foundation-label">Client trust</p>
-        <h2 id="corporate-trust-title">Trusted by corporate and institutional teams.</h2>
-        <p>Selected organizations Luxe has served.</p>
+        <h2 id="corporate-trust-title">Organizations We’ve Had the Pleasure of Serving</h2>
+        <p>Selected organizations Luxe has provided event service for.</p>
       </header>
       <CredibilityStrip
         variant="hero"

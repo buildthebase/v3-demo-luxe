@@ -75,7 +75,7 @@ function GalleryHero() {
       <div className="gallery-hero-media" aria-label="Luxe experience composition">
         <div aria-hidden="true"><i /><i /><i /></div>
         <strong>Service direction.<br />Event context.</strong>
-        <span>Coffee · Dessert · Seating<br />Planned for the room.</span>
+        <span>COFFEE · DESSERT · EVENT RENTALS<br />Planned for the room.</span>
       </div>
     </header>
   );
@@ -85,7 +85,7 @@ function GalleryInquiry() {
   return (
     <section className="gallery-inquiry" aria-labelledby="gallery-inquiry-title">
       <div>
-        <h2 id="gallery-inquiry-title">Plan your Toronto event experience.</h2>
+        <h2 id="gallery-inquiry-title">Plan Your Toronto Event Experience</h2>
         <p>
           Share the occasion, setting, guest count, and the Luxe experiences you
           are considering. Luxe serves Toronto and the Greater Toronto Area, and

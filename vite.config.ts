@@ -17,7 +17,7 @@ const localBindingConfig = {
   assets: {
     directory: "./public",
     binding: "ASSETS",
-    not_found_handling: "none",
+    not_found_handling: "none" as const,
   },
   images: {
     binding: "IMAGES",

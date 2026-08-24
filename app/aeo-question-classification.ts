@@ -613,7 +613,7 @@ export const questionClassifications: QuestionClassification[] = [
       "industry-partners",
     ],
     services: ["Luxe Seating Rentals"],
-    eventTypes: ["Weddings", "Baby showers", "Bridal showers", "Birthdays", "Backyard and outdoor events", "Engagements", "Private celebrations"],
+    eventTypes: ["Weddings", "Baby showers", "Bridal showers", "Birthdays", "Private events"],
     searchIntents: ["Informational", "Comparison", "Local"],
     funnelStages: ["Discovery", "Understanding", "Planning", "Vendor evaluation"],
     geographicIntent: {
@@ -646,7 +646,7 @@ export const questionClassifications: QuestionClassification[] = [
       "industry-partners",
     ],
     services: ["Luxe Seating Rentals"],
-    eventTypes: ["Weddings", "Showers", "Birthdays", "Backyard and outdoor events", "Engagements", "Private celebrations"],
+    eventTypes: ["Weddings", "Baby showers", "Bridal showers", "Birthdays", "Private events"],
     searchIntents: ["Logistical", "Transactional", "Troubleshooting"],
     funnelStages: ["Planning", "Cost investigation", "Vendor evaluation", "Booking preparation"],
     geographicIntent: {
@@ -721,7 +721,7 @@ export const questionClassifications: QuestionClassification[] = [
     firstPartyEvidence: {
       status: "partial",
       available: [
-        "Confirmed upper limit of three simultaneous Coffee Bar and Sweet Cart setups",
+        "Multiple Coffee Bar and Sweet Cart setups may be available based on event scope and availability",
         "Public content now withholds multi-day and recurring capability",
       ],
       limitation:

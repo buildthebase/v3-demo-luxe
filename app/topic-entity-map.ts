@@ -42,7 +42,7 @@ export const divisionEntities: TopicEntity[] = experiences.map((experience) => (
 export const serviceEntities: TopicEntity[] = [
   ["cafe-cart-experience", entityNames.coffeeExperiences.cafeCart.shortName, "coffee-bar"],
   ["signature-coffee-bar-experience", entityNames.coffeeExperiences.signatureCoffeeBar.shortName, "coffee-bar"],
-  ["espresso-service", "Espresso service", "coffee-bar"],
+  ["espresso-service", "Specialty coffee service", "coffee-bar"],
   ["matcha-service", "Matcha service", "coffee-bar"],
   ["seasonal-beverages", "Seasonal beverages", "coffee-bar"],
   ["mini-dutch-pancakes", "Mini Dutch pancakes", "sweet-cart"],

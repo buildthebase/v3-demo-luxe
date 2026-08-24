@@ -36,7 +36,7 @@ const bridalShowerServices: readonly SignatureExperience[] = signatureExperience
         ...experience,
         tagline: "A café-style welcome",
         description:
-          "Professional baristas serve espresso-style classics, signature lattes, Premium Matcha, and iced specialty drinks to delight guests throughout the celebration.",
+          "Choose from café favourites, signature beverages, premium matcha and milk alternatives to create a menu suited to your bridal shower.",
       };
     }
 
@@ -45,7 +45,7 @@ const bridalShowerServices: readonly SignatureExperience[] = signatureExperience
         ...experience,
         tagline: "A live sweet moment",
         description:
-          "Fresh Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station, and the Luxe Churro Bar prepared live on-site to create a sweet interactive highlight. Soft Serve Add-On is available as an enhancement.",
+          "Luxe Sweet Cart options include Mini Dutch Pancakes, Belgian Waffles on a Stick, Mini Donuts and the Luxe Churro Bar. Your selected option or combination of options is confirmed in your proposal. Soft Serve Add-On is available with select dessert options as an optional enhancement and is not offered as a standalone service.",
       };
     }
 
@@ -53,7 +53,7 @@ const bridalShowerServices: readonly SignatureExperience[] = signatureExperience
       ...experience,
       tagline: "A composed setting",
       description:
-        "White resin chairs, 6-ft tables, cocktail tables, available linens, and tent lighting for guest seating, dining, photos, and gift openings.",
+        "White resin chairs, 6-ft tables, cocktail tables, linens and optional tenting are available based on event requirements. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'.",
     };
   },
 );
@@ -69,9 +69,8 @@ function BridalHero() {
           <span>in Toronto and the GTA.</span>
         </h1>
         <p>
-          Elevate your celebration with specialty coffee beverages, Premium Matcha,
-          live dessert carts, and focused chair and table rentals for a polished,
-          welcoming bridal shower.
+          Elevated coffee and matcha service, interactive live desserts and curated
+          event rentals for a polished, welcoming bridal shower.
         </p>
         <div className="bridal-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">
@@ -154,8 +153,8 @@ function BridalMoments() {
           <p>Guest arrival</p>
           <h3>A café-style welcome.</h3>
           <p>
-            Greet arriving guests with espresso-style classics and signature beverages, iced
-            matchas, and signature lattes for a warm, interactive start to the
+            Greet arriving guests with barista-served specialty coffee, iced matchas, and
+            signature lattes for a warm, interactive start to the
             celebration.
           </p>
         </article>
@@ -173,10 +172,10 @@ function BridalMoments() {
           <p>The sweet moment</p>
           <h3>Dessert becomes part of the celebration.</h3>
           <p>
-            Treat guests to interactive live dessert stations serving warm
-            Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station,
-            or the Luxe Churro Bar. Soft Serve Add-On is available as an
-            enhancement.
+            Treat guests to interactive live dessert service with options including warm
+            Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station and
+            the Luxe Churro Bar. Your selected option or combination of options is
+            confirmed during planning. Soft Serve Add-On is available as an enhancement.
           </p>
         </article>
         <article>
@@ -246,11 +245,12 @@ function BridalServiceCombinations() {
     >
       <header>
         <h2 id="bridal-combinations-title">
-          Bridal shower coffee cart, dessert, and rental combinations
+          Example bridal shower service combinations
         </h2>
         <p>
-          Select a standalone service or bundle coffee, dessert, and venue
-          rentals together in one effortless planning process.
+          Build the experience around your celebration. Book one Luxe service on
+          its own or combine Coffee Bar, Sweet Cart and select rentals based on
+          what your bridal shower needs.
         </p>
       </header>
       <ol>

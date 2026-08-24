@@ -8,7 +8,7 @@ export const coffeeFormats = [
     shortName: entityNames.coffeeExperiences.cafeCart.contextualName,
     formatLabel: "Compact café experience",
     statement:
-      "Our compact café experience designed for intimate celebrations, office events and spaces where a smaller footprint is preferred—without compromising the quality or presentation of the Luxe Coffee Bar experience.",
+      "Our compact café experience designed for intimate celebrations, office events and spaces where a smaller footprint is preferred, without compromising the quality or presentation of the Luxe Coffee Bar experience.",
     eventFit:
       "Smaller celebrations, bridal and baby showers, private dinners, intimate gatherings, and tighter venues.",
     presence:
@@ -31,19 +31,17 @@ export const coffeeFormats = [
 
 export const coffeeBookingIncludes = [
   "Choice of Luxe Café Cart or Luxe Signature Coffee Bar",
-  "Professional barista service",
+  "Barista-served specialty coffee",
   "Premium espresso equipment",
   "A curated selection of café classics, signature beverages and premium non-coffee options tailored to your selected experience.",
-  "Hot and iced beverages",
   "Hot and iced service, whole milk and premium milk alternatives are available as part of the Coffee Bar experience.",
-  "Dairy and premium milk alternatives",
   "Premium syrups and sauces",
   "Luxury menu display",
   "Complete setup and takedown",
   "Cups, lids, and serving essentials",
 ] as const;
 
-export const espressoClassics = [
+export const cafeFavourites = [
   "Espresso",
   "Americano",
   "Cappuccino",
@@ -60,7 +58,7 @@ export const signatureCoffeeCollection = [
 ] as const;
 
 export const nonCoffeeCollection = [
-  "Premium Matcha Latte",
+  "Matcha Latte",
   "Strawberry Matcha",
   "Chai Latte",
   "Hot Chocolate",
@@ -149,13 +147,13 @@ export const coffeeGalleryPreview = [
   {
     number: "02",
     label: "Craft in service",
-    note: "Professional baristas preparing beverages on-site",
+    note: "Baristas serving specialty coffee and matcha on-site",
     tone: "service",
   },
   {
     number: "03",
     label: "The finished drink",
-    note: "Specialty coffee beverages, matcha, and signature drinks",
+    note: "Barista-served specialty coffee, matcha, and signature beverages",
     tone: "drink",
   },
 ] as const;
@@ -169,12 +167,12 @@ export const coffeeFaqs = [
   {
     question: "What is included with a Luxe Coffee Bar booking?",
     answer:
-      "Every coffee booking includes the selected Café Cart or Signature Coffee Bar format, professional barista service, premium espresso equipment, a curated selection of café classics, signature beverages and premium non-coffee options tailored to your selected experience, hot and iced service, whole milk and premium milk alternatives, syrups and sauces, a menu display, serving essentials, setup, and takedown.",
+      "Every coffee booking includes the selected Café Cart or Signature Coffee Bar format, barista-served specialty coffee, premium espresso equipment, a curated selection of hot and iced café favourites, signature beverages and premium non-coffee options tailored to your selected experience, whole milk and premium milk alternatives, syrups and sauces, a menu display, serving essentials, setup, and takedown.",
   },
   {
-    question: "What is the difference between the two coffee experiences?",
+    question: "What is the difference between Café Cart and Signature Coffee Bar?",
     answer:
-      "Luxe Café Cart is our compact café experience designed for intimate celebrations, office events and spaces where a smaller footprint is preferred—without compromising the quality or presentation of the Luxe Coffee Bar experience. Luxe Signature Coffee Bar is our full premium coffee bar experience designed for weddings, corporate events and celebrations where the bar itself becomes a larger part of the event presentation.",
+      "The Luxe Café Cart offers a more compact café setup for intimate celebrations, offices and spaces where a smaller footprint is preferred. The Luxe Signature Coffee Bar creates a larger, more prominent service presence for weddings, corporate events and celebrations where presentation is a bigger part of the experience.",
   },
   {
     question: "How does a coffee cart compare with traditional coffee catering?",
@@ -189,22 +187,22 @@ export const coffeeFaqs = [
   {
     question: "Are iced drinks included?",
     answer:
-      "Yes. Hot and iced beverages are included within the Luxe Coffee Bar experience rather than treated as separate service categories.",
+      "Yes. Hot and iced beverage service is available as part of the Luxe Coffee Bar experience.",
   },
   {
     question: "Is matcha available?",
     answer:
-      "Yes. Matcha is available within the premium non-coffee selection, including options such as a Premium Matcha Latte and Strawberry Matcha. The menu is selected for the event.",
+      "Yes. Premium matcha is available as a non-coffee option and can also be incorporated into customized event menus.",
   },
   {
     question: "Are milk alternatives available?",
     answer:
-      "Yes. Dairy and premium milk alternatives are included as part of the coffee experience.",
+      "Yes. Whole milk and premium non-dairy milk alternatives are available. Final milk selections are confirmed with the event menu.",
   },
   {
-    question: "Can the menu, cups, and signage be customized?",
+    question: "Can the Coffee Bar menu be customized?",
     answer:
-      "Yes. Clients can personalize signature drinks, seasonal selections, matcha or other non-coffee choices, drink names, menu displays, custom cups, event signage, and cart branding. The final menu and visual treatment are confirmed around ingredient availability, equipment, service speed, guest flow, approved artwork, production requirements, and the event timeline.",
+      "Yes. Coffee Bar menus can be personalized with café favourites, signature beverages, premium matcha and selected non-coffee options based on the chosen experience. Custom menu wording, drink names, cups, stickers and signage can also be incorporated.",
   },
   {
     question: "Can pastries be added to the presentation?",
@@ -217,7 +215,7 @@ export const coffeeFaqs = [
       "Luxe Coffee Bar serves intimate gatherings through large-scale events, with service plans tailored to guest count, menu, venue requirements and event flow. Larger-format events can be accommodated through a customized service plan.",
   },
   {
-    question: "How many drinks can be served per hour?",
+    question: "How many drinks can Luxe serve per hour?",
     answer:
       "Service capacity varies based on guest count, selected menu, hot-to-iced drink mix, and guest arrival patterns. We recommend the appropriate staffing and service setup for each event to keep service moving efficiently.",
   },
@@ -237,7 +235,7 @@ export const coffeeFaqs = [
       "Yes. Luxe primarily serves Toronto and the Greater Toronto Area, with select destination events available throughout Southern Ontario. Travel fees may apply.",
   },
   {
-    question: "What space, power, or water access is required?",
+    question: "What power or water access is required?",
     answer:
       "Setup requirements vary by Coffee Bar format and venue. Our team confirms electrical, water, access and setup requirements with the client or venue before the event so the appropriate service plan can be prepared.",
   },

@@ -41,7 +41,7 @@ export const approvedAnswerValidation = aeoQuestionMap
 export const confirmedOperationalFacts = [
   {
     topic: "Coffee Bar capacity",
-    fact: "250+ guest capacity, with larger-format events accommodated through a customized service plan.",
+    fact: "Event-specific capacity based on the selected experience, service duration, menu, staffing, venue access, and guest flow.",
     source: "approved business configuration",
   },
   {
@@ -51,7 +51,7 @@ export const confirmedOperationalFacts = [
   },
   {
     topic: "Simultaneous setups",
-    fact: "Up to three Coffee Bar setups and up to three Sweet Cart setups, subject to scope and availability.",
+    fact: "Multiple Coffee Bar and Sweet Cart setups can be considered for larger activations, multi-space venues and peak guest periods based on event scope and availability.",
     source: "approved business configuration",
   },
   {

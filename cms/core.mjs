@@ -2,6 +2,17 @@ import path from "node:path";
 
 export const ARTICLE_STATUSES = ["draft", "published", "archived", "trash"];
 export const CLEAN_SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+export const CLIENT_ARTICLE_WORD_RANGE = { minimum: 700, maximum: 1200 };
+export const MINIMUM_SUBSTANTIVE_ARTICLE_WORDS = 250;
+
+const PLACEHOLDER_CONTENT_PATTERNS = [
+  { label: "Lorem Ipsum", pattern: /\blorem\s+ipsum\b/i },
+  { label: "placeholder copy", pattern: /\bplaceholder\s+(?:copy|content|text)\b/i },
+  { label: "dummy text", pattern: /\bdummy\s+text\b/i },
+  { label: "sample copy", pattern: /\bsample\s+copy\b/i },
+  { label: "coming soon", pattern: /\bcoming\s+soon\b/i },
+  { label: "TODO/TBD marker", pattern: /(?:^|\s)(?:TODO|TBD)(?=\s|:|$)/ },
+];
 
 export function flattenTextParts(parts = []) {
   return parts.map((part) => part?.text || "").join(" ").trim();
@@ -35,6 +46,11 @@ export function flattenArticle(article) {
   return [article?.title, article?.slug, article?.category, article?.excerpt, article?.description, ...body]
     .filter(Boolean)
     .join(" ");
+}
+
+export function articleBodyWordCount(article) {
+  const bodyOnly = { ...article, title: "", slug: "", category: "", excerpt: "", description: "" };
+  return flattenArticle(bodyOnly).match(/[\p{L}\p{N}]+(?:[’'-][\p{L}\p{N}]+)*/gu)?.length ?? 0;
 }
 
 export function extractInternalLinks(article) {
@@ -110,6 +126,22 @@ export function validateArticle(article, allArticles, { voice = {}, knownPaths =
   if (article?.status === "archived" && !article.archiveDisposition) issues.push(issue("error", "archive-disposition", "Choose retain-noindex or redirect before archiving."));
   if (article?.archiveDisposition === "redirect" && (!article.redirectTo || !article.redirectTo.startsWith("/") || article.redirectTo.startsWith("//"))) issues.push(issue("error", "redirect", "Choose a clean same-site redirect destination."));
   if (article?.archiveDisposition === "redirect" && article.redirectTo === `/blog/${article.slug}`) issues.push(issue("error", "redirect-self", "An archived article cannot redirect to itself."));
+
+  const bodyWordCount = articleBodyWordCount(article);
+  const bodyText = flattenArticle({ ...article, title: "", slug: "", category: "", excerpt: "", description: "" });
+  const placeholder = PLACEHOLDER_CONTENT_PATTERNS.find(({ pattern }) => pattern.test(bodyText));
+  if (placeholder) issues.push(issue("error", "placeholder-content", `Remove ${placeholder.label} before publishing.`, "content"));
+  if (bodyWordCount === 0) {
+    issues.push(issue("error", "empty-body", "Add a complete customer-facing article body before publishing.", "content"));
+  } else if (bodyWordCount < MINIMUM_SUBSTANTIVE_ARTICLE_WORDS) {
+    issues.push(issue("error", "thin-body", `Article body has ${bodyWordCount} words; at least ${MINIMUM_SUBSTANTIVE_ARTICLE_WORDS} substantive words are required before publishing.`, "content"));
+  }
+  if (!article?.heroImage?.src) issues.push(issue("error", "missing-hero-image", "Assign approved article photography as the hero image before publishing.", "heroImage"));
+  if (bodyWordCount >= MINIMUM_SUBSTANTIVE_ARTICLE_WORDS && bodyWordCount < CLIENT_ARTICLE_WORD_RANGE.minimum) {
+    issues.push(issue("warning", "article-length", `Article body has ${bodyWordCount} words; the client-requested direction is approximately ${CLIENT_ARTICLE_WORD_RANGE.minimum}–${CLIENT_ARTICLE_WORD_RANGE.maximum} useful words when the topic supports it.`, "content"));
+  } else if (bodyWordCount > CLIENT_ARTICLE_WORD_RANGE.maximum) {
+    issues.push(issue("warning", "article-length", `Article body has ${bodyWordCount} words, above the client-requested ${CLIENT_ARTICLE_WORD_RANGE.minimum}–${CLIENT_ARTICLE_WORD_RANGE.maximum} word direction. Keep the additional length only when it remains useful.`, "content"));
+  }
 
   let hasH2 = false;
   for (const [index, block] of (article?.content || []).entries()) {

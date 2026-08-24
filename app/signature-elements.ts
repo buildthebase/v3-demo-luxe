@@ -56,7 +56,7 @@ export const signatureExperiences: SignatureExperience[] = [
     label: "Seating",
     name: "Luxe Seating Rentals",
     description:
-      "White resin chairs, 6-ft tables, cocktail tables, tents, linens, tent lighting, and a dance floor for weddings and private celebrations.",
+      "White resin chairs, 6-ft tables, cocktail tables, tents and linens for weddings and private celebrations. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'.",
     href: "/experiences/seating-rentals",
     image: imageAssets.experiences.seatingRentals,
   },
@@ -72,26 +72,27 @@ export type EventPlanningStep = {
 export const eventPlanningPathway: readonly EventPlanningStep[] = [
   {
     number: "01",
-    title: "Choose the occasion.",
-    description: "Start with the gathering, audience, setting, and atmosphere you are planning.",
+    title: "Tell Us About Your Event",
+    description: "Share your occasion, date, venue, guest count and event format.",
     href: "/events",
   },
   {
     number: "02",
-    title: "Select the experiences.",
-    description: "Explore coffee, dessert, and seating independently or as one coordinated event experience.",
+    title: "Select Your Experiences",
+    description:
+      "Choose Luxe Coffee Bar, Luxe Sweet Cart, event rentals, or combine multiple Luxe services.",
     href: "/experiences",
   },
   {
     number: "03",
-    title: "Personalize the details.",
-    description: "Shape the menu, presentation, service format, signage, and event-specific requirements.",
+    title: "Personalize the Details",
+    description: "Customize your menu, presentation, signage and applicable service details.",
     href: "/faq",
   },
   {
     number: "04",
-    title: "Open the conversation.",
-    description: "Share the event context Luxe needs to prepare the right next conversation.",
+    title: "Receive Your Proposal",
+    description: "We’ll prepare your recommended services, pricing and next steps.",
     href: "/contact",
   },
 ];
@@ -120,7 +121,7 @@ export const combinedExperiences: CombinedExperience[] = [
     occasion: "Wedding",
     title: "Coffee + Dessert + Rentals",
     description:
-      "Specialty coffee, fresh-made desserts, and focused chair, table, tent, linen, and dance-floor rentals coordinated for the wedding.",
+      "Mobile coffee, live desserts and coordinated chair, table, tent and linen rentals for ceremonies, receptions and outdoor weddings. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'.",
     href: "/events/weddings",
     experienceIds: ["coffee", "dessert", "seating"],
   },
@@ -129,7 +130,7 @@ export const combinedExperiences: CombinedExperience[] = [
     occasion: "Product launch",
     title: "Branded drinks + Signage",
     description:
-      "Custom branded beverage prints, bespoke signage, cart wraps, and tailored cup designs that bring your brand to life.",
+      "Custom branded cups, bespoke signage, cart branding and tailored beverage menus that bring your brand to life.",
     href: "/events/brand-activations",
     experienceIds: ["coffee", "signage"],
   },
@@ -183,7 +184,7 @@ export const inquiryContexts: Record<string, InquiryContext> = {
     heading: "Plan your event with Luxe.",
     description:
       "Share the occasion, location, guest count, and the experiences you are considering. Luxe will use that context to guide the right next conversation.",
-    cta: "Plan Your Event",
+    cta: "PLAN YOUR EVENT",
     href: "/contact",
   },
   default: {
@@ -204,9 +205,9 @@ export const inquiryContexts: Record<string, InquiryContext> = {
   },
   events: {
     eyebrow: "Begin with what you are planning",
-    heading: "Plan your special event.",
+    heading: "Tell us what you’re planning.",
     description:
-      "Share the occasion, location, guest count, timing, and the kind of atmosphere you want to create. Luxe will use that context to guide the right combination of experiences.",
+      "Choose your event type, guest count and the Luxe experiences you’re interested in. We’ll help bring the right pieces together.",
     cta: "Plan Your Event",
     href: "/contact",
   },
@@ -215,7 +216,7 @@ export const inquiryContexts: Record<string, InquiryContext> = {
     heading: "Inquire about coffee service.",
     description:
       "Share your occasion, guest count, service timing, beverage direction, and any presentation or branding requirements.",
-    cta: "Plan Your Coffee Bar",
+    cta: "Plan Your Event",
     href: "/contact",
   },
   "sweet-cart": {
@@ -244,10 +245,10 @@ export const inquiryContexts: Record<string, InquiryContext> = {
   },
   "corporate-events": {
     eyebrow: "Hospitality with purpose",
-    heading: "Discuss a corporate event.",
+    heading: "Planning a Corporate Event?",
     description:
-      "Share the audience, schedule, venue, service needs, and brand requirements so Luxe can prepare a polished event direction.",
-    cta: "Plan Your Event",
+      "Share your event date, location, estimated attendance and service requirements. We’ll recommend the appropriate Coffee Bar, Sweet Cart, branding and rental options for your event.",
+    cta: "Plan Your Corporate Event",
     href: "/contact",
   },
   "brand-activations": {

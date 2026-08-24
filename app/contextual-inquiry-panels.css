@@ -65,6 +65,58 @@
   justify-self: end;
 }
 
+/* Keep the final CTA compact and balanced on desktop. */
+@media (min-width: 961px) {
+  .foundation-shell main > .signature-inquiry {
+    grid-template-columns: 88px minmax(0, 1fr) auto !important;
+    grid-template-rows: auto !important;
+    column-gap: clamp(24px, 2.75vw, 40px) !important;
+    row-gap: 0 !important;
+    width: min(
+      calc(100% - (2 * var(--space-page-inline))),
+      76rem
+    ) !important;
+    padding: clamp(28px, 3vw, 40px) !important;
+    align-items: center !important;
+  }
+
+  .foundation-shell main > .signature-inquiry .signature-inquiry-mark {
+    grid-column: 1;
+    grid-row: 1;
+    width: 88px;
+    align-self: center;
+  }
+
+  .foundation-shell main > .signature-inquiry .signature-inquiry-copy {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .foundation-shell main > .signature-inquiry .signature-inquiry-copy h2 {
+    margin-top: var(--space-2);
+    font-size: clamp(1.85rem, 2.3vw, 2.5rem) !important;
+    text-wrap: balance;
+    white-space: normal;
+  }
+
+  .foundation-shell main > .signature-inquiry .signature-inquiry-copy > p:last-child {
+    max-width: 54ch;
+    margin-top: var(--space-3);
+    font-size: clamp(0.95rem, 1vw, 1.05rem);
+    line-height: 1.5;
+  }
+
+  .foundation-shell main > .signature-inquiry > a {
+    grid-column: 3;
+    grid-row: 1;
+    min-height: 44px;
+    gap: var(--space-4);
+    align-self: center;
+    justify-self: end;
+    padding-inline: var(--space-5);
+  }
+}
+
 @media (max-width: 960px) {
   .foundation-shell main > .signature-inquiry {
     grid-template-columns: 100px minmax(0, 1fr) !important;

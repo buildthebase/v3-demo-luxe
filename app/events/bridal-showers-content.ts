@@ -5,7 +5,7 @@ export const bridalShowerExperiences = [
     href: "/experiences/coffee-bar",
     title: "A café moment made for the room.",
     description:
-      "The Café Cart offers a focused welcome, while the Signature Coffee Bar creates a more prominent hospitality presence. Both include professional barista service, espresso classics, hot and iced beverages, and an intentional presentation.",
+      "The Café Cart offers a focused welcome, while the Signature Coffee Bar creates a more prominent hospitality presence. Both include barista-served specialty coffee, hot and iced café favourites, signature beverages, and an intentional presentation.",
     tone: "cafe",
   },
   {
@@ -23,7 +23,7 @@ export const bridalShowerExperiences = [
     href: "/experiences/sweet-cart",
     title: "Dessert becomes part of the scene.",
     description:
-      "Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station, and the Luxe Churro Bar can be prepared on-site with confirmed sauces, toppings, signage, and presentation details. Soft Serve Add-On is available as an enhancement.",
+      "Luxe Sweet Cart options include Mini Dutch Pancakes, Belgian Waffles on a Stick, Mini Donuts and the Luxe Churro Bar. Your selected option or combination of options is confirmed in your proposal. Soft Serve Add-On is available with select dessert options as an optional enhancement and is not offered as a standalone service.",
     tone: "dessert",
   },
   {
@@ -32,7 +32,7 @@ export const bridalShowerExperiences = [
     href: "/experiences/seating-rentals",
     title: "The setting holds the gathering together.",
     description:
-      "Chairs, tables, cocktail tables, tents, linens, and lighting can support dining, conversation, games, gifts, photographs, and indoor or outdoor requirements.",
+      "Chairs, tables, cocktail tables, tents, and linens can support dining, conversation, games, gifts, photographs, and indoor or outdoor requirements. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service.",
     tone: "setting",
   },
 ] as const;
@@ -50,38 +50,45 @@ export const bridalShowerDetails = [
     label: "The presentation",
     title: "Signage and presentation",
     description:
-      "Personalize custom cups, arch signage, and cart wraps with the bride-to-be's name, event date, custom slogans, or floral accents.",
+      "Personalize custom cups, arch signage and available cart branding with the bride-to-be's name, event date or custom slogans. Cart branding is available based on project scope, lead time and production requirements. The Luxe service presentation can coordinate with floral accents provided by the event’s florist or creative team.",
   },
   {
     number: "03",
     label: "The room",
     title: "The room around the service",
     description:
-      "Coordinate seating styles, dining tables, premium linens, ambient lighting, and bar placement to ensure smooth guest movement and photo-worthy corners.",
+      "Coordinate your Luxe rental selections and service placement around the venue layout and celebration.",
   },
 ] as const;
 
 export const bridalShowerCombinations = [
   {
     number: "01",
-    title: "The café shower",
-    experiences: "Café Cart + matcha and specialty drinks",
+    title: "CAFÉ CART + MATCHA",
+    experiences: "Example combination",
     description:
-      "A custom-curated espresso and matcha menu that creates an intimate, café-style atmosphere for guest arrival and lounge relaxation.",
+      "A refined daytime café experience with specialty coffee, premium matcha and personalized menu options.",
   },
   {
     number: "02",
-    title: "The interactive centrepiece",
-    experiences: "Signature Coffee Bar + Sweet Cart",
+    title: "COFFEE BAR + SWEET CART",
+    experiences: "Example combination",
     description:
-      "Pair specialty coffee beverages with a live dessert station to create two engaging focal points that drive guest interaction.",
+      "Pair specialty beverages with an interactive live dessert experience.",
   },
   {
     number: "03",
-    title: "The complete setting",
-    experiences: "Coffee + Dessert + Seating and rentals",
+    title: "SWEET CART + RENTALS",
+    experiences: "Example combination",
     description:
-      "Coordinate espresso service, fresh live desserts, and the confirmed chairs, tables, linens, or tenting needed for the shower through one Luxe inquiry.",
+      "Combine live dessert service with the essential seating, tables, linens or tenting needed for your celebration.",
+  },
+  {
+    number: "04",
+    title: "COFFEE + DESSERT + RENTALS",
+    experiences: "Example combination",
+    description:
+      "Bring multiple Luxe services together through one coordinated inquiry.",
   },
 ] as const;
 
@@ -137,17 +144,17 @@ export const bridalShowerFaqs = [
   {
     question: "Which coffee experience is best for a bridal shower?",
     answer:
-      "The Café Cart is suited to a more intimate, focused café setup, while the Signature Coffee Bar creates a fuller service presence. Guest count, venue, service duration, menu, and the role coffee should play determine the better fit.",
+      "LUXE CAFÉ CART — Our compact café experience for intimate bridal showers and venues where a smaller footprint is preferred, while maintaining the polished presentation and professional service of Luxe Coffee Bar. LUXE SIGNATURE COFFEE BAR — Our larger premium Coffee Bar experience for celebrations where the bar itself becomes a more prominent part of the event presentation.",
   },
   {
     question: "Can matcha and specialty beverages be included?",
     answer:
-      "Yes. A curated selection of café classics, signature beverages and premium non-coffee options is tailored to your selected experience. Hot and iced service, whole milk and premium milk alternatives are available as part of the Coffee Bar experience. Seasonal and custom menu possibilities are reviewed around the event.",
+      "Yes. Choose from café favourites, signature beverages, premium matcha and milk alternatives to create a menu suited to your bridal shower.",
   },
   {
     question: "Which desserts work well for bridal showers?",
     answer:
-      "Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station, and the Luxe Churro Bar all work well when the host wants a freshly prepared, guest-facing dessert moment. Soft Serve Add-On is an enhancement. The best choice depends on the shower schedule, guest count, desired presentation, menu around it, and the service flow confirmed in the proposal.",
+      "Luxe Sweet Cart options include Mini Dutch Pancakes, Belgian Waffles on a Stick, Mini Donuts and the Luxe Churro Bar. Your selected option or combination of options is confirmed in your proposal. Soft Serve Add-On is available with select dessert options as an optional enhancement and is not offered as a standalone service. The best selection depends on the shower schedule, guest count, desired presentation and service flow confirmed in the proposal.",
   },
   {
     question: "Can coffee and dessert be booked together?",
@@ -157,7 +164,7 @@ export const bridalShowerFaqs = [
   {
     question: "Can seating and event rentals be included?",
     answer:
-      "Yes. Chairs, tables, cocktail tables, tents, linens, and lighting can be planned alongside coffee or dessert. Inventory, quantities, delivery, setup, teardown, pickup, access, and fees must be confirmed for the venue and date.",
+      "Yes. Chairs, tables, cocktail tables, tents and linens can be planned alongside coffee or dessert. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. The proposal confirms inventory, quantities, delivery, setup, takedown, pickup, access and fees for the venue and date.",
   },
   {
     question: "Can menus and signage be customized?",
@@ -165,9 +172,9 @@ export const bridalShowerFaqs = [
       "Yes. Signature drinks, menu displays, custom cups, event signage, cart details, dessert presentation, and approved event wording can be discussed. Final possibilities depend on direction, production requirements, timing, and the selected experience.",
   },
   {
-    question: "Does Luxe provide floral or event styling?",
+    question: "Can Luxe coordinate with my florist or event decorator?",
     answer:
-      "Floral styling and event styling are available possibilities. The exact creative direction, floral scope, sourcing, installation, rental styling, production timing, and responsibilities must be confirmed during planning rather than assumed as a fixed package.",
+      "Yes. We can coordinate the presentation and placement of our Coffee Bar, Sweet Cart, signage and rentals with your planner, florist or decorator so the Luxe experience complements the overall event aesthetic.",
   },
   {
     question: "Can Luxe work with the host, planner, venue, or decorator?",

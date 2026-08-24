@@ -157,7 +157,7 @@
         "type": "paragraph",
         "content": [
           {
-            "text": "In the supplied bridal-shower guidance, the Café Cart is described as a focused welcome or more intimate café setup, while the Signature Coffee Bar creates a fuller, more prominent hospitality presence. Both are described as including professional barista service, espresso classics, hot and iced beverages, and an intentional presentation."
+            "text": "In the supplied bridal-shower guidance, the Café Cart is described as a focused welcome or more intimate café setup, while the Signature Coffee Bar creates a fuller, more prominent hospitality presence. Both are described as including barista-served specialty coffee, hot and iced café favourites, signature beverages, and an intentional presentation."
           }
         ]
       },
@@ -441,7 +441,7 @@
       },
       {
         "id": "claim-15",
-        "text": "The bridal-shower descriptions say that both formats include professional barista service, espresso classics, hot and iced beverages, and intentional presentation.",
+        "text": "The bridal-shower descriptions say that both formats include barista-served specialty coffee, hot and iced café favourites, signature beverages, and intentional presentation.",
         "status": "grounded",
         "sourceIds": [
           "site-a2687258bee9e855"
@@ -547,7 +547,7 @@
         "type": "paragraph",
         "content": [
           {
-            "text": "Pairing barista-brewed specialty coffee with interactive live dessert service creates two complementary tasting focal points. For an event planner, the opportunity is not simply to place two carts in one room. It is to decide what each service should contribute to the guest journey and how the two moments should relate."
+            "text": "Pairing barista-served specialty coffee with interactive live dessert service creates two complementary tasting focal points. For an event planner, the opportunity is not simply to place two carts in one room. It is to decide what each service should contribute to the guest journey and how the two moments should relate."
           }
         ]
       },
@@ -733,7 +733,7 @@
         "title": "Capacity requires an event-specific plan",
         "content": [
           {
-            "text": "Luxe Coffee Bar can support up to 500 guests, while Luxe Sweet Cart can support up to 400 guests. Each service can support up to three simultaneous setups, subject to event scope. These figures are capacity limits, not universal portion, preparation-rate or wait-time formulas."
+            "text": "Coffee Bar capacity is reviewed individually, while Luxe Sweet Cart can support up to 400 guests. Multiple Coffee Bar and Sweet Cart setups can be considered for larger activations, multi-space venues and peak guest periods based on event scope and availability. These figures are capacity limits, not universal portion, preparation-rate or wait-time formulas."
           }
         ]
       },
@@ -912,7 +912,7 @@
       },
       {
         "id": "claim-03",
-        "text": "Barista-brewed specialty coffee and interactive live dessert service can create two complementary tasting focal points.",
+        "text": "Barista-served specialty coffee and interactive live dessert service can create two complementary tasting focal points.",
         "status": "grounded",
         "sourceIds": [
           "site-98c67b367178f5f1"
@@ -995,7 +995,7 @@
       },
       {
         "id": "claim-12",
-        "text": "Luxe Coffee Bar can support up to 500 guests and Luxe Sweet Cart can support up to 400 guests, subject to an event-specific plan and scope.",
+        "text": "Luxe Coffee Bar capacity is reviewed individually and Luxe Sweet Cart can support up to 400 guests, subject to an event-specific plan and scope.",
         "status": "grounded",
         "sourceIds": [
           "site-46948cbe24af52d5",
@@ -1005,7 +1005,7 @@
       },
       {
         "id": "claim-13",
-        "text": "Luxe Coffee Bar and Luxe Sweet Cart can each support up to three simultaneous setups, subject to event scope.",
+        "text": "Multiple Coffee Bar and Sweet Cart setups can be considered for larger activations, multi-space venues and peak guest periods based on event scope and availability.",
         "status": "grounded",
         "sourceIds": [
           "site-46948cbe24af52d5"
@@ -1097,7 +1097,7 @@
     "title": "How to Pair a Mobile Coffee Bar with a Live Sweet Cart at Your Event",
     "seoTitle": "How to Pair a Coffee Bar and Sweet Cart at an Event",
     "description": "Plan a coordinated Luxe Coffee Bar and Luxe Sweet Cart experience around timing, guest flow, menus, presentation and venue requirements.",
-    "excerpt": "A considered guide to coordinating handcrafted beverages and live dessert service for weddings, corporate events, brand activations, showers and private celebrations.",
+    "excerpt": "A considered guide to coordinating premium coffee and matcha service with live desserts for weddings, corporate events, brand activations, showers and private celebrations.",
     "category": "Event Planning",
     "publishDate": "2026-08-07T18:50:16.998Z",
     "modifiedDate": "2026-08-07T18:50:17.000Z",
@@ -1123,7 +1123,7 @@
         "type": "paragraph",
         "content": [
           {
-            "text": "A mobile coffee bar brings commercial espresso equipment, skilled baristas and a handcrafted beverage menu to the venue. Alongside it, the Luxe Sweet Cart prepares and finishes desserts in view, making service and presentation visible parts of the event."
+            "text": "A mobile coffee bar brings commercial espresso equipment, barista-served specialty coffee and a curated beverage menu to the venue. Alongside it, the Luxe Sweet Cart prepares and finishes desserts in view, making service and presentation visible parts of the event."
           }
         ]
       },
@@ -1183,7 +1183,7 @@
             "href": "/experiences/coffee-bar"
           },
           {
-            "text": " is a mobile café experience with professional baristas, handcrafted beverages and intentional presentation. The "
+            "text": " is a mobile café experience with barista-served specialty coffee, signature beverages and intentional presentation. The "
           },
           {
             "text": "Luxe Sweet Cart",
@@ -1250,7 +1250,7 @@
         "type": "paragraph",
         "content": [
           {
-            "text": "Placement should reflect how guests are expected to move through the room. In corporate settings, espresso service and sweet bites can be paired with cocktail tables and lounge seating to encourage natural movement and conversation. That arrangement is a useful planning reference, but the final layout should respond to the particular venue."
+            "text": "Placement should reflect how guests are expected to move through the room. In corporate settings, specialty coffee and matcha service and sweet bites can be paired with cocktail tables and lounge seating to encourage natural movement and conversation. That arrangement is a useful planning reference, but the final layout should respond to the particular venue."
           }
         ]
       },
@@ -1279,7 +1279,7 @@
         "type": "paragraph",
         "content": [
           {
-            "text": "Build a shared menu direction without assuming that every beverage needs a prescribed dessert match. Luxe Coffee Bar provides a handcrafted beverage menu, while Sweet Cart desserts are prepared in view and finished to order. The connection can come from the overall selection, service moment and presentation."
+            "text": "Build a shared menu direction without assuming that every beverage needs a prescribed dessert match. Luxe Coffee Bar provides premium coffee and matcha service, while Sweet Cart desserts are prepared in view and finished to order. The connection can come from the overall selection, service moment and presentation."
           }
         ]
       },
@@ -1539,7 +1539,7 @@
     "claims": [
       {
         "id": "claim-01",
-        "text": "Luxe Coffee Bar brings commercial espresso equipment, skilled or professional baristas and a handcrafted beverage menu to the venue, with intentional presentation as part of the room.",
+        "text": "Luxe Coffee Bar brings commercial espresso equipment, barista-served specialty coffee and a curated beverage menu to the venue, with intentional presentation as part of the room.",
         "status": "grounded",
         "sourceIds": [
           "public-3b872a406dffe8de",
@@ -1603,7 +1603,7 @@
       },
       {
         "id": "claim-08",
-        "text": "In corporate settings, espresso service and sweet bites can be paired with cocktail tables and lounge seating to encourage natural movement and conversation.",
+        "text": "In corporate settings, specialty coffee and matcha service and sweet bites can be paired with cocktail tables and lounge seating to encourage natural movement and conversation.",
         "status": "grounded",
         "sourceIds": [
           "public-2315f3719a2a0da9"
@@ -1735,7 +1735,7 @@
     "title": "How to Pair Luxe Coffee Bar and Luxe Sweet Cart for a Considered Event Experience",
     "seoTitle": "How to Pair a Mobile Coffee Bar and Sweet Cart",
     "description": "A practical guide to coordinating Luxe Coffee Bar and Luxe Sweet Cart around your event schedule, guest movement, layout and visual direction.",
-    "excerpt": "Pair handcrafted beverages with live dessert preparation by treating timing, layout and presentation as parts of one hospitality plan.",
+    "excerpt": "Pair premium coffee and matcha service with live dessert preparation by treating timing, layout and presentation as parts of one hospitality plan.",
     "category": "Event Planning",
     "publishDate": "2026-08-12T20:03:15.434Z",
     "modifiedDate": "2026-08-12T20:03:15.436Z",
@@ -1768,7 +1768,7 @@
             "href": "/experiences/coffee-bar"
           },
           {
-            "text": " brings commercial espresso equipment, skilled baristas and a handcrafted beverage menu to the venue, while "
+            "text": " brings commercial espresso equipment, barista-served specialty coffee and a curated beverage menu to the venue, while "
           },
           {
             "text": "Luxe Sweet Cart",
@@ -1789,7 +1789,7 @@
         "type": "paragraph",
         "content": [
           {
-            "text": "Each experience contributes something different to the room. Luxe Coffee Bar combines professional baristas, handcrafted beverages and intentional presentation. Luxe Sweet Cart adds live, made-to-order dessert preparation, warm cart styling and a finished presentation that becomes part of the event atmosphere."
+            "text": "Each experience contributes something different to the room. Luxe Coffee Bar combines barista-served specialty coffee, signature beverages and intentional presentation. Luxe Sweet Cart adds live, made-to-order dessert preparation, warm cart styling and a finished presentation that becomes part of the event atmosphere."
           }
         ]
       },
@@ -1863,7 +1863,7 @@
         "type": "paragraph",
         "content": [
           {
-            "text": "Think of the coffee bar, sweet cart and surrounding furniture as one hospitality area. Espresso service and sweet bites can be paired with cocktail tables and lounge seating to encourage natural movement and organic conversation. The aim is to make each element feel connected to the gathering rather than isolated from it."
+            "text": "Think of the coffee bar, sweet cart and surrounding furniture as one hospitality area. Specialty coffee and matcha service and sweet bites can be paired with cocktail tables and lounge seating to encourage natural movement and organic conversation. The aim is to make each element feel connected to the gathering rather than isolated from it."
           }
         ]
       },
@@ -1999,7 +1999,7 @@
           ],
           [
             {
-              "text": "Consider espresso service, sweet bites and nearby seating together when planning movement and conversation."
+              "text": "Consider specialty coffee and matcha service, sweet bites and nearby seating together when planning movement and conversation."
             }
           ],
           [
@@ -2030,7 +2030,7 @@
     "claims": [
       {
         "id": "claim-01",
-        "text": "Luxe Coffee Bar brings commercial espresso equipment, skilled baristas and a handcrafted beverage menu directly to the venue.",
+        "text": "Luxe Coffee Bar brings commercial espresso equipment, barista-served specialty coffee and a curated beverage menu directly to the venue.",
         "status": "grounded",
         "sourceIds": [
           "public-3b872a406dffe8de"
@@ -2039,7 +2039,7 @@
       },
       {
         "id": "claim-02",
-        "text": "Luxe Coffee Bar is a mobile café experience with professional baristas, handcrafted beverages and intentional presentation shaped around the event.",
+        "text": "Luxe Coffee Bar is a mobile café experience with barista-served specialty coffee, signature beverages and intentional presentation shaped around the event.",
         "status": "grounded",
         "sourceIds": [
           "public-a7abb361f1233a57"
@@ -2121,7 +2121,7 @@
       },
       {
         "id": "claim-11",
-        "text": "Espresso service and sweet bites can be paired with cocktail tables and lounge seating to encourage natural movement and organic conversation.",
+        "text": "Specialty coffee and matcha service and sweet bites can be paired with cocktail tables and lounge seating to encourage natural movement and organic conversation.",
         "status": "grounded",
         "sourceIds": [
           "public-2315f3719a2a0da9"

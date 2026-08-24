@@ -3,11 +3,15 @@ import test from "node:test";
 import { createEmptyArticle } from "../cms/core.mjs";
 import { prepareBulkLifecycle } from "../cms/article-lifecycle.mjs";
 
+const completeBody = Array.from({ length: 700 }, (_, index) => `guidance${index}`).join(" ");
+const heroImage = { id: "hero", src: "/images/blog/example/hero.webp", width: 1600, height: 1000, alt: "An event setup" };
+
 function article(slug, status = "draft", overrides = {}) {
   return {
     ...createEmptyArticle(), slug, status, title: `Article ${slug}`, seoTitle: `Article ${slug} | Luxe Event Co.`,
     description: "A complete description for this test article.", excerpt: "A complete excerpt.",
-    content: [{ type: "paragraph", content: [{ text: "Useful editorial content." }] }],
+    heroImage, heroAlt: "An event setup",
+    content: [{ type: "paragraph", content: [{ text: completeBody }] }],
     ...overrides,
   };
 }

@@ -38,7 +38,7 @@ export const contentRequirements: ContentRequirement[] = [
     type: "operational",
     status: "confirmed",
     source: "client-intake",
-    requirement: "Record the 250+ Coffee Bar guest capacity and explain that larger-format events can be accommodated through a customized service plan; publish Seating Rentals capacity only after confirmation.",
+    requirement: "Explain that Coffee Bar capacity depends on the selected experience, service duration, menu, staffing, venue access, and guest flow; publish Seating Rentals capacity only after confirmation.",
     validationNote: "Capacity is not a promise of identical service speed or a substitute for event-specific planning.",
   },
   {
@@ -101,7 +101,7 @@ export const contentRequirements: ContentRequirement[] = [
     type: "experience",
     status: "confirmed",
     source: "client-intake",
-    requirement: "Present espresso classics, signature drinks, matcha, tea, chai, hot chocolate, milk alternatives, and seasonal collections as the confirmed menu framework.",
+    requirement: "State that Coffee Bar menus can include café favourites, signature beverages, premium matcha and selected non-coffee options based on the chosen experience.",
     validationNote: "Seasonal availability and final menu selections remain subject to event date and approval.",
   },
   {
@@ -146,7 +146,7 @@ export const contentRequirements: ContentRequirement[] = [
     type: "conversion",
     status: "needs-proof",
     source: "client-intake",
-    requirement: "Show how agencies and corporate teams move from campaign objective to branded cups, signage, menus, staffing, production coordination, and event-day delivery.",
+    requirement: "Show how agencies and corporate teams move from campaign objective to branded cups, signage, menus, staffing, Luxe service coordination, and event-day delivery.",
     validationNote: "The capability is confirmed; the step-by-step workflow and examples still need client input.",
   },
   {
@@ -263,7 +263,7 @@ export const pageContentBriefs: PageContentBrief[] = [
     path: "/events/brand-activations",
     purpose: "Translate campaign objectives into branded, staffed, measurable physical experiences.",
     requiredRequirements: ["corporate-branding-workflow", "branding-possibilities", "simultaneous-setups", "service-duration", "planner-venue-coordination", "travel-service-area", "liability-insurance"],
-    proofPriority: ["branded activation photography", "custom cups and menus", "production coordination examples"],
+    proofPriority: ["branded activation photography", "custom cups and menus", "Luxe service coordination examples"],
     doNotInvent: sharedDoNotInvent,
   },
   {

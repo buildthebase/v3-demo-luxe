@@ -53,6 +53,145 @@
   text-align: center;
 }
 
+/* Keep the service-planning details available through the proof-item bubbles. */
+.foundation-shell .coffee-page .sweet-hero-proof {
+  overflow: visible;
+}
+
+.foundation-shell .coffee-page .sweet-hero-proof > div {
+  position: relative;
+}
+
+.foundation-shell .coffee-page .sweet-hero-proof dd.coffee-proof-with-info {
+  display: flex;
+  width: 100%;
+  min-height: 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.foundation-shell .coffee-page .sweet-hero-proof dd.coffee-proof-with-info > strong {
+  width: auto;
+  min-height: 0;
+  padding: 0;
+}
+
+.coffee-proof-info {
+  position: relative;
+  z-index: 5;
+  width: 1.5rem;
+  height: 1.5rem;
+  flex: 0 0 1.5rem;
+}
+
+.foundation-shell .coffee-page button.coffee-proof-info-trigger {
+  appearance: none;
+  display: grid;
+  width: 1.5rem;
+  min-width: 1.5rem;
+  max-width: 1.5rem;
+  height: 1.5rem;
+  min-height: 1.5rem;
+  max-height: 1.5rem;
+  inline-size: 1.5rem;
+  min-inline-size: 1.5rem;
+  max-inline-size: 1.5rem;
+  block-size: 1.5rem;
+  min-block-size: 1.5rem;
+  max-block-size: 1.5rem;
+  aspect-ratio: 1;
+  box-sizing: border-box;
+  flex: 0 0 1.5rem;
+  place-items: center;
+  padding: 0;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-luxe-gold-ink);
+  cursor: pointer;
+  font-family: Georgia, serif;
+  font-size: 0.78rem;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.foundation-shell .coffee-page button.coffee-proof-info-trigger::before {
+  position: absolute;
+  inset: -0.65rem;
+  content: "";
+}
+
+.foundation-shell .coffee-page button.coffee-proof-info-trigger:focus-visible {
+  outline: 2px solid var(--color-luxe-gold);
+  outline-offset: 3px;
+}
+
+.coffee-proof-info-copy {
+  position: absolute;
+  top: calc(100% + 0.85rem);
+  left: 50%;
+  width: min(22rem, calc(100vw - 2rem));
+  max-width: calc(100vw - 2rem);
+  box-sizing: border-box;
+  padding: 1rem 1.1rem;
+  border: 1px solid rgb(255 255 255 / 18%);
+  background: var(--color-luxe-black);
+  box-shadow: 0 1rem 2.5rem rgb(23 22 20 / 18%);
+  color: var(--color-luxe-ivory);
+  opacity: 0;
+  pointer-events: none;
+  text-align: left;
+  overflow-wrap: anywhere;
+  transform: translate(calc(-50% + var(--coffee-proof-shift, 0px)), -0.35rem);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.coffee-proof-info-copy::before {
+  position: absolute;
+  bottom: 100%;
+  left: calc(50% - var(--coffee-proof-shift, 0px));
+  border: 0.45rem solid transparent;
+  border-bottom-color: var(--color-luxe-black);
+  content: "";
+  transform: translateX(-50%);
+}
+
+.coffee-proof-info-copy p {
+  margin: 0;
+  color: inherit;
+  font-size: 0.82rem;
+  letter-spacing: 0;
+  line-height: 1.55;
+  text-align: left;
+  text-transform: none;
+}
+
+.coffee-proof-info.is-open .coffee-proof-info-copy {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(calc(-50% + var(--coffee-proof-shift, 0px)), 0);
+}
+
+.coffee-proof-info[data-placement="top"] .coffee-proof-info-copy {
+  top: auto;
+  bottom: calc(100% + 0.85rem);
+  transform: translate(calc(-50% + var(--coffee-proof-shift, 0px)), 0.35rem);
+}
+
+.coffee-proof-info[data-placement="top"].is-open .coffee-proof-info-copy {
+  transform: translate(calc(-50% + var(--coffee-proof-shift, 0px)), 0);
+}
+
+.coffee-proof-info[data-placement="top"] .coffee-proof-info-copy::before {
+  top: 100%;
+  bottom: auto;
+  border-top-color: var(--color-luxe-black);
+  border-bottom-color: transparent;
+}
+
 /* The proof statement sits in a full-width desktop panel. Give it enough
  * measure to balance over two lines while keeping the panel alignment exact. */
 @media (min-width: 961px) {

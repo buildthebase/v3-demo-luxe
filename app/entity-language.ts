@@ -15,7 +15,7 @@ export const canonicalEntityVocabulary = {
     name: experience.name,
     role:
       experience.slug === "coffee-bar"
-        ? "Mobile coffee and espresso service division"
+        ? "Specialty coffee and matcha service division"
         : experience.slug === "sweet-cart"
           ? "Live dessert-cart service division"
           : "Event and seating-rental service division",

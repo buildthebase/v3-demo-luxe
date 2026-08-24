@@ -25,8 +25,8 @@ export function EventsHero({
         </h1>
         <p>
           From weddings and corporate functions to brand activations and private
-          celebrations, Luxe offers mobile espresso bars and live dessert carts,
-          plus focused seating rentals for weddings, showers, birthdays, backyard
+          celebrations, Luxe offers premium mobile Coffee Bars and live dessert carts,
+          plus event rentals for weddings, showers, birthdays, backyard
           events, and private gatherings.
         </p>
         <div className="events-hero-actions">
@@ -77,8 +77,8 @@ export function EventsApproach() {
         </p>
       </div>
       <p className="events-approach-closing">
-        One Luxe Event Co. inquiry can coordinate the selected experiences while
-        allowing each service to retain its own purpose and character.
+        Book one Luxe experience on its own, or bring coffee, dessert and event
+        rentals together through one coordinated inquiry.
       </p>
       <ol className="events-approach-principles">
         {eventLedPrinciples.map((principle) => (

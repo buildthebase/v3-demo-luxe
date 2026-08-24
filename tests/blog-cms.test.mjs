@@ -1,6 +1,9 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { buildLinkGraph, createEmptyArticle, parseInlineInternalLinks, searchArticles, validateArticle } from "../cms/core.mjs";
+import { articleBodyWordCount, buildLinkGraph, createEmptyArticle, parseInlineInternalLinks, searchArticles, validateArticle } from "../cms/core.mjs";
+
+const usefulBody = Array.from({ length: 700 }, (_, index) => `guidance${index}`).join(" ");
+const heroImage = { id: "hero", src: "/images/blog/example/hero.webp", width: 1600, height: 1000, alt: "An event setup" };
 
 function article(overrides = {}) {
   return {
@@ -10,10 +13,12 @@ function article(overrides = {}) {
     seoTitle: "Example article | Luxe Event Co.",
     description: "A useful and unique description for this example article.",
     excerpt: "A useful excerpt.",
+    heroImage,
+    heroAlt: "An event setup",
     content: [
       { type: "quick-answer", title: "Quick answer", content: [{ text: "A concise answer." }] },
       { type: "heading", id: "planning", level: 2, text: "Planning guidance" },
-      { type: "paragraph", content: [{ text: "Read the related guide.", href: "/blog/related-article" }] },
+      { type: "paragraph", content: [{ text: "Read the related guide.", href: "/blog/related-article" }, { text: usefulBody }] },
       { type: "key-takeaways", title: "Key takeaways", items: [[{ text: "One useful point." }]] },
     ],
     ...overrides,
@@ -50,7 +55,7 @@ test("prohibited voice and unverified claims block publishing", () => {
 });
 
 test("CMS search includes body text", () => {
-  const first = article({ slug: "coffee-guide", content: [{ type: "paragraph", content: [{ text: "Ceremonial matcha service" }] }] });
+  const first = article({ slug: "coffee-guide", content: [{ type: "paragraph", content: [{ text: "Premium Matcha service" }] }] });
   const second = article({ slug: "seating-guide", content: [{ type: "paragraph", content: [{ text: "Lounge seating layouts" }] }] });
   assert.deepEqual(searchArticles([first, second], "matcha").map((entry) => entry.slug), ["coffee-guide"]);
 });
@@ -69,4 +74,27 @@ test("raw Markdown internal links block publication", () => {
   });
   const issues = validateArticle(candidate, [candidate], { knownPaths: ["/experiences/coffee-bar"] });
   assert.ok(issues.some((entry) => entry.code === "inline-link-syntax" && entry.severity === "error"));
+});
+
+test("placeholder, thin copy, and missing photography block publication", () => {
+  const candidate = article({
+    heroImage: null,
+    heroAlt: "",
+    content: [{ type: "paragraph", content: [{ text: "Lorem ipsum dolor sit amet." }] }],
+  });
+  const issues = validateArticle(candidate, [candidate], { knownPaths: [] });
+  assert.ok(issues.some((entry) => entry.code === "placeholder-content" && entry.severity === "error"));
+  assert.ok(issues.some((entry) => entry.code === "thin-body" && entry.severity === "error"));
+  assert.ok(issues.some((entry) => entry.code === "missing-hero-image" && entry.severity === "error"));
+
+  const emptyIssues = validateArticle(article({ content: [] }), [], { knownPaths: [] });
+  assert.ok(emptyIssues.some((entry) => entry.code === "empty-body" && entry.severity === "error"));
+});
+
+test("client-requested article length is guidance rather than a blocker", () => {
+  const candidate = article({ content: [{ type: "paragraph", content: [{ text: Array.from({ length: 500 }, (_, index) => `word${index}`).join(" ") }] }] });
+  assert.equal(articleBodyWordCount(candidate), 500);
+  const issues = validateArticle(candidate, [candidate], { knownPaths: [] });
+  assert.ok(issues.some((entry) => entry.code === "article-length" && entry.severity === "warning"));
+  assert.ok(!issues.some((entry) => entry.code === "thin-body"));
 });

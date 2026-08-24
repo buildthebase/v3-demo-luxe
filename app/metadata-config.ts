@@ -14,12 +14,12 @@ export const pageMetadata = {
   "/": {
     title: "Luxe Event Co. | Mobile Coffee Bar, Live Desserts & Event Rentals Toronto",
     description:
-      "Luxe Event Co. provides mobile coffee bars, live desserts, and focused chair, table and tent rentals for weddings and private celebrations across Toronto and the GTA.",
+      "Luxe Event Co. provides mobile coffee bars, live desserts, and chair, table and tent rentals for weddings and private celebrations across Toronto and the GTA.",
   },
   "/experiences": {
     title: "Coffee, Dessert & Event Rentals Toronto | Luxe Event Co.",
     description:
-      "Compare mobile coffee bars and live dessert carts for events, plus focused seating and rentals for weddings and private celebrations across Toronto and the GTA.",
+      "Compare mobile coffee bars and live dessert carts for events, plus seating and event rentals for weddings and private celebrations across Toronto and the GTA.",
   },
   "/experiences/coffee-bar": {
     title: "Mobile Coffee Bar in Toronto | Luxe Coffee Bar",
@@ -34,12 +34,12 @@ export const pageMetadata = {
   "/experiences/seating-rentals": {
     title: "Chair, Table & Tent Rentals Toronto | Luxe Seating Rentals",
     description:
-      "Rent white resin chairs, tables, tents, linens, lighting and a dance floor for weddings, showers, birthdays, engagements, backyard events and private celebrations.",
+      "Rent white resin chairs, tables, tents and linens for weddings, showers, birthdays, engagements, backyard events and private celebrations. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'.",
   },
   "/events": {
     title: "Toronto Event Services | Coffee, Dessert & Rentals | Luxe",
     description:
-      "Explore mobile coffee bars and dessert carts for Toronto events, plus focused seating and rentals for weddings, showers and private celebrations.",
+      "Explore mobile coffee bars and dessert carts for Toronto events, plus seating and event rentals for weddings, showers and private celebrations.",
   },
   "/events/weddings": {
     title: "Toronto Wedding Coffee, Dessert & Rentals | Luxe Event Co.",
@@ -57,14 +57,14 @@ export const pageMetadata = {
       "Turn coffee, matcha, dessert, cups, signage, and cart styling into a cohesive branded activation for launches and campaigns in Toronto and the GTA.",
   },
   "/events/baby-showers": {
-    title: "Baby Shower Dessert Cart Toronto: Luxe Event Co.",
+    title: "Baby Shower Dessert Carts, Coffee Bars & Event Rentals Toronto | Luxe",
     description:
-      "Plan a Toronto or GTA baby shower with mobile coffee bars, matcha drinks, live dessert carts, signage, and refined event rentals for indoor or outdoor venues.",
+      "Create a welcoming Toronto baby shower with premium coffee and matcha service, interactive live desserts and select event rentals, booked individually or together.",
   },
   "/events/bridal-showers": {
     title: "Bridal Shower Coffee Cart Toronto: Luxe Event Co.",
     description:
-      "Plan a Toronto or GTA bridal shower with a coffee cart, dessert cart, matcha, signage, florals, seating, and event rentals in one cohesive setting.",
+      "Plan a Toronto or GTA bridal shower with a coffee cart, dessert cart, matcha, signage, seating, and event rentals in one cohesive setting.",
   },
   "/events/birthdays": {
     title: "Birthday Dessert Catering & Coffee Bar Toronto: Luxe",
@@ -74,7 +74,7 @@ export const pageMetadata = {
   "/events/private-events": {
     title: "Private Event Coffee, Dessert & Rentals Toronto: Luxe",
     description:
-      "Plan a private event in Toronto or the GTA with staffed coffee service, live dessert carts, personalized signage, seating, tents, linens, and lighting.",
+      "Plan a private event in Toronto or the GTA with staffed coffee service, live dessert carts, personalized signage, seating, tents and linens. Tent lighting is available with Luxe tent rentals.",
   },
   "/gallery": {
     title: "Toronto Event Gallery: Coffee, Dessert and Rentals",

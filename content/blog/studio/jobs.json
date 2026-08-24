@@ -511,7 +511,7 @@
         "id": "site-98c67b367178f5f1",
         "topic": "baby-showers-content",
         "category": "Website content",
-        "text": "Barista-brewed specialty coffee paired with interactive live dessert service to create two distinct, complementary tasting focal points.",
+        "text": "Barista-served specialty coffee paired with interactive live dessert service to create two distinct, complementary tasting focal points.",
         "applicablePages": [],
         "applicableServices": [],
         "source": "app/events/baby-showers-content.ts",
@@ -527,7 +527,7 @@
         "id": "site-2ffd2fd222452ab2",
         "topic": "brand-activations-content",
         "category": "Website content",
-        "text": "Standard corporate catering is appropriate when the priority is dependable food or beverage provision with minimal creative production. Branded experiential service is appropriate when the menu, cups, signage, service point, and guest interaction should express a campaign or organization. Neither is universally better; decide from the event objective, audience, desired action, brand requirements, service window, venue, approvals, production scope, and budget. Luxe Coffee Bar and Sweet Cart can support the experiential route when that added role is useful.",
+        "text": "Traditional catering focuses primarily on food and beverage service. A Luxe brand activation combines hospitality with customized presentation, giving guests something to enjoy while creating an additional branded touchpoint within the event.",
         "applicablePages": [],
         "applicableServices": [],
         "source": "app/events/brand-activations-content.ts",
@@ -543,7 +543,7 @@
         "id": "site-a2687258bee9e855",
         "topic": "bridal-showers-content",
         "category": "Website content",
-        "text": "The Café Cart offers a focused welcome, while the Signature Coffee Bar creates a more prominent hospitality presence. Both include professional barista service, espresso classics, hot and iced beverages, and an intentional presentation.",
+        "text": "The Café Cart offers a focused welcome, while the Signature Coffee Bar creates a more prominent hospitality presence. Both include barista-served coffee and matcha, hot and iced café favourites, and an intentional presentation.",
         "applicablePages": [],
         "applicableServices": [],
         "source": "app/events/bridal-showers-content.ts",
@@ -623,7 +623,7 @@
         "id": "site-4d71480f1c159cb0",
         "topic": "weddings-content",
         "category": "Website content",
-        "text": "Complement dinner service, speeches, and evening dancing with artisanal espresso drinks, herbal teas, and custom non-coffee options.",
+        "text": "Complement dinner service, speeches, and evening dancing with specialty coffee beverages, herbal teas, and custom non-coffee options.",
         "applicablePages": [],
         "applicableServices": [],
         "source": "app/events/weddings-content.ts",
@@ -746,7 +746,7 @@
         },
         {
           "heading": "How should planners consider the Café Cart and Signature Coffee Bar?",
-          "purpose": "Introduce the Café Cart as a focused café setup and the Signature Coffee Bar as a more prominent service presence, including professional barista service, espresso classics, and hot and iced beverages. Clearly qualify that these descriptions come from bridal-shower content and that their exact application to weddings requires confirmation.",
+          "purpose": "Introduce the Café Cart as a focused café setup and the Signature Coffee Bar as a more prominent service presence, including barista-served coffee and matcha plus hot and iced café favourites. Clearly qualify that these descriptions come from bridal-shower content and that their exact application to weddings requires confirmation.",
           "sourceIds": [
             "site-a2687258bee9e855",
             "site-779bcc4af548475d"
@@ -1291,7 +1291,7 @@
         "id": "site-98c67b367178f5f1",
         "topic": "baby-showers-content",
         "category": "Website content",
-        "text": "Barista-brewed specialty coffee paired with interactive live dessert service to create two distinct, complementary tasting focal points.",
+        "text": "Barista-served specialty coffee paired with interactive live dessert service to create two distinct, complementary tasting focal points.",
         "applicablePages": [],
         "applicableServices": [],
         "source": "app/events/baby-showers-content.ts",
@@ -1307,7 +1307,7 @@
         "id": "site-2ffd2fd222452ab2",
         "topic": "brand-activations-content",
         "category": "Website content",
-        "text": "Standard corporate catering is appropriate when the priority is dependable food or beverage provision with minimal creative production. Branded experiential service is appropriate when the menu, cups, signage, service point, and guest interaction should express a campaign or organization. Neither is universally better; decide from the event objective, audience, desired action, brand requirements, service window, venue, approvals, production scope, and budget. Luxe Coffee Bar and Sweet Cart can support the experiential route when that added role is useful.",
+        "text": "Traditional catering focuses primarily on food and beverage service. A Luxe brand activation combines hospitality with customized presentation, giving guests something to enjoy while creating an additional branded touchpoint within the event.",
         "applicablePages": [],
         "applicableServices": [],
         "source": "app/events/brand-activations-content.ts",
@@ -1323,7 +1323,7 @@
         "id": "site-a2687258bee9e855",
         "topic": "bridal-showers-content",
         "category": "Website content",
-        "text": "The Café Cart offers a focused welcome, while the Signature Coffee Bar creates a more prominent hospitality presence. Both include professional barista service, espresso classics, hot and iced beverages, and an intentional presentation.",
+        "text": "The Café Cart offers a focused welcome, while the Signature Coffee Bar creates a more prominent hospitality presence. Both include barista-served coffee and matcha, hot and iced café favourites, and an intentional presentation.",
         "applicablePages": [],
         "applicableServices": [],
         "source": "app/events/bridal-showers-content.ts",
@@ -1403,7 +1403,7 @@
         "id": "site-4d71480f1c159cb0",
         "topic": "weddings-content",
         "category": "Website content",
-        "text": "Complement dinner service, speeches, and evening dancing with artisanal espresso drinks, herbal teas, and custom non-coffee options.",
+        "text": "Complement dinner service, speeches, and evening dancing with specialty coffee beverages, herbal teas, and custom non-coffee options.",
         "applicablePages": [],
         "applicableServices": [],
         "source": "app/events/weddings-content.ts",
@@ -1855,7 +1855,7 @@
         "id": "site-98c67b367178f5f1",
         "topic": "baby-showers-content",
         "category": "Website content",
-        "text": "Barista-brewed specialty coffee paired with interactive live dessert service to create two distinct, complementary tasting focal points.",
+        "text": "Barista-served specialty coffee paired with interactive live dessert service to create two distinct, complementary tasting focal points.",
         "applicablePages": [],
         "applicableServices": [],
         "source": "app/events/baby-showers-content.ts",
@@ -1871,7 +1871,7 @@
         "id": "site-2ffd2fd222452ab2",
         "topic": "brand-activations-content",
         "category": "Website content",
-        "text": "Standard corporate catering is appropriate when the priority is dependable food or beverage provision with minimal creative production. Branded experiential service is appropriate when the menu, cups, signage, service point, and guest interaction should express a campaign or organization. Neither is universally better; decide from the event objective, audience, desired action, brand requirements, service window, venue, approvals, production scope, and budget. Luxe Coffee Bar and Sweet Cart can support the experiential route when that added role is useful.",
+        "text": "Traditional catering focuses primarily on food and beverage service. A Luxe brand activation combines hospitality with customized presentation, giving guests something to enjoy while creating an additional branded touchpoint within the event.",
         "applicablePages": [],
         "applicableServices": [],
         "source": "app/events/brand-activations-content.ts",
@@ -1887,7 +1887,7 @@
         "id": "site-a2687258bee9e855",
         "topic": "bridal-showers-content",
         "category": "Website content",
-        "text": "The Café Cart offers a focused welcome, while the Signature Coffee Bar creates a more prominent hospitality presence. Both include professional barista service, espresso classics, hot and iced beverages, and an intentional presentation.",
+        "text": "The Café Cart offers a focused welcome, while the Signature Coffee Bar creates a more prominent hospitality presence. Both include barista-served coffee and matcha, hot and iced café favourites, and an intentional presentation.",
         "applicablePages": [],
         "applicableServices": [],
         "source": "app/events/bridal-showers-content.ts",
@@ -3849,7 +3849,7 @@
         "id": "site-2ffd2fd222452ab2",
         "topic": "brand-activations-content",
         "category": "Website content",
-        "text": "Standard corporate catering is appropriate when the priority is dependable food or beverage provision with minimal creative production. Branded experiential service is appropriate when the menu, cups, signage, service point, and guest interaction should express a campaign or organization. Neither is universally better; decide from the event objective, audience, desired action, brand requirements, service window, venue, approvals, production scope, and budget. Luxe Coffee Bar and Sweet Cart can support the experiential route when that added role is useful.",
+        "text": "Traditional catering focuses primarily on food and beverage service. A Luxe brand activation combines hospitality with customized presentation, giving guests something to enjoy while creating an additional branded touchpoint within the event.",
         "applicablePages": [],
         "applicableServices": [],
         "source": "app/events/brand-activations-content.ts",
@@ -3913,7 +3913,7 @@
         "id": "site-12ef83c73af55eff",
         "topic": "aeo-content-validation",
         "category": "Website content",
-        "text": "Up to three Coffee Bar setups and up to three Sweet Cart setups, subject to scope and availability.",
+        "text": "Multiple Coffee Bar and Sweet Cart setups can be considered for larger activations, multi-space venues and peak guest periods based on event scope and availability.",
         "applicablePages": [],
         "applicableServices": [],
         "source": "app/aeo-content-validation.ts",
@@ -3945,7 +3945,7 @@
         "id": "site-46948cbe24af52d5",
         "topic": "aeo-first-party-evidence",
         "category": "Website content",
-        "text": "Coffee capacity is up to 500 guests, Sweet Cart capacity is up to 400 guests, and each can support up to three simultaneous setups subject to event scope.",
+        "text": "Coffee Bar capacity is reviewed individually and Sweet Cart capacity is up to 400 guests. Multiple Coffee Bar and Sweet Cart setups can be considered for larger activations, multi-space venues and peak guest periods based on event scope and availability.",
         "applicablePages": [],
         "applicableServices": [],
         "source": "app/aeo-first-party-evidence.ts",
@@ -4105,7 +4105,7 @@
         "id": "site-eb050909a0cb2d3a",
         "topic": "aeo-question-map",
         "category": "Website content",
-        "text": "Luxe has confirmed capacity for up to three simultaneous Coffee Bar setups and up to three simultaneous Sweet Cart setups, subject to date, staffing, equipment, travel, access, and scope. Multi-day and recurring requests may be reviewed, but neither operating model is confirmed and neither may be promised.",
+        "text": "Multiple Coffee Bar and Sweet Cart setups can be considered for larger activations, multi-space venues and peak guest periods based on event scope and availability. Multi-day and recurring requests may be reviewed, but neither operating model is confirmed and neither may be promised.",
         "applicablePages": [],
         "applicableServices": [],
         "source": "app/aeo-question-map.ts",
@@ -4297,7 +4297,7 @@
         "id": "site-042c7876c3dc3a59",
         "topic": "content-differentiation",
         "category": "Website content",
-        "text": "Record Coffee Bar capacity up to 500 guests and Sweet Cart capacity up to 400 guests; publish Seating Rentals capacity only after confirmation.",
+        "text": "Record Coffee Bar capacity as event-specific and Sweet Cart capacity up to 400 guests; publish Seating Rentals capacity only after confirmation.",
         "applicablePages": [],
         "applicableServices": [],
         "source": "app/content-differentiation.ts",
@@ -4393,7 +4393,7 @@
         "id": "site-98c67b367178f5f1",
         "topic": "baby-showers-content",
         "category": "Website content",
-        "text": "Barista-brewed specialty coffee paired with interactive live dessert service to create two distinct, complementary tasting focal points.",
+        "text": "Barista-served specialty coffee paired with interactive live dessert service to create two distinct, complementary tasting focal points.",
         "applicablePages": [],
         "applicableServices": [],
         "source": "app/events/baby-showers-content.ts",
@@ -4450,7 +4450,7 @@
       "conflicts": [
         "The requested search intent uses “luxury mobile bars,” but the approved sources do not define either service as luxury or support broader claims about mobile bar services. Use the approved division names and factual hospitality language instead.",
         "The optional geography specifies Toronto and the GTA, but none of the approved sources explicitly confirms the service area. The phrase is voice-approved, yet geographic availability still requires factual confirmation before publication.",
-        "No approved source conflict exists on capacity: Luxe Coffee Bar supports up to 500 guests, Luxe Sweet Cart supports up to 400 guests, and each can support up to three simultaneous setups, all subject to event-specific scope and availability."
+        "No approved source conflict exists on guest capacity: Luxe Coffee Bar capacity is reviewed individually and Luxe Sweet Cart supports up to 400 guests. Multiple Coffee Bar and Sweet Cart setups can be considered for larger activations, multi-space venues and peak guest periods based on event scope and availability."
       ],
       "missingInformation": [
         "Confirmed geographic service area and any travel boundaries or fees for Toronto and the GTA.",
@@ -4509,7 +4509,7 @@
         },
         {
           "heading": "How should guest flow and service capacity be planned?",
-          "purpose": "Explain that flow depends on guest count, selected desserts, service duration, staffing, preparation requirements and arrival patterns. State the qualified limits of up to 500 guests for Coffee Bar and up to 400 guests for Sweet Cart, with up to three simultaneous setups for each subject to event scope; do not turn these limits into throughput promises.",
+          "purpose": "Explain that flow depends on guest count, selected desserts, service duration, staffing, preparation requirements and arrival patterns. Describe Coffee Bar capacity as event-specific and state the qualified limit of up to 400 guests for Sweet Cart. Explain that multiple setups can be considered based on event scope and availability; do not turn these limits into throughput promises.",
           "sourceIds": [
             "site-69be2668f29f5359",
             "site-46948cbe24af52d5"
@@ -4645,7 +4645,7 @@
         "id": "site-2ffd2fd222452ab2",
         "topic": "brand-activations-content",
         "category": "Website content",
-        "text": "Standard corporate catering is appropriate when the priority is dependable food or beverage provision with minimal creative production. Branded experiential service is appropriate when the menu, cups, signage, service point, and guest interaction should express a campaign or organization. Neither is universally better; decide from the event objective, audience, desired action, brand requirements, service window, venue, approvals, production scope, and budget. Luxe Coffee Bar and Sweet Cart can support the experiential route when that added role is useful.",
+        "text": "Traditional catering focuses primarily on food and beverage service. A Luxe brand activation combines hospitality with customized presentation, giving guests something to enjoy while creating an additional branded touchpoint within the event.",
         "applicablePages": [],
         "applicableServices": [],
         "source": "app/events/brand-activations-content.ts",
@@ -4709,7 +4709,7 @@
         "id": "site-12ef83c73af55eff",
         "topic": "aeo-content-validation",
         "category": "Website content",
-        "text": "Up to three Coffee Bar setups and up to three Sweet Cart setups, subject to scope and availability.",
+        "text": "Multiple Coffee Bar and Sweet Cart setups can be considered for larger activations, multi-space venues and peak guest periods based on event scope and availability.",
         "applicablePages": [],
         "applicableServices": [],
         "source": "app/aeo-content-validation.ts",
@@ -4741,7 +4741,7 @@
         "id": "site-46948cbe24af52d5",
         "topic": "aeo-first-party-evidence",
         "category": "Website content",
-        "text": "Coffee capacity is up to 500 guests, Sweet Cart capacity is up to 400 guests, and each can support up to three simultaneous setups subject to event scope.",
+        "text": "Coffee Bar capacity is reviewed individually and Sweet Cart capacity is up to 400 guests. Multiple Coffee Bar and Sweet Cart setups can be considered for larger activations, multi-space venues and peak guest periods based on event scope and availability.",
         "applicablePages": [],
         "applicableServices": [],
         "source": "app/aeo-first-party-evidence.ts",
@@ -4901,7 +4901,7 @@
         "id": "site-eb050909a0cb2d3a",
         "topic": "aeo-question-map",
         "category": "Website content",
-        "text": "Luxe has confirmed capacity for up to three simultaneous Coffee Bar setups and up to three simultaneous Sweet Cart setups, subject to date, staffing, equipment, travel, access, and scope. Multi-day and recurring requests may be reviewed, but neither operating model is confirmed and neither may be promised.",
+        "text": "Multiple Coffee Bar and Sweet Cart setups can be considered for larger activations, multi-space venues and peak guest periods based on event scope and availability. Multi-day and recurring requests may be reviewed, but neither operating model is confirmed and neither may be promised.",
         "applicablePages": [],
         "applicableServices": [],
         "source": "app/aeo-question-map.ts",
@@ -5093,7 +5093,7 @@
         "id": "site-042c7876c3dc3a59",
         "topic": "content-differentiation",
         "category": "Website content",
-        "text": "Record Coffee Bar capacity up to 500 guests and Sweet Cart capacity up to 400 guests; publish Seating Rentals capacity only after confirmation.",
+        "text": "Record Coffee Bar capacity as event-specific and Sweet Cart capacity up to 400 guests; publish Seating Rentals capacity only after confirmation.",
         "applicablePages": [],
         "applicableServices": [],
         "source": "app/content-differentiation.ts",
@@ -5189,7 +5189,7 @@
         "id": "site-98c67b367178f5f1",
         "topic": "baby-showers-content",
         "category": "Website content",
-        "text": "Barista-brewed specialty coffee paired with interactive live dessert service to create two distinct, complementary tasting focal points.",
+        "text": "Barista-served specialty coffee paired with interactive live dessert service to create two distinct, complementary tasting focal points.",
         "applicablePages": [],
         "applicableServices": [],
         "source": "app/events/baby-showers-content.ts",
@@ -5244,7 +5244,7 @@
       "conflicts": [
         "The requested search intent, “luxury mobile bars for events,” may imply multiple beverage bars, while the approved sources establish one specialist coffee service paired with a dessert cart. The article should retain the pairing focus and avoid implying an unsupported broader bar offering.",
         "Toronto and the GTA is an approved brand term, but the supplied sources do not explicitly confirm service-area coverage. Geography may describe the intended audience, but service availability in every GTA location should not be claimed.",
-        "The sources confirm capacities of up to 500 guests for Luxe Coffee Bar and up to 400 guests for Luxe Sweet Cart, while also requiring event-specific qualification. These figures must not be framed as automatic availability for every event."
+        "The sources require event-specific capacity review for Luxe Coffee Bar and confirm up to 400 guests for Luxe Sweet Cart, while also requiring event-specific qualification. These figures must not be framed as automatic availability for every event."
       ],
       "missingInformation": [
         "Confirmed service area and any travel boundaries or fees within Toronto and the GTA.",
@@ -5516,7 +5516,7 @@
         "origin": "public-page",
         "topic": "private events",
         "category": "Public page content",
-        "text": "Full-service mobile espresso bar featuring classic coffee drinks, custom signature lattes, ceremonial matcha, teas, hot chocolate, dairy alternatives, and seasonal menu items served hot or iced. Select between our versatile Café Cart or full Signature Coffee Bar based on your venue size, guest count, and party schedule. Sip ↗︎",
+        "text": "Coffee Bar menus can include café favourites, signature beverages, premium matcha and selected non-coffee options based on the chosen experience. Select between our versatile Café Cart or full Signature Coffee Bar based on your venue size, guest count, and party schedule. Sip ↗︎",
         "applicablePages": [
           "/events/private-events"
         ],
@@ -5756,7 +5756,7 @@
         "origin": "public-page",
         "topic": "corporate events",
         "category": "Public page content",
-        "text": "Pair espresso service and sweet bites with cocktail tables and lounge seating to encourage natural movement and organic conversation.",
+        "text": "Pair specialty coffee and matcha service and sweet bites with cocktail tables and lounge seating to encourage natural movement and organic conversation.",
         "applicablePages": [
           "/events/corporate-events"
         ],
@@ -5796,7 +5796,7 @@
         "origin": "public-page",
         "topic": "corporate events",
         "category": "Public page content",
-        "text": "Deploy multiple espresso bars and dessert carts simultaneously across your venue to eliminate guest queues during peak break times.",
+        "text": "Deploy multiple premium mobile Coffee Bars and dessert carts simultaneously across your venue to eliminate guest queues during peak break times.",
         "applicablePages": [
           "/events/corporate-events"
         ],
@@ -6476,7 +6476,7 @@
         "origin": "public-page",
         "topic": "coffee bar",
         "category": "Public page content",
-        "text": "Simultaneous setups Up to three simultaneous setups may support suitable multi-site, multi-station, or distributed events, subject to availability and scope.",
+        "text": "Multiple Coffee Bar and Sweet Cart setups can be considered for larger activations, multi-space venues and peak guest periods based on event scope and availability.",
         "applicablePages": [
           "/experiences/coffee-bar"
         ],
@@ -6604,7 +6604,7 @@
         "Coffee-bar format should reflect venue size, guest count, and the party schedule.",
         "Visual details may include coordinated signage, floral accents, decals, branded cups, or other personalized elements, depending on the event scope.",
         "Luxe serves Toronto and the GTA. Select destination events may be available throughout Southern Ontario, and travel fees may apply.",
-        "Up to three simultaneous coffee-bar setups may support suitable distributed or multi-station events, subject to availability and scope.",
+        "Multiple Coffee Bar and Sweet Cart setups can be considered for larger activations, multi-space venues and peak guest periods based on event scope and availability.",
         "Pricing and final inclusions should be presented through a transparent, itemized proposal based on the specific event details."
       ],
       "missingInformation": []
@@ -6962,7 +6962,7 @@
         "origin": "public-page",
         "topic": "private events",
         "category": "Public page content",
-        "text": "Full-service mobile espresso bar featuring classic coffee drinks, custom signature lattes, ceremonial matcha, teas, hot chocolate, dairy alternatives, and seasonal menu items served hot or iced. Select between our versatile Café Cart or full Signature Coffee Bar based on your venue size, guest count, and party schedule. Sip ↗︎",
+        "text": "Coffee Bar menus can include café favourites, signature beverages, premium matcha and selected non-coffee options based on the chosen experience. Select between our versatile Café Cart or full Signature Coffee Bar based on your venue size, guest count, and party schedule. Sip ↗︎",
         "applicablePages": [
           "/events/private-events"
         ],
@@ -7202,7 +7202,7 @@
         "origin": "public-page",
         "topic": "corporate events",
         "category": "Public page content",
-        "text": "Pair espresso service and sweet bites with cocktail tables and lounge seating to encourage natural movement and organic conversation.",
+        "text": "Pair specialty coffee and matcha service and sweet bites with cocktail tables and lounge seating to encourage natural movement and organic conversation.",
         "applicablePages": [
           "/events/corporate-events"
         ],
@@ -7242,7 +7242,7 @@
         "origin": "public-page",
         "topic": "corporate events",
         "category": "Public page content",
-        "text": "Deploy multiple espresso bars and dessert carts simultaneously across your venue to eliminate guest queues during peak break times.",
+        "text": "Deploy multiple premium mobile Coffee Bars and dessert carts simultaneously across your venue to eliminate guest queues during peak break times.",
         "applicablePages": [
           "/events/corporate-events"
         ],
@@ -7922,7 +7922,7 @@
         "origin": "public-page",
         "topic": "coffee bar",
         "category": "Public page content",
-        "text": "Simultaneous setups Up to three simultaneous setups may support suitable multi-site, multi-station, or distributed events, subject to availability and scope.",
+        "text": "Multiple Coffee Bar and Sweet Cart setups can be considered for larger activations, multi-space venues and peak guest periods based on event scope and availability.",
         "applicablePages": [
           "/experiences/coffee-bar"
         ],
@@ -8087,7 +8087,7 @@
         },
         {
           "heading": "How can the layout support guest movement and conversation?",
-          "purpose": "Explain how espresso service, sweet bites and nearby seating can be considered together to encourage natural movement and conversation. Prompt planners to review the service footprint, power and venue access without promising a particular guest-flow or queue outcome.",
+          "purpose": "Explain how specialty coffee and matcha service, sweet bites and nearby seating can be considered together to encourage natural movement and conversation. Prompt planners to review the service footprint, power and venue access without promising a particular guest-flow or queue outcome.",
           "sourceIds": [
             "public-2315f3719a2a0da9",
             "public-2f8035c0c41a340e"

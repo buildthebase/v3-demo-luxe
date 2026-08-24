@@ -42,7 +42,7 @@ export const pageQualityEvidence: PageQualityEvidence[] = [
   {
     path: "/experiences/sweet-cart",
     concreteValue:
-      "Details two cart collections, three desserts prepared on-site, sauces, topping categories, optional soft serve, capacity, and setup.",
+      "Details two cart collections, four desserts prepared on-site, sauces, topping categories, optional soft serve, capacity, and setup.",
     firstHandStatus: "supported-by-client-intake",
     evidenceGate:
       "Add approved preparation photography plus confirmed utility, allergen, outdoor-operation, and service-window guidance.",

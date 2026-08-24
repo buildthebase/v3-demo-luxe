@@ -52,10 +52,10 @@ export const contentQaCanonicalFacts = {
     responseExpectation: "Normally within 24 hours.",
   },
   capacities: {
-    coffeeGuests: 500,
+    coffeeGuests: null,
     sweetCartGuests: 400,
-    coffeeSimultaneousSetups: 3,
-    sweetCartSimultaneousSetups: 3,
+    coffeeSimultaneousSetups: null,
+    sweetCartSimultaneousSetups: null,
   },
   seatingRentals: {
     whiteResinChairs: 300,
@@ -67,7 +67,7 @@ export const contentQaCanonicalFacts = {
       tenByTen: 2,
     },
     danceFloor: "18 ft × 18 ft",
-    finishingItems: ["Table linens", "Black and white cocktail-table linens", "Tent walls", "Tent lighting"],
+    finishingItems: ["Table linens", "Black and white cocktail-table linens", "Tent walls", "Tent lighting with Luxe tent rentals"],
   },
   approvedClientNames: credibilityOrganizations
     .filter((organization) => organization.permission === "approved")

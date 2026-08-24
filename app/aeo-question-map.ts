@@ -443,7 +443,7 @@ const questionMapPlans: QuestionMapPlan[] = [
     primaryPage: "/experiences/seating-rentals",
     secondarySupportingPage: "/events",
     proposedAnswer:
-      "Luxe offers 300 white resin chairs, 25 six-foot rectangular tables, 10 cocktail tables, black and white cocktail-table linens, linens for the six-foot tables, three 20-foot by 20-foot tents with two vinyl tops and one clear top, one 15-foot by 15-foot tent, two 10-foot by 10-foot tents, an 18-foot by 18-foot dance floor, tent walls, and tent lighting. Date-specific availability and suitability are confirmed for the request.",
+      "Luxe offers 300 White Resin Chairs, 25 6-ft rectangular tables, 10 Cocktail Tables, black & white cocktail table linens, linens for our 6-ft tables, 3 × 20' × 20' tents with 2 vinyl-top tents and 1 clear-top tent, 2 × 10' × 10' tents, 1 × 15' × 15' tent and tent walls. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'. Date-specific availability and suitability are confirmed for the request.",
     outstandingEvidence: [
       "Ownership and process for keeping availability current",
       "Approved substitution and inventory-change policy",
@@ -683,7 +683,7 @@ const serviceDiscoveryQuestionMap: AeoQuestionMapRecord[] = [
       "A mobile coffee bar brings café equipment, professional baristas, and a made-to-order beverage menu into the event venue.",
     requiredEvidence: {
       available: [
-        "Professional barista service",
+        "Barista-served specialty coffee",
         "Premium espresso equipment",
         "Approved beverage-menu framework",
       ],
@@ -1183,7 +1183,7 @@ const eventPlanningQuestionMap: AeoQuestionMapRecord[] = [
     funnelStage: ["Understanding", "Planning", "Vendor evaluation"],
     searchIntent: ["Informational", "Logistical", "Troubleshooting"],
     proposedAnswer:
-      "There is no universal outdoor-rental list. The site and event may require tents, chairs, tables, cocktail tables, linens, or lighting, but ground conditions, guest count, layout, accessibility, installation, utilities, venue rules, weather protection, and backup planning must be reviewed first.",
+      "There is no universal outdoor-rental list. The site and event may require tents, chairs, tables, cocktail tables, or linens, but ground conditions, guest count, layout, accessibility, installation, utilities, venue rules, weather protection, and backup planning must be reviewed first. Tent lighting is available with Luxe tent rentals.",
     requiredEvidence: {
       available: ["Approved rental categories", "Event-specific outdoor qualification"],
       outstanding: [
@@ -1253,7 +1253,7 @@ const eventPlanningQuestionMap: AeoQuestionMapRecord[] = [
     funnelStage: ["Discovery", "Understanding", "Comparison", "Vendor evaluation"],
     searchIntent: ["Informational", "Commercial investigation", "Comparison"],
     proposedAnswer:
-      "For weddings and private celebrations, Coffee Bar can shape hospitality, Sweet Cart can create a live guest moment, and the focused Seating Rentals inventory can supply core chairs, tables, cocktail tables, tents, linens, tent walls, lighting, and a dance floor. One, two, or all three divisions may be coordinated through one Luxe inquiry when the confirmed inventory and event scope fit.",
+      "For weddings and private celebrations, Coffee Bar can shape hospitality, Sweet Cart can create a live guest moment, and the Seating Rentals inventory can supply core chairs, tables, cocktail tables, tents, linens and tent walls. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'. One, two, or all three divisions may be coordinated through one Luxe inquiry when the confirmed inventory and event scope fit.",
     requiredEvidence: {
       available: ["Confirmed division roles", "Independent and combined booking model"],
       outstanding: [],
@@ -1536,8 +1536,8 @@ const comparisonQuestionMap: AeoQuestionMapRecord[] = [
   createComparisonQuestionRecord({
     id: "comparison-standard-branded-corporate",
     question:
-      "How does standard corporate catering compare with branded experiential service?",
-    normalizedQueryTopic: "standard corporate catering versus branded experiential service",
+      "How does traditional catering compare with a Luxe brand activation?",
+    normalizedQueryTopic: "traditional catering versus a Luxe brand activation",
     primaryPage: "/events/brand-activations",
     secondarySupportingPage: "/events/corporate-events",
     icp: ["corporate-clients", "brand-agency-clients", "industry-partners"],
@@ -1768,7 +1768,7 @@ const pricingQuestionMap: AeoQuestionMapRecord[] = [
     funnelStage: ["Cost investigation", "Vendor evaluation", "Booking preparation"],
     searchIntent: ["Commercial investigation", "Transactional"],
     proposedAnswer:
-      "Branding can increase the quote when it adds artwork, custom cups, signage, cart treatment, menu development, production, shipping, installation, approvals, or lead time. Luxe prices the confirmed surfaces and production scope rather than one universal fee.",
+      "Branding and customization can affect pricing depending on the selected elements, production requirements and lead time. Your proposal will clearly separate the core Luxe experience from any custom branding or production upgrades.",
     requiredEvidence: {
       available: ["Approved branding surfaces", "Approved production variables"],
       outstanding: ["Approved production pricing and branding fee schedule."],
@@ -1934,7 +1934,7 @@ const customizationQuestionMap: AeoQuestionMapRecord[] = [
     funnelStage: ["Understanding", "Planning", "Vendor evaluation"],
     searchIntent: ["Informational", "Commercial investigation", "Inspirational", "Logistical"],
     proposedAnswer:
-      "The confirmed white resin chairs, 6-ft tables, cocktail tables, black or white cocktail-table linens, table linens, tents, tent walls, tent lighting, and dance floor can be considered with the venue, palette, and other Luxe experiences. Luxe does not offer custom furniture or a broad range of styles and finishes. Availability, site suitability, venue rules, and any setup scope remain event-specific.",
+      "The confirmed white resin chairs, 6-ft tables, cocktail tables, black or white cocktail-table linens, table linens, tents and tent walls can be considered with the venue, palette and other Luxe experiences. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'. Luxe does not offer custom furniture or a broad range of styles and finishes. Availability, site suitability, venue rules and any setup scope remain event-specific.",
     requiredEvidence: {
       available: [
         "Confirmed item-level rental inventory, quantities, dimensions, tent types, and linen colours",

@@ -3480,7 +3480,7 @@
 
 .baby-styling > div {
   display: grid;
-  grid-template-columns: minmax(0, 0.54fr) minmax(0, 1fr) minmax(0, 0.54fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-template-areas: "menus signage seating";
   margin-top: clamp(3rem, 7vw, 6rem);
   border: 1px solid var(--baby-rule);
@@ -3532,11 +3532,17 @@
   line-height: 1;
 }
 
+.baby-styling h3 {
+  min-height: 3em;
+  max-width: none;
+  text-wrap: balance;
+}
+
 .baby-styling-item-02 h3 {
   position: relative;
   z-index: 1;
-  max-width: 11ch;
-  font-size: clamp(2rem, 3.3vw, 3.5rem);
+  max-width: none;
+  font-size: clamp(1.6rem, 2.6vw, 2.7rem);
 }
 
 .baby-styling-item-02 p {
@@ -3972,6 +3978,10 @@
   .baby-styling-item-03 {
     border-top: 1px solid var(--baby-rule);
   }
+
+  .baby-styling-item-02 h3 {
+    min-height: 0;
+  }
 }
 
 @media (max-width: 840px) {
@@ -4120,6 +4130,10 @@
       "signage"
       "menus"
       "seating";
+  }
+
+  .baby-styling h3 {
+    min-height: 0;
   }
 
   .baby-page > .signature-combinations .signature-combinations-list > a,
@@ -14674,7 +14688,7 @@ max-width: 36ch;
 
 .sweet-dessert-list {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   border-block: 1px solid color-mix(in srgb, var(--color-luxe-black) 30%, transparent);
 }
 
@@ -17357,6 +17371,10 @@ max-width: 36ch;
   line-height: 1.6;
 }
 
+.activation-system li p + p {
+  margin-top: var(--space-4);
+}
+
 .activation-contexts > header,
 .activation-services > header,
 .activation-scale > header,
@@ -18932,9 +18950,9 @@ max-width: 36ch;
   transform: translateX(-50%);
 }
 
-.corporate-scale article {
+.corporate-page .corporate-scale article {
   display: grid;
-  grid-template-columns: minmax(10rem, 0.56fr) minmax(0, 1fr);
+  grid-template-columns: 300px minmax(0, 1fr);
   gap: clamp(1.5rem, 3vw, 3rem);
   align-items: start;
   padding-block: var(--space-6);
@@ -19239,8 +19257,8 @@ max-width: 36ch;
     margin-top: var(--space-7);
   }
 
-  .corporate-scale article {
-    grid-template-columns: minmax(12rem, 0.55fr) minmax(0, 1.45fr);
+  .corporate-page .corporate-scale article {
+    grid-template-columns: minmax(14rem, 0.75fr) minmax(0, 1.25fr);
   }
 
   .corporate-planning ol {
@@ -19483,7 +19501,7 @@ max-width: 36ch;
     margin-top: var(--space-9);
   }
 
-  .corporate-scale article {
+  .corporate-page .corporate-scale article {
     grid-template-columns: 1fr;
   }
 

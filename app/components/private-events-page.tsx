@@ -39,9 +39,9 @@ function PrivateEventsHero() {
           <span>Dessert &amp; Rentals in Toronto</span>
         </h1>
         <p>
-          Elevate engagements, anniversaries, graduations, holiday parties, and
-          intimate gatherings with custom mobile coffee bars, live dessert
-          stations, and focused chair, table, tent, linen, and dance-floor rentals.
+          Bring Luxe Coffee Bar, Sweet Cart and select event rentals to engagements,
+          anniversaries, graduations, cultural celebrations, holiday gatherings and
+          meaningful family occasions.
         </p>
         <div className="private-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">
@@ -60,7 +60,7 @@ function PrivateEventsHero() {
       <dl className="private-hero-proof">
         <div>
           <dt>One or several</dt>
-          <dd>Book coffee bars, live dessert carts, or seating rentals individually or seamlessly bundled.</dd>
+          <dd>Book Coffee Bar, Sweet Cart or event rentals individually, or combine multiple Luxe services through one coordinated inquiry.</dd>
         </div>
         <div>
           <dt>Personalized</dt>
@@ -82,12 +82,12 @@ function PrivateEventsOverview() {
       <div>
         <p>
           Every private celebration carries its own unique energy, guest flow,
-          and timing. We design our hospitality around how you want your guests
-          to feel from the moment they arrive.
+          and timing. We tailor the Luxe experience around your celebration, venue
+          and the way you want guests to enjoy the event.
         </p>
         <p>
           From morning engagement brunches to late-night anniversary dessert
-          bars, we align our espresso catering, live sweets, and seating rentals
+          bars, we align our mobile specialty coffee service, live sweets, and seating rentals
           to perfectly match your event format.
         </p>
       </div>
@@ -200,8 +200,8 @@ function PrivateEventPlanning() {
         ))}
       </ol>
       <p>
-        <strong>Booking Policy:</strong> A signed contract and a 30% non-refundable
-        deposit secure your event date. Dates remain open until both are received.
+        <strong>Booking Policy:</strong> Your date is secured once the agreement is
+        signed and the 30% non-refundable retainer is received.
       </p>
     </section>
   );

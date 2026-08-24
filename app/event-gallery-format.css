@@ -185,7 +185,27 @@
   text-transform: uppercase;
 }
 
+/* Baby-shower stills: one wide establishing image followed by six service details. */
+.baby-gallery > .baby-gallery-grid[data-asset-status] {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: auto;
+}
+
+.baby-gallery .baby-gallery-grid figure:first-child {
+  grid-column: 1 / -1;
+  grid-row: auto;
+  width: 100%;
+}
+
+.baby-gallery .baby-gallery-grid figure:first-child > div {
+  min-height: clamp(24rem, 48vw, 42rem);
+}
+
 @media (max-width: 780px) {
+  .baby-gallery > .baby-gallery-grid[data-asset-status] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   :is(
     .corporate-gallery,
     .activation-gallery,

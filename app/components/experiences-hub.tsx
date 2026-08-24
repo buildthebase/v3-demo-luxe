@@ -27,7 +27,7 @@ export function ExperiencesHero({
         </h1>
         <p>
           Luxe Event Co. provides mobile coffee bars and live dessert carts for events,
-          plus focused seating rentals for weddings, showers, backyard gatherings,
+          plus event rentals for weddings, showers, backyard gatherings,
           birthdays, and private celebrations across Toronto and the GTA. Book each
           experience independently or coordinate rentals, coffee, and dessert through
           one team when the occasion calls for all three.

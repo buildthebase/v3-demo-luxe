@@ -36,7 +36,7 @@ export const homeEventImageGroups = [
     eventSlugs: ["corporate-events", "brand-activations"],
     tone: "coffee",
     label: "Corporate Events & Brand Activations",
-    context: "Professional mobile espresso bars, custom-branded beverage cups, and refined event spaces for corporate teams, clients, and brand launches.",
+    context: "Premium mobile Coffee Bars, custom-branded beverage cups, and refined event spaces for corporate teams, clients, and brand launches.",
     image: imageAssets.home.professionalOccasions,
     video: {
       mp4: "/images/home/luxe-corporate-events-brand-activations.mp4",
@@ -53,14 +53,14 @@ export const homeProofPoints = [
     detail: "A meaningful layer of assurance for venues, planners, and corporate teams.",
   },
   {
-    value: "500",
-    label: "guest coffee capacity",
-    detail: "Coffee service can be planned for intimate gatherings through large-format events.",
+    value: "Large-Format",
+    label: "coffee service",
+    detail: "Coffee service can be tailored for intimate gatherings through larger-format events, with staffing and service setup planned around guest count, venue and event flow.",
   },
   {
-    value: "03",
-    label: "simultaneous setups",
-    detail: "Confirmed coffee and dessert setup capacity supports multi-event and larger programs.",
+    value: "Multiple",
+    label: "setups available",
+    detail: "Additional Coffee Bar, Sweet Cart or rental setups can be considered for larger or multi-space events based on scope, staffing and availability.",
   },
 ] as const;
 

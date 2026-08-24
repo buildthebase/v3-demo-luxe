@@ -305,6 +305,23 @@
   color: var(--surface-dark-copy-muted) !important;
 }
 
+.seating-page .experience-context.seating-overview .experience-context-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.seating-page .experience-context.seating-overview .experience-context-copy > p {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.seating-page .experience-context.seating-overview .experience-context-copy
+  > p:not(.seating-overview-handoff)
+  + p:not(.seating-overview-handoff) {
+  margin-top: var(--space-5);
+}
+
 .seating-page .experience-context.seating-overview h2 span {
   white-space: normal;
 }
@@ -318,6 +335,8 @@
 }
 
 .seating-page .experience-context.seating-overview .experience-context-copy > p:last-child {
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
   border-top-color: var(--surface-dark-rule);
 }
 
@@ -403,11 +422,6 @@
 
   .experience-context-copy > p:nth-child(2),
   .experience-context-copy > p:nth-child(3) {
-    padding-bottom: 0;
-  }
-
-  .seating-page .experience-context.seating-overview .experience-context-copy > p:nth-child(2) {
-    margin-bottom: var(--space-5);
     padding-bottom: 0;
   }
 

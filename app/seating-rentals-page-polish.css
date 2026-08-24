@@ -56,6 +56,242 @@
   list-style-type: circle !important;
 }
 
+/* Treat tent combinations as an architectural specification within the
+ * inventory section rather than as another card or page-level chapter. */
+.foundation-shell .seating-page .seating-tent-specifications {
+  margin-top: clamp(4rem, 7vw, 7rem);
+  padding-top: clamp(2rem, 4vw, 3.5rem);
+}
+
+.foundation-shell .seating-page .seating-tent-specifications > header {
+  display: grid;
+  grid-template-columns: minmax(10rem, 0.45fr) minmax(0, 1fr);
+  gap: var(--space-6);
+  align-items: end;
+  margin-bottom: clamp(2rem, 4vw, 3.5rem);
+}
+
+.foundation-shell .seating-page .seating-tent-specifications > header > * {
+  margin: 0;
+}
+
+.foundation-shell .seating-page .seating-tent-specifications h3 {
+  max-width: none;
+  font-size: clamp(2.75rem, 5vw, 5.5rem);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: -0.055em;
+}
+
+.foundation-shell .seating-page .seating-tent-specification-table {
+  border-top: 1px solid color-mix(in srgb, var(--color-luxe-black) 30%, transparent);
+}
+
+.foundation-shell .seating-page :is(
+  .seating-tent-specification-head,
+  .seating-tent-specification-row
+) {
+  display: grid;
+  grid-template-columns: minmax(10rem, 0.65fr) minmax(13rem, 0.9fr) minmax(18rem, 1.1fr);
+  gap: clamp(1.25rem, 3vw, 3rem);
+  align-items: center;
+}
+
+.foundation-shell .seating-page .seating-tent-specification-head {
+  min-height: 3.5rem;
+  color: var(--color-luxe-gold-ink);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.foundation-shell .seating-page .seating-tent-specification-row {
+  min-height: clamp(7.5rem, 10vw, 10rem);
+  border-top: 1px solid color-mix(in srgb, var(--color-luxe-black) 18%, transparent);
+}
+
+.foundation-shell .seating-page .seating-tent-specification-row > div {
+  min-width: 0;
+}
+
+.foundation-shell .seating-page .seating-tent-specification-row small {
+  display: none;
+}
+
+.foundation-shell .seating-page .seating-tent-specification-row strong {
+  font-size: clamp(1.45rem, 2vw, 2.2rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.foundation-shell .seating-page .seating-tent-specification-row > div:nth-child(2) > span {
+  color: var(--color-text-muted);
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  line-height: 1.45;
+}
+
+.foundation-shell .seating-page .seating-tent-diagram,
+.foundation-shell .seating-page .seating-tent-diagram-choice,
+.foundation-shell .seating-page .seating-tent-diagram-group {
+  display: flex;
+  align-items: center;
+}
+
+.foundation-shell .seating-page .seating-tent-diagram {
+  gap: var(--space-4);
+  min-height: 4rem;
+}
+
+.foundation-shell .seating-page .seating-tent-diagram-choice {
+  gap: var(--space-4);
+}
+
+.foundation-shell .seating-page .seating-tent-diagram-group {
+  --tent-module-size: 3.5rem;
+}
+
+.foundation-shell .seating-page .seating-tent-diagram-15 {
+  --tent-module-size: 2.625rem;
+}
+
+.foundation-shell .seating-page .seating-tent-diagram-10 {
+  --tent-module-size: 1.75rem;
+}
+
+.foundation-shell .seating-page .seating-tent-diagram-group i {
+  width: var(--tent-module-size);
+  aspect-ratio: 1;
+  border: 1px solid var(--color-luxe-black);
+  background:
+    linear-gradient(
+      to right,
+      transparent calc(50% - 0.5px),
+      rgb(31 31 31 / 22%) 50%,
+      transparent calc(50% + 0.5px)
+    ),
+    linear-gradient(
+      to bottom,
+      transparent calc(50% - 0.5px),
+      rgb(31 31 31 / 22%) 50%,
+      transparent calc(50% + 0.5px)
+    );
+}
+
+.foundation-shell .seating-page .seating-tent-diagram-group i + i {
+  margin-left: -1px;
+}
+
+.foundation-shell .seating-page .seating-tent-diagram-or {
+  color: var(--color-text-muted);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.foundation-shell .seating-page p.seating-tent-specification-note {
+  max-width: 60rem;
+  margin: clamp(2rem, 4vw, 3.5rem) 0 0 auto;
+  padding-top: var(--space-5);
+  border-top: 1px solid color-mix(in srgb, var(--color-luxe-black) 30%, transparent);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+@media (min-width: 801px) {
+  .foundation-shell .seating-page .seating-tent-specifications > header,
+  .foundation-shell .seating-page .seating-tent-specification-table,
+  .foundation-shell .seating-page p.seating-tent-specification-note {
+    width: min(100%, 78rem);
+    margin-inline: auto;
+  }
+
+  .foundation-shell .seating-page .seating-tent-specifications > header {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    text-align: center;
+  }
+
+  .foundation-shell .seating-page .seating-tent-specifications h3 {
+    white-space: nowrap;
+  }
+
+  .foundation-shell .seating-page :is(
+    .seating-tent-specification-head,
+    .seating-tent-specification-row
+  ) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .foundation-shell .seating-page :is(
+    .seating-tent-specification-head,
+    .seating-tent-specification-row
+  ) > * {
+    width: 100%;
+    justify-self: center;
+    text-align: center;
+  }
+
+  .foundation-shell .seating-page .seating-tent-diagram {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 800px) {
+  .foundation-shell .seating-page .seating-tent-specifications > header {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .foundation-shell .seating-page .seating-tent-specification-head {
+    display: none;
+  }
+
+  .foundation-shell .seating-page .seating-tent-specification-row {
+    grid-template-columns: minmax(7rem, 0.7fr) minmax(0, 1fr);
+    gap: var(--space-5);
+    padding-block: var(--space-5);
+  }
+
+  .foundation-shell .seating-page .seating-tent-specification-row > div:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .foundation-shell .seating-page .seating-tent-specification-row small {
+    display: block;
+    margin-bottom: var(--space-2);
+    color: var(--color-luxe-gold-ink);
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+}
+
+@media (max-width: 430px) {
+  .foundation-shell .seating-page .seating-tent-specification-row {
+    grid-template-columns: 1fr;
+  }
+
+  .foundation-shell .seating-page .seating-tent-specification-row > div:last-child {
+    grid-column: auto;
+  }
+
+  .foundation-shell .seating-page .seating-tent-diagram-group {
+    --tent-module-size: 2.85rem;
+  }
+
+  .foundation-shell .seating-page .seating-tent-diagram-15 {
+    --tent-module-size: 2.1375rem;
+  }
+
+  .foundation-shell .seating-page .seating-tent-diagram-10 {
+    --tent-module-size: 1.425rem;
+  }
+}
+
 .foundation-shell .seating-page .seating-item-plan.seating-item-photo {
   min-height: 0;
   aspect-ratio: 4 / 3;
@@ -150,6 +386,27 @@
 .foundation-shell .seating-page .seating-gallery-grid figure > div {
   min-height: 0;
   aspect-ratio: 4 / 5;
+}
+
+.foundation-shell .seating-page .seating-gallery-hold {
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(90deg, transparent calc(50% - 0.5px), rgb(140 111 72 / 18%) 50%, transparent calc(50% + 0.5px)),
+    linear-gradient(transparent calc(50% - 0.5px), rgb(140 111 72 / 18%) 50%, transparent calc(50% + 0.5px)),
+    var(--seating-paper);
+}
+
+.foundation-shell .seating-page .seating-gallery-hold span {
+  padding: 0.7rem 0.9rem;
+  border: 1px solid rgb(140 111 72 / 34%);
+  background: var(--seating-paper);
+  color: var(--seating-bronze);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .foundation-shell .seating-page .seating-gallery-photo::before {
@@ -260,6 +517,10 @@
   .foundation-shell .seating-page .seating-inventory-grid strong {
     min-height: 2.8rem;
     white-space: nowrap;
+  }
+
+  .foundation-shell .seating-page .seating-inventory-grid .seating-item-finishing > strong {
+    white-space: normal;
   }
 
   .foundation-shell .seating-page .seating-inventory-grid p {

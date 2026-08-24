@@ -33,7 +33,7 @@ export const navigationItems: NavigationItem[] = [
   { href: "/gallery", label: "Gallery" },
   { href: "/blog", label: "Blog" },
   { href: "/faq", label: "FAQ" },
-  { href: "/contact", label: "Plan Your Event", emphasis: "inquiry" },
+  { href: "/contact", label: "PLAN YOUR EVENT", emphasis: "inquiry" },
 ];
 
 const homeBreadcrumb = { href: "/", label: "Home" } as const;

@@ -4,7 +4,6 @@ import {
   HomeSelectedImagery,
   HomeServiceArea,
   HomeTrust,
-  HomeUnifiedExperience,
   HomeWorkingExperience,
 } from "./home-sections";
 import { HomeHero } from "./home-hero";
@@ -31,14 +30,14 @@ import {
 const homeSignatureExperiences: readonly SignatureExperience[] = [
   {
     ...signatureExperiences[0],
-    name: "Luxe Coffee Bar: Mobile Espresso & Specialty Beverage Service",
+    name: "Luxe Coffee Bar: Specialty Coffee & Matcha Service",
     headingLead: "Luxe Coffee Bar:",
-    headingDetail: "Mobile Espresso & Specialty Beverage Service",
+    headingDetail: "Specialty Coffee & Matcha Service",
     description:
-      "Mobile espresso, matcha, and specialty beverage service for weddings, corporate arrivals, cocktail hours, and late-night hospitality across Toronto.",
+      "Barista-served specialty coffee and matcha service for weddings, corporate arrivals, cocktail hours, and late-night hospitality across Toronto.",
     image: {
       ...signatureExperiences[0].image,
-      alt: "Luxe mobile espresso and specialty beverage bar serving custom iced drinks at a Toronto event",
+      alt: "Luxe premium mobile Coffee Bar serving specialty coffee, matcha, and custom iced drinks at a Toronto event",
     },
   },
   {
@@ -59,7 +58,7 @@ const homeSignatureExperiences: readonly SignatureExperience[] = [
     headingLead: "Luxe Seating Rentals:",
     headingDetail: "Chair, Table & Tent Rentals",
     description:
-      "White resin chairs, 6-ft tables, cocktail tables, event tents, linens, tent lighting, and a dance floor for weddings and private celebrations.",
+      "White resin chairs, 6-ft tables, cocktail tables, event tents and linens for weddings and private celebrations. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'.",
     image: {
       ...signatureExperiences[2].image,
       alt: "Luxe white resin chairs and event tables arranged for an outdoor Toronto wedding reception",
@@ -111,14 +110,14 @@ export function HomePage() {
         />
         <CombinedExperienceFeature
           id="combinations"
+          description="Start with the occasion and choose only the services that support it."
           footer={(
             <>
-              <strong>Book one or multiple experiences.</strong>
-              <QuoteModalTrigger><span>Plan Your Event ↗︎</span></QuoteModalTrigger>
+              <strong>Every proposal is shaped around the event.</strong>
+              <QuoteModalTrigger><span>PLAN YOUR EVENT ↗︎</span></QuoteModalTrigger>
             </>
           )}
         />
-        <HomeUnifiedExperience />
         <HomeEditorialReview
           id="review-coffee-dessert"
           context="Coffee Bar + Sweet Cart"

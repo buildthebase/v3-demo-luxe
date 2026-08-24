@@ -62,8 +62,8 @@ function FaqHero() {
           <span>before the proposal begins.</span>
         </h1>
         <p>
-          Booking terms, travel, shared operating requirements, and cross-service
-          customization explained with the detail currently confirmed.
+          Booking terms, travel, operating requirements, and cross-service
+          customization explained clearly before you request a proposal.
         </p>
         <div className="faq-hub-hero-actions">
           <Link href="/contact" data-event-name="inquiry_start">
@@ -133,7 +133,7 @@ function FaqInquiry() {
   return (
     <section className="faq-hub-inquiry" aria-labelledby="faq-inquiry-title">
       <div>
-        <h2 id="faq-inquiry-title">Still specific to your event? Ask us directly.</h2>
+        <h2 id="faq-inquiry-title">Have a question specific to your event? Ask us directly.</h2>
         <p>
           Share the date, venue, guest count, experiences under consideration,
           and the operating detail you need clarified. For complete service

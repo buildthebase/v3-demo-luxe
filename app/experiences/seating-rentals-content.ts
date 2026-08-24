@@ -5,7 +5,7 @@ export const rentalCategories = [
     id: "chairs",
     number: "01",
     name: "White Resin Chairs",
-    role: "300 chairs available",
+    role: "300 White Resin Chairs available",
     description:
       "White resin chairs for wedding ceremonies and receptions, baby and bridal showers, birthdays, and private celebrations.",
   },
@@ -13,17 +13,17 @@ export const rentalCategories = [
     id: "tables",
     number: "02",
     name: "6-ft Rectangular Tables",
-    role: "25 tables available",
+    role: "25 × 6-ft Rectangular Tables available",
     description:
-      "Rectangular tables for guest seating, dining, food displays, gifts, and practical event setups. Coordinating linens are also available.",
+      "6-ft rectangular tables for guest seating, dining, food displays, gifts, and practical event setups. Linens for our 6-ft tables are also available.",
   },
   {
     id: "cocktail-tables",
     number: "03",
     name: "Cocktail Tables",
-    role: "10 high-top tables available",
+    role: "10 Cocktail Tables available",
     description:
-      "High-top cocktail tables for arrivals, mingling, and standing service, with black or white cocktail-table linens.",
+      "Cocktail tables for arrivals, mingling, and standing service, with black & white cocktail table linens.",
   },
   {
     id: "tents",
@@ -32,11 +32,11 @@ export const rentalCategories = [
     role: "Six tents across three sizes",
     items: [
       {
-        label: "Three 20' × 20' tents",
-        subitems: ["Two vinyl-top tents", "One clear-top tent"],
+        label: "3 × 20' × 20' tents",
+        subitems: ["2 vinyl-top tents", "1 clear-top tent"],
       },
-      { label: "One 15' × 15' tent" },
-      { label: "Two 10' × 10' tents" },
+      { label: "2 × 10' × 10' tents" },
+      { label: "1 × 15' × 15' tent" },
     ],
     description: "Available for outdoor events, subject to site and weather review.",
   },
@@ -44,17 +44,48 @@ export const rentalCategories = [
     id: "dance-floor",
     number: "05",
     name: "Dance Floor",
-    role: "18' × 18' dance floor",
+    role: "Dance-floor configurations available up to 18' × 18'.",
     description:
-      "A dedicated dance floor sized for intimate weddings, birthdays, engagements, and private celebrations.",
+      "Dance-floor configurations available up to 18' × 18' for intimate weddings, birthdays, engagements and private celebrations.",
   },
   {
     id: "finishing",
     number: "06",
-    name: "Linens, Tent Walls & Lighting",
-    role: "Finishing pieces for a complete setup",
+    name: "Linens, Tent Walls & Tent Lighting",
+    role: "Available with Luxe tent rentals, not as a standalone service",
     description:
-      "Table linens, black or white cocktail-table linens, tent walls, and tent lighting to complete indoor and outdoor rental setups.",
+      "Linens for our 6-ft tables, black & white cocktail table linens and tent walls are available. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service.",
+  },
+] as const;
+
+export const tentConfigurationOptions = [
+  {
+    id: "20-by-20",
+    configuration: "20' × 20'",
+    setup: "Single tent",
+    moduleSize: 20,
+    diagramGroups: [1],
+  },
+  {
+    id: "20-by-40",
+    configuration: "20' × 40' combined configuration",
+    setup: "Two 20' × 20' tents",
+    moduleSize: 20,
+    diagramGroups: [2],
+  },
+  {
+    id: "15-by-15",
+    configuration: "15' × 15'",
+    setup: "Standalone",
+    moduleSize: 15,
+    diagramGroups: [1],
+  },
+  {
+    id: "10-by-10",
+    configuration: "10' × 10'",
+    setup: "Single or paired",
+    moduleSize: 10,
+    diagramGroups: [1, 2],
   },
 ] as const;
 
@@ -72,7 +103,7 @@ export const layoutStudies = [
     title: "Rental placement and flow",
     lead: "The core rentals should fit the room without crowding it.",
     description:
-      "Using venue or site dimensions, we help plan the placement of our tables, chairs, cocktail tables, and dance floor around comfortable guest movement.",
+      "Using venue or site dimensions, we help plan the placement of our tables, chairs and cocktail tables around comfortable guest movement. Dance-floor configurations available up to 18' × 18'.",
     tone: "reception",
   },
   {
@@ -98,7 +129,7 @@ export const rentalOperations = [
     title: "Setup",
     status: "Defined within the proposal",
     description:
-      "On-site placement is completed according to the agreed rental layout. Our crew arranges the selected chairs, tables, cocktail tables, dance floor, and tent elements included in the setup scope.",
+      "On-site placement is completed according to the agreed rental layout. Our crew arranges the selected chairs, tables, cocktail tables and tent elements included in the setup scope. Dance-floor configurations available up to 18' × 18'.",
   },
   {
     number: "03",
@@ -113,47 +144,73 @@ export const rentalEventLinks = [
   {
     href: "/events/weddings",
     label: "Weddings",
-    context: "Ceremony seating and intimate weddings of approximately 100–150 guests, with tables, tents, linens, lighting, cocktail tables, and a dance floor.",
+    context: "Ceremony seating, reception rentals, tents, tables and linens for indoor and outdoor weddings. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'.",
   },
   {
     href: "/events/baby-showers",
     label: "Baby Showers",
-    context: "Chairs, tables, linens, and optional tenting for indoor or backyard showers, including typical gatherings of roughly 30–80 guests.",
+    context: "Chairs, tables, linens and optional tenting for indoor, backyard and private baby showers.",
   },
   {
     href: "/events/bridal-showers",
     label: "Bridal Showers",
-    context: "Guest seating, dining and display tables, cocktail tables, and linens for showers of roughly 30–80 guests, with coffee and dessert available through Luxe.",
-  },
-  {
-    href: "/events/birthdays",
-    label: "Birthdays",
-    context: "Flexible rental setups for family celebrations, milestone parties, and outdoor gatherings.",
+    context: "Coordinated seating, tables, linens and optional outdoor rentals for elegant bridal celebrations.",
   },
   {
     href: "/events/private-events",
-    label: "Backyard & Outdoor Events",
-    context: "Tents, walls, lighting, tables, chairs, linens, cocktail tables, and a dance floor in one coordinated rental plan.",
-  },
-  {
-    href: "/events/private-events",
-    label: "Engagements & Private Events",
-    context: "Practical rental support for engagements, anniversaries, graduations, and family gatherings.",
+    label: "Birthdays & Private Events",
+    context: "Essential rental pieces for backyard celebrations, birthdays, engagements, anniversaries and other private events.",
   },
 ] as const;
 
 export const rentalGalleryPreview = [
   {
+    number: "01",
+    label: "White resin chairs",
+    note: "Reserved for Luxe photography of the current chair inventory.",
+    tone: "chairs",
+  },
+  {
     number: "02",
-    label: "The layout in use",
-    note: "A guest-ready layout showing how the setting functions in use.",
-    tone: "layout",
+    label: "6-ft tables",
+    note: "Reserved for Luxe photography of the current rectangular tables.",
+    tone: "tables",
   },
   {
     number: "03",
-    label: "Linens, lighting and finishing details",
-    note: "A closer view of the practical finishing pieces that complete the setup.",
-    tone: "detail",
+    label: "Cocktail tables",
+    note: "Reserved for Luxe photography of the current cocktail tables.",
+    tone: "cocktail-tables",
+  },
+  {
+    number: "04",
+    label: "Tents",
+    note: "Reserved for Luxe photography of the current tent inventory.",
+    tone: "tents",
+  },
+  {
+    number: "05",
+    label: "Tent Lighting",
+    note: "Reserved for Luxe photography of Tent Lighting available with Luxe tent rentals and not offered as a standalone service.",
+    tone: "tent-lighting",
+  },
+  {
+    number: "06",
+    label: "Dance Floor",
+    note: "Reserved for Luxe photography of Dance-floor configurations available up to 18' × 18'.",
+    tone: "dance-floor",
+  },
+  {
+    number: "07",
+    label: "Linens",
+    note: "Reserved for Luxe photography of the current table and cocktail linens.",
+    tone: "linens",
+  },
+  {
+    number: "08",
+    label: "Complete event setups",
+    note: "Reserved for Luxe photography of complete backyard and event setups.",
+    tone: "complete-setups",
   },
 ] as const;
 
@@ -169,24 +226,24 @@ export const seatingRentalFaqs = [
       "Seating and table rental pricing is determined by the selected items, quantities, event date, venue location, delivery access, and agreed service scope. The proposal itemizes the confirmed rental and operational charges for the booking.",
   },
   {
-    question: "What is included with an event-rental service?",
+    question: "What event rentals does Luxe offer?",
     answer:
-      "Luxe offers 300 white resin chairs, 25 six-foot rectangular tables, 10 cocktail tables, three 20-foot by 20-foot tents with two vinyl tops and one clear top, one 15-foot by 15-foot tent, two 10-foot by 10-foot tents, an 18-foot by 18-foot dance floor, table and cocktail linens, tent walls, and tent lighting. Your proposal confirms availability and any agreed delivery, placement, setup, takedown, or pickup responsibilities.",
+      "Luxe offers a focused rental collection including white resin chairs, 6-ft rectangular tables, cocktail tables, linens, tents and tent walls. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'.",
   },
   {
     question: "Does Luxe deliver rentals?",
     answer:
-      "Delivery may be available within Toronto, the approved GTA service area, and for qualified extended-travel requests, but the current approved intake does not define one universal rental-delivery boundary or policy. Luxe reviews the venue address, requested inventory and quantities, route and travel time, parking or loading access, stairs or elevators, delivery window, placement or setup responsibilities, pickup plan, labour, and fees before confirming delivery.",
+      "Yes. Delivery is available throughout Toronto and the GTA, with select extended-distance requests considered based on availability. Delivery fees are calculated based on location, order size, access requirements and requested service.",
   },
   {
     question: "Is rental setup included?",
     answer:
-      "Setup is not universally included. The proposal states whether delivery, placement, or installation is available for the selected inventory and identifies the agreed responsibilities, labour, timing, access requirements, and fees.",
+      "Setup is available and will be clearly identified in your proposal. Depending on your rental order, you may choose delivery only or delivery with professional setup. Any applicable setup fees are confirmed before booking.",
   },
   {
     question: "Is rental teardown included?",
     answer:
-      "Teardown and pickup responsibilities must be confirmed in the proposal. Timing, venue access, after-hours requirements, and the selected inventory can affect the final scope.",
+      "Pickup and takedown arrangements are confirmed in your proposal based on the selected rentals, event schedule and venue access. After-hours or special-access requirements may carry additional fees.",
   },
   {
     question: "Can rentals be combined with coffee or dessert?",
@@ -196,17 +253,22 @@ export const seatingRentalFaqs = [
   {
     question: "Can rentals be styled to match the event?",
     answer:
-      "Yes, within the confirmed inventory. Black or white cocktail-table linens, linens for the 6-ft tables, tent walls, and tent lighting can help the setup feel cohesive. The rental plan can also be coordinated with Luxe Coffee Bar and Luxe Sweet Cart for one consistent event experience.",
+      "Yes, within the confirmed inventory. Black or white cocktail-table linens, linens for the 6-ft tables, and tent walls can help the setup feel cohesive. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone rental service. The rental plan can also be coordinated with Luxe Coffee Bar and Luxe Sweet Cart for one consistent event experience.",
+  },
+  {
+    question: "Is Tent Lighting available separately?",
+    answer:
+      "Tent Lighting is available with Luxe tent rentals and is not offered as a standalone lighting service.",
   },
   {
     question: "Which areas does Luxe serve?",
     answer:
-      "Luxe primarily serves Toronto and the Greater Toronto Area, including Scarborough, Etobicoke, North York, Markham, Vaughan, Richmond Hill, Aurora, Newmarket, King City, Thornhill, Mississauga, Brampton, Oakville, Burlington, Milton, Pickering, Ajax, Whitby, and Oshawa. Rental requests outside the primary area are reviewed individually, and availability or travel terms are not confirmed until the proposal is approved.",
+      "Luxe primarily serves Toronto and the Greater Toronto Area, including Scarborough, Etobicoke, North York, Markham, Vaughan, Richmond Hill, Aurora, Newmarket, King City, Thornhill, Mississauga, Brampton, Oakville, Burlington, Milton, Pickering, Ajax, Whitby and Oshawa. Select extended-distance requests are available based on inventory, event scope and logistics, with travel terms clearly included in the proposal.",
   },
   {
     question: "Are travel or delivery fees applicable?",
     answer:
-      "Travel fees may apply outside Luxe's standard service area, and rental delivery may carry event-specific transport, labour, access, setup, or pickup costs. Distance thresholds and the universal rental-delivery fee policy remain unapproved, so the proposal must state the available delivery model, responsibilities, and every applicable charge.",
+      "Delivery and travel fees may apply based on event location, rental order, access requirements and whether setup or pickup services are requested. All applicable fees are clearly outlined in your proposal before booking.",
   },
   {
     question: "Can Luxe rentals be used outdoors?",

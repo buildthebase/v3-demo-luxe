@@ -44,13 +44,13 @@ export default function EventsPage() {
         <CombinedExperienceFeature
           id="combinations"
           heading="Combine coffee, dessert, and event rentals."
-          description="Elevate your event by pairing services. We seamlessly blend mobile espresso bars, live dessert carts, and seating rentals to match your venue, timeline, and guest flow."
+          description="Elevate your event by pairing services. We seamlessly blend premium mobile Coffee Bars, live dessert carts, and seating rentals to match your venue, timeline, and guest flow."
           cardTitlesAsHeadings
         />
         <EventsGalleryPreview />
         <EventPlanningPathway
           id="planning-journey"
-          heading="How event planning with Luxe works"
+          heading="How planning your Luxe experience works"
           showDescription={false}
         />
         <ContextualInquiryPanel id="event-planning" contextKey="events" />

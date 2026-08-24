@@ -41,8 +41,8 @@ function ActivationHero() {
           <span>for Toronto campaigns.</span>
         </h1>
         <p>
-          Custom branded coffee carts, matcha bars, and live dessert stations designed
-          for marketing agencies, retail pop-ups, PR launches, and experiential campaigns.
+          Turn Luxe Coffee Bar and Sweet Cart into branded guest touchpoints for product
+          launches, retail activations, pop-ups, corporate campaigns and experiential events.
         </p>
         <div className="activation-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">
@@ -76,8 +76,8 @@ function ActivationHero() {
           <dd>Agencies and internal teams</dd>
         </div>
         <div>
-          <dt>Multi-day capable</dt>
-          <dd>Subject to operating review</dd>
+          <dt>Multi-day planning</dt>
+          <dd>Based on scope and availability</dd>
         </div>
         <div>
           <dt>Multiple</dt>
@@ -107,8 +107,9 @@ function ActivationOverview() {
       <div>
         <p>
           A branded coffee cart activation turns every cup into a tangible marketing
-          asset. We align custom printed cups, branded cart wraps, bespoke menus, and
-          barista interaction directly with your campaign brief.
+          asset. We align custom branded cups or cup stickers, bespoke menus, barista
+          interaction and cart branding available based on project scope, lead time and
+          production requirements with your campaign brief.
         </p>
         <p>
           Incorporate custom menu formulations, branded signage, vinyl cart graphics,
@@ -130,11 +131,12 @@ function ActivationBrandSystem() {
     >
       <header>
         <h2 id="activation-system-title">
-          Carry your brand through every guest touchpoint
+          Carry your brand through key guest touchpoints
         </h2>
         <p>
-          Apply approved brand assets across the physical elements your guests see,
-          use, order from, and photograph.
+          Bring approved brand colours, campaign messaging, and visual assets into the
+          cups, menus, signage, cart presentation, and service details guests see, use,
+          and photograph.
         </p>
       </header>
       <ol>
@@ -143,6 +145,7 @@ function ActivationBrandSystem() {
             <div aria-hidden="true"><i /><i /><i /><i /></div>
             <h3>{touchpoint.title}</h3>
             <p>{touchpoint.description}</p>
+            {touchpoint.note ? <p>{touchpoint.note}</p> : null}
           </li>
         ))}
       </ol>
@@ -186,7 +189,7 @@ function ActivationServices() {
           <span>that fits your campaign</span>
         </h2>
         <p>
-          Select mobile espresso bars, live dessert stations, or a coordinated
+          Select premium mobile Coffee Bars, live dessert stations, or a coordinated
           combination of both for the campaign.
         </p>
       </header>
@@ -213,12 +216,12 @@ function ActivationScale() {
     <section className="activation-scale" aria-labelledby="activation-scale-title">
       <header>
         <h2 id="activation-scale-title">
-          <span>Scalable operations for multi-day,</span>
+          <span>Planning multi-day and</span>
           <span>multi-location campaigns</span>
         </h2>
         <p>
-          Campaign scope can expand across multiple setups, dates, and venues, with a
-          dedicated operational plan built around your brief.
+          Multiple setups, dates, and venues can be considered through an operational
+          review of the campaign brief, event scope, and availability.
         </p>
       </header>
       <div>
@@ -276,8 +279,8 @@ function ActivationGallery() {
       <header>
         <h2 id="activation-gallery-title">Brand activations, seen in context.</h2>
         <p>
-          See how branded coffee, live dessert, signage, cart presentation, and event
-          styling come together within the campaign environment.
+          See the full branded setup, custom details, guest interaction, live preparation,
+          venue context, and campaign presentation working together.
         </p>
       </header>
       <div className="activation-gallery-grid" data-asset-status="awaiting-approved-activation-assets">
@@ -307,8 +310,8 @@ function ActivationPlanning() {
       <header>
         <h2 id="activation-planning-title">From campaign brief to activation day</h2>
         <p>
-          Clear creative inputs and structured production timelines ensure your branded
-          activation transitions seamlessly from concept to execution.
+          We coordinate the Luxe service requirements with your agency, event producer,
+          venue or brand team before activation day.
         </p>
       </header>
       <div className="activation-planning-workflow">

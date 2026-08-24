@@ -28,7 +28,7 @@ const babyShowersSchema = createServicePageSchema({
   serviceName: "Baby shower coffee, dessert, and rental experiences",
   serviceType: "Baby shower coffee bar, dessert cart, and event rental services",
   serviceDescription:
-    "Mobile coffee bars, live dessert carts, and refined event rentals for baby showers in Toronto and the Greater Toronto Area.",
+    "Baby shower dessert carts, coffee bars and event rentals in Toronto and the Greater Toronto Area, available individually or coordinated together.",
   pageName: pageMetadata[babyShowersPath].title,
   pageDescription: pageMetadata[babyShowersPath].description,
 });
@@ -38,15 +38,15 @@ function BabyShowerHero() {
     <header className="baby-hero" id="page-overview">
       <div className="baby-hero-copy">
         <p className="foundation-eyebrow">Baby Showers / Toronto &amp; the GTA</p>
-        <h1 aria-label="Baby shower dessert carts, coffee bars, and event rentals in Toronto.">
+        <h1 aria-label="Baby shower dessert carts, coffee bars and event rentals in Toronto.">
           <span>Baby shower dessert carts,</span>
-          <span>coffee bars, and event rentals</span>
+          <span>coffee bars and event rentals</span>
           <span>in Toronto.</span>
         </h1>
         <p>
-          Premium mobile coffee service, iced matcha, live dessert carts, and boutique
-          seating rentals designed to create a warm, memorable celebration for
-          parents-to-be across Toronto and the GTA.
+          Create a welcoming baby shower with premium coffee and matcha service,
+          interactive live desserts and select event rentals, available individually
+          or coordinated together.
         </p>
         <div className="baby-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">
@@ -105,8 +105,8 @@ function BabyShowerOverview() {
           <p>THE SETTING</p>
           <h3>Room for the celebration to unfold.</h3>
           <p>
-            White resin chairs, 6-ft tables, cocktail tables, and linens arranged
-            around guest seating, gifts, food displays, and conversation.
+            Select Luxe chairs, tables, linens and optional tent rentals can support
+            the confirmed needs of an indoor or outdoor baby shower.
           </p>
         </article>
       </div>
@@ -123,8 +123,8 @@ function BabyShowerStyling() {
           <span>through every detail</span>
         </h2>
         <p>
-          Personalize menus, custom wording, cart styling, and room layouts to match
-          your color palette and event theme.
+          Carry your baby shower theme through personalized menus, custom drink
+          names, cups or stickers, cart signage and coordinated service presentation.
         </p>
       </header>
       <div>
@@ -184,8 +184,8 @@ function BabyShowerGallery() {
       <header>
         <h2 id="baby-gallery-title">Baby shower experiences, seen in context.</h2>
         <p>
-          See how mobile coffee, live dessert, signage, seating, and room details come
-          together within the celebration.
+          See mobile coffee, live dessert, signage, and select rental items within
+          real celebration settings.
         </p>
       </header>
       <div className="baby-gallery-grid" data-asset-status="awaiting-approved-baby-shower-assets">

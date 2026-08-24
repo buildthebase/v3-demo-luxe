@@ -298,12 +298,12 @@ export function HomeHero() {
             aria-hidden={finalState ? undefined : "true"}
           >
             <h2 className="foundation-wide-heading" id="home-hero-seo-title">
-              Luxury event planning, elegantly composed with mobile coffee bars,
+              Luxury event experiences, elegantly composed with mobile coffee bars,
               live dessert carts &amp; event rentals across Toronto &amp; Southern Ontario.
             </h2>
             <p>
-              Coffee, dessert, and intentional seating brought together through one
-              thoughtfully coordinated event experience.
+              Staffed service, refined presentation, and thoughtful guest flow from
+              first setup to final service.
             </p>
           </div>
         </div>
@@ -322,7 +322,7 @@ export function HomeHero() {
             onClick={() => setQuoteModalOpen(true)}
             aria-haspopup="dialog"
           >
-            Plan Your Event
+            PLAN YOUR EVENT
             <span aria-hidden="true">↗︎</span>
           </button>
         </div>

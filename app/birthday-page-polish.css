@@ -57,7 +57,7 @@
 
 .foundation-shell .birthday-page .birthday-combinations > div {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   border-top: 1px solid var(--birthday-rule);
   border-bottom: 1px solid var(--birthday-rule);
 }
@@ -70,8 +70,12 @@
   border-bottom: 0;
 }
 
-.foundation-shell .birthday-page .birthday-combinations article + article {
+.foundation-shell .birthday-page .birthday-combinations article:nth-child(even) {
   border-left: 1px solid var(--birthday-rule);
+}
+
+.foundation-shell .birthday-page .birthday-combinations article:nth-child(n + 3) {
+  border-top: 1px solid var(--birthday-rule);
 }
 
 .foundation-shell .birthday-page .birthday-combinations article > p {
@@ -97,8 +101,11 @@
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .foundation-shell .birthday-page .birthday-combinations article + article {
-    border-top: 1px solid var(--birthday-rule);
+  .foundation-shell .birthday-page .birthday-combinations article:nth-child(even) {
     border-left: 0;
+  }
+
+  .foundation-shell .birthday-page .birthday-combinations article:nth-child(n + 2) {
+    border-top: 1px solid var(--birthday-rule);
   }
 }

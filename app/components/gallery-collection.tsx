@@ -25,10 +25,14 @@ function GalleryMediaFrame({
       data-asset-status={item.status}
     >
       <div className="gallery-media-frame">
-        <ResponsiveImage
-          asset={item}
-          fill
-        />
+        {isPublishableImage(item) ? (
+          <ResponsiveImage asset={item} fill />
+        ) : (
+          <div className="gallery-media-reserved" aria-hidden="true">
+            <i /><i /><i />
+            <span>Reserved for verified Luxe photography</span>
+          </div>
+        )}
       </div>
       <figcaption>
         <span>{item.caption}</span>
@@ -153,8 +157,6 @@ export function GalleryCollection() {
         )}
         {galleryGroups.map((group) => {
           const visible = visibleGroups.some((item) => item.id === group.id);
-          const publishableMedia = group.media.filter(isPublishableImage);
-
           return (
             <article
               className={`gallery-group gallery-group-${group.tone}`}
@@ -167,9 +169,9 @@ export function GalleryCollection() {
                 <h2>{group.title}</h2>
                 <p>{group.description}</p>
               </header>
-              {publishableMedia.length > 0 ? (
+              {group.media.length > 0 ? (
                 <div className="gallery-group-media">
-                  {publishableMedia.map((item) => (
+                  {group.media.map((item) => (
                     <GalleryMediaFrame item={item} tone={group.tone} key={item.id} />
                   ))}
                 </div>

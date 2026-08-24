@@ -22,7 +22,7 @@ export const eventHubEntries: EventHubEntry[] = [
     cue: "The full celebration",
     statement: "Hospitality carried through the celebration.",
     summary:
-      "Mobile coffee, live desserts, and focused chair, table, tent, linen, and dance-floor rentals for ceremonies, receptions, and outdoor weddings.",
+      "Mobile coffee, live desserts and coordinated chair, table, tent and linen rentals for ceremonies, receptions and outdoor weddings. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'.",
   },
   {
     slug: "corporate-events",
@@ -31,7 +31,7 @@ export const eventHubEntries: EventHubEntry[] = [
     cue: "Purposeful hospitality",
     statement: "Service shaped around the schedule.",
     summary:
-      "For conferences, product launches, and corporate galas, Luxe aligns coffee bars and dessert stations with your itinerary and brand aesthetic.",
+      "Premium Coffee Bar and Sweet Cart experiences for conferences, office events, client appreciation, networking events and corporate celebrations, with customization available to complement your brand.",
   },
   {
     slug: "brand-activations",
@@ -40,7 +40,7 @@ export const eventHubEntries: EventHubEntry[] = [
     cue: "The brief, made tangible",
     statement: "An experience guests can see, taste, and remember.",
     summary:
-      "Custom branded coffee and live dessert setups translate your campaign details into an engaging, shareable guest experience.",
+      "Custom-branded coffee and live dessert experiences designed for product launches, pop-ups and brand activations where guest interaction and presentation matter.",
   },
   {
     slug: "baby-showers",
@@ -49,7 +49,7 @@ export const eventHubEntries: EventHubEntry[] = [
     cue: "A beautiful beginning",
     statement: "A welcoming setting for family and friends.",
     summary:
-      "Specialty drinks, freshly prepared desserts, and practical chair and table rentals designed for a warm, memorable afternoon.",
+      "Coordinated chair, table, linen and optional tent rentals for indoor, backyard and private baby showers.",
   },
   {
     slug: "bridal-showers",
@@ -58,7 +58,7 @@ export const eventHubEntries: EventHubEntry[] = [
     cue: "Before the next chapter",
     statement: "A considered setting for the people closest to the couple.",
     summary:
-      "Welcome drinks, live sweet stations, and stylish seating arranged to foster conversation, beautiful photo moments, and effortless gathering.",
+      "Café-style coffee and matcha service, interactive desserts and select event rentals for elegant bridal celebrations.",
   },
   {
     slug: "birthdays",
@@ -67,7 +67,7 @@ export const eventHubEntries: EventHubEntry[] = [
     cue: "A milestone, made personal",
     statement: "Built around the guest of honour.",
     summary:
-      "Customized espresso menus, interactive dessert carts, and confirmed chair and table rentals suited to the birthday and guest count.",
+      "Specialty coffee, interactive dessert experiences and select event rentals tailored to the celebration, venue and guest count.",
   },
   {
     slug: "private-events",
@@ -76,7 +76,7 @@ export const eventHubEntries: EventHubEntry[] = [
     cue: "Gather in your own way",
     statement: "A complete experience for personal milestones.",
     summary:
-      "Engagements, anniversaries, graduations, and holiday parties brought to life through a single tailored Luxe service or a full-suite experience.",
+      "Bring Luxe to engagements, anniversaries, graduations, family celebrations and other meaningful occasions with Coffee Bar, Sweet Cart and select event rentals available individually or together.",
   },
 ];
 
@@ -84,17 +84,19 @@ export const eventLedPrinciples = [
   {
     number: "01",
     label: "Occasion",
-    description: "Start with what is being celebrated, hosted, or launched.",
+    description: "Tell us what you’re celebrating or hosting.",
   },
   {
     number: "02",
     label: "Guests",
-    description: "Consider guest count and how people will gather, mingle, and interact.",
+    description:
+      "Share your guest count so we can recommend the right service and setup.",
   },
   {
     number: "03",
-    label: "Flow",
-    description: "Position each experience to elevate the natural rhythm of your space.",
+    label: "Space",
+    description:
+      "We consider your venue, layout and event format when coordinating your selected Luxe experiences.",
   },
 ] as const;
 

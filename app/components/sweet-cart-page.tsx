@@ -112,8 +112,8 @@ function SweetHero() {
           <dd><strong>Guest capacity</strong></dd>
         </div>
         <div>
-          <dt>Up to 3</dt>
-          <dd><strong>Simultaneous setups</strong></dd>
+          <dt>Available</dt>
+          <dd><strong>Multiple setups</strong></dd>
         </div>
         <div>
           <dt>$5M</dt>
@@ -188,10 +188,11 @@ function SweetCollections() {
   return (
     <section className="sweet-collections" aria-labelledby="sweet-collections-title">
       <header>
-        <p className="foundation-label">Two cart expressions</p>
+        <p className="foundation-label">Physical cart designs</p>
         <h2 id="sweet-collections-title">Choose Your Cart Style</h2>
         <p>
           Select from our available Luxe cart designs to complement your event aesthetic. Cart styles are subject to availability for your event date.
+          These selections refer to the cart&apos;s physical design and do not represent separate service or pricing tiers.
         </p>
       </header>
       <div>
@@ -202,7 +203,6 @@ function SweetCollections() {
             </div>
             <div className="sweet-collection-copy">
               <h3>{collection.name}</h3>
-              <p className="sweet-collection-type">Physical cart style</p>
               <p><strong>{collection.character}</strong> {collection.description}</p>
             </div>
             
@@ -210,8 +210,8 @@ function SweetCollections() {
         ))}
       </div>
       <p className="sweet-collections-note">
-        Cart styles are subject to availability for your event date. Dessert service,
-        styling, footprint, and venue access are confirmed during inquiry.
+        *Cart availability, dessert service, styling, footprint, and venue access
+        are confirmed during inquiry.
 </p>
     </section>
   );
@@ -268,7 +268,9 @@ function ChurroBarFeature() {
           Our newest signature live dessert experience.
         </p>
         <p className="sweet-churro-feature-lead">
-          Fresh, golden churros prepared live and served warm, then finished to order with premium sauces and toppings for an interactive dessert experience.
+          Fresh, golden churros prepared live and served warm, then finished to
+          order with premium sauces and toppings for an interactive dessert
+          experience.
         </p>
         <p className="sweet-churro-feature-events">
           Perfect for weddings, corporate events, baby showers, birthdays, brand
@@ -543,7 +545,7 @@ function SweetCombinations() {
         </Link>
         <Link href="/experiences/seating-rentals">
           <h3>Luxe Seating Rentals</h3>
-          <p>Connect the dessert moment with seating, tables, tents, linens, or lighting.</p>
+          <p>Connect the dessert moment with seating, tables, tents or linens. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service.</p>
           <b aria-hidden="true">Explore Seating Rentals ↗︎</b>
         </Link>
       </div>

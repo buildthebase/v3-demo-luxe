@@ -36,15 +36,15 @@ function WeddingHero() {
     <header className="wedding-hero" id="page-overview">
       <div className="wedding-hero-copy">
         <p className="foundation-eyebrow">Weddings / Toronto &amp; the GTA</p>
-        <h1 aria-label="Toronto wedding coffee, live dessert, and rentals planned around the big day.">
+        <h1 aria-label="Toronto wedding coffee, live dessert and rentals designed around your celebration.">
           <span>Toronto wedding coffee,</span>
-          <span>live dessert, and rentals</span>
-          <span>planned around the big day.</span>
+          <span>live dessert and rentals</span>
+          <span>designed around your celebration.</span>
         </h1>
         <p>
-          Mobile espresso bars, live dessert carts, and focused seating rentals
-          seamlessly coordinated around your venue timeline, guest count, and
-          wedding aesthetic.
+          Mobile specialty coffee bars, live dessert carts and event rentals
+          coordinated around your venue, guest count, timeline and wedding
+          aesthetic.
         </p>
         <div className="wedding-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">
@@ -67,7 +67,7 @@ function WeddingHero() {
         </div>
         <div>
           <dt>Three experiences</dt>
-          <dd>Coffee, dessert, and seating</dd>
+          <dd>COFFEE · DESSERT · EVENT RENTALS</dd>
         </div>
         <div>
           <dt>$5 million</dt>

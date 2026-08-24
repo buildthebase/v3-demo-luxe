@@ -75,7 +75,7 @@ export const seatingRentalsSectionNavigation: readonly PageSectionNavigationItem
   { id: "page-overview", label: "Back to top" },
   { id: "seating-overview-title", label: "The experience" },
   { id: "rental-categories", label: "Rental categories" },
-  { id: "seating-studies-title", label: "Layout planning" },
+  { id: "seating-studies-title", label: "Rental coordination" },
   { id: "seating-applications-title", label: "Indoor and outdoor" },
   { id: "seating-operations-title", label: "Operations" },
   { id: "seating-events-title", label: "Event types" },

@@ -62,6 +62,21 @@ function galleryMedia(
   };
 }
 
+function reservedGalleryMedia(id: string, caption: string): GalleryMedia {
+  return {
+    id,
+    src: null,
+    alt: "",
+    caption,
+    width: 1200,
+    height: 900,
+    sizes: gallerySizes,
+    priority: false,
+    status: "reserved",
+    format: "webp",
+  };
+}
+
 const experienceImages = imageAssets.experiences;
 const homeImages = imageAssets.home;
 
@@ -72,22 +87,22 @@ export const galleryGroups: readonly GalleryGroup[] = [
     title: "Mobile coffee bar experiences",
     context: "Luxe Coffee Bar",
     description:
-      "Explore mobile espresso, matcha, custom drinks, cart styling, and professional barista service shown across real event settings.",
+      "Explore barista-served specialty coffee, matcha, custom drinks, cart styling, and professional service shown across real event settings.",
     tags: ["coffee-bar", "weddings", "corporate", "brand-activations", "private-events"],
     tone: "coffee",
     links: [
       { href: "/experiences/coffee-bar", label: "Explore Coffee Bar" },
     ],
     media: [
-      galleryMedia(experienceImages.coffeeBarHero),
-      galleryMedia(experienceImages.coffeeBarOverview),
-      galleryMedia(experienceImages.coffeeBarDecor),
-      galleryMedia(experienceImages.coffeeBarCraftInService),
-      galleryMedia(experienceImages.coffeeBarFinishedDrink),
-      galleryMedia(experienceImages.experiencesCoffeeBar),
-      galleryMedia(experienceImages.experiencesGalleryCoffeeInService),
-      galleryMedia(experienceImages.experiencesGalleryCompletedSetting),
-      galleryMedia(experienceImages.coffeeBar),
+      galleryMedia(experienceImages.coffeeBarHero, "Complete Luxe Coffee Bar setup for an event."),
+      galleryMedia(experienceImages.coffeeBarOverview, "Luxe Coffee Bar with custom event branding."),
+      galleryMedia(experienceImages.coffeeBarDecor, "Custom-branded Luxe Coffee Bar styled for the occasion."),
+      galleryMedia(experienceImages.coffeeBarCraftInService, "Luxe barista preparing matcha live for guests."),
+      galleryMedia(experienceImages.coffeeBarFinishedDrink, "Guests enjoying finished drinks from the Luxe Coffee Bar."),
+      galleryMedia(experienceImages.experiencesCoffeeBar, "Luxe Coffee Bar service within a complete event setting."),
+      galleryMedia(experienceImages.experiencesGalleryCoffeeInService, "Specialty drinks prepared live by the Luxe Coffee Bar team."),
+      galleryMedia(experienceImages.experiencesGalleryCompletedSetting, "A completed Luxe coffee service ready for guests."),
+      galleryMedia(experienceImages.coffeeBar, "Live drink preparation at the Luxe Coffee Bar."),
     ],
   },
   {
@@ -96,7 +111,7 @@ export const galleryGroups: readonly GalleryGroup[] = [
     title: "Live dessert cart experiences",
     context: "Luxe Sweet Cart",
     description:
-      "See made-to-order Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station, the Luxe Churro Bar, toppings, cart presentation, and guest-facing dessert service.",
+      "See made-to-order mini pancakes, Belgian waffles, mini donuts, toppings, cart presentation, and guest-facing dessert service.",
     tags: [
       "sweet-cart",
       "weddings",
@@ -112,17 +127,17 @@ export const galleryGroups: readonly GalleryGroup[] = [
       { href: "/experiences/sweet-cart", label: "Explore Sweet Cart" },
     ],
     media: [
-      galleryMedia(experienceImages.sweetCartHero),
-      galleryMedia(experienceImages.sweetCartOverview),
-      galleryMedia(experienceImages.miniDutchPancakes),
-      galleryMedia(experienceImages.belgianWaffles),
-      galleryMedia(experienceImages.miniDonuts),
-      galleryMedia(experienceImages.sweetCartDecor),
-      galleryMedia(experienceImages.sweetCartPreparation),
-      galleryMedia(experienceImages.sweetCartFinish),
-      galleryMedia(experienceImages.experiencesSweetCart),
-      galleryMedia(experienceImages.experiencesGalleryDessertInPreparation),
-      galleryMedia(experienceImages.sweetCart),
+      galleryMedia(experienceImages.sweetCartHero, "The Luxe Sweet Cart set and ready for live dessert service."),
+      galleryMedia(experienceImages.sweetCartOverview, "Guests gathering around the Luxe Sweet Cart."),
+      galleryMedia(experienceImages.miniDutchPancakes, "Mini Dutch Pancakes finished with toppings and sauces."),
+      galleryMedia(experienceImages.belgianWaffles, "Belgian Waffles on a Stick finished for guests."),
+      galleryMedia(experienceImages.miniDonuts, "Mini Donuts prepared fresh during service."),
+      galleryMedia(experienceImages.sweetCartDecor, "The illuminated Luxe Sweet Cart within an evening event."),
+      galleryMedia(experienceImages.sweetCartPreparation, "Belgian Waffles on a Stick prepared live at the cart."),
+      galleryMedia(experienceImages.sweetCartFinish, "A finished Luxe dessert with fruit, sauces, and toppings."),
+      galleryMedia(experienceImages.experiencesSweetCart, "Luxe Sweet Cart service in an event setting."),
+      galleryMedia(experienceImages.experiencesGalleryDessertInPreparation, "Dessert prepared to order for an event guest."),
+      galleryMedia(experienceImages.sweetCart, "Guest-facing live dessert service from the Luxe Sweet Cart."),
     ],
   },
   {
@@ -131,7 +146,7 @@ export const galleryGroups: readonly GalleryGroup[] = [
     title: "Event seating and rental settings",
     context: "Luxe Seating Rentals",
     description:
-      "Explore chairs, tables, tents, linens, lighting, dance floors, reception layouts, and finishing details for indoor and outdoor events.",
+      "This collection is reserved for verified Luxe inventory and completed Luxe installations. New photography will feature chairs, tables, linens, tents, tent walls and full private-event setups. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'.",
     tags: [
       "seating-rentals",
       "weddings",
@@ -146,20 +161,11 @@ export const galleryGroups: readonly GalleryGroup[] = [
       { href: "/experiences/seating-rentals", label: "Explore Seating Rentals" },
     ],
     media: [
-      galleryMedia(experienceImages.seatingRentalsHero),
-      galleryMedia(experienceImages.seatingRentalsOverview),
-      galleryMedia(experienceImages.seatingIndoorApplication),
-      galleryMedia(experienceImages.seatingOutdoorApplication),
-      galleryMedia(experienceImages.seatingGalleryLayoutInUse),
-      galleryMedia(experienceImages.seatingGalleryFinishingDetails),
-      galleryMedia(experienceImages.whiteResinChairs),
-      galleryMedia(experienceImages.sixFootRectangularTables),
-      galleryMedia(experienceImages.cocktailTables),
-      galleryMedia(experienceImages.eventTents),
-      galleryMedia(experienceImages.danceFloor),
-      galleryMedia(experienceImages.rentalFinishingPieces),
-      galleryMedia(experienceImages.experiencesSeatingRentals),
-      galleryMedia(experienceImages.seatingRentals),
+      reservedGalleryMedia("reserved-luxe-chairs-tables", "Reserved for Luxe white resin chairs, 6-ft tables, cocktail tables, and linens."),
+      reservedGalleryMedia("reserved-luxe-tents", "Reserved for Luxe 20' × 20' tents, combined 20' × 40' configurations, and clear-top tents."),
+      reservedGalleryMedia("reserved-luxe-tent-finishes", "Reserved for Luxe tent walls and Tent Lighting, which is available with Luxe tent rentals and is not offered as a standalone service."),
+      reservedGalleryMedia("reserved-luxe-dance-floor", "Reserved for Luxe dance-floor configurations, available up to 18' × 18'."),
+      reservedGalleryMedia("reserved-luxe-backyard-setup", "Reserved for a complete Luxe backyard or private-event setup."),
     ],
   },
   {
@@ -175,9 +181,9 @@ export const galleryGroups: readonly GalleryGroup[] = [
       { href: "/events/weddings", label: "Plan a Wedding Experience" },
     ],
     media: [
-      galleryMedia(experienceImages.weddingWelcome),
-      galleryMedia(experienceImages.weddingSweetMoment),
-      galleryMedia(experienceImages.weddingRoom),
+      galleryMedia(experienceImages.weddingWelcome, "Luxe Coffee Bar hospitality welcoming wedding guests."),
+      galleryMedia(experienceImages.weddingSweetMoment, "Luxe live dessert service incorporated into a wedding celebration."),
+      reservedGalleryMedia("reserved-luxe-wedding-rentals", "Reserved for verified Luxe rentals within a wedding setting."),
     ],
   },
   {
@@ -194,11 +200,11 @@ export const galleryGroups: readonly GalleryGroup[] = [
       { href: "/events/brand-activations", label: "Create a Branded Experience" },
     ],
     media: [
-      galleryMedia(homeImages.corporateBrandActivationsPoster),
-      galleryMedia(homeImages.workingWithLuxePoster),
-      galleryMedia(homeImages.professionalOccasions),
-      galleryMedia(homeImages.workInContext),
-      galleryMedia(homeImages.workingWithLuxe),
+      galleryMedia(homeImages.corporateBrandActivationsPoster, "A Luxe hospitality experience created for a corporate or branded event."),
+      galleryMedia(homeImages.workingWithLuxePoster, "Luxe service supporting guests in a professional event environment."),
+      galleryMedia(homeImages.professionalOccasions, "A complete Luxe setup for a professional occasion."),
+      galleryMedia(homeImages.workInContext, "Guests interacting with Luxe service in an event setting."),
+      galleryMedia(homeImages.workingWithLuxe, "Luxe event service coordinated for a team, client, or campaign."),
     ],
   },
   {
@@ -223,9 +229,9 @@ export const galleryGroups: readonly GalleryGroup[] = [
       { href: "/events/private-events", label: "Explore Private Events" },
     ],
     media: [
-      galleryMedia(homeImages.weddingsPrivateEventsPoster),
-      galleryMedia(experienceImages.eventsHubHero),
-      galleryMedia(homeImages.personalCelebrations),
+      galleryMedia(homeImages.weddingsPrivateEventsPoster, "Luxe hospitality incorporated into a wedding or private celebration."),
+      galleryMedia(experienceImages.eventsHubHero, "A Luxe service moment designed around the occasion."),
+      galleryMedia(homeImages.personalCelebrations, "Luxe event service within a personal celebration."),
     ],
   },
   {
@@ -252,7 +258,7 @@ export const galleryGroups: readonly GalleryGroup[] = [
       { href: "/experiences", label: "Explore All Experiences" },
     ],
     media: [
-      galleryMedia(experienceImages.experiencesHero),
+      galleryMedia(experienceImages.experiencesHero, "Coffee Bar, Sweet Cart, and Luxe rentals brought together as one coordinated event experience."),
     ],
   },
 ] as const;

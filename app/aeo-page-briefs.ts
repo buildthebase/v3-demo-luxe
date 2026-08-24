@@ -165,8 +165,8 @@ export const pageAeoBriefs: PageAeoBrief[] = [
     secondaryQuestionThemes: ["How does it compare with venue or traditional coffee service?", "What can be customized?"],
     searchIntents: ["Informational", "Commercial investigation", "Comparison", "Logistical"],
     requiredAnswers: [
-      "Define mobile espresso service and distinguish Café Cart from Signature Coffee Bar.",
-      "State the 250+ guest capacity, flexible event-specific service planning, and multiple service setups for select events.",
+      "Define specialty coffee and matcha service and distinguish Café Cart from Signature Coffee Bar.",
+      "Describe flexible event-specific capacity planning and multiple service setups for select events without publishing a hard Coffee Bar guest limit.",
       "Explain coffee-specific quote factors before presenting inquiry.",
     ],
     requiredFirstPartyEvidence: [
@@ -216,7 +216,7 @@ export const pageAeoBriefs: PageAeoBrief[] = [
     searchIntents: ["Informational", "Commercial investigation", "Comparison", "Inspirational", "Logistical"],
     requiredAnswers: [
       "Define live dessert-cart service and compare hosted and self-serve formats neutrally.",
-      "State confirmed desserts, toppings, optional soft serve, 400-guest limit, and up to three simultaneous setups.",
+      "State confirmed desserts, toppings, optional soft serve, the 400-guest limit, and that multiple setups depend on event scope and availability.",
       "Explain dessert-specific cost, attendant, duration, and preparation dependencies without estimating.",
     ],
     requiredFirstPartyEvidence: [

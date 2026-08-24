@@ -144,13 +144,13 @@ export const evidenceAnswerPairings = [
     route: "/experiences/coffee-bar",
     answerSurface: "Inclusions, menu, capacity, setup, and service planning",
     proofSurface:
-      "Confirmed inclusion list, named beverage menu, 500-guest capacity, three-setup limit, and setup/takedown statement",
+      "Confirmed inclusion list, named beverage menu, event-specific capacity factors, multiple-setup availability, and setup/takedown statement",
   },
   {
     route: "/experiences/sweet-cart",
     answerSurface: "Dessert formats, inclusions, pantry, capacity, and setup",
     proofSurface:
-      "Named desserts, sauces and toppings, inclusion list, 400-guest capacity, three-setup limit, and setup/takedown statement",
+      "Named desserts, sauces and toppings, inclusion list, 400-guest capacity, multiple-setup availability, and setup/takedown statement",
   },
   {
     route: "/experiences/seating-rentals",

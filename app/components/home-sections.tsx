@@ -77,16 +77,15 @@ export function HomePositioning() {
       </h2>
       <div>
         <p className="home-positioning-intro">
-          Led by Luxe’s signature mobile coffee bar, coffee, dessert, and rentals
-          come together through one team and one point of contact. Luxe serves
-          Toronto, the GTA, and Southern Ontario, with capacity for multiple
-          simultaneous event setups.
+          Book one Luxe experience on its own, or bring coffee, dessert and event
+          rentals together through one coordinated inquiry. Work with one team and
+          one point of contact instead of coordinating several vendors.
         </p>
         <ul className="home-positioning-services">
           <li>
             <Link href="#experience-selector-coffee">
               <strong>Luxe Coffee Bar</strong>
-              <span>Specialty coffee beverages &amp; signature sips</span>
+              <span>Hot and iced café favourites &amp; signature beverages</span>
             </Link>
           </li>
           <li>
@@ -100,45 +99,6 @@ export function HomePositioning() {
               <strong>Luxe Seating Rentals</strong>
               <span>Refined seating &amp; event rentals</span>
             </Link>
-          </li>
-        </ul>
-      </div>
-    </section>
-  );
-}
-
-export function HomeUnifiedExperience() {
-  return (
-    <section id="unified-experience" className="home-unified" aria-labelledby="home-unified-title">
-      <div className="home-unified-heading">
-        <p className="foundation-label">The unified Luxe experience</p>
-        <h2 id="home-unified-title">
-          <span>Begin with one.</span>{" "}
-          <span>Consider the whole occasion.</span>
-        </h2>
-      </div>
-      <div className="home-unified-copy">
-        <ul className="home-unified-event-list">
-          <li>
-            <span className="home-unified-event-mark home-unified-event-mark-private" aria-hidden="true" />
-            <p>
-              For a wedding, a mobile coffee bar or espresso cart can carry cocktail
-              hour into the evening.
-            </p>
-          </li>
-          <li>
-            <span className="home-unified-event-mark home-unified-event-mark-corporate" aria-hidden="true" />
-            <p>
-              For a corporate gathering, coffee catering can pair branded drinks
-              with seating designed for conversation.
-            </p>
-          </li>
-          <li>
-            <span className="home-unified-event-mark home-unified-event-mark-wedding" aria-hidden="true" />
-            <p>
-              For a private celebration, a live dessert cart can come together with
-              event rentals to shape the setting itself.
-            </p>
           </li>
         </ul>
       </div>
@@ -194,7 +154,7 @@ export function HomeEventCategories() {
       </Link>
       <div className="home-events-planning-cta">
         <strong>Personalize your celebration.</strong>
-        <QuoteModalTrigger><span>Plan Your Event ↗︎</span></QuoteModalTrigger>
+        <QuoteModalTrigger><span>PLAN YOUR EVENT ↗︎</span></QuoteModalTrigger>
       </div>
     </section>
   );
@@ -205,7 +165,7 @@ export function HomeSelectedImagery() {
     <section id="contextual-imagery" className="home-imagery" aria-labelledby="home-imagery-title">
       <header className="home-section-intro">
         <div>
-          <h2 id="home-imagery-title">See the hype for yourself</h2>
+          <h2 id="home-imagery-title">See the Experience Come Together</h2>
         </div>
       </header>
       <div className="home-imagery-grid">

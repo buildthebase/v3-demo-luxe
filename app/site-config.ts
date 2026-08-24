@@ -5,7 +5,7 @@ const organizationName = entityNames.parentBrand.currentName;
 const alternateSiteNames = entityNames.parentBrand.alternateNames;
 const canonicalBaseUrl = "https://luxeeventco.ca";
 const defaultDescription =
-  "Luxe Event Co. brings together mobile coffee and live dessert for events, plus focused seating rentals for weddings and private celebrations across Toronto and the GTA.";
+  "Luxe Event Co. brings together mobile coffee, live dessert, and event rentals for weddings and private celebrations across Toronto and the GTA.";
 
 export const socialProfiles = {
   coffeeBar: "https://www.instagram.com/luxecoffeebar.to/",
@@ -130,8 +130,8 @@ export type Division = {
   complementarySlugs: string[];
   instagram: string;
   offerings: string[];
-  capacity: number;
-  simultaneousSetups: number;
+  capacity: number | null;
+  simultaneousSetups: number | null;
 };
 
 export const experiences: Division[] = [
@@ -141,7 +141,7 @@ export const experiences: Division[] = [
     name: entityNames.divisions.coffeeBar,
     label: "Coffee Bar",
     landingPath: "/experiences/coffee-bar",
-    summary: "Crafted coffee, professional barista service, and warm hospitality for events.",
+    summary: "Barista-served specialty coffee, premium matcha, and warm hospitality for events.",
     serviceDescription: "A refined mobile coffee experience within the Luxe Event Co. event platform.",
     accent: "coffee",
     inclusions: [],
@@ -159,13 +159,13 @@ export const experiences: Division[] = [
     offerings: [
       entityNames.coffeeExperiences.cafeCart.canonicalName,
       entityNames.coffeeExperiences.signatureCoffeeBar.canonicalName,
-      "Espresso-style classics and signature beverages",
-      "Matcha, tea, chai, and hot chocolate",
+      "Barista-served specialty coffee",
+      "Premium matcha and selected non-coffee options",
       "Seasonal drink collections",
       "Custom branded cups, signage, and menu displays",
     ],
-    capacity: 500,
-    simultaneousSetups: 3,
+    capacity: null,
+    simultaneousSetups: null,
   },
   {
     slug: "sweet-cart",
@@ -173,7 +173,7 @@ export const experiences: Division[] = [
     name: entityNames.divisions.sweetCart,
     label: "Sweet Cart",
     landingPath: "/experiences/sweet-cart",
-    summary: "Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station, and the Luxe Churro Bar prepared and finished on-site.",
+    summary: "Mini pancakes, waffles, mini donuts, and churros prepared and finished on-site.",
     serviceDescription: "A live, made-to-order dessert experience within the Luxe Event Co. event platform.",
     accent: "sweet",
     inclusions: [],
@@ -198,7 +198,7 @@ export const experiences: Division[] = [
       "Custom signage, styling, and combination experiences",
     ],
     capacity: 400,
-    simultaneousSetups: 3,
+    simultaneousSetups: null,
   },
   {
     slug: "seating-rentals",
@@ -207,7 +207,7 @@ export const experiences: Division[] = [
     label: "Seating Rentals",
     landingPath: "/experiences/seating-rentals",
     summary: "Premium core rentals for celebrations made to gather.",
-    serviceDescription: "A focused seating and event rental offering within Luxe Event Co.",
+    serviceDescription: "A coordinated seating and event rental offering within Luxe Event Co.",
     accent: "seating",
     inclusions: [],
     customization: [],
@@ -222,17 +222,17 @@ export const experiences: Division[] = [
     complementarySlugs: ["coffee-bar", "sweet-cart"],
     instagram: socialProfiles.seatingRentals,
     offerings: [
-      "Chairs",
-      "Tables",
-      "Cocktail tables",
-      "20-ft, 15-ft, and 10-ft event tents",
-      "Table and cocktail-table linens",
-      "Tent walls and lighting",
-      "18-ft by 18-ft dance floor",
+      "300 White Resin Chairs",
+      "25 6-ft Rectangular Tables",
+      "10 Cocktail Tables",
+      "3 × 20' × 20', 2 × 10' × 10', and 1 × 15' × 15' Tents",
+      "Linens for 6-ft tables and black & white cocktail table linens",
+      "Tent walls. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service.",
+      "Dance-floor configurations available up to 18' × 18'.",
       "Combined rental experiences with coffee and dessert",
     ],
     capacity: 0,
-    simultaneousSetups: 3,
+    simultaneousSetups: null,
   },
 ];
 

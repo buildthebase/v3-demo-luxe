@@ -15,8 +15,8 @@ export function HomeReviewLauncher() {
     <section
       className="home-review-launcher"
       id="reviews"
-      aria-label="Google review preview"
-      data-content-status="placeholder"
+      aria-label="Google reviews by experience"
+      data-content-status="integration-ready"
     >
       <button
         className="home-review-launcher-button"
@@ -27,7 +27,7 @@ export function HomeReviewLauncher() {
         <span className="home-review-google-icon" aria-hidden="true">G</span>
         <span className="home-review-launcher-copy">
           <strong>Google Reviews</strong>
-          <span>Preview by experience</span>
+          <span>Reviews by experience</span>
         </span>
         <span className="home-review-rating">
           <strong>5.0</strong>
@@ -54,7 +54,7 @@ export function HomeReviewLauncher() {
             ×
           </button>
           <span className="home-review-google-icon" aria-hidden="true">G</span>
-          <p>Google review preview</p>
+          <p>Google Reviews</p>
           <h2 id="home-review-dialog-title">Choose an experience.</h2>
           <div className="home-review-dialog-options">
             {reviewDestinations.map((destination) => (
@@ -68,7 +68,7 @@ export function HomeReviewLauncher() {
               </a>
             ))}
           </div>
-          <small>Sample review placements for layout preview.</small>
+          <small>Select an experience to read its relevant Google review.</small>
         </div>
       </dialog>
     </section>

@@ -453,7 +453,7 @@ export const imageAssets = {
     coffeeBarHero: {
       id: "coffee-bar-hero",
       src: "/images/experiences/coffee-bar-hero/coffee-bar-hero-square-1254.webp",
-      alt: "Luxe Coffee Bar floral café cart with espresso service, menu board, and barista station at an event",
+      alt: "Luxe Coffee Bar floral café cart with specialty coffee and matcha service, menu board, and barista station at an event",
       width: 1254,
       height: 1254,
       sizes: "(max-width: 700px) calc(100vw - 2rem), (max-width: 1120px) 46vw, 42rem",
@@ -546,7 +546,7 @@ export const imageAssets = {
     sixFootRectangularTables: {
       id: "seating-rentals-six-foot-rectangular-tables",
       src: "/images/experiences/luxe-six-foot-rectangular-tables-outdoor-event-toronto.avif",
-      alt: "Six-foot rectangular tables with white linens and chairs at an outdoor wedding",
+      alt: "6-ft rectangular tables with white linens and chairs at an outdoor wedding",
       width: 1554,
       height: 1000,
       sizes: "(max-width: 700px) calc(100vw - 2rem), (max-width: 1120px) 50vw, 36rem",

@@ -29,7 +29,7 @@ const sharedFaqCategories: readonly FaqCategory[] = [
         id: "available-packages",
         question: "What packages are available?",
         answer:
-          "Luxe does not use one universal event package. Luxe Coffee Bar offers the Café Cart Experience and Signature Coffee Bar Experience. Luxe Sweet Cart offers Classic and Signature physical cart styles, subject to availability, with Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station, and the Luxe Churro Bar. Seating Rentals is quoted from confirmed inventory and event requirements. Any service may be available independently or combined through Luxe Event Co.",
+          "Luxe does not use one universal event package. Luxe Coffee Bar offers the Café Cart Experience and Signature Coffee Bar Experience. Luxe Sweet Cart offers Classic and Signature physical cart styles, subject to availability. Dessert options include Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station and the Luxe Churro Bar. Your selected option or combination of options is confirmed in your proposal. Seating Rentals is quoted from confirmed inventory and event requirements. Any service may be available independently or combined through Luxe Event Co.",
         links: [{ href: "/experiences", label: "Compare Luxe experiences" }],
       },
       {
@@ -48,16 +48,16 @@ const sharedFaqCategories: readonly FaqCategory[] = [
       },
       {
         id: "booking-lead-time",
-        question: "How far in advance should clients book?",
+        question: "How far in advance should I book?",
         answer:
-          "Book as early as possible for weddings, spring-to-fall dates, holiday events, and other peak periods. Luxe has not approved one universal lead time because availability depends on the date, selected service, guest count, staffing, travel, and production requirements.",
+          "We recommend booking as early as possible, especially for peak wedding and event dates between spring and fall. Additional lead time is also helpful for custom signage, branded cups and coordinated rentals.",
         links: [{ href: "/contact", label: "Check your date" }],
       },
       {
         id: "reserve-a-date",
-        question: "What is required to reserve a date?",
+        question: "How do I secure my event date?",
         answer:
-          "A signed contract and the required 30% non-refundable retainer reserve the date. Availability is not guaranteed until Luxe has received both.",
+          "Your event date is secured once the service agreement is signed and the 30% non-refundable retainer is received.",
         links: [{ href: "/contact", label: "Begin an inquiry" }],
       },
       {
@@ -69,23 +69,23 @@ const sharedFaqCategories: readonly FaqCategory[] = [
       },
       {
         id: "balance-due",
-        question: "When is the balance due?",
+        question: "When is the remaining balance due?",
         answer:
-          "The remaining balance is due seven days before the event date. The contract and proposal provide the applicable payment schedule for the booking.",
+          "The remaining balance is due 7 days before the event unless otherwise stated in your agreement.",
         links: [{ href: "/contact", label: "Discuss booking terms" }],
       },
       {
         id: "payment-methods",
         question: "Which payment methods are accepted?",
         answer:
-          "Accepted payment methods are provided with the proposal and contract. Luxe has not approved a public list of payment methods, so clients should follow the payment instructions issued for their confirmed booking.",
+          "Available payment methods and payment instructions are provided with your proposal and service agreement.",
         links: [{ href: "/contact", label: "Confirm payment options" }],
       },
       {
         id: "luxe-insured",
         question: "Is Luxe insured?",
         answer:
-          "Yes. Luxe carries $5 million in liability insurance, supporting venue, planner, corporate, and private-event requirements where proof of coverage is requested.",
+          "Yes. Luxe carries $5 million in commercial liability insurance, and proof of insurance can be provided to venues or corporate clients where required.",
         links: [{ href: "/contact", label: "Request event-specific documentation" }],
       },
     ],
@@ -98,30 +98,30 @@ const sharedFaqCategories: readonly FaqCategory[] = [
     items: [
       {
         id: "areas-served",
-        question: "Which areas are served?",
+        question: "Where does Luxe provide service?",
         answer:
-          "Yes, Luxe is available for events in Toronto and throughout the approved Greater Toronto Area service area, including Scarborough, Etobicoke, North York, Markham, Vaughan, Richmond Hill, Aurora, Newmarket, King City, Thornhill, Mississauga, Brampton, Oakville, Burlington, Milton, Pickering, Ajax, Whitby, and Oshawa.",
+          "Luxe primarily serves Toronto and the Greater Toronto Area, with select bookings available throughout Southern Ontario. Travel fees may apply based on event location and logistics.",
         links: [{ href: "/contact", label: "Confirm service for your location" }],
       },
       {
         id: "outside-gta",
         question: "Does Luxe travel outside the GTA?",
         answer:
-          "Select larger events elsewhere in Southern Ontario may be available as extended-travel or destination requests. Availability is not automatic outside the primary service area: Luxe reviews the event scope, date, distance and travel time, staffing, equipment or inventory movement, venue access, service schedule, and any applicable minimum requirements before confirming feasibility.",
+          "Yes. Select bookings are available throughout Southern Ontario. The final service plan is tailored to the event location, selected experience, guest count, travel requirements, venue access and event schedule.",
         links: [{ href: "/contact", label: "Discuss an extended-service event" }],
       },
       {
         id: "travel-fees",
-        question: "Are travel fees applicable?",
+        question: "Do travel fees apply?",
         answer:
-          "Travel fees may apply outside Luxe’s standard service area, but no universal distance threshold or fee formula is published. Location can also affect the feasible service scope, minimum booking review, staffing and travel time, equipment or rental transport, parking and loading requirements, setup and takedown windows, and whether accommodations are required. The proposal identifies the confirmed scope and any location-related charge after these factors are reviewed.",
+          "Travel fees may apply depending on event location, distance, service requirements and transportation needs. Any applicable travel charges are clearly included in your proposal before booking.",
         links: [{ href: "/contact", label: "Request a location-specific quote" }],
       },
       {
         id: "destination-events",
         question: "Are destination events available?",
         answer:
-          "Select destination events in Southern Ontario may be available, particularly for larger event scopes. Luxe confirms the venue location, date, selected services, minimum requirements, travel fees, transport, staffing, accommodations if required, load-in access, utilities, setup and takedown windows, and pickup or return plan before issuing a proposal.",
+          "Select destination events throughout Southern Ontario are available based on event scope and logistics. Your proposal confirms the travel, transport, staffing, venue access, setup and service requirements for the booking.",
         links: [{ href: "/contact", label: "Discuss a destination event" }],
       },
     ],
@@ -141,51 +141,51 @@ const sharedFaqCategories: readonly FaqCategory[] = [
       },
       {
         id: "power-required",
-        question: "Is power required?",
+        question: "What power or water access is required?",
         answer:
-          "Setup requirements vary by Coffee Bar format and venue. Our team confirms electrical, water, access and setup requirements with the client or venue before the event so the appropriate service plan can be prepared.",
+          "Power and water requirements vary by the selected Luxe experience and event setup. We confirm all electrical, water and access requirements before the event so the correct service plan can be prepared.",
         links: [{ href: "/experiences", label: "Explore the experiences" }],
       },
       {
         id: "water-required",
         question: "Is water required?",
         answer:
-          "Setup requirements vary by Coffee Bar format and venue. Our team confirms electrical, water, access and setup requirements with the client or venue before the event so the appropriate service plan can be prepared.",
+          "Power and water requirements vary by the selected Luxe experience and event setup. We confirm all electrical, water and access requirements before the event so the correct service plan can be prepared.",
         links: [{ href: "/contact", label: "Confirm venue requirements" }],
       },
       {
         id: "setup-duration",
-        question: "How long does setup take?",
+        question: "How much setup time does Luxe need?",
         answer:
-          "Luxe has not approved one public setup duration. Venue location does not determine feasibility by itself: timing depends on travel, the loading window, parking, loading dock or entrance, stairs or elevators, travel distance inside the venue, placement, utilities, experience type, branding, rental scope, weather protection, and the venue’s setup window. Luxe can coordinate these inputs with the client, planner, or venue, but the responsible contacts and load-in details must be confirmed before the arrival and setup schedule is issued.",
+          "Setup time varies by selected experience, venue access and event requirements. Our team confirms the appropriate arrival and setup window with the client or venue before the event.",
         links: [{ href: "/contact", label: "Share venue access details" }],
       },
       {
         id: "teardown-duration",
         question: "How long does teardown take?",
         answer:
-          "Luxe has not approved one public teardown duration. Timing depends on the selected services, equipment, rental pickup plan, venue rules, loading access, after-hours requirements, and event schedule. The takedown or pickup window must be confirmed for the booking.",
+          "Takedown timing varies by the selected services, equipment, rental pickup plan, venue rules, loading access and event schedule. The appropriate takedown or pickup window is confirmed before the event.",
         links: [{ href: "/contact", label: "Discuss the event schedule" }],
       },
       {
         id: "outdoor-service",
-        question: "Can services operate outdoors?",
+        question: "Can Luxe operate outdoors?",
         answer:
-          "Indoor service is supported when the venue can meet the confirmed access, space, utility, and operating requirements. Outdoor service can be planned, but no universal outdoor limit is approved. Ground conditions, shelter or tenting, temperature, wind, precipitation, power or water access, equipment protection, venue rules, and a practical indoor or protected backup plan must be reviewed for the selected experience.",
+          "Yes. Many Luxe experiences can be provided outdoors, subject to suitable weather conditions, venue access and the requirements of the selected service. Outdoor events should have an appropriate contingency plan where weather may affect service.",
         links: [{ href: "/events", label: "Explore event applications" }],
       },
       {
         id: "rain-plan",
         question: "What happens if it rains?",
         answer:
-          "The host and venue must provide an approved weather plan before an outdoor event. Depending on the forecast and setup, this may require suitable tenting, protected operating space, relocation indoors, or another agreed adjustment. Luxe does not operate equipment in unsafe conditions.",
+          "For outdoor events, the client is responsible for ensuring an appropriate covered or alternate service area if weather conditions could affect equipment or service. Tent options may also be available through Luxe depending on the event.",
         links: [{ href: "/contact", label: "Plan an outdoor event" }],
       },
       {
         id: "without-direct-power",
         question: "Can Luxe operate without direct access to power?",
         answer:
-          "Do not assume so. Feasibility depends on the selected cart, equipment, menu, event duration, venue rules, and any approved alternative power arrangement. Luxe must review and confirm the plan before booking.",
+          "Alternative power arrangements may be available depending on the selected experience, equipment, menu, event duration and venue requirements. Our team confirms the appropriate power plan before the event.",
         links: [{ href: "/contact", label: "Review an off-grid setup" }],
       },
     ],
@@ -200,7 +200,7 @@ const sharedFaqCategories: readonly FaqCategory[] = [
         id: "event-theme",
         question: "Can experiences be matched to an event theme?",
         answer:
-          "Yes. Luxe can discuss colour direction, menu language, beverage or dessert selections, signage, cups, cart presentation, florals where applicable, and selected rental elements. The visual direction must still preserve menu clarity, an orderly service point, practical guest movement, and the operating needs of each experience. Final possibilities depend on the chosen service, approved design, production timeline, and event conditions.",
+          "Yes. Luxe can discuss colour direction, menu language, beverage or dessert selections, signage, cups, cart presentation and selected rental elements. We can also coordinate the Luxe service presentation with floral accents provided by the event’s florist or creative team. The visual direction preserves menu clarity, practical guest movement and the operating needs of each experience, with the final plan tailored to the selected service and event requirements.",
         links: [{ href: "/experiences", label: "Explore experience customization" }],
       },
       {
@@ -214,15 +214,22 @@ const sharedFaqCategories: readonly FaqCategory[] = [
         id: "custom-menus",
         question: "Can menus be customized?",
         answer:
-          "Yes. Coffee menus can combine the confirmed espresso classics with signature beverages, seasonal selections, matcha, tea, chai, hot chocolate, and dairy-free milk alternatives. Dessert directions can use the approved desserts, Premium Sauces, standard toppings, premium toppings, and Soft Serve Add-On. Soft Serve Add-On is offered as an enhancement and is not available as a standalone service. Names and presentation can respond to the event, but the final menu must remain workable for the selected experience, guest count, equipment, ingredients, service speed, and guest flow.",
+          "Coffee Bar menus can include café favourites, signature beverages, premium matcha and selected non-coffee options based on the chosen experience. Dessert menus can include the available desserts, premium sauces, standard toppings, premium toppings and Soft Serve Add-On. Soft serve is offered as an enhancement and is not available as a standalone service. Final menu names and presentation are tailored to the selected experience, guest count, equipment, service speed and guest flow.",
         links: [{ href: "/experiences", label: "Explore menu possibilities" }],
       },
       {
         id: "multiple-experiences",
-        question: "Can multiple experiences be booked together?",
+        question: "Can Coffee, Dessert and Rentals be booked together?",
         answer:
-          "Yes. Coffee, dessert, and rentals may be booked independently or combined. Luxe coordinates the selected services through one inquiry and proposal journey while confirming each experience’s timing, staffing, setup, and logistics.",
+          "Yes. Luxe Coffee Bar, Luxe Sweet Cart and select event rentals can each be booked independently or coordinated together through one inquiry.",
         links: [{ href: "/experiences", label: "Explore combined experiences" }],
+      },
+      {
+        id: "planner-venue-coordination",
+        question: "Does Luxe work with venues/planners?",
+        answer:
+          "Yes. We can coordinate directly with planners, venues and event contacts regarding access, setup timing, service placement and the requirements of the Luxe services booked.",
+        links: [{ href: "/contact", label: "Discuss event coordination" }],
       },
       {
         id: "corporate-branding",
@@ -247,6 +254,43 @@ type PublishedFaqSource = {
   href: string;
   linkLabel: string;
   items: readonly PublishedFaqItem[];
+};
+
+const masterFaqAnswerOverrides: Readonly<Record<string, string>> = {
+  "Can the Coffee Bar menu be customized?":
+    "Yes. Coffee Bar menus can be personalized with café favourites, signature beverages, premium matcha and selected non-coffee options based on the chosen experience. Custom menu wording, drink names, cups, stickers and signage can also be incorporated.",
+  "Are iced drinks included?":
+    "Yes. Hot and iced beverage service is available as part of the Luxe Coffee Bar experience.",
+  "Is matcha available?":
+    "Yes. Premium matcha is available as a non-coffee option and can also be incorporated into customized event menus.",
+  "Are milk alternatives available?":
+    "Yes. Whole milk and premium non-dairy milk alternatives are available. Final milk selections are confirmed with the event menu.",
+  "How many baristas are included?":
+    "Professional barista service is included with every Coffee Bar booking. Staffing is tailored to guest count, selected menu, service duration and event flow.",
+  "How many drinks can Luxe serve per hour?":
+    "Service capacity depends on guest count, selected menu, hot-to-iced drink mix and guest arrival patterns. We recommend the appropriate staffing and setup for each event to keep service moving efficiently.",
+  "What is the difference between Café Cart and Signature Coffee Bar?":
+    "The Luxe Café Cart offers a more compact café setup for intimate celebrations, offices and spaces where a smaller footprint is preferred. The Luxe Signature Coffee Bar creates a larger, more prominent service presence for weddings, corporate events and celebrations where presentation is a bigger part of the experience.",
+  "What desserts does Luxe Sweet Cart offer?":
+    "Luxe Sweet Cart offers Mini Dutch Pancakes, Belgian Waffles on a Stick, Mini Donuts and the Luxe Churro Bar. The selected dessert experience is prepared and served live for guests.",
+  "Is soft serve available?":
+    "Yes. Vanilla or chocolate soft serve can be added to select Luxe Sweet Cart bookings as an enhancement. Soft serve is not currently offered as a standalone service.",
+  "What toppings and sauces are included?":
+    "Sweet Cart experiences include a curated selection of standard toppings and premium sauces based on the selected package. Premium toppings and additional enhancements can also be added where available.",
+  "Can Luxe accommodate allergies or dietary restrictions?":
+    "Please share any dietary restrictions or allergy concerns during your inquiry. Our team will review the selected ingredients, preparation process and equipment to determine what accommodations can safely be offered. Because equipment and preparation areas may be shared, Luxe cannot guarantee an allergen-free environment.",
+  "How long does Sweet Cart service last?":
+    "Service duration is based on guest count and the selected dessert experience. Most Luxe Sweet Cart bookings include approximately 1.5–2.5 hours of live dessert service, with the exact service window confirmed in your proposal.",
+  "How many Sweet Cart attendants are included?":
+    "Professional attendant service is included with every Luxe Sweet Cart booking. Staffing is determined by guest count, dessert selection and service requirements.",
+  "What event rentals does Luxe offer?":
+    "Luxe offers a focused rental collection including white resin chairs, 6-ft rectangular tables, cocktail tables, linens, tents, tent walls, tent lighting and dance-floor configurations up to 18' × 18'.",
+  "Is Tent Lighting available separately?":
+    "Tent lighting is available with Luxe tent rentals and is not currently offered as a standalone lighting service.",
+  "Is rental setup included?":
+    "Setup is available and will be clearly identified in your proposal. Depending on the rental order, clients may select delivery only or delivery with professional setup. Any applicable setup fees are confirmed before booking.",
+  "Does Luxe deliver rentals?":
+    "Yes. Delivery is available throughout Toronto and the GTA, with select extended-distance requests considered based on availability. Delivery fees are based on location, order size, access requirements and requested service.",
 };
 
 const sweetCartPricingVariant: PublishedFaqItem = {
@@ -351,7 +395,7 @@ const publishedFaqCategories: readonly FaqCategory[] = publishedFaqSources.map(
     items: source.items.map((item, itemIndex) => ({
       id: `${source.id}-${String(itemIndex + 1).padStart(2, "0")}`,
       question: item.question,
-      answer: item.answer,
+      answer: masterFaqAnswerOverrides[item.question] ?? item.answer,
       links: [{ href: source.href, label: source.linkLabel }],
     })),
   }),

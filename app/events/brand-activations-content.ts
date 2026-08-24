@@ -1,27 +1,32 @@
 export const activationBrandTouchpoints = [
   {
     number: "01",
-    title: "Branded cups and vessels",
+    title: "Branded cups and cup stickers",
     description:
-      "Feature campaign logos, brand marks, and event slogans across custom printed espresso cups, cold drink vessels, and sleeves.",
+      "Feature approved campaign logos, brand marks, and messaging through custom branded cups or cup stickers tailored to the activation.",
+    note: null,
   },
   {
     number: "02",
-    title: "Menus, signage, and drink names",
+    title: "Custom menus and drink names",
     description:
-      "Tailor beverage titles and acrylic menu signage to reflect campaign themes while keeping ordering seamless and functional.",
+      "Create custom menus and customized drink names that reflect the product, campaign theme, or event message while keeping ordering clear and seamless.",
+    note: null,
   },
   {
     number: "03",
-    title: "Colour and visual alignment",
+    title: "Event signage and campaign messaging",
     description:
-      "Match brand hex codes across signage, napkins, display accents, and florals without sacrificing menu contrast or service speed.",
+      "Extend campaign messaging across guest-facing signage, menu displays and selected visual details throughout the activation. Optional floral accents coordinated with the event’s florist or creative team.",
+    note: null,
   },
   {
     number: "04",
-    title: "Cart branding and presentation",
+    title: "Cart branding and guest-facing presentation",
     description:
-      "Transform mobile carts into focal points using custom vinyl cart wraps, branded decals, custom floral arrangements, and styled barista attire.",
+      "Carry approved brand colours through cart signage, branded panels, decals, and display accents for a cohesive guest-facing presentation.",
+    note:
+      "Custom vinyl wraps, branded aprons, and other production upgrades can be quoted separately where available, based on scope, production requirements, and lead time.",
   },
 ] as const;
 
@@ -36,7 +41,7 @@ export const activationContexts = [
     number: "02",
     title: "Retail activations",
     description:
-      "Integrate branded espresso bars, iced matchas, or live sweet carts directly into storefronts, pop-ups, and shopping environments to boost foot traffic.",
+      "Integrate branded mobile Coffee Bars, iced matchas, or live sweet carts directly into storefronts, pop-ups, and shopping environments to boost foot traffic.",
   },
   {
     number: "03",
@@ -48,7 +53,7 @@ export const activationContexts = [
     number: "04",
     title: "Trade shows",
     description:
-      "Drive continuous booth traffic and extend attendee dwell time with high-volume mobile espresso service and interactive dessert stations.",
+      "Drive continuous booth traffic and extend attendee dwell time with high-volume specialty coffee and matcha service and interactive dessert stations.",
   },
   {
     number: "05",
@@ -60,7 +65,7 @@ export const activationContexts = [
     number: "06",
     title: "Campaign events",
     description:
-      "Bring digital and visual campaign elements to life through custom branded cups, tailored menu names, and branded cart wraps built for social sharing.",
+      "Bring digital and visual campaign elements to life through custom branded cups, tailored menu names and cart branding available based on project scope, lead time and production requirements.",
   },
 ] as const;
 
@@ -71,7 +76,7 @@ export const activationServiceMedia = [
     href: "/experiences/coffee-bar",
     statement: "Branded coffee and matcha service guests can hold and share.",
     description:
-      "Espresso-style classics and signature beverages, Premium Matcha, seasonal iced drinks, and custom branded cups crafted to encourage guest social sharing and direct engagement.",
+      "Barista-served specialty coffee, Premium Matcha, seasonal iced drinks, and custom branded cups crafted to encourage guest social sharing and direct engagement.",
   },
   {
     number: "02",
@@ -79,7 +84,7 @@ export const activationServiceMedia = [
     href: "/experiences/sweet-cart",
     statement: "Interactive branded dessert service prepared in the moment.",
     description:
-      "Fresh-made Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station, and the Luxe Churro Bar prepared live to drive guest interaction and foot traffic. Soft Serve Add-On is available as an enhancement.",
+      "Interactive live dessert service with Luxe Sweet Cart options including Mini Dutch Pancakes, Belgian Waffles on a Stick, Mini Donuts and the Luxe Churro Bar. Your selected option or combination of options is confirmed in your proposal. Soft Serve Add-On is available with select dessert options as an optional enhancement and is not offered as a standalone service.",
   },
   {
     number: "03",
@@ -96,39 +101,57 @@ export const activationScaleCapabilities = [
     number: "01",
     title: "Multiple branded setups",
     description:
-      "Deploy up to three Coffee Bars and three Sweet Carts simultaneously across your venue space, subject to scheduling, staffing, and venue requirements.",
+      "Multiple Coffee Bar and Sweet Cart setups can be considered for larger activations, multi-space venues and peak guest periods based on event scope and availability.",
   },
   {
     number: "02",
     title: "Multi-day campaigns",
     description:
-      "Sustain multi-day pop-ups seamlessly. We manage daily restocking, overnight equipment storage, staffing schedules, and fresh ingredient replenishment.",
+      "Multi-day activations can be planned around the campaign schedule, staffing, storage, replenishment and venue requirements.",
   },
   {
     number: "03",
     title: "Multiple-location campaigns",
     description:
-      "Activate across multiple GTA venues or regional markets with synchronized logistics, brand consistency, and dedicated field production management.",
+      "Multi-location campaigns can be reviewed individually based on dates, locations, staffing and production requirements.",
   },
 ] as const;
 
 export const activationGalleryPreviews = [
   {
     number: "01",
-    label: "The service surface",
-    note: "Cart treatment, menu, cups, and signage within the campaign environment",
+    label: "Full branded setup",
+    note: "A complete Coffee Bar or Sweet Cart setup with the branded presentation clearly visible",
     tone: "surface",
   },
   {
     number: "02",
-    label: "The interaction",
-    note: "Guest participation, preparation, and branded hospitality in motion",
-    tone: "interaction",
+    label: "Custom cups and signage",
+    note: "Close detail of branded cups or cup stickers, custom menus, and event signage",
+    tone: "details",
   },
   {
     number: "03",
-    label: "The captured moment",
-    note: "Permission-cleared photography or video showing the activation in context",
+    label: "Guest interaction",
+    note: "Guests ordering, receiving, enjoying, or sharing the activation experience",
+    tone: "interaction",
+  },
+  {
+    number: "04",
+    label: "Live preparation",
+    note: "A drink or dessert being prepared live within the branded service environment",
+    tone: "preparation",
+  },
+  {
+    number: "05",
+    label: "Activation within the venue",
+    note: "A wide view showing the service setup, guest flow, and surrounding event space",
+    tone: "venue",
+  },
+  {
+    number: "06",
+    label: "Campaign in context",
+    note: "Campaign branding visible across the activation and its surrounding environment",
     tone: "capture",
   },
 ] as const;
@@ -156,7 +179,7 @@ export const activationPlanningRequirements = [
     number: "04",
     title: "Approve the creative details",
     description:
-      "Review and sign off on print proofs for custom cups, menu signage, cart wraps, and beverage styling.",
+      "Review and approve print proofs for custom cups, menu signage and any cart branding available based on project scope, lead time and production requirements.",
   },
   {
     number: "05",
@@ -170,18 +193,18 @@ export const activationFaqs = [
   {
     question: "Does branding increase the price?",
     answer:
-      "Branding can increase the quote when it adds artwork preparation, custom cups, signage, cart treatment, special menu development, production quantities, approvals, shipping, installation, or additional lead time. A simple approved menu or naming treatment may require less production than a fully branded service environment. Luxe prices the confirmed branding surfaces and production scope rather than applying one universal branding fee.",
+      "Branding and customization can affect pricing depending on the selected elements, production requirements and lead time. Your proposal will clearly separate the core Luxe experience from any custom branding or production upgrades.",
   },
   {
     question:
-      "How does standard corporate catering compare with branded experiential service?",
+      "How does traditional catering compare with a Luxe brand activation?",
     answer:
-      "Standard corporate catering is appropriate when the priority is dependable food or beverage provision with minimal creative production. Branded experiential service is appropriate when the menu, cups, signage, service point, and guest interaction should express a campaign or organization. Neither is universally better; decide from the event objective, audience, desired action, brand requirements, service window, venue, approvals, production scope, and budget. Luxe Coffee Bar and Sweet Cart can support the experiential route when that added role is useful.",
+      "Traditional catering focuses primarily on food and beverage service. A Luxe brand activation combines hospitality with customized presentation, giving guests something to enjoy while creating an additional branded touchpoint within the event.",
   },
   {
     question: "Can the Coffee Bar or Sweet Cart be branded?",
     answer:
-      "Yes. Cart branding and event styling are available for activations. Final treatment depends on the approved creative direction, cart format, production method, timeline, quantities, and event requirements.",
+      "Yes. Cart branding and coordinated service presentation are available for activations. Final treatment depends on the approved creative direction, cart format, production method, timeline, quantities, and event requirements.",
   },
   {
     question: "Can cups, signage, and menus include a logo?",
@@ -194,14 +217,14 @@ export const activationFaqs = [
       "Yes. Luxe can develop campaign drink names and tailor a menu around the product, campaign, audience, season, or event theme. Final recipes and naming depend on menu feasibility, service speed, ingredient availability, guest ordering clarity, and creative approval.",
   },
   {
-    question: "Can Luxe work directly with agencies and experiential teams?",
+    question: "Can Luxe work directly with agencies and creative teams?",
     answer:
-      "Yes. Luxe works directly with event agencies and planners and can coordinate with marketing teams, experiential teams, retail brands, public relations teams, content teams, venues, producers, and other campaign partners.",
+      "Luxe can work directly with marketing teams, experiential agencies, PR teams, event producers, venues and brand partners to align the Coffee Bar or Sweet Cart presentation with the campaign.",
   },
   {
     question: "Can Luxe support multi-day or multiple-location campaigns?",
     answer:
-      "Multi-day and multiple-location campaigns can be reviewed, but neither is a universally confirmed capability. Luxe must assess the dates, locations, travel, staffing, equipment, reset or storage needs, setup requirements, production plan, and handoffs before representing the complete brief as available.",
+      "Multi-day activations can be planned around the campaign schedule, staffing, storage, replenishment and venue requirements. Multi-location campaigns can be reviewed individually based on dates, locations, staffing and production requirements.",
   },
   {
     question: "Which assets are required from the client?",
@@ -211,6 +234,6 @@ export const activationFaqs = [
   {
     question: "How far in advance should a brand activation be planned?",
     answer:
-      "Luxe recommends beginning as early as possible, especially when custom cups, signage, cart branding, tailored menus, multiple setups, multiple dates, or agency approvals are involved. No universal lead time is published because production and approval requirements vary by brief.",
+      "Luxe recommends beginning as early as possible, especially when custom cups, signage, cart branding, tailored menus, multiple setups, multiple dates or agency approvals are involved. The production schedule is tailored to the campaign brief, required approvals and event date.",
   },
 ] as const;

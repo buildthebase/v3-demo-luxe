@@ -3,11 +3,11 @@ import { imageAssets } from "../image-system";
 
 const weddingExperienceDescriptions: Record<SignatureExperience["id"], string> = {
   coffee:
-    "Mobile espresso, matcha, and seasonal specialty drink service designed for guest arrivals, cocktail hour, reception, or late-night energy.",
+    "Premium mobile coffee and matcha service with hot and iced café favourites, signature beverages and personalized menu options.",
   dessert:
     "Fresh on-site dessert preparation and custom cart styling that creates an engaging, delicious focal point for your guests.",
   seating:
-    "White resin chairs, 6-ft tables, cocktail tables, linens, tents, tent lighting, and a dance floor for ceremonies, receptions, and outdoor weddings.",
+    "White resin chairs, 6-ft tables, cocktail tables, linens and tents for ceremonies, receptions and outdoor weddings. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'.",
 };
 
 const weddingExperienceLabels: Record<SignatureExperience["id"], string> = {
@@ -32,7 +32,7 @@ export const weddingMoments = [
     fitLabel: "Best fit",
     fit: "Café Cart",
     description:
-      "Greet early-arriving guests and the wedding party with espresso-style classics and signature beverages, iced matchas, and warm signature drinks as they arrive before the ceremony.",
+      "Welcome guests with a refined café experience featuring specialty coffee, matcha and signature hot or iced beverages before the ceremony begins.",
   },
   {
     number: "02",
@@ -41,7 +41,7 @@ export const weddingMoments = [
     fitLabel: "Best fit",
     fit: "Signature Coffee Bar",
     description:
-      "Provide guests with a sophisticated hospitality feature between the ceremony and dinner. Tailored with seasonal hot drinks and refreshing iced lattes.",
+      "Serve guests specialty coffee, matcha, signature beverages and refreshing iced drinks as they transition from the ceremony to the reception.",
   },
   {
     number: "03",
@@ -50,7 +50,7 @@ export const weddingMoments = [
     fitLabel: "Can include",
     fit: "Coffee Bar",
     description:
-      "Complement dinner service, speeches, and evening dancing with specialty coffee beverages, herbal teas, and custom non-coffee options.",
+      "Complement dinner, speeches and evening celebrations with specialty coffee, matcha, tea and premium non-coffee options.",
   },
   {
     number: "04",
@@ -59,7 +59,7 @@ export const weddingMoments = [
     fitLabel: "Best fit",
     fit: "Sweet Cart",
     description:
-      "Interactive live dessert station featuring fresh Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station, and the Luxe Churro Bar prepared fresh in front of your guests. Soft Serve Add-On is available as an enhancement.",
+      "Create an interactive dessert moment with Luxe Sweet Cart options including Mini Dutch Pancakes, Belgian Waffles on a Stick, Mini Donuts and the Luxe Churro Bar. Your selected option or combination of options is confirmed during planning. Soft serve can be added to select dessert options as an enhancement.",
   },
   {
     number: "05",
@@ -68,7 +68,7 @@ export const weddingMoments = [
     fitLabel: "Can include",
     fit: "Coffee Bar or Sweet Cart",
     description:
-      "Re-energize the dance floor with late-night specialty coffee beverages or freshly baked warm treats, providing a memorable second-wind hospitality moment.",
+      "Re-energize the celebration with late-night specialty coffee or a live Luxe Sweet Cart experience.",
   },
   {
     number: "06",
@@ -77,34 +77,34 @@ export const weddingMoments = [
     fitLabel: "Optional",
     fit: "Coffee Bar",
     description:
-      "Keep the celebration going during your farewell brunch or day-after gift opening with premium mobile coffee service for family and close friends.",
+      "Extend the Luxe experience into a farewell brunch or morning-after gathering with café-style coffee and matcha service for your guests.",
   },
 ] as const;
 
 export const weddingCustomization = [
   {
     number: "01",
-    title: "Drinks and menus",
+    title: "DRINKS & MENUS",
     description:
-      "Tailored signature drinks, seasonal lattes, oat and almond milk alternatives, matcha, and custom menu wording crafted for your taste.",
+      "Choose café favourites, signature beverages, matcha, milk alternatives and personalized menu selections for your wedding.",
   },
   {
     number: "02",
-    title: "Cups, signage, and wording",
+    title: "CUPS, SIGNAGE & WORDING",
     description:
-      "Add custom wedding monograms, partner names, wedding dates, and custom printed cups or signage frames for a cohesive visual look.",
+      "Personalize cups, stickers, menu displays and event signage with your names, wedding date, monogram or custom design.",
   },
   {
     number: "03",
-    title: "Dessert and cart presentation",
+    title: "DESSERT & CART PRESENTATION",
     description:
-      "Coordinate cart finishes, floral arrangements, custom topper displays, and gourmet sauce bars to match your wedding color palette.",
+      "Coordinate cart styling, custom signage, topping displays and premium sauce selections with your wedding aesthetic.",
   },
   {
     number: "04",
-    title: "Seating and room details",
+    title: "RENTALS",
     description:
-      "Coordinate the confirmed white resin chairs, 6-ft tables, cocktail tables, and linen options with the venue dimensions and rental layout.",
+      "Complete the setting with select Luxe chairs, tables, linens and tents. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'.",
   },
 ] as const;
 
@@ -113,7 +113,7 @@ export const weddingLogistics = [
     number: "01",
     title: "Planner and venue coordination",
     description:
-      "Share planner and venue contacts where relevant so access, placement, and service details can be reviewed for the confirmed scope.",
+      "We can coordinate directly with your planner or venue contact regarding arrival, setup timing, access requirements and the placement of Luxe services.",
   },
   {
     number: "02",
@@ -131,7 +131,7 @@ export const weddingLogistics = [
     number: "04",
     title: "Travel and destination planning",
     description:
-      "Based in Toronto, Luxe serves the GTA and select destination venues across Southern Ontario, including Muskoka, Niagara, and Prince Edward County.",
+      "Luxe serves weddings throughout Toronto and the GTA, with select destination bookings available throughout Southern Ontario, including Muskoka, Niagara and Prince Edward County. Travel fees are quoted based on location and event requirements.",
   },
 ] as const;
 
@@ -152,10 +152,10 @@ export const weddingGalleryPreview = [
   },
   {
     number: "03",
-    label: "The room",
-    note: "Gold seating, soft linens, garden florals, and warm light shape an intimate reception beneath the trees.",
+    label: "The rentals",
+    note: "Luxe white resin chairs arranged for an outdoor wedding setting.",
     tone: "room",
-    image: imageAssets.experiences.weddingRoom,
+    image: imageAssets.experiences.whiteResinChairs,
   },
 ] as const;
 
@@ -163,7 +163,7 @@ export const weddingFaqs = [
   {
     question: "Can Luxe provide coffee service for weddings?",
     answer:
-      "Yes. Luxe Coffee Bar provides professional barista service, espresso classics, signature drinks, matcha and premium non-coffee options, hot and iced service, milk alternatives, serving essentials, setup, and takedown. The Café Cart or Signature Coffee Bar is selected around the wedding format and guest experience.",
+      "Yes. Luxe Coffee Bar provides premium coffee and matcha service, hot and iced café favourites, signature beverages and premium non-coffee options, milk alternatives, serving essentials, setup, and takedown. The Café Cart or Signature Coffee Bar is selected around the wedding format and guest experience.",
   },
   {
     question: "How much does a wedding coffee bar, dessert cart, or rental plan cost?",
@@ -178,7 +178,7 @@ export const weddingFaqs = [
   {
     question: "Is a coffee bar appropriate for cocktail hour?",
     answer:
-      "Yes, when it supports the transition between ceremony and reception. A coffee bar can give guests a staffed hospitality point with hot, iced, matcha, and non-coffee choices while they gather. Placement, menu breadth, service duration, guest count, and coordination with the venue, planner, caterer, and beverage program determine whether cocktail hour is the right window.",
+      "Yes. Cocktail hour is one of the most popular times for a mobile Coffee Bar, giving guests access to hot and iced specialty beverages while transitioning from the ceremony to the reception.",
   },
   {
     question: "Can coffee and dessert be booked together?",
@@ -188,7 +188,7 @@ export const weddingFaqs = [
   {
     question: "Can seating and rentals be included?",
     answer:
-      "Yes. Chairs, tables, cocktail tables, tents, linens, and lighting can be planned alongside Coffee Bar or Sweet Cart. Inventory, quantities, delivery, setup, teardown, access, and fees must be confirmed for the venue and date.",
+      "Yes. Chairs, tables, cocktail tables, tents and linens can be planned alongside Coffee Bar or Sweet Cart. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. The proposal confirms inventory, quantities, delivery, setup, takedown, access and fees for the venue and date.",
   },
   {
     question: "Can wedding menus, cups, and signage be customized?",
@@ -198,7 +198,7 @@ export const weddingFaqs = [
   {
     question: "How early should couples book?",
     answer:
-      "Luxe recommends booking early for weddings and peak-season dates, especially from April through October. No universal lead time is promised because availability depends on the date, requested experiences, staffing, travel, and logistics.",
+      "We recommend booking as early as possible, particularly for weddings between April and October. Popular dates can fill quickly, and additional lead time is helpful when custom signage, cups, menus or coordinated rentals are required.",
   },
   {
     question: "Does Luxe coordinate with wedding planners and venues?",

@@ -135,20 +135,6 @@
   column-gap: clamp(1.5rem, 3vw, 3rem);
 }
 
-@media (max-width: 1120px) and (min-width: 701px) {
-  .foundation-shell .sweet-page .sweet-dessert-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .foundation-shell .sweet-page .sweet-dessert-list article:nth-child(2) {
-    border-right: 0;
-  }
-
-  .foundation-shell .sweet-page .sweet-dessert-list article:nth-child(-n + 2) {
-    border-bottom: 1px solid rgb(140 111 72 / 28%);
-  }
-}
-
 .foundation-shell .sweet-pantry {
   padding-block: var(--luxe-compact-section-space);
 }

@@ -3,13 +3,13 @@ export const corporateEventApplications = [
     number: "01",
     title: "Employee and team events",
     description:
-      "Espresso bars, matcha stations, and freshly made desserts tailored for staff appreciation days, team milestones, and workplace celebrations.",
+      "Premium mobile Coffee Bars, matcha stations, and freshly made desserts tailored for staff appreciation days, team milestones, and workplace celebrations.",
   },
   {
     number: "02",
     title: "Client and partner events",
     description:
-      "Elevated coffee and sweet bars designed to support executive meetings, client receptions, and strategic relationship-building.",
+      "Elevated coffee and dessert service for executive meetings, client receptions, partner events and company celebrations.",
   },
   {
     number: "03",
@@ -27,7 +27,7 @@ export const corporateEventApplications = [
     number: "05",
     title: "Networking events",
     description:
-      "Pair espresso service and sweet bites to create a natural hospitality point for conversation and connection.",
+      "Pair barista-served specialty coffee and sweet bites to create a natural hospitality point for conversation and connection.",
   },
   {
     number: "06",
@@ -63,7 +63,7 @@ export const corporateExperienceRoles = [
     href: "/experiences/coffee-bar",
     statement: "A complete café service built around the schedule.",
     description:
-      "Professional baristas serving espresso-style classics, iced matchas, signature seasonal drinks, and premium non-coffee options tailored for fast-paced corporate schedules.",
+      "Professional baristas providing specialty coffee and matcha service, signature seasonal drinks, and premium non-coffee options tailored for fast-paced corporate schedules.",
     fact: "Luxe Coffee Bar serves intimate gatherings through large-scale events, with service plans tailored to guest count, menu, venue requirements and event flow. Larger-format events can be accommodated through a customized service plan.",
   },
   {
@@ -73,8 +73,8 @@ export const corporateExperienceRoles = [
     href: "/experiences/sweet-cart",
     statement: "Fresh preparation that becomes part of the event.",
     description:
-      "Interactive live dessert station serving warm Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station, and the Luxe Churro Bar prepared fresh on-site for your team. Soft Serve Add-On is available as an enhancement.",
-    fact: "Dessert service can typically support up to 400 guests, subject to the selections, staffing, duration, venue, and preparation requirements.",
+      "Interactive live dessert service with Luxe Sweet Cart options including Mini Dutch Pancakes, Belgian Waffles on a Stick, Mini Donuts and the Luxe Churro Bar. Your selected option or combination of options is confirmed in your proposal, together with any available enhancements.",
+    fact: "Dessert service is planned around attendance, selections, staffing, duration, venue, and preparation requirements.",
   },
   {
     number: "03",
@@ -83,7 +83,7 @@ export const corporateExperienceRoles = [
     href: "/experiences/seating-rentals",
     statement: "Core rental pieces considered only when the inventory fits.",
     description:
-      "White resin chairs, 6-ft tables, cocktail tables, linens, and tenting may be considered for suitable celebrations, but Luxe does not offer a broad conference-furniture catalogue.",
+      "Luxe offers a focused rental collection rather than a broad conference-furniture catalogue. Select chairs, tables, cocktail tables and related rental pieces can be incorporated where they suit the event.",
     fact: "Availability, quantities, delivery, setup, teardown, access, and fees must be confirmed for the request.",
   },
 ] as const;
@@ -99,40 +99,40 @@ export const corporateBrandingOptions = [
     number: "02",
     title: "Branded cups and signage",
     description:
-      "Feature company logos, campaign slogans, and brand graphics across custom printed espresso cups, acrylic menu stands, and custom cart panels.",
+      "Feature company logos, campaign slogans, and brand graphics across custom branded cups or cup stickers, acrylic menu stands, and custom cart panels.",
   },
   {
     number: "03",
     title: "Cart and service styling",
     description:
-      "Customize full cart vinyl wraps, floral accents, matching barista aprons, and display styling to match your brand color palette.",
+      "Customize cart signage, branded panels, menu displays and service details to complement your company or campaign palette.",
   },
 ] as const;
 
 export const corporateScaleCapabilities = [
   {
     number: "01",
-    title: "Multiple setups",
+    title: "Multiple service points",
     description:
-      "Deploy multiple espresso bars and dessert carts simultaneously across your venue to eliminate guest queues during peak break times.",
+      "Additional Coffee Bar or Sweet Cart setups can be considered for larger events and peak service periods.",
   },
   {
     number: "02",
-    title: "Multi-day programs",
+    title: "Multi-day events",
     description:
-      "Seamless multi-day catering with scheduled daily restocking, overnight storage management, and consistent staffing across your entire convention or summit.",
+      "Multi-day service can be planned around the event schedule, staffing, storage and venue requirements.",
   },
   {
     number: "03",
-    title: "Recurring events",
+    title: "Recurring programs",
     description:
-      "Establish recurring weekly or monthly pop-up café perks for headquarters, regional offices, or ongoing client appreciation days.",
+      "Recurring office and corporate service can be arranged based on frequency, location and availability.",
   },
   {
     number: "04",
-    title: "High-volume service",
+    title: "High-volume events",
     description:
-      "Engineered workflows, dual-group espresso machines, and dedicated barista teams designed to handle heavy guest arrival surges smoothly.",
+      "Staffing, equipment and service flow are planned around attendance and anticipated peak guest periods.",
   },
 ] as const;
 
@@ -153,19 +153,19 @@ export const corporatePlanningSteps = [
     number: "03",
     title: "Confirm the operating details",
     description:
-      "Our operations team reviews loading access, electrical draw, floor footprint, and setup or strike windows directly with your venue.",
+      "We review loading access, electrical requirements, floor footprint and setup/takedown windows with your venue or event contact before service.",
   },
   {
     number: "04",
     title: "Approve branded elements",
     description:
-      "Finalize custom beverage menus, logo cup proofs, cart vinyl wraps, and signage proofs well in advance of production deadlines.",
+      "Review and approve any separately quoted production items, such as custom menus, branded panels, cup artwork or signage, well in advance of production deadlines.",
   },
   {
     number: "05",
     title: "Coordinate service day",
     description:
-      "On-site execution handled seamlessly alongside your event producers, venue coordinators, and procurement contacts.",
+      "We coordinate the Luxe service requirements with your agency, event producer, venue or brand team before activation day.",
   },
 ] as const;
 
@@ -199,17 +199,17 @@ export const corporateFaqs = [
   {
     question: "Can Luxe support multiple setups?",
     answer:
-      "Multiple service setups are available for select events. For larger events, conferences and multi-space venues, additional Coffee Bar setups can be incorporated based on event scope, staffing, venue requirements and availability. Every request remains subject to date availability, equipment, venue access, travel, and the confirmed service plan.",
+      "Multiple Coffee Bar and Sweet Cart setups can be considered for larger activations, multi-space venues and peak guest periods based on event scope and availability.",
   },
   {
     question: "Can Luxe support multi-day corporate events?",
     answer:
-      "A multi-day request can be reviewed, but Luxe has not yet approved a universal multi-day operating model. Dates, daily schedules, menus, staffing, equipment, reset or storage requirements, replenishment, site access, and travel must be confirmed before Luxe represents the work as available.",
+      "Yes. Multi-day corporate service can be arranged depending on the event schedule, location, staffing, storage and venue requirements. Share your dates and itinerary with us so we can build the appropriate service plan.",
   },
   {
     question: "Can Luxe support recurring corporate programs?",
     answer:
-      "A recurring program can be reviewed, but Luxe has not yet approved a universal recurring-service model. Frequency, dates, locations, quantities, menus, staffing, equipment, storage, and venue requirements must be confirmed before Luxe represents the program as available.",
+      "Yes. Recurring office Coffee Bars, employee appreciation events and corporate hospitality programs can be arranged based on frequency, location and availability.",
   },
   {
     question: "What guest capacities can Luxe handle?",
@@ -229,6 +229,6 @@ export const corporateFaqs = [
   {
     question: "Which organizations has Luxe served?",
     answer:
-      "Luxe has permission to identify OPTrust, CST Savings, Convergint, ICNA Canada, and Waste Connections of Canada among the organizations it has served. Specific event details, outcomes, quotations, and case studies are published only when separately approved.",
+      "Luxe has provided event service for organizations including OPTrust, CST Savings, Convergint, ICNA Canada and Waste Connections of Canada.",
   },
 ] as const;

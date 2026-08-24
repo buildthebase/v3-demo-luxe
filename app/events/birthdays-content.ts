@@ -6,19 +6,19 @@ export const birthdayContexts = [
     number: "01",
     title: "Milestone birthdays",
     description:
-      "Celebrate 30th, 40th, 50th, or 80th birthdays with custom cocktail-style receptions, dinner service additions, or open-house dessert and coffee bars.",
+      "Celebrate 30th, 40th, 50th, or 80th birthdays with custom cocktail-style receptions, coffee, dessert and rental enhancements, or open-house dessert and coffee bars.",
   },
   {
     number: "02",
     title: "Adult celebrations",
     description:
-      "Enhance daytime brunches, cocktail parties, private dinners, or late-night dessert hours with espresso-style classics and signature beverages, Premium Matcha, and live treats.",
+      "Enhance daytime brunches, cocktail parties, private dinners, or late-night dessert hours with barista-served specialty coffee, Premium Matcha, signature beverages, and live treats.",
   },
   {
     number: "03",
     title: "Family birthdays",
     description:
-      "Serve multigenerational parties with warm dessert stations, specialty espresso for adults, and fun non-caffeinated beverages for younger guests.",
+      "Serve multigenerational parties with warm dessert stations, barista-served coffee and matcha for adults, and fun non-caffeinated beverages for younger guests.",
   },
   {
     number: "04",
@@ -37,7 +37,7 @@ export const birthdayExperiences = [
     image: imageAssets.experiences.coffeeBar,
     href: "/experiences/coffee-bar",
     description:
-      "Professional baristas serve espresso-style classics, Premium Matcha, signature birthday lattes, and specialty coffee beverages throughout your celebration.",
+      "Professional baristas provide specialty coffee and matcha service, signature birthday lattes, and specialty beverages throughout your celebration.",
   },
   {
     id: "dessert",
@@ -47,7 +47,7 @@ export const birthdayExperiences = [
     image: imageAssets.experiences.sweetCart,
     href: "/experiences/sweet-cart",
     description:
-      "Interactive live dessert catering featuring warm Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station, and the Luxe Churro Bar made fresh on-site for your guests. Soft Serve Add-On is available as an enhancement.",
+      "Interactive live dessert service with Luxe Sweet Cart options including Mini Dutch Pancakes, Belgian Waffles on a Stick, Mini Donuts and the Luxe Churro Bar. Your selected option or combination of options is confirmed in your proposal. Soft Serve Add-On is available with select dessert options as an optional enhancement and is not offered as a standalone service.",
   },
   {
     id: "seating",
@@ -57,7 +57,7 @@ export const birthdayExperiences = [
     image: imageAssets.experiences.seatingRentals,
     href: "/experiences/seating-rentals",
     description:
-      "White resin chairs, 6-ft tables, cocktail tables, linens, tents, tent lighting, and a dance floor for suitable birthday and backyard celebrations.",
+      "Select Luxe rentals include white resin chairs, 6-ft tables, cocktail tables, linens and tents. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'.",
   },
 ] satisfies readonly SignatureExperience[];
 
@@ -78,38 +78,45 @@ export const birthdayPersonalization = [
     number: "03",
     title: "Seating and room details",
     description:
-      "Coordinate seating layouts, high-top cocktail tables, premium linens, and accent lighting tailored to your venue dimensions and guest circulation.",
+      "Available linens can be incorporated where applicable to the selected Luxe rentals. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service.",
   },
 ] as const;
 
 export const birthdayCombinations = [
   {
     number: "01",
-    title: "The milestone café",
-    experiences: "Signature Coffee Bar + beverage service",
+    title: "Coffee Bar",
     description:
-      "A dedicated specialty beverage station featuring barista-served specialty coffee, Premium Matcha, and signature birthday lattes to anchor guest arrivals or late-night party hours.",
+      "Create a café-style birthday experience with specialty coffee, matcha and signature beverages.",
   },
   {
     number: "02",
-    title: "The interactive sweet moment",
-    experiences: "Sweet Cart + live dessert service",
+    title: "Sweet Cart",
     description:
-      "A live dessert station serving made-to-order Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station, or the Luxe Churro Bar that doubles as an engaging visual focal point for all ages.",
+      "Turn dessert into part of the entertainment with live preparation, sauces and toppings.",
   },
   {
     number: "03",
-    title: "The complete birthday setting",
-    experiences: "Coffee + Dessert + Rentals",
+    title: "Sweet Cart + Rentals",
     description:
-      "Coordinate barista coffee, a live dessert station, and confirmed chair, table, linen, or tent rentals through one Luxe inquiry.",
+      "Pair an interactive dessert experience with select seating, tables, linens or tenting.",
+  },
+  {
+    number: "04",
+    title: "Coffee + Dessert + Rentals",
+    description:
+      "Bring multiple Luxe services together through one coordinated inquiry.",
   },
 ] as const;
 
 export const birthdayGallery = [
-  { number: "01", label: "The arrival", note: "Coffee, matcha, menus, and guest hospitality.", tone: "arrival" },
-  { number: "02", label: "The sweet moment", note: "Live dessert, signage, toppings, and guest interaction.", tone: "centre" },
-  { number: "03", label: "The room", note: "Seating, tables, lighting, and celebration atmosphere.", tone: "room" },
+  { number: "01", label: "The milestone setup", note: "Adult or milestone birthday setup.", tone: "room" },
+  { number: "02", label: "The Coffee Bar", note: "Coffee Bar service within a birthday celebration.", tone: "arrival" },
+  { number: "03", label: "The Sweet Cart", note: "Sweet Cart actively preparing and serving dessert.", tone: "centre" },
+  { number: "04", label: "The personalized details", note: "Custom birthday signage and menu presentation.", tone: "arrival" },
+  { number: "05", label: "The guest experience", note: "Guests interacting with the Luxe service.", tone: "centre" },
+  { number: "06", label: "The rental setup", note: "Actual Luxe rentals arranged for the celebration.", tone: "room" },
+  { number: "07", label: "The wider celebration", note: "A wider view showing how the service fits into the event.", tone: "arrival" },
 ] as const;
 
 export const birthdayPlanning = [
@@ -149,17 +156,17 @@ export const birthdayFaqs = [
   {
     question: "Which non-coffee beverages are available?",
     answer:
-      "The Coffee Bar offers premium non-coffee choices including Premium Matcha Latte, Strawberry Matcha, chai latte, and hot chocolate. The final menu selections are made for the event.",
+      "Coffee Bar menus can include café favourites, signature beverages, premium matcha and selected non-coffee options based on the chosen experience.",
   },
   {
     question: "Which birthday desserts are available?",
     answer:
-      "Luxe Sweet Cart offers Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station, and the Luxe Churro Bar prepared on-site. Soft Serve Add-On is an enhancement. Sauces, standard toppings, premium toppings, quantities, and service format are confirmed in the proposal.",
+      "Luxe Sweet Cart options include Mini Dutch Pancakes, Belgian Waffles on a Stick, Mini Donuts and the Luxe Churro Bar. Your selected option or combination of options is confirmed in your proposal. Soft Serve Add-On is available with select dessert options as an optional enhancement and is not offered as a standalone service. Sauces, toppings, quantities and service format are confirmed in the proposal.",
   },
   {
     question: "Can coffee, dessert, and rentals be combined?",
     answer:
-      "Yes. Any one service can be booked independently, and several can be coordinated through one Luxe Event Co. inquiry and proposal journey. Availability, timing, placement, staffing, rental scope, access, and venue requirements must be confirmed.",
+      "Yes. Any one service can be booked independently, and several can be coordinated through one Luxe Event Co. inquiry and proposal journey. The final plan is tailored to the selected services, timing, placement, staffing, rental scope, access and venue requirements.",
   },
   {
     question: "How much does birthday dessert catering cost?",

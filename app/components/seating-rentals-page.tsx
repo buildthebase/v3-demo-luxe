@@ -7,6 +7,7 @@ import {
   rentalOperations,
   rentalServiceAreas,
   seatingRentalFaqs,
+  tentConfigurationOptions,
 } from "../experiences/seating-rentals-content";
 import { imageAssets, type ResponsiveImageAsset } from "../image-system";
 import { pageMetadata } from "../metadata-config";
@@ -36,10 +37,6 @@ const rentalCategoryImages: Record<string, ResponsiveImageAsset | undefined> = {
   "dance-floor": imageAssets.experiences.danceFloor,
   finishing: imageAssets.experiences.rentalFinishingPieces,
 };
-const rentalGalleryImages: Record<string, ResponsiveImageAsset | undefined> = {
-  layout: imageAssets.experiences.seatingGalleryLayoutInUse,
-  detail: imageAssets.experiences.seatingGalleryFinishingDetails,
-};
 const seatingRentalsSchema = createServicePageSchema({
   path: seatingRentalsPath,
   serviceId: divisionServiceIds.seating,
@@ -49,24 +46,49 @@ const seatingRentalsSchema = createServicePageSchema({
     "A focused collection of premium seating and event rentals for weddings, showers, backyard and outdoor events, birthdays, engagements, and private celebrations across Toronto and the GTA.",
   pageName: pageMetadata[seatingRentalsPath].title,
   pageDescription:
-    "Explore confirmed white resin chairs, 6-ft tables, cocktail tables, six event tents, linens, tent walls, tent lighting, and an 18-ft dance floor, with event-specific service options and complementary Luxe experiences.",
+    "Explore 300 White Resin Chairs, 25 6-ft rectangular tables, 10 Cocktail Tables, 3 × 20' × 20' tents, 2 × 10' × 10' tents, 1 × 15' × 15' tent, linens and tent walls. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'.",
   areaServed: createAreaServed(rentalServiceAreas),
 });
+
+function TentFootprintDiagram({
+  diagramGroups,
+  moduleSize,
+}: {
+  diagramGroups: readonly number[];
+  moduleSize: 10 | 15 | 20;
+}) {
+  return (
+    <div className="seating-tent-diagram" aria-hidden="true">
+      {diagramGroups.map((moduleCount, groupIndex) => (
+        <span className="seating-tent-diagram-choice" key={`${moduleCount}-${groupIndex}`}>
+          {groupIndex > 0 ? <span className="seating-tent-diagram-or">or</span> : null}
+          <span
+            className={`seating-tent-diagram-group seating-tent-diagram-${moduleSize}`}
+          >
+            {Array.from({ length: moduleCount }, (_, moduleIndex) => (
+              <i key={moduleIndex} />
+            ))}
+          </span>
+        </span>
+      ))}
+    </div>
+  );
+}
 
 function SeatingHero() {
   return (
     <header className="seating-hero" id="page-overview">
       <div className="seating-hero-copy">
         <p className="foundation-eyebrow">EVENT RENTALS IN TORONTO &amp; THE GTA</p>
-        <h1 aria-label="Event rentals for intimate celebrations, outdoor weddings, and beautifully planned gatherings.">
+        <h1 aria-label="Event rentals for intimate celebrations, outdoor weddings and beautifully planned gatherings across Toronto & the GTA.">
           <span>Event rentals for intimate celebrations,</span>
-          <span>outdoor weddings, and beautifully planned gatherings.</span>
+          <span>outdoor weddings and beautifully planned gatherings across Toronto &amp; the GTA.</span>
         </h1>
         <p>
-          From white resin chairs and tables to tents, linens, cocktail tables,
-          lighting, and a dance floor, Luxe provides the essential pieces for intimate
-          celebrations and outdoor weddings. Delivery and setup details are confirmed
-          for each proposal, with the option to add Luxe Coffee Bar and Luxe Sweet Cart.
+          A focused collection of chairs, tables, tents, linens and cocktail tables for
+          weddings, showers, birthdays and private events. Tent Lighting is available
+          with Luxe tent rentals and is not offered as a standalone service. Dance-floor
+          configurations available up to 18&apos; × 18&apos;.
         </p>
         <div className="seating-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">
@@ -117,13 +139,23 @@ function SeatingOverview() {
         <>
           <p>
             Luxe Seating Rentals provides chairs, tables, cocktail tables, tents,
-            linens, lighting, tent walls, and a dance floor for{" "}
+            linens and tent walls for{" "}
             <Link href="/events/weddings">weddings</Link>,{" "}
             <Link href="/events/baby-showers">baby showers</Link>,{" "}
             <Link href="/events/bridal-showers">bridal showers</Link>, birthdays,
             backyard gatherings, and{" "}
             <Link href="/events/private-events">private celebrations</Link> across
             Toronto and the GTA.
+          </p>
+          <p>
+            Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations
+            available up to 18&apos; × 18&apos;.
+          </p>
+          <p>
+            Luxe offers a focused rental collection rather than a broad
+            conference-furniture catalogue. Our rentals are best suited to events
+            requiring classic white seating, rectangular tables, cocktail tables,
+            tenting and related essentials.
           </p>
           <p>
             With Luxe Seating Rentals, Luxe Coffee Bar, and Luxe Sweet Cart under one
@@ -201,6 +233,50 @@ function RentalCategories() {
           );
         })}
       </div>
+      <section
+        className="seating-tent-specifications"
+        aria-labelledby="seating-tent-specifications-title"
+        data-evidence-status="pending-luxe-confirmation"
+      >
+        <header>
+          <p className="foundation-label">Tent coordination</p>
+          <h3 id="seating-tent-specifications-title">Available Tent Configurations</h3>
+        </header>
+        <div
+          className="seating-tent-specification-table"
+          role="table"
+          aria-label="Tent configurations and available setups"
+        >
+          <div className="seating-tent-specification-head" role="row">
+            <span role="columnheader">Configuration</span>
+            <span role="columnheader">Available setup</span>
+            <span role="columnheader">Footprint</span>
+          </div>
+          {tentConfigurationOptions.map((option) => (
+            <article className="seating-tent-specification-row" key={option.id} role="row">
+              <div role="cell">
+                <small aria-hidden="true">Configuration</small>
+                <strong>{option.configuration}</strong>
+              </div>
+              <div role="cell">
+                <small aria-hidden="true">Available setup</small>
+                <span>{option.setup}</span>
+              </div>
+              <div role="cell" aria-label={`${option.configuration} footprint diagram`}>
+                <small aria-hidden="true">Footprint</small>
+                <TentFootprintDiagram
+                  diagramGroups={option.diagramGroups}
+                  moduleSize={option.moduleSize}
+                />
+              </div>
+            </article>
+          ))}
+        </div>
+        <p className="seating-tent-specification-note">
+          Tent configurations are subject to inventory availability, site conditions
+          and event requirements.
+        </p>
+      </section>
     </section>
   );
 }
@@ -209,9 +285,9 @@ function LayoutInspiration() {
   return (
     <section className="seating-studies" aria-labelledby="seating-studies-title">
       <header>
-        <p className="foundation-label">Rental layout guidance</p>
+        <p className="foundation-label">Rental coordination</p>
         <h2 className="foundation-wide-heading" id="seating-studies-title">
-          Planning How the Rentals Fit
+          Coordinating How the Rentals Fit
         </h2>
       </header>
       <div>
@@ -240,11 +316,7 @@ function RentalOperations() {
         <p className="foundation-label">Delivery, setup, and teardown</p>
         <h2 id="seating-operations-title">Rental Delivery, Setup &amp; Pickup</h2>
         <p className="seating-operations-subtitle">
-          Available services and responsibilities are confirmed for each event.
-        </p>
-        <p>
-          The rental proposal clearly outlines the services, timing, access
-          requirements, responsibilities, and applicable fees included with the booking.
+          Delivery, setup and pickup options are quoted based on the rental order, venue location, access requirements and requested service. Setup is not automatically included with delivery unless specified in your proposal.
         </p>
       </header>
       <div className="seating-operation-grid">
@@ -267,7 +339,7 @@ function IndoorOutdoorApplications() {
     <section className="seating-applications" aria-labelledby="seating-applications-title">
       <header>
         <p className="foundation-label">Indoor and outdoor applications</p>
-        <h2 id="seating-applications-title">Indoor &amp; Outdoor Rental Planning</h2>
+        <h2 id="seating-applications-title">Indoor &amp; Outdoor Rental Coordination.</h2>
         <p className="seating-applications-subtitle">
           Every setting calls for a different approach.
         </p>
@@ -278,7 +350,7 @@ function IndoorOutdoorApplications() {
           <div className="seating-application-photo">
             <ResponsiveImage asset={imageAssets.experiences.seatingIndoorApplication} fill />
           </div>
-          <h3>Indoor venue planning and site logistics</h3>
+          <h3>Indoor rental coordination and site logistics</h3>
           <p>
             For indoor events, room dimensions, access, delivery timing, and the areas
             available for guest seating, dining, displays, and service help determine
@@ -290,12 +362,13 @@ function IndoorOutdoorApplications() {
           <div className="seating-application-photo">
             <ResponsiveImage asset={imageAssets.experiences.seatingOutdoorApplication} fill />
           </div>
-          <h3>Outdoor event planning and weather contingency</h3>
+          <h3>Outdoor rental coordination and weather contingency</h3>
           <p>
             For backyard and outdoor events, we review the available footprint, ground
             surface, access, tent size, wind and weather considerations, and space needed
-            for tables, chairs, service, and the dance floor. Suitability and any
-            contingency requirements must be confirmed for the specific site and event.
+            for tables, chairs and service. Dance-floor configurations available up to
+            18&apos; × 18&apos;. Suitability and any contingency requirements must be confirmed
+            for the specific site and event.
           </p>
         </article>
       </div>
@@ -307,7 +380,7 @@ function RentalEvents() {
   return (
     <section className="seating-events" aria-labelledby="seating-events-title">
       <header>
-        <p className="foundation-label">Recommended by occasion</p>
+        <p className="foundation-label">Ideal events</p>
         <h2 className="foundation-wide-heading" id="seating-events-title">
           <span>Rentals made for the celebrations</span>
           <span>we know how to support.</span>
@@ -334,34 +407,25 @@ function RentalGallery() {
         <p className="foundation-label">Rental gallery</p>
         <h2 id="seating-gallery-title">The rental setup, seen as part of the celebration.</h2>
         <p>
-          Full-setting views will show how chairs, tables, tents, linens, lighting,
-          and the dance floor come together in real indoor and outdoor celebrations.
+          Full-setting views will show how chairs, tables, tents and linens come together
+          in real indoor and outdoor celebrations. Tent Lighting is available with Luxe
+          tent rentals and is not offered as a standalone service. Dance-floor configurations
+          available up to 18&apos; × 18&apos;.
         </p>
       </header>
-      <div className="seating-gallery-grid" data-asset-status="approved-photography">
-        {rentalGalleryPreview.map((item) => {
-          const galleryImage = rentalGalleryImages[item.tone];
-
-          return (
-            <figure className={`seating-gallery-${item.tone}`} key={item.number}>
-              <div
-                className={galleryImage ? "seating-gallery-photo" : undefined}
-                aria-hidden={!galleryImage}
-              >
-                {galleryImage ? (
-                  <ResponsiveImage asset={galleryImage} fill />
-                ) : (
-                  <><i /><i /><i /></>
-                )}
-              </div>
-              <figcaption>
-                <span>{item.number}</span>
-                <h3>{item.label}</h3>
-                <small>{item.note}</small>
-              </figcaption>
-            </figure>
-          );
-        })}
+      <div className="seating-gallery-grid" data-asset-status="awaiting-luxe-photography">
+        {rentalGalleryPreview.map((item) => (
+          <figure className={`seating-gallery-${item.tone}`} key={item.number}>
+            <div className="seating-gallery-hold" aria-hidden="true">
+              <span>Image placement reserved</span>
+            </div>
+            <figcaption>
+              <span>{item.number}</span>
+              <h3>{item.label}</h3>
+              <small>{item.note}</small>
+            </figcaption>
+          </figure>
+        ))}
       </div>
       <Link href="/gallery">Explore the Luxe event gallery <span aria-hidden="true">↗︎</span></Link>
     </section>
@@ -394,7 +458,12 @@ function RentalCombinations() {
     >
       <header>
         <p className="foundation-label">Within the Luxe family</p>
-        <h2 id="seating-combinations-title">One Team for the Core Rentals, Coffee &amp; Dessert</h2>
+        <h2 id="seating-combinations-title">One Team for Rentals, Coffee &amp; Dessert</h2>
+        <p>
+          Bring the core pieces of your event together through one inquiry. Pair Luxe
+          rentals with our mobile Coffee Bar or live Sweet Cart experience without
+          coordinating multiple vendors.
+        </p>
       </header>
       <div>
         <Link href="/experiences/coffee-bar">

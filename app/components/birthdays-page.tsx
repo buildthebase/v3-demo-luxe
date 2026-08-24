@@ -35,15 +35,14 @@ function BirthdayHero() {
     <header className="birthday-hero" id="page-overview">
       <div className="birthday-hero-copy">
         <p className="foundation-eyebrow">Birthdays / Toronto &amp; the GTA</p>
-        <h1 aria-label="Birthday dessert catering, coffee bars, and rentals in Toronto">
-          <span>Birthday dessert catering,</span>
-          <span>coffee bars, and rentals</span>
-          <span>in Toronto</span>
+        <h1 aria-label="Birthday coffee bars, live dessert catering and event rentals in Toronto">
+          <span>Birthday coffee bars,</span>
+          <span>live dessert catering and</span>
+          <span>event rentals in Toronto.</span>
         </h1>
         <p>
-          Interactive live dessert carts, mobile espresso bars, matcha, and boutique
-          seating rentals designed for adult milestones, family gatherings, and
-          private birthday celebrations across Toronto and the GTA.
+          Create a birthday experience around the person being celebrated with
+          specialty coffee and matcha, interactive desserts and select Luxe rentals.
         </p>
         <div className="birthday-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">
@@ -151,8 +150,8 @@ function BirthdayPersonalization() {
       <header>
         <h2 id="birthday-personalization-title">Personalized birthday menus, signage, and room details</h2>
         <p>
-          Tailor drink menus, custom cart signage, and event styling elements to
-          reflect the guest of honour.
+          Tailor drink menus, custom signage, service presentation and select rental
+          enhancements to reflect the guest of honour.
         </p>
       </header>
       <div>
@@ -169,12 +168,12 @@ function BirthdayCombinations() {
   return (
     <section className="birthday-combinations" aria-labelledby="birthday-combinations-title">
       <header>
-        <h2 className="foundation-wide-heading" id="birthday-combinations-title">Birthday service combinations built around the milestone</h2>
-        <p>Flexible service pairings designed around your event layout, guest flow, and milestone timing.</p>
+        <h2 className="foundation-wide-heading" id="birthday-combinations-title">Birthday service inspiration</h2>
+        <p>One experience or several. Build your Luxe services around the celebration.</p>
       </header>
       <div>
         {birthdayCombinations.map((item) => (
-          <article key={item.number}><h3>{item.title}: {item.experiences}</h3><p>{item.description}</p>
+          <article key={item.number}><h3>{item.title}</h3><p>{item.description}</p>
           </article>
         ))}
       </div>
