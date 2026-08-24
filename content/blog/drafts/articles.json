@@ -2185,5 +2185,551 @@
       "briefApprovedAt": "2026-08-12T20:00:51.036Z",
       "outlineApprovedAt": "2026-08-12T20:02:10.596Z"
     }
+  },
+  {
+    "schemaVersion": 1,
+    "slug": "what-to-share-before-requesting-an-event-proposal",
+    "title": "What to share before requesting an event proposal",
+    "seoTitle": "What to Share Before Requesting an Event Proposal",
+    "description": "A practical guide to the event details that help Luxe Event Co. shape coffee, dessert, and rental recommendations across Toronto and the GTA.",
+    "excerpt": "A clear brief helps align the guest count, venue, timing, service mix, and operating details before a tailored proposal takes shape.",
+    "category": "Event Planning",
+    "publishDate": "2026-08-04T09:00:00-04:00",
+    "modifiedDate": "2026-08-24T05:43:01.113Z",
+    "author": {
+      "name": "Luxe Event Co.",
+      "type": "Organization",
+      "url": "https://luxeeventco.ca"
+    },
+    "heroImage": null,
+    "heroAlt": "",
+    "socialImage": null,
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "lorem-ipsum",
+        "level": 2,
+        "text": "Lorem ipsum dolor sit amet"
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "consectetur-adipiscing",
+        "level": 2,
+        "text": "Consectetur adipiscing elit"
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "sed-do-eiusmod",
+        "level": 2,
+        "text": "Sed do eiusmod tempor incididunt"
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor."
+          }
+        ]
+      }
+    ],
+    "relatedArticleSlugs": [
+      "how-to-plan-mobile-coffee-catering",
+      "event-rentals-and-guest-flow"
+    ],
+    "status": "draft",
+    "claims": [],
+    "generation": null
+  },
+  {
+    "schemaVersion": 1,
+    "slug": "how-to-plan-mobile-coffee-catering",
+    "title": "How to plan mobile coffee catering for an event",
+    "seoTitle": "How to Plan Mobile Coffee Catering for an Event",
+    "description": "Plan mobile coffee catering around guest count, timing, menu choices, venue access, and event flow in Toronto and the GTA.",
+    "excerpt": "The strongest coffee service plans connect the beverage menu, station footprint, staffing, and service timing to the rhythm of the gathering.",
+    "category": "Coffee Catering",
+    "publishDate": "2026-07-31T09:00:00-04:00",
+    "modifiedDate": "2026-08-24T05:43:01.113Z",
+    "author": {
+      "name": "Luxe Event Co.",
+      "type": "Organization",
+      "url": "https://luxeeventco.ca"
+    },
+    "heroImage": null,
+    "heroAlt": "",
+    "socialImage": null,
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "lorem-ipsum",
+        "level": 2,
+        "text": "Lorem ipsum dolor sit amet"
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "consectetur-adipiscing",
+        "level": 2,
+        "text": "Consectetur adipiscing elit"
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "sed-do-eiusmod",
+        "level": 2,
+        "text": "Sed do eiusmod tempor incididunt"
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor."
+          }
+        ]
+      }
+    ],
+    "relatedArticleSlugs": [
+      "what-to-share-before-requesting-an-event-proposal",
+      "coffee-and-dessert-in-a-wedding-timeline"
+    ],
+    "status": "draft",
+    "claims": [],
+    "generation": null
+  },
+  {
+    "schemaVersion": 1,
+    "slug": "planning-a-live-dessert-experience",
+    "title": "What to consider when planning a live dessert experience",
+    "seoTitle": "Planning a Live Dessert Catering Experience",
+    "description": "Plan a live dessert cart around menu, timing, guest interaction, venue placement, and service flow for events in Toronto and the GTA.",
+    "excerpt": "Live dessert becomes part of the occasion when preparation, presentation, and guest interaction are considered as one experience.",
+    "category": "Dessert Catering",
+    "publishDate": "2026-07-27T09:00:00-04:00",
+    "modifiedDate": "2026-08-24T05:43:01.113Z",
+    "author": {
+      "name": "Luxe Event Co.",
+      "type": "Organization",
+      "url": "https://luxeeventco.ca"
+    },
+    "heroImage": null,
+    "heroAlt": "",
+    "socialImage": null,
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "lorem-ipsum",
+        "level": 2,
+        "text": "Lorem ipsum dolor sit amet"
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "consectetur-adipiscing",
+        "level": 2,
+        "text": "Consectetur adipiscing elit"
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "sed-do-eiusmod",
+        "level": 2,
+        "text": "Sed do eiusmod tempor incididunt"
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor."
+          }
+        ]
+      }
+    ],
+    "relatedArticleSlugs": [
+      "coffee-and-dessert-in-a-wedding-timeline",
+      "thoughtfully-hosted-private-events"
+    ],
+    "status": "draft",
+    "claims": [],
+    "generation": null
+  },
+  {
+    "schemaVersion": 1,
+    "slug": "coffee-and-dessert-in-a-wedding-timeline",
+    "title": "Where coffee and live dessert fit into a wedding timeline",
+    "seoTitle": "Coffee and Live Dessert in a Wedding Timeline",
+    "description": "Ideas for placing mobile coffee and live dessert within a wedding timeline, from guest arrival through the evening celebration.",
+    "excerpt": "Coffee and live dessert can support distinct wedding moments when each service is coordinated with the venue, schedule, and guest experience.",
+    "category": "Weddings",
+    "publishDate": "2026-07-18T09:00:00-04:00",
+    "modifiedDate": "2026-08-24T05:43:01.113Z",
+    "author": {
+      "name": "Luxe Event Co.",
+      "type": "Organization",
+      "url": "https://luxeeventco.ca"
+    },
+    "heroImage": null,
+    "heroAlt": "",
+    "socialImage": null,
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "lorem-ipsum",
+        "level": 2,
+        "text": "Lorem ipsum dolor sit amet"
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "consectetur-adipiscing",
+        "level": 2,
+        "text": "Consectetur adipiscing elit"
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "sed-do-eiusmod",
+        "level": 2,
+        "text": "Sed do eiusmod tempor incididunt"
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor."
+          }
+        ]
+      }
+    ],
+    "relatedArticleSlugs": [
+      "how-to-plan-mobile-coffee-catering",
+      "planning-a-live-dessert-experience"
+    ],
+    "status": "draft",
+    "claims": [],
+    "generation": null
+  },
+  {
+    "schemaVersion": 1,
+    "slug": "corporate-event-hospitality-planning",
+    "title": "Planning hospitality for corporate events and conferences",
+    "seoTitle": "Corporate Event and Conference Hospitality Planning",
+    "description": "Plan coffee, dessert, and event rentals for corporate events, conferences, multi-day programs, and recurring workplace hospitality.",
+    "excerpt": "Corporate hospitality becomes more effective when service timing, capacity, venue operations, and the purpose of each event moment are planned together.",
+    "category": "Corporate Events",
+    "publishDate": "2026-07-14T09:00:00-04:00",
+    "modifiedDate": "2026-08-24T05:43:01.113Z",
+    "author": {
+      "name": "Luxe Event Co.",
+      "type": "Organization",
+      "url": "https://luxeeventco.ca"
+    },
+    "heroImage": null,
+    "heroAlt": "",
+    "socialImage": null,
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "lorem-ipsum",
+        "level": 2,
+        "text": "Lorem ipsum dolor sit amet"
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "consectetur-adipiscing",
+        "level": 2,
+        "text": "Consectetur adipiscing elit"
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "sed-do-eiusmod",
+        "level": 2,
+        "text": "Sed do eiusmod tempor incididunt"
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor."
+          }
+        ]
+      }
+    ],
+    "relatedArticleSlugs": [
+      "what-to-share-before-requesting-an-event-proposal",
+      "branded-hospitality-for-brand-activations"
+    ],
+    "status": "draft",
+    "claims": [],
+    "generation": null
+  },
+  {
+    "schemaVersion": 1,
+    "slug": "branded-hospitality-for-brand-activations",
+    "title": "How branded hospitality supports an event activation",
+    "seoTitle": "How Branded Hospitality Supports Event Activations",
+    "description": "Explore how coffee, matcha, live dessert, custom cups, signage, and presentation can support a brand activation or campaign event.",
+    "excerpt": "A hospitality touchpoint can encourage conversation and guest participation while carrying the campaign through menus, cups, signage, and presentation.",
+    "category": "Brand Activations",
+    "publishDate": "2026-07-10T09:00:00-04:00",
+    "modifiedDate": "2026-08-24T05:43:01.113Z",
+    "author": {
+      "name": "Luxe Event Co.",
+      "type": "Organization",
+      "url": "https://luxeeventco.ca"
+    },
+    "heroImage": null,
+    "heroAlt": "",
+    "socialImage": null,
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "lorem-ipsum",
+        "level": 2,
+        "text": "Lorem ipsum dolor sit amet"
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "consectetur-adipiscing",
+        "level": 2,
+        "text": "Consectetur adipiscing elit"
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "sed-do-eiusmod",
+        "level": 2,
+        "text": "Sed do eiusmod tempor incididunt"
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor."
+          }
+        ]
+      }
+    ],
+    "relatedArticleSlugs": [
+      "corporate-event-hospitality-planning",
+      "how-to-plan-mobile-coffee-catering"
+    ],
+    "status": "draft",
+    "claims": [],
+    "generation": null
+  },
+  {
+    "schemaVersion": 1,
+    "slug": "thoughtfully-hosted-private-events",
+    "title": "How to make a private celebration feel thoughtfully hosted",
+    "seoTitle": "How to Thoughtfully Host a Private Event",
+    "description": "Practical hospitality ideas for engagements, graduations, holidays, birthdays, milestones, and other private events.",
+    "excerpt": "A private celebration feels considered when its welcome, menu, shared moments, seating, and service rhythm all support the occasion.",
+    "category": "Private Events",
+    "publishDate": "2026-07-07T09:00:00-04:00",
+    "modifiedDate": "2026-08-24T05:43:01.113Z",
+    "author": {
+      "name": "Luxe Event Co.",
+      "type": "Organization",
+      "url": "https://luxeeventco.ca"
+    },
+    "heroImage": null,
+    "heroAlt": "",
+    "socialImage": null,
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "lorem-ipsum",
+        "level": 2,
+        "text": "Lorem ipsum dolor sit amet"
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "consectetur-adipiscing",
+        "level": 2,
+        "text": "Consectetur adipiscing elit"
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "sed-do-eiusmod",
+        "level": 2,
+        "text": "Sed do eiusmod tempor incididunt"
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor."
+          }
+        ]
+      }
+    ],
+    "relatedArticleSlugs": [
+      "planning-a-live-dessert-experience",
+      "event-rentals-and-guest-flow"
+    ],
+    "status": "draft",
+    "claims": [],
+    "generation": null
   }
 ]
