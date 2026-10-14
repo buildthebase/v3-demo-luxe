@@ -11683,17 +11683,24 @@ body .foundation-shell main:is(
 
   .home-cinematic-hero[data-phase="together"] .home-cinematic-panel-coffee {
     z-index: 2;
-    animation: home-mobile-carousel-coffee 21s linear infinite;
+    opacity: 0;
   }
 
   .home-cinematic-hero[data-phase="together"] .home-cinematic-panel-dessert {
     z-index: 2;
-    animation: home-mobile-carousel-dessert 21s linear infinite;
+    opacity: 0;
   }
 
   .home-cinematic-hero[data-phase="together"] .home-cinematic-panel-seating {
     z-index: 2;
-    animation: home-mobile-carousel-seating 21s linear infinite;
+    opacity: 0;
+  }
+
+  .home-cinematic-hero[data-phase="together"][data-mobile-clip="coffee"] .home-cinematic-panel-coffee,
+  .home-cinematic-hero[data-phase="together"][data-mobile-clip="dessert"] .home-cinematic-panel-dessert,
+  .home-cinematic-hero[data-phase="together"][data-mobile-clip="seating"] .home-cinematic-panel-seating {
+    z-index: 3;
+    opacity: 1;
   }
 }
 

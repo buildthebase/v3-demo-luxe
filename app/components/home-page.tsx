@@ -33,6 +33,10 @@ const homeSignatureExperiences: readonly SignatureExperience[] = [
     name: "Luxe Coffee Bar: Specialty Coffee & Matcha Service",
     headingLead: "Luxe Coffee Bar:",
     headingDetail: "Specialty Coffee & Matcha Service",
+    carouselImages: [
+      { id: "home-coffee-core-1-wide", src: "/images/home/coffee-core-1-wide.webp", alt: "Personalized Luxe Coffee Bar with a gold Leandro Mercado do Café front panel in an ivory indoor event setting", width: 1254, height: 1254, sizes: "(max-width: 700px) 100vw, 33vw", unoptimized: true, status: "approved", format: "webp" },
+      { id: "home-coffee-core-2-wide", src: "/images/home/coffee-core-2-wide.webp", alt: "White Luxe Coffee Bar with Love is brewing signage beneath a fringed umbrella in an outdoor garden setting", width: 1254, height: 1254, sizes: "(max-width: 700px) 100vw, 33vw", unoptimized: true, status: "approved", format: "webp" },
+    ],
     description:
       "Barista-served specialty coffee and matcha service for weddings, corporate arrivals, cocktail hours, and late-night hospitality across Toronto.",
     image: {
@@ -49,7 +53,14 @@ const homeSignatureExperiences: readonly SignatureExperience[] = [
       "Live dessert preparation and interactive sweet cart experiences designed to create memorable moments for your guests.",
     image: {
       ...signatureExperiences[1].image,
-      alt: "Luxe live interactive dessert cart station prepared for guests at a Toronto event",
+      id: "home-sweet-cart-core-wide",
+      src: "/images/home/sweet-cart-core-wide.webp",
+      alt: "Centered Luxe Sweet Cart with three globe lights in an evening event venue",
+      width: 1254,
+      height: 1254,
+      sizes: "(max-width: 700px) 100vw, 33vw",
+      unoptimized: true,
+      format: "webp",
     },
   },
   {
@@ -61,7 +72,14 @@ const homeSignatureExperiences: readonly SignatureExperience[] = [
       "White resin chairs, 6-ft tables, cocktail tables, event tents and linens for weddings and private celebrations. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'.",
     image: {
       ...signatureExperiences[2].image,
-      alt: "Luxe white resin chairs and event tables arranged for an outdoor Toronto wedding reception",
+      id: "home-rentals-core-garden",
+      src: "/images/home/rentals-core-garden.webp",
+      alt: "Overhead view of a garden celebration with white and clear-top tents, banquet tables, chairs and warm tent lighting",
+      width: 1254,
+      height: 1254,
+      sizes: "(max-width: 700px) 100vw, 33vw",
+      unoptimized: true,
+      format: "webp",
     },
   },
 ];

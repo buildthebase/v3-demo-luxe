@@ -445,6 +445,34 @@
   }
 }
 
+.home-page .experience-selector-copy-link {
+  display: flex;
+  color: inherit;
+  text-decoration: none;
+}
+
+.home-page .signature-selector-copy,
+.foundation-shell .home-page .signature-selector-heading,
+.foundation-shell .home-page .signature-selector-heading-detail,
+.home-page .signature-selector-copy > span:nth-of-type(2) {
+  width: 100%;
+  max-width: none;
+}
+
+.signature-selector-keep-together { white-space: nowrap; }
+.experience-image-carousel { position: relative; }
+.home-page .experience-image-carousel .experience-image-slide:first-child .signature-selector-image { object-position: center 60%; }
+.home-page .experience-image-carousel .experience-image-slide:nth-child(2) .signature-selector-image { object-position: center 55%; }
+.home-page .signature-selector-choice:hover .experience-image-carousel .signature-selector-image { transform: none; }
+.home-page .signature-selector-dessert .signature-selector-image { object-position: center center; }
+.home-page .signature-selector-dessert:hover .signature-selector-image { transform: none; }
+.experience-image-slide { position: absolute; inset: 0; opacity: 0; pointer-events: none; transition: opacity 600ms ease-in-out; }
+.experience-image-slide.is-active { opacity: 1; pointer-events: auto; }
+.experience-image-controls { position: absolute; z-index: 3; bottom: 12px; right: 12px; display: flex; align-items: center; gap: 10px; padding: 6px; background: rgba(255, 255, 255, .94); color: #242424; }
+.experience-image-controls button { border: 0; background: transparent; color: inherit; min-width: 36px; min-height: 36px; cursor: pointer; }
+.experience-image-controls span { font-size: 12px; }
+@media (prefers-reduced-motion: reduce) { .experience-image-slide { transition: none; } }
+
 @media (max-width: 950px) {
   .foundation-shell .home-page .home-hero-copy h1,
   .foundation-shell .home-page .home-cinematic-copy h1 {
@@ -453,6 +481,14 @@
 }
 
 @media (max-width: 700px) {
+  .foundation-shell .home-page > .signature-selector .signature-selector-copy,
+  .foundation-shell .home-page > .signature-selector .signature-selector-heading,
+  .foundation-shell .home-page > .signature-selector .signature-selector-heading-detail,
+  .foundation-shell .home-page > .signature-selector .signature-selector-copy > span:nth-of-type(2) {
+    width: 100%;
+    max-width: none;
+  }
+
   .foundation-shell .home-page > .signature-selector
     .signature-selector-heading-lead,
   .foundation-shell .home-page > .signature-selector

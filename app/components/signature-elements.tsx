@@ -17,6 +17,7 @@ import {
 } from "../signature-elements";
 import { ResponsiveImage } from "./responsive-image";
 import { QuoteModalTrigger } from "./quote-modal-trigger";
+import { ExperienceImageCarousel } from "./experience-image-carousel";
 
 const experienceSelectorActions: Record<string, string> = {
   coffee: "Sip",
@@ -140,11 +141,36 @@ export function ExperienceSelector({
                 {experience.headingLead}
               </span>{" "}
               <span className="signature-selector-heading-detail">
-                {experience.headingDetail}
+                {experience.carouselImages && experience.headingDetail.endsWith("Matcha Service") ? <>{experience.headingDetail.slice(0, -14)}<span className="signature-selector-keep-together">Matcha Service</span></> : experience.headingDetail}
               </span>
             </>
           ) : experience.name;
 
+          const copy = (
+              <div className="signature-selector-copy">
+                <span className="signature-selector-label">{experience.label}</span>
+                {useItemHeadings ? (
+                  <h3 className="signature-selector-heading">{heading}</h3>
+                ) : (
+                  <strong className="signature-selector-heading">{heading}</strong>
+                )}
+                {experience.tagline ? (
+                  <em className="signature-selector-tagline">{experience.tagline}</em>
+                ) : null}
+                <span>{experience.description}</span>
+                <b aria-hidden="true">
+                  {experienceSelectorActions[experience.id] ?? "Explore"} ↗︎
+                </b>
+              </div>
+          );
+          if (experience.carouselImages) {
+            return (
+              <div className={`signature-selector-choice signature-selector-${experience.id}`} id={`experience-selector-${experience.id}`} key={experience.id}>
+                <ExperienceImageCarousel images={experience.carouselImages} href={experience.href} />
+                <Link href={experience.href} className="experience-selector-copy-link">{copy}</Link>
+              </div>
+            );
+          }
           return (
             <Link
               className={`signature-selector-choice signature-selector-${experience.id}`}
@@ -163,21 +189,7 @@ export function ExperienceSelector({
                   />
                 )}
               </span>
-              <div className="signature-selector-copy">
-                <span className="signature-selector-label">{experience.label}</span>
-                {useItemHeadings ? (
-                  <h3 className="signature-selector-heading">{heading}</h3>
-                ) : (
-                  <strong className="signature-selector-heading">{heading}</strong>
-                )}
-                {experience.tagline ? (
-                  <em className="signature-selector-tagline">{experience.tagline}</em>
-                ) : null}
-                <span>{experience.description}</span>
-                <b aria-hidden="true">
-                  {experienceSelectorActions[experience.id] ?? "Explore"} ↗︎
-                </b>
-              </div>
+              {copy}
             </Link>
           );
         })}

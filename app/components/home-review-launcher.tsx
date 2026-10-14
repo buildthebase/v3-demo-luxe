@@ -3,9 +3,9 @@
 import { useRef } from "react";
 
 const reviewDestinations = [
-  { href: "#review-coffee", label: "Coffee Bar" },
-  { href: "#review-coffee-dessert", label: "Coffee Bar + Sweet Cart" },
-  { href: "#review-coffee-seating", label: "Coffee Bar + Seating Rentals" },
+  { href: "https://share.google/e1m6G5fgm6E2cHZS1", label: "Luxe Coffee Bar" },
+  { href: "https://share.google/kYktuzaI5E0tVlGFN", label: "Luxe Sweet Cart" },
+  { href: "https://share.google/eX284kqBBFmcwTFJX", label: "Luxe Seating Rentals" },
 ] as const;
 
 export function HomeReviewLauncher() {
@@ -61,10 +61,12 @@ export function HomeReviewLauncher() {
               <a
                 href={destination.href}
                 key={destination.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => dialogRef.current?.close()}
               >
                 <span>{destination.label}</span>
-                <b aria-hidden="true">↘︎</b>
+                <b aria-hidden="true">↗︎</b>
               </a>
             ))}
           </div>

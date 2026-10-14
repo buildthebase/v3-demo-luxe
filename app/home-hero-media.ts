@@ -18,8 +18,9 @@ export const homeHeroTimeline = {
   clipDurationMs: 3000,
   finalClipDurationMs: 7000,
   crossfadeMs: 500,
-  loopCrossfadeMs: 750,
-  phaseStartsMs: [0, 2500, 5000, 7500] as const,
+  loopCrossfadeMs: 500,
+  gatherLoopCrossfadeMs: 1000,
+  phaseStartsMs: [0, 3000, 6000, 9000] as const,
   finalPhaseIndex: 3,
 } as const;
 

@@ -11,6 +11,7 @@ export type SignatureExperience = {
   description: string;
   href: string;
   image: ResponsiveImageAsset;
+  carouselImages?: readonly ResponsiveImageAsset[];
   video?: {
     mp4: string;
     webm: string;
