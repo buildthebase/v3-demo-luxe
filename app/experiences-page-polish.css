@@ -1,12 +1,19 @@
 /* Experiences hub mobile composition refinements. */
 .foundation-shell .experiences-page .experiences-hero-world {
-  aspect-ratio: 1375 / 1144;
+  aspect-ratio: 1402 / 1122;
   min-height: 0;
   overflow: hidden;
 }
 
 .foundation-shell .experiences-page .experiences-hero-world img {
   display: block;
+}
+
+/* Keep the source framing and full-resolution AVIF detail; the light grade
+   lifts the six supporting photos without regenerating their subjects. */
+.foundation-shell .experiences-page .experiences-feature-art img,
+.foundation-shell .experiences-page .experiences-gallery-grid img {
+  filter: brightness(1.035) contrast(1.055) saturate(1.025);
 }
 
 .foundation-shell .experiences-page

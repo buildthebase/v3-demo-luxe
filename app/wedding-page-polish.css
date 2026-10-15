@@ -715,15 +715,15 @@
 }
 
 .wedding-gallery-room img {
-  object-position: center 68%;
+  object-position: center center;
 }
 
 .wedding-gallery-dessert img {
-  object-position: center 67%;
+  object-position: center center;
 }
 
 .wedding-gallery-welcome img {
-  object-position: center 44%;
+  object-position: center center;
 }
 
 .wedding-overview > div:last-child p:last-child {
@@ -761,7 +761,7 @@
   }
 
   .wedding-gallery-room img {
-    filter: brightness(1.15);
+    filter: none;
   }
 }
 

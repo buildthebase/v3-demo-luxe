@@ -33,16 +33,8 @@ const homeSignatureExperiences: readonly SignatureExperience[] = [
     name: "Luxe Coffee Bar: Specialty Coffee & Matcha Service",
     headingLead: "Luxe Coffee Bar:",
     headingDetail: "Specialty Coffee & Matcha Service",
-    carouselImages: [
-      { id: "home-coffee-core-1-wide", src: "/images/home/coffee-core-1-wide.webp", alt: "Personalized Luxe Coffee Bar with a gold Leandro Mercado do Café front panel in an ivory indoor event setting", width: 1254, height: 1254, sizes: "(max-width: 700px) 100vw, 33vw", unoptimized: true, status: "approved", format: "webp" },
-      { id: "home-coffee-core-2-wide", src: "/images/home/coffee-core-2-wide.webp", alt: "White Luxe Coffee Bar with Love is brewing signage beneath a fringed umbrella in an outdoor garden setting", width: 1254, height: 1254, sizes: "(max-width: 700px) 100vw, 33vw", unoptimized: true, status: "approved", format: "webp" },
-    ],
     description:
       "Barista-served specialty coffee and matcha service for weddings, corporate arrivals, cocktail hours, and late-night hospitality across Toronto.",
-    image: {
-      ...signatureExperiences[0].image,
-      alt: "Luxe premium mobile Coffee Bar serving specialty coffee, matcha, and custom iced drinks at a Toronto event",
-    },
   },
   {
     ...signatureExperiences[1],
@@ -51,17 +43,6 @@ const homeSignatureExperiences: readonly SignatureExperience[] = [
     headingDetail: "Live Interactive Dessert Station",
     description:
       "Live dessert preparation and interactive sweet cart experiences designed to create memorable moments for your guests.",
-    image: {
-      ...signatureExperiences[1].image,
-      id: "home-sweet-cart-core-wide",
-      src: "/images/home/sweet-cart-core-wide.webp",
-      alt: "Centered Luxe Sweet Cart with three globe lights in an evening event venue",
-      width: 1254,
-      height: 1254,
-      sizes: "(max-width: 700px) 100vw, 33vw",
-      unoptimized: true,
-      format: "webp",
-    },
   },
   {
     ...signatureExperiences[2],
@@ -70,17 +51,6 @@ const homeSignatureExperiences: readonly SignatureExperience[] = [
     headingDetail: "Chair, Table & Tent Rentals",
     description:
       "White resin chairs, 6-ft tables, cocktail tables, event tents and linens for weddings and private celebrations. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'.",
-    image: {
-      ...signatureExperiences[2].image,
-      id: "home-rentals-core-garden",
-      src: "/images/home/rentals-core-garden.webp",
-      alt: "Overhead view of a garden celebration with white and clear-top tents, banquet tables, chairs and warm tent lighting",
-      width: 1254,
-      height: 1254,
-      sizes: "(max-width: 700px) 100vw, 33vw",
-      unoptimized: true,
-      format: "webp",
-    },
   },
 ];
 
@@ -123,7 +93,7 @@ export function HomePage() {
           context="Luxe Coffee Bar"
           quote="The coffee bar became a natural gathering point—thoughtful drinks, warm service, and a polished experience guests returned to throughout the evening."
           links={[
-            { href: "/experiences/coffee-bar", label: "Explore Coffee Bar" },
+            { href: "/experiences/coffee-bar", label: "Discover the experience" },
           ]}
         />
         <section id="combinations" className="home-experience-cta" aria-labelledby="home-experience-cta-title">
@@ -149,8 +119,7 @@ export function HomePage() {
           context="Coffee Bar + Sweet Cart"
           quote="The coffee and live dessert service felt like one complete experience, carrying guests naturally from the first sip to the final indulgence."
           links={[
-            { href: "/experiences/coffee-bar", label: "Explore Coffee Bar" },
-            { href: "/experiences/sweet-cart", label: "Explore Sweet Cart" },
+            { href: "/experiences", label: "Explore the possibilities" },
           ]}
         />
         <HomeEventCategories />
@@ -161,8 +130,7 @@ export function HomePage() {
           context="Coffee Bar + Seating Rentals"
           quote="Coffee service and intentional seating worked beautifully together, giving guests a comfortable place to connect, settle in, and stay awhile."
           links={[
-            { href: "/experiences/coffee-bar", label: "Explore Coffee Bar" },
-            { href: "/experiences/seating-rentals", label: "Explore Seating Rentals" },
+            { href: "/experiences", label: "Find your Luxe" },
           ]}
         />
         <HomeWorkingExperience />

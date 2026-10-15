@@ -18,6 +18,7 @@ import {
 import { ResponsiveImage } from "./responsive-image";
 import { QuoteModalTrigger } from "./quote-modal-trigger";
 import { ExperienceImageCarousel } from "./experience-image-carousel";
+import { experienceCardMedia } from "../experience-card-media";
 
 const experienceSelectorActions: Record<string, string> = {
   coffee: "Sip",
@@ -134,7 +135,11 @@ export function ExperienceSelector({
       </header>
       <div className="signature-selector-world">
         <div className="signature-selector-line" aria-hidden="true" />
-        {experiences.map((experience) => {
+        {experiences.map((configuredExperience) => {
+          const experience: SignatureExperience = {
+            ...configuredExperience,
+            ...experienceCardMedia[configuredExperience.id],
+          };
           const heading = experience.headingLead && experience.headingDetail ? (
             <>
               <span className="signature-selector-heading-lead">
