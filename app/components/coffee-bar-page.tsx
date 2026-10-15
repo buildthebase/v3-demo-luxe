@@ -65,7 +65,7 @@ const coffeeBarSchema = createServicePageSchema({
     "A complete mobile caf\u00e9 and beverage experience for weddings, corporate events, brand activations, and private events in Toronto and the GTA.",
   pageName: pageMetadata[coffeePath].title,
   pageDescription:
-    "Explore the Luxe Caf\u00e9 Cart and Signature Coffee Bar, included drinks, customization, capacity, and event applications.",
+    "Explore the Luxe Signature Coffee Bar, included drinks, customization, capacity, and event applications.",
   faqs: coffeeFaqs,
 });
 
@@ -88,7 +88,7 @@ function CoffeeHero() {
             Plan Your Event <span aria-hidden="true">↗︎</span>
           </QuoteModalTrigger>
           <a href="#coffee-formats">
-            Compare Coffee Experiences <span aria-hidden="true">↓︎</span>
+            Explore Signature Coffee Bar <span aria-hidden="true">↓︎</span>
           </a>
         </div>
       </div>
@@ -98,7 +98,6 @@ function CoffeeHero() {
           className="coffee-hero-photo"
           fill
         />
-        <b>Crafted in the room</b>
       </div>
       <div className="sweet-hero-proof-heading">
         <p className="foundation-label">Confirmed capacity and service planning</p>
@@ -196,11 +195,11 @@ function CoffeeFormats() {
   return (
     <section className="coffee-formats" id="coffee-formats" aria-labelledby="coffee-formats-title">
       <header>
-        <p className="foundation-label">Two distinct experiences</p>
-        <h2 id="coffee-formats-title">Café Cart or Signature Coffee Bar?</h2>
+        <p className="foundation-label">The Signature experience</p>
+        <h2 id="coffee-formats-title">Luxe Signature Coffee Bar</h2>
       </header>
       <div className="coffee-format-pair">
-        {coffeeFormats.map((format) => (
+        {coffeeFormats.filter((format) => format.id === "signature-bar").map((format) => (
           <article className={`coffee-format-${format.id}`} key={format.id}>
             <div className="coffee-format-art" aria-hidden="true">
               <i />
@@ -231,7 +230,7 @@ function CoffeeFormats() {
         ))}
       </div>
       <div className="coffee-format-cta">
-        <p>Choose the coffee experience that belongs in your room.</p>
+        <p>Bring the Signature Coffee Bar experience to your event.</p>
         <QuoteModalTrigger data-event-name="inquiry_start">
           Plan Your Event <span aria-hidden="true">↗︎</span>
         </QuoteModalTrigger>

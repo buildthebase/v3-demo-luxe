@@ -492,3 +492,7 @@
   }
 
 }
+/* The Signature Collection is the sole cart design featured on this page. */
+.foundation-shell .sweet-page .sweet-collections > div {
+  grid-template-columns: minmax(0, 1fr);
+}

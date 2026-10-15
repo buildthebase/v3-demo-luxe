@@ -46,7 +46,7 @@ export const eventsSectionNavigation: readonly PageSectionNavigationItem[] = [
 export const coffeeBarSectionNavigation: readonly PageSectionNavigationItem[] = [
   { id: "page-overview", label: "Back to top" },
   { id: "coffee-overview-title", label: "The experience" },
-  { id: "coffee-formats", label: "Coffee experiences" },
+  { id: "coffee-formats", label: "Signature Coffee Bar" },
   { id: "coffee-inclusions-title", label: "What is included" },
   { id: "coffee-menu-title", label: "Coffee menu" },
   { id: "coffee-pricing", label: "Pricing" },
@@ -59,7 +59,7 @@ export const coffeeBarSectionNavigation: readonly PageSectionNavigationItem[] = 
 export const sweetCartSectionNavigation: readonly PageSectionNavigationItem[] = [
   { id: "page-overview", label: "Back to top" },
   { id: "sweet-positioning-title", label: "The experience" },
-  { id: "sweet-collections-title", label: "Cart styles" },
+  { id: "sweet-collections-title", label: "Signature cart" },
   { id: "dessert-experiences", label: "Dessert menu" },
   { id: "sweet-inclusions-title", label: "What is included" },
   { id: "sweet-pantry-title", label: "Sauces and toppings" },

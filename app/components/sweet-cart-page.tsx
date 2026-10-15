@@ -95,7 +95,6 @@ function SweetHero() {
       </div>
       <div className="sweet-hero-art">
         <ResponsiveImage asset={imageAssets.experiences.sweetCartHero} fill />
-        <b>Prepared on-site</b>
       </div>
 <div className="sweet-hero-proof-heading">
         <p className="foundation-label">Confirmed capacity and dessert-service planning</p>
@@ -188,15 +187,15 @@ function SweetCollections() {
   return (
     <section className="sweet-collections" aria-labelledby="sweet-collections-title">
       <header>
-        <p className="foundation-label">Physical cart designs</p>
-        <h2 id="sweet-collections-title">Choose Your Cart Style</h2>
+        <p className="foundation-label">Signature cart design</p>
+        <h2 id="sweet-collections-title">Signature Sweet Cart</h2>
         <p>
-          Select from our available Luxe cart designs to complement your event aesthetic. Cart styles are subject to availability for your event date.
-          These selections refer to the cart&apos;s physical design and do not represent separate service or pricing tiers.
+          Our Signature cart design complements your event aesthetic and is subject to availability for your event date.
+          Signature refers to the cart&apos;s physical design, not a separate service or pricing tier.
         </p>
       </header>
       <div>
-        {sweetCartCollections.map((collection) => (
+        {sweetCartCollections.filter((collection) => collection.id === "signature").map((collection) => (
           <article className={`sweet-collection-${collection.id}`} key={collection.id}>
             <div className="sweet-collection-art" aria-hidden="true">
               <i /><i /><i />

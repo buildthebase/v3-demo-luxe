@@ -283,3 +283,31 @@
     font-size: clamp(1.3rem, 5.8vw, 1.7rem);
   }
 }
+/* Match the square hero photograph rather than cropping it into a tall frame.
+ * Prevent grid stretching and legacy minimum heights from cutting off the cart. */
+.foundation-shell .coffee-page .coffee-hero-art {
+  min-height: 0;
+  aspect-ratio: 1;
+  align-self: center;
+}
+
+.foundation-shell .coffee-page .coffee-hero-art > .coffee-hero-photo {
+  object-fit: contain !important;
+  object-position: center;
+}
+
+/* Compact callout: no oversized watermark or empty space reserved beneath it. */
+.foundation-shell .coffee-page .coffee-seasonal {
+  gap: 0;
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.foundation-shell .coffee-page .coffee-seasonal::after {
+  content: none;
+}
+
+.foundation-shell .coffee-page .coffee-seasonal-subtitle {
+  max-width: 65ch;
+  margin-inline: auto;
+}

@@ -26,8 +26,8 @@ export const homeEventImageGroups = [
     context: "Wedding coffee bar service, dessert cart rentals, and event seating shaped around meaningful moments and guest hospitality.",
     image: imageAssets.home.personalCelebrations,
     video: {
-      mp4: "/images/home/luxe-weddings-private-events.mp4",
-      webm: "/images/home/luxe-weddings-private-events.webm",
+      mp4: "/images/home/luxe-weddings-private-events-v2.mp4",
+      webm: "/images/home/luxe-weddings-private-events-v2.webm",
       poster: imageAssets.home.weddingsPrivateEventsPoster.src,
     },
   },
@@ -39,8 +39,8 @@ export const homeEventImageGroups = [
     context: "Premium mobile Coffee Bars, custom-branded beverage cups, and refined event spaces for corporate teams, clients, and brand launches.",
     image: imageAssets.home.professionalOccasions,
     video: {
-      mp4: "/images/home/luxe-corporate-events-brand-activations.mp4",
-      webm: "/images/home/luxe-corporate-events-brand-activations.webm",
+      mp4: "/images/home/luxe-corporate-events-brand-activations-v2.mp4",
+      webm: "/images/home/luxe-corporate-events-brand-activations-v2.webm",
       poster: imageAssets.home.corporateBrandActivationsPoster.src,
     },
   },

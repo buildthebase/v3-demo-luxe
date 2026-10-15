@@ -122,8 +122,30 @@
 }
 
 @media (max-width: 700px) {
+  .foundation-shell .home-page .home-positioning {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .foundation-shell .home-page #home-positioning-title {
+    --luxe-type-h2: clamp(1.15rem, 6vw, 2.625rem);
     font-size: clamp(1rem, 6vw, 2.625rem) !important;
+    box-sizing: border-box;
+    min-width: 0;
+    padding-inline-start: var(--space-5);
+    text-align: left;
+  }
+
+  .foundation-shell .home-page .home-positioning > div {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    padding-inline-start: var(--space-5);
+    text-align: left;
+  }
+
+  .foundation-shell .home-page .home-positioning-intro {
+    max-width: 100% !important;
   }
 }
 

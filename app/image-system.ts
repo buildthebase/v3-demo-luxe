@@ -125,7 +125,7 @@ export const imageAssets = {
   home: {
     weddingsPrivateEventsPoster: {
       id: "home-weddings-private-events-poster",
-      src: "/images/home/luxe-weddings-private-events-poster.webp",
+      src: "/images/home/luxe-weddings-private-events-v2-poster.webp",
       alt: "Luxe wedding and private event service shown in a vertical editorial frame",
       width: 1080,
       height: 1920,
@@ -135,7 +135,7 @@ export const imageAssets = {
     },
     corporateBrandActivationsPoster: {
       id: "home-corporate-brand-activations-poster",
-      src: "/images/home/luxe-corporate-events-brand-activations-poster.webp",
+      src: "/images/home/luxe-corporate-events-brand-activations-v2-poster.webp",
       alt: "Luxe corporate event and brand activation service shown in a vertical editorial frame",
       width: 1080,
       height: 1920,

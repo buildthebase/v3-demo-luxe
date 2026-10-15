@@ -101,7 +101,6 @@ function SeatingHero() {
       </div>
       <div className="seating-hero-plan seating-hero-photo">
         <ResponsiveImage asset={imageAssets.experiences.seatingRentalsHero} fill />
-        <b>Gather / dine / celebrate</b>
       </div>
       <div className="coffee-hero-proof-heading">
         <h2 id="seating-hero-proof-title">
