@@ -49,6 +49,7 @@ function HomeEditorialImage({
       <div className="home-editorial-frame">
         {slot.video ? (
           <HomeEditorialVideo
+            fadeIn={slot.id === "personal-gatherings" || slot.id === "professional-gatherings"}
             label={slot.label}
             mp4={slot.video.mp4}
             poster={slot.video.poster}

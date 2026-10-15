@@ -190,13 +190,6 @@ function WeddingCoordination() {
         <h2 id="wedding-coordination-title">
           What Luxe coordinates before the wedding.
         </h2>
-        <aside>
-          <strong>$5 million liability insurance</strong>
-          <p>
-            Certificates of Insurance (COI) provided directly to your venue and
-            planning team upon request.
-          </p>
-        </aside>
         <p>
           Access, timing, placement, utilities, setup, pickup, venue
           requirements, and travel are reviewed before the event so the
@@ -211,6 +204,13 @@ function WeddingCoordination() {
           </li>
         ))}
       </ol>
+      <aside className="wedding-coordination-insurance" aria-label="Liability insurance">
+        <strong>$5 million liability insurance</strong>
+        <p>
+          Certificates of Insurance (COI) provided directly to your venue and
+          planning team upon request.
+        </p>
+      </aside>
     </section>
   );
 }

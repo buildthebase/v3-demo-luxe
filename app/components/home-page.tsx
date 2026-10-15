@@ -8,6 +8,7 @@ import {
   HomeWorkingExperience,
 } from "./home-sections";
 import { HomeHero } from "./home-hero";
+import { HomeEventVideoSequence } from "./home-event-video-sequence";
 import { HomeEditorialReview } from "./home-editorial-review";
 import { HomeReviewLauncher } from "./home-review-launcher";
 import {
@@ -105,14 +106,7 @@ export function HomePage() {
               <Link href="/experiences">EXPLORE EXPERIENCES <span aria-hidden="true">↗︎</span></Link>
             </div>
           </div>
-          <div className="home-experience-cta-media" aria-label="Reserved event imagery">
-            {[1, 2].map(number => (
-              <div className="home-experience-cta-placeholder" key={number}>
-                <span aria-hidden="true">0{number}</span>
-                <p>Image / video placeholder</p>
-              </div>
-            ))}
-          </div>
+          <HomeEventVideoSequence />
         </section>
         <HomeEditorialReview
           id="review-coffee-dessert"

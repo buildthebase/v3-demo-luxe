@@ -1004,3 +1004,115 @@
     display: none;
   }
 }
+/* Wedding logistics: one clear introduction, four readable topics, then proof. */
+.foundation-shell .wedding-page .wedding-coordination > header {
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 1.25rem clamp(2rem, 6vw, 6rem);
+  align-items: end;
+  margin-bottom: clamp(2rem, 4vw, 3.5rem);
+}
+
+.foundation-shell .wedding-page .wedding-coordination > header .foundation-label {
+  grid-column: 1 / -1;
+  grid-row: auto;
+  justify-self: start;
+  margin: 0;
+}
+
+.foundation-shell .wedding-page .wedding-coordination > header h2 {
+  grid-column: 1;
+  grid-row: auto;
+  width: 100%;
+  max-width: 23ch;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.foundation-shell .wedding-page .wedding-coordination > header > p:last-child {
+  grid-column: 2;
+  grid-row: auto;
+  width: 100%;
+  max-width: 48ch;
+  justify-self: start;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.foundation-shell .wedding-page .wedding-coordination ol {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 clamp(2rem, 6vw, 6rem);
+  border: 0;
+}
+
+.foundation-shell .wedding-page .wedding-coordination ol::before,
+.foundation-shell .wedding-page .wedding-coordination li::before {
+  content: none;
+}
+
+.foundation-shell .wedding-page .wedding-coordination li,
+.foundation-shell .wedding-page .wedding-coordination li:nth-child(2n) {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  justify-self: stretch;
+  margin: 0;
+  padding: clamp(1.5rem, 3vw, 2.5rem) 0;
+  border: 0;
+  border-top: 1px solid var(--surface-dark-rule);
+  transform: none;
+}
+
+.foundation-shell .wedding-page .wedding-coordination h3 {
+  max-width: none;
+  margin: 0;
+  font-size: clamp(1.45rem, 2.1vw, 2rem);
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.foundation-shell .wedding-page .wedding-coordination li > p {
+  max-width: 58ch;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.foundation-shell .wedding-page .wedding-coordination > .wedding-coordination-insurance {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  gap: 1rem clamp(2rem, 5vw, 5rem);
+  align-items: center;
+  margin-top: clamp(.5rem, 2vw, 1.5rem);
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  border: 1px solid var(--surface-dark-rule);
+  background: rgb(255 255 255 / 3%);
+}
+
+.foundation-shell .wedding-page .wedding-coordination-insurance strong {
+  color: var(--color-luxe-gold-on-dark);
+  font-size: clamp(1.15rem, 1.7vw, 1.65rem);
+  line-height: 1.25;
+}
+
+.foundation-shell .wedding-page .wedding-coordination-insurance p {
+  max-width: 55ch;
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .foundation-shell .wedding-page .wedding-coordination > header,
+  .foundation-shell .wedding-page .wedding-coordination ol,
+  .foundation-shell .wedding-page .wedding-coordination > .wedding-coordination-insurance {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .foundation-shell .wedding-page .wedding-coordination > header > p:last-child {
+    grid-column: 1;
+    max-width: none;
+  }
+}

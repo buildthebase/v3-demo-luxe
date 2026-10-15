@@ -58,30 +58,22 @@
   gap: 1rem;
 }
 
-.home-experience-cta-placeholder {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  aspect-ratio: 4 / 5;
-  padding: 1rem;
+.home-experience-cta-video {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 9 / 16;
   border: 1px solid var(--color-rule);
-  background: var(--color-luxe-taupe);
-  color: var(--color-text-secondary);
+  background: #000;
 }
-
-.home-experience-cta-placeholder > span { font-size: .75rem; letter-spacing: .12em; }
-.home-experience-cta-placeholder > p { margin: 0; font-size: .8rem; }
 
 @media (max-width: 960px) {
   .home-experience-cta { grid-template-columns: minmax(0, 1fr); }
   .home-experience-cta-copy h2 { max-width: none; }
-  .home-experience-cta-placeholder { aspect-ratio: 4 / 3; }
 }
 
 @media (max-width: 480px) {
   .home-experience-cta-actions { flex-direction: column; }
   .home-experience-cta-media { gap: .75rem; }
-  .home-experience-cta-placeholder { aspect-ratio: 1; padding: .75rem; }
 }
 
 .home-page {
@@ -708,4 +700,37 @@
   .foundation-shell .home-page .home-cinematic-copy h1 {
     font-size: clamp(2.4rem, 12vw, 3.25rem);
   }
+}
+/* Fade the preview into actual playback only once a video frame is ready. */
+:is(.home-event-group, .home-experience-cta-media) .home-editorial-video-poster {
+  z-index: 2;
+  object-fit: cover;
+  object-position: center;
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity 700ms ease-in-out;
+}
+
+:is(.home-event-group, .home-experience-cta-media) .home-editorial-video-poster[data-video-started="true"] {
+  opacity: 0;
+}
+
+:is(.home-event-group, .home-experience-cta-media) .home-editorial-video-control {
+  z-index: 3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(.home-event-group, .home-experience-cta-media) .home-editorial-video-poster {
+    transition: none;
+  }
+}
+.home-experience-cta-media .home-editorial-video-replay {
+  width: auto;
+  min-width: 5.5rem;
+  padding-inline: .85rem;
+  border-radius: 1.5rem;
+}
+.home-experience-cta-media .home-editorial-video-control:disabled {
+  opacity: .45;
+  cursor: default;
 }
