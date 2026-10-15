@@ -18,6 +18,7 @@ export function HomeHero() {
   const [sequenceSkipped, setSequenceSkipped] = useState(false);
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [failedMedia, setFailedMedia] = useState<Set<string>>(() => new Set());
+  const [playbackBlocked, setPlaybackBlocked] = useState(false);
   const timers = useRef<number[]>([]);
   const loopTimers = useRef<number[]>([]);
   const videos = useRef<Array<Array<HTMLVideoElement | null>>>([]);
@@ -45,7 +46,10 @@ export function HomeHero() {
     const introVideos = videos.current.slice(0, finalPhase).flatMap(layers => layers[0] ? [layers[0]] : []);
     let started = false;
     const startWhenReady = () => {
-      if (started || introVideos.some(video => video.readyState < 3 && !video.error)) return;
+      // iOS may preload metadata only for hidden videos. Never wait for all
+      // three clips to buffer before starting the visible one.
+      const firstVideo = introVideos[0];
+      if (started || (firstVideo && firstVideo.readyState < 1 && !firstVideo.error)) return;
       started = true;
       setIntroReady(true);
       timers.current = homeHeroTimeline.phaseStartsMs.slice(1).map((start, index) =>
@@ -53,6 +57,8 @@ export function HomeHero() {
       );
     };
     introVideos.forEach(video => {
+      video.addEventListener("loadedmetadata", startWhenReady);
+      video.addEventListener("loadeddata", startWhenReady);
       video.addEventListener("canplay", startWhenReady);
       video.addEventListener("error", startWhenReady);
     });
@@ -62,6 +68,8 @@ export function HomeHero() {
       timers.current.forEach(window.clearTimeout);
       timers.current = [];
       introVideos.forEach(video => {
+        video.removeEventListener("loadedmetadata", startWhenReady);
+        video.removeEventListener("loadeddata", startWhenReady);
         video.removeEventListener("canplay", startWhenReady);
         video.removeEventListener("error", startWhenReady);
       });
@@ -82,8 +90,15 @@ export function HomeHero() {
       return primary && secondary ? [{ primary, secondary, mediaIndex }] : [];
     });
     const play = (video: HTMLVideoElement, mediaIndex: number) => {
-      void video.play().catch(() => {
-        if (!disposed) setFailedMedia(current => new Set(current).add(homeHeroMedia[mediaIndex].id));
+      video.muted = true;
+      video.defaultMuted = true;
+      void video.play().catch((error: DOMException) => {
+        if (disposed || error.name === "AbortError") return;
+        if (error.name === "NotAllowedError") {
+          setPlaybackBlocked(true);
+          return;
+        }
+        if (video.error) setFailedMedia(current => new Set(current).add(homeHeroMedia[mediaIndex].id));
       });
     };
     const clearTimers = () => {
@@ -197,12 +212,12 @@ export function HomeHero() {
       later(crossfade, durationMs);
     };
     configure();
-    groups.forEach(item => item.primary.addEventListener("loadeddata", configure));
+    groups.forEach(item => item.primary.addEventListener("loadedmetadata", configure));
     desktopQuery.addEventListener("change", configure);
     return () => {
       disposed = true;
       clearTimers();
-      groups.forEach(item => item.primary.removeEventListener("loadeddata", configure));
+      groups.forEach(item => item.primary.removeEventListener("loadedmetadata", configure));
       desktopQuery.removeEventListener("change", configure);
     };
   }, [finalPhase, introReady, phase]);
@@ -231,6 +246,18 @@ export function HomeHero() {
     setFailedMedia((current) => new Set(current).add(id));
   }
 
+  function resumeHeroVideos() {
+    const desktop = window.matchMedia("(min-width: 821px)").matches;
+    const indices = finalState ? (desktop ? [0, 1, 2] : [mobileClip]) : [phase];
+    indices.forEach(index => {
+      videos.current[index]?.forEach(video => {
+        if (!video || video.style.opacity === "0") return;
+        video.muted = true;
+        void video.play().then(() => setPlaybackBlocked(false)).catch(() => setPlaybackBlocked(true));
+      });
+    });
+  }
+
   return (
     <section
       id="page-overview"
@@ -245,6 +272,7 @@ export function HomeHero() {
         experience, and intentional seating and event rentals. The muted hero films
         provide atmosphere only; this page contains the complete service information.
       </p>
+      {playbackBlocked ? <button className="home-cinematic-play-button" type="button" onClick={resumeHeroVideos}>Play hero videos</button> : null}
       <div className="home-cinematic-stage">
         <div className="home-cinematic-media-grid" aria-hidden="true">
           {homeHeroMedia.map((media, index) => {
@@ -276,6 +304,7 @@ export function HomeHero() {
                         videos.current[index][layerIndex] = node;
                       }}
                       muted
+                      autoPlay={layerIndex === 0 && (active || (finalState && index === mobileClip))}
                       loop={!finalState}
                       playsInline
                       preload={index < 3 ? "auto" : "none"}

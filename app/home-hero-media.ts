@@ -30,7 +30,7 @@ export const homeHeroMedia: readonly HomeHeroMedia[] = [
     label: "Luxe Coffee Bar",
     word: "Sip,",
     placement: "left",
-    poster: null,
+    poster: "/media/home-hero/coffee-poster.jpg",
     sources: [
       {
         src: "/media/home-hero/coffee.mp4",
@@ -43,7 +43,7 @@ export const homeHeroMedia: readonly HomeHeroMedia[] = [
     label: "Luxe Sweet Cart",
     word: "Indulge,",
     placement: "center",
-    poster: null,
+    poster: "/media/home-hero/dessert-poster.jpg",
     sources: [
       {
         src: "/media/home-hero/dessert.mp4",
@@ -56,7 +56,7 @@ export const homeHeroMedia: readonly HomeHeroMedia[] = [
     label: "Luxe Seating Rentals",
     word: "Gather.",
     placement: "right",
-    poster: null,
+    poster: "/media/home-hero/rentals-poster.jpg",
     sources: [
       {
         src: "/media/home-hero/rentals.mp4",

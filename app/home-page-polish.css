@@ -445,6 +445,18 @@
   }
 }
 
+.home-cinematic-play-button {
+  position: absolute;
+  z-index: 10;
+  top: 7rem;
+  right: 1rem;
+  padding: .65rem 1rem;
+  border: 1px solid currentColor;
+  background: rgba(255, 255, 255, .94);
+  color: #242424;
+  cursor: pointer;
+}
+
 .home-page .experience-selector-copy-link {
   display: flex;
   color: inherit;
