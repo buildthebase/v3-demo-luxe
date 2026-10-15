@@ -487,13 +487,6 @@
     margin-inline: auto !important;
   }
 
-  .foundation-shell .seating-page .seating-inventory > header h2#seating-inventory-title {
-    width: auto !important;
-    max-width: none !important;
-    white-space: nowrap !important;
-    text-wrap: nowrap;
-  }
-
   .foundation-shell .seating-page .seating-studies > header h2#seating-studies-title {
     width: auto !important;
     max-width: none !important;
@@ -579,4 +572,26 @@
   .foundation-shell .seating-page .seating-overview-content {
     border-top: 0;
   }
+}
+
+/* Keep the inventory introduction centered and inside its section at every
+ * breakpoint. Long headings and supporting copy must be allowed to wrap. */
+.foundation-shell .seating-page .seating-inventory > header {
+  grid-template-columns: minmax(0, 1fr) !important;
+  justify-items: center;
+  min-width: 0;
+  max-width: 100%;
+  text-align: center;
+}
+
+.foundation-shell .seating-page .seating-inventory > header h2#seating-inventory-title,
+.foundation-shell .seating-page .seating-inventory > header .seating-inventory-subtitle {
+  grid-column: 1;
+  width: 100% !important;
+  min-width: 0;
+  max-width: 100% !important;
+  margin-inline: auto !important;
+  white-space: normal !important;
+  text-wrap: balance;
+  text-align: center;
 }
