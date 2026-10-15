@@ -10,7 +10,7 @@ export const homeSectionNavigation: readonly PageSectionNavigationItem[] = [
   { id: "experience-selector", label: "The experience" },
   { id: "unified-experience", label: "Tailored events" },
   { id: "event-types", label: "Event types" },
-  { id: "combinations", label: "Combinations" },
+  { id: "combinations", label: "Explore your experience" },
   { id: "contextual-imagery", label: "See Luxe in action" },
   { id: "operational-proof", label: "Our capabilities" },
   { id: "working-with-luxe", label: "Working with Luxe" },

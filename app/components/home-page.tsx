@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   HomeEventCategories,
   HomePositioning,
@@ -10,7 +11,6 @@ import { HomeHero } from "./home-hero";
 import { HomeEditorialReview } from "./home-editorial-review";
 import { HomeReviewLauncher } from "./home-review-launcher";
 import {
-  CombinedExperienceFeature,
   ContextualInquiryPanel,
   EventPlanningPathway,
   ExperienceSelector,
@@ -126,16 +126,24 @@ export function HomePage() {
             { href: "/experiences/coffee-bar", label: "Explore Coffee Bar" },
           ]}
         />
-        <CombinedExperienceFeature
-          id="combinations"
-          description="Start with the occasion and choose only the services that support it."
-          footer={(
-            <>
-              <strong>Every proposal is shaped around the event.</strong>
-              <QuoteModalTrigger><span>PLAN YOUR EVENT ↗︎</span></QuoteModalTrigger>
-            </>
-          )}
-        />
+        <section id="combinations" className="home-experience-cta" aria-labelledby="home-experience-cta-title">
+          <div className="home-experience-cta-copy">
+            <h2 id="home-experience-cta-title">Your event. Your way.</h2>
+            <p>Explore our coffee, live dessert and rental experiences, or start planning yours with our team.</p>
+            <div className="home-experience-cta-actions">
+              <QuoteModalTrigger className="home-experience-cta-primary">PLAN YOUR EVENT <span aria-hidden="true">↗︎</span></QuoteModalTrigger>
+              <Link href="/experiences">EXPLORE EXPERIENCES <span aria-hidden="true">↗︎</span></Link>
+            </div>
+          </div>
+          <div className="home-experience-cta-media" aria-label="Reserved event imagery">
+            {[1, 2].map(number => (
+              <div className="home-experience-cta-placeholder" key={number}>
+                <span aria-hidden="true">0{number}</span>
+                <p>Image / video placeholder</p>
+              </div>
+            ))}
+          </div>
+        </section>
         <HomeEditorialReview
           id="review-coffee-dessert"
           context="Coffee Bar + Sweet Cart"
