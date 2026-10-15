@@ -11504,7 +11504,7 @@ body .foundation-shell main:is(
 }
 
 .home-cinematic-word-seating {
-  color: var(--color-luxe-black);
+  color: #fff;
   text-shadow: none;
   transform: translateX(18%);
 }
@@ -11783,7 +11783,7 @@ body .foundation-shell main:is(
   }
 
   .home-cinematic-word-seating {
-    color: var(--color-luxe-black);
+    color: #fff;
     text-shadow: none;
   }
 
