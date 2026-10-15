@@ -54,9 +54,9 @@ function ContactHero() {
     <header className="inquire-hero">
       <div className="inquire-hero-copy">
         <p className="foundation-eyebrow">Contact Luxe Event Co. / Plan Your Event</p>
-        <h1 aria-label="Contact Luxe Event Co. to plan your Toronto event.">
-          <span>Contact Luxe Event Co.</span>
-          <span>to plan your Toronto event.</span>
+        <h1 aria-label="Let’s plan something memorable.">
+          <span>Let’s plan</span>
+          <span>something memorable.</span>
         </h1>
         <p>
           Planning a wedding, corporate event, brand activation, or private
