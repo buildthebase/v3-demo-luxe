@@ -3,7 +3,6 @@ import {
   layoutStudies,
   rentalCategories,
   rentalEventLinks,
-  rentalGalleryPreview,
   rentalOperations,
   rentalServiceAreas,
   seatingRentalFaqs,
@@ -26,6 +25,10 @@ import { QuoteModalTrigger } from "./quote-modal-trigger";
 import { ResponsiveImage } from "./responsive-image";
 import { ContextualInquiryPanel } from "./signature-elements";
 import { SiteShell } from "./site-shell";
+import { RentalTentUseCases } from "./rental-tent-use-cases";
+
+// Archived sections remain in source for restoration, but are not rendered.
+const showArchivedRentalSections = false;
 
 const seatingRentalsPath = "/experiences/seating-rentals";
 const [rentalPricingAnswer, ...rentalContextualFaqs] = seatingRentalFaqs;
@@ -102,17 +105,9 @@ function SeatingHero() {
       <div className="seating-hero-plan seating-hero-photo">
         <ResponsiveImage asset={imageAssets.experiences.seatingRentalsHero} fill />
       </div>
-      <div className="coffee-hero-proof-heading">
-        <h2 id="seating-hero-proof-title">
-          <span>Seating rentals.</span>
-          <span>Mobile coffee bar.</span>
-          <span>Dessert cart.</span>
-          <span>All in one place.</span>
-        </h2>
-      </div>
       <dl
         className="sweet-hero-proof seating-hero-proof"
-        aria-labelledby="seating-hero-proof-title"
+        aria-label="Luxe event rental details"
       >
         <div><dt>300</dt><dd><strong>White resin chairs</strong></dd></div>
         <div><dt>25</dt><dd><strong>6-ft tables</strong></dd></div>
@@ -232,7 +227,7 @@ function RentalCategories() {
           );
         })}
       </div>
-      <section
+      {showArchivedRentalSections ? <section
         className="seating-tent-specifications"
         aria-labelledby="seating-tent-specifications-title"
         data-evidence-status="pending-luxe-confirmation"
@@ -275,7 +270,7 @@ function RentalCategories() {
           Tent configurations are subject to inventory availability, site conditions
           and event requirements.
         </p>
-      </section>
+      </section> : null}
     </section>
   );
 }
@@ -315,7 +310,7 @@ function RentalOperations() {
         <p className="foundation-label">Delivery, setup, and teardown</p>
         <h2 id="seating-operations-title">Rental Delivery, Setup &amp; Pickup</h2>
         <p className="seating-operations-subtitle">
-          Delivery, setup and pickup options are quoted based on the rental order, venue location, access requirements and requested service. Setup is not automatically included with delivery unless specified in your proposal.
+          Delivery, setup and pickup options are quoted based on the rental order, venue location, access requirements and requested service.
         </p>
       </header>
       <div className="seating-operation-grid">
@@ -399,38 +394,6 @@ function RentalEvents() {
   );
 }
 
-function RentalGallery() {
-  return (
-    <section className="seating-gallery" aria-labelledby="seating-gallery-title">
-      <header>
-        <p className="foundation-label">Rental gallery</p>
-        <h2 id="seating-gallery-title">The rental setup, seen as part of the celebration.</h2>
-        <p>
-          Full-setting views will show how chairs, tables, tents and linens come together
-          in real indoor and outdoor celebrations. Tent Lighting is available with Luxe
-          tent rentals and is not offered as a standalone service. Dance-floor configurations
-          available up to 18&apos; × 18&apos;.
-        </p>
-      </header>
-      <div className="seating-gallery-grid" data-asset-status="awaiting-luxe-photography">
-        {rentalGalleryPreview.map((item) => (
-          <figure className={`seating-gallery-${item.tone}`} key={item.number}>
-            <div className="seating-gallery-hold" aria-hidden="true">
-              <span>Image placement reserved</span>
-            </div>
-            <figcaption>
-              <span>{item.number}</span>
-              <h3>{item.label}</h3>
-              <small>{item.note}</small>
-            </figcaption>
-          </figure>
-        ))}
-      </div>
-      <Link href="/gallery">Explore the Luxe event gallery <span aria-hidden="true">↗︎</span></Link>
-    </section>
-  );
-}
-
 function RentalPricing() {
   return (
     <section className="seating-pricing" aria-labelledby="seating-pricing-title">
@@ -510,12 +473,12 @@ export function SeatingRentalsPage() {
         <SeatingHero />
         <SeatingOverview />
         <RentalCategories />
-        <LayoutInspiration />
-        <IndoorOutdoorApplications />
+        <RentalTentUseCases />
+        {showArchivedRentalSections ? <LayoutInspiration /> : null}
+        {showArchivedRentalSections ? <IndoorOutdoorApplications /> : null}
         <RentalOperations />
         <RentalEvents />
         <RentalPricing />
-        <RentalGallery />
         <RentalCombinations />
         <RentalFaq />
         <ContextualInquiryPanel contextKey="seating-rentals" />

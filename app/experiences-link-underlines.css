@@ -1,0 +1,17 @@
+/* Match the close, text-relative underline of the homepage Indulge action.
+ * Limit this to text links: hero, comparison, process and inquiry boxes retain
+ * their existing borders and padding. No arrow content is added. */
+.foundation-shell .experiences-page :is(
+  .experiences-feature-footer > a,
+  .experiences-text-link,
+  .experiences-booking-clarity > a,
+  .signature-selector-footer a,
+  .signature-combinations-footer a > span
+) {
+  border-bottom: 0 !important;
+  text-decoration-line: underline;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .18em;
+  text-decoration-skip-ink: auto;
+}

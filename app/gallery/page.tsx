@@ -56,11 +56,7 @@ function GalleryHero() {
   return (
     <header className="gallery-hero">
       <div className="gallery-hero-copy">
-        <h1 aria-label="Luxe event gallery: coffee, dessert, and rental experiences.">
-          <span>Luxe event gallery:</span>
-          <span>coffee, dessert, and</span>
-          <span>rental experiences.</span>
-        </h1>
+        <h1>Luxe event gallery: coffee, dessert, and rental experiences.</h1>
         <p>
           See how Luxe mobile coffee bars, live dessert carts, seating rentals,
           and coordinated service support weddings, corporate events, brand
@@ -68,14 +64,9 @@ function GalleryHero() {
         </p>
         <div className="gallery-hero-actions">
           <Link href="/contact" data-event-name="inquiry_start">
-            Plan Your Event <span aria-hidden="true">↗︎</span>
+            Plan Your Event
           </Link>
         </div>
-      </div>
-      <div className="gallery-hero-media" aria-label="Luxe experience composition">
-        <div aria-hidden="true"><i /><i /><i /></div>
-        <strong>Service direction.<br />Event context.</strong>
-        <span>COFFEE · DESSERT · EVENT RENTALS<br />Planned for the room.</span>
       </div>
     </header>
   );
@@ -93,7 +84,7 @@ function GalleryInquiry() {
         </p>
       </div>
       <Link href="/contact" data-event-name="inquiry_start">
-        Plan Your Event <span aria-hidden="true">↗︎</span>
+        Plan Your Event
       </Link>
     </section>
   );

@@ -595,3 +595,56 @@
   text-wrap: balance;
   text-align: center;
 }
+.foundation-shell .seating-page .seating-inventory-grid > article {
+  height: auto;
+  min-height: 0;
+  padding-bottom: clamp(1.25rem, 2vw, 2rem);
+}
+.foundation-shell .seating-page .seating-inventory-grid > article > p:last-child {
+  min-height: 0;
+  margin-bottom: 0;
+}
+
+/* Carry the tent configuration palette into the complementary services. */
+.foundation-shell .seating-page > .seating-combinations.related-experiences {
+  --surface-dark-rule: var(--color-rule);
+  --surface-dark-copy-muted: var(--color-text-secondary);
+  position: relative;
+  isolation: isolate;
+  background: var(--surface-chapter-taupe);
+  box-shadow: 0 0 0 100vmax var(--surface-chapter-taupe);
+  clip-path: inset(0 -100vmax);
+  color: var(--color-luxe-black);
+}
+
+.foundation-shell .seating-page > .seating-combinations.related-experiences::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0 -100vmax;
+  background-color: transparent;
+  background-image: radial-gradient(rgb(23 22 20 / 5.3%) .55px, transparent .7px);
+  background-size: 4px 4px;
+  content: "";
+  pointer-events: none;
+}
+
+.foundation-shell .seating-combinations.related-experiences > header h2,
+.foundation-shell .seating-combinations.related-experiences > div > a,
+.foundation-shell .seating-combinations.related-experiences a > h3,
+.foundation-shell .seating-combinations.related-experiences a > b {
+  color: var(--color-luxe-black);
+}
+
+.foundation-shell .seating-combinations.related-experiences > header > p:last-child,
+.foundation-shell .seating-combinations.related-experiences a > p {
+  color: var(--color-text-secondary);
+}
+
+.foundation-shell .seating-combinations.related-experiences > div > a {
+  background: rgb(248 246 242 / 35%);
+}
+
+.foundation-shell .seating-combinations.related-experiences > div > a:hover,
+.foundation-shell .seating-combinations.related-experiences > div > a:focus-visible {
+  background: rgb(248 246 242 / 55%);
+}

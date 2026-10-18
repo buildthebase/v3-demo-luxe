@@ -1,15 +1,15 @@
-import Link from "next/link";
 import {
   HomeEventCategories,
   HomePositioning,
   HomeSelectedImagery,
   HomeServiceArea,
   HomeTrust,
-  HomeWorkingExperience,
 } from "./home-sections";
 import { HomeHero } from "./home-hero";
-import { HomeEventVideoSequence } from "./home-event-video-sequence";
+import { HomeCaseStudy } from "./home-case-study";
 import { HomeEditorialReview } from "./home-editorial-review";
+import { ResponsiveImage } from "./responsive-image";
+import { imageAssets } from "../image-system";
 import { HomeReviewLauncher } from "./home-review-launcher";
 import {
   ContextualInquiryPanel,
@@ -18,7 +18,6 @@ import {
 } from "./signature-elements";
 import { JsonLd } from "./json-ld";
 import { PageSectionNavigation } from "./page-section-navigation";
-import { QuoteModalTrigger } from "./quote-modal-trigger";
 import { SiteShell } from "./site-shell";
 import { homeSectionNavigation } from "../page-section-navigation";
 import { pageMetadata } from "../metadata-config";
@@ -90,36 +89,6 @@ export function HomePage() {
           showDescription={false}
         />
         <HomeEditorialReview
-          id="review-coffee"
-          context="Luxe Coffee Bar"
-          quote="The coffee bar became a natural gathering point—thoughtful drinks, warm service, and a polished experience guests returned to throughout the evening."
-          links={[
-            { href: "/experiences/coffee-bar", label: "Discover the experience" },
-          ]}
-        />
-        <section id="combinations" className="home-experience-cta" aria-labelledby="home-experience-cta-title">
-          <div className="home-experience-cta-copy">
-            <h2 id="home-experience-cta-title">Your event. Your way.</h2>
-            <p>Explore our coffee, live dessert and rental experiences, or start planning yours with our team.</p>
-            <div className="home-experience-cta-actions">
-              <QuoteModalTrigger className="home-experience-cta-primary">PLAN YOUR EVENT <span aria-hidden="true">↗︎</span></QuoteModalTrigger>
-              <Link href="/experiences">EXPLORE EXPERIENCES <span aria-hidden="true">↗︎</span></Link>
-            </div>
-          </div>
-          <HomeEventVideoSequence />
-        </section>
-        <HomeEditorialReview
-          id="review-coffee-dessert"
-          context="Coffee Bar + Sweet Cart"
-          quote="The coffee and live dessert service felt like one complete experience, carrying guests naturally from the first sip to the final indulgence."
-          links={[
-            { href: "/experiences", label: "Explore the possibilities" },
-          ]}
-        />
-        <HomeEventCategories />
-        <HomeSelectedImagery />
-        <HomeTrust />
-        <HomeEditorialReview
           id="review-coffee-seating"
           context="Coffee Bar + Seating Rentals"
           quote="Coffee service and intentional seating worked beautifully together, giving guests a comfortable place to connect, settle in, and stay awhile."
@@ -127,8 +96,31 @@ export function HomePage() {
             { href: "/experiences", label: "Find your Luxe" },
           ]}
         />
-        <HomeWorkingExperience />
+        <HomeCaseStudy />
         <EventPlanningPathway id="planning-journey" showDescription={false} />
+        <HomeEventCategories />
+        <HomeSelectedImagery />
+        <HomeTrust />
+        <section className="home-coffee-quote-film" id="coffee-quote-film" aria-label="Luxe Coffee Bar in service">
+          <div className="home-coffee-quote-film-frame">
+            <ResponsiveImage asset={imageAssets.home.coffeeQuotePreparation} fill />
+          </div>
+        </section>
+        <HomeEditorialReview
+          id="review-coffee"
+          context="Luxe Coffee Bar"
+          headerMedia={
+            <div className="home-coffee-quote-film-desktop">
+              <div className="home-coffee-quote-film-frame">
+                <ResponsiveImage asset={imageAssets.home.coffeeQuotePreparation} fill />
+              </div>
+            </div>
+          }
+          quote="The coffee bar became a natural gathering point—thoughtful drinks, warm service, and a polished experience guests returned to throughout the evening."
+          links={[
+            { href: "/experiences/coffee-bar", label: "Discover the experience" },
+          ]}
+        />
         <HomeServiceArea />
         <ContextualInquiryPanel id="event-planning" contextKey="home" />
       </main>

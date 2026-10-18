@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ProcessStartAction } from "./process-start-action";
 import {
   activationBrandTouchpoints,
   activationContexts,
@@ -338,7 +339,7 @@ function ActivationPlanning() {
           </ol>
         </div>
       </div>
-      <Link href="/events/corporate-events">Explore Corporate Event Capabilities</Link>
+      <ProcessStartAction />
     </section>
   );
 }

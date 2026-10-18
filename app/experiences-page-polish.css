@@ -1,3 +1,111 @@
+/* Hide the thin dark capture edge in the Sweet Cart source photo. */
+.foundation-shell .experiences-page .experiences-feature-dessert .experiences-feature-art img {
+  transform: scale(1.025);
+  transform-origin: center;
+}
+
+.foundation-shell .experiences-page .experiences-feature-copy > .experiences-feature-footnote {
+  margin: .9rem 0 0;
+  padding: 0;
+  border: 0;
+  font-size: .875rem !important;
+  line-height: 1.55;
+}
+@media (max-width: 700px) {
+  .foundation-shell .experiences-page .experiences-feature-copy > .experiences-feature-footnote {
+    font-size: .8125rem !important;
+  }
+}
+
+/* Mobile-only editorial heading alignment; preserve desktop composition. */
+@media (max-width: 700px) {
+  .foundation-shell .experiences-page .experiences-comparison-cta {
+    text-align: center;
+    justify-items: center;
+  }
+  .foundation-shell .experiences-page .experiences-comparison-cta-copy {
+    width: 100%;
+    text-align: center;
+    justify-items: center;
+  }
+  .foundation-shell .experiences-page .experiences-comparison-cta-copy > p {
+    text-align: center;
+    margin-inline: auto;
+  }
+  .foundation-shell .experiences-page .experiences-comparison-cta-link {
+    justify-self: center;
+    margin-inline: auto;
+  }
+  .foundation-shell .experiences-page #experiences-comparison-title,
+  .foundation-shell .experiences-page #signature-combinations-title,
+  .foundation-shell .experiences-page #experiences-events-title,
+  .foundation-shell .experiences-page .signature-combinations-intro > p {
+    width: 100%;
+    max-width: none;
+    margin-inline: auto;
+    text-align: center;
+    justify-self: center;
+    grid-column: 1 / -1;
+  }
+  .foundation-shell .experiences-page #experiences-events-title > span {
+    display: block;
+    text-align: center;
+  }
+}
+
+.foundation-shell .experiences-page .experiences-booking-proof li {
+  text-align: center;
+  justify-items: center;
+  align-content: center;
+}
+
+/* Service details: a quiet vertical list rather than a ruled comparison grid. */
+.foundation-shell .experiences-page .experiences-feature-copy > ul {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: .7rem;
+  margin-top: 1.5rem;
+  padding: 0;
+  border: 0;
+  list-style: none;
+}
+.foundation-shell .experiences-page .experiences-feature-copy > ul > li {
+  position: relative;
+  padding: 0 0 0 1rem;
+  border: 0;
+  line-height: 1.6;
+}
+.foundation-shell .experiences-page .experiences-feature-copy > ul > li::before {
+  position: absolute;
+  left: 0;
+  top: .67em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-luxe-gold-ink);
+  content: "";
+}
+
+/* Popular Combinations uses the same fine gold linework as the homepage icons. */
+.foundation-shell .experiences-page .signature-combinations-line-icons .signature-combinations-list > a {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+.signature-combination-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .75rem;
+  color: var(--color-luxe-gold-ink);
+}
+.signature-combination-icons svg { width: 3rem; height: 3rem; flex-shrink: 0; }
+@media (max-width: 700px) {
+  .foundation-shell .experiences-page .signature-combinations-line-icons .signature-combinations-list > a {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+  }
+  .signature-combination-icons { justify-content: flex-start; }
+}
+
 /* Experiences hub mobile composition refinements. */
 .foundation-shell .experiences-page .experiences-hero-world {
   aspect-ratio: 1402 / 1122;

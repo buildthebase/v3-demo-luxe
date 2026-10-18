@@ -51,10 +51,10 @@ export const rentalCategories = [
   {
     id: "finishing",
     number: "06",
-    name: "Linens, Tent Walls & Tent Lighting",
+    name: "Tent Walls & Tent Lighting",
     role: "Available with Luxe tent rentals, not as a standalone service",
     description:
-      "Linens for our 6-ft tables, black & white cocktail table linens and tent walls are available. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service.",
+      "Tent walls are available. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service.",
   },
 ] as const;
 

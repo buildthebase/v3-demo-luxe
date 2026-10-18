@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ProcessStartAction } from "./process-start-action";
 import {
   babyShowerCombinations,
   babyShowerExperiences,
@@ -233,6 +234,7 @@ function BabyShowerPlanning() {
           </li>
         ))}
       </ol>
+      <ProcessStartAction />
     </section>
   );
 }

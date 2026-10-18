@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ProcessStartAction } from "./process-start-action";
 import {
   bridalShowerCombinations,
   bridalShowerDetails,
@@ -318,6 +319,7 @@ function BridalPlanning() {
           </li>
         ))}
       </ol>
+      <ProcessStartAction />
     </section>
   );
 }

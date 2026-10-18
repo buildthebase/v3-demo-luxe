@@ -1,0 +1,5 @@
+[0:v]fps=30,scale=1080:1920:flags=lanczos,vidstabtransform=input=/private/tmp/luxe-coffee-C5024.trf:smoothing=12:optzoom=1:zoomspeed=0.2:interpol=bicubic,crop=1080:1720:0:200,setsar=1,hqdn3d=0.6:0.6:1.2:1.2,eq=contrast=1.04:brightness=0.012:saturation=1.025,split=2[base][detail];
+[detail]cas=strength=0.48[sharp];
+[sharp][base]blend=all_expr='A*(0.35+0.5*pow(abs(Y/H-0.5)*2,1.5))+B*(0.65-0.5*pow(abs(Y/H-0.5)*2,1.5))',split=2[clear][glass];
+[glass]median=radius=2:planes=1[clean];
+[clean][clear]blend=all_expr='if(between(X,430,900)*between(Y,330,410),A*0.55+B*0.45,B)'[out]

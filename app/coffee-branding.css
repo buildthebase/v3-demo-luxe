@@ -1,0 +1,72 @@
+.foundation-shell .coffee-page > .coffee-branding {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: clamp(2rem, 6vw, 6rem);
+  width: min(100% - (2 * var(--space-page-inline)), var(--layout-max));
+  margin-inline: auto;
+  padding-block: var(--luxe-compact-section-space);
+  background: var(--surface-chapter-taupe);
+  box-shadow: 0 0 0 100vmax var(--surface-chapter-taupe);
+  clip-path: inset(0 -100vmax);
+  color: var(--color-luxe-black);
+  position: relative;
+  isolation: isolate;
+}
+.coffee-branding::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0 -100vmax;
+  background-image: radial-gradient(rgb(23 22 20 / 5.3%) .55px, transparent .7px);
+  background-size: 4px 4px;
+  content: "";
+  pointer-events: none;
+}
+.coffee-branding-gallery { width: min(100%, 24rem); justify-self: center; min-width: 0; }
+.coffee-branding-photo { overflow: hidden; border: 0; aspect-ratio: 945 / 1665; touch-action: pan-y pinch-zoom; cursor: grab; user-select: none; }
+.coffee-branding-photo:active { cursor: grabbing; }
+.coffee-branding-photo img { display: block; width: 100%; height: 100%; object-fit: cover; transform: scale(1.035); transform-origin: center; }
+.coffee-branding-controls { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: .75rem; }
+.coffee-branding-controls button { min-width: 44px; min-height: 44px; cursor: pointer; color: var(--color-luxe-black); }
+.coffee-branding-arrow { border: 1px solid var(--color-luxe-gold-ink); background: rgb(248 246 242 / 65%); font-size: 1.25rem; }
+.coffee-branding-arrow:hover { background: var(--color-luxe-black); color: var(--color-luxe-ivory); }
+.coffee-branding-dots { display: flex; }
+.coffee-branding-dots button { display: grid; place-items: center; padding: 0; border: 0; background: transparent; }
+.coffee-branding-dots button > span { width: 8px; height: 8px; border: 1px solid var(--color-luxe-gold-ink); border-radius: 50%; }
+.coffee-branding-dots button[aria-current="true"] > span { background: var(--color-luxe-gold-ink); }
+.foundation-shell .coffee-branding-gallery-hint,
+.foundation-shell .coffee-branding-gallery-count { margin: .65rem 0 0; text-align: center; font-size: .75rem !important; line-height: 1.5; color: var(--color-text-secondary); }
+.coffee-branding-touch-hint { display: none; }
+@media (pointer: coarse) { .coffee-branding-touch-hint { display: inline; } }
+.coffee-branding-gallery:focus-visible { outline: 2px solid var(--color-luxe-gold-ink); outline-offset: 6px; }
+.coffee-branding-controls button:focus-visible { outline: 2px solid var(--color-luxe-gold-ink); outline-offset: 3px; }
+.coffee-branding-copy { min-width: 0; container-type: inline-size; }
+.foundation-shell .coffee-branding-copy h2#coffee-branding-title:not(#luxe-sitewide-h2-scale):not(#home-hero-seo-title) {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 auto;
+  font-size: clamp(1rem, 5.3cqi, 2.6rem) !important;
+  line-height: 1.15;
+  text-align: center;
+  white-space: nowrap;
+}
+.coffee-branding-copy > p { margin: 1.25rem 0 0; color: var(--color-text-secondary); line-height: 1.6; }
+.coffee-branding-copy > .foundation-label { margin: 0 0 1rem; color: var(--color-luxe-gold-ink); }
+.coffee-branding-copy ul { display: grid; gap: .75rem; margin: 1.5rem 0; padding-left: 1.2rem; list-style: disc; line-height: 1.6; }
+.coffee-branding-copy li::marker { color: var(--color-luxe-gold-ink); }
+.foundation-shell .coffee-branding-copy > .coffee-branding-note { font-size: .875rem !important; }
+.coffee-branding-link { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; max-width: 100%; margin-top: 1rem; padding: .6rem 1rem; border: 1px solid var(--color-luxe-black); color: var(--color-luxe-black); font-size: .875rem; text-decoration: none; text-align: center; }
+.coffee-branding-link:focus-visible { outline: 2px solid var(--color-luxe-gold-ink); outline-offset: 4px; }
+.coffee-branding-link:hover { background: var(--color-luxe-black); color: var(--color-luxe-ivory); }
+@media (min-width: 801px) {
+  .foundation-shell .coffee-branding-copy h2#coffee-branding-title:not(#luxe-sitewide-h2-scale):not(#home-hero-seo-title) {
+    text-align: left !important;
+    margin-inline: 0 !important;
+    padding-inline: 0;
+  }
+  .coffee-branding-link { min-height: 56px; padding: 1rem 2rem; font-size: 1rem; }
+}
+@media (max-width: 800px) {
+  .foundation-shell .coffee-page > .coffee-branding { grid-template-columns: minmax(0, 1fr); }
+  .coffee-branding-gallery { width: min(100%, 22rem); }
+}

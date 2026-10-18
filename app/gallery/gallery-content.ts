@@ -3,6 +3,11 @@ import {
   isPublishableImage,
   type ResponsiveImageAsset,
 } from "../image-system";
+import { experienceCardMedia } from "../experience-card-media";
+import { weddingGalleryPreview } from "../events/weddings-content";
+import { homeHeroMedia } from "../home-hero-media";
+import { homeEventImageGroups } from "../home-content";
+import { brandingPhotos } from "../coffee-branding-media";
 
 export type GalleryFilter =
   | "all"
@@ -19,6 +24,7 @@ export type GalleryFilter =
 
 export type GalleryMedia = ResponsiveImageAsset & {
   caption: string;
+  video?: { sources: readonly { src: string; type: string }[] };
 };
 
 export type GalleryGroup = {
@@ -29,7 +35,7 @@ export type GalleryGroup = {
   description: string;
   tags: readonly GalleryFilter[];
   tone: "coffee" | "dessert" | "seating" | "combined";
-  links: readonly { href: string; label: string }[];
+  links: readonly [{ href: string; label: string }];
   media: readonly GalleryMedia[];
 };
 
@@ -62,23 +68,17 @@ function galleryMedia(
   };
 }
 
-function reservedGalleryMedia(id: string, caption: string): GalleryMedia {
-  return {
-    id,
-    src: null,
-    alt: "",
-    caption,
-    width: 1200,
-    height: 900,
-    sizes: gallerySizes,
-    priority: false,
-    status: "reserved",
-    format: "webp",
-  };
-}
-
 const experienceImages = imageAssets.experiences;
 const homeImages = imageAssets.home;
+
+function galleryVideo(asset: ResponsiveImageAsset, sources: readonly { src: string; type: string }[], caption: string): GalleryMedia {
+  return { ...galleryMedia(asset, caption), id: `${asset.id}-film`, video: { sources } };
+}
+
+function heroFilm(id: "coffee" | "dessert" | "seating", caption: string): GalleryMedia {
+  const media = homeHeroMedia.find(item => item.id === id)!;
+  return galleryVideo({ id: `gallery-hero-${id}`, src: media.poster, alt: caption, width: 720, height: 1280, sizes: gallerySizes, status: "approved", format: "jpeg", unoptimized: true }, media.sources, caption);
+}
 
 export const galleryGroups: readonly GalleryGroup[] = [
   {
@@ -103,6 +103,11 @@ export const galleryGroups: readonly GalleryGroup[] = [
       galleryMedia(experienceImages.experiencesGalleryCoffeeInService, "Specialty drinks prepared live by the Luxe Coffee Bar team."),
       galleryMedia(experienceImages.experiencesGalleryCompletedSetting, "A completed Luxe coffee service ready for guests."),
       galleryMedia(experienceImages.coffeeBar, "Live drink preparation at the Luxe Coffee Bar."),
+      galleryMedia(experienceImages.coffeeSignaturePreparation),
+      ...experienceCardMedia.coffee.carouselImages.map(asset => galleryMedia(asset)),
+      ...brandingPhotos.map(asset => galleryMedia(asset)),
+      heroFilm("coffee", "Sip: specialty coffee prepared live by Luxe Coffee Bar."),
+      galleryMedia(homeImages.coffeeQuotePreparation, "A closer look at Luxe Coffee Bar preparation."),
     ],
   },
   {
@@ -138,6 +143,8 @@ export const galleryGroups: readonly GalleryGroup[] = [
       galleryMedia(experienceImages.experiencesSweetCart, "Luxe Sweet Cart service in an event setting."),
       galleryMedia(experienceImages.experiencesGalleryDessertInPreparation, "Dessert prepared to order for an event guest."),
       galleryMedia(experienceImages.sweetCart, "Guest-facing live dessert service from the Luxe Sweet Cart."),
+      galleryMedia(experienceCardMedia.dessert.image),
+      heroFilm("dessert", "Indulge: live dessert preparation with Luxe Sweet Cart."),
     ],
   },
   {
@@ -146,7 +153,7 @@ export const galleryGroups: readonly GalleryGroup[] = [
     title: "Event seating and rental settings",
     context: "Luxe Seating Rentals",
     description:
-      "This collection is reserved for verified Luxe inventory and completed Luxe installations. New photography will feature chairs, tables, linens, tents, tent walls and full private-event setups. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'.",
+      "Explore Luxe chairs, tables, tents, dance floors and completed event settings. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations are available up to 18' × 18'.",
     tags: [
       "seating-rentals",
       "weddings",
@@ -161,11 +168,22 @@ export const galleryGroups: readonly GalleryGroup[] = [
       { href: "/experiences/seating-rentals", label: "Explore Seating Rentals" },
     ],
     media: [
-      reservedGalleryMedia("reserved-luxe-chairs-tables", "Reserved for Luxe white resin chairs, 6-ft tables, cocktail tables, and linens."),
-      reservedGalleryMedia("reserved-luxe-tents", "Reserved for Luxe 20' × 20' tents, combined 20' × 40' configurations, and clear-top tents."),
-      reservedGalleryMedia("reserved-luxe-tent-finishes", "Reserved for Luxe tent walls and Tent Lighting, which is available with Luxe tent rentals and is not offered as a standalone service."),
-      reservedGalleryMedia("reserved-luxe-dance-floor", "Reserved for Luxe dance-floor configurations, available up to 18' × 18'."),
-      reservedGalleryMedia("reserved-luxe-backyard-setup", "Reserved for a complete Luxe backyard or private-event setup."),
+      ...[
+        experienceImages.experiencesSeatingRentals,
+        experienceImages.seatingRentalsHero,
+        experienceImages.seatingRentalsOverview,
+        experienceImages.whiteResinChairs,
+        experienceImages.sixFootRectangularTables,
+        experienceImages.cocktailTables,
+        experienceImages.eventTents,
+        experienceImages.danceFloor,
+        experienceImages.rentalFinishingPieces,
+        experienceImages.seatingGalleryLayoutInUse,
+        experienceImages.seatingGalleryFinishingDetails,
+        experienceImages.seatingRentals,
+        experienceCardMedia.seating.image,
+      ].map(asset => galleryMedia(asset)),
+      heroFilm("seating", "Gather: an aerial view of Luxe tents, seating and an outdoor celebration."),
     ],
   },
   {
@@ -183,7 +201,7 @@ export const galleryGroups: readonly GalleryGroup[] = [
     media: [
       galleryMedia(experienceImages.weddingWelcome, "Luxe Coffee Bar hospitality welcoming wedding guests."),
       galleryMedia(experienceImages.weddingSweetMoment, "Luxe live dessert service incorporated into a wedding celebration."),
-      reservedGalleryMedia("reserved-luxe-wedding-rentals", "Reserved for verified Luxe rentals within a wedding setting."),
+      ...weddingGalleryPreview.map(item => galleryMedia(item.image, item.note)),
     ],
   },
   {
@@ -197,10 +215,12 @@ export const galleryGroups: readonly GalleryGroup[] = [
     tone: "coffee",
     links: [
       { href: "/events/corporate-events", label: "Explore Corporate Events" },
-      { href: "/events/brand-activations", label: "Create a Branded Experience" },
     ],
     media: [
-      galleryMedia(homeImages.corporateBrandActivationsPoster, "A Luxe hospitality experience created for a corporate or branded event."),
+      galleryVideo(homeImages.corporateBrandActivationsPoster, [
+        { src: homeEventImageGroups[1].video.webm, type: "video/webm" },
+        { src: homeEventImageGroups[1].video.mp4, type: "video/mp4" },
+      ], "Luxe Coffee Bar hospitality at corporate events and brand activations."),
       galleryMedia(homeImages.workingWithLuxePoster, "Luxe service supporting guests in a professional event environment."),
       galleryMedia(homeImages.professionalOccasions, "A complete Luxe setup for a professional occasion."),
       galleryMedia(homeImages.workInContext, "Guests interacting with Luxe service in an event setting."),
@@ -226,10 +246,12 @@ export const galleryGroups: readonly GalleryGroup[] = [
     tone: "dessert",
     links: [
       { href: "/events", label: "Explore Events" },
-      { href: "/events/private-events", label: "Explore Private Events" },
     ],
     media: [
-      galleryMedia(homeImages.weddingsPrivateEventsPoster, "Luxe hospitality incorporated into a wedding or private celebration."),
+      galleryVideo(homeImages.weddingsPrivateEventsPoster, [
+        { src: homeEventImageGroups[0].video.webm, type: "video/webm" },
+        { src: homeEventImageGroups[0].video.mp4, type: "video/mp4" },
+      ], "Luxe hospitality incorporated into weddings and private celebrations."),
       galleryMedia(experienceImages.eventsHubHero, "A Luxe service moment designed around the occasion."),
       galleryMedia(homeImages.personalCelebrations, "Luxe event service within a personal celebration."),
     ],

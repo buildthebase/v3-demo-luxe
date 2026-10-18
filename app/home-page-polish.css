@@ -1,3 +1,85 @@
+/* Standalone Coffee Bar film above its client quote. */
+.foundation-shell .home-page > .home-coffee-quote-film {
+  display: flex;
+  justify-content: center;
+  margin-block: clamp(2rem, 4vw, 4rem) 0;
+}
+.home-coffee-quote-film-frame {
+  position: relative;
+  width: min(100%, 24rem);
+  aspect-ratio: 27 / 43;
+  overflow: hidden;
+  background: var(--color-luxe-black);
+}
+.home-coffee-quote-film-frame .home-editorial-video { object-fit: cover; }
+.home-coffee-quote-film-desktop { display: none; }
+@media (min-width: 801px) {
+  .foundation-shell .home-page > .home-coffee-quote-film { display: none; }
+  .home-coffee-quote-film-desktop { display: block; width: 100%; margin-top: 1rem; }
+  .foundation-shell .home-page #review-coffee {
+    grid-template-rows: auto auto auto 1fr;
+    row-gap: var(--space-3);
+  }
+  .foundation-shell .home-page #review-coffee > header {
+    grid-column: 1;
+    grid-row: 1 / span 4;
+    grid-template-rows: subgrid;
+    align-self: stretch;
+  }
+  .foundation-shell .home-page #review-coffee > header > span { grid-row: 1; }
+  .foundation-shell .home-page #review-coffee > header > strong { grid-row: 2; }
+  .foundation-shell .home-page #review-coffee .home-coffee-quote-film-desktop {
+    grid-row: 3 / span 2;
+    align-self: start;
+  }
+  .foundation-shell .home-page #review-coffee > blockquote {
+    grid-column: 2;
+    grid-row: 3;
+    padding-top: 1rem;
+  }
+  .foundation-shell .home-page #review-coffee > nav {
+    grid-column: 2;
+    grid-row: 4;
+    padding-top: clamp(1rem, 2vw, 2rem);
+    align-self: start;
+  }
+}
+
+/* Center this heading on the full section, with two intentional lines. */
+.foundation-shell .home-page .home-events .home-section-intro-single {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.foundation-shell .home-page h2#home-events-title {
+  width: 100%;
+  min-width: 0;
+  max-width: none !important;
+  margin-inline: auto;
+  text-align: center;
+  white-space: normal;
+}
+.foundation-shell .home-page #home-events-title .home-events-title-line {
+  display: block;
+  white-space: nowrap;
+}
+@media (max-width: 700px) {
+  .foundation-shell .home-page h2#home-events-title {
+    font-size: clamp(1.25rem, 5.6vw, 2.4rem) !important;
+    line-height: 1.1;
+  }
+}
+
+/* Keep the event-directory link underline close without shrinking its tap area. */
+.foundation-shell .home-page .home-events > .home-text-link,
+.foundation-shell .home-page .home-gallery-link {
+  padding-bottom: 0;
+  border-bottom: 0;
+  text-decoration: underline;
+  text-underline-offset: .2em;
+  text-decoration-thickness: 1px;
+}
+
 /* Homepage hierarchy and vertical-rhythm refinements. */
 .home-experience-cta {
   display: grid;

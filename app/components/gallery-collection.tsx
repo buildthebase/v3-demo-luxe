@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import {
   galleryFilters,
   galleryGroups,
@@ -11,13 +11,16 @@ import {
 } from "../gallery/gallery-content";
 import { isPublishableImage } from "../image-system";
 import { ResponsiveImage } from "./responsive-image";
+import { GalleryPhotoViewer, galleryPhotoAlt } from "./gallery-photo-viewer";
 
 function GalleryMediaFrame({
   item,
   tone,
+  onOpen,
 }: {
   item: GalleryMedia;
   tone: GalleryGroup["tone"];
+  onOpen: (id: string, trigger: HTMLButtonElement) => void;
 }) {
   return (
     <figure
@@ -25,8 +28,16 @@ function GalleryMediaFrame({
       data-asset-status={item.status}
     >
       <div className="gallery-media-frame">
-        {isPublishableImage(item) ? (
-          <ResponsiveImage asset={item} fill />
+        {item.video ? (
+          <video controls playsInline muted preload="none" poster={item.src ?? undefined} aria-label={item.alt}>
+            {item.video.sources.map(source => <source key={source.src} src={source.src} type={source.type} />)}
+            Your browser does not support video playback.
+          </video>
+        ) : isPublishableImage(item) ? (
+          <button type="button" className="gallery-photo-open" aria-haspopup="dialog" aria-label={`Open photo: ${item.caption}`} onClick={event => onOpen(item.id, event.currentTarget)}>
+            <ResponsiveImage asset={{ ...item, alt: galleryPhotoAlt(item) }} fill />
+            <span className="gallery-photo-expand" aria-hidden="true">⤢</span>
+          </button>
         ) : (
           <div className="gallery-media-reserved" aria-hidden="true">
             <i /><i /><i />
@@ -34,31 +45,22 @@ function GalleryMediaFrame({
           </div>
         )}
       </div>
-      <figcaption>
-        <span>{item.caption}</span>
-      </figcaption>
     </figure>
   );
 }
 
 export function GalleryCollection() {
-  const filterDropdownRef = useRef<HTMLDetailsElement>(null);
   const [activeFilters, setActiveFilters] = useState<GalleryFilter[]>([]);
+  const [openGroups, setOpenGroups] = useState<Set<string>>(() => new Set());
+  const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
+  const photoTrigger = useRef<HTMLButtonElement | null>(null);
   const visibleGroups = galleryGroups.filter(
     (group) =>
       activeFilters.length === 0 ||
       activeFilters.some((filter) => group.tags.includes(filter)),
   );
   const selectableFilters = galleryFilters.filter((filter) => filter.value !== "all");
-
-  useEffect(() => {
-    const closeFilterOnScroll = () => {
-      filterDropdownRef.current?.removeAttribute("open");
-    };
-
-    window.addEventListener("scroll", closeFilterOnScroll, { passive: true });
-    return () => window.removeEventListener("scroll", closeFilterOnScroll);
-  }, []);
+  const photos = visibleGroups.flatMap(group => group.media.filter(item => !item.video && isPublishableImage(item)));
 
   const toggleFilter = (filter: GalleryFilter) => {
     setActiveFilters((current) =>
@@ -77,7 +79,7 @@ export function GalleryCollection() {
             Showing {visibleGroups.length} {visibleGroups.length === 1 ? "group" : "groups"}.
           </p>
         </div>
-        <details className="gallery-filter-dropdown" ref={filterDropdownRef}>
+        <details className="gallery-filter-dropdown">
           <summary>
             <span>Filter gallery</span>
             <small>
@@ -155,24 +157,39 @@ export function GalleryCollection() {
             </button>
           </div>
         )}
-        {galleryGroups.map((group) => {
-          const visible = visibleGroups.some((item) => item.id === group.id);
+        {visibleGroups.map((group) => {
+          const open = openGroups.has(group.id);
           return (
             <article
-              className={`gallery-group gallery-group-${group.tone}`}
+              className={`gallery-group gallery-group-collapsible gallery-group-${group.tone}`}
               data-gallery-group={group.id}
-              hidden={!visible}
               key={group.id}
             >
               <header>
                 <p>{group.context}</p>
-                <h2>{group.title}</h2>
-                <p>{group.description}</p>
+                <h2 className="foundation-wide-heading">
+                  <button type="button" className="gallery-group-toggle" aria-expanded={open} aria-controls={`gallery-content-${group.id}`}
+                    onClick={() => setOpenGroups(current => {
+                      const next = new Set(current);
+                      if (next.has(group.id)) next.delete(group.id);
+                      else next.add(group.id);
+                      return next;
+                    })}>
+                    <span>{group.title}</span>
+                    <span className="gallery-group-toggle-symbol" aria-hidden="true">{open ? "−" : "+"}</span>
+                  </button>
+                </h2>
               </header>
+              <div className="gallery-group-content" id={`gallery-content-${group.id}`} hidden={!open}>
+              {open ? <>
+              <p className="gallery-group-description">{group.description}</p>
               {group.media.length > 0 ? (
                 <div className="gallery-group-media">
                   {group.media.map((item) => (
-                    <GalleryMediaFrame item={item} tone={group.tone} key={item.id} />
+                    <GalleryMediaFrame item={item} tone={group.tone} key={item.id} onOpen={(id, trigger) => {
+                      photoTrigger.current = trigger;
+                      setSelectedPhoto(id);
+                    }} />
                   ))}
                 </div>
               ) : null}
@@ -184,14 +201,20 @@ export function GalleryCollection() {
                     data-gallery-item-id={group.id}
                     key={link.href}
                   >
-                    {link.label} <span aria-hidden="true">↗︎</span>
+                    {link.label}
                   </Link>
                 ))}
               </nav>
+              </> : null}
+              </div>
             </article>
           );
         })}
       </section>
+      {selectedPhoto ? <GalleryPhotoViewer photos={photos} initialId={selectedPhoto} onClose={() => {
+        setSelectedPhoto(null);
+        photoTrigger.current?.focus({ preventScroll: true });
+      }} /> : null}
     </>
   );
 }

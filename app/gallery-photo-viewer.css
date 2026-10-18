@@ -1,0 +1,73 @@
+/* Closed collections contain no media elements, so they make no media requests. */
+.gallery-group.gallery-group-collapsible { display: block; padding-block: 1.5rem; }
+.gallery-group-collapsible > header { position: static; }
+.gallery-group-collapsible > header > p:first-of-type { margin-bottom: .5rem; }
+.foundation-shell .gallery-group-collapsible > header h2.foundation-wide-heading:not(#luxe-sitewide-h2-scale):not(#home-hero-seo-title) { width: 100%; max-width: none !important; }
+.gallery-group-toggle { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; width: 100%; min-height: 48px; border: 0; padding: .5rem 0; background: transparent; color: inherit; font: inherit; font-size: clamp(1.3rem, 2.8vw, 2.5rem); line-height: 1.2; letter-spacing: -.04em; text-align: left; cursor: pointer; }
+.gallery-group-toggle-symbol { flex-shrink: 0; display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--color-rule); color: var(--color-luxe-gold-ink); font-size: 1.5rem; font-weight: 400; }
+.gallery-group-toggle:focus-visible { outline: 2px solid var(--color-luxe-gold-ink); outline-offset: 5px; }
+.gallery-group-content[hidden] { display: none !important; }
+.gallery-group-content { padding-block: 1.25rem .5rem; }
+.gallery-group-description { max-width: 65ch; margin: 0 0 2rem; color: var(--color-text-secondary); line-height: 1.6; }
+.gallery-group-content > nav { display: flex; flex-wrap: wrap; gap: 1rem 2rem; margin-top: 2rem; }
+.gallery-group-content > nav a { display: inline-flex; align-items: center; gap: .75rem; min-height: 44px; text-decoration: underline; text-underline-offset: .18em; }
+
+.gallery-photo-open {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+.gallery-photo-open:focus-visible { outline: 3px solid var(--color-luxe-gold); outline-offset: -4px; }
+.gallery-photo-expand {
+  position: absolute;
+  right: .75rem;
+  bottom: .75rem;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  background: rgb(23 22 20 / 75%);
+  color: var(--color-luxe-ivory);
+  font-size: 1.35rem;
+  pointer-events: none;
+}
+dialog.gallery-photo-viewer {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: max(.75rem, env(safe-area-inset-top)) max(.75rem, env(safe-area-inset-right)) max(.75rem, env(safe-area-inset-bottom)) max(.75rem, env(safe-area-inset-left));
+  border: 0;
+  background: rgb(23 22 20 / 98%);
+  color: var(--color-luxe-ivory);
+  overflow: hidden;
+  overscroll-behavior: contain;
+}
+dialog.gallery-photo-viewer[open] { display: flex; flex-direction: column; }
+.gallery-photo-viewer::backdrop { background: rgb(0 0 0 / 85%); }
+.gallery-viewer-toolbar { display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; padding: 0 .25rem .5rem; }
+.gallery-viewer-toolbar > span { font-size: .8rem; letter-spacing: .05em; }
+.gallery-photo-viewer button { display: grid; place-items: center; width: 48px; height: 48px; padding: 0; border: 1px solid rgb(248 246 242 / 45%); background: rgb(23 22 20 / 80%); color: var(--color-luxe-ivory); font-size: 1.65rem; line-height: 1; cursor: pointer; }
+.gallery-photo-viewer button:hover { border-color: var(--color-luxe-gold); color: var(--color-luxe-gold); }
+.gallery-photo-viewer button:focus-visible { outline: 2px solid var(--color-luxe-gold); outline-offset: 3px; }
+.gallery-viewer-stage { position: relative; display: flex; align-items: center; justify-content: center; flex: 1; min-height: 0; padding-inline: 4rem; touch-action: pan-y pinch-zoom; user-select: none; }
+.gallery-viewer-stage .gallery-viewer-photo { display: block; width: 100%; height: 100%; max-height: 100%; object-fit: contain; }
+.gallery-viewer-previous, .gallery-viewer-next { position: absolute; top: 50%; transform: translateY(-50%); }
+.gallery-viewer-previous { left: .25rem; }
+.gallery-viewer-next { right: .25rem; }
+.gallery-viewer-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (max-width: 700px) {
+  .gallery-viewer-stage { padding: 0 0 3.75rem; }
+  .gallery-viewer-previous, .gallery-viewer-next { top: auto; bottom: 0; transform: none; }
+  .gallery-viewer-previous { left: calc(50% - 60px); }
+  .gallery-viewer-next { right: calc(50% - 60px); }
+}

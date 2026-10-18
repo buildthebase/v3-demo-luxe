@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ProcessStartAction } from "./process-start-action";
 import {
   birthdayCombinations,
   birthdayContexts,
@@ -223,6 +224,7 @@ function BirthdayPlanning() {
           </li>
         ))}
       </ol>
+      <ProcessStartAction />
     </section>
   );
 }

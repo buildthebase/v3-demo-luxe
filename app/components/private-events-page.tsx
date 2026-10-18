@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ProcessStartAction } from "./process-start-action";
 import {
   privateEventContexts,
   privateEventExperiences,
@@ -203,6 +204,7 @@ function PrivateEventPlanning() {
         <strong>Booking Policy:</strong> Your date is secured once the agreement is
         signed and the 30% non-refundable retainer is received.
       </p>
+      <ProcessStartAction />
     </section>
   );
 }

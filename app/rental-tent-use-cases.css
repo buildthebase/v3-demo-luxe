@@ -1,0 +1,47 @@
+.foundation-shell .seating-page > .rental-tent-use-cases {
+  width: min(100% - (2 * var(--space-page-inline)), var(--layout-max));
+  margin-inline: auto;
+  padding-block: var(--luxe-compact-section-space);
+  background: var(--surface-chapter-taupe);
+  box-shadow: 0 0 0 100vmax var(--surface-chapter-taupe);
+  clip-path: inset(0 -100vmax);
+  color: var(--color-luxe-black);
+  text-align: center;
+  position: relative;
+  isolation: isolate;
+}
+.rental-tent-use-cases::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0 -100vmax;
+  background-image: radial-gradient(rgb(23 22 20 / 5.3%) .55px, transparent .7px);
+  background-size: 4px 4px;
+  content: "";
+  pointer-events: none;
+}
+.rental-tent-use-cases > header { max-width: 48rem; margin: 0 auto 2.5rem; }
+.rental-tent-use-cases .foundation-label { color: var(--color-luxe-gold-ink); }
+.foundation-shell .rental-tent-use-cases h2#tent-use-cases-title { width: 100% !important; max-width: none !important; margin: 0 auto 1.25rem; text-align: center; }
+.rental-tent-use-cases > header > p:last-child { margin: 0; color: var(--color-text-secondary); line-height: 1.65; }
+.rental-tent-use-case-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); border-top: 1px solid var(--color-rule); border-left: 1px solid var(--color-rule); }
+.rental-tent-use-case-grid > article { grid-column: span 2; padding: clamp(1.5rem, 3vw, 3rem); border-right: 1px solid var(--color-rule); border-bottom: 1px solid var(--color-rule); background: rgb(248 246 242 / 35%); min-width: 0; }
+.rental-tent-use-case-grid > article:nth-child(n + 4) { grid-column: span 3; background: rgb(248 246 242 / 15%); }
+.rental-tent-use-case-icon { height: 4rem; max-width: 100%; margin: 0 auto 1.25rem; color: var(--color-luxe-gold-ink); }
+.rental-tent-use-case-grid h3 { margin: 0 0 .5rem; font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 400; line-height: 1.2; }
+.rental-tent-use-case-grid .rental-tent-capacity { margin: 0 0 1rem; color: var(--color-luxe-gold-ink); font-weight: 600; }
+.rental-tent-use-case-grid p:last-child { margin: 0 auto; max-width: 40ch; color: var(--color-text-secondary); line-height: 1.6; }
+.foundation-shell .rental-tent-use-cases > .rental-tent-use-case-note { max-width: 80ch; margin: 1.5rem auto; font-size: .875rem !important; font-style: italic; color: var(--color-text-secondary); line-height: 1.6; }
+.rental-tent-use-case-action { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: .9rem 1.5rem; border: 1px solid var(--color-luxe-black); color: var(--color-luxe-black); font-size: .875rem; }
+.rental-tent-use-case-action:hover { background: var(--color-luxe-black); color: var(--color-luxe-ivory); }
+.rental-tent-use-case-action:focus-visible { outline: 2px solid var(--color-luxe-gold-ink); outline-offset: 4px; }
+@media (min-width: 801px) {
+  .foundation-shell .rental-tent-use-cases h2#tent-use-cases-title {
+    white-space: nowrap;
+    font-size: clamp(1.75rem, 3.4vw, 3.5rem) !important;
+  }
+}
+@media (max-width: 700px) {
+  .rental-tent-use-case-grid { grid-template-columns: minmax(0, 1fr); }
+  .rental-tent-use-case-grid > article,
+  .rental-tent-use-case-grid > article:nth-child(n + 4) { grid-column: auto; }
+}

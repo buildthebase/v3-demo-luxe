@@ -17,8 +17,10 @@ import {
 } from "../signature-elements";
 import { ResponsiveImage } from "./responsive-image";
 import { QuoteModalTrigger } from "./quote-modal-trigger";
+import { ProcessStartAction } from "./process-start-action";
 import { ExperienceImageCarousel } from "./experience-image-carousel";
 import { experienceCardMedia } from "../experience-card-media";
+import { ExperienceLineIcon } from "./experience-line-icon";
 
 const experienceSelectorActions: Record<string, string> = {
   coffee: "Sip",
@@ -268,15 +270,15 @@ export function EventPlanningPathway({
               stepNodes.current[index] = node;
             }}
           >
-            <Link href={step.href}>
+            <div className="signature-pathway-step">
               <span>{step.number}</span>
               <strong>{step.title}</strong>
               <p>{step.description}</p>
-              <b aria-hidden="true">↗︎</b>
-            </Link>
+            </div>
           </li>
         ))}
       </ol>
+      <ProcessStartAction />
     </section>
   );
 }
@@ -289,6 +291,7 @@ export function CombinedExperienceFeature({
   cardTitlesAsHeadings = false,
   footer,
   showGridSurface = false,
+  useLineIcons = false,
 }: {
   id?: string;
   combinations?: readonly CombinedExperience[];
@@ -297,11 +300,12 @@ export function CombinedExperienceFeature({
   cardTitlesAsHeadings?: boolean;
   footer?: ReactNode;
   showGridSurface?: boolean;
+  useLineIcons?: boolean;
 } = {}) {
   return (
     <section
       id={id}
-      className={`signature-combinations${showGridSurface ? " luxe-grid-section" : ""}`}
+      className={`signature-combinations${showGridSurface ? " luxe-grid-section" : ""}${useLineIcons ? " signature-combinations-line-icons" : ""}`}
       aria-labelledby="signature-combinations-title"
     >
       {showGridSurface ? <span className="luxe-section-grid" aria-hidden="true" /> : null}
@@ -323,12 +327,12 @@ export function CombinedExperienceFeature({
               )}
               <span>{combination.description}</span>
             </div>
-            <span className="signature-combination-orbit" aria-hidden="true">
+            <span className={useLineIcons ? "signature-combination-icons" : "signature-combination-orbit"} aria-hidden="true">
               {combination.experienceIds.map((experienceId) => (
-                <i className={`signature-node-${experienceId}`} key={experienceId} />
+                useLineIcons ? <ExperienceLineIcon type={experienceId} key={experienceId} /> : <i className={`signature-node-${experienceId}`} key={experienceId} />
               ))}
             </span>
-            <b aria-hidden="true">↗︎</b>
+            {useLineIcons ? null : <b aria-hidden="true">↗︎</b>}
           </Link>
         ))}
       </div>

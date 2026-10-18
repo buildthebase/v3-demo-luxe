@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 type EditorialReviewLink = {
   href: string;
@@ -10,11 +11,13 @@ export function HomeEditorialReview({
   id,
   links,
   quote,
+  headerMedia,
 }: {
   context: string;
   id: string;
   links: readonly EditorialReviewLink[];
   quote: string;
+  headerMedia?: ReactNode;
 }) {
   return (
     <section
@@ -26,6 +29,7 @@ export function HomeEditorialReview({
       <header>
         <span>Sample client quote</span>
         <strong>{context}</strong>
+        {headerMedia}
       </header>
       <blockquote>
         <p>“{quote}”</p>

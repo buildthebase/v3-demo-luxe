@@ -39,8 +39,8 @@ export const homeEventImageGroups = [
     context: "Premium mobile Coffee Bars, custom-branded beverage cups, and refined event spaces for corporate teams, clients, and brand launches.",
     image: imageAssets.home.professionalOccasions,
     video: {
-      mp4: "/images/home/luxe-corporate-events-brand-activations-v2.mp4",
-      webm: "/images/home/luxe-corporate-events-brand-activations-v2.webm",
+      mp4: "/images/home/luxe-corporate-events-brand-activations-v3.mp4",
+      webm: "/images/home/luxe-corporate-events-brand-activations-v3.webm",
       poster: imageAssets.home.corporateBrandActivationsPoster.src,
     },
   },

@@ -6,3 +6,9 @@
 .coffee-inclusions-folio::after {
   content: none;
 }
+
+/* Match the beverage menu's single charcoal outline without an inset frame. */
+.foundation-shell .coffee-page .coffee-inclusions-folio {
+  border: 1px solid color-mix(in srgb, var(--color-luxe-black) 50%, transparent);
+  box-shadow: none;
+}

@@ -112,7 +112,8 @@ export function HomeEventCategories() {
     <section id="event-types" className="home-events" aria-labelledby="home-events-title">
       <header className="home-section-intro home-section-intro-single">
         <h2 id="home-events-title">
-          Event Catering &amp; Rental Services for Every Occasion
+          <span className="home-events-title-line">Event Catering &amp; Rental</span>{" "}
+          <span className="home-events-title-line">Services for Every Occasion</span>
         </h2>
       </header>
       <div className="home-event-groups">
@@ -175,7 +176,7 @@ export function HomeSelectedImagery() {
         ))}
       </div>
       <Link href="/gallery" className="home-text-link home-gallery-link">
-        Visit the Luxe event gallery <span aria-hidden="true">↗︎</span>
+        Visit the Luxe event gallery
       </Link>
     </section>
   );

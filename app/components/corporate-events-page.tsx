@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ProcessStartAction } from "./process-start-action";
 import {
   corporateBrandingOptions,
   corporateEventApplications,
@@ -372,6 +373,7 @@ function CorporatePlanning() {
           </li>
         ))}
       </ol>
+      <ProcessStartAction />
     </section>
   );
 }

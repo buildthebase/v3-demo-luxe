@@ -7,7 +7,6 @@ import {
   standardToppings,
   sweetCartCollections,
   sweetCartFaqs,
-  sweetCustomization,
   sweetEventLinks,
   sweetGalleryPreview,
 } from "../experiences/sweet-cart-content";
@@ -393,32 +392,6 @@ function SweetPantry() {
   );
 }
 
-function SweetCustomization() {
-  return (
-    <section
-      className="sweet-customization"
-      aria-labelledby="sweet-customization-title"
-    >
-      <header>
-        <p className="foundation-label">Personalized for the occasion</p>
-        <h2 className="foundation-wide-heading" id="sweet-customization-title">
-          <span>Customize the dessert menu,</span>
-          <span>cart, and presentation.</span>
-        </h2>
-      </header>
-      <div>
-        {sweetCustomization.map((item) => (
-          <article key={item.number}>
-            <span>{item.number}</span>
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
-          </article>
-        ))}
-      </div>
-    </section>
-  );
-}
-
 function SweetOperations() {
   return (
     <section
@@ -581,7 +554,6 @@ export function SweetCartPage() {
         <SweetSoftServe />
         <SweetInclusions />
         <SweetPantry />
-        <SweetCustomization />
         <SweetOperations />
         <SweetEvents />
         <SweetGallery />

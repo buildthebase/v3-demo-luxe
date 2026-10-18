@@ -15,6 +15,6 @@ const coffeeImages = [
 // their own event-specific imagery.
 export const experienceCardMedia = {
   coffee: { image: coffeeImages[0], carouselImages: coffeeImages },
-  dessert: { image: cardImage("sweet-cart-core-wide", "/images/home/sweet-cart-core-wide.webp", "Centered Luxe Sweet Cart with three globe lights in an evening event venue") },
+  dessert: { image: cardImage("sweet-cart-core-wheels", "/images/home/sweet-cart-core-wheels.webp", "Centered Luxe Sweet Cart on small caster wheels with three globe lights in an evening event venue") },
   seating: { image: cardImage("rentals-core-garden", "/images/home/rentals-core-garden.webp", "Overhead view of a garden celebration with white and clear-top tents, banquet tables, chairs and warm tent lighting") },
 };

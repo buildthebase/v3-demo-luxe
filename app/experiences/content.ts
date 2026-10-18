@@ -7,8 +7,9 @@ export type ExperienceHubFeature = {
   statement: string;
   description: string;
   details: readonly string[];
-  fact: string;
-  factLabel: string;
+  fact?: string;
+  factLabel?: string;
+  footnote?: string;
   href: `/experiences/${string}`;
   cta: string;
 };
@@ -24,7 +25,6 @@ export const experienceHubFeatures: readonly ExperienceHubFeature[] = [
     description:
       "Luxe Coffee Bar brings barista-served specialty coffee, premium matcha service, and a refined café atmosphere into weddings, corporate gatherings, activations, and private celebrations.",
     details: [
-      "Café Cart or Signature Coffee Bar",
       "Hot and iced café favourites and signature beverages",
       "Signature drinks and premium non-coffee options",
       "Menus, cups, signage, and branding possibilities",
@@ -68,10 +68,8 @@ export const experienceHubFeatures: readonly ExperienceHubFeature[] = [
       "Chairs and tables",
       "Cocktail tables",
       "Tents and linens",
-      "Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service.",
     ],
-    fact: "Core pieces",
-    factLabel: "focused rental inventory",
+    footnote: "Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service.",
     href: "/experiences/seating-rentals",
     cta: "Explore Luxe Seating Rentals",
   },
@@ -107,16 +105,16 @@ export const experienceNeedComparison = [
 export const experienceHubCombinations: readonly CombinedExperience[] = [
   {
     id: "bridal-shower",
-    occasion: "Bridal shower",
+    occasion: "Bridal Showers & Baby Showers",
     title: "Mobile Coffee Bar + Sweet Cart",
     description:
-      "A warm arrival, a live dessert moment, and one unified presentation for pre-wedding celebrations.",
+      "A warm arrival, a live dessert moment, and one unified presentation for bridal showers and baby showers.",
     href: "/events/bridal-showers",
     experienceIds: ["coffee", "dessert"],
   },
   {
     id: "backyard-celebration",
-    occasion: "Backyard celebration",
+    occasion: "Birthdays & Private Events",
     title: "Coffee Bar + Seating Rentals",
     description:
       "Mobile coffee with the tables, chairs, tenting, and linens needed for a welcoming outdoor gathering.",
@@ -125,16 +123,16 @@ export const experienceHubCombinations: readonly CombinedExperience[] = [
   },
   {
     id: "wedding",
-    occasion: "Wedding",
-    title: "Coffee + Dessert Cart + Event Rentals",
+    occasion: "Weddings",
+    title: "Coffee + Dessert Cart",
     description:
-      "On-site barista service, interactive dessert stations, and rental layouts planned seamlessly around your wedding venue.",
+      "On-site barista service and interactive dessert experiences coordinated around your wedding venue.",
     href: "/events/weddings",
-    experienceIds: ["coffee", "dessert", "seating"],
+    experienceIds: ["coffee", "dessert"],
   },
   {
     id: "product-launch",
-    occasion: "Product launch",
+    occasion: "Brand Activations",
     title: "Branded Drinks + Custom Signage",
     description:
       "A tactile brand experience with customized beverage menus, branded cups, and interactive cart displays.",

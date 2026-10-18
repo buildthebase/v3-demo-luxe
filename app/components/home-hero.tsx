@@ -338,19 +338,19 @@ export function HomeHero() {
               </span>
             ))}
           </h1>
-          <div
-            className={`home-cinematic-description${finalState ? " is-visible" : ""}`}
-            aria-hidden={finalState ? undefined : "true"}
-          >
-            <h2 className="foundation-wide-heading" id="home-hero-seo-title">
-              Luxury event experiences, elegantly composed with mobile coffee bars,
-              live dessert carts &amp; event rentals across Toronto &amp; Southern Ontario.
-            </h2>
-            <p>
-              Staffed service, refined presentation, and thoughtful guest flow from
-              first setup to final service.
-            </p>
-          </div>
+        </div>
+        <div
+          className={`home-cinematic-description${finalState ? " is-visible" : ""}`}
+          aria-hidden={finalState ? undefined : "true"}
+        >
+          <h2 className="foundation-wide-heading" id="home-hero-seo-title">
+            Luxury event experiences, elegantly composed with mobile coffee bars,
+            live dessert carts &amp; event rentals across Toronto &amp; Southern Ontario.
+          </h2>
+          <p>
+            Staffed service, refined presentation, and thoughtful guest flow from
+            first setup to final service.
+          </p>
         </div>
 
         <div

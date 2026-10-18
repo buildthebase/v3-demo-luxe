@@ -1,3 +1,83 @@
+/* Keep the event-applications heading centered on the full section width. */
+.foundation-shell .coffee-page .coffee-events > header {
+  width: 100%;
+  justify-items: center;
+}
+.foundation-shell .coffee-page h2#coffee-events-title {
+  width: 100% !important;
+  max-width: none !important;
+  margin-inline: auto !important;
+  text-align: center;
+  justify-self: center;
+  grid-column: 1 / -1;
+}
+
+/* Pricing and logistics actions use labels only, without decorative arrows. */
+@media (max-width: 700px) {
+  .foundation-shell .coffee-page .coffee-operations .priority-answer > div > a,
+  .foundation-shell .coffee-page .coffee-operations > aside > a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding-block: .7rem;
+    line-height: 1.4;
+  }
+}
+.coffee-operations .priority-answer > div > a > span[aria-hidden="true"],
+.coffee-operations > aside > a > span[aria-hidden="true"] {
+  display: none;
+}
+
+/* Menu introduction shares one page-centered axis at every screen size. */
+.foundation-shell .coffee-page .coffee-menu > header {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "label" "title" "tagline";
+  gap: 1.25rem;
+  width: 100%;
+  justify-items: center;
+  text-align: center;
+}
+.foundation-shell .coffee-page h2#coffee-menu-title {
+  width: 100% !important;
+  max-width: none !important;
+  margin-inline: auto !important;
+  text-align: center;
+  grid-column: 1 / -1;
+  grid-area: title;
+}
+.foundation-shell .coffee-page .coffee-menu > header > p:last-child {
+  width: 100%;
+  max-width: none;
+  margin-inline: auto;
+  text-align: center;
+  grid-column: 1 / -1;
+  grid-area: tagline;
+  margin-block: 0;
+  white-space: nowrap;
+  font-size: clamp(.65rem, 3.2vw, 1.1rem) !important;
+}
+.foundation-shell .coffee-page .coffee-menu > header .coffee-menu-tagline span {
+  display: inline;
+}
+
+/* Let the overview heading use its actual column, including tablet layouts. */
+.foundation-shell .coffee-page h2#coffee-overview-title {
+  box-sizing: border-box;
+  width: 100% !important;
+  min-width: 0;
+  max-width: none !important;
+  margin-inline: 0 !important;
+  white-space: normal;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+@media (min-width: 701px) and (max-width: 960px) {
+  .foundation-shell .coffee-page h2#coffee-overview-title {
+    text-align: center;
+    align-self: stretch;
+  }
+}
+
 /* Coffee Bar heading alignment and supporting-copy hierarchy. */
 .foundation-shell .coffee-page .coffee-overview-media {
   min-height: 0;
@@ -283,8 +363,7 @@
     font-size: clamp(1.3rem, 5.8vw, 1.7rem);
   }
 }
-/* Match the square hero photograph rather than cropping it into a tall frame.
- * Prevent grid stretching and legacy minimum heights from cutting off the cart. */
+/* Keep the original square hero layout with a cart-focused image crop. */
 .foundation-shell .coffee-page .coffee-hero-art {
   min-height: 0;
   aspect-ratio: 1;
@@ -295,6 +374,15 @@
   object-fit: contain !important;
   object-position: center;
 }
+
+.foundation-shell .coffee-page .coffee-format-art.coffee-format-photo {
+  min-height: 0;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  width: 100%;
+  align-self: center;
+}
+.coffee-format-photo img { object-position: center; }
 
 /* Compact callout: no oversized watermark or empty space reserved beneath it. */
 .foundation-shell .coffee-page .coffee-seasonal {

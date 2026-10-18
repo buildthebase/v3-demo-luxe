@@ -157,11 +157,14 @@ function ExperienceFeature({ feature }: { feature: ExperienceHubFeature }) {
             <li key={detail}>{detail}</li>
           ))}
         </ul>
+        {feature.footnote ? (
+          <p className="experiences-feature-footnote"><em>* {feature.footnote}</em></p>
+        ) : null}
         <div className="experiences-feature-footer">
-          <p>
+          {feature.fact ? <p>
             <strong>{feature.fact}</strong>
             <span>{feature.factLabel}</span>
-          </p>
+          </p> : null}
           <Link
             href={feature.href}
             data-event-name="experience_select"

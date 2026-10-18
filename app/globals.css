@@ -971,21 +971,21 @@
     background: var(--color-luxe-gold);
   }
 
-  .foundation-shell :is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list li:has(a:hover)::before,
-  .foundation-shell :is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list li:has(a:focus-visible)::before {
+  .foundation-shell :is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list li:has(.signature-pathway-step:hover)::before,
+  .foundation-shell :is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list li:has(.signature-pathway-step:focus-visible)::before {
     background: var(--color-luxe-gold);
     transform: rotate(45deg) scale(1.12);
   }
 
-  .foundation-shell :is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list a {
+  .foundation-shell :is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list .signature-pathway-step {
     min-height: 270px;
     grid-template-rows: auto auto 1fr;
     padding: 82px var(--space-5) var(--space-6);
     transform: none;
   }
 
-  .foundation-shell :is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list a:hover,
-  .foundation-shell :is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list a:focus-visible {
+  .foundation-shell :is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list .signature-pathway-step:hover,
+  .foundation-shell :is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list .signature-pathway-step:focus-visible {
     background:
       linear-gradient(
         180deg,
@@ -996,7 +996,7 @@
     transform: none;
   }
 
-  .foundation-shell :is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list a > span {
+  .foundation-shell :is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list .signature-pathway-step > span {
     color: var(--color-luxe-gold-ink);
     font-size: var(--type-body);
   }
@@ -1103,7 +1103,7 @@
     display: none;
   }
 
-  .foundation-shell :is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list a {
+  .foundation-shell :is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list .signature-pathway-step {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 24px;
     grid-template-rows: auto auto auto;
@@ -1113,17 +1113,17 @@
     transform: none;
   }
 
-  .foundation-shell :is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list li:nth-child(even) a {
+  .foundation-shell :is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list li:nth-child(even) .signature-pathway-step {
     padding-left: 54px;
   }
 
-  .foundation-shell :is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list a:hover,
-  .foundation-shell :is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list a:focus-visible {
+  .foundation-shell :is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list .signature-pathway-step:hover,
+  .foundation-shell :is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list .signature-pathway-step:focus-visible {
     background: color-mix(in srgb, var(--color-surface-offset) 72%, transparent);
     transform: none;
   }
 
-  .foundation-shell :is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list a > span {
+  .foundation-shell :is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list .signature-pathway-step > span {
     grid-column: 1 / -1;
     font-size: var(--type-body);
   }
@@ -1160,12 +1160,12 @@
     left: 30px;
   }
 
-  .foundation-shell :is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list a {
+  .foundation-shell :is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list .signature-pathway-step {
     margin-left: 30px;
     padding-left: 42px;
   }
 
-  .foundation-shell :is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list li:nth-child(even) a {
+  .foundation-shell :is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list li:nth-child(even) .signature-pathway-step {
     padding-left: 42px;
   }
 }
@@ -4796,7 +4796,7 @@
   border-color: var(--surface-dark-rule);
 }
 
-.events-page > .signature-pathway .signature-pathway-list a > span {
+.events-page > .signature-pathway .signature-pathway-list .signature-pathway-step > span {
   color: var(--color-luxe-gold-ink);
 }
 
@@ -4804,8 +4804,8 @@
   color: var(--surface-dark-copy-muted);
 }
 
-.foundation-shell .events-page > .signature-pathway .signature-pathway-list a:hover,
-.foundation-shell .events-page > .signature-pathway .signature-pathway-list a:focus-visible {
+.foundation-shell .events-page > .signature-pathway .signature-pathway-list .signature-pathway-step:hover,
+.foundation-shell .events-page > .signature-pathway .signature-pathway-list .signature-pathway-step:focus-visible {
   background: transparent;
   transform: none;
 }
@@ -7496,7 +7496,7 @@ body .foundation-shell main:is(
   border-right: 0;
 }
 
-.signature-pathway-list a {
+.signature-pathway-list .signature-pathway-step {
   position: relative;
   display: grid;
   min-height: 270px;
@@ -7507,13 +7507,13 @@ body .foundation-shell main:is(
     transform var(--motion-standard) var(--ease-luxe-out);
 }
 
-.signature-pathway-list a:hover,
-.signature-pathway-list a:focus-visible {
+.signature-pathway-list .signature-pathway-step:hover,
+.signature-pathway-list .signature-pathway-step:focus-visible {
   background: var(--color-surface-offset);
   transform: translateY(-6px);
 }
 
-.signature-pathway-list a > span {
+.signature-pathway-list .signature-pathway-step > span {
   color: var(--gold-text);
   font-size: var(--type-small);
   letter-spacing: .14em;
@@ -7816,7 +7816,7 @@ body .foundation-shell main:is(
     display: block;
   }
 
-  .signature-pathway-list a {
+  .signature-pathway-list .signature-pathway-step {
     min-height: 245px;
     padding: var(--space-4);
   }
@@ -9006,7 +9006,7 @@ body .foundation-shell main:is(
     border-bottom: 1px solid var(--color-rule);
   }
 
-  .signature-pathway-list a {
+  .signature-pathway-list .signature-pathway-step {
     min-height: 190px;
   }
 
@@ -11504,8 +11504,10 @@ body .foundation-shell main:is(
 }
 
 .home-cinematic-word-seating {
-  color: #fff;
-  text-shadow: none;
+  color: var(--color-luxe-ivory);
+  text-shadow:
+    0 2px 28px rgb(31 31 31 / 58%),
+    0 1px 1px rgb(31 31 31 / 68%);
   transform: translateX(18%);
 }
 
@@ -11783,8 +11785,10 @@ body .foundation-shell main:is(
   }
 
   .home-cinematic-word-seating {
-    color: #fff;
-    text-shadow: none;
+    color: var(--color-luxe-ivory);
+    text-shadow:
+      0 2px 28px rgb(31 31 31 / 64%),
+      0 1px 1px rgb(31 31 31 / 72%);
   }
 
   .home-cinematic-word-dessert {
@@ -20619,17 +20623,36 @@ max-width: 36ch;
 }
 
 .gallery-hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(25rem, .92fr);
-  gap: clamp(3rem, 8vw, 9rem);
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  min-height: calc(100svh - 8.5rem);
-  padding-block: clamp(4rem, 8vh, 7.5rem);
+  min-height: 0;
+  padding-block: clamp(2.25rem, 4.5vw, 4.5rem);
+  text-align: center;
+}
+
+.foundation-shell .gallery-page .gallery-hero-copy {
+  width: 100%;
+  max-width: 68rem;
+  padding-inline: 0;
+  text-align: center;
+}
+
+.foundation-shell .gallery-page .gallery-hero-copy h1 {
+  width: 100%;
+  max-width: 60rem;
+  margin: 0 auto clamp(1.25rem, 2vw, 2rem);
+  font-size: clamp(22px, 4.2vw, 64px);
+  line-height: 1.05;
+  font-weight: 500;
+  letter-spacing: -.075em;
+  text-align: center;
+  text-wrap: balance;
 }
 
 .gallery-hero-copy > p:not(.foundation-eyebrow) {
   max-width: 42rem;
-  margin: 0;
+  margin: 0 auto;
   color: var(--color-text-secondary);
   font-size: clamp(1.05rem, 1.45vw, 1.35rem);
   line-height: 1.55;
@@ -20638,6 +20661,7 @@ max-width: 36ch;
 .gallery-hero-actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: var(--space-3);
   margin-top: var(--space-6);
 }
@@ -20977,6 +21001,15 @@ max-width: 36ch;
 
 .gallery-media-frame img {
   object-fit: cover;
+}
+
+.gallery-media-frame video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: var(--color-luxe-black);
 }
 
 .gallery-media-reserved {
@@ -22944,7 +22977,7 @@ max-width: 36ch;
 @media (min-width: 761px) {
 .foundation-shell
   main:not(.blog-index-page):not(.blog-article-page)
-  h2:not(.foundation-wide-heading):not(#events-directory-title):not(#sweet-positioning-title):not(#sweet-inclusions-title):not(#coffee-overview-title):not(#seating-overview-title):not(#coffee-events-title):not(#sweet-combinations-title):not(#coffee-hero-proof-title):not(#seating-hero-proof-title):not(#corporate-planning-title):not(#events-approach-title):not(#coffee-formats-title):not(#home-hero-seo-title):not(#wedding-overview-title) {
+  h2:not(.foundation-wide-heading):not(#events-directory-title):not(#sweet-positioning-title):not(#sweet-inclusions-title):not(#coffee-overview-title):not(#seating-overview-title):not(#coffee-events-title):not(#sweet-combinations-title):not(#coffee-hero-proof-title):not(#seating-hero-proof-title):not(#corporate-planning-title):not(#events-approach-title):not(#coffee-formats-title):not(#home-hero-seo-title):not(#wedding-overview-title):not(#coffee-branding-title) {
     max-width: 18ch !important;
     font-size: var(--luxe-type-h2) !important;
     line-height: .98 !important;

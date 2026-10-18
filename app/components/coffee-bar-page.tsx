@@ -23,6 +23,7 @@ import { ResponsiveImage } from "./responsive-image";
 import { ContextualInquiryPanel } from "./signature-elements";
 import { SiteShell } from "./site-shell";
 import { CoffeeProofInfo } from "./coffee-proof-info";
+import { CoffeeBrandingGallery } from "./coffee-branding-gallery";
 
 const coffeePath = "/experiences/coffee-bar";
 const [coffeePricingAnswer, ...coffeeContextualFaqs] = coffeeFaqs;
@@ -201,9 +202,8 @@ function CoffeeFormats() {
       <div className="coffee-format-pair">
         {coffeeFormats.filter((format) => format.id === "signature-bar").map((format) => (
           <article className={`coffee-format-${format.id}`} key={format.id}>
-            <div className="coffee-format-art" aria-hidden="true">
-              <i />
-              <i />
+            <div className="coffee-format-art coffee-format-photo">
+              <ResponsiveImage asset={imageAssets.experiences.coffeeSignaturePreparation} fill />
             </div>
             <div className="coffee-format-copy">
               <p className="coffee-format-label">{format.formatLabel}</p>
@@ -234,6 +234,26 @@ function CoffeeFormats() {
         <QuoteModalTrigger data-event-name="inquiry_start">
           Plan Your Event <span aria-hidden="true">↗︎</span>
         </QuoteModalTrigger>
+      </div>
+    </section>
+  );
+}
+
+function CoffeeBranding() {
+  return (
+    <section className="coffee-branding" id="coffee-branding" aria-labelledby="coffee-branding-title">
+      <CoffeeBrandingGallery />
+      <div className="coffee-branding-copy">
+        <p className="foundation-label">Made personal</p>
+        <h2 id="coffee-branding-title">Your occasion. Your signature.</h2>
+        <p>Carry your event aesthetic or campaign identity through the details guests see, hold and remember.</p>
+        <ul>
+          <li>Personalized menus and custom drink names</li>
+          <li>Custom branded cups or cup stickers</li>
+          <li>Event signage and menu displays</li>
+          <li>Cart signage and branding aligned with your colours and messaging</li>
+        </ul>
+        <QuoteModalTrigger className="coffee-branding-link">Personalize Your Coffee Bar</QuoteModalTrigger>
       </div>
     </section>
   );
@@ -497,6 +517,7 @@ export function CoffeeBarPage() {
         <CoffeeHero />
         <CoffeeOverview />
         <CoffeeFormats />
+        <CoffeeBranding />
         <CoffeeInclusions />
         <CoffeeMenu />
         <CoffeeOperations />
