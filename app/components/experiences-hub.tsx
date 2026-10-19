@@ -147,8 +147,9 @@ function ExperienceFeature({ feature }: { feature: ExperienceHubFeature }) {
       </div>
       <div className="experiences-feature-copy">
         <p className="foundation-label">{feature.eyebrow}</p>
-        <h2>
-          {feature.name}: {feature.searchDescriptor}
+        <h2 className="foundation-wide-heading experiences-feature-title">
+          <span>{feature.name}:</span>{" "}
+          <span>{feature.searchDescriptor}</span>
         </h2>
         <h3>{feature.statement}</h3>
         <p>{feature.description}</p>

@@ -93,7 +93,7 @@ function SweetHero() {
         </div>
       </div>
       <div className="sweet-hero-art">
-        <ResponsiveImage asset={imageAssets.experiences.sweetCartHero} fill />
+        <ResponsiveImage asset={{ ...imageAssets.experiences.sweetCartSignature, priority: true, sizes: "(max-width: 700px) calc(100vw - 2rem), 42vw" }} fill />
       </div>
 <div className="sweet-hero-proof-heading">
         <p className="foundation-label">Confirmed capacity and dessert-service planning</p>
@@ -185,32 +185,32 @@ function SweetPositioning() {
 function SweetCollections() {
   return (
     <section className="sweet-collections" aria-labelledby="sweet-collections-title">
-      <header>
-        <p className="foundation-label">Signature cart design</p>
-        <h2 id="sweet-collections-title">Signature Sweet Cart</h2>
-        <p>
-          Our Signature cart design complements your event aesthetic and is subject to availability for your event date.
-          Signature refers to the cart&apos;s physical design, not a separate service or pricing tier.
-        </p>
-      </header>
       <div>
         {sweetCartCollections.filter((collection) => collection.id === "signature").map((collection) => (
           <article className={`sweet-collection-${collection.id}`} key={collection.id}>
-            <div className="sweet-collection-art" aria-hidden="true">
-              <i /><i /><i />
+            <div className="sweet-collection-art sweet-collection-photo">
+              <ResponsiveImage asset={{ ...imageAssets.experiences.sweetCartHero, priority: false, sizes: "(max-width: 700px) calc(100vw - 2rem), 24rem" }} fill />
             </div>
             <div className="sweet-collection-copy">
-              <h3>{collection.name}</h3>
-              <p><strong>{collection.character}</strong> {collection.description}</p>
+              <header>
+                <p className="foundation-label">Signature cart design</p>
+                <h2 id="sweet-collections-title" className="foundation-wide-heading">Signature Sweet Cart</h2>
+              </header>
+              <p className="sweet-collection-character">{collection.character}</p>
+              <p>{collection.description}</p>
+              <p>
+                Our Signature cart design complements your event aesthetic and is subject to availability for your event date.
+                Signature refers to the cart&apos;s physical design, not a separate service or pricing tier.
+              </p>
+              <p className="sweet-collections-note">
+                *Cart availability, dessert service, styling, footprint, and venue access
+                are confirmed during inquiry.
+              </p>
             </div>
             
           </article>
         ))}
       </div>
-      <p className="sweet-collections-note">
-        *Cart availability, dessert service, styling, footprint, and venue access
-        are confirmed during inquiry.
-</p>
     </section>
   );
 }

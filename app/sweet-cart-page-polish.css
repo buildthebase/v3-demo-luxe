@@ -495,4 +495,61 @@
 /* The Signature Collection is the sole cart design featured on this page. */
 .foundation-shell .sweet-page .sweet-collections > div {
   grid-template-columns: minmax(0, 1fr);
+  border: 0;
+}
+
+.foundation-shell .sweet-page .sweet-collections article.sweet-collection-signature {
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1fr);
+  grid-template-rows: auto;
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+.foundation-shell .sweet-page .sweet-collection-photo {
+  width: min(100%, 24rem);
+  min-height: 0;
+  aspect-ratio: 900 / 1453;
+  justify-self: center;
+  overflow: hidden;
+}
+.foundation-shell .sweet-page .sweet-collection-copy {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 36rem;
+  container-type: inline-size;
+}
+.foundation-shell .sweet-page .sweet-collection-copy > header {
+  display: grid;
+  gap: .75rem;
+}
+.foundation-shell .sweet-page .sweet-collection-copy h2#sweet-collections-title:not(#luxe-sitewide-h2-scale):not(#home-hero-seo-title) {
+  width: 100%;
+  max-width: none !important;
+  margin: 0;
+  text-align: left;
+  white-space: nowrap;
+  font-size: clamp(1.25rem, 7.4cqi, 3rem) !important;
+  line-height: 1.08;
+}
+.foundation-shell .sweet-page .sweet-collection-copy p {
+  margin: 0;
+  line-height: 1.65;
+}
+.foundation-shell .sweet-page .sweet-collection-copy .sweet-collection-character {
+  color: var(--color-luxe-gold-ink);
+  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+}
+.foundation-shell .sweet-page .sweet-collection-copy .sweet-collections-note {
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--surface-dark-rule);
+  font-size: .8125rem !important;
+  text-align: left;
+}
+@media (max-width: 700px) {
+  .foundation-shell .sweet-page .sweet-collections article.sweet-collection-signature {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }

@@ -134,6 +134,7 @@ export const galleryGroups: readonly GalleryGroup[] = [
     media: [
       galleryMedia(experienceImages.sweetCartHero, "The Luxe Sweet Cart set and ready for live dessert service."),
       galleryMedia(experienceImages.sweetCartOverview, "Guests gathering around the Luxe Sweet Cart."),
+      galleryMedia(experienceImages.sweetCartSignature, "Guests waiting for made-to-order desserts at the Signature Luxe Sweet Cart."),
       galleryMedia(experienceImages.miniDutchPancakes, "Mini Dutch Pancakes finished with toppings and sauces."),
       galleryMedia(experienceImages.belgianWaffles, "Belgian Waffles on a Stick finished for guests."),
       galleryMedia(experienceImages.miniDonuts, "Mini Donuts prepared fresh during service."),

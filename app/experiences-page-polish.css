@@ -171,7 +171,7 @@
 
 @media (max-width: 700px) {
   .foundation-shell .experiences-page
-    .experiences-feature-copy h2:not(#luxe-sitewide-h2-scale) {
+    .experiences-feature-copy h2:not(.experiences-feature-title):not(#luxe-sitewide-h2-scale) {
     font-size: var(--type-heading-sm) !important;
   }
 
@@ -202,5 +202,26 @@
   .foundation-shell .experiences-page > .signature-combinations
     .signature-combinations-intro {
     padding-bottom: 0;
+  }
+}
+
+/* Size against the text column so each service title stays on two lines. */
+.foundation-shell .experiences-page .experiences-feature-copy {
+  container-type: inline-size;
+}
+.foundation-shell .experiences-page .experiences-feature-copy h2.experiences-feature-title:not(#luxe-sitewide-h2-scale):not(#home-hero-seo-title) {
+  width: 100%;
+  max-width: none !important;
+  font-size: clamp(1rem, 2.15vw, 2.25rem) !important;
+  line-height: 1.08;
+  text-wrap: initial;
+}
+.experiences-feature-title > span {
+  display: block;
+  white-space: nowrap;
+}
+@media (max-width: 700px) {
+  .foundation-shell .experiences-page .experiences-feature-copy h2.experiences-feature-title:not(#luxe-sitewide-h2-scale):not(#home-hero-seo-title) {
+    font-size: clamp(1.0625rem, 5.8cqi, 1.65rem) !important;
   }
 }

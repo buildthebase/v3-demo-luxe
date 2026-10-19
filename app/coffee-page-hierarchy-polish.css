@@ -371,13 +371,13 @@
 }
 
 .foundation-shell .coffee-page .coffee-hero-art > .coffee-hero-photo {
-  object-fit: contain !important;
+  object-fit: cover !important;
   object-position: center;
 }
 
 .foundation-shell .coffee-page .coffee-format-art.coffee-format-photo {
   min-height: 0;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1;
   overflow: hidden;
   width: 100%;
   align-self: center;

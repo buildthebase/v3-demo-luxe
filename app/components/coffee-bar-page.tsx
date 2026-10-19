@@ -95,7 +95,7 @@ function CoffeeHero() {
       </div>
       <div className="coffee-hero-art">
         <ResponsiveImage
-          asset={imageAssets.experiences.coffeeBarHero}
+          asset={{ ...imageAssets.experiences.coffeeSignaturePreparation, priority: true, sizes: "(max-width: 700px) calc(100vw - 2rem), 42vw" }}
           className="coffee-hero-photo"
           fill
         />
@@ -203,7 +203,7 @@ function CoffeeFormats() {
         {coffeeFormats.filter((format) => format.id === "signature-bar").map((format) => (
           <article className={`coffee-format-${format.id}`} key={format.id}>
             <div className="coffee-format-art coffee-format-photo">
-              <ResponsiveImage asset={imageAssets.experiences.coffeeSignaturePreparation} fill />
+              <ResponsiveImage asset={{ ...imageAssets.experiences.coffeeBarHero, priority: false, sizes: "(max-width: 700px) calc(100vw - 2rem), 34vw" }} fill />
             </div>
             <div className="coffee-format-copy">
               <p className="coffee-format-label">{format.formatLabel}</p>
