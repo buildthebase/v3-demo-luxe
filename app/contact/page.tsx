@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { InquiryHandoffLink } from "../components/inquiry-handoff-link";
+import { QuoteModalTrigger } from "../components/quote-modal-trigger";
 import { JsonLd } from "../components/json-ld";
 import { SiteShell } from "../components/site-shell";
 import { createPageMetadata, pageMetadata } from "../metadata-config";
@@ -40,12 +40,9 @@ function InquiryAction({
   className?: string;
 }) {
   return (
-    <InquiryHandoffLink
-      className={className}
-      context={{ sourcePath: "/contact" }}
-    >
+    <QuoteModalTrigger className={className}>
       Start Your Event Inquiry <span aria-hidden="true">↗︎</span>
-    </InquiryHandoffLink>
+    </QuoteModalTrigger>
   );
 }
 

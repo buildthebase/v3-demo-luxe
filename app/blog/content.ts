@@ -15,6 +15,7 @@ export type BlogArticleAuthor = {
 export type BlogArticleText = {
   text: string;
   href?: string;
+  action?: "quote";
   emphasis?: "strong" | "emphasis";
 };
 
@@ -59,6 +60,7 @@ export type BlogArticle = {
   schemaVersion: number;
   slug: string;
   title: string;
+  titleLines?: readonly string[];
   seoTitle: string;
   description: string;
   excerpt: string;
@@ -67,7 +69,18 @@ export type BlogArticle = {
   modifiedDate: string;
   author: BlogArticleAuthor;
   heroImage: ResponsiveImageAsset | null;
+  heroDesktopImage?: ResponsiveImageAsset | null;
+  heroImageSources?: readonly {
+    media: string;
+    type: string;
+    srcSet: string;
+    sizes: string;
+    width: number;
+    height: number;
+  }[];
   heroAlt: string;
+  showPlanningLinks?: boolean;
+  editorialApproval?: { shortForm: boolean; note: string };
   socialImage?: ResponsiveImageAsset | null;
   content: readonly BlogArticleContentBlock[];
   relatedArticleSlugs: readonly string[];

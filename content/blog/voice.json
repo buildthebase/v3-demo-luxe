@@ -1,21 +1,24 @@
 {
   "schemaVersion": 1,
-  "version": "1.0.0",
+  "version": "1.3.1",
   "tone": [
-    "considered",
-    "clear",
-    "editorial",
+    "conversational",
     "warm",
-    "precise"
+    "personal",
+    "clear",
+    "considered",
+    "quietly confident"
   ],
   "approvedTerms": [
-    "Luxe Coffee Bar",
+    "the Luxe Coffee Bar",
     "Luxe Sweet Cart",
     "Luxe Seating Rentals",
     "Toronto and the GTA"
   ],
+  "terminologyGuidance": "Always include the definite article when mentioning the product: the Luxe Coffee Bar, or The Luxe Coffee Bar at the start of a sentence. Apply this to running copy, editorial headings and link labels wherever the name appears. This is a naming convention, not a requirement to insert the product name into every article.",
   "requiredPhrases": [],
   "excludedWords": [
+    "—",
     "game-changing",
     "revolutionary",
     "unforgettable magic",
@@ -27,9 +30,24 @@
     "number one event company"
   ],
   "canadianSpelling": true,
-  "headingGuidance": "Use descriptive headings that answer a planning question without keyword stuffing.",
-  "sentenceGuidance": "Prefer clear, measured sentences and factual hospitality language.",
-  "paragraphGuidance": "Keep paragraphs focused and readable, normally two to four sentences.",
-  "approvedExamples": [],
-  "rejectedExamples": []
+  "punctuationGuidance": "Never use em dashes in any copy. Use a full stop, comma, colon or parentheses as appropriate. Do not substitute double hyphens for em dashes.",
+  "headingGuidance": "Use plain, specific headings that tell the reader what the section covers. The request and Custom signage for the cart and cups are good examples. Do not reach for a clever line when a simple heading works. Avoid keyword stuffing, abstract design language and headings that promise more than the facts support.",
+  "sentenceOpeningGuidance": "Review sentence and paragraph openings across the complete article. Do not repeatedly start with the family, the client, they wanted or we. Vary the structure naturally by stating the specific request, work or detail directly, rather than swapping in synonyms for the client. Do not repeat the same brief in the excerpt, introduction and every section.",
+  "sentenceGuidance": "Write like a knowledgeable Luxe team member explaining the work in ordinary language. Use natural contractions and we for confirmed Luxe work. Be warm by being helpful and specific, not by adding sentimental lines or forced familiarity. Give sentences a clear subject and action: we customised the signage, not the cart gave the coffee setup its own place. Describe results only when they add information beyond the request. Do not invent dialogue, client emotions, praise, testimonials, interactions, creative process or results. Avoid sales pressure, design jargon, stock luxury adjectives, rhetorical flourishes and commentary about what the article is trying to say. If a sentence sounds strange when spoken or has no clear literal meaning, rewrite it plainly or remove it.",
+  "paragraphGuidance": "Be concise. Each paragraph must add a confirmed detail or useful advice, not repeat that the setup felt connected, personal or part of the celebration. Keep the length proportionate to the information available; do not pad a short event story into a long article. Warmth comes from clear, helpful language, not decorative phrases. In case studies, say what the client asked for, what Luxe actually supplied or customised, and what the finished setup looked like. In guides, answer the reader's question directly. Before finalising, read it aloud and check the literal meaning of every sentence: what happened, who did it, and what does the reader learn? Delete vague metaphors, generic introductions, repeated conclusions and sentences that sound conversational but say nothing. Avoid phrases such as in keeping with, brought a little of that same character, the cart gave the coffee setup its own place, and it had always been part of the plan.",
+  "approvedExamples": [
+    "For this baby shower, the request was simple: a coffee cart with custom signage and cup labels that matched the colours and theme chosen for the day.",
+    "We customised the Luxe Coffee Bar to suit, so the finished setup fit in beautifully with the shower décor. Here’s a closer look.",
+    "The cart featured a striped front panel, a bow illustration and Café Bébé lettering. Personalised cup labels completed the setup, so guests’ drinks matched the theme too.",
+    "If you already have colours or a theme in mind, share them with us when you enquire. Let us know whether you’re interested in custom cart signage, cup labels or both, and we can talk through the options for your event."
+  ],
+  "rejectedExamples": [
+    "Luxe provided Coffee Bar service for this occasion, with personalised visual details carried through the setup.",
+    "The aim was visual continuity.",
+    "This case study is about that relationship between hospitality and presentation.",
+    "The result was a coordinated expression of the family's theme, carried from the cart to each cup rather than confined to a single display.",
+    "They wanted it to feel like it had always been part of the plan.",
+    "The cart gave the coffee setup its own place in the celebration, while the cups brought a little of that same character to each drink.",
+    "Sometimes, it's the little things that bring a setup together."
+  ]
 }

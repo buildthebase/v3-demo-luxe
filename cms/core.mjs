@@ -134,7 +134,12 @@ export function validateArticle(article, allArticles, { voice = {}, knownPaths =
   if (bodyWordCount === 0) {
     issues.push(issue("error", "empty-body", "Add a complete customer-facing article body before publishing.", "content"));
   } else if (bodyWordCount < MINIMUM_SUBSTANTIVE_ARTICLE_WORDS) {
-    issues.push(issue("error", "thin-body", `Article body has ${bodyWordCount} words; at least ${MINIMUM_SUBSTANTIVE_ARTICLE_WORDS} substantive words are required before publishing.`, "content"));
+    const approvedShortForm = article.editorialApproval?.shortForm === true
+      && typeof article.editorialApproval.note === "string"
+      && article.editorialApproval.note.trim().length > 0;
+    issues.push(approvedShortForm
+      ? issue("warning", "approved-short-form", `This ${bodyWordCount}-word article has explicit editorial approval for its short format.`, "content")
+      : issue("error", "thin-body", `Article body has ${bodyWordCount} words; at least ${MINIMUM_SUBSTANTIVE_ARTICLE_WORDS} substantive words are required before publishing.`, "content"));
   }
   if (!article?.heroImage?.src) issues.push(issue("error", "missing-hero-image", "Assign approved article photography as the hero image before publishing.", "heroImage"));
   if (bodyWordCount >= MINIMUM_SUBSTANTIVE_ARTICLE_WORDS && bodyWordCount < CLIENT_ARTICLE_WORD_RANGE.minimum) {

@@ -13,7 +13,7 @@ const contextualLinksByCategory: Record<
   string,
   readonly { href: string; label: string }[]
 > = {
-  "Coffee Catering": [{ href: "/experiences/coffee-bar", label: "Explore Luxe Coffee Bar" }],
+  "Coffee Catering": [{ href: "/experiences/coffee-bar", label: "Explore the Luxe Coffee Bar" }],
   "Dessert Catering": [{ href: "/experiences/sweet-cart", label: "Explore Luxe Sweet Cart" }],
   "Event Rentals": [{ href: "/experiences/seating-rentals", label: "Explore Luxe Seating Rentals" }],
   Weddings: [{ href: "/events/weddings", label: "Explore Luxe wedding experiences" }],
@@ -56,7 +56,9 @@ export function BlogArticlePresentation({
 }) {
   const path = `/blog/${article.slug}`;
   const relatedArticles = showRelatedArticles ? getRelatedPublishedBlogArticles(article) : [];
-  const contextualLinks = showPlanningLinks ? contextualLinksByCategory[article.category] ?? [] : [];
+  const contextualLinks = showPlanningLinks && article.showPlanningLinks !== false
+    ? contextualLinksByCategory[article.category] ?? []
+    : [];
   const readingTime = calculateReadingTime(article.content);
   const heroImage = article.heroImage ? { ...article.heroImage, alt: article.heroAlt, priority: true } : null;
   const dateFormatter = new Intl.DateTimeFormat("en-CA", { day: "numeric", month: "long", year: "numeric" });
@@ -78,7 +80,11 @@ export function BlogArticlePresentation({
           <header className="blog-article-hero">
             <div>
               <p>{article.category}</p>
-              <h1>{article.title}</h1>
+              <h1 aria-label={article.title} className={article.titleLines?.length ? "blog-article-title-multiline" : undefined}>
+                {article.titleLines?.length
+                  ? article.titleLines.map((line) => <span className="blog-article-title-line" key={line}>{line}</span>)
+                  : article.title}
+              </h1>
               <p>{article.description}</p>
               {showPublishedDetails ? (
                 <div>
@@ -89,7 +95,28 @@ export function BlogArticlePresentation({
                 </div>
               ) : null}
             </div>
-            {heroImage ? <figure><ResponsiveImage asset={heroImage} /></figure> : null}
+            {heroImage ? (
+              <figure
+                data-orientation={heroImage.width < heroImage.height ? "portrait" : "landscape"}
+                data-desktop-landscape={article.heroDesktopImage?.src ? "true" : undefined}
+              >
+                {article.heroDesktopImage?.src ? (
+                  <picture style={{ aspectRatio: `${heroImage.width} / ${heroImage.height}` }}>
+                    {article.heroImageSources?.map((source) => (
+                      <source key={source.srcSet} {...source} />
+                    ))}
+                    <source
+                      media="(min-width: 1024px)"
+                      srcSet={article.heroDesktopImage.src}
+                      type="image/webp"
+                      width={article.heroDesktopImage.width}
+                      height={article.heroDesktopImage.height}
+                    />
+                    <ResponsiveImage asset={heroImage} />
+                  </picture>
+                ) : <ResponsiveImage asset={heroImage} />}
+              </figure>
+            ) : null}
           </header>
           <BlogArticleBody content={article.content} />
           {contextualLinks.length ? (

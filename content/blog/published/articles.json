@@ -1,1 +1,115 @@
-[]
+[
+  {
+    "schemaVersion": 1,
+    "slug": "baby-shower-custom-coffee-bar",
+    "title": "A Baby Shower with the Luxe Coffee Bar",
+    "titleLines": ["A Baby Shower with", "the Luxe Coffee Bar"],
+    "seoTitle": "A Baby Shower with Custom Coffee Bar Details | Luxe Event Co.",
+    "description": "We customised the cart signage and cup labels for a baby shower, matching its colours and theme. See the finished coffee bar setup below.",
+    "excerpt": "Custom cart signage and personalised cup labels helped the Luxe Coffee Bar match this baby shower’s colours and theme.",
+    "category": "Coffee Catering",
+    "showPlanningLinks": false,
+    "publishDate": "2026-10-29T18:00:00.000Z",
+    "modifiedDate": "2026-10-29T18:00:00.000Z",
+    "author": { "name": "Luxe Event Co.", "type": "Organization", "url": "https://luxeeventco.ca" },
+    "heroImage": {
+      "id": "baby-shower-cart-portrait-lettering-v4",
+      "src": "/images/case-studies/baby-shower-cart-portrait-lettering-v4.webp",
+      "alt": "Custom coffee bar signage at a baby shower, beneath greenery and globe lights",
+      "width": 1440,
+      "height": 2560,
+      "sizes": "(max-width: 550px) calc(100vw - 2rem), 512px",
+      "quality": 90,
+      "status": "approved",
+      "format": "webp"
+    },
+    "heroDesktopImage": {
+      "id": "baby-shower-cart-landscape-lettering-v3",
+      "src": "/images/case-studies/baby-shower-cart-landscape-lettering-v3.webp",
+      "alt": "The Luxe Coffee Bar with custom Café Bébé signage and a matching menu display at a baby shower",
+      "width": 1920,
+      "height": 1280,
+      "sizes": "960px",
+      "status": "approved",
+      "format": "webp"
+    },
+    "heroImageSources": [
+      {
+        "media": "(min-width: 1024px)",
+        "type": "image/avif",
+        "srcSet": "/images/case-studies/baby-shower-cart-landscape-lettering-v3-960.avif 960w, /images/case-studies/baby-shower-cart-landscape-lettering-v3-1440.avif 1440w, /images/case-studies/baby-shower-cart-landscape-lettering-v3-1920.avif 1920w",
+        "sizes": "(max-width: 1100px) calc(100vw - 7rem), 960px",
+        "width": 1920,
+        "height": 1280
+      },
+      {
+        "media": "(max-width: 1023px)",
+        "type": "image/avif",
+        "srcSet": "/images/case-studies/baby-shower-cart-portrait-lettering-v4-480.avif 480w, /images/case-studies/baby-shower-cart-portrait-lettering-v4-768.avif 768w, /images/case-studies/baby-shower-cart-portrait-lettering-v4-1024.avif 1024w, /images/case-studies/baby-shower-cart-portrait-lettering-v4-1440.avif 1440w",
+        "sizes": "(max-width: 550px) calc(100vw - 2rem), 512px",
+        "width": 1440,
+        "height": 2560
+      }
+    ],
+    "heroAlt": "The Luxe Coffee Bar with custom signage and a menu display at a baby shower",
+    "socialImage": null,
+    "editorialApproval": {
+      "shortForm": true,
+      "note": "The user explicitly approved this concise revision in chat on 2026-10-29. Keep the approved copy rather than padding it to the default article minimum."
+    },
+    "content": [
+      {
+        "type": "quick-answer",
+        "title": "The occasion, at a glance",
+        "content": [{ "text": "A baby shower with the Luxe Coffee Bar, custom cart signage and personalised cup labels to match the chosen colours and theme. The finished setup fit in beautifully with the shower décor." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "text": "For this baby shower, the request was simple: a coffee cart with custom signage and cup labels that matched the colours and theme chosen for the day." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "text": "We customised the Luxe Coffee Bar to suit, so the finished setup fit in beautifully with the shower décor. Here’s a closer look." }]
+      },
+      { "type": "heading", "id": "the-client-request", "level": 2, "text": "A coffee cart to match the shower" },
+      {
+        "type": "paragraph",
+        "content": [{ "text": "The booking was for the Luxe Coffee Bar on its own, with personalisation for both the cart and cups." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "text": "The cart featured a striped front panel, a bow illustration and Café Bébé lettering. Personalised cup labels completed the setup, so guests’ drinks matched the theme too." }]
+      },
+      { "type": "heading", "id": "the-coffee-bar-direction", "level": 2, "text": "How it came together" },
+      {
+        "type": "paragraph",
+        "content": [{ "text": "With greenery and globe lights above the cart, the custom front panel was easy to see. The coffee menu stood beside it, keeping the counter clear for preparing and serving drinks." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "text": "You can see the finished cart and personalised cups in the short film on our homepage." }]
+      },
+      { "type": "heading", "id": "the-result", "level": 2, "text": "Thinking about your own baby shower?" },
+      {
+        "type": "paragraph",
+        "content": [{ "text": "If you already have colours or a theme in mind, share them with us when you enquire. Let us know whether you’re interested in custom cart signage, cup labels or both. Not sure what you’d like yet? That’s fine too. We can help you explore the options and find a look that suits your event." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "text": "Explore " }, { "text": "the Luxe Coffee Bar", "href": "/experiences/coffee-bar" }, { "text": " or " }, { "text": "tell us about your baby shower", "href": "/contact", "action": "quote" }, { "text": "." }]
+      }
+    ],
+    "relatedArticleSlugs": [],
+    "status": "published",
+    "claims": [
+      {
+        "id": "baby-shower-client-brief",
+        "text": "The family requested a coffee cart with custom cup and cart signage matching their baby shower’s colours and theme; Coffee Bar was the only Luxe service booked.",
+        "status": "grounded",
+        "sourceIds": ["client-confirmation-2026-10-29"],
+        "note": "Direct user confirmation in this project chat; event footage supplied by the user. Article date is the editorial date, not the event date. No testimonial, guest count, venue, menu or performance claims supplied."
+      }
+    ],
+    "generation": null
+  }
+]

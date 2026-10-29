@@ -1,12 +1,9 @@
 .foundation-shell .home-page > .home-case-study {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  align-items: center;
-  column-gap: clamp(2rem, 4vw, 4rem);
-  row-gap: 1.75rem;
+  gap: clamp(2rem, 4vw, 3.5rem);
   padding-inline: 0;
   margin-block: 0;
-  padding-block: clamp(2.25rem, 4vw, 3.5rem);
+  padding-block: clamp(2.5rem, 5vw, 5rem);
   border: 0;
   background: var(--surface-chapter-dark);
   box-shadow: 0 0 0 100vmax var(--surface-chapter-dark);
@@ -14,7 +11,6 @@
   color: var(--surface-dark-copy);
   position: relative;
   isolation: isolate;
-  text-align: center;
 }
 .home-case-study::before {
   position: absolute;
@@ -25,88 +21,88 @@
   content: "";
   pointer-events: none;
 }
-/* Join adjacent tonal chapters without exposing the page canvas between them. */
-.foundation-shell .home-page > .home-case-study + .signature-pathway {
-  margin-top: 0;
-  border-top: 0;
-}
-.home-case-study-heading,
-.home-case-study-copy { min-width: 0; width: 100%; max-width: none; margin-inline: auto; }
+.foundation-shell .home-page > .home-case-study + .signature-pathway { margin-top: 0; border-top: 0; }
+.home-case-study-heading { min-width: 0; text-align: center; }
 .home-case-study .foundation-label { margin: 0 0 1rem; color: var(--color-luxe-gold-on-dark); }
-.home-case-study h2 { margin: 0 auto; max-width: none; color: var(--surface-dark-copy); }
-.home-case-study-icons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin: 1.25rem auto 0;
-  color: var(--color-luxe-gold-on-dark);
-}
-.home-case-study-icons svg { width: 3rem; height: auto; flex-shrink: 0; }
-.home-case-study-story { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 3rem); margin: 0; text-align: left; }
-@media (min-width: 801px) {
-  .home-case-study-story { text-align: center; }
-  .home-case-study-story > div dd { margin-inline: auto; }
-}
-.home-case-study-story dt {
-  margin: 0 0 .4rem;
+.home-case-study #home-case-study-title:not(#luxe-sitewide-h2-scale):not(#home-hero-seo-title) {
+  margin: 0 auto;
+  max-width: 100%;
   color: var(--surface-dark-copy);
-  font-size: var(--type-small);
+  font-size: clamp(1.8rem, 4vw, 3.5rem) !important;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+.home-case-study-layout {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+  width: 100%;
+  max-width: 66rem;
+  margin-inline: auto;
+}
+.home-case-study-film {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  max-width: 25rem;
+  aspect-ratio: 9 / 16;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.home-case-study-film .home-editorial-video { object-fit: contain; }
+.home-case-study-film .home-editorial-video-control { z-index: 2; }
+.home-case-study-copy { min-width: 0; text-align: left; }
+.foundation-shell .home-case-study-copy h3 {
+  margin: 0 0 clamp(1.5rem, 3vw, 2rem);
+  color: var(--surface-dark-copy);
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  line-height: 1.18;
+  text-wrap: balance;
+}
+.home-case-study-story { display: grid; gap: 1.25rem; margin: 0; }
+.home-case-study-story > div { padding-top: 1.25rem; border-top: 1px solid rgb(248 246 242 / 18%); }
+.home-case-study-story dt {
+  display: flex;
+  align-items: baseline;
+  gap: .8rem;
+  margin: 0 0 .5rem;
+  color: var(--surface-dark-copy);
+  font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
-  letter-spacing: .01em;
-  text-transform: none;
 }
-.home-case-study-story dt span { display: block; margin-bottom: .5rem; color: var(--color-luxe-gold-on-dark); font-size: .75rem; letter-spacing: .1em; }
 .home-case-study-story dd {
   margin: 0;
-  max-width: 56ch;
+  max-width: 48ch;
   color: var(--surface-dark-copy-muted);
-  font-size: var(--type-body);
+  font-size: clamp(1rem, 1.15vw, 1.125rem);
   line-height: 1.6;
 }
-.home-case-study-quote {
-  margin: 1.75rem 0 0;
-  padding: 0;
-  border: 0;
-}
-.home-case-study-quote figcaption,
-.home-case-study-quote-label { color: var(--surface-dark-copy-muted); font-size: var(--type-small); line-height: 1.5; background: none; }
-.home-case-study-quote figcaption { margin-top: .5rem; }
-.home-case-study-quote blockquote { margin: .65rem 0 0; }
-.home-case-study-quote blockquote p { margin: 0; color: var(--surface-dark-copy-muted); font-size: var(--type-body); line-height: 1.6; }
 .foundation-shell .home-case-study .home-case-study-action {
   display: inline-flex;
   align-items: center;
-  gap: 1rem;
   max-width: 100%;
   min-height: 48px;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   padding-block: .65rem;
-  border-bottom: 1px solid currentColor;
+  border: 0;
   color: var(--surface-dark-copy);
-  font-size: .875rem;
+  font-size: 1rem;
   letter-spacing: .025em;
   line-height: 1.5;
   text-transform: none;
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .18em;
 }
-.home-case-study-action span { flex-shrink: 0; }
 .foundation-shell .home-case-study .home-case-study-action:hover { color: var(--color-luxe-gold-on-dark); }
 .home-case-study-action:focus-visible { outline: 2px solid var(--color-luxe-gold-on-dark); outline-offset: 4px; }
 @media (min-width: 801px) {
-  .foundation-shell .home-case-study .home-case-study-action {
-    font-size: 1.125rem !important;
-    border-bottom: 0;
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: .18em;
-  }
-  .home-case-study-action > span[aria-hidden="true"] { display: none; }
+  .foundation-shell .home-case-study .home-case-study-action { font-size: 1.125rem !important; }
 }
-@media (max-width: 800px) {
-  .foundation-shell .home-page > .home-case-study { grid-template-columns: minmax(0, 1fr); gap: 1.75rem; padding-inline: 0; }
-  .home-case-study h2 { max-width: none; }
-  .home-case-study-story { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
-  .home-case-study-icons { display: none; }
+@media (max-width: 700px) {
+  .home-case-study-layout { grid-template-columns: minmax(0, 1fr); gap: 2rem; max-width: 32rem; }
+  .home-case-study-film { max-width: 20rem; }
+  .home-case-study-copy h3 { text-align: center; }
 }

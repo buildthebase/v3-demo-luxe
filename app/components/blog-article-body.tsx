@@ -4,6 +4,7 @@ import type {
   BlogArticleText,
 } from "../blog/content";
 import { ResponsiveImage } from "./responsive-image";
+import { QuoteModalTrigger } from "./quote-modal-trigger";
 
 function ArticleText({ content }: { content: readonly BlogArticleText[] }) {
   return content.map((item, index) => {
@@ -11,7 +12,9 @@ function ArticleText({ content }: { content: readonly BlogArticleText[] }) {
 
     if (item.emphasis === "strong") rendered = <strong>{rendered}</strong>;
     if (item.emphasis === "emphasis") rendered = <em>{rendered}</em>;
-    if (item.href) {
+    if (item.action === "quote") {
+      rendered = <QuoteModalTrigger>{rendered}</QuoteModalTrigger>;
+    } else if (item.href) {
       rendered = item.href.startsWith("/") || item.href.startsWith("#") ? (
         <Link href={item.href}>{rendered}</Link>
       ) : (
