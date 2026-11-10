@@ -38,7 +38,7 @@ export const contentRequirements: ContentRequirement[] = [
     type: "operational",
     status: "confirmed",
     source: "client-intake",
-    requirement: "Explain that Coffee Bar capacity depends on the selected experience, service duration, menu, staffing, venue access, and guest flow; publish Seating Rentals capacity only after confirmation.",
+    requirement: "Explain that Coffee Bar capacity depends on the selected experience, service duration, menu, staffing, venue access, and guest flow; publish Event Rentals capacity only after confirmation.",
     validationNote: "Capacity is not a promise of identical service speed or a substitute for event-specific planning.",
   },
   {
@@ -128,7 +128,7 @@ export const contentRequirements: ContentRequirement[] = [
     type: "conversion",
     status: "confirmed",
     source: "both",
-    requirement: "Show how Coffee, Sweet Cart, and Seating Rentals can be selected independently or combined through one inquiry and proposal journey.",
+    requirement: "Show how Coffee, Sweet Cart, and Event Rentals can be selected independently or combined through one inquiry and proposal journey.",
     validationNote: "Do not describe the website as a full planning service; it coordinates experiences and hands off to the approved proposal workflow.",
   },
   {
@@ -233,7 +233,7 @@ export const pageContentBriefs: PageContentBrief[] = [
   },
   {
     path: "/experiences/seating-rentals",
-    purpose: "Present Seating Rentals as a focused collection of practical, premium essentials for weddings, showers, backyard and outdoor events, birthdays, engagements, and private celebrations.",
+    purpose: "Present Event Rentals as a focused collection of practical, premium essentials for weddings, showers, backyard and outdoor events, birthdays, engagements, and private celebrations.",
     requiredRequirements: ["booking-inclusions", "service-duration", "setup-teardown", "outdoor-events", "rental-delivery-setup", "multi-service-coordination", "travel-service-area", "liability-insurance"],
     proofPriority: ["real inventory photography", "room transformations", "delivery and setup examples"],
     doNotInvent: sharedDoNotInvent,

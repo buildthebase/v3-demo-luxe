@@ -26,7 +26,7 @@ export const pageQualityEvidence: PageQualityEvidence[] = [
   {
     path: "/experiences",
     concreteValue:
-      "Compares Coffee Bar, Sweet Cart, and Seating Rentals by format, role, capacity, event fit, and combination logic.",
+      "Compares Coffee Bar, Sweet Cart, and Event Rentals by format, role, capacity, event fit, and combination logic.",
     firstHandStatus: "supported-by-client-intake",
     evidenceGate:
       "Add approved division photography and final operating specifications without flattening the divisions into interchangeable cards.",

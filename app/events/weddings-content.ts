@@ -30,7 +30,7 @@ export const weddingMoments = [
     phase: "Before the ceremony",
     title: "A thoughtful welcome.",
     fitLabel: "Best fit",
-    fit: "Café Cart",
+    fit: "Coffee Bar",
     description:
       "Welcome guests with a refined café experience featuring specialty coffee, matcha and signature hot or iced beverages before the ceremony begins.",
   },
@@ -39,7 +39,7 @@ export const weddingMoments = [
     phase: "Cocktail hour",
     title: "Coffee becomes part of the transition.",
     fitLabel: "Best fit",
-    fit: "Signature Coffee Bar",
+    fit: "Coffee Bar",
     description:
       "Serve guests specialty coffee, matcha, signature beverages and refreshing iced drinks as they transition from the ceremony to the reception.",
   },
@@ -84,54 +84,46 @@ export const weddingMoments = [
 export const weddingCustomization = [
   {
     number: "01",
-    title: "DRINKS & MENUS",
-    description:
-      "Choose café favourites, signature beverages, matcha, milk alternatives and personalized menu selections for your wedding.",
-  },
-  {
-    number: "02",
-    title: "CUPS, SIGNAGE & WORDING",
+    title: "Cups, signage & wording",
     description:
       "Personalize cups, stickers, menu displays and event signage with your names, wedding date, monogram or custom design.",
   },
   {
-    number: "03",
-    title: "DESSERT & CART PRESENTATION",
+    number: "02",
+    title: "Dessert & cart presentation",
     description:
       "Coordinate cart styling, custom signage, topping displays and premium sauce selections with your wedding aesthetic.",
-  },
-  {
-    number: "04",
-    title: "RENTALS",
-    description:
-      "Complete the setting with select Luxe chairs, tables, linens and tents. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'.",
   },
 ] as const;
 
 export const weddingLogistics = [
   {
     number: "01",
-    title: "Planner and venue coordination",
+    title: "Planner & venue coordination",
+    iconPath: "M19 12h26v45H19V12Zm7-5h12v10H26V7Zm0 21h12M26 36h12M26 44h8",
     description:
-      "We can coordinate directly with your planner or venue contact regarding arrival, setup timing, access requirements and the placement of Luxe services.",
+      "We coordinate arrival, setup timing, access and service placement with your planner or venue.",
   },
   {
     number: "02",
-    title: "Setup, teardown, and pickup",
+    title: "Setup & pickup",
+    iconPath: "M7 19h30v28H7V19Zm30 10h11l9 10v8H37M43 31v9h12M22 49a6 6 0 1 1-12 0 6 6 0 0 1 12 0Zm31 0a6 6 0 1 1-12 0 6 6 0 0 1 12 0Z",
     description:
-      "Coffee Bar and Sweet Cart setup and takedown are included. Rental delivery, setup, teardown, pickup, timing, and fees are confirmed separately in the proposal.",
+      "Coffee Bar and Sweet Cart setup and takedown are included. Rental logistics and fees are confirmed in your proposal.",
   },
   {
     number: "03",
     title: "Venue requirements",
+    iconPath: "M12 55V20L32 8l20 12v35M7 55h50M23 55V37h18v18M21 25h4m14 0h4",
     description:
-      "Power, water, access, floor protection, surface conditions, and weather considerations are reviewed according to the confirmed experiences and venue.",
+      "We review power, water, access, surfaces and weather requirements for your chosen services.",
   },
   {
     number: "04",
-    title: "Travel and destination planning",
+    title: "Travel & destination weddings",
+    iconPath: "M32 57S13 37 13 25a19 19 0 0 1 38 0c0 12-19 32-19 32ZM40 25a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z",
     description:
-      "Luxe serves weddings throughout Toronto and the GTA, with select destination bookings available throughout Southern Ontario, including Muskoka, Niagara and Prince Edward County. Travel fees are quoted based on location and event requirements.",
+      "Serving Toronto, the GTA and select Southern Ontario destinations. Travel fees vary by location.",
   },
 ] as const;
 
@@ -167,14 +159,15 @@ export const weddingGalleryPreview = [
   {
     number: "03",
     label: "The rentals",
-    note: "Luxe white resin chairs arranged for an outdoor wedding setting.",
+    note: "White resin chairs and tables dressed with teal linens and floral centrepieces.",
     tone: "room",
     image: {
       ...imageAssets.experiences.whiteResinChairs,
-      id: "wedding-gallery-white-resin-chairs-wide",
-      src: "/images/weddings/white-resin-chairs-wide.webp",
-      width: 1122,
-      height: 1402,
+      id: "wedding-gallery-tables-and-chairs",
+      src: "/images/weddings/wedding-rentals-clean.webp",
+      alt: "White resin chairs around tables with teal linens, blue and white flowers, and candlelight in a bright reception room",
+      width: 1330,
+      height: 1182,
       unoptimized: true,
       format: "webp",
     },
@@ -185,7 +178,7 @@ export const weddingFaqs = [
   {
     question: "Can Luxe provide coffee service for weddings?",
     answer:
-      "Yes. Luxe Coffee Bar provides premium coffee and matcha service, hot and iced café favourites, signature beverages and premium non-coffee options, milk alternatives, serving essentials, setup, and takedown. The Café Cart or Signature Coffee Bar is selected around the wedding format and guest experience.",
+      "Yes. The Luxe Coffee Bar provides premium coffee and matcha service, hot and iced café favourites, signature beverages and premium non-coffee options, milk alternatives, serving essentials, setup, and takedown. We plan the Coffee Bar setup around your wedding format and guest experience.",
   },
   {
     question: "How much does a wedding coffee bar, dessert cart, or rental plan cost?",
@@ -230,6 +223,6 @@ export const weddingFaqs = [
   {
     question: "Does Luxe travel outside Toronto?",
     answer:
-      "Yes. Luxe serves Toronto and the Greater Toronto Area and considers select destination weddings throughout Southern Ontario. Travel fees may apply outside the standard service area.",
+      "Yes. Luxe serves Toronto and the Greater Toronto Area and considers select destination weddings throughout Southern Ontario, including Muskoka, Niagara and Prince Edward County. Travel fees are based on your location and event requirements.",
   },
 ] as const;

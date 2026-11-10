@@ -15,7 +15,7 @@ export const corporateEventApplications = [
     number: "03",
     title: "Conferences and trade shows",
     description:
-      "High-volume coffee bars and live dessert stations to power attendee arrivals, programmed session breaks, and sustained booth traffic.",
+      "High-volume coffee bars and live dessert stations for guest arrivals, conference breaks and exhibition booths.",
   },
   {
     number: "04",
@@ -37,21 +37,9 @@ export const corporateEventApplications = [
   },
   {
     number: "07",
-    title: "Holiday and appreciation events",
+    title: "Business and community events",
     description:
-      "Seasonal drink menus, peppermint lattes, warm Belgian waffles, and festive dessert carts that bring warmth to year-end celebrations.",
-  },
-  {
-    number: "08",
-    title: "Real estate and development events",
-    description:
-      "Sophisticated pop-up coffee for sales centre grand openings, broker previews, groundbreaking ceremonies, and tenant events.",
-  },
-  {
-    number: "09",
-    title: "Institutional and campus events",
-    description:
-      "Scalable coffee and dessert catering tailored for university galas, donor receptions, academic conferences, and alumni gatherings.",
+      "Coffee bar and dessert service for openings, milestones and celebrations across businesses, campuses and communities.",
   },
 ] as const;
 
@@ -109,63 +97,30 @@ export const corporateBrandingOptions = [
   },
 ] as const;
 
-export const corporateScaleCapabilities = [
-  {
-    number: "01",
-    title: "Multiple service points",
-    description:
-      "Additional Coffee Bar or Sweet Cart setups can be considered for larger events and peak service periods.",
-  },
-  {
-    number: "02",
-    title: "Multi-day events",
-    description:
-      "Multi-day service can be planned around the event schedule, staffing, storage and venue requirements.",
-  },
-  {
-    number: "03",
-    title: "Recurring programs",
-    description:
-      "Recurring office and corporate service can be arranged based on frequency, location and availability.",
-  },
-  {
-    number: "04",
-    title: "High-volume events",
-    description:
-      "Staffing, equipment and service flow are planned around attendance and anticipated peak guest periods.",
-  },
-] as const;
-
 export const corporatePlanningSteps = [
   {
     number: "01",
     title: "Share the brief",
     description:
-      "Submit your event details, location, expected attendance, timeline, and hospitality requirements to kick off your proposal.",
+      "Share your venue, guest count, schedule and preferred services.",
   },
   {
     number: "02",
     title: "Build the service plan",
     description:
-      "We prepare a proposal around the confirmed Coffee Bar, Sweet Cart, branding, staffing, and service requirements.",
+      "We plan staffing, equipment and any additional service points for peak demand.",
   },
   {
     number: "03",
-    title: "Confirm the operating details",
+    title: "Confirm access and branding",
     description:
-      "We review loading access, electrical requirements, floor footprint and setup/takedown windows with your venue or event contact before service.",
+      "Confirm venue access, power, space, storage and setup times. Approve any quoted branding before production.",
   },
   {
     number: "04",
-    title: "Approve branded elements",
-    description:
-      "Review and approve any separately quoted production items, such as custom menus, branded panels, cup artwork or signage, well in advance of production deadlines.",
-  },
-  {
-    number: "05",
     title: "Coordinate service day",
     description:
-      "We coordinate the Luxe service requirements with your agency, event producer, venue or brand team before activation day.",
+      "We coordinate timing with your team, including multi-day or recurring service, subject to availability.",
   },
 ] as const;
 
@@ -219,7 +174,7 @@ export const corporateFaqs = [
   {
     question: "Can coffee and dessert be combined, and are rentals available?",
     answer:
-      "Luxe Coffee Bar and Luxe Sweet Cart can be booked independently or coordinated through one inquiry. Select white resin chairs, 6-ft tables, cocktail tables, linens, or tenting may be considered only when the focused Luxe Seating Rentals inventory suits the request; Luxe does not provide a broad corporate or conference furniture catalogue.",
+      "Luxe Coffee Bar and Luxe Sweet Cart can be booked independently or coordinated through one inquiry. Select white resin chairs, 6-ft tables, cocktail tables, linens, or tenting may be considered only when the focused Luxe Event Rentals inventory suits the request; Luxe does not provide a broad corporate or conference furniture catalogue.",
   },
   {
     question: "How should coffee catering be planned for a corporate event?",

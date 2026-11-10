@@ -3400,14 +3400,16 @@
 }
 
 .baby-page > .signature-selector .signature-section-heading {
-  grid-template-columns: minmax(0, 1.08fr) minmax(20rem, 0.92fr);
-  align-items: end;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  text-align: center;
 }
 
 .baby-page > .signature-selector .signature-section-heading h2 {
   grid-column: 1;
-  max-width: 14ch;
-  margin: 0;
+  width: 100%;
+  max-width: 52rem;
+  margin: 0 auto;
   font-size: var(--type-internal-page-h1);
   font-weight: 400;
   letter-spacing: -0.065em;
@@ -3839,8 +3841,8 @@
   grid-template-columns: minmax(0, 0.52fr) minmax(0, 1fr);
   gap: clamp(3rem, 7vw, 8rem);
   align-items: start;
-  background: color-mix(in srgb, var(--baby-blush) 16%, var(--color-luxe-ivory));
-  box-shadow: 0 0 0 100vmax color-mix(in srgb, var(--baby-blush) 16%, var(--color-luxe-ivory));
+  background: var(--color-luxe-ivory);
+  box-shadow: 0 0 0 100vmax var(--color-luxe-ivory);
   clip-path: inset(0 -100vmax);
 }
 
@@ -6942,7 +6944,7 @@ a {
     main:not(.home-page)
     section
     > header:has(> h2):not(:has(> p:not(.foundation-label)))
-    > :where(.foundation-label, h2) {
+    > :where(.foundation-label, h2):not(.foundation-wide-heading) {
     grid-column: 1 !important;
     width: min(100%, 20ch);
     margin-inline: auto !important;
@@ -15631,7 +15633,7 @@ max-width: 36ch;
   }
 }
 
-/* Seating Rentals: measured geometry, circulation, and the architecture of gathering. */
+/* Event Rentals: measured geometry, circulation, and the architecture of gathering. */
 .seating-page {
   overflow: clip;
 }
@@ -25171,7 +25173,7 @@ background: color-mix(
 }
 
 
-/* Seating Rentals editorial rehaul: spatial planning presented as a Luxe folio. */
+/* Event Rentals editorial rehaul: spatial planning presented as a Luxe folio. */
 .seating-page {
   --seating-paper: #f0ebe2;
   --seating-stone: #d7cfc3;
@@ -25755,7 +25757,7 @@ transparent 0.7px);
 }
 
 
-/* Match the Coffee Bar mobile proof to the Sweet Cart and Seating Rentals stack. */
+/* Match the Coffee Bar mobile proof to the Sweet Cart and Event Rentals stack. */
 @media (min-width: 1121px) {
   .sweet-hero-proof-heading {
     position: relative;
@@ -26580,4 +26582,52 @@ transparent 0.7px);
 .luxe-grid-section > :not(.luxe-section-grid) {
   position: relative;
   z-index: 1;
+}
+
+/* Images for the baby shower overview and outdoor setting. */
+.baby-overview-parts article::before {
+  content: none;
+}
+
+.baby-overview-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  margin-bottom: var(--space-6);
+}
+
+.baby-overview-image img {
+  object-position: center 58%;
+}
+
+.baby-settings article:last-child > div {
+  overflow: hidden;
+  aspect-ratio: 2 / 3;
+  min-height: 0;
+}
+
+.baby-settings article:last-child > div img {
+  object-position: center 36%;
+}
+
+.foundation-shell .baby-page .baby-hero-art {
+  aspect-ratio: 6 / 7;
+  min-height: 0;
+  overflow: hidden;
+}
+.foundation-shell .baby-page .baby-hero-art::before,
+.foundation-shell .baby-page .baby-hero-art::after {
+  content: none;
+}
+.foundation-shell .baby-page .baby-hero-art img {
+  object-position: center 35%;
+}
+.baby-settings article:first-child > div {
+  aspect-ratio: 2 / 3;
+  min-height: 0;
+  overflow: hidden;
+}
+.baby-settings article:first-child > div img {
+  object-position: center 45%;
 }

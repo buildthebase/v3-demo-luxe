@@ -57,7 +57,7 @@ export const canonicalEntityVocabulary = {
 
 export const entityRelationshipStatements = {
   parentToDivisions:
-    "Luxe Event Co. is the parent organization behind Luxe Coffee Bar, Luxe Sweet Cart, and Luxe Seating Rentals.",
+    "Luxe Event Co. is the parent organization behind Luxe Coffee Bar, Luxe Sweet Cart, and Luxe Event Rentals.",
   independentBooking:
     "Each division can be requested independently through its own service pathway.",
   coordinatedBooking:
@@ -70,7 +70,7 @@ export const entityRelationshipStatements = {
 
 export const entityReferenceRules = [
   "Use the complete current parent name, Luxe Event Co., when explaining ownership, coordination, contact, or organization-level policy.",
-  "Use Luxe Coffee Bar, Luxe Sweet Cart, or Luxe Seating Rentals on first division reference; use the shorter service label only after the division is established by the page or paragraph.",
+  "Use Luxe Coffee Bar, Luxe Sweet Cart, or Luxe Event Rentals on first division reference; use the shorter service label only after the division is established by the page or paragraph.",
   "Use Café Cart Experience and Signature Coffee Bar Experience as the service-format names; Café Cart and Signature Coffee Bar are permitted contextual short forms after the format is established.",
   "Use Greater Toronto Area before or alongside GTA when geographic scope needs to stand alone; do not imply that all of Southern Ontario is a standard service area.",
   "Use only the public email, phone, website, service areas, and event categories derived from the shared site configuration.",

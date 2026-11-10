@@ -48,7 +48,7 @@ export default function ExperiencesPage() {
         <CombinedExperienceFeature
           id="combinations"
           heading="Popular Combinations"
-          description="The right combination of mobile coffee, live dessert, and seating rentals is tailored around your event, setting, and guest experience across Toronto and the GTA."
+          description="The right combination of coffee bar service, live dessert, and event rentals is tailored around your event, setting, and guest experience across Toronto and the GTA."
           combinations={experienceHubCombinations}
           cardTitlesAsHeadings
           useLineIcons

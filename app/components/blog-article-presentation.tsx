@@ -15,7 +15,7 @@ const contextualLinksByCategory: Record<
 > = {
   "Coffee Catering": [{ href: "/experiences/coffee-bar", label: "Explore the Luxe Coffee Bar" }],
   "Dessert Catering": [{ href: "/experiences/sweet-cart", label: "Explore Luxe Sweet Cart" }],
-  "Event Rentals": [{ href: "/experiences/seating-rentals", label: "Explore Luxe Seating Rentals" }],
+  "Event Rentals": [{ href: "/experiences/seating-rentals", label: "Explore Luxe Event Rentals" }],
   Weddings: [{ href: "/events/weddings", label: "Explore Luxe wedding experiences" }],
   "Corporate Events": [{ href: "/events/corporate-events", label: "Explore corporate event services" }],
   "Brand Activations": [{ href: "/events/brand-activations", label: "Explore brand activation services" }],

@@ -54,7 +54,7 @@ export function SiteShell({
               SWEET CART
             </Link>
             <Link href="/experiences/seating-rentals">
-              SEATING RENTALS
+              EVENT RENTALS
             </Link>
           </nav>
         </div>

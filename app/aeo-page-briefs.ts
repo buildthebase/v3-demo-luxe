@@ -64,7 +64,7 @@ export const pageAeoBriefs: PageAeoBrief[] = [
     secondaryQuestionThemes: ["Why trust Luxe?", "Where should a visitor begin?"],
     searchIntents: ["Informational", "Commercial investigation", "Local"],
     requiredAnswers: [
-      "Define the parent company and the distinct Coffee Bar, Sweet Cart, and Seating Rentals roles.",
+      "Define the parent company and the distinct Coffee Bar, Sweet Cart, and Event Rentals roles.",
       "State Toronto and the GTA as the primary market and qualify Southern Ontario travel.",
       "Show the supported event categories and one clear next step.",
     ],
@@ -118,7 +118,7 @@ export const pageAeoBriefs: PageAeoBrief[] = [
     secondaryQuestionThemes: ["Which event types suit each service?", "How can combining services affect the quote?"],
     searchIntents: ["Informational", "Comparison", "Commercial investigation"],
     requiredAnswers: [
-      "Differentiate Coffee Bar, Sweet Cart, and Seating Rentals by role and operating scope.",
+      "Differentiate Coffee Bar, Sweet Cart, and Event Rentals by role and operating scope.",
       "Explain independent and combined booking without claiming an automatic discount.",
       "Direct visitors to the service page that owns detailed inclusions and constraints.",
     ],
@@ -253,7 +253,7 @@ export const pageAeoBriefs: PageAeoBrief[] = [
   },
   {
     path: "/experiences/seating-rentals",
-    pageName: "Seating Rentals",
+    pageName: "Event Rentals",
     pageRole: "Own the confirmed focused inventory, rental-specific quantity and placement guidance, proposal-defined operational responsibilities, quote factors, and delivery feasibility.",
     primaryIcps: ["wedding-clients", "private-event-clients", "industry-partners"],
     primaryQuestionThemes: [

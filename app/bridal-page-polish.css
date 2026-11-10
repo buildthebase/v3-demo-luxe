@@ -297,10 +297,17 @@
 /* Bridal planning: a host-facing guide rather than an intake checklist. */
 
 .bridal-page > .bridal-planning {
+  --bridal-rule: var(--surface-dark-rule);
+  --color-text-secondary: var(--surface-dark-copy-muted);
+  --color-luxe-gold-ink: var(--color-luxe-gold-on-dark);
   position: relative;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: clamp(3rem, 6vw, 6rem) var(--layout-grid-gap);
   align-items: start;
+  color: var(--color-luxe-ivory);
+  background: var(--color-luxe-black);
+  box-shadow: 0 0 0 100vmax var(--color-luxe-black);
+  clip-path: inset(0 -100vmax);
 }
 
 .bridal-page > .bridal-planning > header {

@@ -115,7 +115,7 @@ export const aeoMetrics: AeoMetric[] = [
     sources: ["Google Search Console", "Bing Webmaster Tools"],
     dimensions: ["service", "landing_page", "query_cluster", "impressions", "clicks", "average_position"],
     method:
-      "Map queries and canonical pages to Coffee Bar, Sweet Cart, Seating Rentals, or coordinated experiences.",
+      "Map queries and canonical pages to Coffee Bar, Sweet Cart, Event Rentals, or coordinated experiences.",
     decisionUse:
       "Compare demand and content gaps across divisions without treating raw impressions as bookings.",
     availability: "available after verification",
@@ -220,7 +220,7 @@ export const brandQueryGroups = {
   parentBrand: [siteConfig.name, "Luxe Event Co", "Luxe Event Company"],
   coffeeDivision: ["Luxe Coffee Bar", "Luxe Coffee Cart"],
   sweetDivision: ["Luxe Sweet Cart"],
-  seatingDivision: ["Luxe Seating Rentals"],
+  seatingDivision: ["Luxe Event Rentals"],
 } as const;
 
 export const serviceVisibilityGroups = [

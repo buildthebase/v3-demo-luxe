@@ -43,7 +43,7 @@ const rentalCategoryImages: Record<string, ResponsiveImageAsset | undefined> = {
 const seatingRentalsSchema = createServicePageSchema({
   path: seatingRentalsPath,
   serviceId: divisionServiceIds.seating,
-  serviceName: "Luxe Seating Rentals",
+  serviceName: "Luxe Event Rentals",
   serviceType: "Event seating and rental service",
   serviceDescription:
     "A focused collection of premium seating and event rentals for weddings, showers, backyard and outdoor events, birthdays, engagements, and private celebrations across Toronto and the GTA.",
@@ -132,7 +132,7 @@ function SeatingOverview() {
       copy={
         <>
           <p>
-            Luxe Seating Rentals provides chairs, tables, cocktail tables, tents,
+            Luxe Event Rentals provides chairs, tables, cocktail tables, tents,
             linens and tent walls for{" "}
             <Link href="/events/weddings">weddings</Link>,{" "}
             <Link href="/events/baby-showers">baby showers</Link>,{" "}
@@ -152,12 +152,12 @@ function SeatingOverview() {
             tenting and related essentials.
           </p>
           <p>
-            With Luxe Seating Rentals, Luxe Coffee Bar, and Luxe Sweet Cart under one
+            With Luxe Event Rentals, Luxe Coffee Bar, and Luxe Sweet Cart under one
             roof, you can coordinate the rentals, coffee, and dessert through one team
             and one inquiry, making the event easier to plan from the start.
           </p>
           <p className="seating-overview-handoff">
-            Luxe Seating Rentals can be booked independently or coordinated with{" "}
+            Luxe Event Rentals can be booked independently or coordinated with{" "}
             <Link href="/experiences/coffee-bar">Luxe Coffee Bar</Link> and{" "}
             <Link href="/experiences/sweet-cart">Luxe Sweet Cart</Link> through one{" "}
             <Link href="/contact">Luxe Event Co. inquiry</Link>.

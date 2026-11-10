@@ -1,47 +1,72 @@
-/* Let the Events approach statement use the full desktop content measure. */
-.foundation-shell .events-page .events-approach-intro {
-  max-width: none;
-}
-
-.foundation-shell .events-page .events-approach h2#events-approach-title {
-  width: 100% !important;
-  max-width: none !important;
-}
-
-.foundation-shell .events-page .events-gallery {
-  padding-bottom: clamp(2.5rem, 4vw, 4rem);
-}
-
 .foundation-shell .events-page .events-hero-composition {
   border: 1px solid color-mix(in srgb, var(--color-luxe-black) 22%, transparent);
   background: var(--color-luxe-black);
+  aspect-ratio: 6 / 7;
+  min-height: 0;
 }
 
 .foundation-shell .events-page .events-hero-composition img {
-  object-position: center 48%;
+  object-position: center 32%;
 }
 
-@media (min-width: 1280px) {
-  .foundation-shell .events-page .events-approach h2#events-approach-title {
-    font-size: clamp(2.2rem, 2.85vw, 2.8rem) !important;
-    white-space: nowrap !important;
-  }
-}
-
-@media (max-width: 1279px) {
-  .foundation-shell .events-page .events-approach h2#events-approach-title {
-    white-space: normal;
+@media (min-width: 901px) {
+  .foundation-shell .events-page .events-hero-copy {
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: clamp(29rem, min(47vw, calc(100svh - 12rem)), 44rem);
   }
 }
 
-@media (max-width: 700px) {
-  .foundation-shell .events-page .events-approach-principles li {
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--space-2);
-    align-items: start;
-  }
+/* Ivory hero, taupe directory, ivory combinations, taupe planning, dark inquiry. */
+.foundation-shell .events-page > :is(.events-directory, .signature-pathway) {
+  --color-luxe-gold-ink: #695438;
+  --gold-text: var(--color-luxe-gold-ink);
+  position: relative;
+  isolation: isolate;
+  margin-top: 0;
+  background-color: var(--surface-chapter-soft);
+  background-image: none;
+  box-shadow: 0 0 0 100vmax var(--surface-chapter-soft);
+  clip-path: inset(0 -100vmax);
+  color: var(--color-luxe-black);
+}
 
-  .foundation-shell .events-page .events-approach-principles p {
-    grid-column: 1;
-  }
+.foundation-shell .events-page > :is(.events-directory, .signature-pathway)::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0 -100vmax;
+  background-image: radial-gradient(rgb(23 22 20 / 5.3%) .55px, transparent .7px);
+  background-size: 4px 4px;
+  content: "";
+  pointer-events: none;
+}
+
+.foundation-shell .events-page > :is(.events-directory, .signature-pathway) > * {
+  position: relative;
+  z-index: 1;
+}
+
+.foundation-shell .events-page > .signature-combinations {
+  background-color: var(--color-luxe-ivory);
+  box-shadow: 0 0 0 100vmax var(--color-luxe-ivory);
+}
+
+.foundation-shell .events-page > .signature-pathway .signature-section-heading h2,
+.foundation-shell .events-page > .signature-pathway .signature-pathway-list strong {
+  color: var(--color-luxe-black);
+}
+
+.foundation-shell .events-page > .signature-pathway .signature-pathway-list p {
+  color: var(--color-text-secondary);
+}
+
+.foundation-shell .events-page > .signature-pathway .signature-pathway-step > span {
+  color: var(--color-luxe-gold-ink) !important;
+}
+
+.foundation-shell .events-page > .signature-pathway .signature-pathway-list,
+.foundation-shell .events-page > .signature-pathway .signature-pathway-list li {
+  border-color: var(--color-rule);
 }

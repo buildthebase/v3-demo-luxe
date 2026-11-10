@@ -892,7 +892,7 @@ const serviceDiscoveryQuestionMap: AeoQuestionMapRecord[] = [
     funnelStage: ["Understanding", "Comparison", "Vendor evaluation"],
     searchIntent: ["Commercial investigation", "Comparison", "Transactional"],
     proposedAnswer:
-      "Yes. Luxe Event Co. is the parent company for Coffee Bar, Sweet Cart, and Seating Rentals, so the three services can be planned through one inquiry and proposal journey while each keeps its specialist scope.",
+      "Yes. Luxe Event Co. is the parent company for Coffee Bar, Sweet Cart, and Event Rentals, so the three services can be planned through one inquiry and proposal journey while each keeps its specialist scope.",
     requiredEvidence: {
       available: [
         "Confirmed parent-and-division model",
@@ -1253,7 +1253,7 @@ const eventPlanningQuestionMap: AeoQuestionMapRecord[] = [
     funnelStage: ["Discovery", "Understanding", "Comparison", "Vendor evaluation"],
     searchIntent: ["Informational", "Commercial investigation", "Comparison"],
     proposedAnswer:
-      "For weddings and private celebrations, Coffee Bar can shape hospitality, Sweet Cart can create a live guest moment, and the Seating Rentals inventory can supply core chairs, tables, cocktail tables, tents, linens and tent walls. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'. One, two, or all three divisions may be coordinated through one Luxe inquiry when the confirmed inventory and event scope fit.",
+      "For weddings and private celebrations, Coffee Bar can shape hospitality, Sweet Cart can create a live guest moment, and the Event Rentals inventory can supply core chairs, tables, cocktail tables, tents, linens and tent walls. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'. One, two, or all three divisions may be coordinated through one Luxe inquiry when the confirmed inventory and event scope fit.",
     requiredEvidence: {
       available: ["Confirmed division roles", "Independent and combined booking model"],
       outstanding: [],

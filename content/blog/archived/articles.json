@@ -209,7 +209,7 @@
         "type": "paragraph",
         "content": [
           {
-            "text": "Luxe Coffee Bar, Luxe Sweet Cart, and Luxe Seating Rentals may be planned independently or coordinated through one Luxe Event Co. inquiry and proposal journey. Combining services does not make them a fixed package; each retains its specialist scope. You can "
+            "text": "Luxe Coffee Bar, Luxe Sweet Cart, and Luxe Event Rentals may be planned independently or coordinated through one Luxe Event Co. inquiry and proposal journey. Combining services does not make them a fixed package; each retains its specialist scope. You can "
           },
           {
             "text": "explore the available experiences",
@@ -524,7 +524,7 @@
           ],
           [
             {
-              "text": "Luxe Coffee Bar, Luxe Sweet Cart, and Luxe Seating Rentals may be considered independently or coordinated through one inquiry without becoming a fixed package."
+              "text": "Luxe Coffee Bar, Luxe Sweet Cart, and Luxe Event Rentals may be considered independently or coordinated through one inquiry without becoming a fixed package."
             }
           ],
           [
@@ -592,7 +592,7 @@
       },
       {
         "id": "claim-07",
-        "text": "Luxe Coffee Bar, Luxe Sweet Cart, and Luxe Seating Rentals may be planned independently or through one Luxe Event Co. inquiry and proposal journey while retaining their specialist scopes; combining divisions does not create a fixed package.",
+        "text": "Luxe Coffee Bar, Luxe Sweet Cart, and Luxe Event Rentals may be planned independently or through one Luxe Event Co. inquiry and proposal journey while retaining their specialist scopes; combining divisions does not create a fixed package.",
         "status": "grounded",
         "sourceIds": [
           "site-da4019924e949b3f",
@@ -621,7 +621,7 @@
       },
       {
         "id": "claim-10",
-        "text": "Luxe Seating Rentals begins with categories including chairs, tables, cocktail tables, tents, linens, and lighting; specific inventory, quantities, availability, and delivery, placement, setup, takedown, or pickup responsibilities are confirmed for the event.",
+        "text": "Luxe Event Rentals begins with categories including chairs, tables, cocktail tables, tents, linens, and lighting; specific inventory, quantities, availability, and delivery, placement, setup, takedown, or pickup responsibilities are confirmed for the event.",
         "status": "grounded",
         "sourceIds": [
           "site-96d2db73e8b78909"

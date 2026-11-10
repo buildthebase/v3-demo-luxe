@@ -26,7 +26,7 @@ export const babyShowerExperiences = [
     id: "seating",
     number: "03",
     label: "SEATING AND RENTALS",
-    name: "Luxe Seating Rentals",
+    name: "Luxe Event Rentals",
     description:
       "Complete the setup with select Luxe chairs, tables, linens and optional tent rentals for indoor or outdoor baby showers.",
     href: "/experiences/seating-rentals",
@@ -47,7 +47,7 @@ export const babyShowerCombinations = [
   {
     id: "baby-shower-dessert-rentals",
     occasion: "DESSERT AND EVENT ESSENTIALS",
-    title: "Sweet Cart + Rentals",
+    title: "Sweet Cart + Event Rentals",
     description:
       "Pair an interactive dessert experience with the essential chairs, tables, linens or tenting needed for the event.",
     href: "/contact",
@@ -56,7 +56,7 @@ export const babyShowerCombinations = [
   {
     id: "baby-shower-complete",
     occasion: "THE COMPLETE GATHERING",
-    title: "Coffee + Dessert + Rentals",
+    title: "Coffee Bar + Dessert + Event Rentals",
     description:
       "Bring multiple Luxe services together through one coordinated inquiry.",
     href: "/contact",
@@ -148,21 +148,24 @@ export const babyShowerGallery = [
 export const babyShowerPlanning = [
   {
     number: "01",
-    title: "Event details",
+    icon: "details",
+    title: "Your celebration",
     description:
-      "Provide your event date, venue location, estimated guest count, overall timeline, and whether the shower takes place indoors or outdoors.",
+      "Share your date, venue, guest count, schedule and the services you are considering.",
   },
   {
     number: "02",
-    title: "Experience preferences",
+    icon: "coffee",
+    title: "Menus & personal touches",
     description:
-      "Let us know if you prefer premium mobile coffee service, Premium Matcha service, live dessert carts, seating rentals, or a coordinated bundle.",
+      "Choose drink and dessert menus, colours, custom drink names, cups or signage. Floral details can be coordinated with your florist.",
   },
   {
     number: "03",
-    title: "Venue and setup needs",
+    icon: "seating",
+    title: "Venue & setup",
     description:
-      "Share any details regarding room access, available floor space, electrical access, vendor load-in timing, and venue rules.",
+      "We confirm rental selections, service placement, access, space, power, water and setup timing with your venue.",
   },
 ] as const;
 
@@ -175,7 +178,7 @@ export const babyShowerFaqs = [
   {
     question: "Can the Coffee Bar, Sweet Cart, and rentals be booked separately?",
     answer:
-      "Yes. Luxe Coffee Bar, Luxe Sweet Cart, and Luxe Seating Rentals can each be booked independently or coordinated within one baby shower plan.",
+      "Yes. Luxe Coffee Bar, Luxe Sweet Cart, and Luxe Event Rentals can each be booked independently or coordinated within one baby shower plan.",
   },
   {
     question: "What desserts can be prepared at a baby shower?",

@@ -1,15 +1,15 @@
 import Link from "next/link";
+import { EventInquiryAction } from "./event-inquiry-action";
 import { ProcessStartAction } from "./process-start-action";
 import {
   corporateBrandingOptions,
   corporateEventApplications,
   corporateExperienceRoles,
   corporateFaqs,
-  corporateGalleryPreviews,
   corporatePlanningSteps,
-  corporateScaleCapabilities,
 } from "../events/corporate-events-content";
 import { pageMetadata } from "../metadata-config";
+import { imageAssets } from "../image-system";
 import { corporateEventsSectionNavigation } from "../page-section-navigation";
 import { createServicePageSchema } from "../schema-builders";
 import { signatureExperiences } from "../signature-elements";
@@ -17,6 +17,7 @@ import { FaqAccordion } from "./faq-accordion";
 import { JsonLd } from "./json-ld";
 import { PageSectionNavigation } from "./page-section-navigation";
 import { QuoteModalTrigger } from "./quote-modal-trigger";
+import { ResponsiveImage } from "./responsive-image";
 import {
   ContextualInquiryPanel,
   CredibilityStrip,
@@ -69,35 +70,24 @@ function CorporateHero() {
           </a>
         </div>
       </div>
-      <div className="corporate-hero-system" aria-hidden="true">
-        <div className="corporate-hero-screen">
-          <span>Hospitality online</span>
-          <i />
-          <i />
-          <i />
-        </div>
-        <ol>
-          <li>Brief</li>
-          <li>Brand</li>
-          <li>Service</li>
-          <li>Flow</li>
-        </ol>
+      <div className="corporate-hero-system">
+        <ResponsiveImage asset={imageAssets.experiences.corporateHero} fill />
       </div>
       <dl className="corporate-hero-proof">
         <div>
-          <dt>FLEXIBLE CAPACITY</dt>
+          <dt>Flexible capacity</dt>
           <dd>Service planned around attendance</dd>
         </div>
         <div>
-          <dt>MULTIPLE SETUPS</dt>
+          <dt>Multiple setups</dt>
           <dd>Available for select events</dd>
         </div>
         <div>
-          <dt>COFFEE + DESSERT</dt>
+          <dt>Coffee + dessert</dt>
           <dd>Book together or separately</dd>
         </div>
         <div>
-          <dt>$5 MILLION</dt>
+          <dt>$5 million</dt>
           <dd>Liability insurance</dd>
         </div>
       </dl>
@@ -109,7 +99,7 @@ function CorporateOverview() {
   return (
     <section className="corporate-overview" aria-labelledby="corporate-overview-title">
       <div>
-        <h2 id="corporate-overview-title">
+        <h2 id="corporate-overview-title" className="foundation-wide-heading">
           Corporate hospitality across Toronto and the GTA, planned around the event.
         </h2>
       </div>
@@ -136,9 +126,7 @@ function CorporateCapabilities() {
     officePopUps,
     networkingEvents,
     brandLaunches,
-    holidayEvents,
-    realEstateEvents,
-    institutionalEvents,
+    businessAndCommunityEvents,
   ] = corporateEventApplications;
 
   const panel = (
@@ -149,6 +137,11 @@ function CorporateCapabilities() {
       className={feature ? "corporate-capability-panel-feature" : undefined}
       key={event.number}
     >
+      {feature && (
+        <div className="corporate-capability-feature-image">
+          <ResponsiveImage asset={imageAssets.experiences.corporateEmployeeEvents} fill />
+        </div>
+      )}
       <h3>{event.title}</h3>
       <p>{event.description}</p>
     </article>
@@ -168,29 +161,25 @@ function CorporateCapabilities() {
       </header>
       <div className="corporate-capability-groups">
         <div className="corporate-capability-group">
-          {panel(conferenceEvents, true)}
+          {panel(employeeEvents, true)}
           <div className="corporate-capability-stack">
-            {panel(employeeEvents)}
+            {panel(conferenceEvents)}
             {panel(clientEvents)}
           </div>
         </div>
 
-        <div className="corporate-capability-group corporate-capability-group-feature-right">
+        <div className="corporate-capability-group corporate-capability-group-balanced">
           <div className="corporate-capability-stack">
             {panel(officePopUps)}
             {panel(networkingEvents)}
           </div>
-          {panel(brandLaunches, true)}
-        </div>
-
-        <div className="corporate-capability-group">
-          {panel(realEstateEvents, true)}
           <div className="corporate-capability-stack">
-            {panel(holidayEvents)}
-            {panel(institutionalEvents)}
+            {panel(brandLaunches)}
+            {panel(businessAndCommunityEvents)}
           </div>
         </div>
       </div>
+      <EventInquiryAction />
     </section>
   );
 }
@@ -227,7 +216,7 @@ function CorporateBranding() {
       key={option.number}
       className={feature ? "corporate-branding-feature" : undefined}
     >
-      {feature ? <span aria-hidden="true">BRAND</span> : null}
+      {feature ? <div className="corporate-branding-image"><ResponsiveImage asset={imageAssets.experiences.corporateBranding} fill /></div> : null}
       <div>
         <h3>{option.title}</h3>
         <p>{option.description}</p>
@@ -264,32 +253,6 @@ function CorporateBranding() {
   );
 }
 
-function CorporateScale() {
-  return (
-    <section className="corporate-scale" aria-labelledby="corporate-scale-title">
-      <header>
-        <p className="foundation-label">Scale planning</p>
-        <h2 id="corporate-scale-title">
-          Built to adapt to larger corporate events.
-        </h2>
-        <p>
-          From single-day activations to conferences and recurring workplace events,
-          Luxe can develop a service plan around attendance, schedule, venue access and
-          event requirements.
-        </p>
-      </header>
-      <div>
-        {corporateScaleCapabilities.map((capability) => (
-          <article key={capability.number}>
-            <h3>{capability.title}</h3>
-            <p>{capability.description}</p>
-          </article>
-        ))}
-      </div>
-    </section>
-  );
-}
-
 function CorporateTrust() {
   return (
     <section className="corporate-trust" aria-labelledby="corporate-trust-title">
@@ -309,67 +272,38 @@ function CorporateTrust() {
           by venues and corporate event partners.
         </strong>
       </p>
-    </section>
-  );
-}
-
-function CorporateGallery() {
-  return (
-    <section className="corporate-gallery" aria-labelledby="corporate-gallery-title">
-      <header>
-        <h2 id="corporate-gallery-title">Corporate hospitality, shown in action.</h2>
-        <p>
-          Layout, service flow, and guest interaction show how
-          the experience works beyond the first impression.
-        </p>
-      </header>
-      <div className="corporate-gallery-grid" data-asset-status="awaiting-approved-corporate-assets">
-        {corporateGalleryPreviews.map((item) => (
-          <figure className={`corporate-gallery-${item.tone}`} key={item.number}>
-            <div aria-hidden="true"><i /><i /><i /></div>
-            <figcaption>
-              <strong>{item.label}</strong>
-              <small>{item.note}</small>
-            </figcaption>
-          </figure>
-        ))}
-      </div>
-      <Link href="/gallery">
-        Explore the Luxe event gallery <span aria-hidden="true">↗︎</span>
-      </Link>
+      <p className="corporate-event-fit">
+        <QuoteModalTrigger className="corporate-event-fit-link">
+          Plan Your Event
+        </QuoteModalTrigger>
+      </p>
     </section>
   );
 }
 
 function CorporatePlanning() {
-  const [openingStep, ...supportingSteps] = corporatePlanningSteps;
-
   return (
-    <section className="corporate-planning luxe-grid-section" aria-labelledby="corporate-planning-title">
+    <section className="corporate-planning corporate-planning-merged luxe-grid-section" aria-labelledby="corporate-planning-title">
       <span className="luxe-section-grid" aria-hidden="true" />
       <header>
         <div>
-          <p className="foundation-label">Planning process</p>
+          <p className="foundation-label">Planning and logistics</p>
           <h2 id="corporate-planning-title">
             From event brief to service day
           </h2>
         </div>
         <p>
-          Our streamlined 5-step process ensures clear vendor communication,
-          custom branding alignment, and flawless execution on site.
+          A clear plan for single-day, large-scale, multi-day or recurring events.
         </p>
       </header>
-      <ol>
-        <li className="corporate-planning-primary">
-          <div>
-            <h3>{openingStep.title}</h3>
-            <p>{openingStep.description}</p>
-          </div>
-        </li>
-        {supportingSteps.map((step) => (
+      <ol className="corporate-planning-trail">
+        {corporatePlanningSteps.map((step) => (
           <li key={step.number}>
-            <h3>{step.title}</h3>
-            <p>{step.description}</p>
+            <span className="corporate-planning-marker" aria-hidden="true">{step.number}</span>
+            <div className="corporate-planning-step-copy">
+              <h3>{step.title}</h3>
+              <p>{step.description}</p>
+            </div>
           </li>
         ))}
       </ol>
@@ -403,10 +337,8 @@ export function CorporateEventsPage() {
         <CorporateCapabilities />
         <CorporateExperiences />
         <CorporateBranding />
-        <CorporateScale />
-        <CorporateTrust />
-        <CorporateGallery />
         <CorporatePlanning />
+        <CorporateTrust />
         <CorporateFaq />
         <ContextualInquiryPanel contextKey="corporate-events" showEyebrow={false} />
       </main>

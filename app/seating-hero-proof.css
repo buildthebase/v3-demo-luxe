@@ -1,4 +1,4 @@
-/* Seating Rentals uses a restrained specification ledger beneath the hero. */
+/* Event Rentals uses a restrained specification ledger beneath the hero. */
 .seating-page .seating-hero > .coffee-hero-proof-heading {
   grid-column: 1 / -1;
   display: grid;
@@ -187,7 +187,7 @@
     gap: 0.45rem;
   }
 
-  /* Keep Seating Rentals in the same compact two-column proof format as Sweet Cart. */
+  /* Keep Event Rentals in the same compact two-column proof format as Sweet Cart. */
   .seating-page .seating-hero > .sweet-hero-proof {
     display: grid;
     width: 100%;
@@ -273,7 +273,7 @@
   }
 }
 
-/* Align the Seating Rentals section introductions with the other service pages. */
+/* Align the Event Rentals section introductions with the other service pages. */
 .seating-page .seating-overview > div {
   align-self: start;
   max-width: 42rem;

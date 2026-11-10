@@ -124,7 +124,7 @@ export const bridalShowerPlanning = [
     number: "02",
     title: "Experience preferences",
     description:
-      "Select whether premium mobile coffee service, Premium Matcha, live dessert cart, seating rentals, or a coordinated combination suits your vision.",
+      "Select whether premium mobile coffee service, Premium Matcha, live dessert cart, event rentals, or a coordinated combination suits your vision.",
   },
   {
     number: "03",

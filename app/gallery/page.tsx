@@ -58,7 +58,7 @@ function GalleryHero() {
       <div className="gallery-hero-copy">
         <h1>Luxe event gallery: coffee, dessert, and rental experiences.</h1>
         <p>
-          See how Luxe mobile coffee bars, live dessert carts, seating rentals,
+          See how Luxe mobile coffee bars, live dessert carts, event rentals,
           and coordinated service support weddings, corporate events, brand
           activations, showers, and private celebrations across Toronto and the GTA.
         </p>

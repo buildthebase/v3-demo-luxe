@@ -53,7 +53,7 @@ export const birthdayExperiences = [
     id: "seating",
     number: "03",
     label: "Seating and event rentals",
-    name: "Luxe Seating Rentals",
+    name: "Luxe Event Rentals",
     image: imageAssets.experiences.seatingRentals,
     href: "/experiences/seating-rentals",
     description:
@@ -128,7 +128,7 @@ export const birthdayPlanning = [
   {
     title: "The experiences",
     description:
-      "Let us know if you are considering premium mobile coffee service, Premium Matcha service, live dessert cart, confirmed seating rentals, or a coordinated combination.",
+      "Let us know if you are considering premium mobile coffee service, Premium Matcha service, live dessert cart, event rentals, or a combination of services.",
   },
   {
     title: "The venue and service needs",

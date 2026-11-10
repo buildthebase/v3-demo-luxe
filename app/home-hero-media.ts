@@ -53,7 +53,7 @@ export const homeHeroMedia: readonly HomeHeroMedia[] = [
   },
   {
     id: "seating",
-    label: "Luxe Seating Rentals",
+    label: "Luxe Event Rentals",
     word: "Gather.",
     placement: "right",
     poster: "/media/home-hero/rentals-dji-poster.jpg",

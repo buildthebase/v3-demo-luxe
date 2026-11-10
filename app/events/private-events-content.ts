@@ -65,7 +65,7 @@ export const privateEventExperiences = [
     id: "seating",
     number: "03",
     label: "Event seating and rentals",
-    name: "Luxe Seating Rentals",
+    name: "Luxe Event Rentals",
     image: imageAssets.experiences.seatingRentals,
     href: "/experiences/seating-rentals",
     description:
@@ -109,7 +109,7 @@ export const privateEventPlanningRequirements = [
   },
   {
     number: "03",
-    title: "The experiences in consideration",
+    title: "Services you’re considering",
     description:
       "Select your desired services including a premium mobile Coffee Bar, matcha, live dessert carts, rentals, custom signage, and any dietary preferences.",
   },
@@ -175,7 +175,7 @@ export const privateEventFaqs = [
   {
     question: "Can one Luxe experience be booked independently?",
     answer:
-      "Yes. Luxe Coffee Bar, Luxe Sweet Cart, and Luxe Seating Rentals can each be booked independently. Minimum booking requirements, availability, and the final scope vary by service, travel, and event logistics.",
+      "Yes. Luxe Coffee Bar, Luxe Sweet Cart, and Luxe Event Rentals can each be booked independently. Minimum booking requirements, availability, and the final scope vary by service, travel, and event logistics.",
   },
   {
     question: "Can coffee, dessert, and rentals be combined?",

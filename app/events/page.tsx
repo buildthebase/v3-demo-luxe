@@ -4,9 +4,7 @@ import {
   EventPlanningPathway,
 } from "../components/signature-elements";
 import {
-  EventsApproach,
   EventsDirectory,
-  EventsGalleryPreview,
   EventsHero,
 } from "../components/events-hub";
 import { JsonLd } from "../components/json-ld";
@@ -39,15 +37,13 @@ export default function EventsPage() {
         <EventsHero
           titleLines={["Toronto event experiences,", "tailored for every occasion."]}
         />
-        <EventsApproach />
         <EventsDirectory />
         <CombinedExperienceFeature
           id="combinations"
-          heading="Combine coffee, dessert, and event rentals."
-          description="Elevate your event by pairing services. We seamlessly blend premium mobile Coffee Bars, live dessert carts, and seating rentals to match your venue, timeline, and guest flow."
+          heading="Popular Combinations"
+          description="Combine coffee bar service, live dessert carts, and event rentals to suit your venue, timeline, and guest flow."
           cardTitlesAsHeadings
         />
-        <EventsGalleryPreview />
         <EventPlanningPathway
           id="planning-journey"
           heading="How planning your Luxe experience works"

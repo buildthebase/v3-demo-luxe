@@ -38,7 +38,7 @@ export const searchIntents: SearchIntent[] = [
   },
   {
     path: "/experiences/seating-rentals",
-    page: "Seating Rentals",
+    page: "Event Rentals",
     primary: "Chair table and tent rentals Toronto",
     supporting: ["Wedding chair rentals", "Shower table rentals", "Backyard tent rentals GTA"],
     status: "strategic-draft",

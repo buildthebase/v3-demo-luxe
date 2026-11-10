@@ -43,7 +43,7 @@ export const galleryFilters: readonly { value: GalleryFilter; label: string }[] 
   { value: "all", label: "All" },
   { value: "coffee-bar", label: "Coffee Bar" },
   { value: "sweet-cart", label: "Sweet Cart" },
-  { value: "seating-rentals", label: "Seating Rentals" },
+  { value: "seating-rentals", label: "Event Rentals" },
   { value: "weddings", label: "Weddings" },
   { value: "corporate", label: "Corporate" },
   { value: "brand-activations", label: "Brand Activations" },
@@ -152,7 +152,7 @@ export const galleryGroups: readonly GalleryGroup[] = [
     id: "seating-rental-experiences",
     number: "03",
     title: "Event seating and rental settings",
-    context: "Luxe Seating Rentals",
+    context: "Luxe Event Rentals",
     description:
       "Explore Luxe chairs, tables, tents, dance floors and completed event settings. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations are available up to 18' × 18'.",
     tags: [
@@ -166,7 +166,7 @@ export const galleryGroups: readonly GalleryGroup[] = [
     ],
     tone: "seating",
     links: [
-      { href: "/experiences/seating-rentals", label: "Explore Seating Rentals" },
+      { href: "/experiences/seating-rentals", label: "Explore Event Rentals" },
     ],
     media: [
       ...[
@@ -263,7 +263,7 @@ export const galleryGroups: readonly GalleryGroup[] = [
     title: "Coffee, dessert, and rentals together",
     context: "Complete Luxe Experiences",
     description:
-      "See how Luxe Coffee Bar, Luxe Sweet Cart, and Luxe Seating Rentals can share one visual direction while serving distinct roles at an event.",
+      "See how Luxe Coffee Bar, Luxe Sweet Cart, and Luxe Event Rentals can share one visual direction while serving distinct roles at an event.",
     tags: [
       "coffee-bar",
       "sweet-cart",

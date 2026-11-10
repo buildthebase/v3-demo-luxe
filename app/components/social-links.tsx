@@ -6,7 +6,7 @@ import { siteConfig } from "../site-config";
 const instagramLinks = [
   { href: siteConfig.socialProfiles.coffeeBar, label: "Luxe Coffee Bar" },
   { href: siteConfig.socialProfiles.sweetCart, label: "Luxe Sweet Cart" },
-  { href: siteConfig.socialProfiles.seatingRentals, label: "Luxe Seating Rentals" },
+  { href: siteConfig.socialProfiles.seatingRentals, label: "Luxe Event Rentals" },
 ] as const;
 
 export function InstagramLinks({ className }: { className: string }) {

@@ -32,7 +32,7 @@ export const pageMetadata = {
       "Discover the signature Luxe Churro Bar and live dessert carts for Toronto and GTA events, with warm sweets prepared and finished for guests on-site.",
   },
   "/experiences/seating-rentals": {
-    title: "Chair, Table & Tent Rentals Toronto | Luxe Seating Rentals",
+    title: "Chair, Table & Tent Rentals Toronto | Luxe Event Rentals",
     description:
       "Rent white resin chairs, tables, tents and linens for weddings, showers, birthdays, engagements, backyard events and private celebrations. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'.",
   },
@@ -79,7 +79,7 @@ export const pageMetadata = {
   "/gallery": {
     title: "Toronto Event Gallery: Coffee, Dessert and Rentals",
     description:
-      "Explore our Toronto event gallery with mobile coffee bars, live dessert carts and seating rentals for weddings, showers and private celebrations.",
+      "Explore our Toronto event gallery with mobile coffee bars, live dessert carts and event rentals for weddings, showers and private celebrations.",
   },
   "/faq": {
     title: "Event Planning & Booking FAQs | Luxe Event Co.",

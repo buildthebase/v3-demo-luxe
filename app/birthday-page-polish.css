@@ -85,6 +85,17 @@
   line-height: 1.65;
 }
 
+/* Preserve a contrasting planning chapter after removing the gallery. */
+.foundation-shell .birthday-page .birthday-planning {
+  --birthday-rule: var(--surface-dark-rule);
+  --color-text-secondary: var(--surface-dark-copy-muted);
+  --color-luxe-gold-ink: var(--color-luxe-gold-on-dark);
+  color: var(--color-luxe-ivory);
+  background: var(--color-luxe-black);
+  box-shadow: 0 0 0 100vmax var(--color-luxe-black);
+  clip-path: inset(0 -100vmax);
+}
+
 @media (max-width: 840px) {
   .foundation-shell .birthday-page .birthday-combinations > header {
     grid-template-columns: minmax(0, 1fr);

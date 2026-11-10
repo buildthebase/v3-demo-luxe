@@ -63,7 +63,7 @@ export function ExperiencesBookingClarity() {
         <div>
           <dt>Can each experience be booked independently?</dt>
           <dd>
-            Absolutely. Luxe Coffee Bar, Luxe Sweet Cart and Luxe Seating Rentals can
+            Absolutely. Luxe Coffee Bar, Luxe Sweet Cart and Luxe Event Rentals can
             each be booked individually, or combined to create a complete event
             experience.
           </dd>
@@ -254,7 +254,7 @@ export function ExperiencesGalleryPreview() {
 Each experience, in its element.
         </h2>
 <p>
-  See how Luxe Coffee Bar, Luxe Sweet Cart, and Luxe Seating Rentals take
+  See how Luxe Coffee Bar, Luxe Sweet Cart, and Luxe Event Rentals take
   shape across real gatherings, then explore the full event gallery.
 </p>
       </header>

@@ -23,11 +23,9 @@ export function HomeEditorialReview({
     <section
       className="home-editorial-review"
       id={id}
-      aria-label={`Sample client quote about ${context}`}
-      data-content-status="placeholder"
+      aria-label={`Client quote about ${context}`}
     >
       <header>
-        <span>Sample client quote</span>
         <strong>{context}</strong>
         {headerMedia}
       </header>

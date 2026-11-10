@@ -17,29 +17,28 @@
   .foundation-shell .home-page > .home-coffee-quote-film { display: none; }
   .home-coffee-quote-film-desktop { display: block; width: 100%; margin-top: 1rem; }
   .foundation-shell .home-page #review-coffee {
-    grid-template-rows: auto auto auto 1fr;
+    grid-template-rows: auto auto 1fr;
     row-gap: var(--space-3);
   }
   .foundation-shell .home-page #review-coffee > header {
     grid-column: 1;
-    grid-row: 1 / span 4;
+    grid-row: 1 / span 3;
     grid-template-rows: subgrid;
     align-self: stretch;
   }
-  .foundation-shell .home-page #review-coffee > header > span { grid-row: 1; }
-  .foundation-shell .home-page #review-coffee > header > strong { grid-row: 2; }
+  .foundation-shell .home-page #review-coffee > header > strong { grid-row: 1; }
   .foundation-shell .home-page #review-coffee .home-coffee-quote-film-desktop {
-    grid-row: 3 / span 2;
+    grid-row: 2 / span 2;
     align-self: start;
   }
   .foundation-shell .home-page #review-coffee > blockquote {
     grid-column: 2;
-    grid-row: 3;
+    grid-row: 2;
     padding-top: 1rem;
   }
   .foundation-shell .home-page #review-coffee > nav {
     grid-column: 2;
-    grid-row: 4;
+    grid-row: 3;
     padding-top: clamp(1rem, 2vw, 2rem);
     align-self: start;
   }
@@ -443,14 +442,6 @@
 .foundation-shell .home-page .home-editorial-review > header {
   display: grid;
   gap: var(--space-3);
-}
-
-.foundation-shell .home-page .home-editorial-review > header > span {
-  color: var(--gold-text);
-  font-size: clamp(0.65rem, 0.75vw, 0.76rem);
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
 }
 
 .foundation-shell .home-page .home-editorial-review > header > strong {

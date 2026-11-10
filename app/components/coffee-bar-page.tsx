@@ -103,7 +103,7 @@ function CoffeeHero() {
       <div className="sweet-hero-proof-heading">
         <p className="foundation-label">Confirmed capacity and service planning</p>
         <h2 id="coffee-hero-proof-title" className="foundation-wide-heading">
-          The service plan follows the room, menu, and guest flow.
+          Coffee service planned around your event.
         </h2>
       </div>
       <dl className="sweet-hero-proof" aria-labelledby="coffee-hero-proof-title">
@@ -178,7 +178,7 @@ function CoffeeOverview() {
           <p className="coffee-overview-handoff">
             Luxe Coffee Bar can be booked independently or coordinated with{" "}
             <Link href="/experiences/sweet-cart">Luxe Sweet Cart</Link> and{" "}
-            <Link href="/experiences/seating-rentals">Luxe Seating Rentals</Link>{" "}
+            <Link href="/experiences/seating-rentals">Luxe Event Rentals</Link>{" "}
             through one coordinated inquiry. {" "}
             <QuoteModalTrigger className="coffee-overview-inquiry">
               Plan Your Event
@@ -484,9 +484,9 @@ function CoffeeRelated() {
           <b aria-hidden="true">Explore Sweet Cart ↗︎</b>
         </Link>
         <Link href="/experiences/seating-rentals">
-          <h3>Luxe Seating Rentals</h3>
+          <h3>Luxe Event Rentals</h3>
           <p>Connect café hospitality with the structure and setting around it.</p>
-          <b aria-hidden="true">Explore Seating Rentals ↗︎</b>
+          <b aria-hidden="true">Explore Event Rentals ↗︎</b>
         </Link>
       </div>
     </section>

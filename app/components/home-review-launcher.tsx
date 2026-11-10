@@ -5,7 +5,7 @@ import { useRef } from "react";
 const reviewDestinations = [
   { href: "https://share.google/e1m6G5fgm6E2cHZS1", label: "Luxe Coffee Bar" },
   { href: "https://share.google/kYktuzaI5E0tVlGFN", label: "Luxe Sweet Cart" },
-  { href: "https://share.google/eX284kqBBFmcwTFJX", label: "Luxe Seating Rentals" },
+  { href: "https://share.google/eX284kqBBFmcwTFJX", label: "Luxe Event Rentals" },
 ] as const;
 
 export function HomeReviewLauncher() {

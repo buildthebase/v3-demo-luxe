@@ -8,7 +8,7 @@ export const entityNames = {
   divisions: {
     coffeeBar: "Luxe Coffee Bar",
     sweetCart: "Luxe Sweet Cart",
-    seatingRentals: "Luxe Seating Rentals",
+    seatingRentals: "Luxe Event Rentals",
   },
   coffeeExperiences: {
     cafeCart: {

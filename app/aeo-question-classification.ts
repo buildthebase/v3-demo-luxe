@@ -29,7 +29,7 @@ export type ServiceScope =
   | "Luxe Event Co."
   | "Luxe Coffee Bar"
   | "Luxe Sweet Cart"
-  | "Luxe Seating Rentals";
+  | "Luxe Event Rentals";
 
 export type EventTypeScope =
   | "All event types"
@@ -108,7 +108,7 @@ export const questionClassifications: QuestionClassification[] = [
       "Luxe Event Co.",
       "Luxe Coffee Bar",
       "Luxe Sweet Cart",
-      "Luxe Seating Rentals",
+      "Luxe Event Rentals",
     ],
     eventTypes: ["All event types"],
     searchIntents: ["Informational", "Comparison", "Inspirational"],
@@ -347,7 +347,7 @@ export const questionClassifications: QuestionClassification[] = [
     services: [
       "Luxe Coffee Bar",
       "Luxe Sweet Cart",
-      "Luxe Seating Rentals",
+      "Luxe Event Rentals",
     ],
     eventTypes: ["All event types"],
     searchIntents: ["Logistical", "Troubleshooting", "Transactional"],
@@ -390,7 +390,7 @@ export const questionClassifications: QuestionClassification[] = [
     services: [
       "Luxe Coffee Bar",
       "Luxe Sweet Cart",
-      "Luxe Seating Rentals",
+      "Luxe Event Rentals",
     ],
     eventTypes: ["All event types"],
     searchIntents: ["Logistical", "Troubleshooting"],
@@ -432,7 +432,7 @@ export const questionClassifications: QuestionClassification[] = [
     services: [
       "Luxe Coffee Bar",
       "Luxe Sweet Cart",
-      "Luxe Seating Rentals",
+      "Luxe Event Rentals",
     ],
     eventTypes: ["Weddings", "Corporate events", "Private events"],
     searchIntents: ["Logistical", "Troubleshooting", "Comparison"],
@@ -476,7 +476,7 @@ export const questionClassifications: QuestionClassification[] = [
       "Luxe Event Co.",
       "Luxe Coffee Bar",
       "Luxe Sweet Cart",
-      "Luxe Seating Rentals",
+      "Luxe Event Rentals",
     ],
     eventTypes: ["All event types"],
     searchIntents: ["Commercial investigation", "Transactional", "Comparison", "Local"],
@@ -612,7 +612,7 @@ export const questionClassifications: QuestionClassification[] = [
       "private-event-clients",
       "industry-partners",
     ],
-    services: ["Luxe Seating Rentals"],
+    services: ["Luxe Event Rentals"],
     eventTypes: ["Weddings", "Baby showers", "Bridal showers", "Birthdays", "Private events"],
     searchIntents: ["Informational", "Comparison", "Local"],
     funnelStages: ["Discovery", "Understanding", "Planning", "Vendor evaluation"],
@@ -645,7 +645,7 @@ export const questionClassifications: QuestionClassification[] = [
       "private-event-clients",
       "industry-partners",
     ],
-    services: ["Luxe Seating Rentals"],
+    services: ["Luxe Event Rentals"],
     eventTypes: ["Weddings", "Baby showers", "Bridal showers", "Birthdays", "Private events"],
     searchIntents: ["Logistical", "Transactional", "Troubleshooting"],
     funnelStages: ["Planning", "Cost investigation", "Vendor evaluation", "Booking preparation"],
@@ -678,7 +678,7 @@ export const questionClassifications: QuestionClassification[] = [
       "private-event-clients",
       "industry-partners",
     ],
-    services: ["Luxe Seating Rentals"],
+    services: ["Luxe Event Rentals"],
     eventTypes: ["All event types"],
     searchIntents: ["Commercial investigation", "Transactional", "Troubleshooting"],
     funnelStages: ["Cost investigation", "Vendor evaluation", "Booking preparation"],
@@ -779,7 +779,7 @@ export const questionClassifications: QuestionClassification[] = [
       "Luxe Event Co.",
       "Luxe Coffee Bar",
       "Luxe Sweet Cart",
-      "Luxe Seating Rentals",
+      "Luxe Event Rentals",
     ],
     eventTypes: ["All event types"],
     searchIntents: ["Logistical", "Troubleshooting", "Commercial investigation"],
@@ -824,7 +824,7 @@ export const questionClassifications: QuestionClassification[] = [
       "Luxe Event Co.",
       "Luxe Coffee Bar",
       "Luxe Sweet Cart",
-      "Luxe Seating Rentals",
+      "Luxe Event Rentals",
     ],
     eventTypes: ["All event types"],
     searchIntents: ["Commercial investigation", "Comparison", "Inspirational"],

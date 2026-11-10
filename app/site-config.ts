@@ -30,7 +30,7 @@ export const siteConfig = {
   location: "Toronto, Canada",
   description: defaultDescription,
   defaultMetadata: {
-    title: `${organizationName} | Coffee, Desserts & Seating Rentals Toronto`,
+    title: `${organizationName} | Coffee, Desserts & Event Rentals Toronto`,
     description: defaultDescription,
   },
   brandAssets: {
@@ -204,7 +204,7 @@ export const experiences: Division[] = [
     slug: "seating-rentals",
     number: "03",
     name: entityNames.divisions.seatingRentals,
-    label: "Seating Rentals",
+    label: "Event Rentals",
     landingPath: "/experiences/seating-rentals",
     summary: "Premium core rentals for celebrations made to gather.",
     serviceDescription: "A coordinated seating and event rental offering within Luxe Event Co.",
@@ -218,7 +218,7 @@ export const experiences: Division[] = [
       secondary: ["wedding chair rentals Toronto", "backyard event tent rentals Toronto"],
     },
     gallery: [],
-    inquiryCta: "Ask about Luxe Seating Rentals",
+    inquiryCta: "Ask about Luxe Event Rentals",
     complementarySlugs: ["coffee-bar", "sweet-cart"],
     instagram: socialProfiles.seatingRentals,
     offerings: [

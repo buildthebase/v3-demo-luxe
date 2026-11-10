@@ -42,7 +42,7 @@ export const routeSocialCards = {
   "/experiences/seating-rentals": {
     id: "social-card-luxe-seating-rentals",
     src: "/images/social/luxe-seating-rentals.png",
-    alt: "Luxe Seating Rentals for events across Toronto and the GTA",
+    alt: "Luxe Event Rentals for events across Toronto and the GTA",
     width: 1200,
     height: 630,
     sizes: "1200px",

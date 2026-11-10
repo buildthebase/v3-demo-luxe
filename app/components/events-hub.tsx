@@ -1,10 +1,7 @@
 import Link from "next/link";
+import { EventInquiryAction } from "./event-inquiry-action";
 import { imageAssets } from "../image-system";
-import {
-  eventHubEntries,
-  eventLedPrinciples,
-  eventsGalleryPreview,
-} from "../events/content";
+import { eventHubEntries } from "../events/content";
 import { ResponsiveImage } from "./responsive-image";
 
 export function EventsHero({
@@ -44,54 +41,6 @@ export function EventsHero({
     </header>
   );
 }
-
-export function EventsApproach() {
-  return (
-    <section
-      id="event-led-approach"
-      className="events-approach surface-chapter surface-chapter-dark"
-      aria-labelledby="events-approach-title"
-    >
-      <div className="events-approach-intro">
-        <p className="foundation-label">The Luxe event-led approach</p>
-        <h2 id="events-approach-title">
-          Coffee, dessert, and event rentals built around your occasion.
-        </h2>
-        <p className="events-approach-lead">
-          Luxe brings together coffee, dessert, seating, and event rentals
-          according to what the occasion genuinely requires.
-        </p>
-      </div>
-      <div className="events-approach-body">
-        <p>
-          Each experience can be booked independently or coordinated within one
-          event plan. The venue, guest count, schedule, service needs, and
-          desired atmosphere shape which services are included and how they work
-          together.
-        </p>
-        <p>
-          <Link href="/experiences/coffee-bar">Luxe Coffee Bar</Link> enhances
-          hospitality and conversation. <Link href="/experiences/sweet-cart">Luxe Sweet Cart</Link>{" "}
-          delivers an interactive dessert moment. <Link href="/experiences/seating-rentals">Luxe Seating Rentals</Link>{" "}
-          shapes comfort, room layout, and guest movement.
-        </p>
-      </div>
-      <p className="events-approach-closing">
-        Book one Luxe experience on its own, or bring coffee, dessert and event
-        rentals together through one coordinated inquiry.
-      </p>
-      <ol className="events-approach-principles">
-        {eventLedPrinciples.map((principle) => (
-          <li key={principle.number}>
-            <strong>{principle.label}</strong>
-            <p>{principle.description}</p>
-          </li>
-        ))}
-      </ol>
-    </section>
-  );
-}
-
 export function EventsDirectory() {
   return (
     <section
@@ -103,7 +52,7 @@ export function EventsDirectory() {
         <p className="foundation-label">Explore by occasion</p>
         <h2 id="events-directory-title">Explore event services by occasion.</h2>
         <p>
-          Explore how Luxe Coffee Bar, Luxe Sweet Cart, and Luxe Seating Rentals
+          Explore how Luxe Coffee Bar, Luxe Sweet Cart, and Luxe Event Rentals
           can be planned for weddings, corporate events, brand activations,
           showers, birthdays, and private celebrations across Toronto and the
           GTA.
@@ -129,40 +78,7 @@ export function EventsDirectory() {
           </article>
         ))}
       </div>
-    </section>
-  );
-}
-
-export function EventsGalleryPreview() {
-  return (
-    <section id="gallery" className="events-gallery" aria-labelledby="events-gallery-title">
-      <header>
-        <p className="foundation-label">Featured gallery</p>
-        <h2 id="events-gallery-title">Toronto event experience gallery.</h2>
-      </header>
-      <div
-        className="events-gallery-grid"
-        data-asset-status="awaiting-approved-photography"
-      >
-        {eventsGalleryPreview.map((item) => (
-          <figure className={`events-gallery-${item.tone}`} key={item.id}>
-            <div aria-hidden="true">
-              <i />
-              <i />
-              <i />
-            </div>
-            <figcaption>
-              <h3>
-                <strong>{item.label}</strong>
-              </h3>
-              <small>{item.context}</small>
-            </figcaption>
-          </figure>
-        ))}
-      </div>
-      <Link href="/gallery" className="events-text-link">
-        Explore the Luxe event gallery <span aria-hidden="true">↗︎</span>
-      </Link>
+      <EventInquiryAction />
     </section>
   );
 }

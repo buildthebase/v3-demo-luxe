@@ -139,7 +139,7 @@ function FaqInquiry() {
           and the operating detail you need clarified. For complete service
           mechanics, review the <Link href="/experiences/coffee-bar">Coffee Bar</Link>,
           {" "}<Link href="/experiences/sweet-cart">Sweet Cart</Link>, or{" "}
-          <Link href="/experiences/seating-rentals">Seating Rentals</Link>.
+          <Link href="/experiences/seating-rentals">Event Rentals</Link>.
         </p>
       </div>
       <Link href="/contact" data-event-name="inquiry_start">

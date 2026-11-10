@@ -1964,7 +1964,7 @@
         "type": "paragraph",
         "content": [
           {
-            "text": "Luxe Coffee Bar and Luxe Sweet Cart can each be booked independently, or coordinated through one Luxe Event Co. inquiry. Luxe Event Co. also allows Luxe Coffee Bar, Luxe Sweet Cart and Luxe Seating Rentals to be coordinated through one team for weddings, corporate events, brand activations and private celebrations across Toronto and the GTA."
+            "text": "Luxe Coffee Bar and Luxe Sweet Cart can each be booked independently, or coordinated through one Luxe Event Co. inquiry. Luxe Event Co. also allows Luxe Coffee Bar, Luxe Sweet Cart and Luxe Event Rentals to be coordinated through one team for weddings, corporate events, brand activations and private celebrations across Toronto and the GTA."
           }
         ]
       },
@@ -2146,7 +2146,7 @@
       },
       {
         "id": "claim-14",
-        "text": "Luxe Coffee Bar, Luxe Sweet Cart and Luxe Seating Rentals can be coordinated through one team for weddings, corporate events, brand activations and private celebrations across Toronto and the GTA.",
+        "text": "Luxe Coffee Bar, Luxe Sweet Cart and Luxe Event Rentals can be coordinated through one team for weddings, corporate events, brand activations and private celebrations across Toronto and the GTA.",
         "status": "grounded",
         "sourceIds": [
           "public-ba33625620d2368b"

@@ -1,11 +1,11 @@
 import Link from "next/link";
+import { EventInquiryAction } from "./event-inquiry-action";
 import { ProcessStartAction } from "./process-start-action";
 import {
   birthdayCombinations,
   birthdayContexts,
   birthdayExperiences,
   birthdayFaqs,
-  birthdayGallery,
   birthdayPersonalization,
   birthdayPlanning,
 } from "../events/birthdays-content";
@@ -85,7 +85,7 @@ function BirthdayOverview() {
         <article>
           <h3>One experience or several</h3>
           <p>
-            Choose the Luxe Coffee Bar, Luxe Sweet Cart, or Luxe Seating Rentals
+            Choose the Luxe Coffee Bar, Luxe Sweet Cart, or Luxe Event Rentals
             individually, or bundle them into a single coordinated booking.
           </p>
         </article>
@@ -161,6 +161,7 @@ function BirthdayPersonalization() {
           </article>
         ))}
       </div>
+      <EventInquiryAction />
     </section>
   );
 }
@@ -182,33 +183,10 @@ function BirthdayCombinations() {
   );
 }
 
-function BirthdayGallery() {
-  return (
-    <section
-      className="birthday-gallery luxe-grid-section luxe-grid-section-dark"
-      aria-labelledby="birthday-gallery-title"
-    >
-      <span className="luxe-section-grid" aria-hidden="true" />
-      <header>
-        <h2 id="birthday-gallery-title">Birthday experiences, seen in context.</h2>
-        <p>Coffee, live dessert, signage, seating, and room details shown within the celebrations they were planned for.</p>
-      </header>
-      <div data-asset-status="awaiting-approved-birthday-assets">
-        {birthdayGallery.map((item) => (
-          <figure className={`birthday-gallery-${item.tone}`} key={item.number}>
-            <div aria-hidden="true"><i /><i /><i /></div>
-            <figcaption><strong>{item.label}</strong><small>{item.note}</small></figcaption>
-          </figure>
-        ))}
-      </div>
-      <Link href="/gallery">Explore the Luxe Event Gallery <span aria-hidden="true">↗︎</span></Link>
-    </section>
-  );
-}
-
 function BirthdayPlanning() {
   return (
-    <section className="birthday-planning" aria-labelledby="birthday-planning-title">
+    <section className="birthday-planning luxe-grid-section luxe-grid-section-dark" aria-labelledby="birthday-planning-title">
+      <span className="luxe-section-grid" aria-hidden="true" />
       <header>
         <h2 id="birthday-planning-title">What to share when planning a birthday with Luxe.</h2>
         <p>
@@ -250,7 +228,6 @@ export function BirthdaysPage() {
         <BirthdayExperiences />
         <BirthdayPersonalization />
         <BirthdayCombinations />
-        <BirthdayGallery />
         <BirthdayPlanning />
         <BirthdayFaq />
         <ContextualInquiryPanel contextKey="birthdays" showEyebrow={false} />

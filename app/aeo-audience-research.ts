@@ -502,7 +502,7 @@ export const aeoContentDependencies: AeoContentDependency[] = [
     label: "Guest capacities",
     status: "partially-confirmed",
     publicationRule:
-      "Coffee Bar and Sweet Cart limits may be used with event-specific qualification; Seating Rentals capacity remains unpublished.",
+      "Coffee Bar and Sweet Cart limits may be used with event-specific qualification; Event Rentals capacity remains unpublished.",
   },
   {
     slug: "drinks-served-per-hour",
@@ -560,7 +560,7 @@ export const aeoContentDependencies: AeoContentDependency[] = [
     label: "Service minimums",
     status: "partially-confirmed",
     publicationRule:
-      "Use only the confirmed Coffee Bar minimum; do not infer Sweet Cart or Seating Rentals minimums.",
+      "Use only the confirmed Coffee Bar minimum; do not infer Sweet Cart or Event Rentals minimums.",
   },
   {
     slug: "pricing-variables",

@@ -298,9 +298,22 @@
   z-index: 1;
 }
 
+.foundation-shell .private-page .private-planning > header {
+  display: block;
+  text-align: center;
+}
+
+.foundation-shell .private-page .private-planning > header h2 {
+  width: 100%;
+  max-width: 26ch;
+  margin-inline: auto;
+  text-align: center;
+  text-wrap: balance;
+}
+
 .foundation-shell .private-page .private-planning > header > p:last-child {
   max-width: 58ch;
-  margin-top: 24px;
+  margin: 1.25rem auto 0;
 }
 
 .foundation-shell .private-page .private-planning > ol {

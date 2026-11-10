@@ -1,10 +1,10 @@
 import Link from "next/link";
+import { EventInquiryAction } from "./event-inquiry-action";
 import { ProcessStartAction } from "./process-start-action";
 import {
   privateEventContexts,
   privateEventExperiences,
   privateEventFaqs,
-  privateEventGallery,
   privateEventPersonalization,
   privateEventPlanningRequirements,
 } from "../events/private-events-content";
@@ -88,7 +88,7 @@ function PrivateEventsOverview() {
         </p>
         <p>
           From morning engagement brunches to late-night anniversary dessert
-          bars, we align our mobile specialty coffee service, live sweets, and seating rentals
+          bars, we align our mobile specialty coffee service, live sweets, and event rentals
           to perfectly match your event format.
         </p>
       </div>
@@ -118,6 +118,7 @@ function PrivateEventContexts() {
           </li>
         ))}
       </ol>
+      <EventInquiryAction />
     </section>
   );
 }
@@ -125,7 +126,7 @@ function PrivateEventContexts() {
 function PrivateEventExperiences() {
   return (
     <ExperienceSelector
-      description="Explore our core service pillars tailored for private celebrations across Toronto and the GTA."
+      description="Explore coffee, live desserts and event rentals for private celebrations across Toronto and the GTA."
       experiences={privateEventExperiences}
       heading={
         <>
@@ -155,29 +156,6 @@ function PrivateEventPersonalization() {
           </article>
         ))}
       </div>
-    </section>
-  );
-}
-
-function PrivateEventGallery() {
-  return (
-    <section className="private-gallery" aria-labelledby="private-gallery-title">
-      <header>
-        <h2 id="private-gallery-title">Private event experiences, seen in context.</h2>
-        <p>Coffee, live dessert, signage, seating, and room details shown within the gatherings they were planned for.</p>
-      </header>
-      <div data-asset-status="awaiting-approved-private-event-assets">
-        {privateEventGallery.map((item) => (
-          <figure className={`private-gallery-${item.tone}`} key={item.number}>
-            <div aria-hidden="true"><i /><i /><i /></div>
-            <figcaption>
-              <strong>{item.label}</strong>
-              <small>{item.note}</small>
-            </figcaption>
-          </figure>
-        ))}
-      </div>
-      <Link href="/gallery">Explore the Luxe Event Gallery <span aria-hidden="true">↗︎</span></Link>
     </section>
   );
 }
@@ -229,7 +207,6 @@ export function PrivateEventsPage() {
         <PrivateEventContexts />
         <PrivateEventExperiences />
         <PrivateEventPersonalization />
-        <PrivateEventGallery />
         <PrivateEventPlanning />
         <PrivateEventFaq />
         <ContextualInquiryPanel contextKey="private-events" showEyebrow={false} />

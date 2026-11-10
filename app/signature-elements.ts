@@ -55,7 +55,7 @@ export const signatureExperiences: SignatureExperience[] = [
     id: "seating",
     number: "03",
     label: "Seating",
-    name: "Luxe Seating Rentals",
+    name: "Luxe Event Rentals",
     description:
       "White resin chairs, 6-ft tables, cocktail tables, tents and linens for weddings and private celebrations. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'.",
     href: "/experiences/seating-rentals",
@@ -101,7 +101,7 @@ export const eventPlanningPathway: readonly EventPlanningStep[] = [
 export const combinedExperiences: CombinedExperience[] = [
   {
     id: "bridal-shower",
-    occasion: "Bridal shower",
+    occasion: "Bridal Showers & Baby Showers",
     title: "Coffee Bar + Sweet Cart",
     description:
       "A welcoming espresso arrival paired with an interactive live dessert cart, presented in a seamless aesthetic.",
@@ -110,28 +110,28 @@ export const combinedExperiences: CombinedExperience[] = [
   },
   {
     id: "backyard-celebration",
-    occasion: "Backyard celebration",
-    title: "Coffee Bar + Rentals",
+    occasion: "Birthdays & Private Events",
+    title: "Coffee Bar + Event Rentals",
     description:
-      "Mobile coffee paired with the core tables, chairs, tenting, and linens needed for a polished outdoor gathering.",
+      "Coffee bar service paired with the tables, chairs, tenting, and linens needed for an outdoor event.",
     href: "/events/private-events",
     experienceIds: ["coffee", "seating"],
   },
   {
     id: "wedding",
-    occasion: "Wedding",
-    title: "Coffee + Dessert + Rentals",
+    occasion: "Weddings",
+    title: "Coffee Bar + Dessert + Event Rentals",
     description:
-      "Mobile coffee, live desserts and coordinated chair, table, tent and linen rentals for ceremonies, receptions and outdoor weddings. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'.",
+      "Coffee bar service, live desserts, and coordinated chair, table, tent, and linen rentals for ceremonies and receptions.",
     href: "/events/weddings",
     experienceIds: ["coffee", "dessert", "seating"],
   },
   {
     id: "product-launch",
-    occasion: "Product launch",
-    title: "Branded drinks + Signage",
+    occasion: "Brand Activations",
+    title: "Coffee Bar + Custom Signage",
     description:
-      "Custom branded cups, bespoke signage, cart branding and tailored beverage menus that bring your brand to life.",
+      "Coffee bar service with custom signage, branded cups, backdrops and more, coordinated around your brand.",
     href: "/events/brand-activations",
     experienceIds: ["coffee", "signage"],
   },
@@ -248,7 +248,7 @@ export const inquiryContexts: Record<string, InquiryContext> = {
     eyebrow: "Hospitality with purpose",
     heading: "Planning a Corporate Event?",
     description:
-      "Share your event date, location, estimated attendance and service requirements. We’ll recommend the appropriate Coffee Bar, Sweet Cart, branding and rental options for your event.",
+      "Share your event date, location, estimated attendance and service requirements.",
     cta: "Plan Your Corporate Event",
     href: "/contact",
   },

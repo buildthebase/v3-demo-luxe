@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { EventInquiryAction } from "./event-inquiry-action";
 import {
   weddingCustomization,
   weddingExperiences,
@@ -8,9 +9,11 @@ import {
   weddingMoments,
 } from "../events/weddings-content";
 import { pageMetadata } from "../metadata-config";
+import { imageAssets } from "../image-system";
 import { weddingsSectionNavigation } from "../page-section-navigation";
 import { createServicePageSchema } from "../schema-builders";
 import { FaqAccordion } from "./faq-accordion";
+import { CoffeeBrandingGallery } from "./coffee-branding-gallery";
 import { JsonLd } from "./json-ld";
 import { PageSectionNavigation } from "./page-section-navigation";
 import { QuoteModalTrigger } from "./quote-modal-trigger";
@@ -55,10 +58,8 @@ function WeddingHero() {
           </a>
         </div>
       </div>
-      <div className="wedding-hero-art" aria-hidden="true">
-        <i />
-        <i />
-        <i />
+      <div className="wedding-hero-art">
+        <ResponsiveImage asset={imageAssets.experiences.weddingHero} fill />
       </div>
       <dl className="wedding-hero-proof">
         <div>
@@ -75,35 +76,6 @@ function WeddingHero() {
         </div>
       </dl>
     </header>
-  );
-}
-
-function WeddingOverview() {
-  return (
-    <section className="wedding-overview luxe-grid-section" aria-labelledby="wedding-overview-title">
-      <span className="luxe-section-grid" aria-hidden="true" />
-      <div>
-        <p className="foundation-label">The wedding experience</p>
-        <h2 id="wedding-overview-title">
-          Wedding coffee, live dessert, and rentals coordinated as one guest experience.
-        </h2>
-      </div>
-      <div>
-        <p>
-          Luxe collaborates directly with couples, wedding planners, venues,
-          and vendor teams to integrate each service smoothly into your wedding
-          timeline.
-        </p>
-        <p>
-          <Link href="/experiences/coffee-bar">Luxe Coffee Bar</Link>,{" "}
-          <Link href="/experiences/sweet-cart">Luxe Sweet Cart</Link>, and{" "}
-          <Link href="/experiences/seating-rentals">Luxe Seating Rentals</Link>{" "}
-          can be booked individually or packaged into a single inquiry. Your
-          venue layout, schedule, guest count, and desired aesthetic determine
-          the final plan.
-        </p>
-      </div>
-    </section>
   );
 }
 
@@ -161,9 +133,17 @@ function WeddingCustomization() {
           Personalize your wedding service details
         </h2>
         <p>
-          Carry your wedding aesthetic through custom signage, drink menus,
-          cart styling, linens, and selected rental details.
+          Personalize your cups, signage and dessert cart to match your wedding.
         </p>
+        <div className="wedding-customization-image">
+          <CoffeeBrandingGallery
+            label="Wedding personalization photos"
+            photos={[
+              imageAssets.experiences.weddingPersonalizedMenu,
+              imageAssets.experiences.weddingPersonalizedCup,
+            ]}
+          />
+        </div>
       </header>
       <div>
         {weddingCustomization.map((item) => (
@@ -173,6 +153,7 @@ function WeddingCustomization() {
           </article>
         ))}
       </div>
+      <EventInquiryAction />
     </section>
   );
 }
@@ -190,27 +171,20 @@ function WeddingCoordination() {
         <h2 id="wedding-coordination-title">
           What Luxe coordinates before the wedding.
         </h2>
-        <p>
-          Access, timing, placement, utilities, setup, pickup, venue
-          requirements, and travel are reviewed before the event so the
-          confirmed services arrive prepared for the setting.
-        </p>
       </header>
       <ol>
         {weddingLogistics.map((item) => (
           <li key={item.number}>
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
+            <svg className="wedding-coordination-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d={item.iconPath} />
+            </svg>
+            <div className="wedding-coordination-copy">
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
           </li>
         ))}
       </ol>
-      <aside className="wedding-coordination-insurance" aria-label="Liability insurance">
-        <strong>$5 million liability insurance</strong>
-        <p>
-          Certificates of Insurance (COI) provided directly to your venue and
-          planning team upon request.
-        </p>
-      </aside>
     </section>
   );
 }
@@ -268,8 +242,8 @@ export function WeddingsPage() {
         <JsonLd data={weddingsSchema} />
         <PageSectionNavigation items={weddingsSectionNavigation} />
         <WeddingHero />
-        <WeddingOverview />
         <WeddingDay />
+        <WeddingGallery />
         <ExperienceSelector
           id="wedding-experiences"
           experiences={weddingExperiences}
@@ -286,7 +260,6 @@ export function WeddingsPage() {
         />
         <WeddingCustomization />
         <WeddingCoordination />
-        <WeddingGallery />
         <WeddingFaq />
         <ContextualInquiryPanel id="wedding-inquiry" contextKey="weddings" />
       </main>

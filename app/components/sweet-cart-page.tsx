@@ -167,7 +167,7 @@ function SweetPositioning() {
           <p className="sweet-positioning-handoff">
             Luxe Sweet Cart can be booked independently or coordinated with{" "}
             <Link href="/experiences/coffee-bar">Luxe Coffee Bar</Link> and{" "}
-            <Link href="/experiences/seating-rentals">Luxe Seating Rentals</Link>{" "}
+            <Link href="/experiences/seating-rentals">Luxe Event Rentals</Link>{" "}
             through the{" "}
             <QuoteModalTrigger className="sweet-positioning-inquiry">
               Plan Your Event
@@ -516,9 +516,9 @@ function SweetCombinations() {
           <b aria-hidden="true">Explore Coffee Bar ↗︎</b>
         </Link>
         <Link href="/experiences/seating-rentals">
-          <h3>Luxe Seating Rentals</h3>
+          <h3>Luxe Event Rentals</h3>
           <p>Connect the dessert moment with seating, tables, tents or linens. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service.</p>
-          <b aria-hidden="true">Explore Seating Rentals ↗︎</b>
+          <b aria-hidden="true">Explore Event Rentals ↗︎</b>
         </Link>
       </div>
     </section>

@@ -286,12 +286,13 @@ export function EventPlanningPathway({
 export function CombinedExperienceFeature({
   id,
   combinations = combinedExperiences,
-  heading = "More than one way to shape the room.",
-  description = "The right combination of coffee, dessert, and seating is shaped around the occasion, the setting, and the way guests will experience it.",
-  cardTitlesAsHeadings = false,
+  heading = "Popular Combinations",
+  description = "The right combination of coffee bar service, live dessert, and event rentals is shaped around your occasion, setting, and guest experience.",
+  cardTitlesAsHeadings = true,
   footer,
   showGridSurface = false,
-  useLineIcons = false,
+  useLineIcons = true,
+  variant = "popular",
 }: {
   id?: string;
   combinations?: readonly CombinedExperience[];
@@ -301,11 +302,12 @@ export function CombinedExperienceFeature({
   footer?: ReactNode;
   showGridSurface?: boolean;
   useLineIcons?: boolean;
+  variant?: "popular" | "original";
 } = {}) {
   return (
     <section
       id={id}
-      className={`signature-combinations${showGridSurface ? " luxe-grid-section" : ""}${useLineIcons ? " signature-combinations-line-icons" : ""}`}
+      className={`signature-combinations${variant === "popular" ? " popular-combinations" : ""}${showGridSurface ? " luxe-grid-section" : ""}${useLineIcons ? " signature-combinations-line-icons" : ""}`}
       aria-labelledby="signature-combinations-title"
     >
       {showGridSurface ? <span className="luxe-section-grid" aria-hidden="true" /> : null}
@@ -315,7 +317,7 @@ export function CombinedExperienceFeature({
       </div>
       <div className="signature-combinations-list">
         {combinations.map((combination) => (
-          <Link href={combination.href} key={combination.id}>
+          <QuoteModalTrigger key={combination.id}>
             <div className="signature-combination-main">
               <small>{combination.occasion}</small>
               {cardTitlesAsHeadings ? (
@@ -333,7 +335,7 @@ export function CombinedExperienceFeature({
               ))}
             </span>
             {useLineIcons ? null : <b aria-hidden="true">↗︎</b>}
-          </Link>
+          </QuoteModalTrigger>
         ))}
       </div>
       {footer ? <div className="signature-combinations-footer">{footer}</div> : null}

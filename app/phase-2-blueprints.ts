@@ -155,7 +155,7 @@ const blueprintDesigns: Phase2PageBlueprint[] = [
   {
     path: "/faq",
     archetype: "faq",
-    hierarchy: ["FAQ hero", "Category navigation", "General booking", "Travel and service area", "Setup and logistics", "Coffee Bar", "Sweet Cart", "Seating Rentals", "Customization", "Inquiry"],
+    hierarchy: ["FAQ hero", "Category navigation", "General booking", "Travel and service area", "Setup and logistics", "Coffee Bar", "Sweet Cart", "Event Rentals", "Customization", "Inquiry"],
     surfaceSequence: ["canvas", "narrative", "canvas", "emphasis"],
     desktopComposition: "Category navigation and native disclosure groups support fast factual review.",
     mobileComposition: "Touch-sized native disclosures retain every answer, link, and heading without hover dependence.",

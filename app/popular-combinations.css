@@ -1,0 +1,88 @@
+/* One presentation for the Experiences and Events combination sections. */
+.foundation-shell main:is(.experiences-page, .events-page) > .popular-combinations {
+  display: grid;
+  grid-template-columns: minmax(230px, .7fr) minmax(0, 1.3fr);
+  gap: clamp(3rem, 9vw, 8.75rem);
+  margin-top: 0;
+  padding-block: var(--luxe-compact-section-space);
+}
+.foundation-shell .popular-combinations .signature-combinations-intro {
+  display: block;
+  align-self: start;
+  padding-bottom: 0;
+}
+.foundation-shell .popular-combinations .signature-combinations-intro h2 {
+  width: 100%;
+  max-width: 12ch;
+  margin: 0;
+}
+.foundation-shell .popular-combinations .signature-combinations-intro > p {
+  width: 100%;
+  max-width: 38ch;
+  margin: var(--space-5) 0 0;
+}
+.foundation-shell .popular-combinations .signature-combinations-list {
+  display: block;
+  min-width: 0;
+  margin: 0;
+}
+.foundation-shell main .popular-combinations .signature-combinations-list > a {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas: "main icons";
+  align-items: center;
+  gap: var(--space-4);
+  width: 100%;
+  min-height: 154px;
+  padding-block: var(--space-6);
+}
+.foundation-shell .popular-combinations .signature-combination-main {
+  grid-area: main;
+  min-width: 0;
+  gap: var(--space-2);
+}
+.foundation-shell .popular-combinations .signature-combination-main strong {
+  font-size: clamp(1.35rem, 1.8vw, 1.8rem);
+  line-height: 1.1;
+}
+.foundation-shell .popular-combinations .signature-combination-main > span {
+  max-width: 48ch;
+  font-size: var(--type-body);
+  line-height: 1.55;
+}
+.foundation-shell .popular-combinations .signature-combination-icons {
+  grid-area: icons;
+  min-width: 0;
+}
+.foundation-shell .popular-combinations .signature-combinations-list > a:focus-visible {
+  outline: 2px solid var(--color-luxe-gold-ink);
+  outline-offset: 3px;
+}
+@media (max-width: 960px) {
+  .foundation-shell main:is(.experiences-page, .events-page) > .popular-combinations {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-6);
+  }
+  .foundation-shell .popular-combinations .signature-combinations-intro h2,
+  .foundation-shell .popular-combinations .signature-combinations-intro > p {
+    max-width: none;
+  }
+}
+@media (max-width: 700px) {
+  .foundation-shell .popular-combinations .signature-combinations-intro {
+    text-align: center;
+  }
+  .foundation-shell main .popular-combinations .signature-combinations-list > a {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "main" "icons";
+    min-height: 0;
+    gap: 1.25rem;
+  }
+  .foundation-shell .popular-combinations .signature-combination-main strong {
+    font-size: clamp(1.3rem, 6vw, 1.65rem);
+    line-height: 1.08;
+  }
+  .foundation-shell .popular-combinations .signature-combination-icons {
+    justify-content: flex-start;
+  }
+}

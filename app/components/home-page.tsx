@@ -46,8 +46,8 @@ const homeSignatureExperiences: readonly SignatureExperience[] = [
   },
   {
     ...signatureExperiences[2],
-    name: "Luxe Seating Rentals: Chair, Table & Tent Rentals",
-    headingLead: "Luxe Seating Rentals:",
+    name: "Luxe Event Rentals: Chair, Table & Tent Rentals",
+    headingLead: "Luxe Event Rentals:",
     headingDetail: "Chair, Table & Tent Rentals",
     description:
       "White resin chairs, 6-ft tables, cocktail tables, event tents and linens for weddings and private celebrations. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'.",
@@ -90,7 +90,7 @@ export function HomePage() {
         />
         <HomeEditorialReview
           id="review-coffee-seating"
-          context="Coffee Bar + Seating Rentals"
+          context="Coffee Bar + Event Rentals"
           quote="Coffee service and intentional seating worked beautifully together, giving guests a comfortable place to connect, settle in, and stay awhile."
           links={[
             { href: "/experiences", label: "Find your Luxe" },

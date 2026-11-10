@@ -45,7 +45,7 @@ export const measurementEvents: MeasurementEvent[] = [
     trigger: "A visitor selects a division or experience from an experience selector or related-experience module.",
     pages: ["/", "/experiences", ...experiencePages, ...eventPages],
     parameters: ["experience_slug", "source_path", "selector_location", "selection_mode"],
-    interpretation: "Measures demand for Coffee Bar, Sweet Cart, and Seating Rentals and the contexts that introduce them.",
+    interpretation: "Measures demand for Coffee Bar, Sweet Cart, and Event Rentals and the contexts that introduce them.",
     source: "master-specification",
   },
   {

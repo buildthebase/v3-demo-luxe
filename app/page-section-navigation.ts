@@ -23,7 +23,7 @@ export const experiencesSectionNavigation: readonly PageSectionNavigationItem[] 
   { id: "booking-approach", label: "Booking approach" },
   { id: "experience-coffee", label: "Coffee Bar" },
   { id: "experience-dessert", label: "Sweet Cart" },
-  { id: "experience-seating", label: "Seating Rentals" },
+  { id: "experience-seating", label: "Event Rentals" },
   { id: "experience-comparison", label: "Plan your event" },
   { id: "combinations", label: "Combinations" },
   { id: "event-types", label: "Explore by event" },
@@ -34,10 +34,8 @@ export const experiencesSectionNavigation: readonly PageSectionNavigationItem[] 
 
 export const eventsSectionNavigation: readonly PageSectionNavigationItem[] = [
   { id: "page-overview", label: "Back to top" },
-  { id: "event-led-approach", label: "The event-led approach" },
   { id: "event-pathways", label: "Event pathways" },
   { id: "combinations", label: "Combinations" },
-  { id: "gallery", label: "See Luxe in action" },
   { id: "planning-journey", label: "Planning process" },
   { id: "event-planning", label: "Plan your event" },
 ] as const;
@@ -84,12 +82,11 @@ export const seatingRentalsSectionNavigation: readonly PageSectionNavigationItem
 
 export const weddingsSectionNavigation: readonly PageSectionNavigationItem[] = [
   { id: "page-overview", label: "Back to top" },
-  { id: "wedding-overview-title", label: "The wedding experience" },
   { id: "wedding-day-title", label: "Wedding-day possibilities" },
+  { id: "wedding-gallery-title", label: "Gallery" },
   { id: "wedding-experiences", label: "Three experiences" },
   { id: "wedding-customization-title", label: "Personalization" },
   { id: "wedding-coordination-title", label: "Planning and logistics" },
-  { id: "wedding-gallery-title", label: "Gallery" },
   { id: "wedding-faq-title", label: "Questions" },
   { id: "wedding-inquiry", label: "Plan your wedding" },
 ] as const;
@@ -100,10 +97,8 @@ export const corporateEventsSectionNavigation: readonly PageSectionNavigationIte
   { id: "corporate-capabilities-title", label: "Capabilities" },
   { id: "corporate-experiences", label: "Three experiences" },
   { id: "corporate-branding-title", label: "Branding" },
-  { id: "corporate-scale-title", label: "Scale and logistics" },
+  { id: "corporate-planning-title", label: "Planning and logistics" },
   { id: "corporate-trust-title", label: "Trusted by teams" },
-  { id: "corporate-gallery-title", label: "Gallery" },
-  { id: "corporate-planning-title", label: "Planning process" },
   { id: "corporate-faq-title", label: "Questions" },
 ] as const;
 
@@ -124,12 +119,9 @@ export const brandActivationsSectionNavigation: readonly PageSectionNavigationIt
 export const babyShowersSectionNavigation: readonly PageSectionNavigationItem[] = [
   { id: "page-overview", label: "Back to top" },
   { id: "baby-overview-title", label: "The shower experience" },
-  { id: "baby-experiences", label: "Three experiences" },
-  { id: "baby-styling-title", label: "Styling" },
   { id: "baby-settings-title", label: "Indoor and outdoor" },
   { id: "baby-combinations", label: "Experience combinations" },
-  { id: "baby-gallery-title", label: "Gallery" },
-  { id: "baby-planning-title", label: "Planning checklist" },
+  { id: "baby-planning-title", label: "Planning & personalisation" },
   { id: "baby-faq-title", label: "Questions" },
 ] as const;
 
@@ -140,7 +132,6 @@ export const bridalShowersSectionNavigation: readonly PageSectionNavigationItem[
   { id: "bridal-experiences", label: "Three experiences" },
   { id: "bridal-combinations-title", label: "Experience combinations" },
   { id: "bridal-details-title", label: "Personal details" },
-  { id: "bridal-gallery-title", label: "Gallery" },
   { id: "bridal-planning-title", label: "Planning checklist" },
   { id: "bridal-faq-title", label: "Questions" },
 ] as const;
@@ -152,7 +143,6 @@ export const birthdaysSectionNavigation: readonly PageSectionNavigationItem[] = 
   { id: "birthday-experiences", label: "Three experiences" },
   { id: "birthday-personalization-title", label: "Personalization" },
   { id: "birthday-combinations-title", label: "Experience combinations" },
-  { id: "birthday-gallery-title", label: "Gallery" },
   { id: "birthday-planning-title", label: "Planning checklist" },
   { id: "birthday-faq-title", label: "Questions" },
 ] as const;
@@ -163,7 +153,6 @@ export const privateEventsSectionNavigation: readonly PageSectionNavigationItem[
   { id: "private-contexts-title", label: "Occasions" },
   { id: "private-experiences", label: "Three experiences" },
   { id: "private-personalization-title", label: "Personalization" },
-  { id: "private-gallery-title", label: "Gallery" },
   { id: "private-planning-title", label: "Planning checklist" },
   { id: "private-faq-title", label: "Questions" },
 ] as const;

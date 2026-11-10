@@ -4,7 +4,6 @@ import {
   bridalShowerCombinations,
   bridalShowerDetails,
   bridalShowerFaqs,
-  bridalShowerGallery,
   bridalShowerPlanning,
 } from "../events/bridal-showers-content";
 import { pageMetadata } from "../metadata-config";
@@ -108,7 +107,7 @@ function BridalOverview() {
         <article>
           <h3>Booked independently or together</h3>
           <p>
-            Book the Luxe Coffee Bar, Luxe Sweet Cart, or Luxe Seating Rentals
+            Book the Luxe Coffee Bar, Luxe Sweet Cart, or Luxe Event Rentals
             as standalone services, or combine them into a single, seamless
             booking.
           </p>
@@ -267,39 +266,13 @@ function BridalServiceCombinations() {
   );
 }
 
-function BridalGallery() {
-  return (
-    <section
-      className="bridal-gallery luxe-grid-section luxe-grid-section-dark"
-      aria-labelledby="bridal-gallery-title"
-    >
-      <span className="luxe-section-grid" aria-hidden="true" />
-      <header>
-        <h2 id="bridal-gallery-title">Bridal shower service moments to plan for.</h2>
-        <p>
-          Consider how coffee, live dessert, signage, seating, and room details
-          can support arrivals, guest interaction, and time around the table.
-        </p>
-      </header>
-      <div data-asset-status="awaiting-approved-bridal-shower-assets">
-        {bridalShowerGallery.map((item) => (
-          <figure className={`bridal-gallery-${item.tone}`} key={item.number}>
-            <div aria-hidden="true"><i /><i /><i /></div>
-            <figcaption><strong>{item.label}</strong><small>{item.note}</small></figcaption>
-          </figure>
-        ))}
-      </div>
-      <Link href="/gallery">Explore the Luxe Event Gallery <span aria-hidden="true">↗︎</span></Link>
-    </section>
-  );
-}
-
 function BridalPlanning() {
   return (
     <section
-      className="bridal-details bridal-planning"
+      className="bridal-details bridal-planning luxe-grid-section luxe-grid-section-dark"
       aria-labelledby="bridal-planning-title"
     >
+      <span className="luxe-section-grid" aria-hidden="true" />
       <header>
         <h2 id="bridal-planning-title">
           <span>Planning a bridal shower</span>{" "}
@@ -350,7 +323,6 @@ export function BridalShowersPage() {
         <BridalCombinations />
         <BridalServiceCombinations />
         <BridalDetails />
-        <BridalGallery />
         <BridalPlanning />
         <BridalFaq />
         <ContextualInquiryPanel contextKey="bridal-showers" showEyebrow={false} />

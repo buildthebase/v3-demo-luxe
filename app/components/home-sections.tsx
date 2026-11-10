@@ -97,7 +97,7 @@ export function HomePositioning() {
           </li>
           <li>
             <Link href="#experience-selector-seating">
-              <strong>Luxe Seating Rentals</strong>
+              <strong>Luxe Event Rentals</strong>
               <span>Refined seating &amp; event rentals</span>
             </Link>
           </li>

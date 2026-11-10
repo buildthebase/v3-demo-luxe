@@ -248,7 +248,7 @@ export const seatingRentalFaqs = [
   {
     question: "Can rentals be combined with coffee or dessert?",
     answer:
-      "Yes. Luxe Coffee Bar, Luxe Sweet Cart, and Luxe Seating Rentals can be requested independently or planned together through one inquiry and proposal journey.",
+      "Yes. Luxe Coffee Bar, Luxe Sweet Cart, and Luxe Event Rentals can be requested independently or planned together through one inquiry and proposal journey.",
   },
   {
     question: "Can rentals be styled to match the event?",

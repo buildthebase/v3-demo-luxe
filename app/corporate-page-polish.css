@@ -1,4 +1,254 @@
 /* Corporate Events natural heading measure and single-column introductions. */
+.foundation-shell .corporate-page .corporate-hero-system {
+  aspect-ratio: 6 / 7;
+  min-height: 0;
+  overflow: hidden;
+}
+.foundation-shell .corporate-page .corporate-hero-system::before,
+.foundation-shell .corporate-page .corporate-hero-system::after {
+  content: none;
+}
+.foundation-shell .corporate-page .corporate-hero-system img {
+  object-position: center 40%;
+}
+.corporate-branding-image {
+  position: relative;
+  width: 100%;
+  min-height: clamp(16rem, 28vw, 30rem);
+  overflow: hidden;
+}
+.corporate-branding-image img {
+  object-position: center 45%;
+}
+@media (min-width: 901px) {
+  .foundation-shell .corporate-page .corporate-hero {
+    grid-template-columns: minmax(0, 1.04fr) minmax(25rem, 0.96fr);
+  }
+  .foundation-shell .corporate-page .corporate-hero-copy {
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: clamp(29rem, min(47vw, calc(100svh - 12rem)), 44rem);
+  }
+}
+@media (min-width: 901px) and (max-width: 1050px) {
+  .foundation-shell .corporate-page .corporate-hero {
+    grid-template-columns: minmax(0, 1.08fr) minmax(20rem, 0.72fr);
+    gap: clamp(2rem, 5vw, 4rem);
+  }
+}
+
+.foundation-shell .corporate-page .corporate-overview {
+  --overview-frame: color-mix(in srgb, var(--color-luxe-gold-ink) 48%, transparent);
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(2rem, 3vw, 3rem);
+  padding: clamp(4rem, 6vw, 5.5rem) clamp(1.5rem, 4vw, 4rem);
+  text-align: center;
+}
+
+.foundation-shell .corporate-page .corporate-overview::after {
+  position: absolute;
+  inset: clamp(1.25rem, 2vw, 2rem) 0;
+  border: 1px solid var(--overview-frame);
+  content: "";
+  pointer-events: none;
+}
+
+.foundation-shell .corporate-page .corporate-overview > div:first-child::before {
+  display: block;
+  width: 3.5rem;
+  height: 1px;
+  margin: 0 auto clamp(1.5rem, 2vw, 2rem);
+  background: var(--color-luxe-gold-ink);
+  content: "";
+}
+
+.foundation-shell .corporate-page .corporate-overview #corporate-overview-title {
+  width: 100%;
+  max-width: 66rem !important;
+  margin: 0 auto;
+  text-wrap: balance;
+}
+
+.foundation-shell .corporate-page .corporate-overview > div:last-child {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  width: 100%;
+  max-width: 64rem;
+  margin-inline: auto;
+  padding-top: 0;
+}
+
+.foundation-shell .corporate-page .corporate-overview > div:last-child p {
+  max-width: none;
+  margin: 0;
+  padding-right: clamp(1.5rem, 3vw, 3rem);
+}
+
+.foundation-shell .corporate-page .corporate-overview > div:last-child p + p {
+  padding-right: 0;
+  padding-left: clamp(1.5rem, 3vw, 3rem);
+  border-left: 1px solid var(--overview-frame);
+}
+
+@media (max-width: 700px) {
+  .foundation-shell .corporate-page .corporate-overview > div:last-child {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .foundation-shell .corporate-page .corporate-overview > div:last-child p {
+    padding: 0;
+  }
+
+  .foundation-shell .corporate-page .corporate-overview > div:last-child p + p {
+    padding: 1.5rem 0 0;
+    border-top: 1px solid var(--overview-frame);
+    border-left: 0;
+  }
+}
+
+.foundation-shell .corporate-page .corporate-capability-panel-feature {
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.corporate-capability-feature-image {
+  position: absolute;
+  inset: 0;
+}
+
+.foundation-shell .corporate-page .corporate-capability-panel-feature::after {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 20%, rgb(0 0 0 / 20%) 40%, rgb(0 0 0 / 88%) 78%);
+  content: "";
+  pointer-events: none;
+}
+
+.foundation-shell .corporate-page .corporate-capability-panel-feature > :is(h3, p) {
+  position: relative;
+  z-index: 2;
+}
+
+.foundation-shell .corporate-page .corporate-capability-panel-feature::before {
+  z-index: 2;
+}
+
+.foundation-shell .corporate-page .corporate-capability-panel-feature img {
+  object-position: center 48%;
+}
+.foundation-shell .corporate-page .corporate-hero-proof dt {
+  text-transform: none;
+}
+
+.foundation-shell .corporate-page .corporate-capability-group-balanced {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.foundation-shell .corporate-page .corporate-capability-group article:not(.corporate-capability-panel-feature) {
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1.5rem, 2.5vw, 2.5rem);
+  text-align: center;
+}
+
+.foundation-shell .corporate-page .corporate-capability-group article:not(.corporate-capability-panel-feature)::before {
+  position: static;
+  flex: 0 0 1px;
+  width: 3.5rem;
+  margin: 0 auto 1.5rem;
+}
+
+.foundation-shell .corporate-page .corporate-capability-group article:not(.corporate-capability-panel-feature) h3 {
+  width: 100%;
+  max-width: none;
+  margin: 0 0 1rem;
+  text-wrap: balance;
+}
+
+.foundation-shell .corporate-page .corporate-capability-group article:not(.corporate-capability-panel-feature) p {
+  width: 100%;
+  max-width: 48ch;
+  margin: 0 auto;
+}
+@media (max-width: 700px) {
+  .foundation-shell .corporate-page .corporate-capability-groups {
+    gap: var(--layout-grid-gap);
+  }
+
+  .foundation-shell .corporate-page .corporate-capability-stack {
+    grid-template-rows: auto;
+  }
+
+  .foundation-shell .corporate-page .corporate-capability-group-balanced {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .foundation-shell .corporate-page .corporate-capability-panel-feature {
+    padding: 0;
+    text-align: center;
+  }
+
+  .foundation-shell .corporate-page .corporate-capability-panel-feature::before,
+  .foundation-shell .corporate-page .corporate-capability-panel-feature::after {
+    content: none;
+  }
+
+  .corporate-capability-feature-image {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+  }
+
+  .foundation-shell .corporate-page .corporate-capability-panel-feature h3 {
+    max-width: none;
+    margin: 0;
+    padding: 1.5rem 1.5rem 1rem;
+    text-wrap: balance;
+  }
+
+  .foundation-shell .corporate-page .corporate-capability-panel-feature p {
+    max-width: none;
+    padding: 0 1.5rem 1.5rem;
+  }
+}
+
+.foundation-shell .corporate-page .corporate-event-fit {
+  margin: 1.5rem 0 0;
+  text-align: center;
+}
+.foundation-shell .corporate-page .corporate-event-fit-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  max-width: 100%;
+  padding: .65rem 1.2rem;
+  border: 1px solid var(--color-luxe-black);
+  border-radius: 0;
+  background: transparent;
+  color: var(--color-luxe-black);
+  font-size: .875rem;
+  font-weight: 500;
+  letter-spacing: .06em;
+  line-height: 1.5;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.foundation-shell .corporate-page .corporate-event-fit-link:hover {
+  background: var(--color-luxe-black);
+  color: var(--color-luxe-ivory);
+}
+.foundation-shell .corporate-page .corporate-event-fit-link:focus-visible {
+  outline: 2px solid var(--color-luxe-gold-ink);
+  outline-offset: 4px;
+}
+
 .foundation-shell .corporate-page #corporate-experiences
   .signature-section-heading h2 {
   width: min(100%, 25ch);
@@ -8,24 +258,76 @@
   text-wrap: wrap;
 }
 
-.foundation-shell .corporate-page .corporate-branding > header {
-  grid-template-columns: 1fr;
+.foundation-shell .corporate-page .corporate-branding > header,
+.foundation-shell .corporate-page .corporate-trust > header {
+  display: block;
+  margin-bottom: clamp(2rem, 3.5vw, 3rem);
+  text-align: center;
 }
 
 .foundation-shell .corporate-page .corporate-branding > header > div {
-  width: min(100%, 68rem);
+  width: 100%;
 }
 
-.foundation-shell .corporate-page .corporate-branding h2 {
-  max-width: none;
+.foundation-shell .corporate-page .corporate-branding > header h2,
+.foundation-shell .corporate-page .corporate-trust > header h2 {
+  width: 100%;
+  max-width: 26ch;
+  margin-inline: auto;
+  text-align: center;
+  text-wrap: balance;
 }
 
 .foundation-shell .corporate-page .corporate-branding-intro {
-  max-width: 62rem;
-  margin: clamp(1.5rem, 2.5vw, 2.5rem) 0 0;
+  max-width: 64ch;
+  margin: 1.25rem auto 0;
   color: var(--color-text-secondary);
   font-size: var(--type-body);
   line-height: 1.65;
+}
+
+.foundation-shell .corporate-page .corporate-trust > header > p:last-child {
+  max-width: 58ch;
+  margin: 1.25rem auto 0;
+  text-align: center;
+}
+
+.foundation-shell .corporate-page .corporate-branding article {
+  min-height: 0;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1.5rem, 2.5vw, 2.5rem);
+  text-align: center;
+}
+
+.foundation-shell .corporate-page .corporate-branding article::before {
+  position: static;
+  flex: 0 0 1px;
+  width: 3.5rem;
+  margin: 0 auto 1.5rem;
+}
+
+.foundation-shell .corporate-page .corporate-branding article > div {
+  width: 100%;
+}
+
+.foundation-shell .corporate-page .corporate-branding article h3 {
+  max-width: none;
+  margin: 0 0 1rem;
+  text-wrap: balance;
+}
+
+.foundation-shell .corporate-page .corporate-branding article p {
+  max-width: 48ch;
+  margin-inline: auto;
+}
+
+.foundation-shell .corporate-page .corporate-branding-feature::before {
+  content: none;
+}
+
+.foundation-shell .corporate-page .corporate-branding article.corporate-branding-feature h3 {
+  margin-top: 1.5rem;
 }
 
 .foundation-shell .corporate-page .corporate-planning > header {
@@ -46,6 +348,140 @@
   max-width: none;
   margin: 0 auto;
   text-align: center;
+}
+
+.foundation-shell .corporate-page .corporate-planning-merged {
+  padding-block: clamp(3rem, 5vw, 4.5rem);
+}
+.foundation-shell .corporate-page .corporate-planning-merged > header {
+  gap: 1.25rem;
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+.foundation-shell .corporate-page .corporate-planning-merged > header > p:last-child {
+  max-width: 68ch;
+}
+.foundation-shell .corporate-page .corporate-planning-merged > ol {
+  --trail-column-gap: clamp(2rem, 6vw, 6rem);
+  --trail-row-gap: clamp(2rem, 4vw, 3.5rem);
+  --trail-turn-space: clamp(1.5rem, 4vw, 3rem);
+  --trail-line: color-mix(in srgb, var(--color-luxe-gold-ink) 60%, transparent);
+  position: relative;
+  isolation: isolate;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: auto;
+  gap: var(--trail-row-gap) var(--trail-column-gap);
+  padding: 0 var(--trail-turn-space) 0 0;
+  border: 0;
+}
+.foundation-shell .corporate-page .corporate-planning-merged > ol > li {
+  position: relative;
+  display: block;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+}
+.foundation-shell .corporate-page .corporate-planning-merged > ol > li:nth-child(1) {
+  grid-area: 1 / 1;
+}
+.foundation-shell .corporate-page .corporate-planning-merged > ol > li:nth-child(2) {
+  grid-area: 1 / 2;
+}
+.foundation-shell .corporate-page .corporate-planning-merged > ol > li:nth-child(3) {
+  grid-area: 2 / 2;
+}
+.foundation-shell .corporate-page .corporate-planning-merged > ol > li:nth-child(4) {
+  grid-area: 2 / 1;
+}
+.foundation-shell .corporate-page .corporate-planning-merged > ol > li::before {
+  position: absolute;
+  z-index: -1;
+  top: 1.25rem;
+  left: 50%;
+  pointer-events: none;
+}
+.foundation-shell .corporate-page .corporate-planning-merged > ol > li:is(:nth-child(1), :nth-child(4))::before {
+  width: calc(100% + var(--trail-column-gap));
+  border-top: 1px solid var(--trail-line);
+  content: "";
+}
+.foundation-shell .corporate-page .corporate-planning-merged > ol > li:nth-child(2)::before {
+  right: calc(-1 * var(--trail-turn-space));
+  height: calc(100% + var(--trail-row-gap));
+  border: 1px solid var(--trail-line);
+  border-left: 0;
+  border-radius: 0 3rem 3rem 0;
+  content: "";
+}
+.foundation-shell .corporate-page .corporate-planning-marker {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-inline: auto;
+  border: 1px solid var(--color-luxe-gold-ink);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--color-luxe-taupe) 48%, var(--color-luxe-ivory));
+  color: var(--color-luxe-gold-ink);
+  font-size: .75rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: .08em;
+}
+.foundation-shell .corporate-page .corporate-planning-step-copy {
+  width: 100%;
+  max-width: 34ch;
+  margin-inline: auto;
+  padding-top: 1.15rem;
+  text-align: center;
+}
+.foundation-shell .corporate-page .corporate-planning-merged h3 {
+  margin: 0 0 .75rem;
+  font-size: clamp(1.15rem, 1.75vw, 1.5rem);
+  line-height: 1.25;
+}
+.foundation-shell .corporate-page .corporate-planning-merged li p {
+  margin: 0;
+  font-size: var(--type-body);
+  line-height: 1.6;
+}
+@media (max-width: 700px) {
+  .foundation-shell .corporate-page .corporate-planning-merged > ol {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    padding: 0;
+  }
+  .foundation-shell .corporate-page .corporate-planning-merged > ol > li:nth-child(n) {
+    display: grid;
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    grid-column: 1;
+    grid-row: auto;
+    gap: 1rem;
+    padding: 0 0 1.75rem;
+    border: 0;
+  }
+  .foundation-shell .corporate-page .corporate-planning-merged > ol > li:nth-child(n)::before {
+    inset: 1.25rem auto -1.25rem 1.25rem;
+    width: 1px;
+    height: auto;
+    border: 0;
+    border-radius: 0;
+    background: var(--trail-line);
+    content: "";
+  }
+  .foundation-shell .corporate-page .corporate-planning-merged > ol > li:last-child {
+    padding-bottom: 0;
+  }
+  .foundation-shell .corporate-page .corporate-planning-merged > ol > li:last-child::before {
+    content: none;
+  }
+  .foundation-shell .corporate-page .corporate-planning-step-copy {
+    max-width: none;
+    margin: 0;
+    padding-top: .35rem;
+    text-align: left;
+  }
 }
 
 @media (min-width: 961px) {
