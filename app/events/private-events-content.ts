@@ -4,39 +4,39 @@ import type { SignatureExperience } from "../signature-elements";
 export const privateEventContexts = [
   {
     number: "01",
-    title: "Engagement parties",
+    title: "Engagement Parties",
     description:
-      "Coffee, matcha, live dessert, signage, and selected rentals can support an intimate toast, cocktail-style gathering, dinner, or open-house celebration.",
+      "Celebrate the beginning of something special with handcrafted coffee, premium matcha, live desserts, and personalized details that complement your engagement celebration.",
   },
   {
     number: "02",
     title: "Anniversaries",
     description:
-      "A personalized menu, guest-facing dessert moment, or refined room setting can reflect the couple, the milestone, and the way they want to gather.",
+      "Mark another milestone together with a personalized coffee and dessert experience, whether you're hosting an intimate dinner or celebrating with family and friends.",
   },
   {
     number: "03",
     title: "Graduations",
     description:
-      "Coffee and non-coffee drinks, live dessert, custom signage, and flexible gathering spaces can suit daytime receptions, family dinners, and larger celebrations.",
+      "Celebrate the achievement with specialty beverages, freshly prepared desserts, and custom signage designed around the graduate and their special day.",
   },
   {
     number: "04",
-    title: "Religious and cultural celebrations",
+    title: "Religious & Cultural Celebrations",
     description:
-      "Planning a religious or cultural celebration? Share any important timing, dietary, venue or service considerations during your inquiry so we can determine the appropriate Luxe experience for your event.",
+      "From traditional family gatherings to meaningful cultural celebrations, we tailor our coffee, dessert, and service presentation to complement your occasion and preferences.",
   },
   {
     number: "05",
-    title: "Holiday gatherings",
+    title: "Holiday Gatherings",
     description:
-      "Seasonal beverage collections, coffee, matcha, live dessert, and selected room elements can support private holiday parties and indoor winter gatherings.",
+      "Bring something special to your holiday celebration with seasonal coffee, premium matcha, warm desserts, and personalized service for family and friends.",
   },
   {
     number: "06",
-    title: "Family celebrations / Other milestone events",
+    title: "Family Celebrations & Milestones",
     description:
-      "Retirements, reunions, accomplishments, welcome-home gatherings, and other personal occasions can begin with this atmosphere and guest experience rather than a predefined package.",
+      "From reunions and retirement celebrations to welcome-home gatherings and personal milestones, create a memorable experience with handcrafted beverages and interactive desserts.",
   },
 ] as const;
 
@@ -49,7 +49,7 @@ export const privateEventExperiences = [
     image: imageAssets.experiences.coffeeBar,
     href: "/experiences/coffee-bar",
     description:
-      "Premium mobile coffee and matcha service featuring hot and iced café favourites, signature beverages and selected non-coffee options. Select between our versatile Café Cart or full Signature Coffee Bar based on your venue size, guest count, and party schedule.",
+      "Enjoy a café-inspired experience featuring barista-crafted espresso, signature lattes, premium matcha, and specialty hot and iced beverages. Personalized drink menus, custom cups, and cart signage are available to complement your event.",
   },
   {
     id: "dessert",
@@ -59,7 +59,7 @@ export const privateEventExperiences = [
     image: imageAssets.experiences.sweetCart,
     href: "/experiences/sweet-cart",
     description:
-      "Interactive live dessert service with Luxe Sweet Cart options including Mini Dutch Pancakes, Belgian Waffles on a Stick, Mini Donuts and the Luxe Churro Bar. Your selected option or combination of options is confirmed in your proposal. Soft Serve Add-On is available with select dessert options as an optional enhancement and is not offered as a standalone service. Sauces, toppings and staffing are confirmed in your proposal.",
+      "Bring interactive dessert catering to your celebration with freshly prepared mini Dutch pancakes, Belgian waffles on a stick, mini donuts, or live churros. Customize your experience with premium toppings, sauces, and optional soft serve.",
   },
   {
     id: "seating",
@@ -69,28 +69,28 @@ export const privateEventExperiences = [
     image: imageAssets.experiences.seatingRentals,
     href: "/experiences/seating-rentals",
     description:
-      "Add select Luxe rentals including white resin chairs, 6-ft tables, cocktail tables, linens and tents based on the needs of your event. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'.",
+      "Complete your gathering with selected event rentals, including white resin chairs, tables, cocktail tables, linens, tents, and dance floors in configurations up to 18 × 18 ft. Tent lighting is available with our tent rentals and is not offered separately.",
   },
 ] satisfies readonly SignatureExperience[];
 
 export const privateEventPersonalization = [
   {
     number: "01",
-    title: "Menus and drinks",
+    title: "Menus & Drinks",
     description:
-      "Signature beverages, seasonal menus, custom cups, and menu displays can be discussed around the occasion and the confirmed experiences.",
+      "Choose signature coffee drinks, premium matcha, seasonal favourites, and personalized beverage names that reflect your celebration.",
   },
   {
     number: "02",
-    title: "Signage and presentation",
+    title: "Signage & Presentation",
     description:
-      "Event signage, cart details, dessert presentation, and selected visual elements can be tailored to the gathering and its production timeline.",
+      "Make your setup personal with custom cart signage, branded cups, menu displays, and colour-coordinated presentation tailored to your event.",
   },
   {
     number: "03",
-    title: "Seating and room details",
+    title: "Seating & Event Details",
     description:
-      "The confirmed chairs, tables, cocktail tables, linens and tents can be considered around the venue dimensions and guest count. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'.",
+      "Complete the setting with selected chairs, tables, linens, tents, and dance-floor rentals that suit your venue and celebration. Tent lighting is available exclusively with Luxe tent rentals.",
   },
 ] as const;
 

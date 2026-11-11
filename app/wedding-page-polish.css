@@ -706,7 +706,7 @@
 
 .wedding-gallery > header h2 {
   width: 100%;
-  max-width: 12ch;
+  max-width: 26ch;
   margin: 0 auto;
   text-align: center;
   text-wrap: balance;
@@ -717,21 +717,11 @@
   font-size: clamp(0.85rem, 0.78rem + 0.28vw, 1rem);
 }
 
-.wedding-gallery-room img {
-  object-position: center center;
-}
-
-.foundation-shell .wedding-page .wedding-gallery-room > div {
-  aspect-ratio: 742 / 660;
-  min-height: 0;
-}
-
-.wedding-gallery-dessert img {
-  object-position: center center;
-}
-
-.wedding-gallery-welcome img {
-  object-position: center center;
+.wedding-gallery > header > p:last-child {
+  max-width: 64ch;
+  margin: 0;
+  color: var(--color-text-secondary);
+  line-height: 1.65;
 }
 
 .wedding-overview > div:last-child p:last-child {
@@ -750,27 +740,7 @@
     padding-inline: clamp(1rem, 2vw, 2rem);
   }
 
-  .wedding-gallery-grid {
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  }
 
-  .wedding-gallery figure:first-child {
-    width: 86%;
-    align-self: center;
-    justify-self: center;
-  }
-
-  .wedding-gallery figure:first-child > div {
-    min-height: clamp(28rem, 48vw, 42rem);
-  }
-
-  .wedding-gallery-room > div {
-    min-height: clamp(36rem, 43.2vw, 43.2rem);
-  }
-
-  .wedding-gallery-room img {
-    filter: none;
-  }
 }
 
 @media (max-width: 780px) {
@@ -810,14 +780,6 @@
   .wedding-overview > div:last-child {
     width: 100%;
     padding: clamp(1.75rem, 7vw, 2.5rem);
-  }
-
-  .wedding-gallery figure:first-child {
-    width: 100%;
-  }
-
-  .wedding-gallery figure:first-child > div {
-    min-height: min(88vw, 27rem);
   }
 
   .wedding-gallery > a {
@@ -1197,25 +1159,6 @@
   transform: none;
 }
 
-@media (min-width: 781px) {
-  .foundation-shell .wedding-page .wedding-gallery-grid {
-    display: block;
-    columns: 2;
-    column-gap: var(--space-5);
-  }
-  .foundation-shell .wedding-page .wedding-gallery-grid figure {
-    break-inside: avoid;
-    margin-bottom: var(--space-5);
-  }
-  .foundation-shell .wedding-page .wedding-gallery-grid figure:first-child {
-    width: 100%;
-    break-after: column;
-  }
-  .foundation-shell .wedding-page .wedding-gallery-grid .wedding-gallery-room {
-    width: min(80%, 34rem);
-    margin-inline: auto;
-  }
-}
 .foundation-shell .wedding-page .wedding-customization > header::after {
   content: none;
 }

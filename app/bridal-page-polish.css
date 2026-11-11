@@ -1,5 +1,17 @@
 /* Bridal Shower overview: host notes arranged like a quiet invitation suite. */
 
+.bridal-hero-photo {
+  position: relative;
+  width: min(100%, 30rem);
+  aspect-ratio: 3 / 4;
+  justify-self: center;
+  overflow: hidden;
+}
+
+.bridal-hero-photo img {
+  object-position: 50% 42%;
+}
+
 .bridal-page > .bridal-host-overview {
   position: relative;
   display: grid;

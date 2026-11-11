@@ -6,25 +6,25 @@ export const birthdayContexts = [
     number: "01",
     title: "Milestone birthdays",
     description:
-      "Celebrate 30th, 40th, 50th, or 80th birthdays with custom cocktail-style receptions, coffee, dessert and rental enhancements, or open-house dessert and coffee bars.",
+      "Celebrate 30th, 40th, 50th, 60th, and other milestone birthdays with handcrafted specialty drinks, interactive live desserts, and personalized event details.",
   },
   {
     number: "02",
     title: "Adult celebrations",
     description:
-      "Enhance daytime brunches, cocktail parties, private dinners, or late-night dessert hours with barista-served specialty coffee, Premium Matcha, signature beverages, and live treats.",
+      "Elevate birthday dinners, brunches, and evening gatherings with barista-served coffee, premium matcha, signature beverages, and freshly prepared desserts.",
   },
   {
     number: "03",
     title: "Family birthdays",
     description:
-      "Serve multigenerational parties with warm dessert stations, barista-served coffee and matcha for adults, and fun non-caffeinated beverages for younger guests.",
+      "Bring generations together with live dessert stations, specialty coffee for adults, and non-coffee beverages for younger guests.",
   },
   {
     number: "04",
-    title: "Select children's birthdays",
+    title: "Children's birthdays",
     description:
-      "Delight kids and parents alike with live warm mini Dutch pancakes, hot chocolate, customized signage, and comfortable seating layouts.",
+      "Create memorable birthday moments with freshly prepared mini Dutch pancakes, mini donuts, waffles on a stick, or churros, complemented by customized signage and selected event rentals.",
   },
 ] as const;
 
@@ -37,7 +37,7 @@ export const birthdayExperiences = [
     image: imageAssets.experiences.coffeeBar,
     href: "/experiences/coffee-bar",
     description:
-      "Professional baristas provide specialty coffee and matcha service, signature birthday lattes, and specialty beverages throughout your celebration.",
+      "Professional baristas serving handcrafted espresso drinks, iced lattes, premium matcha, and signature beverages. Our mobile coffee bars can be personalized with custom menus, branded cups, and cart signage to complement your celebration.",
   },
   {
     id: "dessert",
@@ -47,17 +47,18 @@ export const birthdayExperiences = [
     image: imageAssets.experiences.sweetCart,
     href: "/experiences/sweet-cart",
     description:
-      "Interactive live dessert service with Luxe Sweet Cart options including Mini Dutch Pancakes, Belgian Waffles on a Stick, Mini Donuts and the Luxe Churro Bar. Your selected option or combination of options is confirmed in your proposal. Soft Serve Add-On is available with select dessert options as an optional enhancement and is not offered as a standalone service.",
+      "Interactive live dessert experiences featuring mini Dutch pancakes, Belgian waffles on a stick, mini donuts, and freshly prepared churros. Select your preferred dessert experience, with optional premium toppings and soft serve enhancements.",
   },
   {
     id: "seating",
     number: "03",
     label: "Seating and event rentals",
-    name: "Luxe Event Rentals",
+    name: "Luxe Seating Rentals",
+    hideMedia: true,
     image: imageAssets.experiences.seatingRentals,
     href: "/experiences/seating-rentals",
     description:
-      "Select Luxe rentals include white resin chairs, 6-ft tables, cocktail tables, linens and tents. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'.",
+      "Complete your celebration with white resin chairs, 6-ft tables, cocktail tables, linens, tents, and dance floor rentals available in configurations up to 18 × 18 ft. Tent lighting is available exclusively with our tent rentals.",
   },
 ] satisfies readonly SignatureExperience[];
 
@@ -66,46 +67,46 @@ export const birthdayPersonalization = [
     number: "01",
     title: "Menus and flavours",
     description:
-      "Curate customized drink menus with signature birthday lattes, matcha, syrups, and dessert toppings picked specifically to match the guest of honour's favorite flavors.",
+      "Personalize your celebration with signature coffee drinks, matcha, seasonal beverages, and dessert toppings selected to complement the guest of honour's favourite flavours.",
   },
   {
     number: "02",
     title: "Signage and presentation",
     description:
-      "Personalize the setup with custom name decals, milestone year signage, branded cup sleeves, menu boards, and color-matched cart details.",
+      "Customize your experience with personalized cart signage, branded drink cups, menu boards, milestone wording, and colour-coordinated design details.",
   },
   {
     number: "03",
     title: "Seating and room details",
     description:
-      "Available linens can be incorporated where applicable to the selected Luxe rentals. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service.",
+      "Complete your setting with our available chairs, tables, linens, tent rentals, and dance floors. Tent lighting can also be incorporated when booking a Luxe tent.",
   },
 ] as const;
 
 export const birthdayCombinations = [
   {
     number: "01",
-    title: "Coffee Bar",
+    title: "Coffee Bar + Sweet Cart",
     description:
-      "Create a café-style birthday experience with specialty coffee, matcha and signature beverages.",
+      "Pair handcrafted specialty coffee and matcha with an interactive live dessert experience for a memorable birthday celebration.",
   },
   {
     number: "02",
-    title: "Sweet Cart",
+    title: "Sweet Cart + Event Rentals",
     description:
-      "Turn dessert into part of the entertainment with live preparation, sauces and toppings.",
+      "Combine freshly prepared desserts with seating, tables, linens, or tent rentals to create a welcoming space for your guests.",
   },
   {
     number: "03",
-    title: "Sweet Cart + Rentals",
+    title: "Coffee Bar + Event Rentals",
     description:
-      "Pair an interactive dessert experience with select seating, tables, linens or tenting.",
+      "Create a café-inspired birthday setting with barista-served beverages and coordinated seating or event rentals.",
   },
   {
     number: "04",
-    title: "Coffee + Dessert + Rentals",
+    title: "Coffee Bar + Sweet Cart + Event Rentals",
     description:
-      "Bring multiple Luxe services together through one coordinated inquiry.",
+      "Bring together specialty beverages, interactive desserts, and coordinated event rentals through one seamless booking experience.",
   },
 ] as const;
 
@@ -128,7 +129,7 @@ export const birthdayPlanning = [
   {
     title: "The experiences",
     description:
-      "Let us know if you are considering premium mobile coffee service, Premium Matcha service, live dessert cart, event rentals, or a combination of services.",
+      "Let us know whether you're interested in Luxe Coffee Bar, Luxe Sweet Cart, Luxe Seating Rentals, or a combination of experiences. Matcha and specialty non-coffee beverages can be incorporated into your selected coffee service.",
   },
   {
     title: "The venue and service needs",
@@ -138,7 +139,7 @@ export const birthdayPlanning = [
   {
     title: "The personal direction",
     description:
-      "Tell us about favourite drink flavours, dessert toppings, colour schemes, custom signage wording, and the confirmed rental items or quantities you need.",
+      "Share your preferred drink flavours, dessert selections, colour palette, custom signage wording, and any rental items or quantities you're considering.",
   },
 ] as const;
 

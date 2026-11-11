@@ -23,6 +23,18 @@
 }
 .foundation-shell .home-page > .home-case-study + .signature-pathway { margin-top: 0; border-top: 0; }
 .home-case-study-heading { min-width: 0; text-align: center; }
+.home-case-study-supporting-line {
+  margin: 1.25rem auto 0;
+  color: var(--color-luxe-ivory);
+  font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+  line-height: 1.45;
+}
+.home-case-study-description {
+  max-width: 65ch;
+  margin: 1rem auto 0;
+  color: var(--surface-dark-copy-muted);
+  line-height: 1.65;
+}
 .home-case-study .foundation-label { margin: 0 0 1rem; color: var(--color-luxe-gold-on-dark); }
 .home-case-study #home-case-study-title:not(#luxe-sitewide-h2-scale):not(#home-hero-seo-title) {
   margin: 0 auto;
@@ -98,6 +110,47 @@
 }
 .foundation-shell .home-case-study .home-case-study-action:hover { color: var(--color-luxe-gold-on-dark); }
 .home-case-study-action:focus-visible { outline: 2px solid var(--color-luxe-gold-on-dark); outline-offset: 4px; }
+.home-case-study-content-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  width: min(100%, 66rem);
+  margin-inline: auto;
+  padding-top: clamp(1.5rem, 3vw, 2rem);
+  border-top: 1px solid rgb(248 246 242 / 18%);
+}
+.home-case-study-content-feature > div { min-width: 0; }
+.home-case-study-content-feature h3 {
+  margin: 0 0 0.65rem;
+  color: var(--color-luxe-gold-on-dark);
+  font-size: clamp(1.1rem, 1.4vw, 1.3rem);
+  font-weight: 500;
+  line-height: 1.35;
+}
+.home-case-study-content-feature p {
+  margin: 0;
+  color: var(--surface-dark-copy-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+.home-case-study-coverage-action {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  max-width: 100%;
+  margin-top: 0.75rem;
+  color: var(--surface-dark-copy);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+.home-case-study-coverage-action:hover { color: var(--color-luxe-gold-on-dark); }
+.home-case-study-coverage-action:focus-visible { outline: 2px solid var(--color-luxe-gold-on-dark); outline-offset: 4px; }
+@media (max-width: 700px) {
+  .home-case-study-content-feature { grid-template-columns: minmax(0, 1fr); }
+}
 @media (min-width: 801px) {
   .foundation-shell .home-case-study .home-case-study-action { font-size: 1.125rem !important; }
 }

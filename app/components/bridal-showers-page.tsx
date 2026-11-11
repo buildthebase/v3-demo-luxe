@@ -7,6 +7,8 @@ import {
   bridalShowerPlanning,
 } from "../events/bridal-showers-content";
 import { pageMetadata } from "../metadata-config";
+import { imageAssets } from "../image-system";
+import { ResponsiveImage } from "./responsive-image";
 import { bridalShowersSectionNavigation } from "../page-section-navigation";
 import { createServicePageSchema } from "../schema-builders";
 import { signatureExperiences, type SignatureExperience } from "../signature-elements";
@@ -51,6 +53,7 @@ const bridalShowerServices: readonly SignatureExperience[] = signatureExperience
 
     return {
       ...experience,
+      name: "Luxe Seating Rentals",
       tagline: "A composed setting",
       description:
         "White resin chairs, 6-ft tables, cocktail tables, linens and optional tenting are available based on event requirements. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'.",
@@ -63,13 +66,13 @@ function BridalHero() {
     <header className="bridal-hero" id="page-overview">
       <div className="bridal-hero-copy">
         <p className="foundation-eyebrow">Bridal Showers / Toronto &amp; the GTA</p>
-        <h1 aria-label="Bridal shower coffee cart, dessert, and event rentals in Toronto and the GTA.">
-          <span>Bridal shower coffee cart,</span>{" "}
+        <h1 aria-label="Bridal shower coffee, dessert, and event rentals in Toronto and the GTA.">
+          <span>Bridal shower coffee,</span>{" "}
           <span>dessert, and event rentals</span>{" "}
           <span>in Toronto and the GTA.</span>
         </h1>
         <p>
-          Elevated coffee and matcha service, interactive live desserts and curated
+          Elevated coffee and matcha service, interactive live desserts, and curated
           event rentals for a polished, welcoming bridal shower.
         </p>
         <div className="bridal-hero-actions">
@@ -81,11 +84,8 @@ function BridalHero() {
           </a>
         </div>
       </div>
-      <div className="bridal-hero-art" aria-hidden="true">
-        <div><b>Café</b></div>
-        <div><b>Sweet</b></div>
-        <div><b>Setting</b></div>
-        <i /><i />
+      <div className="bridal-hero-photo">
+        <ResponsiveImage asset={imageAssets.experiences.bridalHero} fill />
       </div>
       <dl className="bridal-hero-proof">
         <div><dt>One inquiry</dt><dd>COFFEE, DESSERT, AND RENTALS</dd></div>
@@ -107,7 +107,7 @@ function BridalOverview() {
         <article>
           <h3>Booked independently or together</h3>
           <p>
-            Book the Luxe Coffee Bar, Luxe Sweet Cart, or Luxe Event Rentals
+            Book the Luxe Coffee Bar, Luxe Sweet Cart, or Luxe Seating Rentals
             as standalone services, or combine them into a single, seamless
             booking.
           </p>
@@ -249,7 +249,7 @@ function BridalServiceCombinations() {
         </h2>
         <p>
           Build the experience around your celebration. Book one Luxe service on
-          its own or combine Coffee Bar, Sweet Cart and select rentals based on
+          its own or combine Coffee Bar, Sweet Cart and Event Rentals based on
           what your bridal shower needs.
         </p>
       </header>

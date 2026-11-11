@@ -27,103 +27,103 @@ export const weddingExperiences: SignatureExperience[] = signatureExperiences.ma
 export const weddingMoments = [
   {
     number: "01",
-    phase: "Before the ceremony",
-    title: "A thoughtful welcome.",
-    fitLabel: "Best fit",
+    phase: "Before the Ceremony",
+    title: "A warm welcome.",
+    fitLabel: "Suggested Experience",
     fit: "Coffee Bar",
     description:
-      "Welcome guests with a refined café experience featuring specialty coffee, matcha and signature hot or iced beverages before the ceremony begins.",
+      "Start the celebration with barista-crafted coffee, premium matcha, and signature hot or iced beverages as guests arrive.",
   },
   {
     number: "02",
-    phase: "Cocktail hour",
-    title: "Coffee becomes part of the transition.",
-    fitLabel: "Best fit",
+    phase: "Cocktail Hour",
+    title: "A moment to gather.",
+    fitLabel: "Suggested Experience",
     fit: "Coffee Bar",
     description:
-      "Serve guests specialty coffee, matcha, signature beverages and refreshing iced drinks as they transition from the ceremony to the reception.",
+      "Give guests a café-inspired experience between the ceremony and reception with handcrafted drinks and personalized service.",
   },
   {
     number: "03",
     phase: "Reception",
-    title: "Hospitality woven into the room.",
-    fitLabel: "Can include",
+    title: "Hospitality throughout the celebration.",
+    fitLabel: "Suggested Experience",
     fit: "Coffee Bar",
     description:
-      "Complement dinner, speeches and evening celebrations with specialty coffee, matcha, tea and premium non-coffee options.",
+      "Complement your reception with specialty coffee and non-coffee beverages tailored to your wedding schedule.",
   },
   {
     number: "04",
     phase: "Dessert",
-    title: "A live sweet moment.",
-    fitLabel: "Best fit",
+    title: "A sweet moment worth sharing.",
+    fitLabel: "Suggested Experience",
     fit: "Sweet Cart",
     description:
-      "Create an interactive dessert moment with Luxe Sweet Cart options including Mini Dutch Pancakes, Belgian Waffles on a Stick, Mini Donuts and the Luxe Churro Bar. Your selected option or combination of options is confirmed during planning. Soft serve can be added to select dessert options as an enhancement.",
+      "Bring the excitement of live dessert preparation to your celebration with mini Dutch pancakes, Belgian waffles on a stick, mini donuts, or fresh churros.",
   },
   {
     number: "05",
-    phase: "Late night",
-    title: "A second wind, served beautifully.",
-    fitLabel: "Can include",
+    phase: "Late Night",
+    title: "Keep the celebration going.",
+    fitLabel: "Suggested Experience",
     fit: "Coffee Bar or Sweet Cart",
     description:
-      "Re-energize the celebration with late-night specialty coffee or a live Luxe Sweet Cart experience.",
+      "Surprise guests with late-night specialty coffee or a freshly prepared dessert experience.",
   },
   {
     number: "06",
-    phase: "The morning after",
-    title: "Hospitality can continue.",
-    fitLabel: "Optional",
+    phase: "The Morning After",
+    title: "One more moment together.",
+    fitLabel: "Suggested Experience",
     fit: "Coffee Bar",
     description:
-      "Extend the Luxe experience into a farewell brunch or morning-after gathering with café-style coffee and matcha service for your guests.",
+      "Extend the experience with a farewell brunch featuring handcrafted coffee, matcha, and specialty beverages. Available as an additional booking.",
   },
 ] as const;
 
 export const weddingCustomization = [
   {
     number: "01",
-    title: "Cups, signage & wording",
+    title: "Custom Cups, Menus & Signage",
     description:
-      "Personalize cups, stickers, menu displays and event signage with your names, wedding date, monogram or custom design.",
+      "Personalize your wedding coffee experience with custom drink names, branded cups, menu displays, and cart signage featuring your names, monogram, wedding date, or chosen design.",
   },
   {
     number: "02",
-    title: "Dessert & cart presentation",
+    title: "Cart Styling & Dessert Presentation",
     description:
-      "Coordinate cart styling, custom signage, topping displays and premium sauce selections with your wedding aesthetic.",
+      "Create a cohesive look across your coffee and dessert experiences with custom cart signage, coordinated colours, premium sauces, toppings, and thoughtful presentation details.",
   },
 ] as const;
 
 export const weddingLogistics = [
   {
     number: "01",
-    title: "Planner & venue coordination",
+    title: "Planner & Venue Coordination",
     iconPath: "M19 12h26v45H19V12Zm7-5h12v10H26V7Zm0 21h12M26 36h12M26 44h8",
     description:
-      "We coordinate arrival, setup timing, access and service placement with your planner or venue.",
+      "We work with your planner or venue to confirm service placement, access, and setup timing.",
   },
   {
     number: "02",
-    title: "Setup & pickup",
+    title: "Setup & Takedown",
     iconPath: "M7 19h30v28H7V19Zm30 10h11l9 10v8H37M43 31v9h12M22 49a6 6 0 1 1-12 0 6 6 0 0 1 12 0Zm31 0a6 6 0 1 1-12 0 6 6 0 0 1 12 0Z",
     description:
-      "Coffee Bar and Sweet Cart setup and takedown are included. Rental logistics and fees are confirmed in your proposal.",
+      "Coffee Bar and Sweet Cart setup and takedown are included. Rental delivery, setup, and pickup arrangements are confirmed in your proposal.",
   },
   {
     number: "03",
-    title: "Venue requirements",
+    title: "Venue Requirements",
     iconPath: "M12 55V20L32 8l20 12v35M7 55h50M23 55V37h18v18M21 25h4m14 0h4",
     description:
-      "We review power, water, access, surfaces and weather requirements for your chosen services.",
+      "We'll review electrical access, water needs, loading arrangements, and weather considerations for your selected services.",
   },
   {
     number: "04",
-    title: "Travel & destination weddings",
+    title: "Travel & Destination Weddings",
     iconPath: "M32 57S13 37 13 25a19 19 0 0 1 38 0c0 12-19 32-19 32ZM40 25a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z",
     description:
-      "Serving Toronto, the GTA and select Southern Ontario destinations. Travel fees vary by location.",
+      "Serving Toronto, the GTA, and select Southern Ontario destinations, with travel requirements confirmed before booking.",
   },
 ] as const;
 
@@ -148,12 +148,9 @@ export const weddingGalleryPreview = [
     note: "On-site dessert preparation and guest interaction.",
     tone: "dessert",
     image: {
-      ...imageAssets.experiences.weddingSweetMoment,
-      id: "wedding-gallery-dessert-wide",
-      src: "/images/weddings/sweet-moment-dessert-station-wide.webp",
-      width: 1254,
-      height: 1254,
-      unoptimized: true,
+      ...imageAssets.experiences.sweetCartSignature,
+      id: "wedding-gallery-dessert-guests",
+      sizes: "(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) 45vw, 42vw",
     },
   },
   {

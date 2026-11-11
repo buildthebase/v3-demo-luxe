@@ -165,12 +165,13 @@ export function ExperienceSelector({
                   <em className="signature-selector-tagline">{experience.tagline}</em>
                 ) : null}
                 <span>{experience.description}</span>
+                {experience.supportingNote ? <small className="signature-selector-supporting-note">{experience.supportingNote}</small> : null}
                 <b aria-hidden="true">
                   {experienceSelectorActions[experience.id] ?? "Explore"} ↗︎
                 </b>
               </div>
           );
-          if (experience.carouselImages) {
+          if (experience.carouselImages && !experience.hideMedia) {
             return (
               <div className={`signature-selector-choice signature-selector-${experience.id}`} id={`experience-selector-${experience.id}`} key={experience.id}>
                 <ExperienceImageCarousel images={experience.carouselImages} href={experience.href} />
@@ -180,12 +181,12 @@ export function ExperienceSelector({
           }
           return (
             <Link
-              className={`signature-selector-choice signature-selector-${experience.id}`}
+              className={`signature-selector-choice signature-selector-${experience.id}${experience.hideMedia ? " signature-selector-without-media" : ""}`}
               href={experience.href}
               id={`experience-selector-${experience.id}`}
               key={experience.id}
             >
-              <span className="signature-selector-art">
+              {!experience.hideMedia ? <span className="signature-selector-art">
                 {experience.video ? (
                   <SignatureSelectorVideo video={experience.video} />
                 ) : (
@@ -195,7 +196,7 @@ export function ExperienceSelector({
                     fill
                   />
                 )}
-              </span>
+              </span> : null}
               {copy}
             </Link>
           );
@@ -212,9 +213,11 @@ export function EventPlanningPathway({
   heading = "How the planning journey takes shape",
   description = "This sequence explains the planning path. The operational inquiry remains a separate, focused handoff.",
   showDescription = true,
+  actionLabel,
 }: {
   id?: string;
   steps?: readonly EventPlanningStep[];
+  actionLabel?: string;
   heading?: string;
   description?: string;
   showDescription?: boolean;
@@ -278,7 +281,7 @@ export function EventPlanningPathway({
           </li>
         ))}
       </ol>
-      <ProcessStartAction />
+      <ProcessStartAction label={actionLabel} />
     </section>
   );
 }

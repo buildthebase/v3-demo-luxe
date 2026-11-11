@@ -7,10 +7,6 @@ import {
 } from "./home-sections";
 import { HomeHero } from "./home-hero";
 import { HomeCaseStudy } from "./home-case-study";
-import { HomeEditorialReview } from "./home-editorial-review";
-import { ResponsiveImage } from "./responsive-image";
-import { imageAssets } from "../image-system";
-import { HomeReviewLauncher } from "./home-review-launcher";
 import {
   ContextualInquiryPanel,
   EventPlanningPathway,
@@ -25,32 +21,61 @@ import { createHomePageSchema } from "../schema-builders";
 import {
   signatureExperiences,
   type SignatureExperience,
+  type EventPlanningStep,
 } from "../signature-elements";
+
+const homePlanningSteps: readonly EventPlanningStep[] = [
+  {
+    number: "01",
+    title: "Tell Us About Your Event",
+    description: "Share your event date, location, guest count, and the occasion you're celebrating.",
+    href: "/events",
+  },
+  {
+    number: "02",
+    title: "Choose Your Experiences",
+    description: "Explore our Coffee Bar, Sweet Cart, and Event Rentals. Book one service or combine multiple Luxe experiences.",
+    href: "/experiences",
+  },
+  {
+    number: "03",
+    title: "Personalize the Details",
+    description: "Select your menu preferences, custom signage, branding, and any additional enhancements.",
+    href: "/faq",
+  },
+  {
+    number: "04",
+    title: "Receive Your Proposal",
+    description: "We'll prepare a tailored proposal outlining your selected services, pricing, and next steps to secure your date.",
+    href: "/contact",
+  },
+];
 
 const homeSignatureExperiences: readonly SignatureExperience[] = [
   {
     ...signatureExperiences[0],
-    name: "Luxe Coffee Bar: Specialty Coffee & Matcha Service",
+    name: "Luxe Coffee Bar: Specialty Coffee & Matcha Catering",
     headingLead: "Luxe Coffee Bar:",
-    headingDetail: "Specialty Coffee & Matcha Service",
+    headingDetail: "Specialty Coffee & Matcha Catering",
+    supportingNote: "Proudly partnering with Ontario coffee roasters to bring quality specialty coffee to every event.",
     description:
-      "Barista-served specialty coffee and matcha service for weddings, corporate arrivals, cocktail hours, and late-night hospitality across Toronto.",
+      "Bring a premium café experience to your event with professional baristas serving specialty coffees, signature lattes, iced beverages, matcha, and personalized drink menus.",
   },
   {
     ...signatureExperiences[1],
-    name: "Luxe Sweet Cart: Live Interactive Dessert Station",
+    name: "Luxe Sweet Cart: Live Dessert Experiences",
     headingLead: "Luxe Sweet Cart:",
-    headingDetail: "Live Interactive Dessert Station",
+    headingDetail: "Live Dessert Experiences",
     description:
-      "Live dessert preparation and interactive sweet cart experiences designed to create memorable moments for your guests.",
+      "Treat your guests to freshly prepared mini Dutch pancakes, Belgian waffles on a stick, mini donuts, or live churros, complete with sauces, toppings, and interactive service.",
   },
   {
     ...signatureExperiences[2],
-    name: "Luxe Event Rentals: Chair, Table & Tent Rentals",
+    name: "Luxe Event Rentals: Seating, Tables & Tents",
     headingLead: "Luxe Event Rentals:",
-    headingDetail: "Chair, Table & Tent Rentals",
+    headingDetail: "Seating, Tables & Tents",
     description:
-      "White resin chairs, 6-ft tables, cocktail tables, event tents and linens for weddings and private celebrations. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'.",
+      "Complete your event with white resin chairs, tables, cocktail tables, linens, tent rentals, and dance floors up to 18' × 18'. Tent lighting is available exclusively with our tent rentals.",
   },
 ];
 
@@ -73,54 +98,25 @@ export function HomePage() {
         >
           <div>
             <dt>$5M</dt>
-            <dd>Liability coverage</dd>
+            <dd>Commercial Liability Coverage</dd>
           </div>
           <div>
-            <dt>500+</dt>
-            <dd>Events served</dd>
+            <dt>Three Luxe Experiences</dt>
+            <dd>Coffee • Desserts • Event Rentals</dd>
           </div>
         </dl>
         <HomePositioning />
-        <HomeReviewLauncher />
         <ExperienceSelector
           id="experience-selector"
           experiences={homeSignatureExperiences}
           heading="Our Core Event Experiences"
           showDescription={false}
         />
-        <HomeEditorialReview
-          id="review-coffee-seating"
-          context="Coffee Bar + Event Rentals"
-          quote="Coffee service and intentional seating worked beautifully together, giving guests a comfortable place to connect, settle in, and stay awhile."
-          links={[
-            { href: "/experiences", label: "Find your Luxe" },
-          ]}
-        />
         <HomeCaseStudy />
-        <EventPlanningPathway id="planning-journey" showDescription={false} />
+        <EventPlanningPathway id="planning-journey" steps={homePlanningSteps} actionLabel="PLAN YOUR EVENT" showDescription={false} />
         <HomeEventCategories />
         <HomeSelectedImagery />
         <HomeTrust />
-        <section className="home-coffee-quote-film" id="coffee-quote-film" aria-label="Luxe Coffee Bar in service">
-          <div className="home-coffee-quote-film-frame">
-            <ResponsiveImage asset={imageAssets.home.coffeeQuotePreparation} fill />
-          </div>
-        </section>
-        <HomeEditorialReview
-          id="review-coffee"
-          context="Luxe Coffee Bar"
-          headerMedia={
-            <div className="home-coffee-quote-film-desktop">
-              <div className="home-coffee-quote-film-frame">
-                <ResponsiveImage asset={imageAssets.home.coffeeQuotePreparation} fill />
-              </div>
-            </div>
-          }
-          quote="The coffee bar became a natural gathering point—thoughtful drinks, warm service, and a polished experience guests returned to throughout the evening."
-          links={[
-            { href: "/experiences/coffee-bar", label: "Discover the experience" },
-          ]}
-        />
         <HomeServiceArea />
         <ContextualInquiryPanel id="event-planning" contextKey="home" />
       </main>

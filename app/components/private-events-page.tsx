@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { imageAssets } from "../image-system";
+import { ResponsiveImage } from "./responsive-image";
 import { EventInquiryAction } from "./event-inquiry-action";
 import { ProcessStartAction } from "./process-start-action";
 import {
@@ -35,14 +37,13 @@ function PrivateEventsHero() {
     <header className="private-hero" id="page-overview">
       <div className="private-hero-copy">
         <p className="foundation-eyebrow">Private Events / Toronto &amp; the GTA</p>
-        <h1 aria-label="Private Event Coffee, Dessert & Rentals in Toronto">
-          <span>Private Event Coffee,</span>
-          <span>Dessert &amp; Rentals in Toronto</span>
+        <h1>
+          Private Event Coffee Bars, Live Desserts &amp; Rentals in Toronto &amp; the GTA
         </h1>
         <p>
-          Bring Luxe Coffee Bar, Sweet Cart and select event rentals to engagements,
-          anniversaries, graduations, cultural celebrations, holiday gatherings and
-          meaningful family occasions.
+          From engagement parties and anniversaries to graduations, cultural
+          celebrations, and intimate gatherings, Luxe brings specialty coffee,
+          handcrafted desserts, and thoughtfully selected event rentals to your celebration.
         </p>
         <div className="private-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">
@@ -53,23 +54,21 @@ function PrivateEventsHero() {
           </a>
         </div>
       </div>
-      <div className="private-hero-art" aria-hidden="true">
-        <div><i /><i /><i /></div>
-        <strong>Yours,<br />by design.</strong>
-        <span>One occasion.<br />Its own composition.</span>
+      <div className="private-hero-photo">
+        <ResponsiveImage asset={imageAssets.experiences.privateHero} />
       </div>
       <dl className="private-hero-proof">
         <div>
-          <dt>One or several</dt>
-          <dd>Book Coffee Bar, Sweet Cart or event rentals individually, or combine multiple Luxe services through one coordinated inquiry.</dd>
+          <dt>One Inquiry</dt>
+          <dd>COFFEE, DESSERT &amp; EVENT RENTALS</dd>
         </div>
         <div>
-          <dt>Personalized</dt>
-          <dd>Tailor custom drink menus, branded cart decals, signage, and seating layouts to your theme.</dd>
+          <dt>Made Personal</dt>
+          <dd>CUSTOM MENUS, BRANDING &amp; EVENT DETAILS</dd>
         </div>
         <div>
-          <dt>$5 million</dt>
-          <dd>Full commercial liability coverage for complete peace of mind at any venue.</dd>
+          <dt>$5 Million</dt>
+          <dd>LIABILITY INSURANCE</dd>
         </div>
       </dl>
     </header>
@@ -79,17 +78,17 @@ function PrivateEventsHero() {
 function PrivateEventsOverview() {
   return (
     <section className="private-overview" aria-labelledby="private-overview-title">
-      <h2 id="private-overview-title">Private event experiences for every kind of gathering</h2>
+      <h2 id="private-overview-title">Your Celebration, Your Experience.</h2>
       <div>
         <p>
-          Every private celebration carries its own unique energy, guest flow,
-          and timing. We tailor the Luxe experience around your celebration, venue
-          and the way you want guests to enjoy the event.
+          Every gathering has its own atmosphere, and the details should reflect it.
+          From the first handcrafted drink to the final sweet moment, we tailor our
+          services to complement your occasion, venue, and guests.
         </p>
         <p>
-          From morning engagement brunches to late-night anniversary dessert
-          bars, we align our mobile specialty coffee service, live sweets, and event rentals
-          to perfectly match your event format.
+          Whether you&apos;re hosting an intimate engagement party, a milestone anniversary,
+          a graduation, or a cultural celebration, Luxe Coffee Bar, Luxe Sweet Cart,
+          and event rentals can be booked individually or combined into one coordinated experience.
         </p>
       </div>
     </section>
@@ -101,13 +100,10 @@ function PrivateEventContexts() {
     <section className="private-contexts" id="private-occasions" aria-labelledby="private-contexts-title">
       <header>
         <h2 id="private-contexts-title">
-          <span>Private events for engagements,</span>
-          <span>graduations, holidays,</span>
-          <span>and milestones</span>
+          Private Celebrations, Thoughtfully Served.
         </h2>
         <p>
-          From intimate family celebrations to major cultural gatherings, we
-          customize our service flow to match your occasion.
+          From intimate gatherings to meaningful milestones, explore how Luxe can complement your celebration.
         </p>
       </header>
       <ol>
@@ -126,14 +122,9 @@ function PrivateEventContexts() {
 function PrivateEventExperiences() {
   return (
     <ExperienceSelector
-      description="Explore coffee, live desserts and event rentals for private celebrations across Toronto and the GTA."
+      description="Choose one Luxe experience or bring multiple services together for a beautifully coordinated celebration."
       experiences={privateEventExperiences}
-      heading={
-        <>
-          <span>Coffee bars, live desserts,</span>
-          <span>and rentals for private events</span>
-        </>
-      }
+      heading="Everything You Need for a Memorable Gathering."
       headingClassName="foundation-wide-heading"
       id="private-experiences"
       useItemHeadings
@@ -146,7 +137,8 @@ function PrivateEventPersonalization() {
   return (
     <section className="private-personalization" aria-labelledby="private-personalization-title">
       <header>
-        <h2 id="private-personalization-title">Make the occasion distinctly its own.</h2>
+        <h2 id="private-personalization-title">Personalized Details That Make It Yours.</h2>
+        <p>From your favourite drinks to custom cart signage and coordinated presentation, every detail can reflect the occasion you&apos;re celebrating.</p>
       </header>
       <div>
         {privateEventPersonalization.map((item) => (
@@ -182,7 +174,7 @@ function PrivateEventPlanning() {
         <strong>Booking Policy:</strong> Your date is secured once the agreement is
         signed and the 30% non-refundable retainer is received.
       </p>
-      <ProcessStartAction />
+      <ProcessStartAction label="PLAN YOUR EVENT" />
     </section>
   );
 }

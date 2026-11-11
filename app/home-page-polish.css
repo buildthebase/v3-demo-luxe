@@ -557,11 +557,18 @@
   text-align: center;
 }
 
-.foundation-shell .home-page .home-events-planning-cta strong {
+.foundation-shell .home-page .home-events-planning-cta h3 {
+  margin: 0;
   font-size: clamp(1.8rem, 3.5vw, 3.75rem);
   font-weight: 500;
   letter-spacing: -0.045em;
   line-height: 1;
+}
+
+.foundation-shell .home-page .home-events-planning-cta p {
+  max-width: 60ch;
+  margin: 0;
+  line-height: 1.65;
 }
 
 .foundation-shell .home-page .home-events-planning-cta a {
@@ -663,6 +670,19 @@
 .home-page .signature-selector-copy > span:nth-of-type(2) {
   width: 100%;
   max-width: none;
+}
+
+.home-page .signature-selector-copy {
+  container-type: inline-size;
+}
+
+.foundation-shell .home-page > .signature-selector .signature-selector-heading {
+  font-size: min(1.5rem, 5.6cqi);
+  min-height: 2.24em;
+}
+
+.foundation-shell .home-page > .signature-selector .signature-selector-heading-detail {
+  margin-top: 0.08em;
 }
 
 .signature-selector-keep-together { white-space: nowrap; }

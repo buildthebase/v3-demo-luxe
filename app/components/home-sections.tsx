@@ -78,27 +78,28 @@ export function HomePositioning() {
       </h2>
       <div>
         <p className="home-positioning-intro">
-          Book one Luxe experience on its own, or bring coffee, dessert and event
-          rentals together through one coordinated inquiry. Work with one team and
-          one point of contact instead of coordinating several vendors.
+          Whether you&apos;re planning an intimate celebration, wedding, or large corporate
+          event, Luxe makes it easy to book one experience or combine multiple services
+          through one coordinated inquiry. From the first conversation to event day,
+          we bring the details together.
         </p>
         <ul className="home-positioning-services">
           <li>
             <Link href="#experience-selector-coffee">
               <strong>Luxe Coffee Bar</strong>
-              <span>Hot and iced café favourites &amp; signature beverages</span>
+              <span>Barista-served specialty coffee, matcha, signature lattes, and customized beverage experiences.</span>
             </Link>
           </li>
           <li>
             <Link href="#experience-selector-dessert">
               <strong>Luxe Sweet Cart</strong>
-              <span>Live desserts &amp; personalized indulgences</span>
+              <span>Freshly prepared mini Dutch pancakes, Belgian waffles on a stick, mini donuts, and live churro experiences.</span>
             </Link>
           </li>
           <li>
             <Link href="#experience-selector-seating">
               <strong>Luxe Event Rentals</strong>
-              <span>Refined seating &amp; event rentals</span>
+              <span>Event seating, tables, linens, tent rentals, and dance floors to complete your celebration.</span>
             </Link>
           </li>
         </ul>
@@ -112,8 +113,8 @@ export function HomeEventCategories() {
     <section id="event-types" className="home-events" aria-labelledby="home-events-title">
       <header className="home-section-intro home-section-intro-single">
         <h2 id="home-events-title">
-          <span className="home-events-title-line">Event Catering &amp; Rental</span>{" "}
-          <span className="home-events-title-line">Services for Every Occasion</span>
+          <span className="home-events-title-line">Elevated Experiences</span>{" "}
+          <span className="home-events-title-line">for Every Occasion</span>
         </h2>
       </header>
       <div className="home-event-groups">
@@ -155,7 +156,8 @@ export function HomeEventCategories() {
         Explore every event pathway
       </Link>
       <div className="home-events-planning-cta">
-        <strong>Personalize your celebration.</strong>
+        <h3>Personalize Your Celebration.</h3>
+        <p>Make your experience uniquely yours with custom cart signage, branded cups, personalized menus, and styling details designed around your event or brand.</p>
         <QuoteModalTrigger><span>PLAN YOUR EVENT ↗︎</span></QuoteModalTrigger>
       </div>
     </section>
@@ -251,21 +253,20 @@ export function HomeServiceArea() {
         <p className="foundation-label">Service area</p>
         <h2
           id="home-service-area-title"
-          aria-label="Toronto, GTA, Southern Ontario."
+          aria-label="Toronto at the Centre. The GTA and Southern Ontario Within Reach."
         >
           <span className="home-service-area-title-desktop">
-            Toronto at the centre. The GTA and Southern Ontario within reach.
+            Toronto at the Centre. The GTA and Southern Ontario Within Reach.
           </span>
           <span className="home-service-area-title-mobile" aria-hidden="true">
-            <span>Toronto,</span>
-            <span>GTA,</span>
-            <span>Southern Ontario.</span>
+            <span>Toronto at the Centre.</span>
+            <span>The GTA and Southern Ontario Within Reach.</span>
           </span>
         </h2>
         <p>
-          Luxe Event Co. serves weddings, corporate events, brand activations, and
-          private celebrations across Toronto and the Greater Toronto Area, with
-          select destination events available throughout Southern Ontario.
+          Luxe Event Co. provides mobile coffee catering, live dessert experiences,
+          and event rentals across Toronto and the Greater Toronto Area, with select
+          events available throughout Southern Ontario.
         </p>
       </div>
       <dl>

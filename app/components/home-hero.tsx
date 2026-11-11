@@ -344,12 +344,12 @@ export function HomeHero() {
           aria-hidden={finalState ? undefined : "true"}
         >
           <h2 className="foundation-wide-heading" id="home-hero-seo-title">
-            Luxury event experiences, elegantly composed with mobile coffee bars,
-            live dessert carts &amp; event rentals across Toronto &amp; Southern Ontario.
+            Luxury Coffee, Live Desserts &amp; Event Rentals in Toronto
           </h2>
           <p>
-            Staffed service, refined presentation, and thoughtful guest flow from
-            first setup to final service.
+            From weddings and private celebrations to corporate events and brand
+            activations, Luxe brings specialty coffee, live dessert stations, and
+            refined event rentals together for a beautifully coordinated experience.
           </p>
         </div>
 

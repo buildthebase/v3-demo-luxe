@@ -1,4 +1,16 @@
 /* Birthday headings use natural wrapping inside a centered editorial measure. */
+.birthday-hero-photo {
+  position: relative;
+  width: min(100%, 24rem);
+  aspect-ratio: 1 / 2;
+  justify-self: center;
+  overflow: hidden;
+}
+
+.birthday-hero-photo img {
+  object-position: left center;
+}
+
 .foundation-shell .birthday-page > #birthday-experiences {
   margin-top: 0;
 }

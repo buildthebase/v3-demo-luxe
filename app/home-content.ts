@@ -8,11 +8,19 @@ const featuredEventSlugs = [
   "brand-activations",
 ] as const;
 
+const homeEventSummaries: Record<(typeof featuredEventSlugs)[number], string> = {
+  weddings: "Coffee bars, live dessert stations, and event rentals thoughtfully coordinated around your wedding day.",
+  "private-events": "Personalized coffee, desserts, and event experiences for engagements, anniversaries, graduations, and private gatherings.",
+  "corporate-events": "Elevated hospitality experiences for employees, clients, conferences, and workplace celebrations.",
+  "brand-activations": "Custom-branded coffee and dessert experiences that bring your brand to life through interactive guest engagement.",
+};
+
 export const featuredHomeEvents = featuredEventSlugs.map((slug, index) => {
   const event = eventTypes.find((item) => item.slug === slug)!;
 
   return {
     ...event,
+    summary: homeEventSummaries[slug],
     number: String(index + 1).padStart(2, "0"),
   };
 });
@@ -23,7 +31,7 @@ export const homeEventImageGroups = [
     eventSlugs: ["weddings", "private-events"],
     tone: "dessert",
     label: "Weddings & Private Celebrations",
-    context: "Wedding coffee bar service, dessert cart rentals, and event seating shaped around meaningful moments and guest hospitality.",
+    context: "Celebrate life's meaningful moments with specialty coffee, live desserts, and event rentals tailored to your occasion.",
     image: imageAssets.home.personalCelebrations,
     video: {
       mp4: "/images/home/luxe-weddings-private-events-v2.mp4",
@@ -36,7 +44,7 @@ export const homeEventImageGroups = [
     eventSlugs: ["corporate-events", "brand-activations"],
     tone: "coffee",
     label: "Corporate Events & Brand Activations",
-    context: "Premium mobile Coffee Bars, custom-branded beverage cups, and refined event spaces for corporate teams, clients, and brand launches.",
+    context: "Professional beverage service, interactive dessert stations, and custom-branded experiences for corporate gatherings, conferences, and brand activations.",
     image: imageAssets.home.professionalOccasions,
     video: {
       mp4: "/images/home/luxe-corporate-events-brand-activations-v3.mp4",
@@ -49,18 +57,18 @@ export const homeEventImageGroups = [
 export const homeProofPoints = [
   {
     value: "$5M",
-    label: "liability insurance",
-    detail: "A meaningful layer of assurance for venues, planners, and corporate teams.",
+    label: "Commercial Liability Coverage",
+    detail: "Supporting venue, planner, corporate, and private-event insurance requirements.",
   },
   {
-    value: "Large-Format",
-    label: "coffee service",
-    detail: "Coffee service can be tailored for intimate gatherings through larger-format events, with staffing and service setup planned around guest count, venue and event flow.",
+    value: "Flexible",
+    label: "Event Formats",
+    detail: "From intimate gatherings to larger celebrations, our services are tailored around guest count, venue requirements, and event flow.",
   },
   {
     value: "Multiple",
-    label: "setups available",
-    detail: "Additional Coffee Bar, Sweet Cart or rental setups can be considered for larger or multi-space events based on scope, staffing and availability.",
+    label: "Setups Available",
+    detail: "Additional coffee bars, dessert stations, and event rental setups can be arranged for larger or multi-space events, subject to availability.",
   },
 ] as const;
 
@@ -125,7 +133,7 @@ export const homeImageSlots = [
   {
     id: "occasion-in-context",
     label: "The whole occasion",
-    context: "Hospitality, presentation, and the surrounding space brought together as one experience.",
+    context: "From the first welcome drink to the final dessert, discover how Luxe brings hospitality, presentation, and meaningful guest experiences together.",
     tone: "seating",
     image: imageAssets.home.workInContext,
   },

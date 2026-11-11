@@ -1,6 +1,7 @@
 import Link from "next/link";
+import { imageAssets } from "../image-system";
+import { ResponsiveImage } from "./responsive-image";
 import { EventInquiryAction } from "./event-inquiry-action";
-import { ProcessStartAction } from "./process-start-action";
 import {
   birthdayCombinations,
   birthdayContexts,
@@ -36,29 +37,28 @@ function BirthdayHero() {
     <header className="birthday-hero" id="page-overview">
       <div className="birthday-hero-copy">
         <p className="foundation-eyebrow">Birthdays / Toronto &amp; the GTA</p>
-        <h1 aria-label="Birthday coffee bars, live dessert catering and event rentals in Toronto">
-          <span>Birthday coffee bars,</span>
-          <span>live dessert catering and</span>
-          <span>event rentals in Toronto.</span>
+        <h1 aria-label="Birthday coffee bars, live dessert carts, and event rentals in Toronto and the GTA.">
+          <span>Birthday coffee bars,</span>{" "}
+          <span>live dessert carts, and event rentals</span>{" "}
+          <span>in Toronto and the GTA.</span>
         </h1>
         <p>
-          Create a birthday experience around the person being celebrated with
-          specialty coffee and matcha, interactive desserts and select Luxe rentals.
+          Celebrate birthdays of all ages with handcrafted coffee and matcha,
+          freshly prepared desserts, and curated event rentals tailored to your celebration.
         </p>
         <div className="birthday-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">
             Plan Your Event <span aria-hidden="true">↗︎</span>
           </QuoteModalTrigger>
-          <a href="#birthday-contexts">EXPLORE THE OCCASION <span aria-hidden="true">↓︎</span></a>
+          <a href="#birthday-contexts">Explore Birthday Experiences <span aria-hidden="true">↓︎</span></a>
         </div>
       </div>
-      <div className="birthday-hero-art" aria-hidden="true">
-        <i /><i /><i />
-        <span>One person.<br />Their point of view.</span>
+      <div className="birthday-hero-photo">
+        <ResponsiveImage asset={imageAssets.experiences.birthdayHero} fill />
       </div>
       <dl className="birthday-hero-proof">
         <div><dt>One inquiry</dt><dd>COFFEE, DESSERT, AND RENTALS</dd></div>
-        <div><dt>Milestone-led</dt><dd>PLANNED AROUND THE GUEST OF HONOUR</dd></div>
+        <div><dt>Every celebration</dt><dd>PERSONALIZED TO THE GUEST OF HONOUR</dd></div>
         <div><dt>$5 million</dt><dd>Liability insurance</dd></div>
       </dl>
     </header>
@@ -69,32 +69,31 @@ function BirthdayOverview() {
   return (
     <section className="birthday-overview" aria-labelledby="birthday-overview-title">
       <h2 id="birthday-overview-title">
-        Birthday catering planned around the person, not a{" "}
-        <span className="birthday-overview-title-tail">standard format.</span>
+        Birthday experiences designed around the guest of honour.
       </h2>
 
       <div className="birthday-overview-notes">
         <article>
-          <h3>Built around the person</h3>
+          <h3>Personal to every celebration</h3>
           <p>
-            We tailor the entire service to reflect the guest of honour&apos;s tastes,
-            age milestone, guest list, and preferred party aesthetic.
+            We tailor our coffee, dessert, and rental experiences to reflect the
+            guest of honour&apos;s tastes, milestone, and celebration style.
           </p>
         </article>
 
         <article>
           <h3>One experience or several</h3>
           <p>
-            Choose the Luxe Coffee Bar, Luxe Sweet Cart, or Luxe Event Rentals
-            individually, or bundle them into a single coordinated booking.
+            Book Luxe Coffee Bar, Luxe Sweet Cart, or Luxe Seating Rentals
+            individually, or combine multiple services through one coordinated booking.
           </p>
         </article>
 
         <article>
-          <h3>Shaped by the occasion</h3>
+          <h3>Designed for your venue</h3>
           <p>
-            We align setup schedules, venue dimensions, guest flow, and power
-            requirements to ensure smooth execution on event day.
+            We coordinate service timing, setup requirements, and guest flow
+            around your venue to create a seamless experience.
           </p>
         </article>
       </div>
@@ -112,7 +111,7 @@ function BirthdayContexts() {
       <span className="luxe-section-grid" aria-hidden="true" />
       <header>
         <h2 className="foundation-wide-heading" id="birthday-contexts-title">
-          Birthday catering for different ages and occasions
+          Birthday experiences for every kind of celebration
         </h2>
       </header>
       <ol>
@@ -170,8 +169,8 @@ function BirthdayCombinations() {
   return (
     <section className="birthday-combinations" aria-labelledby="birthday-combinations-title">
       <header>
-        <h2 className="foundation-wide-heading" id="birthday-combinations-title">Birthday service inspiration</h2>
-        <p>One experience or several. Build your Luxe services around the celebration.</p>
+        <h2 className="foundation-wide-heading" id="birthday-combinations-title">Popular birthday service combinations</h2>
+        <p>Choose one Luxe experience or combine multiple services to create a celebration tailored to your guests, venue, and event style.</p>
       </header>
       <div>
         {birthdayCombinations.map((item) => (
@@ -202,7 +201,7 @@ function BirthdayPlanning() {
           </li>
         ))}
       </ol>
-      <ProcessStartAction />
+      <EventInquiryAction />
     </section>
   );
 }

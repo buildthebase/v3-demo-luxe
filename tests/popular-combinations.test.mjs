@@ -27,15 +27,15 @@ test("popular combinations share the presentation and quote popup", () => {
   assert.match(baby, /variant="original"/);
   assert.match(baby, /useLineIcons=\{false\}/);
   assert.match(read("app/components/bridal-showers-page.tsx"), /Example bridal shower service combinations/);
-  assert.match(read("app/components/birthdays-page.tsx"), /Birthday service inspiration/);
+  assert.match(read("app/components/birthdays-page.tsx"), /Popular birthday service combinations/);
 });
 
-test("customer-facing sources use Event Rentals without changing existing service URLs", () => {
+test("customer-facing sources use Event Rentals or the requested Luxe Seating Rentals brand without changing service URLs", () => {
   function visit(directory) {
     for (const item of readdirSync(new URL(`../${directory}`, import.meta.url), { withFileTypes: true })) {
       const path = `${directory}/${item.name}`;
       if (item.isDirectory()) visit(path);
-      else if (/\.(tsx?|css|json)$/.test(path)) assert.doesNotMatch(read(path), /\bseating rentals\b/i, path);
+      else if (/\.(tsx?|css|json)$/.test(path)) assert.doesNotMatch(read(path).replace(/\bLuxe Seating Rentals\b/g, ""), /\bseating rentals\b/i, path);
     }
   }
   visit("app");
@@ -77,8 +77,8 @@ test("corporate planning and scale are condensed into one four-step section", ()
 test("wedding personalization retains only two evenly arranged cards", () => {
   const cards = read("app/events/weddings-content.ts").split("export const weddingCustomization = [")[1].split("] as const;")[0];
   assert.equal((cards.match(/number: "/g) ?? []).length, 2);
-  assert.match(cards, /Cups, signage & wording/);
-  assert.match(cards, /Dessert & cart presentation/);
+  assert.match(cards, /Custom Cups, Menus & Signage/);
+  assert.match(cards, /Cart Styling & Dessert Presentation/);
   assert.doesNotMatch(cards, /DRINKS & MENUS|title: "RENTALS"/);
   const css = read("app/wedding-page-polish.css");
   assert.match(css, /grid-template-columns: repeat\(2, minmax\(0, 1fr\)\);\s*grid-auto-rows: 1fr/);

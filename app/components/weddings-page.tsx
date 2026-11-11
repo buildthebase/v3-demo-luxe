@@ -39,15 +39,13 @@ function WeddingHero() {
     <header className="wedding-hero" id="page-overview">
       <div className="wedding-hero-copy">
         <p className="foundation-eyebrow">Weddings / Toronto &amp; the GTA</p>
-        <h1 aria-label="Toronto wedding coffee, live dessert and rentals designed around your celebration.">
-          <span>Toronto wedding coffee,</span>
-          <span>live dessert and rentals</span>
-          <span>designed around your celebration.</span>
+        <h1>
+          Wedding Coffee Bars, Live Dessert Experiences, and Event Rentals in Toronto &amp; the GTA.
         </h1>
         <p>
-          Mobile specialty coffee bars, live dessert carts and event rentals
-          coordinated around your venue, guest count, timeline and wedding
-          aesthetic.
+          From handcrafted specialty coffee and matcha to freshly prepared desserts
+          and refined event rentals, Luxe brings personalized hospitality to every
+          part of your wedding celebration.
         </p>
         <div className="wedding-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">
@@ -130,10 +128,11 @@ function WeddingCustomization() {
       <header>
         <p className="foundation-label">Made specific to the celebration</p>
         <h2 id="wedding-customization-title">
-          Personalize your wedding service details
+          Personalized Details, Thoughtfully Styled.
         </h2>
         <p>
-          Personalize your cups, signage and dessert cart to match your wedding.
+          From custom coffee cart signage and branded cups to signature drink menus
+          and coordinated dessert presentation, the finishing touches should feel uniquely yours.
         </p>
         <div className="wedding-customization-image">
           <CoffeeBrandingGallery
@@ -169,7 +168,7 @@ function WeddingCoordination() {
       <header>
         <p className="foundation-label">Planning and logistics</p>
         <h2 id="wedding-coordination-title">
-          What Luxe coordinates before the wedding.
+          The Details We Plan With You.
         </h2>
       </header>
       <ol>
@@ -194,23 +193,28 @@ function WeddingGallery() {
     <section className="wedding-gallery" aria-labelledby="wedding-gallery-title">
       <header>
         <p className="foundation-label">Wedding gallery</p>
-        <h2 id="wedding-gallery-title">Picture the experiences across the wedding day.</h2>
+        <h2 id="wedding-gallery-title">Real Moments. Thoughtful Hospitality.</h2>
+        <p>Explore how Luxe Coffee Bar, Luxe Sweet Cart, and Luxe Seating Rentals complement wedding celebrations through personalized service and presentation.</p>
       </header>
-      <div className="wedding-gallery-grid" data-asset-status="awaiting-approved-photography">
-        {weddingGalleryPreview.map((item) => (
-          <figure className={`wedding-gallery-${item.tone}`} key={item.number}>
-            <div>
-              {item.image ? (
-                <ResponsiveImage asset={item.image} fill />
-              ) : (
-                <span aria-hidden="true"><i /><i /><i /></span>
-              )}
-            </div>
-            <figcaption>
-              <strong>{item.label}</strong>
-              <small>{item.note}</small>
-            </figcaption>
-          </figure>
+      <div className="wedding-gallery-grid">
+        {[[weddingGalleryPreview[0], weddingGalleryPreview[2]], [weddingGalleryPreview[1]]].map((column) => (
+          <div className="wedding-gallery-column" key={column[0].number}>
+            {column.map((item) => (
+              <figure className={`wedding-gallery-${item.tone}`} key={item.number}>
+                <div>
+                  {item.image ? (
+                    <ResponsiveImage asset={item.image} />
+                  ) : (
+                    <span aria-hidden="true"><i /><i /><i /></span>
+                  )}
+                </div>
+                <figcaption>
+                  <strong>{item.label}</strong>
+                  <small>{item.note}</small>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         ))}
       </div>
       <Link href="/gallery">

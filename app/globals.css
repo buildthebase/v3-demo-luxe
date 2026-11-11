@@ -1443,7 +1443,6 @@
 
 .wedding-day > header,
 .wedding-combinations > header,
-.wedding-gallery > header,
 .wedding-faq > header {
   display: grid;
   grid-template-columns: minmax(12rem, 0.52fr) minmax(0, 1fr) minmax(17rem, 0.6fr);
@@ -1806,30 +1805,32 @@
 
 .wedding-gallery-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  grid-template-rows: repeat(2, minmax(18rem, 1fr));
-  gap: var(--space-5);
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(1.25rem, 3vw, 3rem);
+  align-items: start;
   margin-bottom: var(--space-5);
 }
 
+.wedding-gallery-column {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  min-width: 0;
+}
+
 .wedding-gallery figure {
+  min-width: 0;
   margin: 0;
 }
 
-.wedding-gallery figure:first-child {
-  grid-row: 1 / 3;
-}
-
 .wedding-gallery figure > div {
-  position: relative;
-  min-height: 22rem;
   overflow: hidden;
   border: 1px solid var(--wedding-rule);
-  background: var(--surface-chapter-taupe);
 }
 
-.wedding-gallery figure:first-child > div {
-  min-height: 100%;
+.wedding-gallery figure img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .wedding-gallery figure > div i {
@@ -1973,13 +1974,11 @@
   }
 
   .wedding-combinations > header,
-  .wedding-gallery > header,
   .wedding-faq > header {
     grid-template-columns: 0.5fr 1.2fr;
   }
 
-  .wedding-combinations > header > p:last-child,
-  .wedding-gallery > header > p:last-child {
+  .wedding-combinations > header > p:last-child {
     grid-column: 2;
   }
 
@@ -2103,18 +2102,16 @@
 
   .wedding-gallery-grid {
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
     gap: var(--space-7);
   }
 
-  .wedding-gallery figure:first-child {
-    grid-row: auto;
+  .wedding-gallery-column {
+    display: contents;
   }
 
-  .wedding-gallery figure > div,
-  .wedding-gallery figure:first-child > div {
-    min-height: min(88vw, 27rem);
-  }
+  .wedding-gallery-welcome { order: 1; }
+  .wedding-gallery-dessert { order: 2; }
+  .wedding-gallery-room { order: 3; }
 }
 
 @media (max-width: 700px) {
@@ -2178,15 +2175,13 @@
 
   .wedding-day > header,
   .wedding-combinations > header,
-  .wedding-gallery > header,
   .wedding-faq > header {
     grid-template-columns: 1fr;
     margin-bottom: var(--space-7);
   }
 
   .wedding-day > header > p:last-child,
-  .wedding-combinations > header > p:last-child,
-  .wedding-gallery > header > p:last-child {
+  .wedding-combinations > header > p:last-child {
     grid-column: auto;
   }
 
@@ -7114,6 +7109,10 @@ a {
   border-right: 0;
 }
 
+.signature-selector-choice.signature-selector-without-media {
+  grid-template-rows: 1fr;
+}
+
 .signature-selector-choice:focus-visible {
   background: color-mix(in srgb, var(--color-luxe-taupe) 34%, transparent);
 }
@@ -7298,6 +7297,15 @@ body .foundation-shell main:is(
   font-style: normal;
   font-weight: 500;
   line-height: 1.3;
+}
+
+.signature-selector-supporting-note {
+  display: block;
+  margin-top: var(--space-3);
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .signature-selector-copy > span:nth-of-type(2) {
@@ -19668,6 +19676,18 @@ max-width: 36ch;
   line-height: 1.55;
 }
 
+.private-hero-photo {
+  width: min(100%, 30rem);
+  min-width: 0;
+  justify-self: center;
+}
+
+.private-hero-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .private-hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -19954,7 +19974,7 @@ max-width: 36ch;
 .private-planning li + li { border-left: 1px solid var(--private-rule); }
 .private-planning h3 { margin: var(--space-6) 0 var(--space-4); font-size: clamp(1.5rem, 2.2vw, 2.25rem); font-weight: 500; letter-spacing: -.045em; line-height: 1; }
 .private-planning li p { color: var(--color-text-secondary); line-height: 1.55; }
-.private-planning > p { max-width: 48rem; margin: var(--space-6) 0 0 auto; color: var(--color-text-secondary); line-height: 1.6; }
+.private-planning > p { max-width: 48rem; margin: var(--space-6) auto 0; color: var(--color-text-secondary); line-height: 1.6; text-align: center; }
 
 .private-faq { border-top: 1px solid var(--private-rule); }
 .private-faq > div { margin-top: clamp(3rem, 7vw, 6rem); border-top: 1px solid var(--private-rule); }

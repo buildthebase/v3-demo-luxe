@@ -1,11 +1,11 @@
 export const bridalShowerExperiences = [
   {
     number: "01",
-    label: "Café-style coffee service",
+    label: "Luxe Coffee Bar",
     href: "/experiences/coffee-bar",
     title: "A café moment made for the room.",
     description:
-      "The Café Cart offers a focused welcome, while the Signature Coffee Bar creates a more prominent hospitality presence. Both include barista-served specialty coffee, hot and iced café favourites, signature beverages, and an intentional presentation.",
+      "The Luxe Coffee Bar includes barista-served specialty coffee, hot and iced café favourites, signature beverages, and a setup suited to your venue and guest count.",
     tone: "cafe",
   },
   {
@@ -19,7 +19,7 @@ export const bridalShowerExperiences = [
   },
   {
     number: "03",
-    label: "Live dessert",
+    label: "Luxe Sweet Cart",
     href: "/experiences/sweet-cart",
     title: "Dessert becomes part of the scene.",
     description:
@@ -28,7 +28,7 @@ export const bridalShowerExperiences = [
   },
   {
     number: "04",
-    label: "Seating and rentals",
+    label: "Luxe Seating Rentals",
     href: "/experiences/seating-rentals",
     title: "The setting holds the gathering together.",
     description:
@@ -57,38 +57,38 @@ export const bridalShowerDetails = [
     label: "The room",
     title: "The room around the service",
     description:
-      "Coordinate your Luxe rental selections and service placement around the venue layout and celebration.",
+      "Coordinate your Luxe Seating Rentals selections and service placement around the venue layout and celebration.",
   },
 ] as const;
 
 export const bridalShowerCombinations = [
   {
     number: "01",
-    title: "CAFÉ CART + MATCHA",
+    title: "Coffee Bar + Matcha Service",
     experiences: "Example combination",
     description:
-      "A refined daytime café experience with specialty coffee, premium matcha and personalized menu options.",
+      "A refined café experience featuring handcrafted espresso drinks, premium matcha, and personalized beverage options for your bridal shower.",
   },
   {
     number: "02",
-    title: "COFFEE BAR + SWEET CART",
+    title: "Coffee Bar + Sweet Cart",
     experiences: "Example combination",
     description:
-      "Pair specialty beverages with an interactive live dessert experience.",
+      "Pair handcrafted specialty beverages with freshly prepared desserts, creating two complementary experiences for your guests to enjoy.",
   },
   {
     number: "03",
-    title: "SWEET CART + RENTALS",
+    title: "Sweet Cart + Event Rentals",
     experiences: "Example combination",
     description:
-      "Combine live dessert service with the essential seating, tables, linens or tenting needed for your celebration.",
+      "Combine interactive live dessert service with seating, tables, linens, or tent rentals to create a welcoming setting for your celebration.",
   },
   {
     number: "04",
-    title: "COFFEE + DESSERT + RENTALS",
+    title: "Coffee Bar + Sweet Cart + Event Rentals",
     experiences: "Example combination",
     description:
-      "Bring multiple Luxe services together through one coordinated inquiry.",
+      "Bring together specialty coffee, freshly prepared desserts, and coordinated event rentals through one seamless booking experience.",
   },
 ] as const;
 
@@ -124,7 +124,7 @@ export const bridalShowerPlanning = [
     number: "02",
     title: "Experience preferences",
     description:
-      "Select whether premium mobile coffee service, Premium Matcha, live dessert cart, event rentals, or a coordinated combination suits your vision.",
+      "Let us know whether you’re considering the Luxe Coffee Bar, Luxe Sweet Cart, Luxe Seating Rentals, or a combination. Matcha can be included with your coffee service.",
   },
   {
     number: "03",
@@ -142,9 +142,9 @@ export const bridalShowerPlanning = [
 
 export const bridalShowerFaqs = [
   {
-    question: "Which coffee experience is best for a bridal shower?",
+    question: "Which Luxe Coffee Bar setup is best for a bridal shower?",
     answer:
-      "LUXE CAFÉ CART — Our compact café experience for intimate bridal showers and venues where a smaller footprint is preferred, while maintaining the polished presentation and professional service of Luxe Coffee Bar. LUXE SIGNATURE COFFEE BAR — Our larger premium Coffee Bar experience for celebrations where the bar itself becomes a more prominent part of the event presentation.",
+      "The Luxe Coffee Bar can be planned with a compact setup for intimate bridal showers or venues with limited space, or a larger setup where the bar is a more prominent part of the celebration. We can help you choose based on your venue, guest count and preferred presentation.",
   },
   {
     question: "Can matcha and specialty beverages be included?",
@@ -159,12 +159,12 @@ export const bridalShowerFaqs = [
   {
     question: "Can coffee and dessert be booked together?",
     answer:
-      "Yes. Luxe Coffee Bar and Luxe Sweet Cart can be selected together. Their menus, placement, timing, staffing, setup, and service flow are coordinated through one inquiry and proposal journey.",
+      "Yes. The Luxe Coffee Bar and Luxe Sweet Cart can be selected together. Their menus, placement, timing, staffing, setup, and service flow are coordinated through one inquiry and proposal journey.",
   },
   {
     question: "Can seating and event rentals be included?",
     answer:
-      "Yes. Chairs, tables, cocktail tables, tents and linens can be planned alongside coffee or dessert. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. The proposal confirms inventory, quantities, delivery, setup, takedown, pickup, access and fees for the venue and date.",
+      "Yes. Luxe Seating Rentals includes chairs, tables, cocktail tables, tents and linens that can be planned alongside the Luxe Coffee Bar or Luxe Sweet Cart. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. The proposal confirms inventory, quantities, delivery, setup, takedown, pickup, access and fees for the venue and date.",
   },
   {
     question: "Can menus and signage be customized?",
@@ -174,7 +174,7 @@ export const bridalShowerFaqs = [
   {
     question: "Can Luxe coordinate with my florist or event decorator?",
     answer:
-      "Yes. We can coordinate the presentation and placement of our Coffee Bar, Sweet Cart, signage and rentals with your planner, florist or decorator so the Luxe experience complements the overall event aesthetic.",
+      "Yes. We can coordinate the presentation and placement of the Luxe Coffee Bar, Luxe Sweet Cart, Luxe Seating Rentals and signage with your planner, florist or decorator so the Luxe experience complements the overall event aesthetic.",
   },
   {
     question: "Can Luxe work with the host, planner, venue, or decorator?",
