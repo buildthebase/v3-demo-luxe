@@ -184,9 +184,9 @@ export type InquiryContext = {
 export const inquiryContexts: Record<string, InquiryContext> = {
   home: {
     eyebrow: "Your event, shaped in full",
-    heading: "Plan your event with Luxe.",
+    heading: "Plan Your Event with Luxe.",
     description:
-      "Share the occasion, location, guest count, and the experiences you are considering. Luxe will use that context to guide the right next conversation.",
+      "Tell us about your event, explore our experiences, and receive a personalized proposal designed around your celebration.",
     cta: "PLAN YOUR EVENT",
     href: "/contact",
   },

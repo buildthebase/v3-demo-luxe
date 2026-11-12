@@ -1145,18 +1145,62 @@
 }
 .foundation-shell .wedding-page .wedding-customization-image {
   position: relative;
-  width: min(100%, 28rem);
+  width: min(100%, 62rem);
   margin-top: 1rem;
 }
-.foundation-shell .wedding-page .wedding-customization-image .coffee-branding-gallery {
+.wedding-customization-image .wedding-branding-label {
+  margin: 0 0 1.25rem;
+  color: var(--color-luxe-gold-ink);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+}
+.wedding-branding-track {
+  position: relative;
+  display: flex;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.wedding-branding-track::-webkit-scrollbar { display: none; }
+.wedding-branding-slide {
+  flex: 0 0 calc((100% - clamp(1rem, 2vw, 1.5rem)) / 2);
+  min-width: 0;
+  aspect-ratio: 3 / 4;
+  margin: 0;
+  scroll-snap-align: start;
+  border: 1px solid var(--wedding-rule);
+  background: var(--color-luxe-ivory);
+}
+.foundation-shell .wedding-page .wedding-branding-slide img {
+  display: block;
   width: 100%;
-}
-.foundation-shell .wedding-page .wedding-customization-image .coffee-branding-photo {
-  aspect-ratio: 1;
-}
-.foundation-shell .wedding-page .wedding-customization-image img {
-  object-position: center 35%;
+  height: 100%;
+  object-fit: contain;
   transform: none;
+}
+.wedding-branding-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+  font-size: 0.85rem;
+}
+.wedding-branding-controls button {
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--color-luxe-gold-ink);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+.wedding-branding-controls button:disabled { opacity: 0.35; cursor: default; }
+.wedding-branding-controls button:focus-visible,
+.wedding-branding-track:focus-visible { outline: 2px solid var(--color-luxe-gold-ink); outline-offset: 4px; }
+@media (max-width: 700px) {
+  .wedding-branding-slide { flex-basis: 100%; }
 }
 
 .foundation-shell .wedding-page .wedding-customization > header::after {

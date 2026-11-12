@@ -13,7 +13,7 @@ import { imageAssets } from "../image-system";
 import { weddingsSectionNavigation } from "../page-section-navigation";
 import { createServicePageSchema } from "../schema-builders";
 import { FaqAccordion } from "./faq-accordion";
-import { CoffeeBrandingGallery } from "./coffee-branding-gallery";
+import { WeddingBrandingGallery } from "./wedding-branding-gallery";
 import { JsonLd } from "./json-ld";
 import { PageSectionNavigation } from "./page-section-navigation";
 import { QuoteModalTrigger } from "./quote-modal-trigger";
@@ -135,13 +135,8 @@ function WeddingCustomization() {
           and coordinated dessert presentation, the finishing touches should feel uniquely yours.
         </p>
         <div className="wedding-customization-image">
-          <CoffeeBrandingGallery
-            label="Wedding personalization photos"
-            photos={[
-              imageAssets.experiences.weddingPersonalizedMenu,
-              imageAssets.experiences.weddingPersonalizedCup,
-            ]}
-          />
+          <p className="wedding-branding-label">Examples of Luxe Custom Branding</p>
+          <WeddingBrandingGallery />
         </div>
       </header>
       <div>

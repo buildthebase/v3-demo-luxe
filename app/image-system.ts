@@ -453,6 +453,17 @@ export const imageAssets = {
       status: "approved",
       format: "webp",
     },
+    sweetChurroService: {
+      id: "sweet-churro-service",
+      src: "/images/experiences/sweet-churro-service-clear.avif",
+      alt: "Fresh churro topped with chocolate and colourful sprinkles, served with vanilla soft serve by a gloved Luxe team member",
+      width: 1600,
+      height: 835,
+      sizes: "(max-width: 960px) 100vw, 55vw",
+      unoptimized: true,
+      status: "approved",
+      format: "avif",
+    },
     sweetCartSignature: {
       id: "sweet-cart-signature-guests",
       src: "/images/experiences/sweet-signature-guests.webp",

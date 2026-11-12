@@ -254,11 +254,8 @@ function DessertExperiences() {
 function ChurroBarFeature() {
   return (
     <section className="sweet-churro-feature" aria-labelledby="sweet-churro-title">
-      <div className="sweet-churro-feature-art" aria-hidden="true">
-        <span />
-        <span />
-        <span />
-        <i>Prepared live</i>
+      <div className="sweet-churro-feature-photo">
+        <ResponsiveImage asset={imageAssets.experiences.sweetChurroService} />
       </div>
       <div className="sweet-churro-feature-copy">
         <h3 id="sweet-churro-title">Luxe Churro Bar</h3>
