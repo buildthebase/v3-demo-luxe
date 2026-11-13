@@ -2,7 +2,9 @@
 
 The existing enhanced dessert portrait remains slide 1. The five user-supplied event photographs follow in attachment order. Sources are preserved in the user's `Downloads/drive-download-20261113T180620Z-1-001/` folder. Working copies are in `/private/tmp/luxe-wedding-hero-source/`.
 
-The carousel follows the site's existing wedding branding gallery interaction: native horizontal scroll snapping, previous/next arrows, a visible count, and keyboard navigation. It shows one full photograph at every viewport size. The consistent 3:4 outer frame includes controls below the photo, so controls do not obscure faces, cups or desserts. Images use `object-fit: contain`; no additional image crop is applied. There is no automatic slide rotation. The selected photo is preserved when the viewport changes. Reduced-motion preferences are respected for arrow and keyboard navigation.
+The carousel uses native horizontal scroll snapping, previous/next arrows, a visible count, and keyboard navigation. It shows one full photograph at every viewport size. The consistent 3:4 outer frame includes controls below the photo, so controls do not obscure faces, cups or desserts. Images use `object-fit: contain`; no additional image crop is applied. The selected photo is preserved when the viewport changes.
+
+The slideshow advances every five seconds while at least 25% of the photo track is visible. It loops to the first photo after the sixth without scrolling backwards through intermediate photos. Hover temporarily pauses rotation; touch, keyboard focus and manual browsing pause it until the visitor presses Play. A play/pause button sits beside the existing controls. Rotation also pauses in background tabs and while off screen. Reduced-motion preferences disable automatic rotation and animated scrolling, leaving manual navigation available.
 
 Only the first image is eager-loaded with high fetch priority. Subsequent slides use native lazy loading. All final photos are AVIF with direct delivery, avoiding a second lossy optimizer pass. New assets were encoded by Sharp at quality 74, effort 8 and 4:4:4 chroma without further resizing. The five new images total 904,319 bytes, compared with 4,176,555 bytes across the original PNGs.
 
@@ -23,7 +25,7 @@ Method: the built-in image-generation tool edited each input separately. AI rest
 
 ## Verification
 
-The local `/events/weddings` preview was checked at 320, 390, 768 and 1440 pixels wide. All six images load. Previous/next arrows, Home/End and arrow-key navigation, native horizontal scrolling, first/last button states and preserving the selected photo across screen-size changes were verified. Controls remain below the photos and within the hero frame, with no horizontal page overflow or headline overlap. No browser console errors were recorded. TypeScript and the production build pass. The local preview remains running on port 3000.
+The local `/events/weddings` preview was checked at 320, 390, 768 and 1440 pixels wide. All six images load. Previous/next arrows, Home/End and arrow-key navigation, native horizontal scrolling and preserving the selected photo across screen-size changes were verified. The slideshow update additionally verifies the five-second advance, sixth-to-first loop, manual navigation pausing, play/pause control and off-screen pausing. Its controls fit at 320, 768 and 1440 pixels wide and remain below the photos, without horizontal page overflow. No browser console errors were recorded. TypeScript and the production build pass. The local preview remains running on port 3000.
 
 ## Final prompt set
 
