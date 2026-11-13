@@ -9,11 +9,11 @@ import {
   weddingMoments,
 } from "../events/weddings-content";
 import { pageMetadata } from "../metadata-config";
-import { imageAssets } from "../image-system";
 import { weddingsSectionNavigation } from "../page-section-navigation";
 import { createServicePageSchema } from "../schema-builders";
 import { FaqAccordion } from "./faq-accordion";
 import { WeddingBrandingGallery } from "./wedding-branding-gallery";
+import { WeddingHeroCarousel } from "./wedding-hero-carousel";
 import { JsonLd } from "./json-ld";
 import { PageSectionNavigation } from "./page-section-navigation";
 import { QuoteModalTrigger } from "./quote-modal-trigger";
@@ -57,7 +57,7 @@ function WeddingHero() {
         </div>
       </div>
       <div className="wedding-hero-art">
-        <ResponsiveImage asset={imageAssets.experiences.weddingHero} fill />
+        <WeddingHeroCarousel />
       </div>
       <dl className="wedding-hero-proof">
         <div>

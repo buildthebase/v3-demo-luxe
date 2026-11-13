@@ -698,14 +698,15 @@ export const imageAssets = {
     },
     weddingHero: {
       id: "wedding-hero-dessert-moment",
-      src: "/images/weddings/wedding-hero-dessert-moment.webp",
+      src: "/images/weddings/wedding-hero-dessert-moment-clear-v2.avif",
       alt: "A couple sharing a dessert at a wedding celebration",
       width: 941,
       height: 1672,
       sizes: "(max-width: 700px) calc(100vw - 2.75rem), (max-width: 1120px) 38vw, 42rem",
       priority: true,
+      unoptimized: true,
       status: "approved",
-      format: "webp",
+      format: "avif",
     },
     weddingRoom: {
       id: "wedding-gallery-garden-reception-table",

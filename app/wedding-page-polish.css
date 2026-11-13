@@ -1,7 +1,7 @@
 /* Wedding-page display rhythm and personalization treatment. */
 
 .foundation-shell .wedding-page .wedding-hero-art {
-  aspect-ratio: 6 / 7;
+  aspect-ratio: 3 / 4;
   min-height: 0;
   overflow: hidden;
 }
@@ -13,6 +13,86 @@
 
 .foundation-shell .wedding-page .wedding-hero-art img {
   object-position: center 35%;
+}
+
+.wedding-hero-carousel {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 0.75rem;
+}
+
+.wedding-hero-carousel-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.wedding-hero-carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.wedding-hero-carousel-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  height: 100%;
+  margin: 0;
+  scroll-snap-align: start;
+}
+
+.foundation-shell .wedding-page .wedding-hero-carousel-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.wedding-hero-carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  gap: 10px;
+  padding: 6px;
+  background: rgb(255 255 255 / 94%);
+  color: var(--color-luxe-black);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+}
+
+.wedding-hero-carousel-controls > span {
+  min-width: 3rem;
+  text-align: center;
+}
+
+.wedding-hero-carousel-controls button {
+  display: grid;
+  place-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 1.125rem;
+  cursor: pointer;
+}
+
+.wedding-hero-carousel-controls button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.wedding-hero-carousel-controls button:focus-visible,
+.wedding-hero-carousel-track:focus-visible {
+  outline: 2px solid var(--color-luxe-gold-ink);
+  outline-offset: -3px;
 }
 
 @media (min-width: 901px) {
