@@ -191,6 +191,30 @@
 @media (min-width: 961px) {
   .foundation-shell .home-page .home-positioning {
     grid-template-columns: minmax(0, 1.6fr) minmax(280px, 1fr);
+    row-gap: 1.5rem;
+  }
+
+  .foundation-shell .home-page #home-positioning-title {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: end;
+  }
+
+  .foundation-shell .home-page .home-positioning > div {
+    display: contents;
+  }
+
+  .foundation-shell .home-page .home-positioning-intro {
+    grid-column: 1;
+    grid-row: 2;
+    max-width: none !important;
+    padding-inline-start: clamp(1.25rem, 3vw, 2.5rem);
+  }
+
+  .foundation-shell .home-page .home-positioning-services {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    align-self: center;
   }
 }
 
