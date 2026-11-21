@@ -231,7 +231,7 @@ export function BrandActivationsPage({ comparison = false }: { comparison?: bool
                   <span>Venue documentation available on request.</span>
                 </div>
               </div>
-              <QuoteModalTrigger className={`${styles.button} ${styles.goldButton}`}>Start Here</QuoteModalTrigger>
+              <QuoteModalTrigger className={`${styles.button} ${styles.goldButton}`}>Plan Your Event</QuoteModalTrigger>
             </div>
           </div>
         </section>

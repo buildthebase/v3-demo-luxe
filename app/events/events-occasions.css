@@ -2,32 +2,32 @@
 .foundation-shell main.events-page > #event-pathways.events-occasion-cards { padding-block: clamp(48px, 6vw, 80px); }
 .foundation-shell main.events-page #event-pathways.events-occasion-cards > header {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 20px 64px;
-  align-items: start;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+  justify-items: center;
   margin: 0 0 36px;
   padding: 0;
-  text-align: left;
+  text-align: center;
 }
 .foundation-shell main.events-page #event-pathways.events-occasion-cards > header .foundation-label { grid-column: 1 / -1; }
 .foundation-shell main.events-page #event-pathways #events-directory-title:not(#luxe-sitewide-h2-scale):not(#home-hero-seo-title) {
   width: auto;
-  max-width: 22ch !important;
-  margin: 0 !important;
+  max-width: 32ch !important;
+  margin: 0 auto !important;
   font-size: clamp(1.85rem, 3.5vw, 3rem) !important;
   line-height: 1.1 !important;
-  text-align: left !important;
+  text-align: center !important;
   text-wrap: balance;
   white-space: normal !important;
 }
 .foundation-shell main.events-page #event-pathways.events-occasion-cards > header > p:last-child {
-  grid-column: 2;
-  max-width: 56ch;
-  margin: 0;
+  grid-column: 1;
+  max-width: 76ch;
+  margin: 0 auto;
   font-size: 1rem;
   line-height: 1.7;
   color: var(--color-text-secondary);
-  text-align: left;
+  text-align: center;
 }
 .foundation-shell main.events-page #event-pathways .events-directory-list {
   display: grid;
