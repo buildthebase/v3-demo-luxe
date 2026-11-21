@@ -6,7 +6,7 @@ import { validateArticle } from "../cms/core.mjs";
 const articles = JSON.parse(readFileSync(new URL("../content/blog/published/articles.json", import.meta.url), "utf8"));
 const article = articles.find(({ slug }) => slug === "baby-shower-custom-coffee-bar");
 
-test("homepage case study links to a complete, unnamed coffee-only article", () => {
+test("homepage case study links to the Café Bébé article and its film", () => {
   assert.ok(article);
   assert.equal(article.status, "published");
   const component = readFileSync(new URL("../app/components/home-case-study.tsx", import.meta.url), "utf8");
@@ -14,17 +14,26 @@ test("homepage case study links to a complete, unnamed coffee-only article", () 
   assert.doesNotMatch(component, /Nicholas|\[placeholder\]|insert quote/i);
   assert.doesNotMatch(component, /aria-hidden="true">0[123]</);
   assert.doesNotMatch(JSON.stringify(article), /Nicholas/i);
-  assert.ok(JSON.stringify(article.content).includes("booking was for the Luxe Coffee Bar on its own"));
   assert.equal(article.editorialApproval.shortForm, true);
-  assert.equal(article.content[0].type, "quick-answer");
-  assert.equal(article.content[0].title, "The occasion, at a glance");
+  assert.equal(article.title, "Inside the Café Bébé Coffee Bar");
+  assert.equal(article.content[0].type, "callout");
   assert.deepEqual(article.content.filter(({ type }) => type === "heading").map(({ text }) => text), [
-    "A coffee cart to match the shower", "How it came together", "Thinking about your own baby shower?",
+    "A little something made just for the occasion", "The finishing touches", "Let's make it yours",
+  ]);
+  const imageIndex = article.content.findIndex(block => block.type === "image");
+  assert.deepEqual(article.content[imageIndex - 1].content, [
+    { text: "Take a closer look at how it all came together.", emphasis: "strong" },
   ]);
   assert.equal(article.showPlanningLinks, false);
-  assert.ok(article.content.some((block) => block.type === "paragraph" && block.content.some((part) => part.text === "tell us about your baby shower" && part.action === "quote")));
+  const articleLinks = article.content
+    .filter(block => block.type === "paragraph")
+    .flatMap(block => block.content.filter(part => part.href));
+  const filmLink = articleLinks.find(link => link.text === "short film on our homepage");
+  assert.equal(filmLink?.href, "/#review-coffee-dessert");
+  assert.ok(component.includes('id="review-coffee-dessert"'));
+  assert.ok(articleLinks.some(link => link.text === "get in touch" && link.href === "/contact"));
   const errors = validateArticle(article, articles, {
-    knownPaths: ["/experiences/coffee-bar", "/contact"],
+    knownPaths: ["/", "/experiences/coffee-bar", "/contact"],
   }).filter(({ severity }) => severity === "error");
   assert.deepEqual(errors, []);
 });
@@ -35,21 +44,12 @@ test("case-study video formats and article poster exist", () => {
     "videos/case-studies/baby-shower-coffee-bar-v1.webm",
     "images/case-studies/baby-shower-coffee-bar.webp",
     article.heroImage.src.slice(1),
-    article.heroDesktopImage.src.slice(1),
   ]) {
     assert.ok(statSync(new URL(`../public/${path}`, import.meta.url)).size > 0);
   }
-  assert.equal(article.heroImage.width / article.heroImage.height, 9 / 16);
-  assert.equal(article.heroDesktopImage.width / article.heroDesktopImage.height, 3 / 2);
-  assert.equal(article.heroImageSources.length, 2);
-  for (const source of article.heroImageSources) {
-    assert.equal(source.type, "image/avif");
-    for (const candidate of source.srcSet.split(",")) {
-      const path = candidate.trim().split(/\s+/)[0];
-      const size = statSync(new URL(`../public${path}`, import.meta.url)).size;
-      assert.ok(size > 0 && size < 500_000, `${path} should fit the image payload budget`);
-    }
-  }
+  assert.equal(article.heroImage.src, "/images/experiences/custom-branding/cafe-bebe-bow-cart-clear.avif");
+  assert.ok(statSync(new URL(`../public${article.heroImage.src}`, import.meta.url)).size < 500_000);
+  assert.equal(article.heroDesktopImage, undefined);
 });
 
 test("shared editorial voice preserves conversational direction and factual guardrails", () => {

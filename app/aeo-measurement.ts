@@ -32,7 +32,7 @@ export const aeoMetrics: AeoMetric[] = [
     sources: ["Google Search Console", "Bing Webmaster Tools"],
     dimensions: [...searchDimensions, "branded_or_non_branded"],
     method:
-      "Exclude approved Luxe Event Co. and division-name variants from query exports; retain an auditable brand-term list.",
+      "Exclude approved Experiences by Luxe and division-name variants from query exports; retain an auditable brand-term list.",
     decisionUse:
       "Find service, event, local, and planning topics earning visibility independently of existing brand awareness.",
     availability: "available after verification",
@@ -217,7 +217,7 @@ export const aeoMetrics: AeoMetric[] = [
 ];
 
 export const brandQueryGroups = {
-  parentBrand: [siteConfig.name, "Luxe Event Co", "Luxe Event Company"],
+  parentBrand: [siteConfig.name, ...siteConfig.alternateNames],
   coffeeDivision: ["Luxe Coffee Bar", "Luxe Coffee Cart"],
   sweetDivision: ["Luxe Sweet Cart"],
   seatingDivision: ["Luxe Event Rentals"],

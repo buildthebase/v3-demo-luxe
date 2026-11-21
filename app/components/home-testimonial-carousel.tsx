@@ -88,7 +88,7 @@ export function HomeTestimonialCarousel() {
         className="home-testimonial-track"
         ref={trackRef}
         role="group"
-        aria-label="Luxe Event Co. review placeholders"
+        aria-label="Experiences by Luxe review placeholders"
       >
         {homeTestimonialPlaceholders.map((testimonial, index) => (
           <blockquote

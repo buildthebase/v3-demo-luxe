@@ -65,7 +65,7 @@ export const schemaRules = [
   "FAQPage is conditional on visible approved answers and is not a promise of a Google rich result.",
   "Do not use Event schema for Weddings, Corporate Events, Brand Activations, or other service pages unless the page is for one specific public event with a date and location.",
   "Do not add schema solely to target AI Overviews or AI Mode; follow foundational SEO and structured-data requirements.",
-  "Do not add AggregateRating or Review markup for self-serving reviews of Luxe Event Co. or its divisions.",
+  "Do not add AggregateRating or Review markup for self-serving reviews of Experiences by Luxe or its divisions.",
 ] as const;
 
 export const structuredDataDecisions = {

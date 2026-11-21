@@ -167,16 +167,16 @@ export const birthdayFaqs = [
   {
     question: "Can coffee, dessert, and rentals be combined?",
     answer:
-      "Yes. Any one service can be booked independently, and several can be coordinated through one Luxe Event Co. inquiry and proposal journey. The final plan is tailored to the selected services, timing, placement, staffing, rental scope, access and venue requirements.",
+      "Yes. Any one service can be booked independently, and several can be coordinated through one Experiences by Luxe inquiry and proposal journey. The final plan is tailored to the selected services, timing, placement, staffing, rental scope, access and venue requirements.",
   },
   {
     question: "How much does birthday dessert catering cost?",
     answer:
-      "Birthday dessert catering is quoted around the selected menu, guest count, service duration, staffing, travel, venue access, presentation, and optional enhancements. Share the event details with Luxe Event Co. to receive a proposal shaped around the celebration.",
+      "Birthday dessert catering is quoted around the selected menu, guest count, service duration, staffing, travel, venue access, presentation, and optional enhancements. Share the event details with Experiences by Luxe to receive a proposal shaped around the celebration.",
   },
   {
     question: "Which areas does Luxe serve for birthday events?",
     answer:
-      "Luxe Event Co. serves birthday events across Toronto and the Greater Toronto Area. Venue access, travel, delivery, setup, and service requirements are confirmed for the specific event location during the proposal process.",
+      "Experiences by Luxe serves birthday events across Toronto and the Greater Toronto Area. Venue access, travel, delivery, setup, and service requirements are confirmed for the specific event location during the proposal process.",
   },
 ] as const;

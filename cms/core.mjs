@@ -1,4 +1,5 @@
 import path from "node:path";
+import projectManifest from "../cms-project.json" with { type: "json" };
 
 export const ARTICLE_STATUSES = ["draft", "published", "archived", "trash"];
 export const CLEAN_SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
@@ -202,19 +203,19 @@ export function searchArticles(articles, query) {
   });
 }
 
-export function createEmptyArticle() {
+export function createEmptyArticle(canonicalOrigin = projectManifest.canonicalBaseUrl) {
   const now = new Date().toISOString();
   return {
     schemaVersion: 1,
     slug: "new-article",
     title: "New article",
-    seoTitle: "New article | Luxe Event Co.",
+    seoTitle: `New article | ${projectManifest.name}`,
     description: "",
     excerpt: "",
     category: "Event Planning",
     publishDate: now,
     modifiedDate: now,
-    author: { name: "Luxe Event Co.", type: "Organization", url: "https://luxeeventco.ca" },
+    author: { name: projectManifest.name, type: "Organization", url: canonicalOrigin },
     heroImage: null,
     heroAlt: "",
     socialImage: null,

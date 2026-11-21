@@ -52,6 +52,7 @@
   width: 100%;
   max-width: 66rem;
   margin-inline: auto;
+  scroll-margin-top: 7.5rem;
 }
 .home-case-study-film {
   position: relative;
@@ -158,4 +159,15 @@
   .home-case-study-layout { grid-template-columns: minmax(0, 1fr); gap: 2rem; max-width: 32rem; }
   .home-case-study-film { max-width: 20rem; }
   .home-case-study-copy h3 { text-align: center; }
+}
+
+@media (max-width: 700px) {
+  .foundation-shell .home-case-study-supporting-line {
+    font-size: clamp(.875rem, 3.7vw, 1.1rem);
+  }
+
+  .home-case-study-supporting-line > span {
+    display: block;
+    white-space: nowrap;
+  }
 }

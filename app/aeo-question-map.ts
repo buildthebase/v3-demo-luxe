@@ -892,7 +892,7 @@ const serviceDiscoveryQuestionMap: AeoQuestionMapRecord[] = [
     funnelStage: ["Understanding", "Comparison", "Vendor evaluation"],
     searchIntent: ["Commercial investigation", "Comparison", "Transactional"],
     proposedAnswer:
-      "Yes. Luxe Event Co. is the parent company for Coffee Bar, Sweet Cart, and Event Rentals, so the three services can be planned through one inquiry and proposal journey while each keeps its specialist scope.",
+      "Yes. Experiences by Luxe is the parent company for Coffee Bar, Sweet Cart, and Event Rentals, so the three services can be planned through one inquiry and proposal journey while each keeps its specialist scope.",
     requiredEvidence: {
       available: [
         "Confirmed parent-and-division model",

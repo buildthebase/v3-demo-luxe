@@ -405,6 +405,7 @@ function renderEditor() {
     workspace.innerHTML = `${renderHeader("Luxe Journal", "Editor")}<div class="panel empty">Choose an article from Articles or create a new draft.</div>`;
     return;
   }
+  const canonicalHostname = new URL(state.project.manifest.canonicalBaseUrl).hostname;
   workspace.innerHTML = `${renderHeader("Article editor", article.title, '<button class="button" data-action="preview">Preview</button><button class="button primary" data-action="save-article">Save</button>')}
     <div class="editor-layout"><form id="article-form">
       <section class="panel"><h2>Core content</h2><div class="field-grid">
@@ -429,7 +430,7 @@ function renderEditor() {
         ${article.status !== "published" ? '<button class="button gold" data-action="publish">Publish</button>' : '<button class="button" data-action="archive">Archive</button>'}
         ${article.status !== "trash" ? '<button class="button danger" data-action="trash">Trash</button>' : '<button class="button" data-action="restore">Restore draft</button>'}
       </div></section>
-      <section class="panel"><p class="eyebrow">SEO preview</p><div class="snippet"><a>luxeeventco.ca › blog › ${escapeHtml(article.slug)}</a><strong>${escapeHtml(article.seoTitle)}</strong><span>${escapeHtml(article.description)}</span></div></section>
+      <section class="panel"><p class="eyebrow">SEO preview</p><div class="snippet"><a>${escapeHtml(canonicalHostname)} › blog › ${escapeHtml(article.slug)}</a><strong>${escapeHtml(article.seoTitle)}</strong><span>${escapeHtml(article.description)}</span></div></section>
       <section class="panel"><p class="eyebrow">Validation</p>${renderIssues(article)}</section>
     </aside></div>`;
 }

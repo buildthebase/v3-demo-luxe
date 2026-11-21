@@ -8,7 +8,7 @@ const heroImage = { id: "hero", src: "/images/blog/example/hero.webp", width: 16
 
 function article(slug, status = "draft", overrides = {}) {
   return {
-    ...createEmptyArticle(), slug, status, title: `Article ${slug}`, seoTitle: `Article ${slug} | Luxe Event Co.`,
+    ...createEmptyArticle(), slug, status, title: `Article ${slug}`, seoTitle: `Article ${slug} | Experiences by Luxe`,
     description: "A complete description for this test article.", excerpt: "A complete excerpt.",
     heroImage, heroAlt: "An event setup",
     content: [{ type: "paragraph", content: [{ text: completeBody }] }],

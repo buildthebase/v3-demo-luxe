@@ -1,9 +1,9 @@
 export const entityNames = {
   parentBrand: {
     stableKey: "luxe-event-co",
-    currentName: "Luxe Event Co.",
-    alternateNames: ["Luxe Event Co", "luxeeventco.ca"],
-    nameStatus: "current-name-future-change-planned",
+    currentName: "Experiences by Luxe",
+    alternateNames: ["Luxe"],
+    nameStatus: "current",
   },
   divisions: {
     coffeeBar: "Luxe Coffee Bar",

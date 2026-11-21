@@ -20,7 +20,7 @@ export const brandIdentitySignals = {
   constraints: [
     "Do not create separate site-name entities for division subdirectories.",
     "Do not treat the social card as the organization logo.",
-    "Keep the preferred public name punctuated as Luxe Event Co.; use Luxe Event Co without the period and luxeeventco.ca only as ordered fallbacks.",
+    `Use Luxe and ${siteConfig.domain.primary} as ordered fallbacks for ${siteConfig.name}.`,
     "A valid implementation indicates a preference but does not guarantee the site name or favicon Google displays.",
   ],
 } as const;

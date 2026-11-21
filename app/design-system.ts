@@ -1,13 +1,13 @@
 export const visualSystem = {
   status: "established",
   governingSources: [
-    "Luxe Event Co. Website Strategy, Design, Development, SEO and AEO Implementation Master Specification",
+    "Experiences by Luxe Website Strategy, Design, Development, SEO and AEO Implementation Master Specification",
     "Luxe Brands client intake form, formatted July 2026",
   ],
   creativeDirection: {
     name: "Editorial Event Portfolio",
     intent:
-      "Present Luxe Event Co. as a composed portfolio of hospitality experiences, not a service catalogue or product grid.",
+      "Present Experiences by Luxe as a composed portfolio of hospitality experiences, not a service catalogue or product grid.",
     qualities: [
       "bright",
       "elegant",
@@ -100,7 +100,7 @@ export const visualSystem = {
     },
     wordmark: {
       family: "Manrope",
-      rule: "The approved Luxe Event Co. wordmark treatment remains distinct from editorial page headings.",
+      rule: "The approved Experiences by Luxe wordmark treatment remains distinct from editorial page headings.",
     },
     scale: {
       displayXl: "clamp(3.6rem, 9vw, 9.5rem)",
@@ -235,7 +235,7 @@ export const visualSystem = {
   },
   siteContinuity: {
     requiredAcrossPages: [
-      "Luxe Event Co. parent-brand hierarchy in the global shell and metadata",
+      "Experiences by Luxe parent-brand hierarchy in the global shell and metadata",
       "fine ivory grid canvas between tonal chapters",
       "the approved typography, tracking, measure, spacing, and rule system",
       "the site-wide surface rhythm and full-bleed chapter behaviour",

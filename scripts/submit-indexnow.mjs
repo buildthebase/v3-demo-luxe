@@ -1,6 +1,8 @@
+import projectManifest from "../cms-project.json" with { type: "json" };
+
 const endpoint = "https://api.indexnow.org/indexnow";
-const canonicalOrigin = "https://luxeeventco.ca";
-const canonicalHost = "luxeeventco.ca";
+const canonicalOrigin = projectManifest.canonicalBaseUrl;
+const canonicalHost = new URL(canonicalOrigin).hostname;
 const keyPattern = /^[A-Za-z0-9-]{8,128}$/;
 const args = process.argv.slice(2);
 const sendIndex = args.indexOf("--send");

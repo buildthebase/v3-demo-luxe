@@ -180,7 +180,7 @@ export const privateEventFaqs = [
   {
     question: "Can coffee, dessert, and rentals be combined?",
     answer:
-      "Yes. Multiple services can be coordinated through one Luxe Event Co. inquiry and proposal journey. Timing, placement, staffing, inventory, access, and venue requirements are confirmed for the specific event.",
+      "Yes. Multiple services can be coordinated through one Experiences by Luxe inquiry and proposal journey. Timing, placement, staffing, inventory, access, and venue requirements are confirmed for the specific event.",
   },
   {
     question: "Can menus, signage, and presentation be personalized?",

@@ -26,7 +26,7 @@ export function ExperiencesHero({
           ))}
         </h1>
         <p>
-          Luxe Event Co. provides mobile coffee bars and live dessert carts for events,
+          Experiences by Luxe provides mobile coffee bars and live dessert carts for events,
           plus event rentals for weddings, showers, backyard gatherings,
           birthdays, and private celebrations across Toronto and the GTA. Book each
           experience independently or coordinate rentals, coffee, and dessert through
@@ -81,7 +81,7 @@ export function ExperiencesBookingClarity() {
       </dl>
       <ul
         className="experiences-booking-proof"
-        aria-label="Luxe Event Co. operational credentials"
+        aria-label="Experiences by Luxe operational credentials"
       >
         <li>
           <strong>$5 million{" "}</strong>

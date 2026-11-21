@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "projectId": "e798c1f3-0e31-4965-a529-83d50770286f",
-  "name": "Luxe Event Co.",
-  "canonicalBaseUrl": "https://luxeeventco.ca",
-  "publicSiteUrl": "https://luxeeventco.ca",
+  "name": "Experiences by Luxe",
+  "canonicalBaseUrl": "https://experiencesbyluxe.ca",
+  "publicSiteUrl": "https://experiencesbyluxe.ca",
   "localSiteUrl": "http://127.0.0.1:3000",
   "adapter": "luxe-json-v1",
   "adapterVersion": 1,

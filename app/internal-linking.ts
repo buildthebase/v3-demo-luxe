@@ -171,7 +171,7 @@ export const contactLinkPlan: PageLinkPlan = {
     { href: "/events", anchor: "Choose an event application", purpose: "context", required: true },
     { href: "/faq", anchor: "Review booking questions", purpose: "context", required: true },
     { href: `mailto:${siteConfig.contact.email}`, anchor: siteConfig.contact.email, purpose: "conversion", required: true },
-    { href: `tel:${siteConfig.contact.phone}`, anchor: "Call Luxe Event Co.", purpose: "conversion", required: true },
+    { href: `tel:${siteConfig.contact.phone}`, anchor: "Call Experiences by Luxe", purpose: "conversion", required: true },
     ...experiences.map((experience) => ({ href: experience.instagram, anchor: `${experience.name} on Instagram`, purpose: "proof" as const, required: false })),
   ],
   minimums: [{ label: "internal journey destinations", count: 3 }, { label: "contact methods", count: 2 }],

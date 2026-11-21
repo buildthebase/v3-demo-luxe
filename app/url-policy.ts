@@ -2,6 +2,7 @@ import { primaryRoutes, siteConfig } from "./site-config";
 
 export const canonicalOrigin = siteConfig.url;
 export const canonicalHostname = new URL(canonicalOrigin).hostname;
+export const formerCanonicalHostname = "luxeeventco.ca";
 export const canonicalPaths = new Set<string>(primaryRoutes);
 
 export const duplicateUrlPolicy = {

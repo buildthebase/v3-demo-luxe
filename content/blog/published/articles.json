@@ -2,101 +2,100 @@
   {
     "schemaVersion": 1,
     "slug": "baby-shower-custom-coffee-bar",
-    "title": "A Baby Shower with the Luxe Coffee Bar",
-    "titleLines": ["A Baby Shower with", "the Luxe Coffee Bar"],
-    "seoTitle": "A Baby Shower with Custom Coffee Bar Details | Luxe Event Co.",
+    "title": "Inside the Café Bébé Coffee Bar",
+    "seoTitle": "A Baby Shower with the Luxe Coffee Bar | Experiences by Luxe",
     "description": "We customised the cart signage and cup labels for a baby shower, matching its colours and theme. See the finished coffee bar setup below.",
+    "showDescriptionInHeader": false,
     "excerpt": "Custom cart signage and personalised cup labels helped the Luxe Coffee Bar match this baby shower’s colours and theme.",
     "category": "Coffee Catering",
     "showPlanningLinks": false,
-    "publishDate": "2026-10-29T18:00:00.000Z",
-    "modifiedDate": "2026-10-29T18:00:00.000Z",
-    "author": { "name": "Luxe Event Co.", "type": "Organization", "url": "https://luxeeventco.ca" },
+    "publishDate": "2026-11-20T17:00:00.000Z",
+    "modifiedDate": "2026-11-20T17:00:00.000Z",
+    "author": { "name": "Experiences by Luxe", "type": "Organization", "url": "https://experiencesbyluxe.ca" },
     "heroImage": {
-      "id": "baby-shower-cart-portrait-lettering-v4",
-      "src": "/images/case-studies/baby-shower-cart-portrait-lettering-v4.webp",
-      "alt": "Custom coffee bar signage at a baby shower, beneath greenery and globe lights",
-      "width": 1440,
-      "height": 2560,
+      "id": "cafe-bebe-bow-cart",
+      "src": "/images/experiences/custom-branding/cafe-bebe-bow-cart-clear.avif",
+      "alt": "Lavender striped Café Bébé coffee cart with bow signage and a matching menu beneath a citrus arch",
+      "width": 1200,
+      "height": 1305,
       "sizes": "(max-width: 550px) calc(100vw - 2rem), 512px",
-      "quality": 90,
       "status": "approved",
-      "format": "webp"
+      "format": "avif",
+      "unoptimized": true
     },
-    "heroDesktopImage": {
-      "id": "baby-shower-cart-landscape-lettering-v3",
-      "src": "/images/case-studies/baby-shower-cart-landscape-lettering-v3.webp",
-      "alt": "The Luxe Coffee Bar with custom Café Bébé signage and a matching menu display at a baby shower",
-      "width": 1920,
-      "height": 1280,
-      "sizes": "960px",
-      "status": "approved",
-      "format": "webp"
-    },
-    "heroImageSources": [
-      {
-        "media": "(min-width: 1024px)",
-        "type": "image/avif",
-        "srcSet": "/images/case-studies/baby-shower-cart-landscape-lettering-v3-960.avif 960w, /images/case-studies/baby-shower-cart-landscape-lettering-v3-1440.avif 1440w, /images/case-studies/baby-shower-cart-landscape-lettering-v3-1920.avif 1920w",
-        "sizes": "(max-width: 1100px) calc(100vw - 7rem), 960px",
-        "width": 1920,
-        "height": 1280
-      },
-      {
-        "media": "(max-width: 1023px)",
-        "type": "image/avif",
-        "srcSet": "/images/case-studies/baby-shower-cart-portrait-lettering-v4-480.avif 480w, /images/case-studies/baby-shower-cart-portrait-lettering-v4-768.avif 768w, /images/case-studies/baby-shower-cart-portrait-lettering-v4-1024.avif 1024w, /images/case-studies/baby-shower-cart-portrait-lettering-v4-1440.avif 1440w",
-        "sizes": "(max-width: 550px) calc(100vw - 2rem), 512px",
-        "width": 1440,
-        "height": 2560
-      }
-    ],
-    "heroAlt": "The Luxe Coffee Bar with custom signage and a menu display at a baby shower",
+    "showHeroImageInHeader": false,
+    "heroAlt": "Lavender striped Café Bébé coffee cart with bow signage and a matching menu beneath a citrus arch",
     "socialImage": null,
     "editorialApproval": {
       "shortForm": true,
-      "note": "The user explicitly approved this concise revision in chat on 2026-10-29. Keep the approved copy rather than padding it to the default article minimum."
+      "note": "The user supplied and approved this short-form draft in chat on 2026-11-20."
     },
     "content": [
       {
-        "type": "quick-answer",
-        "title": "The occasion, at a glance",
-        "content": [{ "text": "A baby shower with the Luxe Coffee Bar, custom cart signage and personalised cup labels to match the chosen colours and theme. The finished setup fit in beautifully with the shower décor." }]
+        "type": "callout",
+        "content": [{ "text": "A little lavender, a charming bow, and a coffee bar made just for the occasion. For this beautiful baby shower, we brought a personal touch to our Luxe Coffee Bar with custom Café Bébé signage and matching cup labels, creating a setup that felt right at home among the celebrations." }]
       },
       {
         "type": "paragraph",
-        "content": [{ "text": "For this baby shower, the request was simple: a coffee cart with custom signage and cup labels that matched the colours and theme chosen for the day." }]
+        "content": [{ "text": "Take a closer look at how it all came together.", "emphasis": "strong" }]
+      },
+      {
+        "type": "image",
+        "image": {
+          "id": "cafe-bebe-bow-cart",
+          "src": "/images/experiences/custom-branding/cafe-bebe-bow-cart-clear.avif",
+          "alt": "Lavender striped Café Bébé coffee cart with bow signage and a matching menu beneath a citrus arch",
+          "width": 1200,
+          "height": 1305,
+          "sizes": "(max-width: 800px) calc(100vw - 2rem), 768px",
+          "status": "approved",
+          "format": "avif",
+          "unoptimized": true
+        },
+        "alt": "Lavender striped Café Bébé coffee cart with bow signage and a matching menu beneath a citrus arch"
+      },
+      { "type": "heading", "id": "the-client-request", "level": 2, "text": "A little something made just for the occasion" },
+      {
+        "type": "paragraph",
+        "content": [{ "text": "Every celebration has its own personality, and we love finding ways to bring those little details to life." }]
       },
       {
         "type": "paragraph",
-        "content": [{ "text": "We customised the Luxe Coffee Bar to suit, so the finished setup fit in beautifully with the shower décor. Here’s a closer look." }]
-      },
-      { "type": "heading", "id": "the-client-request", "level": 2, "text": "A coffee cart to match the shower" },
-      {
-        "type": "paragraph",
-        "content": [{ "text": "The booking was for the Luxe Coffee Bar on its own, with personalisation for both the cart and cups." }]
+        "content": [{ "text": "For Café Bébé, the Luxe Coffee Bar was dressed up with a lavender-striped front panel, delicate bow artwork, and personalised lettering that complemented the shower's theme." }]
       },
       {
         "type": "paragraph",
-        "content": [{ "text": "The cart featured a striped front panel, a bow illustration and Café Bébé lettering. Personalised cup labels completed the setup, so guests’ drinks matched the theme too." }]
+        "content": [{ "text": "We carried those same details through to the coffee cups with custom labels, adding a sweet finishing touch to every drink served." }]
       },
-      { "type": "heading", "id": "the-coffee-bar-direction", "level": 2, "text": "How it came together" },
+      { "type": "heading", "id": "the-coffee-bar-direction", "level": 2, "text": "The finishing touches" },
       {
         "type": "paragraph",
-        "content": [{ "text": "With greenery and globe lights above the cart, the custom front panel was easy to see. The coffee menu stood beside it, keeping the counter clear for preparing and serving drinks." }]
-      },
-      {
-        "type": "paragraph",
-        "content": [{ "text": "You can see the finished cart and personalised cups in the short film on our homepage." }]
-      },
-      { "type": "heading", "id": "the-result", "level": 2, "text": "Thinking about your own baby shower?" },
-      {
-        "type": "paragraph",
-        "content": [{ "text": "If you already have colours or a theme in mind, share them with us when you enquire. Let us know whether you’re interested in custom cart signage, cup labels or both. Not sure what you’d like yet? That’s fine too. We can help you explore the options and find a look that suits your event." }]
+        "content": [{ "text": "Surrounded by greenery, soft lighting, and the lovely details of the baby shower, the Café Bébé Coffee Bar became part of the celebration itself." }]
       },
       {
         "type": "paragraph",
-        "content": [{ "text": "Explore " }, { "text": "the Luxe Coffee Bar", "href": "/experiences/coffee-bar" }, { "text": " or " }, { "text": "tell us about your baby shower", "href": "/contact", "action": "quote" }, { "text": "." }]
+        "content": [{ "text": "From the custom signage to the personalised cups, each detail helped bring the look together while giving guests something special to enjoy." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "text": "You can catch a glimpse of the finished setup and personalised cups in the " },
+          { "text": "short film on our homepage", "href": "/#review-coffee-dessert" },
+          { "text": "." }
+        ]
+      },
+      { "type": "heading", "id": "the-result", "level": 2, "text": "Let's make it yours" },
+      {
+        "type": "paragraph",
+        "content": [{ "text": "Planning a baby shower of your own? Whether you're dreaming up a particular colour palette, have a theme you love, or are still gathering inspiration, we'd love to hear what you have in mind." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "text": "From custom cart signage to personalised cups, there are plenty of little ways to make the Luxe Coffee Bar feel uniquely yours." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "text": "Explore " }, { "text": "the Luxe Coffee Bar", "href": "/experiences/coffee-bar" }, { "text": " or " }, { "text": "get in touch", "href": "/contact" }, { "text": " to start planning." }]
       }
     ],
     "relatedArticleSlugs": [],

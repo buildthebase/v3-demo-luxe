@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { ContextualInquiryPanel } from "../components/signature-elements";
 import { GalleryCollection } from "../components/gallery-collection";
 import { JsonLd } from "../components/json-ld";
 import { SiteShell } from "../components/site-shell";
@@ -56,16 +56,14 @@ function GalleryHero() {
   return (
     <header className="gallery-hero">
       <div className="gallery-hero-copy">
-        <h1>Luxe event gallery: coffee, dessert, and rental experiences.</h1>
+        <p className="foundation-eyebrow">THE LUXE GALLERY</p>
+        <h1>A Little Inspiration for Your Next Celebration</h1>
         <p>
-          See how Luxe mobile coffee bars, live dessert carts, event rentals,
-          and coordinated service support weddings, corporate events, brand
-          activations, showers, and private celebrations across Toronto and the GTA.
+          From beautifully styled coffee bars to sweet little details, explore some of our favourite
+          moments and creations from celebrations across Toronto and the GTA.
         </p>
         <div className="gallery-hero-actions">
-          <Link href="/contact" data-event-name="inquiry_start">
-            Plan Your Event
-          </Link>
+          <a href="#gallery-collections">Explore the Gallery</a>
         </div>
       </div>
     </header>
@@ -74,19 +72,17 @@ function GalleryHero() {
 
 function GalleryInquiry() {
   return (
-    <section className="gallery-inquiry" aria-labelledby="gallery-inquiry-title">
-      <div>
-        <h2 id="gallery-inquiry-title">Plan Your Toronto Event Experience</h2>
-        <p>
-          Share the occasion, setting, guest count, and the Luxe experiences you
-          are considering. Luxe serves Toronto and the Greater Toronto Area, and
-          will begin with the event rather than a fixed package.
-        </p>
-      </div>
-      <Link href="/contact" data-event-name="inquiry_start">
-        Plan Your Event
-      </Link>
-    </section>
+    <ContextualInquiryPanel
+      contextKey="gallery"
+      showEyebrow={false}
+      context={{
+        eyebrow: "",
+        heading: "Have something in mind for your event?",
+        description: "Tell us what you’re planning, where it’ll be, and how many guests you’re expecting. If something in the gallery caught your eye, let us know. We can talk through what would work for your event.",
+        cta: "Plan Your Event",
+        href: "/contact",
+      }}
+    />
   );
 }
 

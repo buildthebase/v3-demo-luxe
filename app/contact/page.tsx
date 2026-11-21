@@ -50,7 +50,7 @@ function ContactHero() {
   return (
     <header className="inquire-hero">
       <div className="inquire-hero-copy">
-        <p className="foundation-eyebrow">Contact Luxe Event Co. / Plan Your Event</p>
+        <p className="foundation-eyebrow">Contact Experiences by Luxe / Plan Your Event</p>
         <h1 aria-label="Let’s plan something memorable.">
           <span>Let’s plan</span>
           <span>something memorable.</span>
@@ -96,7 +96,7 @@ function InquiryPlanning() {
       <header>
         <p className="foundation-label">Preparing your event inquiry</p>
         <h2 id="inquire-planning-title">
-          What to include when contacting Luxe Event Co.
+          What to include when contacting Experiences by Luxe
         </h2>
         <p>
           Early estimates are welcome. Send what you know now, and our team will
@@ -154,7 +154,7 @@ function ContactHandoff() {
     >
       <div className="inquire-handoff-copy">
         <h2 id="inquire-handoff-title">
-          Contact Luxe Event Co. about your event.
+          Contact Experiences by Luxe about your event.
         </h2>
         <p>
           {hasThirdPartyInquiry
@@ -164,7 +164,7 @@ function ContactHandoff() {
         <InquiryAction className="inquire-handoff-primary" />
       </div>
       <div className="inquire-contact">
-        <h3>Call or email Luxe Event Co.</h3>
+        <h3>Call or email Experiences by Luxe</h3>
         <a
           href={`tel:${siteConfig.contact.phone}`}
           data-event-name="phone_click"

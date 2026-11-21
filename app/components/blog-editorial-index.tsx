@@ -1,6 +1,8 @@
 import Link from "next/link";
 import type { BlogArticle } from "../blog/content";
 import { BlogJournalInquiry } from "./blog-journal-inquiry";
+import { ResponsiveImage } from "./responsive-image";
+import { isPublishableImage } from "../image-system";
 
 const articleDateFormatter = new Intl.DateTimeFormat("en-CA", {
   day: "numeric",
@@ -55,7 +57,11 @@ function FeaturedStory({ article }: { article: BlogArticle }) {
       </div>
       <article>
         <Link href={`/blog/${article.slug}`}>
-          <StoryImage />
+          {article.heroImage && isPublishableImage(article.heroImage) ? (
+            <figure className="blog-featured-photo">
+              <ResponsiveImage asset={{ ...article.heroImage, alt: article.heroAlt || article.heroImage.alt }} />
+            </figure>
+          ) : <StoryImage />}
           <div>
             <StoryMeta article={article} />
             <h2 id="blog-featured-title">{article.title}</h2>

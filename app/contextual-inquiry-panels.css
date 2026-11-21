@@ -41,7 +41,7 @@
   min-width: 0;
 }
 
-.foundation-shell main > .signature-inquiry .signature-inquiry-copy h2 {
+.foundation-shell main > .signature-inquiry .signature-inquiry-copy h2:not(#luxe-sitewide-h2-scale):not(#home-hero-seo-title) {
   width: auto;
   max-width: none !important;
   margin: var(--space-4) 0 0;
@@ -92,7 +92,7 @@
     grid-row: 1;
   }
 
-  .foundation-shell main > .signature-inquiry .signature-inquiry-copy h2 {
+  .foundation-shell main > .signature-inquiry .signature-inquiry-copy h2:not(#luxe-sitewide-h2-scale):not(#home-hero-seo-title) {
     margin-top: var(--space-2);
     font-size: clamp(1.85rem, 2.3vw, 2.5rem) !important;
     text-wrap: balance;
@@ -117,34 +117,18 @@
   }
 }
 
-@media (max-width: 960px) {
-  .foundation-shell main > .signature-inquiry {
-    grid-template-columns: 100px minmax(0, 1fr) !important;
-  }
-
-  .foundation-shell main > .signature-inquiry .signature-inquiry-copy {
-    grid-column: 2;
-  }
-
-  .foundation-shell main > .signature-inquiry > a {
-    grid-column: 2;
-    justify-self: end;
-  }
-}
-
-@media (max-width: 700px) {
+/* Stack before the copy or action becomes cramped. */
+@media (max-width: 1100px) {
   .foundation-shell main > .signature-inquiry {
     grid-template-columns: 64px minmax(0, 1fr) !important;
-    column-gap: var(--space-5) !important;
-    row-gap: var(--space-5) !important;
-    width: min(
-      calc(100% - (2 * var(--space-4))),
-      var(--layout-max)
-    ) !important;
-    padding: var(--space-6) !important;
+    grid-template-rows: auto auto !important;
+    column-gap: 24px !important;
+    row-gap: 24px !important;
+    padding: 32px !important;
   }
 
   .foundation-shell main > .signature-inquiry .signature-inquiry-mark {
+    grid-column: 1;
     grid-row: 1;
     width: 64px;
     align-self: start;
@@ -155,38 +139,134 @@
     grid-row: 1;
   }
 
-  .foundation-shell main > .signature-inquiry .signature-inquiry-copy h2 {
-    text-wrap: pretty;
+  .foundation-shell main > .signature-inquiry .signature-inquiry-copy h2:not(#luxe-sitewide-h2-scale):not(#home-hero-seo-title) {
+    margin-top: 0;
+    font-size: clamp(1.8rem, 3.4vw, 2.5rem) !important;
+    line-height: 1.1 !important;
+    text-wrap: balance;
     white-space: normal;
   }
 
   .foundation-shell main > .signature-inquiry > a {
-    grid-column: 1 / -1;
+    grid-column: 2;
     grid-row: 2;
-    justify-self: end;
+    align-self: start;
+    justify-self: start;
   }
 }
 
-@media (max-width: 460px) {
+.foundation-shell main > .signature-inquiry > a {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@media (max-width: 700px) {
   .foundation-shell main > .signature-inquiry {
     grid-template-columns: minmax(0, 1fr) !important;
+    width: calc(100% - (2 * var(--space-4))) !important;
+    padding: clamp(24px, 5vw, 32px) !important;
+    row-gap: 24px !important;
+    margin-top: 48px !important;
+    margin-bottom: 48px !important;
   }
 
   .foundation-shell main > .signature-inquiry .signature-inquiry-mark {
-    grid-column: 1;
-    grid-row: 1;
-    width: 52px;
+    display: none;
   }
 
   .foundation-shell main > .signature-inquiry .signature-inquiry-copy {
     grid-column: 1;
-    grid-row: 2;
+    grid-row: 1;
+  }
+
+  .foundation-shell main > .signature-inquiry .signature-inquiry-copy h2:not(#luxe-sitewide-h2-scale):not(#home-hero-seo-title) {
+    font-size: clamp(1.75rem, 6vw, 2.25rem) !important;
+    text-wrap: pretty;
+  }
+
+  .foundation-shell main > .signature-inquiry .signature-inquiry-copy > p:last-child {
+    margin-top: 16px;
+    font-size: 1rem;
+    line-height: 1.6;
   }
 
   .foundation-shell main > .signature-inquiry > a {
     grid-column: 1;
-    grid-row: 3;
+    grid-row: 2;
     width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    justify-content: space-between;
+    padding: 12px 16px;
+    font-size: .75rem;
+    gap: 16px;
+  }
+}
+
+/* The FAQ hub keeps its service links while sharing the closing-panel rhythm. */
+.foundation-shell main > .faq-hub-inquiry {
+  align-items: center;
+  gap: clamp(24px, 3vw, 40px);
+  padding: clamp(28px, 3vw, 40px);
+}
+
+.foundation-shell main > .faq-hub-inquiry h2:not(#luxe-sitewide-h2-scale):not(#home-hero-seo-title) {
+  max-width: 26ch;
+  font-size: clamp(1.85rem, 2.3vw, 2.5rem) !important;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+.foundation-shell main > .faq-hub-inquiry > a {
+  min-height: 48px;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .foundation-shell main > .faq-hub-inquiry {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    margin-block: 48px;
+    padding: clamp(24px, 5vw, 32px);
+  }
+
+  .foundation-shell main > .faq-hub-inquiry h2:not(#luxe-sitewide-h2-scale):not(#home-hero-seo-title) {
+    font-size: clamp(1.75rem, 6vw, 2.25rem) !important;
+    text-wrap: pretty;
+  }
+
+  .foundation-shell main > .faq-hub-inquiry > a {
+    width: 100%;
+    padding: 12px 16px;
+    gap: 16px;
+    font-size: .75rem;
+  }
+}
+
+/* Long contact details must not dictate the width of the closing grid. */
+.foundation-shell .inquire-handoff > div,
+.foundation-shell .inquire-contact a {
+  min-width: 0;
+}
+
+.foundation-shell .inquire-contact a {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 700px) {
+  .foundation-shell .inquire-handoff-copy,
+  .foundation-shell .inquire-contact {
+    padding: 24px 20px;
+  }
+
+  .foundation-shell .inquire-handoff-primary {
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    gap: 12px;
+    padding: 12px;
+    font-size: .6875rem;
+    letter-spacing: .06em;
     justify-content: space-between;
   }
 }

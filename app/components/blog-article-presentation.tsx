@@ -65,6 +65,15 @@ export function BlogArticlePresentation({
   const formattedDate = dateFormatter.format(new Date(article.publishDate));
   const formattedModifiedDate = dateFormatter.format(new Date(article.modifiedDate));
   const showModifiedDate = article.modifiedDate !== article.publishDate;
+  const titleAboveIntro = article.showDescriptionInHeader === false && article.showHeroImageInHeader === false;
+  const publishedDetails = showPublishedDetails ? (
+    <div>
+      <span>By {article.author.name}</span>
+      <span>{readingTime} min read</span>
+      <span>Published <time dateTime={article.publishDate}>{formattedDate}</time></span>
+      {showModifiedDate ? <span>Updated <time dateTime={article.modifiedDate}>{formattedModifiedDate}</time></span> : null}
+    </div>
+  ) : null;
 
   return (
     <SiteShell>
@@ -77,25 +86,19 @@ export function BlogArticlePresentation({
       />
       <main className="blog-article-page">
         <article>
-          <header className="blog-article-hero">
+          <header className={titleAboveIntro ? "blog-article-hero blog-article-hero-compact" : "blog-article-hero"}>
             <div>
               <p>{article.category}</p>
+              {titleAboveIntro ? publishedDetails : null}
               <h1 aria-label={article.title} className={article.titleLines?.length ? "blog-article-title-multiline" : undefined}>
                 {article.titleLines?.length
                   ? article.titleLines.map((line) => <span className="blog-article-title-line" key={line}>{line}</span>)
                   : article.title}
               </h1>
-              <p>{article.description}</p>
-              {showPublishedDetails ? (
-                <div>
-                  <span>By {article.author.name}</span>
-                  <span>{readingTime} min read</span>
-                  <span>Published <time dateTime={article.publishDate}>{formattedDate}</time></span>
-                  {showModifiedDate ? <span>Updated <time dateTime={article.modifiedDate}>{formattedModifiedDate}</time></span> : null}
-                </div>
-              ) : null}
+              {article.showDescriptionInHeader !== false ? <p>{article.description}</p> : null}
+              {titleAboveIntro ? null : publishedDetails}
             </div>
-            {heroImage ? (
+            {heroImage && article.showHeroImageInHeader !== false ? (
               <figure
                 data-orientation={heroImage.width < heroImage.height ? "portrait" : "landscape"}
                 data-desktop-landscape={article.heroDesktopImage?.src ? "true" : undefined}

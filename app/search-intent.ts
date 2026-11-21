@@ -115,14 +115,14 @@ export const searchIntents: SearchIntent[] = [
   {
     path: "/faq",
     page: "FAQ",
-    primary: "Luxe Event Co. booking questions",
+    primary: "Experiences by Luxe booking questions",
     supporting: ["Pricing", "Booking", "Setup", "Travel", "Customization"],
     status: "strategic-draft",
   },
   {
     path: "/contact",
     page: "Contact",
-    primary: "Contact Luxe Event Co.",
+    primary: "Contact Experiences by Luxe",
     supporting: ["Toronto event inquiry", "Coffee bar inquiry", "Dessert cart inquiry", "Event rental inquiry"],
     status: "strategic-draft",
   },

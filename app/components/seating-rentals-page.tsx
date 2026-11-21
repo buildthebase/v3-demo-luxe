@@ -160,7 +160,7 @@ function SeatingOverview() {
             Luxe Event Rentals can be booked independently or coordinated with{" "}
             <Link href="/experiences/coffee-bar">Luxe Coffee Bar</Link> and{" "}
             <Link href="/experiences/sweet-cart">Luxe Sweet Cart</Link> through one{" "}
-            <Link href="/contact">Luxe Event Co. inquiry</Link>.
+            <Link href="/contact">Experiences by Luxe inquiry</Link>.
           </p>
         </>
       }

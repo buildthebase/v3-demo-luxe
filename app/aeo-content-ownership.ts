@@ -20,7 +20,7 @@ export const contentOwnershipRules = [
 export const priorityPageIntentReview: readonly ContentOwnershipRecord[] = [
   {
     path: "/",
-    primaryIntent: "Understand Luxe Event Co. and choose the next journey.",
+    primaryIntent: "Understand Experiences by Luxe and choose the next journey.",
     owns: ["Parent-brand identity", "High-level service and event routing"],
     supports: ["Toronto and GTA relevance", "Coordinated-service discovery"],
     mustNotOwn: ["Complete service mechanics", "Complete event-planning answers", "Shared policies"],

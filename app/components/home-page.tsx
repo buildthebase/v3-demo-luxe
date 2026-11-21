@@ -93,7 +93,7 @@ export function HomePage() {
         <HomeHero />
         <dl
           className="home-hero-proof-points"
-          aria-label="Luxe Event Co. experience and liability coverage"
+          aria-label="Experiences by Luxe experience and liability coverage"
           data-evidence-status="client-supplied"
         >
           <div>

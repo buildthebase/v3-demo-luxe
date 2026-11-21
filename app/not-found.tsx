@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { SiteShell } from "./components/site-shell";
 
 export const metadata: Metadata = {
-  title: "Page Not Found | Luxe Event Co.",
+  title: "Page Not Found | Experiences by Luxe",
   robots: {
     index: false,
     follow: false,
@@ -20,7 +20,7 @@ export default function NotFound() {
           <span>part of the gathering.</span>
         </h1>
         <p>
-          Return to Luxe Event Co. or explore the coffee, dessert, and seating
+          Return to Experiences by Luxe or explore the coffee, dessert, and seating
           experiences available for your event.
         </p>
         <div>

@@ -13,7 +13,7 @@ export default function BlogPage() {
     path: "/blog",
     pageName: pageMetadata["/blog"].title,
     pageDescription: pageMetadata["/blog"].description,
-    collectionName: "Luxe Event Co. planning journal",
+    collectionName: "Experiences by Luxe planning journal",
     collectionType: "Blog",
     items: articles.map((article) => ({
       name: article.title,

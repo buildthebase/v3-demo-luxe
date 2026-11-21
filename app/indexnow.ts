@@ -18,7 +18,7 @@ export const indexNowPolicy = {
   eligibleChanges: ["added", "updated", "deleted", "redirected"] as const,
   submissionRules: [
     "Submit only URLs that changed after IndexNow activation.",
-    "Submit only HTTPS URLs owned by luxeeventco.ca.",
+    `Submit only HTTPS URLs owned by ${siteConfig.domain.primary}.`,
     "Do not submit the full sitemap after every release.",
     "Deduplicate URLs and send no more than 10,000 in one request.",
     "A successful receipt does not guarantee crawling or indexing.",

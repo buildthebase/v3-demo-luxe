@@ -26,7 +26,7 @@ const experiencesSchema = createCollectionPageSchema({
   path: "/experiences",
   pageName: pageMetadata["/experiences"].title,
   pageDescription: pageMetadata["/experiences"].description,
-  collectionName: "Luxe Event Co. experiences",
+  collectionName: "Experiences by Luxe experiences",
   items: experiences.map((experience) => ({
     name: experience.name,
     path: experience.landingPath,

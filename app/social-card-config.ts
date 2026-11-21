@@ -9,7 +9,7 @@ export const routeSocialCards = {
   "/": {
     id: "social-card-luxe-event-co-home",
     src: "/images/social/luxe-event-co-home.png",
-    alt: "Luxe Event Co. coffee, dessert, and seating experiences",
+    alt: "Experiences by Luxe coffee, dessert, and seating experiences",
     width: 1200,
     height: 630,
     sizes: "1200px",

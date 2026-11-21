@@ -29,7 +29,7 @@ const sharedFaqCategories: readonly FaqCategory[] = [
         id: "available-packages",
         question: "What packages are available?",
         answer:
-          "Luxe does not use one universal event package. Luxe Coffee Bar offers the Café Cart Experience and Signature Coffee Bar Experience. Luxe Sweet Cart offers Classic and Signature physical cart styles, subject to availability. Dessert options include Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station and the Luxe Churro Bar. Your selected option or combination of options is confirmed in your proposal. Event Rentals is quoted from confirmed inventory and event requirements. Any service may be available independently or combined through Luxe Event Co.",
+          "Luxe does not use one universal event package. Luxe Coffee Bar offers the Café Cart Experience and Signature Coffee Bar Experience. Luxe Sweet Cart offers Classic and Signature physical cart styles, subject to availability. Dessert options include Mini Dutch Pancakes, Belgian Waffles on a Stick, a Mini Donut Station and the Luxe Churro Bar. Your selected option or combination of options is confirmed in your proposal. Event Rentals is quoted from confirmed inventory and event requirements. Any service may be available independently or combined through Experiences by Luxe.",
         links: [{ href: "/experiences", label: "Compare Luxe experiences" }],
       },
       {

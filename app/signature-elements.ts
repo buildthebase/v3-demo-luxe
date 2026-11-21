@@ -323,7 +323,7 @@ export const signatureElementPlacements = {
       "event-planning-pathway",
       "contextual-inquiry-panel",
     ],
-    note: "The complete Experiences Hub distinguishes each experience while preserving its relationship to Luxe Event Co.",
+    note: "The complete Experiences Hub distinguishes each experience while preserving its relationship to Experiences by Luxe.",
   },
   events: {
     path: "/events",

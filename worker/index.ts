@@ -4,6 +4,7 @@ import handler from "vinext/server/app-router-entry";
 import {
   canonicalHostname,
   canonicalOrigin,
+  formerCanonicalHostname,
   normalizeCanonicalPath,
 } from "../app/url-policy";
 
@@ -84,13 +85,13 @@ function internalServerErrorResponse(): Response {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex, nofollow">
-    <title>Page Temporarily Unavailable | Luxe Event Co.</title>
+    <title>Page Temporarily Unavailable | Experiences by Luxe</title>
   </head>
   <body>
     <main>
       <p>500 / Page temporarily unavailable</p>
       <h1>This page could not be loaded just now.</h1>
-      <p>Please try again shortly, return to Luxe Event Co., or contact us about your event.</p>
+      <p>Please try again shortly, return to Experiences by Luxe, or contact us about your event.</p>
       <p><a href="/">Return Home</a> <a href="/contact">Contact Luxe</a></p>
     </main>
   </body>
@@ -147,17 +148,18 @@ const worker = {
       }
 
       if (
-        bareHostname === canonicalHostname &&
+        bareHostname === formerCanonicalHostname ||
         (
-          hostname !== canonicalHostname ||
-          url.protocol !== "https:" ||
-          canonicalPathname !== url.pathname
+          bareHostname === canonicalHostname &&
+          (
+            hostname !== canonicalHostname ||
+            url.protocol !== "https:" ||
+            canonicalPathname !== url.pathname
+          )
         )
       ) {
-        const destination = new URL(
-          canonicalPathname,
-          canonicalOrigin,
-        );
+        const destination = new URL(canonicalOrigin);
+        destination.pathname = canonicalPathname;
         return url.protocol === "https:"
           ? protectCanonicalHttpsResponse(Response.redirect(destination, 301))
           : Response.redirect(destination, 301);

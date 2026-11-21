@@ -8,7 +8,7 @@ export function HomeCaseStudy() {
       <header className="home-case-study-heading">
         <p className="foundation-label">A Luxe occasion / Coffee Bar</p>
         <h2 id="home-case-study-title">Your Event. Your Way.</h2>
-        <p className="home-case-study-supporting-line">Your guests enjoy the experience. You enjoy the moment.</p>
+        <p className="home-case-study-supporting-line"><span>Your guests enjoy the experience.</span>{" "}<span>You enjoy the moment.</span></p>
         <p className="home-case-study-description">From custom cart signage and branded cups to personalized menus and coordinated event details, we tailor each Luxe experience to complement your celebration or brand.</p>
       </header>
       <div className="home-case-study-layout" id="review-coffee-dessert">

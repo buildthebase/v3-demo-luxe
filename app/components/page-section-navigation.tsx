@@ -34,10 +34,16 @@ export function PageSectionNavigation({
       const revealTarget = revealAfterId
         ? document.getElementById(revealAfterId)
         : null;
+      const closingSection = document.querySelector(
+        "main > .signature-inquiry, main .blog-journal-inquiry, main > .faq-hub-inquiry, footer",
+      );
+      const atPageEnd = closingSection
+        ? closingSection.getBoundingClientRect().top <= window.innerHeight * .85
+        : false;
       setIsPastTop(
-        revealTarget
+        !atPageEnd && (revealTarget
           ? revealTarget.getBoundingClientRect().bottom <= 96
-          : window.scrollY > 80,
+          : window.scrollY > 80),
       );
       const readingLine = window.innerHeight * 0.34;
       const current =

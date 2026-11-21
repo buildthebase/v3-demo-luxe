@@ -63,12 +63,14 @@ export type BlogArticle = {
   titleLines?: readonly string[];
   seoTitle: string;
   description: string;
+  showDescriptionInHeader?: boolean;
   excerpt: string;
   category: string;
   publishDate: string;
   modifiedDate: string;
   author: BlogArticleAuthor;
   heroImage: ResponsiveImageAsset | null;
+  showHeroImageInHeader?: boolean;
   heroDesktopImage?: ResponsiveImageAsset | null;
   heroImageSources?: readonly {
     media: string;

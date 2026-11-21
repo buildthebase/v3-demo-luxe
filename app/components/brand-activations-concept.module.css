@@ -662,3 +662,7 @@
     margin-inline: auto;
   }
 }
+
+.heroCopy .lead {
+  text-wrap: pretty;
+}

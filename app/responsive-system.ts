@@ -20,8 +20,8 @@ export const permanentRoutes = [
 export const responsiveSystem = {
   status: "established",
   governingSources: [
-    "Luxe Event Co. Website Strategy, Design, Development, SEO and AEO Implementation Master Specification",
-    "Luxe Event Co. Complete Intake, July 2026",
+    "Experiences by Luxe Website Strategy, Design, Development, SEO and AEO Implementation Master Specification",
+    "Experiences by Luxe Complete Intake, July 2026",
   ],
   viewportClasses: [
     { name: "small-mobile", testViewport: "320x700", composition: "single-column, priority-led" },

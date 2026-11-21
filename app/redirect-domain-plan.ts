@@ -1,3 +1,5 @@
+import { canonicalHostname, canonicalOrigin, formerCanonicalHostname } from "./url-policy";
+
 export type RedirectPlan = {
   source: string;
   destination: string;
@@ -9,7 +11,7 @@ export type RedirectPlan = {
   notes: string;
 };
 
-export const canonicalHost = siteConfig.url;
+export const canonicalHost = canonicalOrigin;
 
 export const redirectDomainPlan: RedirectPlan[] = [
   {
@@ -37,20 +39,20 @@ export const redirectDomainPlan: RedirectPlan[] = [
     notes: "Service-specific domain should never host a duplicate website.",
   },
   {
-    source: "http://luxeeventco.ca and http://www.luxeeventco.ca",
+    source: `${formerCanonicalHostname} and www.${formerCanonicalHostname} over HTTP or HTTPS`,
     destination: canonicalHost,
     status: "implemented-locally-needs-domain-access",
     redirectType: "301",
     indexing: "do-not-index-source",
-    notes: "Preferred host is HTTPS apex; hosting and DNS configuration must enforce one canonical host without chains.",
+    notes: "Preserve the requested path on the new domain. Route both former hostnames to the redirect worker and provide HTTPS certificates.",
   },
   {
-    source: "https://www.luxeeventco.ca",
+    source: `http://${canonicalHostname} and http(s)://www.${canonicalHostname}`,
     destination: canonicalHost,
     status: "implemented-locally-needs-domain-access",
     redirectType: "301",
     indexing: "do-not-index-source",
-    notes: "Preferred host is HTTPS apex; certificate and DNS access remain deployment dependencies.",
+    notes: "Redirect to the HTTPS apex on the same path. The www host needs DNS and a certificate for HTTPS requests.",
   },
 ];
 
@@ -63,4 +65,3 @@ export const redirectRules = [
   "Keep permanent redirects active long-term.",
   "Confirm SSL works on every redirect domain before launch.",
 ] as const;
-import { siteConfig } from "./site-config";

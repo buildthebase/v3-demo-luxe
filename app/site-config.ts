@@ -1,11 +1,12 @@
 import { imageAssets } from "./image-system";
 import { entityNames } from "./entity-names";
+import { canonicalBaseUrl } from "../cms-project.json";
 
 const organizationName = entityNames.parentBrand.currentName;
-const alternateSiteNames = entityNames.parentBrand.alternateNames;
-const canonicalBaseUrl = "https://luxeeventco.ca";
+const canonicalHostname = new URL(canonicalBaseUrl).hostname;
+const alternateSiteNames = [...entityNames.parentBrand.alternateNames, canonicalHostname];
 const defaultDescription =
-  "Luxe Event Co. brings together mobile coffee, live dessert, and event rentals for weddings and private celebrations across Toronto and the GTA.";
+  `${organizationName} brings together mobile coffee, live dessert, and event rentals for weddings and private celebrations across Toronto and the GTA.`;
 
 export const socialProfiles = {
   coffeeBar: "https://www.instagram.com/luxecoffeebar.to/",
@@ -15,13 +16,12 @@ export const socialProfiles = {
 
 export const siteConfig = {
   organization: {
-    legalName: organizationName,
     publicName: organizationName,
   },
   name: organizationName,
   alternateNames: alternateSiteNames,
   domain: {
-    primary: "luxeeventco.ca",
+    primary: canonicalHostname,
     canonicalBaseUrl,
   },
   url: canonicalBaseUrl,
@@ -40,7 +40,7 @@ export const siteConfig = {
     defaultSocialImage: imageAssets.brand.defaultSocialImage,
   },
   contact: {
-    email: "bookings@luxeeventco.ca",
+    email: "bookings@experiencesbyluxe.ca",
     phone: "+16478691352",
     phoneDisplay: "+1 647-869-1352",
   },
@@ -142,7 +142,7 @@ export const experiences: Division[] = [
     label: "Coffee Bar",
     landingPath: "/experiences/coffee-bar",
     summary: "Barista-served specialty coffee, premium matcha, and warm hospitality for events.",
-    serviceDescription: "A refined mobile coffee experience within the Luxe Event Co. event platform.",
+    serviceDescription: "A refined mobile coffee experience within the Experiences by Luxe event platform.",
     accent: "coffee",
     inclusions: [],
     customization: [],
@@ -174,7 +174,7 @@ export const experiences: Division[] = [
     label: "Sweet Cart",
     landingPath: "/experiences/sweet-cart",
     summary: "Mini pancakes, waffles, mini donuts, and churros prepared and finished on-site.",
-    serviceDescription: "A live, made-to-order dessert experience within the Luxe Event Co. event platform.",
+    serviceDescription: "A live, made-to-order dessert experience within the Experiences by Luxe event platform.",
     accent: "sweet",
     inclusions: [],
     customization: [],
@@ -207,7 +207,7 @@ export const experiences: Division[] = [
     label: "Event Rentals",
     landingPath: "/experiences/seating-rentals",
     summary: "Premium core rentals for celebrations made to gather.",
-    serviceDescription: "A coordinated seating and event rental offering within Luxe Event Co.",
+    serviceDescription: "A coordinated seating and event rental offering within Experiences by Luxe.",
     accent: "seating",
     inclusions: [],
     customization: [],

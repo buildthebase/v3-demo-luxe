@@ -105,7 +105,7 @@ function CorporateOverview() {
       </div>
       <div>
         <p>
-          Luxe Event Co. provides premium mobile Coffee Bar and Sweet Cart experiences
+          Experiences by Luxe provides premium mobile Coffee Bar and Sweet Cart experiences
           for corporate functions where efficient service, brand presentation and guest
           experience matter.
         </p>

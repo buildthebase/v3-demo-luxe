@@ -264,7 +264,7 @@ export function HomeServiceArea() {
           </span>
         </h2>
         <p>
-          Luxe Event Co. provides mobile coffee catering, live dessert experiences,
+          Experiences by Luxe provides mobile coffee catering, live dessert experiences,
           and event rentals across Toronto and the Greater Toronto Area, with select
           events available throughout Southern Ontario.
         </p>

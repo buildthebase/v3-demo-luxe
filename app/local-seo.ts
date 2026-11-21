@@ -45,7 +45,7 @@ export const googleBusinessProfilePlan = {
   status: "verification-required",
   profileUrl: null,
   recommendedModel:
-    "Begin with one Luxe Event Co. service-area profile only if ownership and eligibility are confirmed. Do not create separate division profiles unless each independently meets Google's real-world business and department requirements.",
+    "Begin with one Experiences by Luxe service-area profile only if ownership and eligibility are confirmed. Do not create separate division profiles unless each independently meets Google's real-world business and department requirements.",
   addressTreatment:
     "Do not publish a residential address. If Luxe travels to customers and does not receive customers at its base, configure the profile as a service-area business and hide the address.",
   serviceAreas: approvedBusinessIdentity.primaryServiceAreas,

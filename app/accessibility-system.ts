@@ -4,8 +4,8 @@ export const accessibilitySystem = {
   status: "established",
   target: "WCAG 2.2 Level AA",
   governingSources: [
-    "Luxe Event Co. Website Strategy, Design, Development, SEO and AEO Implementation Master Specification",
-    "Luxe Event Co. Complete Intake, July 2026",
+    "Experiences by Luxe Website Strategy, Design, Development, SEO and AEO Implementation Master Specification",
+    "Experiences by Luxe Complete Intake, July 2026",
   ],
   scope: permanentRoutes,
   semantics: {

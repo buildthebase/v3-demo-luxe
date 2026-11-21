@@ -10,7 +10,7 @@ function article(overrides = {}) {
     ...createEmptyArticle(),
     slug: "example-article",
     title: "Example article",
-    seoTitle: "Example article | Luxe Event Co.",
+    seoTitle: "Example article | Experiences by Luxe",
     description: "A useful and unique description for this example article.",
     excerpt: "A useful excerpt.",
     heroImage,

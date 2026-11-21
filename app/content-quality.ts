@@ -155,7 +155,7 @@ export const helpfulContentStandards = {
   completeness:
     "A page must answer its core decision questions and qualify unresolved operations instead of hiding them.",
   ownership:
-    "The shared shell identifies Luxe Event Co. and publishes its approved phone and email; article-style bylines are not invented for service pages.",
+    "The shared shell identifies Experiences by Luxe and publishes its approved phone and email; article-style bylines are not invented for service pages.",
   firstHandExperience:
     "Client-confirmed operating knowledge may be explained, but photographs, testimonials, venues, outcomes, and case details remain gated until approved.",
   depth:

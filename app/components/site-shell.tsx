@@ -17,9 +17,9 @@ export function SiteShell({
         Skip to main content
       </a>
       <header className="foundation-header">
-        <Link href="/" className="foundation-wordmark" aria-label="Luxe Event Co. home">
+        <Link href="/" className="foundation-wordmark" aria-label={`${siteConfig.name} home`}>
+          <small>Experiences by</small>
           <span>Luxe</span>
-          <small>Event Co.</small>
         </Link>
         <div className="foundation-header-actions">
           <PrimaryNavigation variant="desktop" />
@@ -39,7 +39,7 @@ export function SiteShell({
         </div>
         <div className="foundation-footer-group">
           <span className="foundation-footer-label">Contact</span>
-          <nav className="foundation-footer-contact" aria-label="Contact Luxe Event Co.">
+          <nav className="foundation-footer-contact" aria-label={`Contact ${siteConfig.name}`}>
             <a href={`tel:${siteConfig.contact.phone}`}>{siteConfig.contact.phoneDisplay}</a>
             <a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a>
           </nav>

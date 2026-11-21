@@ -81,7 +81,7 @@ function SweetHero() {
         <p>
           A live, made-to-order dessert experience where interactive preparation,
           warm cart styling, and final presentation become a memorable part of your
-          event atmosphere.
+          event&nbsp;atmosphere.
         </p>
         <div className="sweet-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">

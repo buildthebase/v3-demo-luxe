@@ -374,7 +374,7 @@ async function scanKnowledge(settings) {
       try {
         const response = await fetch(`${publicSiteUrl}${route}`, { signal: AbortSignal.timeout(12_000) });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        records.push(...extractPublicPageRecords(await response.text(), route));
+        records.push(...extractPublicPageRecords(await response.text(), route, currentProject().manifest.canonicalBaseUrl));
       } catch (error) {
         failures.push({ route, error: String(error?.message || error) });
       }
@@ -1151,7 +1151,7 @@ async function runCalendarProposal(payload) {
     approvedKnowledgeTopics: [...new Set(accessibleKnowledgeRecords(state.knowledge, state.snapshot).map((record) => record.topic))].slice(0, 80),
   };
   try {
-    const result = await thread.run(`Create a practical editorial content-calendar proposal for Luxe Event Co. Use the requested cadence and avoid duplicating existing articles or calendar items. Dates must be YYYY-MM-DD, avoid blackout dates, and prefer configured weekdays. Every idea must have a specific rationale, search intent, content pillar, and only valid proposed internal links. This is a proposal only, not publication.\n\nCONTEXT:\n${JSON.stringify(context)}`, { outputSchema: calendarProposalSchema });
+    const result = await thread.run(`Create a practical editorial content-calendar proposal for ${currentProject().manifest.name}. Use the requested cadence and avoid duplicating existing articles or calendar items. Dates must be YYYY-MM-DD, avoid blackout dates, and prefer configured weekdays. Every idea must have a specific rationale, search intent, content pillar, and only valid proposed internal links. This is a proposal only, not publication.\n\nCONTEXT:\n${JSON.stringify(context)}`, { outputSchema: calendarProposalSchema });
     const parsed = JSON.parse(result.finalResponse);
     const proposals = state.calendarProposals;
     const proposal = { id: crypto.randomUUID(), prompt: promptText, createdAt: new Date().toISOString(), threadId: thread.id, usage: mapUsage(result.usage), status: "pending", ...parsed };
@@ -1218,7 +1218,7 @@ async function runCodexStage(stage, payload) {
     jobs.push(job);
     thread = codex.startThread(codexOptions(state.settings));
     schema = briefSchema;
-    prompt = `You are the grounded editorial planner for Luxe Event Co. Use only the supplied approved sources and voice rules. Do not invent facts. Return the requested structured brief.
+    prompt = `You are the grounded editorial planner for ${currentProject().manifest.name}. Use only the supplied approved sources and voice rules. Do not invent facts. Return the requested structured brief.
 
 CLASSIFICATION RULES:
 - A conflict is only a direct contradiction between the request and an approved source. Do not label a supported limit, event-specific condition, or careful qualification as a conflict.
@@ -1323,7 +1323,7 @@ function generatedDraftToArticle(result, job, voice) {
   });
   return {
     schemaVersion: 1, slug: result.slug, title: result.title, seoTitle: result.seoTitle, description: result.description, excerpt: result.excerpt, category: result.category,
-    publishDate: now, modifiedDate: now, author: { name: "Luxe Event Co.", type: "Organization", url: "https://luxeeventco.ca" },
+    publishDate: now, modifiedDate: now, author: { name: currentProject().manifest.name, type: "Organization", url: currentProject().manifest.canonicalBaseUrl },
     heroImage: null, heroAlt: "", socialImage: null, content, relatedArticleSlugs: result.relatedArticleSlugs, status: "draft", claims: result.claims,
     generation: { threadId: job.threadId, stage: "draft", model: job.model, createdAt: job.createdAt, updatedAt: now, knowledgeSnapshot: job.sources.map((source) => source.id).join(","), voiceVersion: voice.version || "unknown", usage: job.usage, briefApprovedAt: job.briefApprovedAt, outlineApprovedAt: job.outlineApprovedAt },
   };
@@ -1515,7 +1515,7 @@ async function projectHandler(req, res, url) {
       res.writeHead(200, { "content-type": { json: "application/json", html: "text/html; charset=utf-8", csv: "text/csv; charset=utf-8" }[format], "content-length": info.size, "content-disposition": `attachment; filename="${currentProject().manifest.name.replace(/[^a-z0-9]+/gi, "-")}-seo-report.${format}"`, "cache-control": "no-store" });
       return createReadStream(file).pipe(res);
     }
-    if (url.pathname === "/api/articles/new" && req.method === "POST") { requireCapability("articles"); return json(res, 200, createEmptyArticle()); }
+    if (url.pathname === "/api/articles/new" && req.method === "POST") { requireCapability("articles"); return json(res, 200, createEmptyArticle(currentProject().manifest.canonicalBaseUrl)); }
     if (url.pathname === "/api/articles/save" && req.method === "POST") return json(res, 200, await saveArticle((await readJsonBody(req)).article));
     if (url.pathname === "/api/articles/lifecycle/bulk" && req.method === "POST") {
       const body = await readJsonBody(req);

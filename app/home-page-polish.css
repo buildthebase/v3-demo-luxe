@@ -62,6 +62,12 @@
   display: block;
   white-space: nowrap;
 }
+@media (max-width: 420px) {
+  .foundation-shell .home-page #home-events-title .home-events-title-line {
+    white-space: normal;
+    text-wrap: balance;
+  }
+}
 @media (max-width: 700px) {
   .foundation-shell .home-page h2#home-events-title {
     font-size: clamp(1.25rem, 5.6vw, 2.4rem) !important;
@@ -850,4 +856,15 @@
 .home-experience-cta-media .home-editorial-video-control:disabled {
   opacity: .45;
   cursor: default;
+}
+
+@media (min-width: 701px) and (max-width: 900px) {
+  .home-page .home-proof-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .home-page .home-proof-grid article {
+    min-height: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--surface-dark-rule);
+  }
 }

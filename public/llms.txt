@@ -1,21 +1,21 @@
-# Luxe Event Co.
+# Experiences by Luxe
 
-> Luxe Event Co. is a Toronto event company bringing together staffed mobile coffee, live dessert, and event rentals across Toronto and the Greater Toronto Area.
+> Experiences by Luxe is a Toronto event company bringing together staffed mobile coffee, live dessert, and event rentals across Toronto and the Greater Toronto Area.
 
-The official website is https://luxeeventco.ca. Visitors can begin with one division, combine complementary experiences, explore by event type, or start an event inquiry.
+The official website is https://experiencesbyluxe.ca. Visitors can begin with one division, combine complementary experiences, explore by event type, or start an event inquiry.
 
 ## Experiences
 
-- [Luxe Coffee Bar](https://luxeeventco.ca/experiences/coffee-bar): Mobile coffee bar, espresso, matcha, seasonal beverage, and custom-branded drink experiences.
-- [Luxe Sweet Cart](https://luxeeventco.ca/experiences/sweet-cart): Dessert options include Mini Dutch Pancakes, Belgian Waffles on a Stick, Mini Donuts and the newest signature Luxe Churro Bar. Your selected option or combination of options is confirmed in your proposal. Soft Serve Add-On is available with select dessert options as an optional enhancement and is not offered as a standalone service.
-- [Luxe Event Rentals](https://luxeeventco.ca/experiences/seating-rentals): White resin chairs, 6-ft rectangular tables, cocktail tables, tents, linens and tent walls. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'.
+- [Luxe Coffee Bar](https://experiencesbyluxe.ca/experiences/coffee-bar): Mobile coffee bar, espresso, matcha, seasonal beverage, and custom-branded drink experiences.
+- [Luxe Sweet Cart](https://experiencesbyluxe.ca/experiences/sweet-cart): Dessert options include Mini Dutch Pancakes, Belgian Waffles on a Stick, Mini Donuts and the newest signature Luxe Churro Bar. Your selected option or combination of options is confirmed in your proposal. Soft Serve Add-On is available with select dessert options as an optional enhancement and is not offered as a standalone service.
+- [Luxe Event Rentals](https://experiencesbyluxe.ca/experiences/seating-rentals): White resin chairs, 6-ft rectangular tables, cocktail tables, tents, linens and tent walls. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'.
 
 ## Events
 
-- [Weddings](https://luxeeventco.ca/events/weddings)
-- [Corporate Events](https://luxeeventco.ca/events/corporate-events)
-- [Brand Activations](https://luxeeventco.ca/events/brand-activations)
-- [Private Events](https://luxeeventco.ca/events/private-events)
+- [Weddings](https://experiencesbyluxe.ca/events/weddings)
+- [Corporate Events](https://experiencesbyluxe.ca/events/corporate-events)
+- [Brand Activations](https://experiencesbyluxe.ca/events/brand-activations)
+- [Private Events](https://experiencesbyluxe.ca/events/private-events)
 
 ## Service context
 
@@ -23,10 +23,10 @@ Luxe serves Toronto and the Greater Toronto Area, with select destination events
 
 ## Official links
 
-- [Luxe Event Co.](https://luxeeventco.ca): Official website.
-- [Explore all Luxe experiences](https://luxeeventco.ca/experiences)
-- [Explore event pathways](https://luxeeventco.ca/events)
-- [Contact Luxe Event Co.](https://luxeeventco.ca/contact)
+- [Experiences by Luxe](https://experiencesbyluxe.ca): Official website.
+- [Explore all Luxe experiences](https://experiencesbyluxe.ca/experiences)
+- [Explore event pathways](https://experiencesbyluxe.ca/events)
+- [Contact Experiences by Luxe](https://experiencesbyluxe.ca/contact)
 - [Luxe Coffee Bar on Instagram](https://www.instagram.com/luxecoffeebar.to/): Official Luxe Coffee Bar account.
 - [Luxe Sweet Cart on Instagram](https://www.instagram.com/luxesweet.cart/): Official Luxe Sweet Cart account.
 - [Luxe Event Rentals on Instagram](https://www.instagram.com/luxeseatingrentals): Official Luxe Event Rentals account.

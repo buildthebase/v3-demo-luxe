@@ -21,7 +21,7 @@ const eventsSchema = createCollectionPageSchema({
   path: "/events",
   pageName: pageMetadata["/events"].title,
   pageDescription: pageMetadata["/events"].description,
-  collectionName: "Luxe Event Co. event pathways",
+  collectionName: "Experiences by Luxe event pathways",
   items: eventHubEntries.map((event) => ({
     name: event.name,
     path: `/events/${event.slug}`,

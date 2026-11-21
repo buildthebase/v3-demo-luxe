@@ -388,7 +388,7 @@ function CoffeeOperations() {
             Southern Ontario.
           </strong>
           <p>
-            Based in Toronto, Luxe Event Co. provides mobile coffee bar catering across
+            Based in Toronto, Experiences by Luxe provides mobile coffee bar catering across
             York Region, Peel, Halton, Durham, and select destination venues throughout
             Southern Ontario.
           </p>

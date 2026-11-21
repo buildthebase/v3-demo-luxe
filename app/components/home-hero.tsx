@@ -268,7 +268,7 @@ export function HomeHero() {
       data-sequence-skipped={sequenceSkipped ? "true" : "false"}
     >
       <p className="home-cinematic-media-alternative">
-        Luxe Event Co. brings together crafted coffee service, a live dessert
+        Experiences by Luxe brings together crafted coffee service, a live dessert
         experience, and intentional seating and event rentals. The muted hero films
         provide atmosphere only; this page contains the complete service information.
       </p>

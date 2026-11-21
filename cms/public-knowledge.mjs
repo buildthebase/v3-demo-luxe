@@ -1,4 +1,5 @@
 import crypto from "node:crypto";
+import projectManifest from "../cms-project.json" with { type: "json" };
 
 const BLOCK_BREAK = /<\/?(?:address|article|aside|blockquote|br|dd|div|dl|dt|figcaption|figure|footer|h[1-6]|header|hr|li|main|nav|ol|p|section|table|tbody|td|tfoot|th|thead|tr|ul)\b[^>]*>/gi;
 
@@ -31,7 +32,7 @@ export function collectPublicPaths({ metadataSource = "", staticPaths = [], publ
   return [...new Set(paths.map((route) => route === "/" ? route : route.replace(/\/$/, "")))].sort();
 }
 
-export function extractPublicPageRecords(html, route, canonicalOrigin = "https://luxeeventco.ca") {
+export function extractPublicPageRecords(html, route, canonicalOrigin = projectManifest.canonicalBaseUrl) {
   const withoutPrivateMarkup = String(html)
     .replace(/<!--([\s\S]*?)-->/g, " ")
     .replace(/<(script|style|noscript|template|svg)\b[^>]*>[\s\S]*?<\/\1>/gi, " ");
@@ -45,7 +46,7 @@ export function extractPublicPageRecords(html, route, canonicalOrigin = "https:/
     .filter((text) => !/^(menu|home|contact|instagram|on this page)$/i.test(text));
   const unique = [...new Set(chunks.map((text) => text.toLowerCase()))]
     .map((lower) => chunks.find((text) => text.toLowerCase() === lower));
-  const topic = route === "/" ? "Luxe Event Co." : route.split("/").filter(Boolean).at(-1).replaceAll("-", " ");
+  const topic = route === "/" ? "Experiences by Luxe" : route.split("/").filter(Boolean).at(-1).replaceAll("-", " ");
   const category = route.startsWith("/blog/") ? "Published blog article" : "Public page content";
   const sourceUrl = `${canonicalOrigin.replace(/\/$/, "")}${route}`;
   return unique.map((text) => {

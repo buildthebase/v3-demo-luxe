@@ -26,7 +26,7 @@ export type SearchIntentType =
   | "Inspirational";
 
 export type ServiceScope =
-  | "Luxe Event Co."
+  | "Experiences by Luxe"
   | "Luxe Coffee Bar"
   | "Luxe Sweet Cart"
   | "Luxe Event Rentals";
@@ -105,7 +105,7 @@ export const questionClassifications: QuestionClassification[] = [
       "private-event-clients",
     ],
     services: [
-      "Luxe Event Co.",
+      "Experiences by Luxe",
       "Luxe Coffee Bar",
       "Luxe Sweet Cart",
       "Luxe Event Rentals",
@@ -309,7 +309,7 @@ export const questionClassifications: QuestionClassification[] = [
   {
     questionId: "branding-and-creative-approval",
     icps: ["corporate-clients", "brand-agency-clients"],
-    services: ["Luxe Event Co.", "Luxe Coffee Bar", "Luxe Sweet Cart"],
+    services: ["Experiences by Luxe", "Luxe Coffee Bar", "Luxe Sweet Cart"],
     eventTypes: ["Corporate events", "Brand activations"],
     searchIntents: ["Informational", "Commercial investigation", "Logistical"],
     funnelStages: ["Understanding", "Planning", "Vendor evaluation"],
@@ -473,7 +473,7 @@ export const questionClassifications: QuestionClassification[] = [
       "industry-partners",
     ],
     services: [
-      "Luxe Event Co.",
+      "Experiences by Luxe",
       "Luxe Coffee Bar",
       "Luxe Sweet Cart",
       "Luxe Event Rentals",
@@ -516,7 +516,7 @@ export const questionClassifications: QuestionClassification[] = [
       "private-event-clients",
       "industry-partners",
     ],
-    services: ["Luxe Event Co."],
+    services: ["Experiences by Luxe"],
     eventTypes: ["All event types"],
     searchIntents: ["Transactional", "Commercial investigation", "Logistical"],
     funnelStages: ["Planning", "Vendor evaluation", "Booking preparation"],
@@ -550,7 +550,7 @@ export const questionClassifications: QuestionClassification[] = [
       "private-event-clients",
       "industry-partners",
     ],
-    services: ["Luxe Event Co."],
+    services: ["Experiences by Luxe"],
     eventTypes: ["All event types"],
     searchIntents: ["Local", "Transactional", "Commercial investigation"],
     funnelStages: ["Discovery", "Cost investigation", "Vendor evaluation"],
@@ -707,7 +707,7 @@ export const questionClassifications: QuestionClassification[] = [
   {
     questionId: "corporate-scale-and-repetition",
     icps: ["corporate-clients", "brand-agency-clients", "industry-partners"],
-    services: ["Luxe Event Co.", "Luxe Coffee Bar", "Luxe Sweet Cart"],
+    services: ["Experiences by Luxe", "Luxe Coffee Bar", "Luxe Sweet Cart"],
     eventTypes: ["Corporate events", "Brand activations"],
     searchIntents: ["Commercial investigation", "Logistical", "Transactional"],
     funnelStages: ["Understanding", "Planning", "Vendor evaluation"],
@@ -740,7 +740,7 @@ export const questionClassifications: QuestionClassification[] = [
   {
     questionId: "procurement-insurance-and-compliance",
     icps: ["corporate-clients", "brand-agency-clients", "industry-partners"],
-    services: ["Luxe Event Co."],
+    services: ["Experiences by Luxe"],
     eventTypes: ["Corporate events", "Brand activations"],
     searchIntents: ["Commercial investigation", "Transactional", "Logistical"],
     funnelStages: ["Vendor evaluation", "Booking preparation"],
@@ -776,7 +776,7 @@ export const questionClassifications: QuestionClassification[] = [
       "industry-partners",
     ],
     services: [
-      "Luxe Event Co.",
+      "Experiences by Luxe",
       "Luxe Coffee Bar",
       "Luxe Sweet Cart",
       "Luxe Event Rentals",
@@ -821,7 +821,7 @@ export const questionClassifications: QuestionClassification[] = [
       "industry-partners",
     ],
     services: [
-      "Luxe Event Co.",
+      "Experiences by Luxe",
       "Luxe Coffee Bar",
       "Luxe Sweet Cart",
       "Luxe Event Rentals",

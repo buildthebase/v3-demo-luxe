@@ -27,10 +27,10 @@ const weddingsSchema = createServicePageSchema({
   serviceName: "Luxe wedding coffee, dessert, and rental experiences",
   serviceType: "Wedding coffee bar, dessert cart, and event rental services",
   serviceDescription:
-    "Wedding coffee, live dessert, and refined rental experiences from Luxe Event Co. for celebrations in Toronto, the GTA, and select Southern Ontario destinations.",
+    "Wedding coffee, live dessert, and refined rental experiences from Experiences by Luxe for celebrations in Toronto, the GTA, and select Southern Ontario destinations.",
   pageName: pageMetadata[weddingsPath].title,
   pageDescription:
-    "Plan coffee service, live dessert, and refined wedding rentals with Luxe Event Co. across Toronto and the GTA.",
+    "Plan coffee service, live dessert, and refined wedding rentals with Experiences by Luxe across Toronto and the GTA.",
   faqs: weddingFaqs,
 });
 
@@ -249,7 +249,7 @@ export function WeddingsPage() {
           footer={
             <Link href="/contact">
               Book one experience independently or coordinate several through
-              one Luxe Event Co. wedding plan.
+              one Experiences by Luxe wedding plan.
             </Link>
           }
           heading="Three experiences, each with a clear role."

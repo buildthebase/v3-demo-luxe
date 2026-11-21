@@ -48,7 +48,7 @@ export const pageAeoBriefs: PageAeoBrief[] = [
   {
     path: "/",
     pageName: "Home",
-    pageRole: "Establish Luxe Event Co., the three divisions, the primary market, and the shortest credible path into service or event research.",
+    pageRole: "Establish Experiences by Luxe, the three divisions, the primary market, and the shortest credible path into service or event research.",
     primaryIcps: [
       "wedding-clients",
       "corporate-clients",
@@ -57,7 +57,7 @@ export const pageAeoBriefs: PageAeoBrief[] = [
       "industry-partners",
     ],
     primaryQuestionThemes: [
-      "What is Luxe Event Co.?",
+      "What is Experiences by Luxe?",
       "Which services can be booked independently or together?",
       "Which events and markets does Luxe serve?",
     ],
@@ -94,7 +94,7 @@ export const pageAeoBriefs: PageAeoBrief[] = [
     ],
     futureResources: [
       {
-        topic: "Luxe Event Co. overview case study",
+        topic: "Experiences by Luxe overview case study",
         evidenceGate: "A permissioned cross-division event with approved imagery, facts, and client commentary.",
       },
     ],

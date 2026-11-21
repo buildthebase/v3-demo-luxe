@@ -385,3 +385,30 @@
     font-size: clamp(1.7rem, 7.5vw, 2.75rem) !important;
   }
 }
+
+/* Keep short final lines with the preceding words as hero copy reflows. */
+.foundation-shell :is([class$="-hero-copy"]:not(.gallery-hero-copy), .not-found-page) > p:not(.foundation-eyebrow),
+.home-cinematic-description p {
+  text-wrap: pretty;
+}
+
+@media (max-width: 960px) {
+  .foundation-shell :is(#coffee-hero-proof-title, #sweet-hero-proof-title),
+  .foundation-shell :is(#coffee-hero-proof-title, #sweet-hero-proof-title, #coffee-events-title) span {
+    white-space: normal;
+    text-wrap: balance;
+  }
+}
+
+@media (max-width: 420px) {
+  .foundation-shell #experiences-events-title span,
+  .foundation-shell #sweet-inclusions-title span,
+  .foundation-shell #sweet-combinations-title span,
+  .foundation-shell #bridal-planning-title span,
+  .foundation-shell .bridal-planning li h3,
+  .foundation-shell .coffee-format-copy h3,
+  .foundation-shell .events-directory-list a {
+    white-space: normal;
+    text-wrap: balance;
+  }
+}
