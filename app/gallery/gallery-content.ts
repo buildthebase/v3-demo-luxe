@@ -430,7 +430,15 @@ function detailPhotos(assets: readonly ResponsiveImageAsset[]): GalleryMedia[] {
   });
 }
 
-export const galleryGroups: readonly GalleryGroup[] = [
+// Exclude these photographs from every collection, including reused copies.
+const removedGallerySources = new Set<string | null | undefined>([
+  experienceImages.seatingIndoorApplication.src,
+  homeImages.professionalOccasions.src,
+  experienceImages.weddingRoom.src,
+  experienceImages.seatingRentals.src,
+]);
+
+export const galleryGroups: readonly GalleryGroup[] = ([
   ...serviceAndOccasionGroups,
   {
     id: "custom-branding-signage", number: "12", title: "Custom Branding & Signage",
@@ -472,7 +480,7 @@ export const galleryGroups: readonly GalleryGroup[] = [
       weddingGalleryPreview[2].image, experienceImages.babySetting,
     ]),
   },
-];
+] satisfies readonly GalleryGroup[]).map(group => ({ ...group, media: group.media.filter(item => !removedGallerySources.has(item.src)) }));
 
 // A reused photograph has one ImageObject in page metadata as well.
 export const approvedGalleryImages = [...new Map(galleryGroups.flatMap(group =>

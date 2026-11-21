@@ -14,6 +14,7 @@ import { eventHubEntries } from "./content";
 import { createPageMetadata, pageMetadata } from "../metadata-config";
 import { eventsSectionNavigation } from "../page-section-navigation";
 import { createCollectionPageSchema } from "../schema-builders";
+import "./events-occasions.css";
 
 export const metadata = createPageMetadata("/events");
 

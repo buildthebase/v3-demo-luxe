@@ -1,0 +1,75 @@
+/* The photographic occasion collection is scoped to the Experiences hub. */
+.foundation-shell main.experiences-page > .experiences-occasions {
+  --occasion-rule: rgb(31 31 31 / 18%);
+  padding-block: 64px;
+  border-top: 1px solid var(--occasion-rule);
+}
+.foundation-shell main.experiences-page > .experiences-occasions > header {
+  display: block;
+  margin-bottom: 32px;
+  text-align: left;
+}
+.foundation-shell main.experiences-page > .experiences-occasions > header .foundation-label:not(#luxe-sitewide-h2-scale):not(#home-hero-seo-title) {
+  display: block !important;
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 0 16px !important;
+  color: var(--color-luxe-gold-ink) !important;
+  text-align: left !important;
+}
+.foundation-shell main.experiences-page > .experiences-occasions h2:not(#luxe-sitewide-h2-scale):not(#home-hero-seo-title) {
+  max-width: 25ch;
+  margin: 0 !important;
+  justify-self: start !important;
+  text-align: left !important;
+}
+.foundation-shell main.experiences-page > .experiences-occasions h2 > span { display: inline; }
+.foundation-shell main.experiences-page > .experiences-occasions .experiences-event-list {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 24px;
+  border: 0;
+}
+.foundation-shell main.experiences-page > .experiences-occasions .experiences-event-list > a {
+  grid-column: span 3;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  min-height: 0;
+  padding: 0;
+  border: 1px solid var(--occasion-rule);
+  color: inherit;
+  text-decoration: none;
+}
+.foundation-shell main.experiences-page > .experiences-occasions .experiences-event-list > a:nth-child(-n+3) { grid-column: span 4; }
+.experiences-occasions .experiences-occasion-photo { position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; }
+.experiences-occasions .experiences-occasion-photo img { object-position: center 33%; }
+.experiences-occasions .experiences-occasion-copy { position: relative; display: grid; gap: 12px; flex: 1; padding: 24px; }
+.experiences-occasions .experiences-occasion-copy > span { color: var(--color-luxe-gold-ink); font-size: .7rem; }
+.foundation-shell main.experiences-page > .experiences-occasions .experiences-occasion-copy h3 {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: -.035em;
+  line-height: 1.25;
+}
+.foundation-shell main.experiences-page > .experiences-occasions .experiences-occasion-copy small { color: var(--color-text-secondary); font-size: .9rem; line-height: 1.65; }
+.experiences-occasions .experiences-occasion-copy b { justify-self: end; align-self: end; font-weight: 400; }
+@media (max-width: 1000px) {
+  .foundation-shell main.experiences-page > .experiences-occasions .experiences-event-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .foundation-shell main.experiences-page > .experiences-occasions .experiences-event-list > a,
+  .foundation-shell main.experiences-page > .experiences-occasions .experiences-event-list > a:nth-child(-n+3) { grid-column: auto; }
+  .foundation-shell main.experiences-page > .experiences-occasions .experiences-event-list > a:last-child { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; }
+  .experiences-occasions .experiences-event-list > a:last-child .experiences-occasion-photo { aspect-ratio: auto; min-height: 240px; }
+}
+@media (max-width: 700px) {
+  .foundation-shell main.experiences-page > .experiences-occasions { padding-block: 40px; }
+  .foundation-shell main.experiences-page > .experiences-occasions .experiences-event-list { gap: 20px; }
+  .experiences-occasions .experiences-occasion-copy { padding: 20px; }
+}
+@media (max-width: 560px) {
+  .foundation-shell main.experiences-page > .experiences-occasions .experiences-event-list { grid-template-columns: minmax(0, 1fr); }
+  .foundation-shell main.experiences-page > .experiences-occasions .experiences-event-list > a:last-child { display: flex; grid-column: auto; }
+  .experiences-occasions .experiences-event-list > a:last-child .experiences-occasion-photo { aspect-ratio: 4 / 3; min-height: 0; }
+}

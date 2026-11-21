@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { EventInquiryAction } from "./event-inquiry-action";
-import { imageAssets } from "../image-system";
+import { imageAssets, type ResponsiveImageAsset } from "../image-system";
 import { eventHubEntries } from "../events/content";
 import { ResponsiveImage } from "./responsive-image";
 
@@ -44,7 +44,7 @@ export function EventsHero({
 export function EventsDirectory() {
   return (
     <section
-      className="events-directory"
+      className="events-directory events-occasion-cards"
       id="event-pathways"
       aria-labelledby="events-directory-title"
     >
@@ -61,19 +61,27 @@ export function EventsDirectory() {
       <div className="events-directory-list">
         {eventHubEntries.map((event) => (
           <article className={`events-directory-${event.slug}`} key={event.slug}>
-            <div>
-              <h3>{event.name}</h3>
-            </div>
-            <div>
-              <strong>{event.statement}</strong>
-              <p>{event.summary}</p>
-            </div>
             <Link
+              className="events-occasion-card"
               href={`/events/${event.slug}`}
+              aria-labelledby={`occasion-${event.slug}-title`}
               data-event-name="event_type_select"
               data-event-type={event.slug}
             >
-              Explore {event.name} <span aria-hidden="true">↗︎</span>
+              <div className="events-occasion-photo">
+                <ResponsiveImage asset={{
+                  ...eventPhotos[event.slug],
+                  priority: false,
+                  sizes: "(max-width: 560px) calc(100vw - 40px), (max-width: 1000px) 44vw, (max-width: 1600px) 30vw, 440px",
+                }} fill />
+              </div>
+              <div className="events-occasion-body">
+                <span className="events-occasion-number" aria-hidden="true">{event.number}</span>
+                <h3 id={`occasion-${event.slug}-title`}>{event.name}</h3>
+                <strong>{event.statement}</strong>
+                <p>{event.summary}</p>
+                <span className="events-occasion-action">Explore {event.name}<span aria-hidden="true">↗︎</span></span>
+              </div>
             </Link>
           </article>
         ))}
@@ -82,3 +90,13 @@ export function EventsDirectory() {
     </section>
   );
 }
+
+const eventPhotos: Record<(typeof eventHubEntries)[number]["slug"], ResponsiveImageAsset> = {
+  weddings: imageAssets.experiences.weddingHero,
+  "corporate-events": imageAssets.experiences.corporateHero,
+  "brand-activations": imageAssets.experiences.corporateBranding,
+  "baby-showers": imageAssets.experiences.babyHero,
+  "bridal-showers": imageAssets.experiences.bridalHero,
+  birthdays: imageAssets.experiences.birthdayHero,
+  "private-events": imageAssets.experiences.privateHero,
+};

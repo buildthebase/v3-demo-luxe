@@ -18,15 +18,19 @@ function GalleryMediaFrame({
   item,
   tone,
   onOpen,
+  active,
 }: {
   item: GalleryMedia;
   tone: GalleryGroup["tone"];
   onOpen: (id: string, trigger: HTMLButtonElement) => void;
+  active: boolean;
 }) {
   return (
     <figure
       className={`gallery-media gallery-media-${tone}`}
       data-asset-status={item.status}
+      data-active={active}
+      style={{ "--gallery-photo-ratio": item.width / item.height } as CSSProperties}
     >
       <div className="gallery-media-frame">
         {item.video ? (
@@ -36,7 +40,7 @@ function GalleryMediaFrame({
           </video>
         ) : isPublishableImage(item) ? (
           <button type="button" className="gallery-photo-open" aria-haspopup="dialog" aria-label={`Open photo: ${item.caption}`} onClick={event => onOpen(item.id, event.currentTarget)}>
-            <ResponsiveImage asset={{ ...item, alt: galleryPhotoAlt(item) }} />
+            <ResponsiveImage asset={{ ...item, alt: galleryPhotoAlt(item), sizes: "(max-width: 700px) 85vw, 70vw" }} />
             <span className="gallery-photo-expand" aria-hidden="true">⤢</span>
           </button>
         ) : (
@@ -48,6 +52,78 @@ function GalleryMediaFrame({
       </div>
     </figure>
   );
+}
+
+function GalleryCarousel({ group, onOpen }: {
+  group: GalleryGroup;
+  onOpen: (id: string, trigger: HTMLButtonElement) => void;
+}) {
+  const track = useRef<HTMLDivElement>(null);
+  const [index, setIndex] = useState(0);
+  const reveal = () => {
+    const carousel = track.current?.parentElement;
+    if (!carousel) return;
+    const header = document.querySelector(".foundation-header")?.getBoundingClientRect().height ?? 108;
+    carousel.style.scrollMarginTop = `${header + 16}px`;
+    const bounds = carousel.getBoundingClientRect();
+    if (bounds.top < header + 16 || bounds.bottom > window.innerHeight - 16) {
+      carousel.scrollIntoView({ block: "start", behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+    }
+  };
+  useEffect(() => { reveal(); }, []);
+  const move = (direction: number) => {
+    const rail = track.current;
+    const slide = rail?.children[index + direction] as HTMLElement | undefined;
+    if (!rail || !slide) return;
+    reveal();
+    rail.scrollTo({
+      left: slide.offsetLeft - Number.parseFloat(getComputedStyle(rail).paddingLeft),
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
+    });
+  };
+
+  return <div className="gallery-carousel">
+    <div className="gallery-group-media gallery-carousel-track" ref={track}
+      role="region" aria-roledescription="carousel" aria-label={`${group.title} photos and films`}
+      tabIndex={0}
+      onKeyDown={event => {
+        if (event.target !== event.currentTarget) return;
+        if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+          event.preventDefault();
+          move(event.key === "ArrowLeft" ? -1 : 1);
+        }
+      }}
+      onScroll={() => {
+        const rail = track.current;
+        if (!rail) return;
+        const maxScroll = rail.scrollWidth - rail.clientWidth;
+        if (maxScroll > 1 && rail.scrollLeft >= maxScroll - 1) {
+          setIndex(group.media.length - 1);
+          return;
+        }
+        const start = rail.scrollLeft + Number.parseFloat(getComputedStyle(rail).paddingLeft);
+        let closest = 0;
+        let distance = Infinity;
+        Array.from(rail.children).forEach((child, position) => {
+          const slide = child as HTMLElement;
+          const delta = Math.abs(slide.offsetLeft - start);
+          if (delta < distance) { closest = position; distance = delta; }
+        });
+        setIndex(closest);
+      }}>
+      {group.media.map((item, position) => <GalleryMediaFrame
+        item={item} tone={group.tone} key={item.id} onOpen={onOpen} active={position === index}
+      />)}
+    </div>
+    <div className="gallery-carousel-controls">
+      <span aria-live="polite" aria-atomic="true">{index + 1} / {group.media.length}</span>
+      <p>Swipe or use the arrows to explore</p>
+      <div>
+        <button type="button" onClick={() => move(-1)} disabled={index === 0} aria-label={`Previous moment in ${group.title}`}>←</button>
+        <button type="button" onClick={() => move(1)} disabled={index === group.media.length - 1} aria-label={`Next moment in ${group.title}`}>→</button>
+      </div>
+    </div>
+  </div>;
 }
 
 export function GalleryCollection() {
@@ -212,14 +288,10 @@ export function GalleryCollection() {
               {open ? <>
               <p className="gallery-group-description">{group.description}</p>
               {group.media.length > 0 ? (
-                <div className="gallery-group-media">
-                  {group.media.map((item) => (
-                    <GalleryMediaFrame item={item} tone={group.tone} key={item.id} onOpen={(id, trigger) => {
+                <GalleryCarousel group={group} onOpen={(id, trigger) => {
                       photoTrigger.current = trigger;
                       setSelectedPhoto(photos.find(photo => photo.id === id)?.id ?? photos.find(photo => photo.src === group.media.find(media => media.id === id)?.src)?.id ?? id);
                     }} />
-                  ))}
-                </div>
               ) : null}
               <nav aria-label={`Related pages for ${group.title}`}>
                 {group.links.map((link) => (

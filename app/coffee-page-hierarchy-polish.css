@@ -134,6 +134,11 @@
 }
 
 /* Keep the service-planning details available through the proof-item bubbles. */
+.foundation-shell .coffee-page > .coffee-hero {
+  clip-path: none;
+  z-index: 1;
+}
+
 .foundation-shell .coffee-page .sweet-hero-proof {
   overflow: visible;
 }

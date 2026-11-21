@@ -1,5 +1,7 @@
 "use client";
 
+import { optimizedPosterSource } from "../responsive-image-sources";
+
 import { useEffect, useRef, useState } from "react";
 import { homeHeroMedia, homeHeroTimeline } from "../home-hero-media";
 import { CredibilityStrip } from "./signature-elements";
@@ -308,7 +310,7 @@ export function HomeHero() {
                       loop={!finalState}
                       playsInline
                       preload={index < 3 ? "auto" : "none"}
-                      poster={media.poster ?? undefined}
+                      poster={optimizedPosterSource(media.poster)}
                       onError={() => markMediaFailed(media.id)}
                       key={`${media.id}-${layerIndex}`}
                     >

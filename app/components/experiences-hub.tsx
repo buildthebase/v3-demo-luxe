@@ -4,7 +4,7 @@ import {
   experienceHubFeatures,
   type ExperienceHubFeature,
 } from "../experiences/content";
-import { imageAssets } from "../image-system";
+import { imageAssets, type ResponsiveImageAsset } from "../image-system";
 import { eventTypes } from "../site-config";
 import { QuoteModalTrigger } from "./quote-modal-trigger";
 import { ResponsiveImage } from "./responsive-image";
@@ -57,7 +57,7 @@ export function ExperiencesBookingClarity() {
     >
       <header>
         <p className="foundation-label">Independent or combined</p>
-        <h2 id="experiences-booking-title">Begin with what the event needs.</h2>
+        <h2 id="experiences-booking-title" className="foundation-wide-heading">Begin with what the event needs.</h2>
       </header>
       <dl>
         <div>
@@ -220,9 +220,8 @@ export function ExperienceNeedComparison() {
 
 export function ExperiencesEventTypes() {
   return (
-    <section id="event-types" className="experiences-events" aria-labelledby="experiences-events-title">
+    <section id="event-types" className="experiences-events experiences-occasions" aria-labelledby="experiences-events-title">
       <header>
-        <p className="foundation-label">Explore by occasion</p>
         <h2 id="experiences-events-title">
           <span>Different occasion.</span> <span>Different experience.</span>
         </h2>
@@ -230,10 +229,15 @@ export function ExperiencesEventTypes() {
       <div className="experiences-event-list">
         {eventTypes.map((event, index) => (
           <Link href={`/events/${event.slug}`} key={event.slug}>
-            <span>{String(index + 1).padStart(2, "0")}</span>
-            <h3>{event.name}</h3>
-            <small>{event.summary}</small>
-            <b aria-hidden="true">↗︎</b>
+            <div className="experiences-occasion-photo">
+              <ResponsiveImage asset={{ ...occasionPhotos[event.slug], priority: false, sizes: "(max-width: 600px) calc(100vw - 40px), (max-width: 1000px) 44vw, 380px" }} fill />
+            </div>
+            <div className="experiences-occasion-copy">
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h3>{event.name}</h3>
+              <small>{event.summary}</small>
+              <b aria-hidden="true">↗︎</b>
+            </div>
           </Link>
         ))}
       </div>
@@ -298,3 +302,13 @@ Each experience, in its element.
     </section>
   );
 }
+
+const occasionPhotos: Record<(typeof eventTypes)[number]["slug"], ResponsiveImageAsset> = {
+  weddings: imageAssets.experiences.weddingHero,
+  "corporate-events": imageAssets.experiences.corporateHero,
+  "brand-activations": imageAssets.experiences.corporateBranding,
+  "baby-showers": imageAssets.experiences.babyHero,
+  "bridal-showers": imageAssets.experiences.bridalHero,
+  birthdays: imageAssets.experiences.birthdayHero,
+  "private-events": imageAssets.experiences.privateHero,
+};

@@ -82,7 +82,7 @@ export function GalleryPhotoViewer({ photos, initialId, onClose }: {
             state.lastMove = now;
           }
         }}>
-        <ResponsiveImage key={photo.id} asset={{ ...photo, alt: galleryPhotoAlt(photo), priority: true, sizes: "100vw" }} className="gallery-viewer-photo" />
+        <ResponsiveImage fullResolution key={photo.id} asset={{ ...photo, alt: galleryPhotoAlt(photo), priority: true, sizes: "100vw" }} className="gallery-viewer-photo" />
         {photos.length > 1 ? <>
           <button className="gallery-viewer-previous" type="button" onClick={() => move(-1)} aria-label="Previous photo">←</button>
           <button className="gallery-viewer-next" type="button" onClick={() => move(1)} aria-label="Next photo">→</button>

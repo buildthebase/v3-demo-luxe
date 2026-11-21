@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import { optimizedPosterSource, responsiveImageSources } from "../responsive-image-sources";
 
 export function HomeEditorialVideo({
   mp4,
@@ -26,6 +26,7 @@ export function HomeEditorialVideo({
   onPlaybackEnd?: () => void;
   disabled?: boolean;
 }) {
+  const posterImage = responsiveImageSources(poster);
   const videoRef = useRef<HTMLVideoElement>(null);
   const hasLoadedRef = useRef(false);
   const hasEndedRef = useRef(false);
@@ -109,22 +110,28 @@ export function HomeEditorialVideo({
         }}
         onPlaying={() => setHasStarted(true)}
         playsInline
-        poster={poster}
+        poster={optimizedPosterSource(poster)}
         preload="none"
       >
         <source src={webm} type="video/webm" />
         <source src={mp4} type="video/mp4" />
       </video>
       {fadeIn ? (
-        <Image
+        // Native srcset uses the same pre-generated renditions as site photography.
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
           alt=""
           aria-hidden="true"
           className="home-editorial-video-poster"
           data-video-started={hasStarted}
-          fill
+          decoding="async"
+          loading="lazy"
+          width={posterImage?.width}
+          height={posterImage?.height}
+          style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
           sizes="(max-width: 700px) calc(100vw - 2rem), 50vw"
-          src={poster}
-          unoptimized
+          src={posterImage?.src ?? poster}
+          srcSet={posterImage?.srcSet}
         />
       ) : null}
       <button

@@ -1,0 +1,2478 @@
+{
+  "/images/case-studies/baby-shower-coffee-bar.webp": {
+    "width": 720,
+    "height": 1280,
+    "bytes": 176460,
+    "variants": [
+      {
+        "src": "/images/responsive/87f2b801b9b0d7bfaf42-320.webp",
+        "width": 320,
+        "bytes": 50436
+      },
+      {
+        "src": "/images/responsive/87f2b801b9b0d7bfaf42-480.webp",
+        "width": 480,
+        "bytes": 92806
+      },
+      {
+        "src": "/images/responsive/87f2b801b9b0d7bfaf42-720.webp",
+        "width": 720,
+        "bytes": 172692
+      }
+    ]
+  },
+  "/images/corporate/branded-cups-signage-clear.webp": {
+    "width": 941,
+    "height": 1672,
+    "bytes": 237500,
+    "variants": [
+      {
+        "src": "/images/responsive/9bc8eb49d0a45c7a2751-320.webp",
+        "width": 320,
+        "bytes": 31336
+      },
+      {
+        "src": "/images/responsive/9bc8eb49d0a45c7a2751-480.webp",
+        "width": 480,
+        "bytes": 55326
+      },
+      {
+        "src": "/images/responsive/9bc8eb49d0a45c7a2751-768.webp",
+        "width": 768,
+        "bytes": 101406
+      },
+      {
+        "src": "/images/responsive/9bc8eb49d0a45c7a2751-941.webp",
+        "width": 941,
+        "bytes": 158084
+      }
+    ]
+  },
+  "/images/corporate/corporate-hero-clear.webp": {
+    "width": 940,
+    "height": 1673,
+    "bytes": 459930,
+    "variants": [
+      {
+        "src": "/images/responsive/2e5a9b5d2d3165c42612-320.webp",
+        "width": 320,
+        "bytes": 48836
+      },
+      {
+        "src": "/images/responsive/2e5a9b5d2d3165c42612-480.webp",
+        "width": 480,
+        "bytes": 91592
+      },
+      {
+        "src": "/images/responsive/2e5a9b5d2d3165c42612-768.webp",
+        "width": 768,
+        "bytes": 181518
+      },
+      {
+        "src": "/images/responsive/2e5a9b5d2d3165c42612-940.webp",
+        "width": 940,
+        "bytes": 289194
+      }
+    ]
+  },
+  "/images/corporate/employee-team-event-clearer.webp": {
+    "width": 941,
+    "height": 1672,
+    "bytes": 437930,
+    "variants": [
+      {
+        "src": "/images/responsive/351f81e75a667ece7b39-320.webp",
+        "width": 320,
+        "bytes": 49366
+      },
+      {
+        "src": "/images/responsive/351f81e75a667ece7b39-480.webp",
+        "width": 480,
+        "bytes": 96552
+      },
+      {
+        "src": "/images/responsive/351f81e75a667ece7b39-768.webp",
+        "width": 768,
+        "bytes": 195054
+      },
+      {
+        "src": "/images/responsive/351f81e75a667ece7b39-941.webp",
+        "width": 941,
+        "bytes": 299754
+      }
+    ]
+  },
+  "/images/events/baby-celebration-setting.webp": {
+    "width": 946,
+    "height": 1663,
+    "bytes": 203002,
+    "variants": [
+      {
+        "src": "/images/responsive/fd9cf37fcd8ce5f1c0fa-320.webp",
+        "width": 320,
+        "bytes": 32566
+      },
+      {
+        "src": "/images/responsive/fd9cf37fcd8ce5f1c0fa-480.webp",
+        "width": 480,
+        "bytes": 57808
+      },
+      {
+        "src": "/images/responsive/fd9cf37fcd8ce5f1c0fa-768.webp",
+        "width": 768,
+        "bytes": 102378
+      },
+      {
+        "src": "/images/responsive/fd9cf37fcd8ce5f1c0fa-946.webp",
+        "width": 946,
+        "bytes": 153582
+      }
+    ]
+  },
+  "/images/events/baby-dessert-moment.webp": {
+    "width": 1024,
+    "height": 1536,
+    "bytes": 133176,
+    "variants": [
+      {
+        "src": "/images/responsive/4da9c48b63ace97c8925-320.webp",
+        "width": 320,
+        "bytes": 17764
+      },
+      {
+        "src": "/images/responsive/4da9c48b63ace97c8925-480.webp",
+        "width": 480,
+        "bytes": 30354
+      },
+      {
+        "src": "/images/responsive/4da9c48b63ace97c8925-768.webp",
+        "width": 768,
+        "bytes": 54844
+      },
+      {
+        "src": "/images/responsive/4da9c48b63ace97c8925-1024.webp",
+        "width": 1024,
+        "bytes": 91274
+      }
+    ]
+  },
+  "/images/events/baby-hero-c0133-camera-frame.webp": {
+    "width": 2160,
+    "height": 3840,
+    "bytes": 2290574,
+    "variants": [
+      {
+        "src": "/images/responsive/4fa8ac3f70162441c897-320.webp",
+        "width": 320,
+        "bytes": 17772
+      },
+      {
+        "src": "/images/responsive/4fa8ac3f70162441c897-480.webp",
+        "width": 480,
+        "bytes": 32476
+      },
+      {
+        "src": "/images/responsive/4fa8ac3f70162441c897-768.webp",
+        "width": 768,
+        "bytes": 74740
+      },
+      {
+        "src": "/images/responsive/4fa8ac3f70162441c897-1024.webp",
+        "width": 1024,
+        "bytes": 161776
+      },
+      {
+        "src": "/images/responsive/4fa8ac3f70162441c897-1440.webp",
+        "width": 1440,
+        "bytes": 357684
+      },
+      {
+        "src": "/images/responsive/4fa8ac3f70162441c897-1920.webp",
+        "width": 1920,
+        "bytes": 599110
+      },
+      {
+        "src": "/images/responsive/4fa8ac3f70162441c897-2160.webp",
+        "width": 2160,
+        "bytes": 1010370
+      }
+    ]
+  },
+  "/images/events/baby-indoor-pouring-clear.webp": {
+    "width": 941,
+    "height": 1672,
+    "bytes": 151662,
+    "variants": [
+      {
+        "src": "/images/responsive/4a673b9d6a643832a13d-320.webp",
+        "width": 320,
+        "bytes": 23426
+      },
+      {
+        "src": "/images/responsive/4a673b9d6a643832a13d-480.webp",
+        "width": 480,
+        "bytes": 39110
+      },
+      {
+        "src": "/images/responsive/4a673b9d6a643832a13d-768.webp",
+        "width": 768,
+        "bytes": 68098
+      },
+      {
+        "src": "/images/responsive/4a673b9d6a643832a13d-941.webp",
+        "width": 941,
+        "bytes": 102996
+      }
+    ]
+  },
+  "/images/events/baby-welcome-matcha.webp": {
+    "width": 941,
+    "height": 1672,
+    "bytes": 125142,
+    "variants": [
+      {
+        "src": "/images/responsive/75e157824e5a8a84eef0-320.webp",
+        "width": 320,
+        "bytes": 18774
+      },
+      {
+        "src": "/images/responsive/75e157824e5a8a84eef0-480.webp",
+        "width": 480,
+        "bytes": 33084
+      },
+      {
+        "src": "/images/responsive/75e157824e5a8a84eef0-768.webp",
+        "width": 768,
+        "bytes": 59698
+      },
+      {
+        "src": "/images/responsive/75e157824e5a8a84eef0-941.webp",
+        "width": 941,
+        "bytes": 90508
+      }
+    ]
+  },
+  "/images/events/birthday-hero-mother-child-clear-v4.avif": {
+    "width": 944,
+    "height": 1666,
+    "bytes": 88578,
+    "variants": [
+      {
+        "src": "/images/responsive/b037c8c2b671b89a03bb-320.webp",
+        "width": 320,
+        "bytes": 30466
+      },
+      {
+        "src": "/images/responsive/b037c8c2b671b89a03bb-480.webp",
+        "width": 480,
+        "bytes": 55746
+      }
+    ]
+  },
+  "/images/events/bridal-hero-bride-coffee-clear-v2.avif": {
+    "width": 960,
+    "height": 1578,
+    "bytes": 114152,
+    "variants": [
+      {
+        "src": "/images/responsive/b5a3ebf846cf56534bff-320.webp",
+        "width": 320,
+        "bytes": 28124
+      },
+      {
+        "src": "/images/responsive/b5a3ebf846cf56534bff-480.webp",
+        "width": 480,
+        "bytes": 56432
+      }
+    ]
+  },
+  "/images/events/events-hero-guest-dessert-full.webp": {
+    "width": 941,
+    "height": 1672,
+    "bytes": 161348,
+    "variants": [
+      {
+        "src": "/images/responsive/7639d1d9d769ec4b2ace-320.webp",
+        "width": 320,
+        "bytes": 22662
+      },
+      {
+        "src": "/images/responsive/7639d1d9d769ec4b2ace-480.webp",
+        "width": 480,
+        "bytes": 37190
+      },
+      {
+        "src": "/images/responsive/7639d1d9d769ec4b2ace-768.webp",
+        "width": 768,
+        "bytes": 66270
+      },
+      {
+        "src": "/images/responsive/7639d1d9d769ec4b2ace-941.webp",
+        "width": 941,
+        "bytes": 95664
+      }
+    ]
+  },
+  "/images/events/private-hero-guests-coffee-clear-v2.avif": {
+    "width": 960,
+    "height": 1639,
+    "bytes": 152910,
+    "variants": [
+      {
+        "src": "/images/responsive/b06424d3e749d33c1833-320.webp",
+        "width": 320,
+        "bytes": 39242
+      },
+      {
+        "src": "/images/responsive/b06424d3e749d33c1833-480.webp",
+        "width": 480,
+        "bytes": 84434
+      }
+    ]
+  },
+  "/images/experiences/cart-as-decor-event.webp": {
+    "width": 941,
+    "height": 1672,
+    "bytes": 300050,
+    "variants": [
+      {
+        "src": "/images/responsive/71a8575bfab701d3f37f-320.webp",
+        "width": 320,
+        "bytes": 46580
+      },
+      {
+        "src": "/images/responsive/71a8575bfab701d3f37f-480.webp",
+        "width": 480,
+        "bytes": 82586
+      },
+      {
+        "src": "/images/responsive/71a8575bfab701d3f37f-768.webp",
+        "width": 768,
+        "bytes": 148422
+      },
+      {
+        "src": "/images/responsive/71a8575bfab701d3f37f-941.webp",
+        "width": 941,
+        "bytes": 215598
+      }
+    ]
+  },
+  "/images/experiences/cocktail-tables-clarity.webp": {
+    "width": 1401,
+    "height": 1123,
+    "bytes": 237610,
+    "variants": [
+      {
+        "src": "/images/responsive/6dff42d134cd8196348b-320.webp",
+        "width": 320,
+        "bytes": 21846
+      },
+      {
+        "src": "/images/responsive/6dff42d134cd8196348b-480.webp",
+        "width": 480,
+        "bytes": 37694
+      },
+      {
+        "src": "/images/responsive/6dff42d134cd8196348b-768.webp",
+        "width": 768,
+        "bytes": 69378
+      },
+      {
+        "src": "/images/responsive/6dff42d134cd8196348b-1024.webp",
+        "width": 1024,
+        "bytes": 98248
+      },
+      {
+        "src": "/images/responsive/6dff42d134cd8196348b-1401.webp",
+        "width": 1401,
+        "bytes": 149630
+      }
+    ]
+  },
+  "/images/experiences/coffee-bar-hero-pilates-square.webp": {
+    "width": 941,
+    "height": 941,
+    "bytes": 39316,
+    "variants": [
+      {
+        "src": "/images/responsive/a886fe0a4f62faea1888-320.webp",
+        "width": 320,
+        "bytes": 8250
+      },
+      {
+        "src": "/images/responsive/a886fe0a4f62faea1888-480.webp",
+        "width": 480,
+        "bytes": 13650
+      },
+      {
+        "src": "/images/responsive/a886fe0a4f62faea1888-768.webp",
+        "width": 768,
+        "bytes": 24790
+      },
+      {
+        "src": "/images/responsive/a886fe0a4f62faea1888-941.webp",
+        "width": 941,
+        "bytes": 36348
+      }
+    ]
+  },
+  "/images/experiences/coffee-bar-overview-clarity.webp": {
+    "width": 1149,
+    "height": 1368,
+    "bytes": 205512,
+    "variants": [
+      {
+        "src": "/images/responsive/1085e6e98225791f1f48-320.webp",
+        "width": 320,
+        "bytes": 19540
+      },
+      {
+        "src": "/images/responsive/1085e6e98225791f1f48-480.webp",
+        "width": 480,
+        "bytes": 34536
+      },
+      {
+        "src": "/images/responsive/1085e6e98225791f1f48-768.webp",
+        "width": 768,
+        "bytes": 67972
+      },
+      {
+        "src": "/images/responsive/1085e6e98225791f1f48-1024.webp",
+        "width": 1024,
+        "bytes": 98026
+      },
+      {
+        "src": "/images/responsive/1085e6e98225791f1f48-1149.webp",
+        "width": 1149,
+        "bytes": 127932
+      }
+    ]
+  },
+  "/images/experiences/coffee-cart-corporate-context-straight.webp": {
+    "width": 941,
+    "height": 1672,
+    "bytes": 113380,
+    "variants": [
+      {
+        "src": "/images/responsive/8b6247ce4dab211d40e9-320.webp",
+        "width": 320,
+        "bytes": 29586
+      },
+      {
+        "src": "/images/responsive/8b6247ce4dab211d40e9-480.webp",
+        "width": 480,
+        "bytes": 49368
+      },
+      {
+        "src": "/images/responsive/8b6247ce4dab211d40e9-768.webp",
+        "width": 768,
+        "bytes": 84472
+      },
+      {
+        "src": "/images/responsive/8b6247ce4dab211d40e9-941.webp",
+        "width": 941,
+        "bytes": 111212
+      }
+    ]
+  },
+  "/images/experiences/coffee-craft-matcha-pour.webp": {
+    "width": 1600,
+    "height": 2399,
+    "bytes": 375288,
+    "variants": [
+      {
+        "src": "/images/responsive/ab71ebf10e9e74319af4-320.webp",
+        "width": 320,
+        "bytes": 23026
+      },
+      {
+        "src": "/images/responsive/ab71ebf10e9e74319af4-480.webp",
+        "width": 480,
+        "bytes": 38480
+      },
+      {
+        "src": "/images/responsive/ab71ebf10e9e74319af4-768.webp",
+        "width": 768,
+        "bytes": 73530
+      },
+      {
+        "src": "/images/responsive/ab71ebf10e9e74319af4-1024.webp",
+        "width": 1024,
+        "bytes": 104372
+      },
+      {
+        "src": "/images/responsive/ab71ebf10e9e74319af4-1440.webp",
+        "width": 1440,
+        "bytes": 160798
+      },
+      {
+        "src": "/images/responsive/ab71ebf10e9e74319af4-1600.webp",
+        "width": 1600,
+        "bytes": 217290
+      }
+    ]
+  },
+  "/images/experiences/coffee-signature-preparation.webp": {
+    "width": 1120,
+    "height": 1400,
+    "bytes": 96046,
+    "variants": [
+      {
+        "src": "/images/responsive/7060ef39a10917ecb1d4-320.webp",
+        "width": 320,
+        "bytes": 19614
+      },
+      {
+        "src": "/images/responsive/7060ef39a10917ecb1d4-480.webp",
+        "width": 480,
+        "bytes": 34350
+      },
+      {
+        "src": "/images/responsive/7060ef39a10917ecb1d4-768.webp",
+        "width": 768,
+        "bytes": 61214
+      },
+      {
+        "src": "/images/responsive/7060ef39a10917ecb1d4-1024.webp",
+        "width": 1024,
+        "bytes": 82958
+      },
+      {
+        "src": "/images/responsive/7060ef39a10917ecb1d4-1120.webp",
+        "width": 1120,
+        "bytes": 94746
+      }
+    ]
+  },
+  "/images/experiences/custom-branding/cafe-bebe-bow-cart-clear.avif": {
+    "width": 1200,
+    "height": 1305,
+    "bytes": 178100,
+    "variants": [
+      {
+        "src": "/images/responsive/58109d878520c7fe382f-320.webp",
+        "width": 320,
+        "bytes": 39960
+      },
+      {
+        "src": "/images/responsive/58109d878520c7fe382f-480.webp",
+        "width": 480,
+        "bytes": 79256
+      },
+      {
+        "src": "/images/responsive/58109d878520c7fe382f-768.webp",
+        "width": 768,
+        "bytes": 169938
+      }
+    ]
+  },
+  "/images/experiences/dance-floor-evening-clear.webp": {
+    "width": 1200,
+    "height": 900,
+    "bytes": 308640,
+    "variants": [
+      {
+        "src": "/images/responsive/fffb60d20d7de2b09376-320.webp",
+        "width": 320,
+        "bytes": 24504
+      },
+      {
+        "src": "/images/responsive/fffb60d20d7de2b09376-480.webp",
+        "width": 480,
+        "bytes": 50274
+      },
+      {
+        "src": "/images/responsive/fffb60d20d7de2b09376-768.webp",
+        "width": 768,
+        "bytes": 101566
+      },
+      {
+        "src": "/images/responsive/fffb60d20d7de2b09376-1024.webp",
+        "width": 1024,
+        "bytes": 150756
+      },
+      {
+        "src": "/images/responsive/fffb60d20d7de2b09376-1200.webp",
+        "width": 1200,
+        "bytes": 224388
+      }
+    ]
+  },
+  "/images/experiences/experiences-hero/luxe-coffee-dessert-experiences-hero-polished.webp": {
+    "width": 1402,
+    "height": 1122,
+    "bytes": 163148,
+    "variants": [
+      {
+        "src": "/images/responsive/b67ddad039b7346cf6e6-320.webp",
+        "width": 320,
+        "bytes": 11340
+      },
+      {
+        "src": "/images/responsive/b67ddad039b7346cf6e6-480.webp",
+        "width": 480,
+        "bytes": 20670
+      },
+      {
+        "src": "/images/responsive/b67ddad039b7346cf6e6-768.webp",
+        "width": 768,
+        "bytes": 40736
+      },
+      {
+        "src": "/images/responsive/b67ddad039b7346cf6e6-1024.webp",
+        "width": 1024,
+        "bytes": 60270
+      },
+      {
+        "src": "/images/responsive/b67ddad039b7346cf6e6-1402.webp",
+        "width": 1402,
+        "bytes": 106266
+      }
+    ]
+  },
+  "/images/experiences/experiences-hub/luxe-coffee-bar-completed-setting-hq.avif": {
+    "width": 1600,
+    "height": 2844,
+    "bytes": 193380,
+    "variants": [
+      {
+        "src": "/images/responsive/0d9cfc6c371053441a08-320.webp",
+        "width": 320,
+        "bytes": 24798
+      },
+      {
+        "src": "/images/responsive/0d9cfc6c371053441a08-480.webp",
+        "width": 480,
+        "bytes": 44726
+      },
+      {
+        "src": "/images/responsive/0d9cfc6c371053441a08-768.webp",
+        "width": 768,
+        "bytes": 84856
+      },
+      {
+        "src": "/images/responsive/0d9cfc6c371053441a08-1024.webp",
+        "width": 1024,
+        "bytes": 124722
+      },
+      {
+        "src": "/images/responsive/0d9cfc6c371053441a08-1440.webp",
+        "width": 1440,
+        "bytes": 189236
+      }
+    ]
+  },
+  "/images/experiences/experiences-hub/luxe-coffee-bar-finished-drink.avif": {
+    "width": 1200,
+    "height": 1579,
+    "bytes": 36679,
+    "variants": [
+      {
+        "src": "/images/responsive/78057840a0116d4bf311-320.webp",
+        "width": 320,
+        "bytes": 16150
+      },
+      {
+        "src": "/images/responsive/78057840a0116d4bf311-480.webp",
+        "width": 480,
+        "bytes": 26354
+      }
+    ]
+  },
+  "/images/experiences/experiences-hub/luxe-coffee-bar-in-service-hq.avif": {
+    "width": 1600,
+    "height": 2844,
+    "bytes": 443982,
+    "variants": [
+      {
+        "src": "/images/responsive/fb5a766b8208f5ff28eb-320.webp",
+        "width": 320,
+        "bytes": 23120
+      },
+      {
+        "src": "/images/responsive/fb5a766b8208f5ff28eb-480.webp",
+        "width": 480,
+        "bytes": 38626
+      },
+      {
+        "src": "/images/responsive/fb5a766b8208f5ff28eb-768.webp",
+        "width": 768,
+        "bytes": 76196
+      },
+      {
+        "src": "/images/responsive/fb5a766b8208f5ff28eb-1024.webp",
+        "width": 1024,
+        "bytes": 131556
+      },
+      {
+        "src": "/images/responsive/fb5a766b8208f5ff28eb-1440.webp",
+        "width": 1440,
+        "bytes": 262500
+      },
+      {
+        "src": "/images/responsive/fb5a766b8208f5ff28eb-1600.webp",
+        "width": 1600,
+        "bytes": 330438
+      }
+    ]
+  },
+  "/images/experiences/experiences-hub/luxe-sweet-cart-dessert-in-preparation-hq.avif": {
+    "width": 1600,
+    "height": 2844,
+    "bytes": 257973,
+    "variants": [
+      {
+        "src": "/images/responsive/75ce5ad16e63cf6c9f9d-320.webp",
+        "width": 320,
+        "bytes": 30228
+      },
+      {
+        "src": "/images/responsive/75ce5ad16e63cf6c9f9d-480.webp",
+        "width": 480,
+        "bytes": 49038
+      },
+      {
+        "src": "/images/responsive/75ce5ad16e63cf6c9f9d-768.webp",
+        "width": 768,
+        "bytes": 91138
+      },
+      {
+        "src": "/images/responsive/75ce5ad16e63cf6c9f9d-1024.webp",
+        "width": 1024,
+        "bytes": 133038
+      },
+      {
+        "src": "/images/responsive/75ce5ad16e63cf6c9f9d-1440.webp",
+        "width": 1440,
+        "bytes": 200160
+      },
+      {
+        "src": "/images/responsive/75ce5ad16e63cf6c9f9d-1600.webp",
+        "width": 1600,
+        "bytes": 245884
+      }
+    ]
+  },
+  "/images/experiences/experiences-hub/seating-celebration-clear-v4.webp": {
+    "width": 941,
+    "height": 1672,
+    "bytes": 353564,
+    "variants": [
+      {
+        "src": "/images/responsive/976fa487acf3072132fa-320.webp",
+        "width": 320,
+        "bytes": 46218
+      },
+      {
+        "src": "/images/responsive/976fa487acf3072132fa-480.webp",
+        "width": 480,
+        "bytes": 89712
+      },
+      {
+        "src": "/images/responsive/976fa487acf3072132fa-768.webp",
+        "width": 768,
+        "bytes": 177730
+      },
+      {
+        "src": "/images/responsive/976fa487acf3072132fa-941.webp",
+        "width": 941,
+        "bytes": 274500
+      }
+    ]
+  },
+  "/images/experiences/experiences-hub/sweet-cart-wedding-guests.webp": {
+    "width": 940,
+    "height": 1673,
+    "bytes": 167844,
+    "variants": [
+      {
+        "src": "/images/responsive/da2d650f0c2cf3c48a1c-320.webp",
+        "width": 320,
+        "bytes": 28872
+      },
+      {
+        "src": "/images/responsive/da2d650f0c2cf3c48a1c-480.webp",
+        "width": 480,
+        "bytes": 47554
+      },
+      {
+        "src": "/images/responsive/da2d650f0c2cf3c48a1c-768.webp",
+        "width": 768,
+        "bytes": 79226
+      },
+      {
+        "src": "/images/responsive/da2d650f0c2cf3c48a1c-940.webp",
+        "width": 940,
+        "bytes": 116228
+      }
+    ]
+  },
+  "/images/experiences/luxe-candlelight-event-lighting-finishing-details-toronto.avif": {
+    "width": 960,
+    "height": 1200,
+    "bytes": 97661,
+    "variants": [
+      {
+        "src": "/images/responsive/cb343fe6b3a936713eff-320.webp",
+        "width": 320,
+        "bytes": 24258
+      },
+      {
+        "src": "/images/responsive/cb343fe6b3a936713eff-480.webp",
+        "width": 480,
+        "bytes": 42412
+      },
+      {
+        "src": "/images/responsive/cb343fe6b3a936713eff-768.webp",
+        "width": 768,
+        "bytes": 83828
+      }
+    ]
+  },
+  "/images/experiences/luxe-coffee-bar-finished-drink.webp": {
+    "width": 1080,
+    "height": 1920,
+    "bytes": 191510,
+    "variants": [
+      {
+        "src": "/images/responsive/9b3aca272777706b0ade-320.webp",
+        "width": 320,
+        "bytes": 28504
+      },
+      {
+        "src": "/images/responsive/9b3aca272777706b0ade-480.webp",
+        "width": 480,
+        "bytes": 53056
+      },
+      {
+        "src": "/images/responsive/9b3aca272777706b0ade-768.webp",
+        "width": 768,
+        "bytes": 120294
+      },
+      {
+        "src": "/images/responsive/9b3aca272777706b0ade-1024.webp",
+        "width": 1024,
+        "bytes": 179090
+      }
+    ]
+  },
+  "/images/experiences/luxe-coffee-bar-service.webp": {
+    "width": 1200,
+    "height": 1200,
+    "bytes": 195534,
+    "variants": [
+      {
+        "src": "/images/responsive/a1a6f92513e16517b666-320.webp",
+        "width": 320,
+        "bytes": 18552
+      },
+      {
+        "src": "/images/responsive/a1a6f92513e16517b666-480.webp",
+        "width": 480,
+        "bytes": 32350
+      },
+      {
+        "src": "/images/responsive/a1a6f92513e16517b666-768.webp",
+        "width": 768,
+        "bytes": 57668
+      },
+      {
+        "src": "/images/responsive/a1a6f92513e16517b666-1024.webp",
+        "width": 1024,
+        "bytes": 78202
+      },
+      {
+        "src": "/images/responsive/a1a6f92513e16517b666-1200.webp",
+        "width": 1200,
+        "bytes": 94724
+      }
+    ]
+  },
+  "/images/experiences/luxe-indoor-table-setting-event-rentals-toronto.avif": {
+    "width": 1200,
+    "height": 964,
+    "bytes": 64303,
+    "variants": [
+      {
+        "src": "/images/responsive/e7fb688b8a5ace843adb-320.webp",
+        "width": 320,
+        "bytes": 14038
+      },
+      {
+        "src": "/images/responsive/e7fb688b8a5ace843adb-480.webp",
+        "width": 480,
+        "bytes": 24606
+      },
+      {
+        "src": "/images/responsive/e7fb688b8a5ace843adb-768.webp",
+        "width": 768,
+        "bytes": 43704
+      },
+      {
+        "src": "/images/responsive/e7fb688b8a5ace843adb-1024.webp",
+        "width": 1024,
+        "bytes": 62154
+      }
+    ]
+  },
+  "/images/experiences/luxe-outdoor-ceremony-white-chair-rentals-toronto.avif": {
+    "width": 1046,
+    "height": 840,
+    "bytes": 279832,
+    "variants": [
+      {
+        "src": "/images/responsive/858b68f5892888187afd-320.webp",
+        "width": 320,
+        "bytes": 39608
+      },
+      {
+        "src": "/images/responsive/858b68f5892888187afd-480.webp",
+        "width": 480,
+        "bytes": 88350
+      },
+      {
+        "src": "/images/responsive/858b68f5892888187afd-768.webp",
+        "width": 768,
+        "bytes": 219532
+      }
+    ]
+  },
+  "/images/experiences/luxe-seating-rentals-aerial-clear-top-tent-overview.webp": {
+    "width": 1440,
+    "height": 2560,
+    "bytes": 1079714,
+    "variants": [
+      {
+        "src": "/images/responsive/b755e2128f054587fcd5-320.webp",
+        "width": 320,
+        "bytes": 59248
+      },
+      {
+        "src": "/images/responsive/b755e2128f054587fcd5-480.webp",
+        "width": 480,
+        "bytes": 115514
+      },
+      {
+        "src": "/images/responsive/b755e2128f054587fcd5-768.webp",
+        "width": 768,
+        "bytes": 250550
+      },
+      {
+        "src": "/images/responsive/b755e2128f054587fcd5-1024.webp",
+        "width": 1024,
+        "bytes": 392784
+      },
+      {
+        "src": "/images/responsive/b755e2128f054587fcd5-1440.webp",
+        "width": 1440,
+        "bytes": 838806
+      }
+    ]
+  },
+  "/images/experiences/luxe-seating-rentals.webp": {
+    "width": 674,
+    "height": 674,
+    "bytes": 99944,
+    "variants": [
+      {
+        "src": "/images/responsive/872bc95827e3ca5a86b1-320.webp",
+        "width": 320,
+        "bytes": 34808
+      },
+      {
+        "src": "/images/responsive/872bc95827e3ca5a86b1-480.webp",
+        "width": 480,
+        "bytes": 65746
+      }
+    ]
+  },
+  "/images/experiences/luxe-six-foot-rectangular-tables-outdoor-event-toronto.avif": {
+    "width": 1554,
+    "height": 1000,
+    "bytes": 530673,
+    "variants": [
+      {
+        "src": "/images/responsive/41fd77cf412192755112-320.webp",
+        "width": 320,
+        "bytes": 36800
+      },
+      {
+        "src": "/images/responsive/41fd77cf412192755112-480.webp",
+        "width": 480,
+        "bytes": 78954
+      },
+      {
+        "src": "/images/responsive/41fd77cf412192755112-768.webp",
+        "width": 768,
+        "bytes": 188678
+      },
+      {
+        "src": "/images/responsive/41fd77cf412192755112-1024.webp",
+        "width": 1024,
+        "bytes": 314756
+      }
+    ]
+  },
+  "/images/experiences/luxe-sweet-cart-belgian-waffles-portrait.webp": {
+    "width": 1080,
+    "height": 1680,
+    "bytes": 106382,
+    "variants": [
+      {
+        "src": "/images/responsive/7d0ba3a4c252de3451b9-320.webp",
+        "width": 320,
+        "bytes": 32700
+      },
+      {
+        "src": "/images/responsive/7d0ba3a4c252de3451b9-480.webp",
+        "width": 480,
+        "bytes": 53220
+      },
+      {
+        "src": "/images/responsive/7d0ba3a4c252de3451b9-768.webp",
+        "width": 768,
+        "bytes": 95740
+      }
+    ]
+  },
+  "/images/experiences/luxe-sweet-cart-finished-for-the-guest.webp": {
+    "width": 1080,
+    "height": 1920,
+    "bytes": 50378,
+    "variants": [
+      {
+        "src": "/images/responsive/ecaec244ebce30bed124-320.webp",
+        "width": 320,
+        "bytes": 12884
+      },
+      {
+        "src": "/images/responsive/ecaec244ebce30bed124-480.webp",
+        "width": 480,
+        "bytes": 21808
+      },
+      {
+        "src": "/images/responsive/ecaec244ebce30bed124-768.webp",
+        "width": 768,
+        "bytes": 41038
+      }
+    ]
+  },
+  "/images/experiences/luxe-sweet-cart-mini-donuts.webp": {
+    "width": 1080,
+    "height": 1680,
+    "bytes": 58846,
+    "variants": [
+      {
+        "src": "/images/responsive/fcf73fc2d43e653d3189-320.webp",
+        "width": 320,
+        "bytes": 17048
+      },
+      {
+        "src": "/images/responsive/fcf73fc2d43e653d3189-480.webp",
+        "width": 480,
+        "bytes": 27792
+      },
+      {
+        "src": "/images/responsive/fcf73fc2d43e653d3189-768.webp",
+        "width": 768,
+        "bytes": 51554
+      }
+    ]
+  },
+  "/images/experiences/luxe-sweet-cart-mini-dutch-pancakes-portrait.webp": {
+    "width": 1080,
+    "height": 1680,
+    "bytes": 108110,
+    "variants": [
+      {
+        "src": "/images/responsive/e7a2d9e4a188948e2386-320.webp",
+        "width": 320,
+        "bytes": 31316
+      },
+      {
+        "src": "/images/responsive/e7a2d9e4a188948e2386-480.webp",
+        "width": 480,
+        "bytes": 52276
+      },
+      {
+        "src": "/images/responsive/e7a2d9e4a188948e2386-768.webp",
+        "width": 768,
+        "bytes": 94540
+      }
+    ]
+  },
+  "/images/experiences/luxe-sweet-cart-prepared-in-the-moment.webp": {
+    "width": 1080,
+    "height": 1920,
+    "bytes": 109636,
+    "variants": [
+      {
+        "src": "/images/responsive/36313a84b21ca4b792b4-320.webp",
+        "width": 320,
+        "bytes": 24494
+      },
+      {
+        "src": "/images/responsive/36313a84b21ca4b792b4-480.webp",
+        "width": 480,
+        "bytes": 43508
+      },
+      {
+        "src": "/images/responsive/36313a84b21ca4b792b4-768.webp",
+        "width": 768,
+        "bytes": 84378
+      }
+    ]
+  },
+  "/images/experiences/luxe-sweet-cart-service.webp": {
+    "width": 1038,
+    "height": 1038,
+    "bytes": 49160,
+    "variants": [
+      {
+        "src": "/images/responsive/eae36e3cf0702c70aa5c-320.webp",
+        "width": 320,
+        "bytes": 15696
+      },
+      {
+        "src": "/images/responsive/eae36e3cf0702c70aa5c-480.webp",
+        "width": 480,
+        "bytes": 25376
+      },
+      {
+        "src": "/images/responsive/eae36e3cf0702c70aa5c-768.webp",
+        "width": 768,
+        "bytes": 44018
+      }
+    ]
+  },
+  "/images/experiences/luxe-wedding-reception-layout-in-use-toronto.avif": {
+    "width": 960,
+    "height": 1200,
+    "bytes": 94110,
+    "variants": [
+      {
+        "src": "/images/responsive/1e3e4ecbf6cddef5ed88-320.webp",
+        "width": 320,
+        "bytes": 26042
+      },
+      {
+        "src": "/images/responsive/1e3e4ecbf6cddef5ed88-480.webp",
+        "width": 480,
+        "bytes": 46282
+      },
+      {
+        "src": "/images/responsive/1e3e4ecbf6cddef5ed88-768.webp",
+        "width": 768,
+        "bytes": 88188
+      }
+    ]
+  },
+  "/images/experiences/luxe-white-event-tent-outdoor-rentals-toronto.avif": {
+    "width": 1000,
+    "height": 803,
+    "bytes": 184600,
+    "variants": [
+      {
+        "src": "/images/responsive/5a765be8b4e47fb8da9a-320.webp",
+        "width": 320,
+        "bytes": 33434
+      },
+      {
+        "src": "/images/responsive/5a765be8b4e47fb8da9a-480.webp",
+        "width": 480,
+        "bytes": 72460
+      },
+      {
+        "src": "/images/responsive/5a765be8b4e47fb8da9a-768.webp",
+        "width": 768,
+        "bytes": 170548
+      }
+    ]
+  },
+  "/images/experiences/luxe-white-resin-chairs-event-rentals-toronto.avif": {
+    "width": 1046,
+    "height": 840,
+    "bytes": 69408,
+    "variants": [
+      {
+        "src": "/images/responsive/a9fb5cafd5f8bfe10f2f-320.webp",
+        "width": 320,
+        "bytes": 24484
+      },
+      {
+        "src": "/images/responsive/a9fb5cafd5f8bfe10f2f-480.webp",
+        "width": 480,
+        "bytes": 44162
+      }
+    ]
+  },
+  "/images/experiences/seating-rentals-hero-clarity.webp": {
+    "width": 1594,
+    "height": 986,
+    "bytes": 475210,
+    "variants": [
+      {
+        "src": "/images/responsive/bc6d1c29c2f58c5c7353-320.webp",
+        "width": 320,
+        "bytes": 24676
+      },
+      {
+        "src": "/images/responsive/bc6d1c29c2f58c5c7353-480.webp",
+        "width": 480,
+        "bytes": 48358
+      },
+      {
+        "src": "/images/responsive/bc6d1c29c2f58c5c7353-768.webp",
+        "width": 768,
+        "bytes": 103250
+      },
+      {
+        "src": "/images/responsive/bc6d1c29c2f58c5c7353-1024.webp",
+        "width": 1024,
+        "bytes": 153096
+      },
+      {
+        "src": "/images/responsive/bc6d1c29c2f58c5c7353-1440.webp",
+        "width": 1440,
+        "bytes": 245172
+      },
+      {
+        "src": "/images/responsive/bc6d1c29c2f58c5c7353-1594.webp",
+        "width": 1594,
+        "bytes": 318324
+      }
+    ]
+  },
+  "/images/experiences/sweet-cart-hero-clarity.webp": {
+    "width": 1008,
+    "height": 1560,
+    "bytes": 180428,
+    "variants": [
+      {
+        "src": "/images/responsive/ca42725d6e7e393f3ad4-320.webp",
+        "width": 320,
+        "bytes": 23776
+      },
+      {
+        "src": "/images/responsive/ca42725d6e7e393f3ad4-480.webp",
+        "width": 480,
+        "bytes": 39790
+      },
+      {
+        "src": "/images/responsive/ca42725d6e7e393f3ad4-768.webp",
+        "width": 768,
+        "bytes": 72238
+      },
+      {
+        "src": "/images/responsive/ca42725d6e7e393f3ad4-1008.webp",
+        "width": 1008,
+        "bytes": 111402
+      }
+    ]
+  },
+  "/images/experiences/sweet-cart-overview-clarity.webp": {
+    "width": 1149,
+    "height": 1369,
+    "bytes": 244410,
+    "variants": [
+      {
+        "src": "/images/responsive/7adee57f5dbce830e01c-320.webp",
+        "width": 320,
+        "bytes": 22570
+      },
+      {
+        "src": "/images/responsive/7adee57f5dbce830e01c-480.webp",
+        "width": 480,
+        "bytes": 40448
+      },
+      {
+        "src": "/images/responsive/7adee57f5dbce830e01c-768.webp",
+        "width": 768,
+        "bytes": 75588
+      },
+      {
+        "src": "/images/responsive/7adee57f5dbce830e01c-1024.webp",
+        "width": 1024,
+        "bytes": 108032
+      },
+      {
+        "src": "/images/responsive/7adee57f5dbce830e01c-1149.webp",
+        "width": 1149,
+        "bytes": 144578
+      }
+    ]
+  },
+  "/images/experiences/sweet-churro-service-clear.avif": {
+    "width": 1600,
+    "height": 835,
+    "bytes": 62077,
+    "variants": [
+      {
+        "src": "/images/responsive/deeb56a39f29a8de9eaf-320.webp",
+        "width": 320,
+        "bytes": 11874
+      },
+      {
+        "src": "/images/responsive/deeb56a39f29a8de9eaf-480.webp",
+        "width": 480,
+        "bytes": 20582
+      },
+      {
+        "src": "/images/responsive/deeb56a39f29a8de9eaf-768.webp",
+        "width": 768,
+        "bytes": 39992
+      },
+      {
+        "src": "/images/responsive/deeb56a39f29a8de9eaf-1024.webp",
+        "width": 1024,
+        "bytes": 58752
+      }
+    ]
+  },
+  "/images/experiences/sweet-signature-guests.webp": {
+    "width": 900,
+    "height": 1453,
+    "bytes": 62410,
+    "variants": [
+      {
+        "src": "/images/responsive/9406fc1535ed65964b87-320.webp",
+        "width": 320,
+        "bytes": 19786
+      },
+      {
+        "src": "/images/responsive/9406fc1535ed65964b87-480.webp",
+        "width": 480,
+        "bytes": 34578
+      },
+      {
+        "src": "/images/responsive/9406fc1535ed65964b87-768.webp",
+        "width": 768,
+        "bytes": 55598
+      }
+    ]
+  },
+  "/images/experiences/tent-walls-and-lighting-centered-v2.webp": {
+    "width": 1200,
+    "height": 900,
+    "bytes": 249490,
+    "variants": [
+      {
+        "src": "/images/responsive/738f4925018e21be2283-320.webp",
+        "width": 320,
+        "bytes": 25290
+      },
+      {
+        "src": "/images/responsive/738f4925018e21be2283-480.webp",
+        "width": 480,
+        "bytes": 54010
+      },
+      {
+        "src": "/images/responsive/738f4925018e21be2283-768.webp",
+        "width": 768,
+        "bytes": 122722
+      },
+      {
+        "src": "/images/responsive/738f4925018e21be2283-1024.webp",
+        "width": 1024,
+        "bytes": 182738
+      }
+    ]
+  },
+  "/images/gallery/birthday-guest-dessert-clear.avif": {
+    "width": 1730,
+    "height": 909,
+    "bytes": 109885,
+    "variants": [
+      {
+        "src": "/images/responsive/08515da2ad88caa73405-320.webp",
+        "width": 320,
+        "bytes": 13580
+      },
+      {
+        "src": "/images/responsive/08515da2ad88caa73405-480.webp",
+        "width": 480,
+        "bytes": 23756
+      },
+      {
+        "src": "/images/responsive/08515da2ad88caa73405-768.webp",
+        "width": 768,
+        "bytes": 44790
+      },
+      {
+        "src": "/images/responsive/08515da2ad88caa73405-1024.webp",
+        "width": 1024,
+        "bytes": 66234
+      },
+      {
+        "src": "/images/responsive/08515da2ad88caa73405-1440.webp",
+        "width": 1440,
+        "bytes": 101644
+      }
+    ]
+  },
+  "/images/gallery/bridal-guest-matcha-clear.avif": {
+    "width": 966,
+    "height": 1628,
+    "bytes": 105067,
+    "variants": [
+      {
+        "src": "/images/responsive/859d40469785b975241d-320.webp",
+        "width": 320,
+        "bytes": 23584
+      },
+      {
+        "src": "/images/responsive/859d40469785b975241d-480.webp",
+        "width": 480,
+        "bytes": 41184
+      },
+      {
+        "src": "/images/responsive/859d40469785b975241d-768.webp",
+        "width": 768,
+        "bytes": 83114
+      }
+    ]
+  },
+  "/images/gallery/cafe-dea-guests-dark-outfits-clear.avif": {
+    "width": 941,
+    "height": 1672,
+    "bytes": 141100,
+    "variants": [
+      {
+        "src": "/images/responsive/987be3d6cb9e934f9dcf-320.webp",
+        "width": 320,
+        "bytes": 24850
+      },
+      {
+        "src": "/images/responsive/987be3d6cb9e934f9dcf-480.webp",
+        "width": 480,
+        "bytes": 49364
+      },
+      {
+        "src": "/images/responsive/987be3d6cb9e934f9dcf-768.webp",
+        "width": 768,
+        "bytes": 108672
+      }
+    ]
+  },
+  "/images/gallery/cafe-dea-guests.avif": {
+    "width": 900,
+    "height": 1600,
+    "bytes": 131329,
+    "variants": [
+      {
+        "src": "/images/responsive/b2adc403885c225002b8-320.webp",
+        "width": 320,
+        "bytes": 27608
+      },
+      {
+        "src": "/images/responsive/b2adc403885c225002b8-480.webp",
+        "width": 480,
+        "bytes": 47664
+      },
+      {
+        "src": "/images/responsive/b2adc403885c225002b8-768.webp",
+        "width": 768,
+        "bytes": 94140
+      },
+      {
+        "src": "/images/responsive/b2adc403885c225002b8-900.webp",
+        "width": 900,
+        "bytes": 120164
+      }
+    ]
+  },
+  "/images/gallery/cafe-dea-host-coffee-clear.avif": {
+    "width": 941,
+    "height": 1672,
+    "bytes": 105448,
+    "variants": [
+      {
+        "src": "/images/responsive/8263cb5ae2fb2f61cb32-320.webp",
+        "width": 320,
+        "bytes": 21586
+      },
+      {
+        "src": "/images/responsive/8263cb5ae2fb2f61cb32-480.webp",
+        "width": 480,
+        "bytes": 40738
+      },
+      {
+        "src": "/images/responsive/8263cb5ae2fb2f61cb32-768.webp",
+        "width": 768,
+        "bytes": 86640
+      }
+    ]
+  },
+  "/images/gallery/cafe-dea-three-guests-clear.avif": {
+    "width": 941,
+    "height": 1671,
+    "bytes": 122363,
+    "variants": [
+      {
+        "src": "/images/responsive/a668bd57ac79b51b63ab-320.webp",
+        "width": 320,
+        "bytes": 25392
+      },
+      {
+        "src": "/images/responsive/a668bd57ac79b51b63ab-480.webp",
+        "width": 480,
+        "bytes": 48188
+      },
+      {
+        "src": "/images/responsive/a668bd57ac79b51b63ab-768.webp",
+        "width": 768,
+        "bytes": 99834
+      }
+    ]
+  },
+  "/images/home/baby-shower-bunny-matcha-close-clear.avif": {
+    "width": 1066,
+    "height": 1476,
+    "bytes": 182047,
+    "variants": [
+      {
+        "src": "/images/responsive/b022168aca1c840d2b17-320.webp",
+        "width": 320,
+        "bytes": 32344
+      },
+      {
+        "src": "/images/responsive/b022168aca1c840d2b17-480.webp",
+        "width": 480,
+        "bytes": 66738
+      },
+      {
+        "src": "/images/responsive/b022168aca1c840d2b17-768.webp",
+        "width": 768,
+        "bytes": 145406
+      }
+    ]
+  },
+  "/images/home/baby-shower-bunny-matcha-wide-clear.avif": {
+    "width": 916,
+    "height": 1717,
+    "bytes": 83962,
+    "variants": [
+      {
+        "src": "/images/responsive/d7ec7642361d306852f5-320.webp",
+        "width": 320,
+        "bytes": 22638
+      },
+      {
+        "src": "/images/responsive/d7ec7642361d306852f5-480.webp",
+        "width": 480,
+        "bytes": 42526
+      }
+    ]
+  },
+  "/images/home/coffee-core-1-wide.webp": {
+    "width": 1254,
+    "height": 1254,
+    "bytes": 156404,
+    "variants": [
+      {
+        "src": "/images/responsive/40fcf8cbb3db9abf3c11-320.webp",
+        "width": 320,
+        "bytes": 13228
+      },
+      {
+        "src": "/images/responsive/40fcf8cbb3db9abf3c11-480.webp",
+        "width": 480,
+        "bytes": 23896
+      },
+      {
+        "src": "/images/responsive/40fcf8cbb3db9abf3c11-768.webp",
+        "width": 768,
+        "bytes": 45736
+      },
+      {
+        "src": "/images/responsive/40fcf8cbb3db9abf3c11-1024.webp",
+        "width": 1024,
+        "bytes": 67336
+      },
+      {
+        "src": "/images/responsive/40fcf8cbb3db9abf3c11-1254.webp",
+        "width": 1254,
+        "bytes": 98080
+      }
+    ]
+  },
+  "/images/home/coffee-core-2-wide.webp": {
+    "width": 1254,
+    "height": 1254,
+    "bytes": 549600,
+    "variants": [
+      {
+        "src": "/images/responsive/43a98f09b07f14f469ca-320.webp",
+        "width": 320,
+        "bytes": 37160
+      },
+      {
+        "src": "/images/responsive/43a98f09b07f14f469ca-480.webp",
+        "width": 480,
+        "bytes": 75958
+      },
+      {
+        "src": "/images/responsive/43a98f09b07f14f469ca-768.webp",
+        "width": 768,
+        "bytes": 169300
+      },
+      {
+        "src": "/images/responsive/43a98f09b07f14f469ca-1024.webp",
+        "width": 1024,
+        "bytes": 260728
+      },
+      {
+        "src": "/images/responsive/43a98f09b07f14f469ca-1254.webp",
+        "width": 1254,
+        "bytes": 388022
+      }
+    ]
+  },
+  "/images/home/coffee-quote-preparation-clean.webp": {
+    "width": 993,
+    "height": 1583,
+    "bytes": 76648,
+    "variants": [
+      {
+        "src": "/images/responsive/f20a0106fe6e251e9e44-320.webp",
+        "width": 320,
+        "bytes": 18536
+      },
+      {
+        "src": "/images/responsive/f20a0106fe6e251e9e44-480.webp",
+        "width": 480,
+        "bytes": 32028
+      },
+      {
+        "src": "/images/responsive/f20a0106fe6e251e9e44-768.webp",
+        "width": 768,
+        "bytes": 54332
+      },
+      {
+        "src": "/images/responsive/f20a0106fe6e251e9e44-993.webp",
+        "width": 993,
+        "bytes": 75466
+      }
+    ]
+  },
+  "/images/home/luxe-corporate-events-brand-activations-v3-poster.webp": {
+    "width": 1080,
+    "height": 1920,
+    "bytes": 73020,
+    "variants": [
+      {
+        "src": "/images/responsive/df41011c1b8d30f59848-320.webp",
+        "width": 320,
+        "bytes": 20010
+      },
+      {
+        "src": "/images/responsive/df41011c1b8d30f59848-480.webp",
+        "width": 480,
+        "bytes": 32712
+      },
+      {
+        "src": "/images/responsive/df41011c1b8d30f59848-768.webp",
+        "width": 768,
+        "bytes": 61808
+      }
+    ]
+  },
+  "/images/home/luxe-weddings-private-events-v2-poster.webp": {
+    "width": 1080,
+    "height": 1920,
+    "bytes": 399460,
+    "variants": [
+      {
+        "src": "/images/responsive/1dbf637eb65cfddd9060-320.webp",
+        "width": 320,
+        "bytes": 36476
+      },
+      {
+        "src": "/images/responsive/1dbf637eb65cfddd9060-480.webp",
+        "width": 480,
+        "bytes": 63772
+      },
+      {
+        "src": "/images/responsive/1dbf637eb65cfddd9060-768.webp",
+        "width": 768,
+        "bytes": 122776
+      },
+      {
+        "src": "/images/responsive/1dbf637eb65cfddd9060-1024.webp",
+        "width": 1024,
+        "bytes": 170554
+      },
+      {
+        "src": "/images/responsive/1dbf637eb65cfddd9060-1080.webp",
+        "width": 1080,
+        "bytes": 235786
+      }
+    ]
+  },
+  "/images/home/personal-celebrations.webp": {
+    "width": 1220,
+    "height": 1340,
+    "bytes": 98962,
+    "variants": [
+      {
+        "src": "/images/responsive/bedd23db693fb11424f2-320.webp",
+        "width": 320,
+        "bytes": 22724
+      },
+      {
+        "src": "/images/responsive/bedd23db693fb11424f2-480.webp",
+        "width": 480,
+        "bytes": 39992
+      },
+      {
+        "src": "/images/responsive/bedd23db693fb11424f2-768.webp",
+        "width": 768,
+        "bytes": 70446
+      },
+      {
+        "src": "/images/responsive/bedd23db693fb11424f2-1024.webp",
+        "width": 1024,
+        "bytes": 89138
+      }
+    ]
+  },
+  "/images/home/professional-occasions.webp": {
+    "width": 788,
+    "height": 874,
+    "bytes": 161636,
+    "variants": [
+      {
+        "src": "/images/responsive/a13f2ee255f64909fa62-320.webp",
+        "width": 320,
+        "bytes": 28178
+      },
+      {
+        "src": "/images/responsive/a13f2ee255f64909fa62-480.webp",
+        "width": 480,
+        "bytes": 57882
+      },
+      {
+        "src": "/images/responsive/a13f2ee255f64909fa62-768.webp",
+        "width": 768,
+        "bytes": 135496
+      }
+    ]
+  },
+  "/images/home/rentals-core-garden.webp": {
+    "width": 1254,
+    "height": 1254,
+    "bytes": 826784,
+    "variants": [
+      {
+        "src": "/images/responsive/d0193d7a94e39b2ce8bc-320.webp",
+        "width": 320,
+        "bytes": 50438
+      },
+      {
+        "src": "/images/responsive/d0193d7a94e39b2ce8bc-480.webp",
+        "width": 480,
+        "bytes": 107440
+      },
+      {
+        "src": "/images/responsive/d0193d7a94e39b2ce8bc-768.webp",
+        "width": 768,
+        "bytes": 242990
+      },
+      {
+        "src": "/images/responsive/d0193d7a94e39b2ce8bc-1024.webp",
+        "width": 1024,
+        "bytes": 380102
+      },
+      {
+        "src": "/images/responsive/d0193d7a94e39b2ce8bc-1254.webp",
+        "width": 1254,
+        "bytes": 593012
+      }
+    ]
+  },
+  "/images/home/sweet-cart-core-wheels.webp": {
+    "width": 1254,
+    "height": 1254,
+    "bytes": 174350,
+    "variants": [
+      {
+        "src": "/images/responsive/a2e6d89d88de49c12b5a-320.webp",
+        "width": 320,
+        "bytes": 19128
+      },
+      {
+        "src": "/images/responsive/a2e6d89d88de49c12b5a-480.webp",
+        "width": 480,
+        "bytes": 33528
+      },
+      {
+        "src": "/images/responsive/a2e6d89d88de49c12b5a-768.webp",
+        "width": 768,
+        "bytes": 59172
+      },
+      {
+        "src": "/images/responsive/a2e6d89d88de49c12b5a-1024.webp",
+        "width": 1024,
+        "bytes": 82950
+      },
+      {
+        "src": "/images/responsive/a2e6d89d88de49c12b5a-1254.webp",
+        "width": 1254,
+        "bytes": 117128
+      }
+    ]
+  },
+  "/images/home/work-in-context.webp": {
+    "width": 2400,
+    "height": 1351,
+    "bytes": 52970,
+    "variants": [
+      {
+        "src": "/images/responsive/ba020c412ceeb5c6c524-320.webp",
+        "width": 320,
+        "bytes": 3960
+      },
+      {
+        "src": "/images/responsive/ba020c412ceeb5c6c524-480.webp",
+        "width": 480,
+        "bytes": 6760
+      },
+      {
+        "src": "/images/responsive/ba020c412ceeb5c6c524-768.webp",
+        "width": 768,
+        "bytes": 13328
+      },
+      {
+        "src": "/images/responsive/ba020c412ceeb5c6c524-1024.webp",
+        "width": 1024,
+        "bytes": 20644
+      },
+      {
+        "src": "/images/responsive/ba020c412ceeb5c6c524-1440.webp",
+        "width": 1440,
+        "bytes": 34982
+      },
+      {
+        "src": "/images/responsive/ba020c412ceeb5c6c524-1920.webp",
+        "width": 1920,
+        "bytes": 45318
+      }
+    ]
+  },
+  "/images/social/luxe-brand-activations.png": {
+    "width": 1200,
+    "height": 630,
+    "bytes": 341004,
+    "variants": [
+      {
+        "src": "/images/responsive/9df2244ca6f01e19d03f-320.webp",
+        "width": 320,
+        "bytes": 4786
+      },
+      {
+        "src": "/images/responsive/9df2244ca6f01e19d03f-480.webp",
+        "width": 480,
+        "bytes": 17954
+      },
+      {
+        "src": "/images/responsive/9df2244ca6f01e19d03f-768.webp",
+        "width": 768,
+        "bytes": 64244
+      },
+      {
+        "src": "/images/responsive/9df2244ca6f01e19d03f-1024.webp",
+        "width": 1024,
+        "bytes": 115566
+      },
+      {
+        "src": "/images/responsive/9df2244ca6f01e19d03f-1200.webp",
+        "width": 1200,
+        "bytes": 88562
+      }
+    ]
+  },
+  "/images/social/luxe-coffee-bar.png": {
+    "width": 1200,
+    "height": 630,
+    "bytes": 333497,
+    "variants": [
+      {
+        "src": "/images/responsive/bd43c8f9bb9a8be7047a-320.webp",
+        "width": 320,
+        "bytes": 4092
+      },
+      {
+        "src": "/images/responsive/bd43c8f9bb9a8be7047a-480.webp",
+        "width": 480,
+        "bytes": 16930
+      },
+      {
+        "src": "/images/responsive/bd43c8f9bb9a8be7047a-768.webp",
+        "width": 768,
+        "bytes": 63002
+      },
+      {
+        "src": "/images/responsive/bd43c8f9bb9a8be7047a-1024.webp",
+        "width": 1024,
+        "bytes": 114220
+      },
+      {
+        "src": "/images/responsive/bd43c8f9bb9a8be7047a-1200.webp",
+        "width": 1200,
+        "bytes": 86048
+      }
+    ]
+  },
+  "/images/social/luxe-corporate-events.png": {
+    "width": 1200,
+    "height": 630,
+    "bytes": 339397,
+    "variants": [
+      {
+        "src": "/images/responsive/26bf8a01d55beb226c82-320.webp",
+        "width": 320,
+        "bytes": 4716
+      },
+      {
+        "src": "/images/responsive/26bf8a01d55beb226c82-480.webp",
+        "width": 480,
+        "bytes": 17858
+      },
+      {
+        "src": "/images/responsive/26bf8a01d55beb226c82-768.webp",
+        "width": 768,
+        "bytes": 64186
+      },
+      {
+        "src": "/images/responsive/26bf8a01d55beb226c82-1024.webp",
+        "width": 1024,
+        "bytes": 115300
+      },
+      {
+        "src": "/images/responsive/26bf8a01d55beb226c82-1200.webp",
+        "width": 1200,
+        "bytes": 88384
+      }
+    ]
+  },
+  "/images/social/luxe-event-co-home.png": {
+    "width": 1200,
+    "height": 630,
+    "bytes": 357431,
+    "variants": [
+      {
+        "src": "/images/responsive/2145c9a68610add4b9cd-320.webp",
+        "width": 320,
+        "bytes": 5826
+      },
+      {
+        "src": "/images/responsive/2145c9a68610add4b9cd-480.webp",
+        "width": 480,
+        "bytes": 19600
+      },
+      {
+        "src": "/images/responsive/2145c9a68610add4b9cd-768.webp",
+        "width": 768,
+        "bytes": 69516
+      },
+      {
+        "src": "/images/responsive/2145c9a68610add4b9cd-1024.webp",
+        "width": 1024,
+        "bytes": 122246
+      },
+      {
+        "src": "/images/responsive/2145c9a68610add4b9cd-1200.webp",
+        "width": 1200,
+        "bytes": 93378
+      }
+    ]
+  },
+  "/images/social/luxe-seating-rentals.png": {
+    "width": 1200,
+    "height": 630,
+    "bytes": 335061,
+    "variants": [
+      {
+        "src": "/images/responsive/eaf66366a5f3925fa1cc-320.webp",
+        "width": 320,
+        "bytes": 4328
+      },
+      {
+        "src": "/images/responsive/eaf66366a5f3925fa1cc-480.webp",
+        "width": 480,
+        "bytes": 17120
+      },
+      {
+        "src": "/images/responsive/eaf66366a5f3925fa1cc-768.webp",
+        "width": 768,
+        "bytes": 63234
+      },
+      {
+        "src": "/images/responsive/eaf66366a5f3925fa1cc-1024.webp",
+        "width": 1024,
+        "bytes": 114046
+      },
+      {
+        "src": "/images/responsive/eaf66366a5f3925fa1cc-1200.webp",
+        "width": 1200,
+        "bytes": 86334
+      }
+    ]
+  },
+  "/images/social/luxe-sweet-cart.png": {
+    "width": 1200,
+    "height": 630,
+    "bytes": 331138,
+    "variants": [
+      {
+        "src": "/images/responsive/9f16c5715c507ca0cc4f-320.webp",
+        "width": 320,
+        "bytes": 4088
+      },
+      {
+        "src": "/images/responsive/9f16c5715c507ca0cc4f-480.webp",
+        "width": 480,
+        "bytes": 16834
+      },
+      {
+        "src": "/images/responsive/9f16c5715c507ca0cc4f-768.webp",
+        "width": 768,
+        "bytes": 62866
+      },
+      {
+        "src": "/images/responsive/9f16c5715c507ca0cc4f-1024.webp",
+        "width": 1024,
+        "bytes": 113758
+      },
+      {
+        "src": "/images/responsive/9f16c5715c507ca0cc4f-1200.webp",
+        "width": 1200,
+        "bytes": 85486
+      }
+    ]
+  },
+  "/images/social/luxe-wedding-experiences.png": {
+    "width": 1200,
+    "height": 630,
+    "bytes": 345073,
+    "variants": [
+      {
+        "src": "/images/responsive/22b65809cc0b6ba57b90-320.webp",
+        "width": 320,
+        "bytes": 5100
+      },
+      {
+        "src": "/images/responsive/22b65809cc0b6ba57b90-480.webp",
+        "width": 480,
+        "bytes": 18540
+      },
+      {
+        "src": "/images/responsive/22b65809cc0b6ba57b90-768.webp",
+        "width": 768,
+        "bytes": 64968
+      },
+      {
+        "src": "/images/responsive/22b65809cc0b6ba57b90-1024.webp",
+        "width": 1024,
+        "bytes": 116226
+      },
+      {
+        "src": "/images/responsive/22b65809cc0b6ba57b90-1200.webp",
+        "width": 1200,
+        "bytes": 89438
+      }
+    ]
+  },
+  "/images/weddings/garden-reception-table.webp": {
+    "width": 899,
+    "height": 1600,
+    "bytes": 110276,
+    "variants": [
+      {
+        "src": "/images/responsive/a155ea2e98f7edc0988b-320.webp",
+        "width": 320,
+        "bytes": 38222
+      },
+      {
+        "src": "/images/responsive/a155ea2e98f7edc0988b-480.webp",
+        "width": 480,
+        "bytes": 64132
+      },
+      {
+        "src": "/images/responsive/a155ea2e98f7edc0988b-768.webp",
+        "width": 768,
+        "bytes": 102730
+      }
+    ]
+  },
+  "/images/weddings/sweet-moment-dessert-station.webp": {
+    "width": 900,
+    "height": 1600,
+    "bytes": 115878,
+    "variants": [
+      {
+        "src": "/images/responsive/0a83daf9d0fdac125373-320.webp",
+        "width": 320,
+        "bytes": 35270
+      },
+      {
+        "src": "/images/responsive/0a83daf9d0fdac125373-480.webp",
+        "width": 480,
+        "bytes": 63206
+      },
+      {
+        "src": "/images/responsive/0a83daf9d0fdac125373-768.webp",
+        "width": 768,
+        "bytes": 105144
+      }
+    ]
+  },
+  "/images/weddings/wedding-hero-bride-dessert-selection-clear.avif": {
+    "width": 968,
+    "height": 1625,
+    "bytes": 169299,
+    "variants": [
+      {
+        "src": "/images/responsive/8ad1d9b613fd32c2befd-320.webp",
+        "width": 320,
+        "bytes": 40632
+      },
+      {
+        "src": "/images/responsive/8ad1d9b613fd32c2befd-480.webp",
+        "width": 480,
+        "bytes": 81108
+      },
+      {
+        "src": "/images/responsive/8ad1d9b613fd32c2befd-768.webp",
+        "width": 768,
+        "bytes": 161902
+      }
+    ]
+  },
+  "/images/weddings/wedding-hero-bride-dessert-smile-clear.avif": {
+    "width": 947,
+    "height": 1660,
+    "bytes": 172796,
+    "variants": [
+      {
+        "src": "/images/responsive/b799bdba31681b66f2b8-320.webp",
+        "width": 320,
+        "bytes": 45320
+      },
+      {
+        "src": "/images/responsive/b799bdba31681b66f2b8-480.webp",
+        "width": 480,
+        "bytes": 88014
+      }
+    ]
+  },
+  "/images/weddings/wedding-hero-couple-coffee-cheers-clear.avif": {
+    "width": 974,
+    "height": 1615,
+    "bytes": 297334,
+    "variants": [
+      {
+        "src": "/images/responsive/4cb5bbf22400a7276d28-320.webp",
+        "width": 320,
+        "bytes": 65130
+      },
+      {
+        "src": "/images/responsive/4cb5bbf22400a7276d28-480.webp",
+        "width": 480,
+        "bytes": 136420
+      },
+      {
+        "src": "/images/responsive/4cb5bbf22400a7276d28-768.webp",
+        "width": 768,
+        "bytes": 295674
+      }
+    ]
+  },
+  "/images/weddings/wedding-hero-couple-dessert-clear.avif": {
+    "width": 992,
+    "height": 1585,
+    "bytes": 170316,
+    "variants": [
+      {
+        "src": "/images/responsive/293380f166ace5666787-320.webp",
+        "width": 320,
+        "bytes": 41134
+      },
+      {
+        "src": "/images/responsive/293380f166ace5666787-480.webp",
+        "width": 480,
+        "bytes": 80254
+      },
+      {
+        "src": "/images/responsive/293380f166ace5666787-768.webp",
+        "width": 768,
+        "bytes": 165710
+      }
+    ]
+  },
+  "/images/weddings/wedding-hero-couple-late-night-clear.avif": {
+    "width": 1077,
+    "height": 1461,
+    "bytes": 94574,
+    "variants": [
+      {
+        "src": "/images/responsive/d10cb9fd7b752fa711a5-320.webp",
+        "width": 320,
+        "bytes": 23472
+      },
+      {
+        "src": "/images/responsive/d10cb9fd7b752fa711a5-480.webp",
+        "width": 480,
+        "bytes": 40490
+      },
+      {
+        "src": "/images/responsive/d10cb9fd7b752fa711a5-768.webp",
+        "width": 768,
+        "bytes": 75046
+      }
+    ]
+  },
+  "/images/weddings/wedding-hero-dessert-moment-clear-v2.avif": {
+    "width": 941,
+    "height": 1672,
+    "bytes": 135604,
+    "variants": [
+      {
+        "src": "/images/responsive/cdb187a8c6d3f956824e-320.webp",
+        "width": 320,
+        "bytes": 30492
+      },
+      {
+        "src": "/images/responsive/cdb187a8c6d3f956824e-480.webp",
+        "width": 480,
+        "bytes": 56618
+      },
+      {
+        "src": "/images/responsive/cdb187a8c6d3f956824e-768.webp",
+        "width": 768,
+        "bytes": 119076
+      }
+    ]
+  },
+  "/images/weddings/wedding-personalized-cup.webp": {
+    "width": 2160,
+    "height": 3840,
+    "bytes": 1214378,
+    "variants": [
+      {
+        "src": "/images/responsive/5a76cafeb5f93bb5f3b9-320.webp",
+        "width": 320,
+        "bytes": 13124
+      },
+      {
+        "src": "/images/responsive/5a76cafeb5f93bb5f3b9-480.webp",
+        "width": 480,
+        "bytes": 22670
+      },
+      {
+        "src": "/images/responsive/5a76cafeb5f93bb5f3b9-768.webp",
+        "width": 768,
+        "bytes": 43542
+      },
+      {
+        "src": "/images/responsive/5a76cafeb5f93bb5f3b9-1024.webp",
+        "width": 1024,
+        "bytes": 76628
+      },
+      {
+        "src": "/images/responsive/5a76cafeb5f93bb5f3b9-1440.webp",
+        "width": 1440,
+        "bytes": 173290
+      },
+      {
+        "src": "/images/responsive/5a76cafeb5f93bb5f3b9-1920.webp",
+        "width": 1920,
+        "bytes": 300236
+      },
+      {
+        "src": "/images/responsive/5a76cafeb5f93bb5f3b9-2160.webp",
+        "width": 2160,
+        "bytes": 542428
+      }
+    ]
+  },
+  "/images/weddings/wedding-personalized-menu.webp": {
+    "width": 1073,
+    "height": 1466,
+    "bytes": 155342,
+    "variants": [
+      {
+        "src": "/images/responsive/a5b6d9b5344f54f255a0-320.webp",
+        "width": 320,
+        "bytes": 12144
+      },
+      {
+        "src": "/images/responsive/a5b6d9b5344f54f255a0-480.webp",
+        "width": 480,
+        "bytes": 22750
+      },
+      {
+        "src": "/images/responsive/a5b6d9b5344f54f255a0-768.webp",
+        "width": 768,
+        "bytes": 45670
+      },
+      {
+        "src": "/images/responsive/a5b6d9b5344f54f255a0-1024.webp",
+        "width": 1024,
+        "bytes": 67432
+      },
+      {
+        "src": "/images/responsive/a5b6d9b5344f54f255a0-1073.webp",
+        "width": 1073,
+        "bytes": 86874
+      }
+    ]
+  },
+  "/images/weddings/wedding-rentals-clean.webp": {
+    "width": 1330,
+    "height": 1182,
+    "bytes": 304194,
+    "variants": [
+      {
+        "src": "/images/responsive/2315346dcb30132f0787-320.webp",
+        "width": 320,
+        "bytes": 24616
+      },
+      {
+        "src": "/images/responsive/2315346dcb30132f0787-480.webp",
+        "width": 480,
+        "bytes": 44396
+      },
+      {
+        "src": "/images/responsive/2315346dcb30132f0787-768.webp",
+        "width": 768,
+        "bytes": 81794
+      },
+      {
+        "src": "/images/responsive/2315346dcb30132f0787-1024.webp",
+        "width": 1024,
+        "bytes": 118136
+      },
+      {
+        "src": "/images/responsive/2315346dcb30132f0787-1330.webp",
+        "width": 1330,
+        "bytes": 186930
+      }
+    ]
+  },
+  "/images/weddings/welcome-coffee-service-wide.webp": {
+    "width": 1122,
+    "height": 1402,
+    "bytes": 317632,
+    "variants": [
+      {
+        "src": "/images/responsive/04355fcea01787d66aed-320.webp",
+        "width": 320,
+        "bytes": 38158
+      },
+      {
+        "src": "/images/responsive/04355fcea01787d66aed-480.webp",
+        "width": 480,
+        "bytes": 66314
+      },
+      {
+        "src": "/images/responsive/04355fcea01787d66aed-768.webp",
+        "width": 768,
+        "bytes": 116064
+      },
+      {
+        "src": "/images/responsive/04355fcea01787d66aed-1024.webp",
+        "width": 1024,
+        "bytes": 162036
+      },
+      {
+        "src": "/images/responsive/04355fcea01787d66aed-1122.webp",
+        "width": 1122,
+        "bytes": 199770
+      }
+    ]
+  },
+  "/images/weddings/welcome-coffee-service.webp": {
+    "width": 900,
+    "height": 1600,
+    "bytes": 114126,
+    "variants": [
+      {
+        "src": "/images/responsive/d26618cd4e78f368aedd-320.webp",
+        "width": 320,
+        "bytes": 32494
+      },
+      {
+        "src": "/images/responsive/d26618cd4e78f368aedd-480.webp",
+        "width": 480,
+        "bytes": 57500
+      },
+      {
+        "src": "/images/responsive/d26618cd4e78f368aedd-768.webp",
+        "width": 768,
+        "bytes": 93206
+      }
+    ]
+  },
+  "/media/home-hero/coffee-poster.jpg": {
+    "width": 900,
+    "height": 1600,
+    "bytes": 54762,
+    "variants": [
+      {
+        "src": "/images/responsive/678f1992a99fe8bbbc05-320.webp",
+        "width": 320,
+        "bytes": 18700
+      },
+      {
+        "src": "/images/responsive/678f1992a99fe8bbbc05-480.webp",
+        "width": 480,
+        "bytes": 31144
+      },
+      {
+        "src": "/images/responsive/678f1992a99fe8bbbc05-768.webp",
+        "width": 768,
+        "bytes": 53640
+      }
+    ]
+  },
+  "/media/home-hero/dessert-poster.jpg": {
+    "width": 900,
+    "height": 1600,
+    "bytes": 67498,
+    "variants": [
+      {
+        "src": "/images/responsive/3614f6a34ff746bf5fec-320.webp",
+        "width": 320,
+        "bytes": 22878
+      },
+      {
+        "src": "/images/responsive/3614f6a34ff746bf5fec-480.webp",
+        "width": 480,
+        "bytes": 37894
+      }
+    ]
+  },
+  "/media/home-hero/rentals-dji-poster.jpg": {
+    "width": 720,
+    "height": 1280,
+    "bytes": 199863,
+    "variants": [
+      {
+        "src": "/images/responsive/f7cf457a1b00918c3691-320.webp",
+        "width": 320,
+        "bytes": 49528
+      },
+      {
+        "src": "/images/responsive/f7cf457a1b00918c3691-480.webp",
+        "width": 480,
+        "bytes": 99630
+      },
+      {
+        "src": "/images/responsive/f7cf457a1b00918c3691-720.webp",
+        "width": 720,
+        "bytes": 199230
+      }
+    ]
+  }
+}

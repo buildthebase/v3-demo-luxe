@@ -19,6 +19,8 @@ import { experiencesSectionNavigation } from "../page-section-navigation";
 import { createCollectionPageSchema } from "../schema-builders";
 import { experiences } from "../site-config";
 import { experienceHubCombinations } from "./content";
+import "./experiences-occasions.css";
+import "./experiences-booking.css";
 
 export const metadata = createPageMetadata("/experiences");
 
