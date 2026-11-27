@@ -46,7 +46,7 @@ export function SiteShell({
           </nav>
         </div>
         <div className="foundation-footer-group">
-          <span className="foundation-footer-label">Explore our experiences</span>
+          <span className="foundation-footer-label">Our experiences</span>
           <nav className="foundation-footer-experiences" aria-label="Explore Luxe experiences">
             <Link href="/experiences/coffee-bar">
               COFFEE BAR

@@ -38,6 +38,7 @@ export function QuoteModalTrigger({
         href="/contact"
         className={className}
         tabIndex={tabIndex}
+        data-luxe-cta="true"
         data-event-name={dataEventName}
         aria-haspopup="dialog"
         onClick={(event) => {

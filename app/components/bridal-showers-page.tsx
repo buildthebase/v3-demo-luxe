@@ -1,3 +1,4 @@
+import { ResponsiveHeroText } from "./responsive-hero-text";
 import Link from "next/link";
 import styles from "./bridal-editorial.module.css";
 import { ExperienceLineIcon } from "./experience-line-icon";
@@ -66,11 +67,13 @@ function BridalHero() {
   return (
     <header className="bridal-hero" id="page-overview">
       <div className="bridal-hero-copy">
-        <p className="foundation-eyebrow">Bridal Showers / Toronto &amp; the GTA</p>
         <h1 aria-label="Bridal shower coffee, dessert, and event rentals in Toronto and the GTA.">
-          <span>Bridal shower coffee,</span>{" "}
-          <span>dessert, and event rentals</span>{" "}
-          <span>in Toronto and the GTA.</span>
+          <ResponsiveHeroText mobile="Coffee &amp; desserts for bridal showers.">
+            <span>Bridal shower coffee,</span>{" "}
+            <span>dessert, and event rentals</span>{" "}
+            <span>in Toronto and the GTA.</span>
+
+          </ResponsiveHeroText>
         </h1>
         <p>
           Elevated coffee and matcha service, interactive live desserts, and curated
@@ -251,13 +254,13 @@ function BridalPlanning() {
 
 function BridalFaq() {
   return (
-    <section className="bridal-faq" aria-labelledby="bridal-faq-title">
+    <section className="bridal-faq page-faq-section" aria-labelledby="bridal-faq-title">
       <header>
         <h2 id="bridal-faq-title">
           Bridal shower coffee, dessert, and rental FAQs.
         </h2>
       </header>
-      <FaqAccordion items={bridalShowerFaqs} indicatorElement="i" showNumbers={false} />
+      <FaqAccordion items={bridalShowerFaqs} showNumbers={false} />
       <Link href="/faq">Review Luxe Booking FAQs <span aria-hidden="true">↗︎</span></Link>
     </section>
   );

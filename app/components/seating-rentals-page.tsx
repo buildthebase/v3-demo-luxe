@@ -1,3 +1,4 @@
+import { ResponsiveHeroText } from "./responsive-hero-text";
 import Link from "next/link";
 import {
   layoutStudies,
@@ -82,10 +83,11 @@ function SeatingHero() {
   return (
     <header className="seating-hero" id="page-overview">
       <div className="seating-hero-copy">
-        <p className="foundation-eyebrow">EVENT RENTALS IN TORONTO &amp; THE GTA</p>
         <h1 aria-label="Event rentals for intimate celebrations, outdoor weddings and beautifully planned gatherings across Toronto & the GTA.">
-          <span>Event rentals for intimate celebrations,</span>
-          <span>outdoor weddings and beautifully planned gatherings across Toronto &amp; the GTA.</span>
+          <ResponsiveHeroText mobile="Event rentals in Toronto &amp; the GTA.">
+            <span>Event rentals for intimate celebrations,</span>{" "}<span>outdoor weddings and beautifully planned gatherings across Toronto &amp; the GTA.</span>
+
+          </ResponsiveHeroText>
         </h1>
         <p>
           A focused collection of chairs, tables, tents, linens and cocktail tables for
@@ -451,12 +453,12 @@ function RentalCombinations() {
 
 function RentalFaq() {
   return (
-    <section className="seating-faq" aria-labelledby="seating-faq-title">
+    <section className="seating-faq page-faq-section" aria-labelledby="seating-faq-title">
       <header>
         <p className="foundation-label">Rental questions</p>
         <h2 id="seating-faq-title">What to know before planning your rentals.</h2>
       </header>
-      <FaqAccordion items={rentalContextualFaqs} />
+      <FaqAccordion items={rentalContextualFaqs} showNumbers={false} />
       <Link href="/faq">
         Review all Luxe booking questions <span aria-hidden="true">↗︎</span>
       </Link>

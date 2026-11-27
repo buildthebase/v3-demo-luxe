@@ -122,8 +122,7 @@ export function BrandActivationsPage({ comparison = false }: { comparison?: bool
         <header className={styles.hero} id="activation-concept-hero">
           <div className={styles.heroGrid}>
             <div className={styles.heroCopy}>
-              <p className={styles.eyebrow}>Brand Activations / Toronto &amp; the GTA</p>
-              <h1><span>Your brand.</span><span>Served by Luxe.</span></h1>
+              <h1><span>Your brand.</span>{" "}<span>Served by Luxe.</span></h1>
               <p className={styles.lead}>
                 Coffee bar and live dessert experiences for launches, pop-ups and
                 campaign events. We bring your colours and messaging to the cart,

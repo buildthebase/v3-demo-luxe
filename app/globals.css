@@ -26706,3 +26706,50 @@ transparent 0.7px);
     min-width: min(14.5rem, calc(100vw - 2.5rem));
   }
 }
+
+/* Keep top-level mobile links and disclosure labels on one text edge. */
+@media (max-width: 960px) {
+  .foundation-mobile-nav-list > li > a,
+  .foundation-mobile-nav .foundation-mobile-nav-heading {
+    padding-inline: 18px;
+    text-align: left;
+  }
+}
+
+/* Fade the surface and ink together without fading the navigation controls. */
+.foundation-shell .foundation-header {
+  transition: background-color 380ms ease, color 320ms ease, border-color 380ms ease;
+}
+@media (min-width: 961px) {
+  .foundation-shell .foundation-header[data-scrolled="true"] {
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .foundation-shell .foundation-header { transition: none; }
+}
+
+/* Fade the navigation surface and inherited text together as the page scrolls. */
+.foundation-header {
+  transition: background-color 420ms ease, color 320ms ease, border-color 420ms ease;
+}
+.category-explore-label { display: none; }
+@media (max-width: 700px) {
+  .experiences-occasion-copy > span:first-child { display: none; }
+  .experiences-occasion-action .mobile-category-arrow { display: none; }
+  .foundation-shell .experiences-occasions .experiences-occasion-copy .experiences-occasion-action {
+    justify-self: start;
+    font-size: var(--luxe-cta-label-size);
+    line-height: 1.5;
+  }
+  .experiences-occasion-action .category-explore-label {
+    display: inline;
+    text-decoration: underline;
+    text-underline-offset: .2em;
+    text-decoration-thickness: 1px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .foundation-header { transition: none; }
+}

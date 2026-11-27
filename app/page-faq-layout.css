@@ -1,0 +1,153 @@
+/* Match the centered, single-column Brand Activations FAQ composition. */
+.foundation-shell main[class] > section.page-faq-section {
+  display: block;
+  position: relative;
+  width: min(calc(100% - 2 * var(--space-page-inline)), var(--layout-max));
+  margin-inline: auto;
+  padding: clamp(3.5rem, 6vw, 5.5rem) 0;
+  background-color: var(--color-luxe-ivory);
+  background-image: radial-gradient(rgb(23 22 20 / 5.3%) .55px, transparent .7px);
+  background-size: 4px 4px;
+  color: var(--color-luxe-black);
+}
+.foundation-shell main[class] > .page-faq-section > header {
+  display: block;
+  position: static;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-align: center;
+}
+.foundation-shell main[class] > .page-faq-section > header h2:not(#luxe-sitewide-h2-scale):not(#home-hero-seo-title) {
+  width: 100%;
+  max-width: 30ch !important;
+  margin: 0 auto;
+  font-size: clamp(1.65rem, 3.1vw, 3.5rem) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -.055em !important;
+  text-align: center;
+  text-wrap: balance;
+}
+.foundation-shell main[class] > .page-faq-section > header .foundation-label {
+  margin: 0 0 1rem;
+  color: var(--color-luxe-gold-ink);
+}
+.foundation-shell main[class] > .page-faq-section > header > p:not(.foundation-label) {
+  max-width: 54ch;
+  margin: 1.25rem auto 0;
+}
+.foundation-shell main[class] .page-faq-section > .faq-accordion {
+  display: block;
+  width: 100%;
+  max-width: 60rem;
+  margin: 2.5rem auto 0;
+  padding: 0;
+  border: 0;
+}
+.foundation-shell main[class] .page-faq-section .faq-accordion details {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid var(--color-rule);
+  background: transparent;
+}
+.foundation-shell main[class] .page-faq-section .faq-accordion summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 72px;
+  margin: 0;
+  padding: 1rem 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-luxe-black);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.65;
+  list-style: none;
+  cursor: pointer;
+}
+.foundation-shell main[class] .page-faq-section .faq-accordion summary::-webkit-details-marker { display: none; }
+.foundation-shell main[class] .page-faq-section .faq-accordion summary h3 {
+  flex: 1;
+  min-width: 0;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  font-size: 1rem !important;
+  font-weight: 400;
+  line-height: 1.65 !important;
+  letter-spacing: normal;
+  text-align: left;
+  white-space: normal;
+  text-wrap: pretty;
+}
+.foundation-shell main[class] .page-faq-section .faq-accordion summary b {
+  flex: 0 0 auto;
+  width: 1.25rem;
+  height: auto;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+}
+.foundation-shell main[class] .page-faq-section .faq-accordion details[open] summary b { transform: rotate(45deg); }
+.foundation-shell main[class] .page-faq-section .faq-accordion details > :is(p, div) {
+  max-width: none;
+  margin: 0;
+  padding: 0 1.5rem 1.25rem 0;
+  border: 0;
+  color: var(--color-text-secondary);
+  font-size: .92rem !important;
+  line-height: 1.7 !important;
+}
+.foundation-shell main[class] .page-faq-section .faq-accordion details > div > p {
+  margin: 0;
+  padding: 0;
+  color: var(--color-text-secondary);
+  font-size: .92rem !important;
+  line-height: 1.7 !important;
+}
+.foundation-shell main[class] .page-faq-section .faq-accordion nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1rem;
+  margin-top: 1rem;
+}
+.foundation-shell main[class] > .page-faq-section > a {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  max-width: 100%;
+  margin: 2rem auto 0;
+  text-align: center;
+}
+.foundation-shell main[class] .page-faq-section summary:focus-visible {
+  outline: 2px solid var(--color-luxe-gold-ink);
+  outline-offset: 5px;
+}
+
+.foundation-shell main[class] > .page-faq-section {
+  isolation: isolate;
+  background-image: radial-gradient(rgb(23 22 20 / 5.3%) .55px, transparent .7px) !important;
+}
+.foundation-shell main[class] > .page-faq-section::before {
+  content: "";
+  position: absolute;
+  inset: 0 -100vmax;
+  z-index: -1;
+  background-color: var(--color-luxe-ivory);
+  background-image: radial-gradient(rgb(23 22 20 / 5.3%) .55px, transparent .7px);
+  background-size: 4px 4px;
+  pointer-events: none;
+}
+.foundation-shell main[class] > .page-faq-section > .luxe-section-grid,
+.foundation-shell main[class] > .page-faq-section > header::before,
+.foundation-shell main[class] > .page-faq-section > header::after { display: none; }

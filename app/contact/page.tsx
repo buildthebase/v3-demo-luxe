@@ -66,7 +66,7 @@ function ContactHandoff() {
             <span className={styles.contactValue}>{siteConfig.contact.email}</span>
           </a>
         </div>
-        <Link className={styles.faq} href="/faq">Review FAQ</Link>
+        <Link className={styles.faq} href="/faq" data-luxe-cta="true">Review FAQ</Link>
       </div>
     </section>
   );

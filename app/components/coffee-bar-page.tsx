@@ -74,10 +74,8 @@ function CoffeeHero() {
   return (
     <header className="coffee-hero" id="page-overview">
       <div className="coffee-hero-copy">
-        <p className="foundation-eyebrow">Luxe Coffee Bar / Toronto &amp; the GTA</p>
         <h1 aria-label="Mobile coffee bar catering in Toronto &amp; the GTA.">
-          <span>Mobile coffee bar catering</span>
-          <span>in Toronto &amp; the GTA.</span>
+          <span>Mobile coffee bar catering</span>{" "}<span>in Toronto &amp; the GTA.</span>
         </h1>
         <p>
           A complete mobile café experience shaped around the event, with professional
@@ -270,9 +268,6 @@ function CoffeeInclusions() {
         <p className="foundation-label">Coffee Bar experience</p>
         <h2 id="coffee-inclusions-title">Complete Mobile Coffee Catering Inclusions</h2>
         <div className="coffee-inclusions-intro">
-          <p>
-            Everything needed for a complete coffee service.
-          </p>
           <p>
             Full barista service, hot and iced beverages, specialty syrups, milk
             alternatives and premium non-coffee options are thoughtfully included in
@@ -495,12 +490,12 @@ function CoffeeRelated() {
 
 function CoffeeFaq() {
   return (
-    <section className="coffee-faq" aria-labelledby="coffee-faq-title">
+    <section className="coffee-faq page-faq-section" aria-labelledby="coffee-faq-title">
       <header>
         <p className="foundation-label">Coffee Bar questions</p>
         <h2 id="coffee-faq-title">The practical details, answered directly.</h2>
       </header>
-      <FaqAccordion items={coffeeContextualFaqs} />
+      <FaqAccordion items={coffeeContextualFaqs} showNumbers={false} />
       <Link href="/faq">
         Review all Luxe booking questions <span aria-hidden="true">↗︎</span>
       </Link>

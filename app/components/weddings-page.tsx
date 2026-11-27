@@ -1,3 +1,4 @@
+import { ResponsiveHeroText } from "./responsive-hero-text";
 import Link from "next/link";
 import { EventInquiryAction } from "./event-inquiry-action";
 import {
@@ -38,9 +39,11 @@ function WeddingHero() {
   return (
     <header className="wedding-hero" id="page-overview">
       <div className="wedding-hero-copy">
-        <p className="foundation-eyebrow">Weddings / Toronto &amp; the GTA</p>
         <h1>
-          Wedding Coffee Bars, Live Dessert Experiences, and Event Rentals in Toronto &amp; the GTA.
+          <ResponsiveHeroText mobile="Coffee, desserts &amp; rentals for weddings.">
+            Wedding coffee bars, live dessert experiences, and event rentals in Toronto &amp; the GTA.
+
+          </ResponsiveHeroText>
         </h1>
         <p>
           From handcrafted specialty coffee and matcha to freshly prepared desserts
@@ -221,7 +224,7 @@ function WeddingGallery() {
 
 function WeddingFaq() {
   return (
-    <section className="wedding-faq" aria-labelledby="wedding-faq-title">
+    <section className="wedding-faq page-faq-section" aria-labelledby="wedding-faq-title">
       <header>
         <p className="foundation-label">Wedding planning questions</p>
         <h2 id="wedding-faq-title">Wedding planning questions, answered.</h2>

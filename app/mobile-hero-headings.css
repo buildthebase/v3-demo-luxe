@@ -1,0 +1,20 @@
+.foundation-shell main h1 .hero-title-mobile { display: none !important; }
+@media (max-width: 700px) {
+  .foundation-shell main h1:not(#mobile-hero-scale):not(#mobile-hero-wrap):not(#mobile-hero-measure) {
+    font-size: clamp(1.75rem, 7.2vw, 2rem) !important;
+    line-height: 1.12 !important;
+    letter-spacing: -.045em !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    white-space: normal !important;
+    overflow-wrap: normal;
+    text-wrap: balance;
+  }
+  .foundation-shell main:not(.home-page) h1:not(#mobile-hero-scale):not(#mobile-hero-wrap):not(#mobile-hero-measure) span {
+    display: inline !important;
+    white-space: normal !important;
+  }
+  .foundation-shell main h1:not(#mobile-hero-scale):not(#mobile-hero-wrap):not(#mobile-hero-measure) br { display: none; }
+  .foundation-shell main:not(.home-page) h1:not(#mobile-hero-scale):not(#mobile-hero-wrap):not(#mobile-hero-measure) .hero-title-desktop { display: none !important; }
+  .foundation-shell main:not(.home-page) h1:not(#mobile-hero-scale):not(#mobile-hero-wrap):not(#mobile-hero-measure) .hero-title-mobile { display: inline !important; }
+}

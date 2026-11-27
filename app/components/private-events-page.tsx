@@ -1,3 +1,4 @@
+import { ResponsiveHeroText } from "./responsive-hero-text";
 import Link from "next/link";
 import styles from "./private-events-refresh.module.css";
 import { ExperienceLineIcon } from "./experience-line-icon";
@@ -38,9 +39,11 @@ function PrivateEventsHero() {
   return (
     <header className="private-hero" id="page-overview">
       <div className="private-hero-copy">
-        <p className="foundation-eyebrow">Private Events / Toronto &amp; the GTA</p>
         <h1>
-          Private Event Coffee Bars, Live Desserts &amp; Rentals in Toronto &amp; the GTA
+          <ResponsiveHeroText mobile="Coffee &amp; desserts for private events.">
+            Private Event Coffee Bars, Live Desserts &amp; Rentals in Toronto &amp; the GTA
+
+          </ResponsiveHeroText>
         </h1>
         <p>
           From engagement parties and anniversaries to graduations, cultural
@@ -130,7 +133,7 @@ function PrivateEventExperiences() {
     <ExperienceSelector
       description="Choose one Luxe experience or bring multiple services together for a beautifully coordinated celebration."
       experiences={privateEventExperiences}
-      heading={<><span className={styles.headingLine}>Everything You Need</span>{" "}<span className={styles.headingLine}>for a Memorable Gathering.</span></>}
+      heading={<><span className={styles.headingLine}>Everything you need</span>{" "}<span className={styles.headingLine}>for a memorable gathering.</span></>}
       headingClassName="foundation-wide-heading"
       id="private-experiences"
       useItemHeadings
@@ -199,9 +202,9 @@ function PrivateEventPlanning() {
 
 function PrivateEventFaq() {
   return (
-    <section className={`private-faq ${styles.chapter} ${styles.faq}`} aria-labelledby="private-faq-title">
+    <section className={`private-faq ${styles.chapter} ${styles.faq} page-faq-section`} aria-labelledby="private-faq-title">
       <header><h2 className="foundation-wide-heading" id="private-faq-title">Private event FAQs.</h2></header>
-      <FaqAccordion items={privateEventFaqs} indicatorElement="i" showNumbers={false} />
+      <FaqAccordion items={privateEventFaqs} showNumbers={false} />
       <Link href="/faq">Review Luxe Booking FAQs <span aria-hidden="true">↗︎</span></Link>
     </section>
   );

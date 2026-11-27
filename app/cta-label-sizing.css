@@ -1,0 +1,49 @@
+/* Match the homepage Personalize Your Celebration action at every breakpoint. */
+:root { --luxe-cta-label-size: clamp(.85rem, 1vw, 1rem); }
+
+.foundation-shell :is(
+  a[data-luxe-cta],
+  .foundation-nav-cta,
+  .foundation-footer-cta,
+  .home-text-link,
+  .home-case-study-action,
+  .home-case-study-coverage-action,
+  .events-text-link,
+  .experiences-text-link,
+  .experiences-comparison-cta-link,
+  .experiences-feature-footer > a,
+  .blog-journal-inquiry a,
+  .blog-featured strong,
+  [class$="-hero-actions"] > a,
+  [class$="-faq"] > a,
+  [class$="-gallery"] > a,
+  .faq-accordion details nav a,
+  .signature-selector-choice b,
+  .events-occasion-action
+):not(.gallery-hero-scroll) {
+  font-size: var(--luxe-cta-label-size) !important;
+}
+
+/* Nested label spans must follow the action rather than page body-text rules. */
+.foundation-shell a[data-luxe-cta] > span:not([aria-hidden="true"]) {
+  font-size: inherit !important;
+}
+
+/* Center this longer action and let its label wrap inside narrow screens. */
+.foundation-shell .home-case-study .home-case-study-coverage-action {
+  grid-column: 1 / -1;
+  justify-self: center;
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  margin: 1rem auto 0;
+  justify-content: center;
+  text-align: center;
+  white-space: normal;
+  text-wrap: balance;
+  font-size: var(--luxe-cta-label-size) !important;
+}
+
+.foundation-shell .home-case-study .home-case-study-action {
+  font-size: var(--luxe-cta-label-size) !important;
+}

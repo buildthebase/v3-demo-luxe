@@ -41,7 +41,7 @@ export function FaqAccordion({
               <nav aria-label={`Related information for ${item.question}`}>
                 {item.links.map((link) => (
                   <Link href={link.href} key={link.href}>
-                    {link.label} <span aria-hidden="true">↗︎</span>
+                    {link.label}
                   </Link>
                 ))}
               </nav>

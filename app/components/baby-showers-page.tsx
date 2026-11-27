@@ -1,3 +1,4 @@
+import { ResponsiveHeroText } from "./responsive-hero-text";
 import Link from "next/link";
 import { ProcessStartAction } from "./process-start-action";
 import {
@@ -37,11 +38,11 @@ function BabyShowerHero() {
   return (
     <header className="baby-hero" id="page-overview">
       <div className="baby-hero-copy">
-        <p className="foundation-eyebrow">Baby Showers / Toronto &amp; the GTA</p>
         <h1 aria-label="Baby shower dessert carts, coffee bars and event rentals in Toronto.">
-          <span>Baby shower dessert carts,</span>
-          <span>coffee bars and event rentals</span>
-          <span>in Toronto.</span>
+          <ResponsiveHeroText mobile="Coffee &amp; desserts for baby showers.">
+            <span>Baby shower dessert carts,</span>{" "}<span>coffee bars and event rentals</span>{" "}<span>in Toronto.</span>
+
+          </ResponsiveHeroText>
         </h1>
         <p>
           Create a welcoming baby shower with premium coffee and matcha service,
@@ -186,10 +187,10 @@ function BabyShowerPlanning() {
 
 function BabyShowerFaq() {
   return (
-    <section className="baby-faq luxe-grid-section" aria-labelledby="baby-faq-title">
+    <section className="baby-faq luxe-grid-section page-faq-section" aria-labelledby="baby-faq-title">
       <span className="luxe-section-grid" aria-hidden="true" />
       <header><h2 id="baby-faq-title">Baby shower planning questions, answered.</h2></header>
-      <FaqAccordion items={babyShowerFaqs} indicatorElement="i" showNumbers={false} />
+      <FaqAccordion items={babyShowerFaqs} showNumbers={false} />
       <Link href="/faq">Review Luxe Booking FAQs <span aria-hidden="true">↗︎</span></Link>
     </section>
   );

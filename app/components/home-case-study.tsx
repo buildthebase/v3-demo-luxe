@@ -49,10 +49,10 @@ export function HomeCaseStudy() {
         <div>
           <h3>Your Experience, Captured.</h3>
           <p>Make the memories last beyond the event. Optional photo and video coverage is available to capture your Luxe experience, from custom details to guest interactions. Selected event content can be made available by the end of the evening, with deliverables confirmed during booking.</p>
-          <QuoteModalTrigger className="home-case-study-coverage-action">
-            ASK ABOUT EVENT CONTENT COVERAGE
-          </QuoteModalTrigger>
         </div>
+        <QuoteModalTrigger className="home-case-study-coverage-action">
+          ASK ABOUT EVENT CONTENT COVERAGE
+        </QuoteModalTrigger>
       </div>
     </section>
   );

@@ -42,7 +42,6 @@ export function ExperienceImageCarousel({ images, href }: { images: readonly Res
         <button type="button" aria-label="Previous Coffee Bar photo" onClick={() => move(-1)}><MediaControlIcon action="previous" /></button>
         <span aria-live={paused ? "polite" : "off"}>{active + 1} / {images.length}</span>
         <button type="button" aria-label="Next Coffee Bar photo" onClick={() => move(1)}><MediaControlIcon action="next" /></button>
-        <button type="button" aria-label={paused ? "Play Coffee Bar slideshow" : "Pause Coffee Bar slideshow"} onClick={() => setPaused(value => !value)}><MediaControlIcon action={paused ? "play" : "pause"} /></button>
       </div>
     </div>
   );

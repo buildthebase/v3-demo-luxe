@@ -56,7 +56,6 @@ function GalleryHero() {
   return (
     <header className="gallery-hero">
       <div className="gallery-hero-copy">
-        <p className="foundation-eyebrow">THE LUXE GALLERY</p>
         <h1>A Little Inspiration for Your Next Celebration</h1>
         <p>
           From beautifully styled coffee bars to sweet little details, explore some of our favourite

@@ -29,7 +29,7 @@
 
 /* A compact, host-focused introduction rather than another photo split. */
 :global(.foundation-shell) .page .overview > h2 { margin-bottom: 2.5rem; }
-:global(.foundation-shell) .page > .overview { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+:global(.foundation-shell) .page > .overview { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(2.5rem, 4vw, 3.5rem); }
 :global(.foundation-shell) .page .overview > h2 { margin-bottom: 0 !important; }
 :global(.foundation-shell) .page .overview > :global(.birthday-overview-notes) { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
 :global(.foundation-shell) .page .overview article { padding: 1.75rem; border: 0; border-top: 2px solid var(--color-luxe-gold); background: var(--color-luxe-ivory); }

@@ -35,11 +35,8 @@ function ActivationHero() {
   return (
     <header className="activation-hero" id="page-overview">
       <div className="activation-hero-copy">
-        <p className="foundation-eyebrow">Brand Activations / Toronto &amp; the GTA</p>
         <h1 aria-label="Branded coffee cart and dessert activations for Toronto campaigns.">
-          <span>Branded coffee cart</span>
-          <span>and dessert activations</span>
-          <span>for Toronto campaigns.</span>
+          <span>Branded coffee cart</span>{" "}<span>and dessert activations</span>{" "}<span>for Toronto campaigns.</span>
         </h1>
         <p>
           Turn Luxe Coffee Bar and Sweet Cart into branded guest touchpoints for product

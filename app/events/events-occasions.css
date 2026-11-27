@@ -100,3 +100,32 @@
 }
 
 .foundation-shell main.events-page #event-pathways .events-directory-list > article::before { display: none; }
+
+@media (max-width: 700px) {
+  .events-occasion-cards .events-occasion-number,
+  .events-occasion-cards .events-occasion-action > span[aria-hidden="true"] {
+    display: none;
+  }
+  .events-occasion-cards .events-occasion-action {
+    justify-content: flex-start;
+    text-decoration: underline;
+    text-underline-offset: .2em;
+    text-decoration-thickness: 1px;
+  }
+}
+/* Match the Experiences occasion cards: arrow-only on larger screens. */
+.events-occasion-cards .events-occasion-action > .events-occasion-explore-label {
+  display: none;
+}
+.events-occasion-cards .events-occasion-action {
+  justify-content: flex-end;
+  border-top: 0;
+}
+@media (max-width: 700px) {
+  .events-occasion-cards .events-occasion-action > .events-occasion-explore-label {
+    display: inline;
+    color: inherit;
+    font-size: inherit;
+  }
+  .events-occasion-cards .events-occasion-action { justify-content: flex-start; }
+}

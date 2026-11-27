@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CategoryArrow } from "./category-arrow";
 import {
   experienceGalleryPreview,
   experienceHubFeatures,
@@ -17,7 +18,6 @@ export function ExperiencesHero({
   return (
     <header id="page-overview" className="experiences-hero">
       <div className="experiences-hero-copy">
-        <p className="foundation-eyebrow">Luxe Experiences / Toronto &amp; the GTA</p>
         <h1 aria-label={titleLines.join(" ")}>
           {titleLines.map((line) => (
             <span aria-hidden="true" key={line}>
@@ -171,7 +171,7 @@ function ExperienceFeature({ feature }: { feature: ExperienceHubFeature }) {
             data-event-name="experience_select"
             data-experience={feature.id}
           >
-            {feature.cta} <span aria-hidden="true">↗︎</span>
+            {feature.cta} <span className="mobile-category-arrow" aria-hidden="true">↗︎</span>
           </Link>
         </div>
       </div>
@@ -236,7 +236,10 @@ export function ExperiencesEventTypes() {
               <span>{String(index + 1).padStart(2, "0")}</span>
               <h3>{event.name}</h3>
               <small>{event.summary}</small>
-              <b aria-hidden="true">↗︎</b>
+              <b className="experiences-occasion-action" aria-hidden="true">
+                <span className="category-explore-label">Explore {event.name}</span>
+                <CategoryArrow />
+              </b>
             </div>
           </Link>
         ))}

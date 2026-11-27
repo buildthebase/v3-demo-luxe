@@ -225,3 +225,12 @@
     font-size: clamp(1.0625rem, 5.8cqi, 1.65rem) !important;
   }
 }
+
+@media (max-width: 700px) {
+  .experiences-feature-footer .mobile-category-arrow { display: none; }
+  .experiences-feature-footer > a {
+    text-decoration: underline;
+    text-underline-offset: .2em;
+    text-decoration-thickness: 1px;
+  }
+}

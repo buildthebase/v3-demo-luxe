@@ -1,3 +1,4 @@
+import { ResponsiveHeroText } from "./responsive-hero-text";
 import Link from "next/link";
 import styles from "./birthday-refresh.module.css";
 import { ExperienceLineIcon } from "./experience-line-icon";
@@ -38,11 +39,13 @@ function BirthdayHero() {
   return (
     <header className="birthday-hero" id="page-overview">
       <div className="birthday-hero-copy">
-        <p className="foundation-eyebrow">Birthdays / Toronto &amp; the GTA</p>
         <h1 aria-label="Birthday coffee bars, live dessert carts, and event rentals in Toronto and the GTA.">
-          <span>Birthday coffee bars,</span>{" "}
-          <span>live dessert carts, and event rentals</span>{" "}
-          <span>in Toronto and the GTA.</span>
+          <ResponsiveHeroText mobile="Coffee, desserts &amp; rentals for birthdays.">
+            <span>Birthday coffee bars,</span>{" "}
+            <span>live dessert carts, and event rentals</span>{" "}
+            <span>in Toronto and the GTA.</span>
+
+          </ResponsiveHeroText>
         </h1>
         <p>
           Celebrate birthdays of all ages with handcrafted coffee and matcha,
@@ -212,9 +215,9 @@ function BirthdayPlanning() {
 
 function BirthdayFaq() {
   return (
-    <section className="birthday-faq" aria-labelledby="birthday-faq-title">
+    <section className="birthday-faq page-faq-section" aria-labelledby="birthday-faq-title">
       <header><h2 className="foundation-wide-heading" id="birthday-faq-title">Birthday planning questions.</h2></header>
-      <FaqAccordion items={birthdayFaqs} indicatorElement="i" showNumbers={false} />
+      <FaqAccordion items={birthdayFaqs} showNumbers={false} />
       <Link href="/faq">Review Luxe Booking FAQs <span aria-hidden="true">↗︎</span></Link>
     </section>
   );

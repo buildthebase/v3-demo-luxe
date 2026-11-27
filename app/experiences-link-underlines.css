@@ -15,3 +15,14 @@
   text-underline-offset: .18em;
   text-decoration-skip-ink: auto;
 }
+/* A single arrow component and size for both hubs' occasion cards. */
+.foundation-shell .luxe-category-arrow {
+  display: block;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--color-luxe-black);
+}
+@media (max-width: 700px) {
+  .foundation-shell .luxe-category-arrow { display: none; }
+}

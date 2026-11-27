@@ -72,10 +72,8 @@ function SweetHero() {
   return (
     <header className="sweet-hero" id="page-overview">
       <div className="sweet-hero-copy">
-        <p className="foundation-eyebrow">Luxe Sweet Cart / Toronto &amp; the GTA</p>
         <h1 aria-label="Toronto dessert cart catering, made in the moment.">
-          <span>Toronto dessert</span>
-          <span>cart catering,</span>
+          <span>Toronto dessert cart catering,</span>{" "}
           <span>made in the moment.</span>
         </h1>
         <p>
@@ -502,9 +500,6 @@ function SweetCombinations() {
             and seating together.
           </span>
         </h2>
-        <p>
-          Bring more of the event together with one team. Pair your Sweet Cart with Luxe Coffee Bar or select Luxe event rentals for a more coordinated guest experience.
-        </p>
       </header>
       <div>
         <Link href="/experiences/coffee-bar">
@@ -524,12 +519,12 @@ function SweetCombinations() {
 
 function SweetFaq() {
   return (
-    <section className="sweet-faq" aria-labelledby="sweet-faq-title">
+    <section className="sweet-faq page-faq-section" aria-labelledby="sweet-faq-title">
       <header>
         <p className="foundation-label">Sweet Cart questions</p>
         <h2 id="sweet-faq-title">Luxe Sweet Cart menu and service FAQs.</h2>
       </header>
-      <FaqAccordion items={sweetContextualFaqs} />
+      <FaqAccordion items={sweetContextualFaqs} showNumbers={false} />
       <Link href="/faq">
         Review all Luxe booking questions <span aria-hidden="true">↗︎</span>
       </Link>

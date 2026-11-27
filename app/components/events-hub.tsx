@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CategoryArrow } from "./category-arrow";
 import { EventInquiryAction } from "./event-inquiry-action";
 import { imageAssets, type ResponsiveImageAsset } from "../image-system";
 import { eventHubEntries } from "../events/content";
@@ -12,7 +13,6 @@ export function EventsHero({
   return (
     <header id="page-overview" className="events-hero">
       <div className="events-hero-copy">
-        <p className="foundation-eyebrow">Luxe Events / Toronto &amp; the GTA</p>
         <h1 aria-label={titleLines.join(" ")}>
           {titleLines.map((line) => (
             <span aria-hidden="true" key={line}>
@@ -80,7 +80,10 @@ export function EventsDirectory() {
                 <h3 id={`occasion-${event.slug}-title`}>{event.name}</h3>
                 <strong>{event.statement}</strong>
                 <p>{event.summary}</p>
-                <span className="events-occasion-action">Explore {event.name}<span aria-hidden="true">↗︎</span></span>
+                <span className="events-occasion-action" aria-hidden="true">
+                  <span className="events-occasion-explore-label">Explore {event.name}</span>
+                  <CategoryArrow />
+                </span>
               </div>
             </Link>
           </article>

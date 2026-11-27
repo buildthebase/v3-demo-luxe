@@ -45,7 +45,6 @@ const faqSchema = {
 function FaqHero() {
   return (
     <header className="faq-editorial-hero" id="faq-page-overview">
-      <p className="foundation-eyebrow">Frequently Asked Questions</p>
       <h1>A Few Things You Might Be Wondering</h1>
       <p>Everything you need to know about booking, planning, and personalising your Luxe experience.</p>
     </header>

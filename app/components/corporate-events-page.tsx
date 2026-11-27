@@ -1,3 +1,4 @@
+import { ResponsiveHeroText } from "./responsive-hero-text";
 import Link from "next/link";
 import { EventInquiryAction } from "./event-inquiry-action";
 import { ProcessStartAction } from "./process-start-action";
@@ -50,11 +51,11 @@ function CorporateHero() {
   return (
     <header className="corporate-hero" id="page-overview">
       <div className="corporate-hero-copy">
-        <p className="foundation-eyebrow">Corporate Events / Toronto &amp; the GTA</p>
         <h1 aria-label="Corporate coffee catering and event experiences, ready for business.">
-          <span>Corporate coffee catering</span>
-          <span>and event experiences,</span>
-          <span>ready for business.</span>
+          <ResponsiveHeroText mobile="Coffee &amp; desserts for corporate events.">
+            <span>Corporate coffee catering</span>{" "}<span>and event experiences,</span>{" "}<span>ready for business.</span>
+
+          </ResponsiveHeroText>
         </h1>
         <p>
           Polished mobile coffee bars, matcha stations, and live desserts tailored for
@@ -314,7 +315,7 @@ function CorporatePlanning() {
 
 function CorporateFaq() {
   return (
-    <section className="corporate-faq" aria-labelledby="corporate-faq-title">
+    <section className="corporate-faq page-faq-section" aria-labelledby="corporate-faq-title">
       <header>
         <h2 id="corporate-faq-title">Answers for teams preparing the brief.</h2>
       </header>

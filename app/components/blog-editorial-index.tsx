@@ -239,8 +239,7 @@ export function BlogEditorialIndex({
           <p>Luxe Event Journal</p>
         </div>
         <h1>
-          <span>Event ideas, planning guidance,</span>
-          <span>and hospitality insights.</span>
+          <span>Event ideas, planning guidance,</span>{" "}<span>and hospitality insights.</span>
         </h1>
         {topics.length ? (
           <nav aria-label="Journal topics">
