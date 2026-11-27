@@ -56,7 +56,7 @@
 }
 .foundation-shell main.experiences-page > .experiences-occasions .experiences-occasion-copy small { color: var(--color-text-secondary); font-size: .9rem; line-height: 1.65; }
 .experiences-occasions .experiences-occasion-copy b { justify-self: end; align-self: end; font-weight: 400; }
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .foundation-shell main.experiences-page > .experiences-occasions .experiences-event-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .foundation-shell main.experiences-page > .experiences-occasions .experiences-event-list > a,
   .foundation-shell main.experiences-page > .experiences-occasions .experiences-event-list > a:nth-child(-n+3) { grid-column: auto; }

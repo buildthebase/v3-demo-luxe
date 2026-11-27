@@ -1,0 +1,156 @@
+/* Wedding-page compositions for tablet/iPad only. */
+@media (min-width: 701px) and (max-width: 1366px) {
+  .foundation-shell .wedding-page .wedding-hero {
+    grid-template-columns: minmax(0, 1.04fr) minmax(0, .96fr);
+    align-items: center;
+    gap: 2rem;
+    padding-block: 3rem;
+  }
+  .foundation-shell .wedding-page .wedding-hero-copy {
+    grid-column: 1;
+    grid-row: 1;
+    min-height: 0;
+    align-self: start;
+    justify-content: flex-start;
+  }
+  .foundation-shell .wedding-page .wedding-hero-copy h1 {
+    max-width: none;
+    margin: 0;
+    font-size: clamp(2.125rem, 3.8vw, 3.25rem) !important;
+    line-height: 1.08 !important;
+    text-wrap: balance;
+  }
+  .foundation-shell .wedding-page .wedding-hero-copy > p:not(.foundation-eyebrow) {
+    max-width: 53ch;
+    margin-top: 1.25rem;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+  .foundation-shell .wedding-page .wedding-hero-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .75rem;
+    margin-top: 1.5rem;
+  }
+  .foundation-shell .wedding-page .wedding-hero-actions > a { max-width: 100%; white-space: normal; }
+  .foundation-shell .wedding-page .wedding-hero-art {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    aspect-ratio: auto;
+    justify-self: end;
+    margin: 0;
+  }
+  .foundation-shell .wedding-page .wedding-hero-carousel {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    gap: .75rem;
+  }
+  .foundation-shell .wedding-page .wedding-hero-carousel-viewport { width: 100%; aspect-ratio: 3 / 4; }
+  .foundation-shell .wedding-page .wedding-hero-carousel-track { position: absolute; inset: 0; }
+  .foundation-shell .wedding-page .wedding-hero-carousel-controls { padding: 0; background: transparent; }
+  .foundation-shell .wedding-page .wedding-hero-proof {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin: 0;
+    border-block: 1px solid var(--wedding-rule);
+  }
+  .foundation-shell .wedding-page .wedding-hero-proof > div {
+    display: grid;
+    align-content: start;
+    gap: .5rem;
+    min-width: 0;
+    padding: 1.25rem 1rem;
+    border: 0;
+    border-right: 1px solid var(--wedding-rule);
+    text-align: center;
+  }
+  .foundation-shell .wedding-page .wedding-hero-proof > div:last-child { border-right: 0; }
+  .foundation-shell .wedding-page .wedding-hero-proof dt { margin: 0; font-size: 1.25rem; line-height: 1.2; }
+  .foundation-shell .wedding-page .wedding-hero-proof dd { margin: 0; font-size: .6875rem; line-height: 1.6; letter-spacing: .08em; }
+
+  .foundation-shell .wedding-page .wedding-day { padding-block: 3.5rem; }
+  .foundation-shell .wedding-page .wedding-day > header { margin-bottom: 2rem; }
+  .foundation-shell .wedding-page .wedding-day > header > p:last-child { max-width: 55ch; margin: 1rem auto 0; font-size: 1rem; line-height: 1.65; }
+  .foundation-shell .wedding-page .wedding-day ol { margin-top: 0; }
+  .foundation-shell .wedding-page .wedding-day li {
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    gap: 1rem 1.5rem;
+    min-height: 0;
+    padding: 1.5rem;
+  }
+  .foundation-shell .wedding-page .wedding-day-symbol {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    width: 3rem;
+    align-self: start;
+    border: 0;
+  }
+  .foundation-shell .wedding-page .wedding-day-symbol span { width: 3rem; }
+  .foundation-shell .wedding-page .wedding-day-copy { grid-column: 2; grid-row: 1; }
+  .foundation-shell .wedding-page .wedding-day-kicker { flex-wrap: wrap; }
+  .foundation-shell .wedding-page .wedding-day-copy h3 { max-width: none; margin: .75rem 0; font-size: 1.5rem; line-height: 1.2; }
+  .foundation-shell .wedding-page .wedding-day-copy > p { max-width: 65ch; margin: 0; font-size: 1rem; line-height: 1.65; }
+  .foundation-shell .wedding-page .wedding-day-fit {
+    grid-column: 2;
+    grid-row: 2;
+    min-height: 0;
+    padding: .75rem 0 0;
+    border: 0;
+    border-top: 1px solid var(--wedding-rule);
+    background: transparent;
+  }
+
+  .foundation-shell .wedding-page .wedding-customization { padding-block: 3.5rem; }
+  .foundation-shell .wedding-page .wedding-customization > header {
+    width: min(100%, 52rem);
+    margin: 0 auto 2rem;
+    gap: 1.25rem;
+  }
+  .foundation-shell .wedding-page .wedding-customization > header::after { content: none; }
+  .foundation-shell .wedding-page .wedding-customization > header > p:not(.foundation-label) {
+    max-width: 53ch;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+  .foundation-shell .wedding-page .wedding-customization-image { width: min(100%, 40rem); margin-top: .5rem; }
+  .foundation-shell .wedding-page .wedding-branding-label { margin-bottom: 1rem; font-size: .75rem; line-height: 1.5; }
+  .foundation-shell .wedding-page .wedding-branding-track { gap: 1rem; }
+  .foundation-shell .wedding-page .wedding-branding-slide { flex-basis: calc((100% - 1rem) / 2); aspect-ratio: 3 / 4; }
+  .foundation-shell .wedding-page .wedding-branding-controls { margin-top: 1rem; }
+  .foundation-shell .wedding-page .wedding-customization > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: auto;
+    gap: 0 2rem;
+    width: min(100%, 52rem);
+    margin-inline: auto;
+  }
+  .foundation-shell .wedding-page .wedding-customization article {
+    grid-column: auto;
+    grid-row: auto;
+    align-self: start;
+    min-width: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 1.5rem 0;
+    border: 0;
+    border-top: 1px solid var(--color-rule);
+    background: transparent;
+    text-align: left;
+  }
+  .foundation-shell .wedding-page .wedding-customization article h3 { margin: 0 0 .75rem; font-size: 1.375rem; line-height: 1.2; text-align: left !important; }
+  .foundation-shell .wedding-page .wedding-customization article p { max-width: none; margin: 0; font-size: 1rem; line-height: 1.65; text-align: left !important; }
+}
+@media (min-width: 701px) and (max-width: 1000px) {
+  .foundation-shell .wedding-page .wedding-hero { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

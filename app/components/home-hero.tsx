@@ -5,6 +5,7 @@ import { optimizedPosterSource } from "../responsive-image-sources";
 import { useEffect, useRef, useState } from "react";
 import { homeHeroMedia, homeHeroTimeline } from "../home-hero-media";
 import { CredibilityStrip } from "./signature-elements";
+import { QuoteModalTrigger } from "./quote-modal-trigger";
 
 type NavigatorWithConnection = Navigator & {
   connection?: {
@@ -18,13 +19,11 @@ export function HomeHero() {
   const [introReady, setIntroReady] = useState(false);
   const [mobileClip, setMobileClip] = useState(0);
   const [sequenceSkipped, setSequenceSkipped] = useState(false);
-  const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [failedMedia, setFailedMedia] = useState<Set<string>>(() => new Set());
   const [playbackBlocked, setPlaybackBlocked] = useState(false);
   const timers = useRef<number[]>([]);
   const loopTimers = useRef<number[]>([]);
   const videos = useRef<Array<Array<HTMLVideoElement | null>>>([]);
-  const quoteDialog = useRef<HTMLDialogElement>(null);
   const finalPhase = homeHeroTimeline.finalPhaseIndex;
   const finalState = phase === finalPhase;
 
@@ -223,20 +222,6 @@ export function HomeHero() {
       desktopQuery.removeEventListener("change", configure);
     };
   }, [finalPhase, introReady, phase]);
-  useEffect(() => {
-    const dialog = quoteDialog.current;
-
-    if (!dialog) {
-      return;
-    }
-
-    if (quoteModalOpen && !dialog.open) {
-      dialog.showModal();
-    } else if (!quoteModalOpen && dialog.open) {
-      dialog.close();
-    }
-  }, [quoteModalOpen]);
-
   function skipIntro() {
     timers.current.forEach(window.clearTimeout);
     timers.current = [];
@@ -361,17 +346,14 @@ export function HomeHero() {
           }`}
           aria-hidden={finalState ? undefined : "true"}
         >
-          <button
-            type="button"
+          <QuoteModalTrigger
             className="home-button home-button-primary"
             data-event-name="inquiry_start"
             tabIndex={finalState ? 0 : -1}
-            onClick={() => setQuoteModalOpen(true)}
-            aria-haspopup="dialog"
           >
             PLAN YOUR EVENT
             <span aria-hidden="true">↗︎</span>
-          </button>
+          </QuoteModalTrigger>
         </div>
 
         {!finalState ? (
@@ -383,39 +365,7 @@ export function HomeHero() {
 
       <CredibilityStrip variant="hero" />
 
-      <dialog
-        className="home-quote-modal"
-        ref={quoteDialog}
-        aria-labelledby="home-quote-modal-title"
-        onClose={() => setQuoteModalOpen(false)}
-        onClick={(event) => {
-          if (event.target === event.currentTarget) {
-            setQuoteModalOpen(false);
-          }
-        }}
-      >
-        <div className="home-quote-modal-inner">
-          <button
-            className="home-quote-modal-close"
-            type="button"
-            aria-label="Close quote form placeholder"
-            onClick={() => setQuoteModalOpen(false)}
-          >
-            <span aria-hidden="true">×</span>
-          </button>
-          <p className="foundation-label">Plan your event</p>
-          <h2 id="home-quote-modal-title">Your quote will begin here.</h2>
-          <p>
-            This popup will contain the Flashquotes quote form, or a similar quote
-            platform, once the final provider is selected and connected.
-          </p>
-          <div className="home-quote-modal-placeholder">
-            <span aria-hidden="true">↗︎</span>
-            <strong>Quote form integration placeholder</strong>
-            <small>No information is collected or submitted yet.</small>
-          </div>
-        </div>
-      </dialog>
+
     </section>
   );
 }

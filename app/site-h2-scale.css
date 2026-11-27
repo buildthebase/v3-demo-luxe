@@ -6,6 +6,6 @@
  * declarations from creating different H2 sizes without changing any of the
  * headings' page-specific color, weight, spacing, or layout treatments.
  */
-.foundation-shell main:not(.blog-index-page):not(.blog-article-page) h2:not(#luxe-sitewide-h2-scale):not(#home-hero-seo-title) {
+.foundation-shell main:not(.blog-index-page):not(.blog-article-page) h2:not(#luxe-sitewide-h2-scale):not(#home-hero-seo-title):not(:where(#corporate-branding-title)) {
   font-size: var(--luxe-type-h2) !important;
 }

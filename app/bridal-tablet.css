@@ -1,0 +1,114 @@
+/* Bridal Shower compositions: tablet/iPad only. */
+@media (min-width: 701px) and (max-width: 1366px) {
+  .foundation-shell main.bridal-page > :is(.bridal-host-overview, .bridal-moments, .signature-selector-bridal, .bridal-personalization, .bridal-planning) {
+    padding-block: 3.5rem;
+  }
+  .foundation-shell main.bridal-page > section[class][aria-labelledby] h2:is(#bridal-overview-title, #bridal-moments-title, #signature-selector-title, #bridal-combinations-title, #bridal-details-title, #bridal-planning-title) {
+    --section-heading-measure: 36rem;
+    --section-heading-leading: 1.12;
+    --luxe-type-h2: clamp(2rem, 3.1vw, 2.6rem);
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: 36rem !important;
+    margin: 0 auto !important;
+    font-size: var(--luxe-type-h2) !important;
+    line-height: 1.12 !important;
+    text-align: center;
+    text-wrap: balance;
+  }
+  .foundation-shell main.bridal-page > section.bridal-host-overview h2#bridal-overview-title { --section-heading-measure: 52rem; max-width: 52rem !important; }
+  .foundation-shell main.bridal-page h2:is(#bridal-moments-title, #signature-selector-title, #bridal-planning-title) > span { display: block !important; }
+  .foundation-shell main.bridal-page > .bridal-host-overview { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .foundation-shell main.bridal-page > .bridal-host-overview::before { content: none; }
+  .foundation-shell main.bridal-page .bridal-host-overview-notes { grid-column: 1; }
+  .foundation-shell main.bridal-page .bridal-host-overview-notes article {
+    display: grid;
+    grid-template-columns: minmax(0, .38fr) minmax(0, .62fr);
+    gap: 2rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--bridal-rule);
+  }
+  .foundation-shell main.bridal-page .bridal-host-overview-notes h3 { max-width: none; margin: 0; font-size: 1.375rem; line-height: 1.2; letter-spacing: -.035em; font-weight: 400; }
+  .foundation-shell main.bridal-page > .bridal-host-overview .bridal-host-overview-notes p { max-width: none; margin: 0; font-size: 1rem; line-height: 1.65; }
+
+  .foundation-shell main.bridal-page > :is(.bridal-moments, .bridal-personalization, .bridal-planning) > header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    align-items: start;
+    width: 100%;
+    max-width: none;
+    gap: 1.25rem;
+    padding: 0;
+    margin: 0 auto 2rem;
+    border: 0;
+    text-align: center;
+  }
+  .foundation-shell main.bridal-page > :is(.bridal-moments, .bridal-personalization, .bridal-planning) > header > p {
+    grid-column: 1;
+    max-width: 62ch;
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+  .foundation-shell main.bridal-page > :is(.bridal-personalization, .bridal-planning)::after,
+  .foundation-shell main.bridal-page > .bridal-planning > header::before,
+  .foundation-shell main.bridal-page > .signature-selector-bridal::after { content: none; }
+  .foundation-shell main.bridal-page .bridal-moment-band { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .foundation-shell main.bridal-page .bridal-moment-band article { padding: 1.75rem; }
+  .foundation-shell main.bridal-page .bridal-moment-band h3 { max-width: none; margin: 0 0 1rem; font-size: 1.5rem; line-height: 1.2; }
+  .foundation-shell main.bridal-page .bridal-moment-band article > p:first-child { margin-bottom: 1rem; font-size: .6875rem; line-height: 1.5; }
+  .foundation-shell main.bridal-page .bridal-moment-band article > p:last-child { max-width: none; font-size: 1rem; line-height: 1.65; }
+  .foundation-shell main.bridal-page .bridal-moment-feature::after { content: none; }
+
+  .foundation-shell main.bridal-page > .signature-selector-bridal .signature-selector-world { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; margin-top: 2rem; }
+  .foundation-shell main.bridal-page > .signature-selector-bridal .signature-selector-line { display: none; }
+  .foundation-shell main.bridal-page > .signature-selector-bridal .signature-selector-choice {
+    display: grid;
+    grid-template-columns: minmax(0, .38fr) minmax(0, .62fr);
+    grid-template-rows: auto;
+    align-items: start;
+    gap: 2rem;
+    min-height: 0;
+    padding: 1.75rem;
+    border: 0;
+    border-top: 1px solid var(--bridal-rule);
+  }
+  .foundation-shell main.bridal-page > .signature-selector-bridal .signature-selector-choice:nth-child(2) { border-top: 0; }
+  .foundation-shell main.bridal-page > .signature-selector-bridal .signature-selector-art { grid-column: 1; grid-row: 1; align-self: start; width: 100%; min-height: 0; height: auto; margin: 0; aspect-ratio: 4 / 3; border-width: .5rem; }
+  .foundation-shell main.bridal-page > .signature-selector-bridal :is(.experience-selector-copy-link, .signature-selector-choice > .signature-selector-copy) { grid-column: 2; grid-row: 1; min-width: 0; }
+  .foundation-shell main.bridal-page > .signature-selector-bridal .signature-selector-copy { gap: .75rem; padding: 0; }
+  .foundation-shell main.bridal-page > .signature-selector-bridal .signature-selector-copy > :is(em, span, b) { margin-top: 0; }
+  .foundation-shell main.bridal-page > .signature-selector-bridal .signature-selector-copy b { padding-top: .5rem; }
+  .foundation-shell main.bridal-page > .signature-selector-bridal .signature-selector-heading { margin: 0; max-width: none; font-size: 1.5rem; line-height: 1.2; }
+  .foundation-shell main.bridal-page > .signature-selector-bridal .signature-selector-copy > span:not(.signature-selector-label) { font-size: 1rem; line-height: 1.65; }
+  .foundation-shell main.bridal-page > .signature-selector-bridal .signature-selector-without-media { grid-template-columns: minmax(0, 1fr); }
+  .foundation-shell main.bridal-page > .signature-selector-bridal .signature-selector-without-media > .signature-selector-copy { grid-column: 1; }
+
+  .foundation-shell main.bridal-page > :is(.bridal-personalization, .bridal-planning) { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .foundation-shell main.bridal-page > .bridal-personalization ol { grid-column: 1; width: 100%; }
+  .foundation-shell main.bridal-page > .bridal-personalization li {
+    display: grid;
+    grid-template-columns: minmax(0, .34fr) minmax(0, .66fr);
+    grid-template-rows: auto auto;
+    align-items: start;
+    gap: .75rem 2rem;
+    min-height: 0;
+    padding: 1.75rem 0;
+    border: 0;
+    border-top: 1px solid var(--bridal-rule);
+  }
+  .foundation-shell main.bridal-page > .bridal-personalization li:first-child { border-top: 0; }
+  .foundation-shell main.bridal-page > .bridal-personalization li > span { grid-column: 1; grid-row: 1; font-size: .6875rem; line-height: 1.5; }
+  .foundation-shell main.bridal-page > .bridal-personalization li h3 { grid-column: 1; grid-row: 2; align-self: start; max-width: none; margin: 0; font-size: 1.375rem; line-height: 1.2; }
+  .foundation-shell main.bridal-page > .bridal-personalization li > p { grid-column: 2; grid-row: 1 / 3; align-self: start; max-width: none; margin: 0; font-size: 1rem; line-height: 1.65; }
+  .foundation-shell main.bridal-page > .bridal-personalization[aria-labelledby="bridal-details-title"] li { grid-template-rows: auto; }
+  .foundation-shell main.bridal-page > .bridal-personalization[aria-labelledby="bridal-details-title"] li :is(h3, p) { grid-row: 1; align-self: start; }
+  .foundation-shell main.bridal-page > .bridal-planning ol { grid-column: 1; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .foundation-shell main.bridal-page > .bridal-planning li { padding: 1.75rem; }
+  .foundation-shell main.bridal-page > .bridal-planning h3 { max-width: none; white-space: normal; font-size: .75rem; line-height: 1.5; letter-spacing: .1em; }
+  .foundation-shell main.bridal-page > .bridal-planning li > p { max-width: none; font-size: 1rem; line-height: 1.65; }
+  .foundation-shell main.bridal-page > .bridal-planning .process-start-action { grid-column: 1; margin-top: 2rem; }
+}

@@ -26,7 +26,7 @@ test("popular combinations share the presentation and quote popup", () => {
   assert.match(baby, /heading="Ways the experiences can come together"/);
   assert.match(baby, /variant="original"/);
   assert.match(baby, /useLineIcons=\{false\}/);
-  assert.match(read("app/components/bridal-showers-page.tsx"), /Example bridal shower service combinations/);
+  assert.match(read("app/components/bridal-showers-page.tsx"), /Example service combinations/);
   assert.match(read("app/components/birthdays-page.tsx"), /Popular birthday service combinations/);
 });
 

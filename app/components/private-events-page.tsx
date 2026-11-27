@@ -1,4 +1,6 @@
 import Link from "next/link";
+import styles from "./private-events-refresh.module.css";
+import { ExperienceLineIcon } from "./experience-line-icon";
 import { imageAssets } from "../image-system";
 import { ResponsiveImage } from "./responsive-image";
 import { EventInquiryAction } from "./event-inquiry-action";
@@ -77,8 +79,11 @@ function PrivateEventsHero() {
 
 function PrivateEventsOverview() {
   return (
-    <section className="private-overview" aria-labelledby="private-overview-title">
-      <h2 id="private-overview-title">Your Celebration, Your Experience.</h2>
+    <section className={`private-overview ${styles.chapter} ${styles.overview}`} aria-labelledby="private-overview-title">
+      <header>
+        <h2 className="foundation-wide-heading" id="private-overview-title"><span className={styles.headingLine}>Your Celebration,</span>{" "}<span className={styles.headingLine}>Your Experience.</span></h2>
+        <div className={styles.experienceMarks} aria-hidden="true"><ExperienceLineIcon type="coffee" /><ExperienceLineIcon type="dessert" /><ExperienceLineIcon type="seating" /></div>
+      </header>
       <div>
         <p>
           Every gathering has its own atmosphere, and the details should reflect it.
@@ -97,10 +102,10 @@ function PrivateEventsOverview() {
 
 function PrivateEventContexts() {
   return (
-    <section className="private-contexts" id="private-occasions" aria-labelledby="private-contexts-title">
+    <section className={`private-contexts ${styles.chapter} ${styles.contexts}`} id="private-occasions" aria-labelledby="private-contexts-title">
       <header>
-        <h2 id="private-contexts-title">
-          Private Celebrations, Thoughtfully Served.
+        <h2 className="foundation-wide-heading" id="private-contexts-title">
+          <span className={styles.headingLine}>Private Celebrations,</span>{" "}<span className={styles.headingLine}>Thoughtfully Served.</span>
         </h2>
         <p>
           From intimate gatherings to meaningful milestones, explore how Luxe can complement your celebration.
@@ -109,6 +114,7 @@ function PrivateEventContexts() {
       <ol>
         {privateEventContexts.map((context) => (
           <li key={context.number}>
+            <span className={styles.number} aria-hidden="true">{context.number}</span>
             <h3 className="private-context-title">{context.title}</h3>
             <p className="private-context-description">{context.description}</p>
           </li>
@@ -124,7 +130,7 @@ function PrivateEventExperiences() {
     <ExperienceSelector
       description="Choose one Luxe experience or bring multiple services together for a beautifully coordinated celebration."
       experiences={privateEventExperiences}
-      heading="Everything You Need for a Memorable Gathering."
+      heading={<><span className={styles.headingLine}>Everything You Need</span>{" "}<span className={styles.headingLine}>for a Memorable Gathering.</span></>}
       headingClassName="foundation-wide-heading"
       id="private-experiences"
       useItemHeadings
@@ -135,18 +141,21 @@ function PrivateEventExperiences() {
 
 function PrivateEventPersonalization() {
   return (
-    <section className="private-personalization" aria-labelledby="private-personalization-title">
+    <section className={`private-personalization ${styles.chapter} ${styles.personalization}`} aria-labelledby="private-personalization-title">
       <header>
-        <h2 id="private-personalization-title">Personalized Details That Make It Yours.</h2>
+        <h2 className="foundation-wide-heading" id="private-personalization-title"><span className={styles.headingLine}>Personalized Details</span>{" "}<span className={styles.headingLine}>That Make It Yours.</span></h2>
         <p>From your favourite drinks to custom cart signage and coordinated presentation, every detail can reflect the occasion you&apos;re celebrating.</p>
       </header>
-      <div>
-        {privateEventPersonalization.map((item) => (
-          <article key={item.number}>
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
-          </article>
-        ))}
+      <div className={styles.personalizationLayout}>
+        <div className={styles.personalizationNotes}>
+          {privateEventPersonalization.map((item) => (
+            <article key={item.number}>
+              <div className={styles.detailMark}><ExperienceLineIcon type={item.number === "01" ? "coffee" : item.number === "03" ? "seating" : "details"} /></div>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -154,22 +163,31 @@ function PrivateEventPersonalization() {
 
 function PrivateEventPlanning() {
   return (
-    <section className="private-planning" aria-labelledby="private-planning-title">
+    <section className={`private-planning ${styles.chapter} ${styles.planning}`} aria-labelledby="private-planning-title">
       <header>
-        <h2 id="private-planning-title">What to share when planning a private event.</h2>
+        <h2 className="foundation-wide-heading" id="private-planning-title"><span className={styles.headingLine}>What to share when planning</span>{" "}<span className={styles.headingLine}>a private event.</span></h2>
         <p>
           Sharing a few preliminary event details helps us design a personalized
           proposal tailored to your vision and venue setup.
         </p>
       </header>
-      <ol>
+      <ul>
         {privateEventPlanningRequirements.map((item) => (
           <li key={item.number}>
+            <svg className={styles.briefIcon} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d={item.number === "01"
+                ? "M24 6l4 12 12 6-12 5-4 13-5-13-13-5 13-6 5-12Zm14 0v8m-4-4h8"
+                : item.number === "02"
+                  ? "M10 10h28v30H10V10Zm0 9h28M17 6v9m14-9v9M17 26h3m8 0h3m-14 7h3m8 0h3"
+                  : item.number === "03"
+                    ? "M10 21h24v9a11 11 0 0 1-22 0v-9Zm24 2h3a5 5 0 0 1 0 10h-4M8 41h31M17 16c-4-4 4-6 0-10m9 10c-4-4 4-6 0-10"
+                    : "M12 40V8h24v32M8 40h32M24 8v32m6-18v6M17 13h3m-3 22h3"} />
+            </svg>
             <h3>{item.title}</h3>
             <p>{item.description}</p>
           </li>
         ))}
-      </ol>
+      </ul>
       <p>
         <strong>Booking Policy:</strong> Your date is secured once the agreement is
         signed and the 30% non-refundable retainer is received.
@@ -181,8 +199,8 @@ function PrivateEventPlanning() {
 
 function PrivateEventFaq() {
   return (
-    <section className="private-faq" aria-labelledby="private-faq-title">
-      <header><h2 id="private-faq-title">Private event FAQs.</h2></header>
+    <section className={`private-faq ${styles.chapter} ${styles.faq}`} aria-labelledby="private-faq-title">
+      <header><h2 className="foundation-wide-heading" id="private-faq-title">Private event FAQs.</h2></header>
       <FaqAccordion items={privateEventFaqs} indicatorElement="i" showNumbers={false} />
       <Link href="/faq">Review Luxe Booking FAQs <span aria-hidden="true">↗︎</span></Link>
     </section>
@@ -192,7 +210,7 @@ function PrivateEventFaq() {
 export function PrivateEventsPage() {
   return (
     <SiteShell breadcrumbPath="/events/private-events">
-      <main className="private-page">
+      <main className={`private-page ${styles.page}`}>
         <PageSectionNavigation items={privateEventsSectionNavigation} />
         <PrivateEventsHero />
         <PrivateEventsOverview />

@@ -1,0 +1,153 @@
+/* One tablet planning journey for every page using EventPlanningPathway. */
+@media (min-width: 701px) and (max-width: 1366px) {
+  .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway {
+    --color-luxe-gold-ink: #695438;
+    --gold-text: var(--color-luxe-gold-ink);
+    width: min(calc(100% - 2 * var(--space-page-inline)), var(--layout-max));
+    margin: 0 auto;
+    padding-block: 3.5rem;
+    border-top: 0;
+    background: var(--surface-chapter-soft);
+    color: var(--color-luxe-black);
+    box-shadow: 0 0 0 100vmax var(--surface-chapter-soft);
+    clip-path: inset(0 -100vmax);
+  }
+  .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway::before {
+    content: none;
+  }
+  .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway > .signature-section-heading {
+    margin-bottom: 0;
+  }
+  .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway > .signature-section-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: 1rem;
+    width: min(100%, 60rem);
+    margin: 0 auto;
+    text-align: center;
+  }
+  .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway > .signature-section-heading h2#signature-pathway-title {
+    width: 100% !important;
+    max-width: 28rem !important;
+    margin: 0 auto !important;
+    color: var(--color-luxe-black);
+    font-size: clamp(2rem, 3.1vw, 2.6rem) !important;
+    font-weight: 400 !important;
+    line-height: 1.12 !important;
+    text-align: center !important;
+    white-space: normal !important;
+  }
+  .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway .process-start-action { margin-top: 2rem; }
+  .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list {
+    --trail-column-gap: clamp(2rem, 6vw, 6rem);
+    --trail-row-gap: clamp(2rem, 4vw, 3.5rem);
+    --trail-turn-space: clamp(1.5rem, 4vw, 3rem);
+    --trail-line: color-mix(in srgb, var(--color-luxe-gold-ink) 60%, transparent);
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto auto;
+    gap: var(--trail-row-gap) var(--trail-column-gap);
+    width: min(100%, 60rem);
+    margin: 2rem auto 0;
+    padding: 0 var(--trail-turn-space) 0 0;
+    border: 0;
+    overflow: visible;
+    list-style: none;
+  }
+  .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list::before { display: none; content: none; }
+  .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list > li {
+    position: relative;
+    display: block;
+    align-self: stretch;
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    border: 0;
+  }
+  .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list > li:nth-child(1) { grid-area: 1 / 1; }
+  .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list > li:nth-child(2) { grid-area: 1 / 2; }
+  .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list > li:nth-child(3) { grid-area: 2 / 2; }
+  .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list > li:nth-child(4) { grid-area: 2 / 1; }
+  .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list > li::before {
+    position: absolute;
+    z-index: -1;
+    inset: 1.25rem auto auto 50%;
+    width: auto;
+    height: auto;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    transform: none;
+    content: none;
+    pointer-events: none;
+  }
+  .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list > li:is(:nth-child(1), :nth-child(4))::before {
+    width: calc(100% + var(--trail-column-gap));
+    border-top: 1px solid var(--trail-line);
+    content: "";
+  }
+  .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list > li:nth-child(2)::before {
+    right: calc(-1 * var(--trail-turn-space));
+    height: calc(100% + var(--trail-row-gap));
+    border: 1px solid var(--trail-line);
+    border-left: 0;
+    border-radius: 0 3rem 3rem 0;
+    content: "";
+  }
+  .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list > li::after { display: none; content: none; }
+  .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list .signature-pathway-step {
+    display: block;
+    min-height: 0;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    transform: none;
+    transition: none;
+    text-align: center;
+  }
+  .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list .signature-pathway-step > span {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 0 auto;
+    padding: 0;
+    border: 1px solid var(--color-luxe-gold-ink);
+    border-radius: 50%;
+    background: var(--surface-chapter-soft);
+    color: var(--color-luxe-gold-ink);
+    font-size: .75rem;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: .08em;
+  }
+  .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list strong {
+    display: block;
+    width: 100%;
+    max-width: none;
+    margin: 1.15rem auto .75rem;
+    color: var(--color-luxe-black);
+    font-size: clamp(1.15rem, 1.75vw, 1.5rem);
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -.035em;
+    text-align: center;
+  }
+  .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list p {
+    width: 100%;
+    max-width: 34ch;
+    margin: 0 auto;
+    padding: 0;
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+  }
+}

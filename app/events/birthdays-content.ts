@@ -54,7 +54,6 @@ export const birthdayExperiences = [
     number: "03",
     label: "Seating and event rentals",
     name: "Luxe Seating Rentals",
-    hideMedia: true,
     image: imageAssets.experiences.seatingRentals,
     href: "/experiences/seating-rentals",
     description:

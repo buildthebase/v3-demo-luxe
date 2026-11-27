@@ -1,0 +1,171 @@
+/* Private celebrations use Luxe's shared materials with an occasion-led rhythm. */
+:global(.foundation-shell) .page > .chapter {
+  --private-rule: color-mix(in srgb, var(--color-luxe-black) 18%, transparent);
+  --private-surface: var(--color-luxe-ivory);
+  --color-text-secondary: #595754;
+  position: relative;
+  isolation: isolate;
+  display: block;
+  width: min(calc(100% - 2 * var(--space-page-inline)), var(--layout-max));
+  max-width: none;
+  margin-inline: auto;
+  padding: clamp(3.5rem, 6vw, 6rem) 0;
+  border: 0;
+  background: var(--private-surface);
+  color: var(--color-luxe-black);
+  box-shadow: 0 0 0 100vmax var(--private-surface);
+  clip-path: inset(0 -100vmax);
+}
+.chapter::before { position: absolute; z-index: -1; inset: 0 -100vmax; background-image: radial-gradient(rgb(23 22 20 / 5.3%) .55px, transparent .7px); background-size: 4px 4px; content: ''; pointer-events: none; }
+:global(.foundation-shell) .page > :is(.overview, .planning) { --private-surface: var(--surface-chapter-soft); }
+:global(.foundation-shell) .page .chapter > header,
+.page :global(#private-experiences .signature-section-heading) { display: grid; grid-template-columns: minmax(0, 1fr); align-items: start; justify-items: center; gap: 1.25rem; width: 100%; max-width: none; margin: 0 auto 2.5rem; text-align: center; container-type: inline-size; }
+:global(.foundation-shell) .page .chapter h2,
+.page :global(#private-experiences .signature-section-heading h2) { --luxe-type-h2: min(3rem, 6vw); width: 100%; max-width: 100% !important; margin: 0 auto; font-weight: 400; letter-spacing: -.05em; line-height: 1.15 !important; text-align: center; text-wrap: pretty; }
+.headingLine { display: block; white-space: nowrap; }
+:global(.foundation-shell) .page :is(:global(#private-contexts-title), :global(#private-personalization-title), :global(#private-planning-title)),
+.page :global(#private-experiences #signature-selector-title) { --luxe-type-h2: min(3rem, 7.6cqi); max-width: 100% !important; }
+:global(.foundation-shell) .page .chapter > header > p { width: 100%; max-width: 64ch; margin: 0 auto; font-size: 1rem; line-height: 1.65; color: var(--color-text-secondary); }
+:global(.foundation-shell) .page .chapter :is(article, li) > p { margin: .85rem 0 0; max-width: none; font-size: 1rem; line-height: 1.65; color: var(--color-text-secondary); }
+:global(.foundation-shell) .page .chapter :is(article, li) > h3 { margin: 0; max-width: none; font-size: 1.5rem !important; font-weight: 400 !important; letter-spacing: -.035em; line-height: 1.2 !important; text-wrap: pretty; }
+.number { display: block; color: #695438 !important; font-size: .75rem !important; font-weight: 400 !important; letter-spacing: .12em; }
+
+/* An editorial opening: a short statement, then the host's context. */
+:global(.foundation-shell) .page > .overview { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); align-items: center; gap: clamp(2rem, 6vw, 6rem); }
+:global(.foundation-shell) .page .overview > header { display: grid; gap: 2rem; margin: 0; justify-items: start; text-align: left; }
+:global(.foundation-shell) .page .overview h2 { --luxe-type-h2: min(3rem, 12cqi); text-align: left; }
+.experienceMarks { display: flex; gap: 1.25rem; color: #695438; }
+.experienceMarks svg { width: 2.75rem; height: 2.75rem; }
+:global(.foundation-shell) .page .overview > div { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem; padding-left: clamp(2rem, 4vw, 4rem); border-left: 1px solid var(--private-rule); }
+:global(.foundation-shell) .page .overview > div p { margin: 0; font-size: 1rem; line-height: 1.75; color: var(--color-text-secondary); }
+
+/* Open entries give each occasion a place without another wall of cards. */
+:global(.foundation-shell) .page .contexts > ol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 3rem; width: 100%; padding: 0; margin: 0; border: 0; list-style: none; }
+:global(.foundation-shell) .page:global(.private-page) .contexts > ol > li { display: grid; grid-template-columns: 2.5rem minmax(0, 1fr); grid-template-rows: auto 1fr; align-content: start; align-items: start; gap: .9rem 1.25rem; grid-column: auto; grid-row: auto; min-width: 0; min-height: 0; padding: 2rem 0; border: 0; border-top: 1px solid var(--private-rule); background: transparent; overflow: visible; container-type: inline-size; }
+:global(.foundation-shell) .page .contexts li::after { content: none; }
+.contexts li > .number { display: grid; place-items: center; width: 2.5rem; height: 2.5rem; margin: 0; border: 1px solid var(--color-luxe-gold-ink); border-radius: 50%; }
+:global(.foundation-shell) .page:global(.private-page) .contexts li > h3 { grid-column: 2; align-self: center; color: var(--color-luxe-black); font-size: min(1.5rem, 6cqi) !important; }
+:global(.foundation-shell) .page .contexts li > p { grid-column: 2; margin: 0; }
+.contexts > :global(.process-start-action) { margin-top: 1rem; }
+
+/* Familiar service photography, one full card at a time on phones. */
+.page :global(#private-experiences) { padding-block: clamp(3.5rem, 6vw, 6rem); }
+.page :global(#private-experiences .signature-selector-world) { min-height: 0; margin-top: 0; }
+.page :global(#private-experiences .signature-selector-line) { display: none; }
+.page :global(#private-experiences .signature-selector-choice) { min-height: 0; padding: 1.75rem; gap: 1.25rem; }
+.page :global(#private-experiences .signature-selector-art) { min-height: 0; height: auto; aspect-ratio: 4 / 3; }
+.page :global(#private-experiences .signature-selector-copy) { min-height: 0; gap: .75rem; }
+.page :global(#private-experiences .signature-selector-heading) { font-size: 1.5rem !important; line-height: 1.2 !important; }
+.page :global(#private-experiences .signature-selector-copy > span:nth-of-type(2)) { width: 100%; max-width: none; margin: 0; font-size: 1rem; line-height: 1.65; text-align: left; justify-self: stretch; }
+.page :global(#private-experiences .signature-selector-copy b) { margin-top: 0; padding-top: .75rem; }
+.page :global(#private-experiences .signature-selector-label) { font-size: .6875rem; line-height: 1.5; }
+
+/* A portrait detail alongside the ways hosts can make the occasion their own. */
+:global(.foundation-shell) .page .personalization > .personalizationLayout { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; margin: 0; border: 0; }
+.personalizationNotes { min-width: 0; border-top: 1px solid var(--private-rule); }
+:global(.foundation-shell) .page .personalization article { display: grid; grid-template-columns: 2.75rem minmax(0, 1fr); gap: .8rem 1.25rem; min-width: 0; padding: 1.75rem 0; border: 0; border-bottom: 1px solid var(--private-rule); }
+.detailMark { grid-column: 1; grid-row: 1 / 3; }
+.detailMark svg { width: 2.75rem; height: 2.75rem; color: #695438; }
+:global(.foundation-shell) .page .personalization article > h3 { grid-column: 2; align-self: center; }
+:global(.foundation-shell) .page .personalization article > p { grid-column: 2; margin: 0; }
+
+/* A host's brief: a calm introduction next to four clearly separated notes. */
+:global(.foundation-shell) .page .faq > div { margin-top: 0; }
+
+@media (min-width: 701px) and (max-width: 1100px) {
+  :global(.foundation-shell) .page .contexts > ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .page :global(#private-experiences .signature-selector-world) { grid-template-columns: minmax(0, 1fr); }
+  .page :global(#private-experiences .signature-selector-choice) { display: grid; grid-template-columns: minmax(0, .38fr) minmax(0, .62fr); grid-template-rows: auto; align-items: start; gap: 1.5rem; grid-column: auto; }
+  .page :global(#private-experiences .signature-selector-art) { grid-column: 1; grid-row: 1; width: 100%; }
+  .page :global(#private-experiences .signature-selector-choice > .signature-selector-copy),
+  .page :global(#private-experiences .experience-selector-copy-link) { grid-column: 2; grid-row: 1; }
+  :global(.foundation-shell) .page > .overview { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  :global(.foundation-shell) .page .overview > header { justify-items: center; text-align: center; }
+  :global(.foundation-shell) .page .overview h2 { --luxe-type-h2: min(3rem, 6vw); text-align: center; }
+  :global(.foundation-shell) .page .overview > div { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; border-left: 0; padding-left: 0; }
+  :global(.foundation-shell) .page .overview > div p + p { padding-left: 2rem; border-left: 1px solid var(--private-rule); }
+  :global(.foundation-shell) .page .personalization > .personalizationLayout { grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: 2rem; align-items: start; }
+}
+@media (max-width: 700px), (min-width: 1101px) {
+  .page :global(#private-experiences .signature-selector-copy) { justify-items: center; text-align: center; }
+  .page :global(#private-experiences .signature-selector-copy > *) { text-align: center; }
+  .page :global(#private-experiences .signature-selector-copy > span:nth-of-type(2)) { width: 100%; max-width: none; margin-inline: 0; text-align: left; justify-self: stretch; }
+}
+@media (max-width: 700px) {
+  :global(.foundation-shell) .page > .overview { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  :global(.foundation-shell) .page .overview > header { justify-items: center; text-align: center; }
+  :global(.foundation-shell) .page .overview h2 { --luxe-type-h2: min(3rem, 6vw); text-align: center; }
+  :global(.foundation-shell) .page .overview > div { padding-left: 0; border-left: 0; }
+  :global(.foundation-shell) .page .contexts > ol { grid-template-columns: minmax(0, 1fr); }
+  :global(.foundation-shell) .page:global(.private-page) .contexts > ol > li { gap: .75rem 1rem; padding-block: 1.5rem; }
+  :global(.foundation-shell) .page:global(.private-page) .contexts li > h3 { font-size: min(1.375rem, 6cqi) !important; }
+  .page :global(#private-experiences .signature-selector-world) { grid-template-columns: minmax(0, 1fr); }
+  .page :global(#private-experiences .signature-selector-choice) { display: grid; grid-template-columns: minmax(0, 1fr); grid-column: auto; padding: 1.5rem 0; }
+  :global(.foundation-shell) .page .personalization > .personalizationLayout { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  :global(.foundation-shell) .page .personalization article > h3 { font-size: 1.25rem !important; }
+  :global(.foundation-shell) .page .faq h3 { font-size: .9375rem !important; line-height: 1.35 !important; }
+}
+
+:global(.foundation-shell) .page:global(.private-page) .contexts :global(.private-context-description) { color: var(--color-text-secondary); }
+:global(.foundation-shell) .page :global(#signature-inquiry-private-events) { --luxe-type-h2: min(3rem, 6vw); max-width: 100% !important; line-height: 1.15 !important; }
+
+/* Preserve authored line breaks against the shared heading-span resets. */
+:global(.foundation-shell) .page h2 .headingLine { display: block !important; white-space: nowrap !important; }
+.page :global(#private-experiences .signature-selector-art) { align-self: start; }
+
+/* Keep the short introduction and its action together. */
+:global(.foundation-shell) .page .personalization article + article { border-left: 0; }
+@media (min-width: 1101px) {
+  :global(.foundation-shell) .page .overview h2 { text-align: left !important; }
+  :global(.foundation-shell) .page .overview h2 .headingLine { text-align: left !important; }
+  .experienceMarks { justify-self: start; }
+}
+
+/* Desktop introduction reads across the page, with a closing icon divider. */
+@media (min-width: 1101px) {
+  :global(.foundation-shell) .page > .overview { grid-template-columns: minmax(0, 1fr); gap: 2rem; padding-block: clamp(3.5rem, 5vw, 5rem); }
+  :global(.foundation-shell) .page .overview > header { display: contents; }
+  :global(.foundation-shell) .page .overview h2 { --luxe-type-h2: min(3rem, 3vw); order: 0; width: 100%; text-align: center !important; }
+  :global(.foundation-shell) .page .overview h2 .headingLine { display: inline !important; white-space: normal !important; text-align: center !important; }
+  :global(.foundation-shell) .page .overview > div { order: 1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: min(100%, 66rem); margin-inline: auto; padding: 0; border: 0; gap: clamp(2rem, 4vw, 4rem); text-align: left; }
+  :global(.foundation-shell) .page .overview > div p { padding: 0; border: 0; margin: 0; }
+  .overview .experienceMarks { order: 2; display: flex; align-items: center; justify-self: center; width: min(100%, 66rem); gap: 1.5rem; margin-top: .5rem; }
+  .overview .experienceMarks::before, .overview .experienceMarks::after { content: ''; flex: 1; height: 1px; background: var(--private-rule); }
+  .overview .experienceMarks svg { width: 2.25rem; height: 2.25rem; flex: 0 0 auto; }
+}
+
+:global(.foundation-shell) .page .overview > div p { max-width: none; text-align: left; text-wrap: pretty; }
+
+/* Without photography, the three notes share the available section width. */
+:global(.foundation-shell) .page .personalization > .personalizationLayout { grid-template-columns: minmax(0, 1fr); width: min(100%, 64rem); margin-inline: auto; gap: 0; }
+@media (min-width: 1101px) {
+  .personalizationNotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+  :global(.foundation-shell) .page .personalization article { border-bottom: 0; }
+}
+
+/* One event brief, with four themes rather than a sequence of steps. */
+:global(.foundation-shell) .page > .planning { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+:global(.foundation-shell) .page .planning > header { display: grid; grid-template-columns: minmax(0, 1fr); grid-column: auto; grid-row: auto; gap: 1.25rem; width: 100%; margin: 0; justify-items: center; text-align: center; }
+:global(.foundation-shell) .page .planning h2 { --luxe-type-h2: min(3rem, 7.6cqi); text-align: center !important; }
+:global(.foundation-shell) .page .planning h2 .headingLine { text-align: center !important; }
+:global(.foundation-shell) .page .planning > ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: min(100%, 70rem); margin: 0 auto; padding: .5rem 2.5rem; border: 1px solid var(--color-luxe-gold); border-top-width: 2px; background: var(--color-luxe-ivory); list-style: none; }
+:global(.foundation-shell) .page .planning > ul > li { display: grid; grid-template-columns: minmax(0, 1fr); align-content: start; gap: .85rem; min-width: 0; min-height: 0; margin: 0; padding: 2rem; border: 0; background: transparent; }
+:global(.foundation-shell) .page .planning > ul > li:nth-child(even) { border-left: 1px solid var(--private-rule); }
+:global(.foundation-shell) .page .planning > ul > li:nth-child(n + 3) { border-top: 1px solid var(--private-rule); }
+.briefIcon { width: 2.5rem; height: 2.5rem; margin-bottom: .25rem; color: #695438; }
+:global(.foundation-shell) .page .planning li > h3 { grid-column: auto; margin: 0; font-size: 1.375rem !important; line-height: 1.2 !important; }
+:global(.foundation-shell) .page .planning li > p { grid-column: auto; margin: 0; font-size: 1rem; line-height: 1.65; }
+:global(.foundation-shell) .page .planning > p { width: min(100%, 64ch); margin: 0 auto; font-size: .875rem; line-height: 1.65; color: var(--color-text-secondary); text-align: center; }
+:global(.foundation-shell) .page .planning > :global(.process-start-action) { width: 100%; margin: 0; justify-content: center; }
+@media (min-width: 701px) and (max-width: 1100px) {
+  :global(.foundation-shell) .page .planning > ul { padding-inline: 1.25rem; }
+  :global(.foundation-shell) .page .planning > ul > li { padding: 1.5rem 1.25rem; }
+  :global(.foundation-shell) .page .planning li > h3 { font-size: 1.25rem !important; }
+}
+@media (max-width: 700px) {
+  :global(.foundation-shell) .page .planning > ul { grid-template-columns: minmax(0, 1fr); padding: 0 1.5rem; }
+  :global(.foundation-shell) .page .planning > ul > li { padding: 1.5rem 0; }
+  :global(.foundation-shell) .page .planning > ul > li:nth-child(even) { border-left: 0; }
+  :global(.foundation-shell) .page .planning > ul > li + li { border-top: 1px solid var(--private-rule); }
+  :global(.foundation-shell) .page .planning li > h3 { font-size: 1.25rem !important; }
+}

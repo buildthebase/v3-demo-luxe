@@ -77,7 +77,7 @@
 .events-occasion-cards .events-occasion-action > span { flex-shrink: 0; color: var(--color-luxe-gold-ink); font-size: 1.1rem; }
 .events-occasion-cards .events-occasion-card:hover .events-occasion-action { text-decoration: underline; text-underline-offset: 4px; }
 .events-occasion-cards .events-occasion-card:focus-visible { outline: 2px solid var(--color-luxe-gold-ink); outline-offset: 4px; }
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .foundation-shell main.events-page #event-pathways.events-occasion-cards > header { gap: 24px; }
   .foundation-shell main.events-page #event-pathways .events-directory-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .foundation-shell main.events-page #event-pathways .events-directory-list > article,

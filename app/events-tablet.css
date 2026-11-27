@@ -1,0 +1,93 @@
+/* Events hub refinements for iPad/tablet only. */
+@media (min-width: 701px) and (max-width: 1366px) {
+  .foundation-shell .events-page .events-hero {
+    align-items: center;
+    gap: 2rem;
+    padding-block: 3rem;
+  }
+  .foundation-shell .events-page .events-hero-copy {
+    min-height: 0;
+    align-self: start;
+    justify-content: flex-start;
+  }
+  .foundation-shell .events-page .events-hero-copy h1 {
+    font-size: clamp(2.125rem, 3.8vw, 3.25rem) !important;
+    line-height: 1.08 !important;
+    white-space: normal;
+  }
+  .foundation-shell .events-page .events-hero-copy > p:not(.foundation-eyebrow) {
+    margin-top: 1.25rem;
+    font-size: 1rem !important;
+    line-height: 1.7 !important;
+  }
+  .foundation-shell .events-page .events-hero-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .75rem;
+    margin-top: 1.5rem;
+  }
+  .foundation-shell .events-page .events-hero-actions > a { max-width: 100%; white-space: normal; }
+  .foundation-shell .events-page .events-hero-composition {
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    aspect-ratio: 6 / 7;
+  }
+
+  /* Seven occasion paths retain a consistent, readable two-column rhythm. */
+  .foundation-shell main.events-page > #event-pathways.events-occasion-cards { padding-block: 3.5rem; }
+  .foundation-shell main.events-page #event-pathways.events-occasion-cards > header {
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  .foundation-shell main.events-page #event-pathways.events-occasion-cards > header > p:last-child { max-width: 62ch; }
+  .foundation-shell main.events-page #event-pathways .events-directory-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+  .foundation-shell main.events-page #event-pathways .events-directory-list > article,
+  .foundation-shell main.events-page #event-pathways .events-directory-list > article:nth-child(-n+3) { grid-column: auto; }
+  .foundation-shell main.events-page #event-pathways .events-occasion-body { padding: 1.25rem; }
+  .foundation-shell main.events-page #event-pathways .events-occasion-number { margin-bottom: .75rem; font-size: .75rem; }
+  .foundation-shell main.events-page #event-pathways .events-occasion-body h3 { margin-bottom: .75rem; font-size: 1.5rem; line-height: 1.2; }
+  .foundation-shell main.events-page #event-pathways .events-occasion-body > strong { margin-bottom: .75rem; font-size: 1rem; line-height: 1.5; }
+  .foundation-shell main.events-page #event-pathways .events-occasion-body p { margin-bottom: 1.25rem; font-size: .9375rem; line-height: 1.65; }
+  .foundation-shell main.events-page #event-pathways .events-directory-list > article:last-child { grid-column: 1 / -1; }
+  .foundation-shell main.events-page #event-pathways .events-directory-list > article:last-child > .events-occasion-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+  .foundation-shell main.events-page #event-pathways .events-directory-list > article:last-child .events-occasion-photo {
+    min-height: 0;
+    height: 100%;
+    aspect-ratio: auto;
+  }
+
+  /* Keep the combinations introduction above its choices on all tablets. */
+  .foundation-shell main.events-page > .popular-combinations {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+    padding-block: 3.5rem;
+  }
+  .foundation-shell .events-page .popular-combinations .signature-combinations-intro { text-align: center; }
+  .foundation-shell .events-page .popular-combinations .signature-combinations-intro h2 {
+    max-width: none;
+    margin: 0 auto;
+  }
+  .foundation-shell .events-page .popular-combinations .signature-combinations-intro > p {
+    max-width: 55ch;
+    margin: 1.25rem auto 0;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  .foundation-shell .events-page .popular-combinations .signature-combinations-list { width: min(100%, 56rem); margin: 0 auto; }
+  .foundation-shell main.events-page .popular-combinations .signature-combinations-list > a {
+    min-height: 0;
+    gap: 1.5rem;
+    padding-block: 1.5rem;
+  }
+  .foundation-shell .events-page .popular-combinations .signature-combination-main h3 { margin: 0; }
+  .foundation-shell .events-page .popular-combinations .signature-combination-main strong { font-size: 1.5rem; line-height: 1.2; }
+  .foundation-shell .events-page .popular-combinations .signature-combination-main > span { font-size: 1rem; line-height: 1.65; max-width: 58ch; }
+}

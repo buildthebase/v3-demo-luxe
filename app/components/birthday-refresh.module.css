@@ -1,0 +1,171 @@
+/* Birthdays share Luxe's materials and type, with their own chapter rhythm. */
+:global(.foundation-shell) .page > .chapter {
+  --birthday-rule: color-mix(in srgb, var(--color-luxe-black) 18%, transparent);
+  --color-text-secondary: #595754;
+  --color-luxe-gold-ink: #695438;
+  --birthday-chapter-surface: var(--color-luxe-ivory);
+  position: relative;
+  isolation: isolate;
+  display: block;
+  width: min(calc(100% - 2 * var(--space-page-inline)), var(--layout-max));
+  max-width: none;
+  margin: 0 auto;
+  padding: clamp(3.5rem, 6vw, 6rem) 0;
+  border: 0;
+  color: var(--color-luxe-black);
+  background: var(--birthday-chapter-surface);
+  box-shadow: 0 0 0 100vmax var(--birthday-chapter-surface);
+  clip-path: inset(0 -100vmax);
+}
+.chapter::before { position: absolute; z-index: -1; inset: 0 -100vmax; background-image: radial-gradient(rgb(23 22 20 / 5.3%) .55px, transparent .7px); background-size: 4px 4px; content: ''; pointer-events: none; }
+:global(.foundation-shell) .page > .overview,
+:global(.foundation-shell) .page > .planning { --birthday-chapter-surface: var(--surface-chapter-soft); }
+:global(.foundation-shell) .page .chapter > header { display: grid; grid-template-columns: minmax(0, 1fr); justify-items: center; align-items: start; gap: 1.25rem; width: 100%; max-width: none; margin: 0 auto 2.5rem; padding: 0; text-align: center; }
+:global(.foundation-shell) .page .chapter h2 { --luxe-type-h2: clamp(2rem, 3vw, 3rem); width: min(100%, 36rem); max-width: 36rem !important; margin: 0 auto; padding: 0; font-weight: 400; line-height: 1.12 !important; letter-spacing: -.05em; text-align: center; text-wrap: balance; }
+:global(.foundation-shell) .page .chapter > header > p { width: 100%; max-width: 62ch; margin: 0 auto; justify-self: center; font-size: 1rem; line-height: 1.65; color: var(--color-text-secondary); }
+:global(.foundation-shell) .page .chapter :is(article, li) > p { max-width: none; margin: .85rem 0 0; color: var(--color-text-secondary); font-size: 1rem; line-height: 1.65; }
+:global(.foundation-shell) .page .chapter :is(article, li) > h3 { margin: 0; font-size: 1.375rem !important; font-weight: 400 !important; line-height: 1.2 !important; letter-spacing: -.035em; }
+.articleNumber, .contextNumber { color: var(--color-luxe-gold-ink); font-size: .75rem; font-weight: 500; letter-spacing: .1em; }
+
+/* A compact, host-focused introduction rather than another photo split. */
+:global(.foundation-shell) .page .overview > h2 { margin-bottom: 2.5rem; }
+:global(.foundation-shell) .page > .overview { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+:global(.foundation-shell) .page .overview > h2 { margin-bottom: 0 !important; }
+:global(.foundation-shell) .page .overview > :global(.birthday-overview-notes) { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+:global(.foundation-shell) .page .overview article { padding: 1.75rem; border: 0; border-top: 2px solid var(--color-luxe-gold); background: var(--color-luxe-ivory); }
+.overview article > svg { display: block; width: 2.75rem; height: 2.75rem; margin-bottom: 1rem; color: var(--color-luxe-gold-ink); }
+
+/* Four balanced occasion cards keep the text-led section compact. */
+:global(.foundation-shell) .page .contexts > ol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; width: 100%; padding: 0; margin: 0; border: 0; list-style: none; }
+:global(.foundation-shell) .page .contexts > ol > li { display: block; grid-column: auto; grid-row: auto; min-width: 0; margin: 0; padding: clamp(1.5rem, 2.5vw, 2rem); border: 1px solid var(--birthday-rule); background: var(--surface-chapter-soft); }
+.contextNumber { display: block; margin-bottom: .85rem; }
+
+/* Shared service architecture, with deliberate intermediate-width layouts. */
+.page :global(#birthday-experiences) { padding-block: clamp(3.5rem, 6vw, 6rem); }
+.page :global(#birthday-experiences .signature-section-heading) { display: grid; grid-template-columns: minmax(0, 1fr); justify-items: center; margin-bottom: 2rem; }
+.page :global(#birthday-experiences .signature-section-heading h2) { --luxe-type-h2: clamp(2rem, 3vw, 3rem); width: min(100%, 36rem); max-width: 100% !important; line-height: 1.12 !important; }
+.page :global(#birthday-experiences .signature-selector-world) { min-height: 0; margin-top: 0; }
+.page :global(#birthday-experiences .signature-selector-line) { display: none; }
+.page :global(#birthday-experiences .signature-selector-choice) { min-height: 0; gap: 1.25rem; padding: 1.75rem; }
+.page :global(#birthday-experiences .signature-selector-art) { min-height: 0; height: auto; aspect-ratio: 4 / 3; }
+.page :global(#birthday-experiences .signature-selector-heading) { font-size: 1.5rem !important; line-height: 1.2 !important; }
+.page :global(#birthday-experiences .signature-selector-copy) { min-height: 0; gap: .75rem; }
+.page :global(#birthday-experiences .signature-selector-copy > span:nth-of-type(2)) { margin-top: 0; font-size: 1rem; line-height: 1.65; }
+.page :global(#birthday-experiences .signature-selector-copy b) { padding-top: .75rem; margin-top: 0; }
+.page :global(#birthday-experiences .signature-selector-label) { font-size: .6875rem; line-height: 1.5; }
+
+@media (max-width: 700px), (min-width: 1101px) {
+  .page :global(#birthday-experiences .signature-selector-copy) {
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+  }
+  .page :global(#birthday-experiences .signature-selector-copy > *) {
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+  }
+  .page :global(#birthday-experiences .signature-selector-copy > span:nth-of-type(2)) {
+    max-width: 38ch;
+    margin-inline: auto;
+  }
+}
+
+/* Three styling notes read as a single editorial strip. */
+:global(.foundation-shell) .page .personalization > div { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin: 0; border: 0; border-block: 1px solid var(--birthday-rule); }
+:global(.foundation-shell) .page .personalization article { grid-column: auto; grid-row: auto; min-width: 0; min-height: 0; padding: 2rem; margin: 0; border: 0; background: transparent; }
+:global(.foundation-shell) .page .personalization article + article { border-left: 1px solid var(--birthday-rule); }
+.personalization .articleNumber { display: block; margin-bottom: 1.25rem; }
+.personalization h3::before { content: none; }
+.personalization > :global(.process-start-action) { margin-top: 2rem; }
+
+/* Combination cards retain the existing options, with more breathing room. */
+:global(.foundation-shell) .page .combinations > div { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; border: 0; }
+:global(.foundation-shell) .page .combinations article { padding: 2rem; min-height: 0; border: 1px solid var(--birthday-rule); background: var(--surface-chapter-soft); }
+.combinations .articleNumber { display: block; margin-bottom: 1rem; }
+
+/* A short expandable planning guide, distinct from the Bridal Showers brief. */
+.planningList { width: min(100%, 54rem); margin: 0 auto; border-top: 2px solid var(--color-luxe-gold); }
+.planning > header::before { content: none; }
+.planningList details { padding: 0 1.75rem; border: 1px solid var(--birthday-rule); border-top: 0; background: var(--color-luxe-ivory); }
+.planningList summary { display: grid; grid-template-columns: 2rem minmax(0, 1fr) 1.5rem; align-items: center; gap: 1rem; min-height: 5rem; padding-block: 1.25rem; list-style: none; cursor: pointer; }
+.planningList summary::-webkit-details-marker { display: none; }
+.planningList summary::after { content: '+'; color: var(--color-luxe-gold-ink); font-size: 1.5rem; font-weight: 300; text-align: center; }
+.planningList details[open] summary::after { content: '−'; }
+:global(.foundation-shell) .page .planningList h3 { max-width: none; margin: 0; font-size: 1.25rem !important; font-weight: 400 !important; line-height: 1.3 !important; letter-spacing: -.025em; text-transform: none; }
+.planningList details > p { padding: 0 2.5rem 1.5rem 3rem; margin: 0; color: var(--color-text-secondary); font-size: 1rem; line-height: 1.65; }
+.planningList summary:focus-visible { outline: 2px solid var(--color-luxe-gold-ink); outline-offset: 4px; }
+.planning > :global(.process-start-action) { margin-top: 2rem; }
+@media (min-width: 1367px) {
+  .page :global(.birthday-hero-copy h1 > span) { white-space: normal !important; }
+}
+
+@media (min-width: 701px) and (max-width: 1100px) {
+  :global(.foundation-shell) .page .overview > :global(.birthday-overview-notes) { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  :global(.foundation-shell) .page .overview article { display: grid; grid-template-columns: 2.75rem minmax(0, 1fr); gap: .75rem 1.5rem; padding: 1.5rem; }
+  .overview article > svg { grid-column: 1; grid-row: 1 / 3; margin: 0; }
+  .overview article h3, .overview article p { grid-column: 2; }
+  :global(.foundation-shell) .page .overview article > p { margin: 0; }
+  .page :global(#birthday-experiences .signature-selector-world) { grid-template-columns: minmax(0, 1fr); }
+  .page :global(#birthday-experiences .signature-selector-choice) { display: grid; grid-template-columns: minmax(0, .38fr) minmax(0, .62fr); grid-template-rows: auto; align-items: start; gap: 1.5rem; }
+  .page :global(#birthday-experiences .signature-selector-art) { grid-column: 1; grid-row: 1; width: 100%; align-self: start; }
+  .page :global(#birthday-experiences .signature-selector-choice > .signature-selector-copy), .page :global(#birthday-experiences .experience-selector-copy-link) { grid-column: 2; grid-row: 1; }
+  .page :global(#birthday-experiences .signature-selector-without-media) { grid-template-columns: minmax(0, 1fr); }
+  .page :global(#birthday-experiences .signature-selector-without-media > .signature-selector-copy) { grid-column: 1; }
+  :global(.foundation-shell) .page .personalization > div { grid-template-columns: minmax(0, 1fr); }
+  :global(.foundation-shell) .page .personalization article { display: grid; grid-template-columns: 2rem minmax(0, .7fr) minmax(0, 1.3fr); gap: 1.25rem; padding: 1.5rem 0; }
+  :global(.foundation-shell) .page .personalization article + article { border-left: 0; border-top: 1px solid var(--birthday-rule); }
+  :global(.foundation-shell) .page .personalization article > p { margin: 0; }
+}
+@media (max-width: 700px) {
+  :global(.foundation-shell) .page .chapter h2 { --luxe-type-h2: clamp(1.8rem, 7.5vw, 2.35rem); }
+  :global(.foundation-shell) .page .overview > :global(.birthday-overview-notes) { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  :global(.foundation-shell) .page .overview article { padding: 1.5rem; }
+  :global(.foundation-shell) .page .contexts > ol { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  :global(.foundation-shell) .page .contexts > ol > li,
+  :global(.foundation-shell) .page .contexts > ol > li:first-child { grid-column: 1; grid-row: auto; padding: 1.5rem; border: 1px solid var(--birthday-rule); background: var(--surface-chapter-soft); }
+  .page :global(#birthday-experiences .signature-selector-world) { grid-template-columns: minmax(0, 1fr); }
+  .page :global(#birthday-experiences .signature-selector-choice) { grid-template-columns: minmax(0, 1fr); padding: 1.5rem 0; }
+  .page :global(#birthday-experiences .signature-section-heading h2) { --luxe-type-h2: clamp(1.8rem, 7.5vw, 2.35rem); }
+  :global(.foundation-shell) .page .personalization > div, :global(.foundation-shell) .page .combinations > div { grid-template-columns: minmax(0, 1fr); }
+  :global(.foundation-shell) .page .personalization article { padding: 1.5rem 0; }
+  :global(.foundation-shell) .page .personalization article + article { border-left: 0; border-top: 1px solid var(--birthday-rule); }
+  :global(.foundation-shell) .page .combinations article { padding: 1.5rem; }
+  .planningList details { padding-inline: 1rem; }
+  .planningList summary { grid-template-columns: 1.5rem minmax(0, 1fr) 1rem; gap: .75rem; }
+  .planningList details > p { padding-left: 0; padding-right: 0; }
+}
+
+/* Keep section titles readable within two lines without clipping their copy. */
+:global(.foundation-shell) .page :is(
+  :global(#birthday-overview-title),
+  :global(#birthday-contexts-title),
+  :global(#birthday-personalization-title),
+  :global(#birthday-combinations-title),
+  :global(#birthday-planning-title),
+  :global(#birthday-experiences .signature-section-heading h2),
+  :global(#birthday-faq-title),
+  :global(#signature-inquiry-birthdays)
+) {
+  --luxe-type-h2: min(3rem, 6vw);
+  width: 100%;
+  max-width: 100% !important;
+  line-height: 1.15 !important;
+  text-wrap: pretty;
+}
+
+:global(.foundation-shell) .page :global(#birthday-experiences #signature-selector-title) {
+  --luxe-type-h2: min(3rem, 6.25cqi);
+  width: 100%;
+  max-width: 100% !important;
+}
+
+.page :global(#birthday-experiences .signature-section-heading) { container-type: inline-size; }
+.experienceHeadingLine { display: block; white-space: nowrap; }
+
+@media (max-width: 380px) {
+  :global(.foundation-shell) .page :global(.birthday-faq h3) {
+    font-size: .9375rem !important;
+    line-height: 1.35 !important;
+  }
+}

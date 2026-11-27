@@ -1,0 +1,204 @@
+/* Event Rentals: tablet-only editorial layouts. */
+@media (min-width: 701px) and (max-width: 1366px) {
+  .foundation-shell .seating-page .seating-overview {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+    padding-block: 3.5rem;
+  }
+  .foundation-shell .seating-page .seating-overview > .seating-overview-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    justify-items: center;
+    width: 100%;
+    max-width: none;
+    margin-inline: auto;
+    padding: 0;
+  }
+  .foundation-shell .seating-page h2#seating-overview-title {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100% !important;
+    max-width: 29ch !important;
+    margin: 0 auto !important;
+    font-size: clamp(2rem, 3.5vw, 2.625rem) !important;
+    line-height: 1.12 !important;
+    text-align: center !important;
+    white-space: normal !important;
+  }
+  .foundation-shell .seating-page .seating-overview-media {
+    display: block;
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: center;
+    width: min(100%, 28rem);
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+    margin: 0;
+    border: 0;
+  }
+  .foundation-shell .seating-page .seating-overview .seating-overview-content {
+    width: min(100%, 52rem);
+    max-width: 52rem;
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+  }
+  .foundation-shell .seating-page .seating-overview-lead {
+    max-width: 39ch;
+    margin: 0 auto;
+    font-size: clamp(1.5rem, 2.5vw, 1.875rem) !important;
+    line-height: 1.25 !important;
+    text-align: center;
+  }
+  .foundation-shell .seating-page .seating-overview-rule { margin: 1.5rem 0; }
+  .foundation-shell .seating-page .seating-overview .seating-overview-copy {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem 2rem;
+  }
+  .foundation-shell .seating-page .seating-overview .seating-overview-copy > p {
+    margin: 0;
+    padding: 0;
+  }
+  .foundation-shell .seating-page .seating-overview .seating-overview-copy > p + p { margin-top: 0; }
+  .foundation-shell .seating-page .seating-overview .seating-overview-copy > p:last-child {
+    grid-column: 1 / -1;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--surface-dark-rule);
+  }
+
+  /* A continuous numbered sequence replaces the oversized two-plus-one cards. */
+  .foundation-shell .seating-page .seating-operations { padding-block: 3.5rem; }
+  .foundation-shell .seating-page .seating-operations > header {
+    width: min(100%, 52rem);
+    margin: 0 auto 1.5rem;
+    padding: 0;
+  }
+  .foundation-shell .seating-page .seating-operations > header::after { content: none; }
+  .foundation-shell .seating-page h2#seating-operations-title {
+    max-width: 28ch;
+    font-size: clamp(2rem, 3.5vw, 2.625rem) !important;
+    line-height: 1.12;
+  }
+  .foundation-shell .seating-page .seating-operations .seating-operations-subtitle {
+    max-width: 45rem;
+    margin: 1rem auto 0;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+  .foundation-shell .seating-page .seating-operation-grid {
+    display: block;
+    width: min(100%, 52rem);
+    margin-inline: auto;
+    border: 0;
+  }
+  .foundation-shell .seating-page .seating-operation-grid article {
+    display: grid;
+    grid-template-columns: 2rem minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    align-items: start;
+    gap: .75rem 1rem;
+    min-height: 0;
+    padding: 1.75rem 0;
+    border: 0;
+    border-top: 1px solid var(--surface-dark-rule);
+    background: transparent;
+    box-shadow: none;
+    overflow: visible;
+  }
+  .foundation-shell .seating-page .seating-operation-grid article::before,
+  .foundation-shell .seating-page .seating-operation-grid article::after { display: none; content: none; }
+  .foundation-shell .seating-page .seating-operation-number {
+    display: block;
+    grid-column: 1;
+    grid-row: 1;
+    width: auto;
+    height: auto;
+    min-height: 0;
+    margin: 0;
+    padding: .25rem 0 0;
+    aspect-ratio: auto;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--color-luxe-gold-on-dark);
+    font-size: .875rem;
+    line-height: 1.5;
+  }
+  .foundation-shell .seating-page .seating-operation-grid article h3 {
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+    max-width: none !important;
+    min-height: 0;
+    margin: 0;
+    color: var(--color-luxe-ivory);
+    font-size: 1.625rem;
+    line-height: 1.2;
+    white-space: normal;
+  }
+  .foundation-shell .seating-page .seating-operation-grid article p {
+    grid-column: 2;
+    grid-row: 2;
+    max-width: 68ch;
+    margin: 0;
+    color: var(--surface-dark-copy-muted);
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .foundation-shell .seating-page .seating-pricing { padding-block: 3.5rem; }
+  .foundation-shell .seating-page .seating-pricing > header,
+  .foundation-shell .seating-page .seating-pricing > .priority-answer { width: min(100%, 44rem); margin-inline: auto; }
+  .foundation-shell .seating-page .seating-pricing > .priority-answer {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+    margin-block: 0;
+    padding: 0;
+    border: 0;
+    min-height: 0;
+  }
+  .foundation-shell .seating-page .seating-pricing .priority-answer > header,
+  .foundation-shell .seating-page .seating-pricing .priority-answer > div { margin: 0; padding: 0; }
+  .foundation-shell .seating-page .seating-pricing .priority-answer h3 {
+    max-width: 30ch;
+    margin: 0;
+    font-size: clamp(1.75rem, 3vw, 2rem);
+    line-height: 1.15;
+    text-align: left;
+  }
+  .foundation-shell .seating-page .seating-pricing .priority-answer > div > a { margin-top: 1.5rem; }
+  .foundation-shell .seating-page .seating-combinations > header { gap: 1.25rem; margin-bottom: 2rem; }
+  .foundation-shell .seating-page .seating-combinations > header > p:last-child { max-width: 52rem; margin-inline: auto; }
+}
+@media (min-width: 701px) and (max-width: 900px) {
+  .foundation-shell .seating-page .seating-overview .seating-overview-copy { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (min-width: 701px) and (max-width: 1366px) {
+  .foundation-shell .seating-page .seating-inventory > header { margin-bottom: 2rem; padding-bottom: 0; }
+  .foundation-shell .seating-page .seating-inventory > header .seating-inventory-subtitle { margin-top: 1rem; }
+  .foundation-shell .seating-page .seating-inventory-grid { margin-top: 0; }
+  .foundation-shell .seating-page .seating-inventory-grid > article { padding: 1.5rem; }
+  .foundation-shell .seating-page .seating-inventory-grid h3 {
+    min-height: 0;
+    margin: 1.25rem 0 .75rem;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    white-space: normal;
+  }
+  .foundation-shell .seating-page .seating-inventory-grid article > strong { min-height: 0; white-space: normal; }
+  .foundation-shell .seating-page .seating-inventory-grid article > p { min-height: 0; margin-top: 1rem; }
+}
+
+@media (min-width: 701px) and (max-width: 1366px) {
+  .foundation-shell .seating-page .experience-context.seating-overview .experience-context-copy > p:not(.seating-overview-handoff) + p:not(.seating-overview-handoff) {
+    margin-top: 0;
+  }
+  .foundation-shell .seating-page .experience-context.seating-overview .experience-context-copy > p:last-child {
+    margin-top: 0;
+  }
+}

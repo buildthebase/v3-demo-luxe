@@ -22995,10 +22995,10 @@ max-width: 36ch;
 @media (min-width: 761px) {
 .foundation-shell
   main:not(.blog-index-page):not(.blog-article-page)
-  h2:not(.foundation-wide-heading):not(#events-directory-title):not(#sweet-positioning-title):not(#sweet-inclusions-title):not(#coffee-overview-title):not(#seating-overview-title):not(#coffee-events-title):not(#sweet-combinations-title):not(#coffee-hero-proof-title):not(#seating-hero-proof-title):not(#corporate-planning-title):not(#events-approach-title):not(#coffee-formats-title):not(#home-hero-seo-title):not(#wedding-overview-title):not(#coffee-branding-title) {
-    max-width: 18ch !important;
+  h2:not(.foundation-wide-heading):not(#events-directory-title):not(#sweet-positioning-title):not(#sweet-inclusions-title):not(#coffee-overview-title):not(#seating-overview-title):not(#coffee-events-title):not(#sweet-combinations-title):not(#coffee-hero-proof-title):not(#seating-hero-proof-title):not(#corporate-planning-title):not(#events-approach-title):not(#coffee-formats-title):not(#home-hero-seo-title):not(#wedding-overview-title):not(#coffee-branding-title):not(:where(#corporate-branding-title)) {
+    max-width: var(--section-heading-measure, 18ch) !important;
     font-size: var(--luxe-type-h2) !important;
-    line-height: .98 !important;
+    line-height: var(--section-heading-leading, .98) !important;
     letter-spacing: -.055em !important;
   }
 }
@@ -26650,3 +26650,17 @@ transparent 0.7px);
 
 .gallery-filter-trigger { width: 100%; background: transparent; color: inherit; text-align: left; cursor: pointer; }
 .gallery-filter-menu[hidden] { display: none; }
+
+/* Shared Flashquotes popup. The provider's script runs only after opening it. */
+.home-quote-modal.flashquotes-modal { width: min(calc(100% - 2rem), 640px); max-width: 100%; max-height: calc(100dvh - 2rem); }
+.flashquotes-modal .flashquotes-modal-inner { padding: 0; }
+.flashquotes-modal-header { position: sticky; top: 0; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.25rem; border-bottom: 1px solid var(--color-border); background: var(--color-luxe-ivory); }
+.flashquotes-modal .flashquotes-modal-header h2 { width: auto; max-width: none; margin: 0; font-size: 1.5rem; line-height: 1.2; letter-spacing: -.035em; }
+.flashquotes-modal .home-quote-modal-close { position: static; }
+.flashquotes-form-frame { display: block; width: 100%; height: 650px; border: 0; background: white; }
+.flashquotes-form-fallback { margin: 0; padding: 1rem 1.25rem; font-size: .875rem; line-height: 1.5; text-align: center; }
+.flashquotes-form-fallback a { text-decoration: underline; text-underline-offset: .2em; }
+@media (max-width: 700px) {
+  .home-quote-modal.flashquotes-modal { width: calc(100% - 1rem); max-height: calc(100dvh - 1rem); }
+  .flashquotes-modal-header { padding: .75rem; }
+}

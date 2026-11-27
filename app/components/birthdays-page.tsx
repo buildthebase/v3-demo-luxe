@@ -1,4 +1,6 @@
 import Link from "next/link";
+import styles from "./birthday-refresh.module.css";
+import { ExperienceLineIcon } from "./experience-line-icon";
 import { imageAssets } from "../image-system";
 import { ResponsiveImage } from "./responsive-image";
 import { EventInquiryAction } from "./event-inquiry-action";
@@ -67,13 +69,14 @@ function BirthdayHero() {
 
 function BirthdayOverview() {
   return (
-    <section className="birthday-overview" aria-labelledby="birthday-overview-title">
-      <h2 id="birthday-overview-title">
+    <section className={`birthday-overview ${styles.chapter} ${styles.overview}`} aria-labelledby="birthday-overview-title">
+      <h2 className="foundation-wide-heading" id="birthday-overview-title">
         Birthday experiences designed around the guest of honour.
       </h2>
 
       <div className="birthday-overview-notes">
         <article>
+          <ExperienceLineIcon type="presentation" />
           <h3>Personal to every celebration</h3>
           <p>
             We tailor our coffee, dessert, and rental experiences to reflect the
@@ -82,6 +85,7 @@ function BirthdayOverview() {
         </article>
 
         <article>
+          <ExperienceLineIcon type="coffee" />
           <h3>One experience or several</h3>
           <p>
             Book Luxe Coffee Bar, Luxe Sweet Cart, or Luxe Seating Rentals
@@ -90,6 +94,7 @@ function BirthdayOverview() {
         </article>
 
         <article>
+          <ExperienceLineIcon type="seating" />
           <h3>Designed for your venue</h3>
           <p>
             We coordinate service timing, setup requirements, and guest flow
@@ -104,19 +109,20 @@ function BirthdayOverview() {
 function BirthdayContexts() {
   return (
     <section
-      className="birthday-contexts luxe-grid-section luxe-grid-section-dark"
+      className={`birthday-contexts ${styles.chapter} ${styles.contexts}`}
       id="birthday-contexts"
       aria-labelledby="birthday-contexts-title"
     >
-      <span className="luxe-section-grid" aria-hidden="true" />
       <header>
         <h2 className="foundation-wide-heading" id="birthday-contexts-title">
-          Birthday experiences for every kind of celebration
+          <span className={styles.experienceHeadingLine}>Birthday experiences</span>{" "}
+          <span className={styles.experienceHeadingLine}>for every kind of celebration.</span>
         </h2>
       </header>
       <ol>
         {birthdayContexts.map((context) => (
           <li key={context.number}>
+            <span className={styles.contextNumber} aria-hidden="true">{context.number}</span>
             <h3>{context.title}</h3>
             <p>{context.description}</p>
           </li>
@@ -131,7 +137,7 @@ function BirthdayExperiences() {
     <ExperienceSelector
       id="birthday-experiences"
       experiences={birthdayExperiences}
-      heading="Birthday coffee bars, live dessert carts, and event rental options."
+      heading={<><span className={styles.experienceHeadingLine}>Birthday coffee bars, live dessert carts,</span>{" "}<span className={styles.experienceHeadingLine}>and event rental options.</span></>}
       headingClassName="foundation-wide-heading"
       showDescription={false}
       useItemHeadings
@@ -143,12 +149,11 @@ function BirthdayExperiences() {
 function BirthdayPersonalization() {
   return (
     <section
-      className="birthday-personalization luxe-grid-section"
+      className={`birthday-personalization ${styles.chapter} ${styles.personalization}`}
       aria-labelledby="birthday-personalization-title"
     >
-      <span className="luxe-section-grid" aria-hidden="true" />
       <header>
-        <h2 id="birthday-personalization-title">Personalized birthday menus, signage, and room details</h2>
+        <h2 className="foundation-wide-heading" id="birthday-personalization-title">Personalized birthday menus, signage, and room details</h2>
         <p>
           Tailor drink menus, custom signage, service presentation and select rental
           enhancements to reflect the guest of honour.
@@ -156,7 +161,7 @@ function BirthdayPersonalization() {
       </header>
       <div>
         {birthdayPersonalization.map((item) => (
-          <article key={item.number}><h3>{item.title}</h3><p>{item.description}</p>
+          <article key={item.number}><span className={styles.articleNumber} aria-hidden="true">{item.number}</span><h3>{item.title}</h3><p>{item.description}</p>
           </article>
         ))}
       </div>
@@ -167,14 +172,14 @@ function BirthdayPersonalization() {
 
 function BirthdayCombinations() {
   return (
-    <section className="birthday-combinations" aria-labelledby="birthday-combinations-title">
+    <section className={`birthday-combinations ${styles.chapter} ${styles.combinations}`} aria-labelledby="birthday-combinations-title">
       <header>
         <h2 className="foundation-wide-heading" id="birthday-combinations-title">Popular birthday service combinations</h2>
         <p>Choose one Luxe experience or combine multiple services to create a celebration tailored to your guests, venue, and event style.</p>
       </header>
       <div>
         {birthdayCombinations.map((item) => (
-          <article key={item.number}><h3>{item.title}</h3><p>{item.description}</p>
+          <article key={item.number}><span className={styles.articleNumber} aria-hidden="true">{item.number}</span><h3>{item.title}</h3><p>{item.description}</p>
           </article>
         ))}
       </div>
@@ -184,23 +189,22 @@ function BirthdayCombinations() {
 
 function BirthdayPlanning() {
   return (
-    <section className="birthday-planning luxe-grid-section luxe-grid-section-dark" aria-labelledby="birthday-planning-title">
-      <span className="luxe-section-grid" aria-hidden="true" />
+    <section className={`birthday-planning ${styles.chapter} ${styles.planning}`} aria-labelledby="birthday-planning-title">
       <header>
-        <h2 id="birthday-planning-title">What to share when planning a birthday with Luxe.</h2>
+        <h2 className="foundation-wide-heading" id="birthday-planning-title">What to share when planning a birthday with Luxe.</h2>
         <p>
           A few clear details help shape the service, setting, and experience
           around the person being celebrated.
         </p>
       </header>
-      <ol>
-        {birthdayPlanning.map((item) => (
-          <li key={item.title}>
-            <h3>{item.title}</h3>
+      <div className={styles.planningList}>
+        {birthdayPlanning.map((item, index) => (
+          <details key={item.title} name="birthday-planning-notes" open={index === 0}>
+            <summary><span className={styles.articleNumber} aria-hidden="true">{String(index + 1).padStart(2, "0")}</span><h3>{item.title}</h3></summary>
             <p>{item.description}</p>
-          </li>
+          </details>
         ))}
-      </ol>
+      </div>
       <EventInquiryAction />
     </section>
   );
@@ -209,7 +213,7 @@ function BirthdayPlanning() {
 function BirthdayFaq() {
   return (
     <section className="birthday-faq" aria-labelledby="birthday-faq-title">
-      <header><h2 id="birthday-faq-title">Birthday planning questions.</h2></header>
+      <header><h2 className="foundation-wide-heading" id="birthday-faq-title">Birthday planning questions.</h2></header>
       <FaqAccordion items={birthdayFaqs} indicatorElement="i" showNumbers={false} />
       <Link href="/faq">Review Luxe Booking FAQs <span aria-hidden="true">↗︎</span></Link>
     </section>
@@ -219,7 +223,7 @@ function BirthdayFaq() {
 export function BirthdaysPage() {
   return (
     <SiteShell breadcrumbPath="/events/birthdays">
-      <main className="birthday-page">
+      <main className={`birthday-page ${styles.page}`}>
         <PageSectionNavigation items={birthdaysSectionNavigation} />
         <BirthdayHero />
         <BirthdayOverview />

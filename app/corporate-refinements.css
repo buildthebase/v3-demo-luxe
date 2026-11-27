@@ -1,0 +1,57 @@
+/* This heading alone keeps its two authored lines on every device. */
+.foundation-shell main.corporate-page .corporate-branding > header > div { container-type: inline-size; }
+.foundation-shell main.corporate-page .corporate-branding[aria-labelledby="corporate-branding-title"] > header h2#corporate-branding-title {
+  width: 100% !important;
+  max-width: none !important;
+  margin-inline: auto !important;
+  font-size: clamp(1rem, 8.2cqi, 2.6rem) !important;
+  line-height: 1.15 !important;
+  text-align: center !important;
+}
+.foundation-shell main.corporate-page .corporate-branding h2#corporate-branding-title > span {
+  display: block;
+  white-space: nowrap !important;
+}
+@media (min-width: 701px) and (max-width: 1366px) {
+  .foundation-shell .corporate-page .corporate-branding { padding-block: 3.5rem; }
+  .foundation-shell .corporate-page .corporate-branding > header { margin-bottom: 2rem; }
+  .foundation-shell .corporate-page .corporate-branding-intro { max-width: 58ch; margin-top: 1.25rem; font-size: 1rem; line-height: 1.65; }
+  .foundation-shell .corporate-page .corporate-branding-composition {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem;
+    width: min(100%, 56rem);
+    margin-inline: auto;
+  }
+  .foundation-shell .corporate-page .corporate-branding article.corporate-branding-feature {
+    display: grid;
+    grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+    align-items: center;
+    gap: 1.75rem;
+    min-height: 0;
+    padding: 1.5rem;
+    text-align: left;
+  }
+  .foundation-shell .corporate-page .corporate-branding-feature > .corporate-branding-image {
+    grid-column: 1;
+    width: min(100%, 16rem);
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 941 / 1672;
+    margin: 0;
+    justify-self: center;
+  }
+  .foundation-shell .corporate-page .corporate-branding-image img { object-fit: contain !important; }
+  .foundation-shell .corporate-page .corporate-branding-feature > div:not(.corporate-branding-image) { grid-column: 2; }
+  .foundation-shell .corporate-page .corporate-branding article.corporate-branding-feature h3 {
+    margin: 0 0 1rem;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    text-align: left;
+  }
+  .foundation-shell .corporate-page .corporate-branding article p { max-width: none; margin: 0; font-size: 1rem; line-height: 1.65; text-align: left; }
+  .foundation-shell .corporate-page .corporate-branding-stack { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto; gap: 2rem; }
+  .foundation-shell .corporate-page .corporate-branding-stack article { min-height: 0; padding: 1.5rem 0; border: 0; border-top: 1px solid var(--corporate-rule); background: transparent; box-shadow: none; text-align: left; }
+  .foundation-shell .corporate-page .corporate-branding-stack article::before { content: none; }
+  .foundation-shell .corporate-page .corporate-branding-stack h3 { margin: 0 0 .75rem; font-size: 1.375rem; line-height: 1.2; text-align: left; }
+}

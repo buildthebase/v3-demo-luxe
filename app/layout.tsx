@@ -42,6 +42,17 @@ import "./blog.css";
 import "./faq-editorial.css";
 import "./mobile-button-underlines.css";
 import "./experiences-link-underlines.css";
+import "./tablet-layout.css";
+import "./sweet-cart-tablet.css";
+import "./home-tablet.css";
+import "./coffee-tablet.css";
+import "./rentals-tablet.css";
+import "./events-tablet.css";
+import "./planning-tablet.css";
+import "./weddings-tablet.css";
+import "./hero-proof-tablet.css";
+import "./corporate-refinements.css";
+import "./bridal-tablet.css";
 import { siteConfig } from "./site-config";
 import { Analytics } from "./analytics";
 

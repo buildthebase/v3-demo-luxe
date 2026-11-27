@@ -1,0 +1,87 @@
+/* Consistent hero proof strips, without changing page-specific facts. */
+@media (min-width: 701px) and (max-width: 1366px) {
+  .foundation-shell main[class] dl:is([class$="-hero-proof"], .sweet-hero-proof, .home-hero-proof-points) {
+    --color-rule: color-mix(in srgb, var(--color-luxe-black) 18%, transparent);
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    padding: 0;
+    margin-block: 0 !important;
+    margin-inline: auto !important;
+    border: 0;
+    border-block: 1px solid var(--color-rule);
+    background: var(--color-luxe-ivory);
+    color: var(--color-luxe-black);
+    overflow: visible;
+  }
+  .foundation-shell main[class] dl:is([class$="-hero-proof"], .sweet-hero-proof, .home-hero-proof-points):has(> div:nth-child(2)):not(:has(> div:nth-child(3))) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .foundation-shell main[class] dl:is([class$="-hero-proof"], .sweet-hero-proof, .home-hero-proof-points):has(> div:nth-child(4)):not(:has(> div:nth-child(5))) { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .foundation-shell main[class] dl:is([class$="-hero-proof"], .sweet-hero-proof, .home-hero-proof-points):has(> div:nth-child(5)) { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .foundation-shell main[class] dl:is([class$="-hero-proof"], .sweet-hero-proof, .home-hero-proof-points) > div {
+    display: grid;
+    grid-column: auto;
+    align-content: start;
+    justify-items: center;
+    gap: .75rem;
+    min-width: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 1.25rem 1rem;
+    border: 0;
+    border-right: 1px solid var(--color-rule);
+    background: transparent;
+    color: var(--color-luxe-black);
+    text-align: center;
+  }
+  .foundation-shell main[class] dl:is([class$="-hero-proof"], .sweet-hero-proof, .home-hero-proof-points) > div:last-child { border-right: 0; }
+  .foundation-shell main[class] dl:is([class$="-hero-proof"], .sweet-hero-proof, .home-hero-proof-points) dt {
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    color: var(--color-luxe-black) !important;
+    font-size: clamp(1.25rem, 2.1vw, 1.75rem);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -.04em;
+    white-space: normal;
+  }
+  .foundation-shell main[class] dl:is([class$="-hero-proof"], .sweet-hero-proof, .home-hero-proof-points) dd {
+    display: grid;
+    justify-items: center;
+    gap: .5rem;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    color: color-mix(in srgb, var(--color-luxe-black) 78%, var(--color-luxe-ivory));
+    font-size: .6875rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: .08em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .foundation-shell main[class] dl:is([class$="-hero-proof"], .sweet-hero-proof, .home-hero-proof-points) dd > strong {
+    display: block;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    white-space: normal;
+  }
+  .foundation-shell main[class] dl:is([class$="-hero-proof"], .sweet-hero-proof, .home-hero-proof-points) dd.coffee-proof-with-info { display: flex; justify-content: center; align-items: center; }
+  .foundation-shell main[class] dl:is([class$="-hero-proof"], .sweet-hero-proof, .home-hero-proof-points) dd > span:not(.coffee-proof-info) { font-size: .75rem; line-height: 1.6; }
+}
+@media (min-width: 701px) and (max-width: 1000px) {
+  .foundation-shell main[class] dl:is([class$="-hero-proof"], .sweet-hero-proof, .home-hero-proof-points):has(> div:nth-child(4)):not(:has(> div:nth-child(5))) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .foundation-shell main[class] dl:is([class$="-hero-proof"], .sweet-hero-proof, .home-hero-proof-points):has(> div:nth-child(4)):not(:has(> div:nth-child(5))) > div:nth-child(even) { border-right: 0; }
+  .foundation-shell main[class] dl:is([class$="-hero-proof"], .sweet-hero-proof, .home-hero-proof-points):has(> div:nth-child(4)):not(:has(> div:nth-child(5))) > div:nth-child(n+3) { border-top: 1px solid var(--color-rule); }
+  .foundation-shell main[class] dl:is([class$="-hero-proof"], .sweet-hero-proof, .home-hero-proof-points):has(> div:nth-child(5)) { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .foundation-shell main[class] dl:is([class$="-hero-proof"], .sweet-hero-proof, .home-hero-proof-points):has(> div:nth-child(5)) > div { grid-column: span 2; }
+  .foundation-shell main[class] dl:is([class$="-hero-proof"], .sweet-hero-proof, .home-hero-proof-points):has(> div:nth-child(5)) > div:nth-child(3) { border-right: 0; }
+  .foundation-shell main[class] dl:is([class$="-hero-proof"], .sweet-hero-proof, .home-hero-proof-points):has(> div:nth-child(5)) > div:nth-child(n+4) { grid-column: span 3; border-top: 1px solid var(--color-rule); }
+}

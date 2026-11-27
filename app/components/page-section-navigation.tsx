@@ -17,6 +17,7 @@ export function PageSectionNavigation({
   revealAfterId?: string;
 }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [isTucked, setIsTucked] = useState(false);
   const [isPastTop, setIsPastTop] = useState(false);
   const [activeId, setActiveId] = useState(items[0]?.id ?? "");
   const rootRef = useRef<HTMLDivElement>(null);
@@ -157,6 +158,7 @@ export function PageSectionNavigation({
         visibleActiveLabel ? "" : "is-top-section",
       ].filter(Boolean).join(" ")}
       ref={rootRef}
+      data-tucked={isTucked}
       onKeyDown={handleKeyDown}
     >
       <button
@@ -171,6 +173,17 @@ export function PageSectionNavigation({
         <span>On this page</span>
         {visibleActiveLabel ? <small>{visibleActiveLabel}</small> : null}
         <i aria-hidden="true" />
+      </button>
+
+      <button
+        className="page-section-navigation-collapse"
+        type="button"
+        aria-label={isTucked ? "Expand on this page tab" : "Collapse on this page tab"}
+        aria-expanded={!isTucked}
+        tabIndex={isPastTop && !isOpen ? 0 : -1}
+        onClick={() => setIsTucked(current => !current)}
+      >
+        <span aria-hidden="true">{isTucked ? "‹" : "›"}</span>
       </button>
 
       <button

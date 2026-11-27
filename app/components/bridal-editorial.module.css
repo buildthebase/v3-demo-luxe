@@ -1,0 +1,173 @@
+/* Page-owned compositions use the shared Luxe palette, type and controls. */
+:global(.foundation-shell) :global(main.bridal-page) > .section {
+  --editorial-rule: color-mix(in srgb, var(--color-luxe-black) 18%, transparent);
+  width: min(calc(100% - 2 * var(--space-page-inline)), var(--layout-max));
+  margin: 0 auto;
+  padding-block: clamp(3.5rem, 6vw, 6rem);
+  position: relative;
+  isolation: isolate;
+}
+:global(.foundation-shell main.bridal-page > :is(.bridal-hero, .bridal-faq, .signature-inquiry)) {
+  position: relative;
+  isolation: isolate;
+}
+.section::before,
+:global(.foundation-shell main.bridal-page > :is(.bridal-hero, .bridal-faq, .signature-inquiry))::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0 -100vmax;
+  background-image: radial-gradient(rgb(23 22 20 / 5.3%) .55px, transparent .7px);
+  background-size: 4px 4px;
+  pointer-events: none;
+  content: '';
+}
+.section.planning::before {
+  background-image: radial-gradient(rgb(23 22 20 / 5.3%) .55px, transparent .7px);
+}
+.section :is(h2, h3, p, figure, ul, ol) { margin: 0; }
+.section :is(h2, h3) { font-weight: 400; text-wrap: balance; }
+.section h2 {
+  --luxe-type-h2: clamp(2rem, 3.4vw, 3.25rem);
+  line-height: 1.08 !important;
+  letter-spacing: -.05em;
+}
+.section h3 { font-size: clamp(1.25rem, 1.8vw, 1.6rem); line-height: 1.2; letter-spacing: -.035em; }
+.section p { color: var(--color-text-secondary); font-size: 1rem; line-height: 1.65; }
+.section .eyebrow { color: var(--color-luxe-gold-ink); font-size: .6875rem; line-height: 1.5; letter-spacing: .14em; text-transform: uppercase; font-weight: 500; }
+.section figure { min-width: 0; }
+.section figcaption { margin-top: .75rem; color: var(--color-text-secondary); font-size: .75rem; line-height: 1.5; }
+.sectionHeader { display: grid; justify-items: center; gap: 1.25rem; margin: 0 auto 2.75rem !important; text-align: center; }
+.sectionHeader h2 { width: 100%; }
+.sectionHeader > p:last-child { max-width: 62ch; }
+.overview { background: var(--surface-chapter-taupe); box-shadow: 0 0 0 100vmax var(--surface-chapter-taupe); clip-path: inset(0 -100vmax); }
+.overviewLayout { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); align-items: center; gap: clamp(2rem, 6vw, 6rem); }
+.overviewPhoto { position: relative; width: 100%; max-width: 30rem; aspect-ratio: 3 / 4; align-self: center; }
+.overviewPhoto > img { object-position: center; }
+.overviewCopy { display: grid; gap: 1.25rem; align-content: start; width: 100%; min-width: 0; container-type: inline-size; }
+.section .overviewCopy > h2 { --luxe-type-h2: clamp(1rem, 6.7cqi, 2.75rem); margin: 0 !important; line-height: 1.14 !important; }
+:global(.foundation-shell) :global(main.bridal-page) .section .overviewCopy h2:global(#bridal-overview-title.foundation-wide-heading) { --luxe-type-h2: clamp(.875rem, 6.7cqi, 2.75rem); width: 100%; min-width: 0; max-width: 100% !important; }
+.overviewCopy h2:global(#bridal-overview-title) > span { display: block !important; white-space: nowrap !important; }
+.overviewCopy h2 { text-align: left !important; }
+.overviewCopy .intro { max-width: 58ch; }
+.benefits { display: grid; gap: 1.5rem; margin: .5rem 0 0 !important; padding: 0; list-style: none; }
+.benefits > li { position: relative; padding-left: 1.25rem; }
+.benefits > li::before { content: ''; position: absolute; left: 0; top: .45rem; width: .35rem; height: .35rem; border: 1px solid var(--color-luxe-gold-ink); transform: rotate(45deg); }
+.benefits h3 { margin-bottom: .4rem; font-size: 1.125rem; }
+.benefits p { font-size: .9375rem; }
+.bullets { display: grid; gap: .65rem; padding-left: 1.1rem; list-style: disc; color: var(--color-text-secondary); font-size: .9375rem; line-height: 1.65; }
+.bullets > li { padding-left: .2rem; }
+.bullets > li::marker { color: var(--color-luxe-gold-ink); font-size: .75em; }
+.moments { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem; padding: 0; list-style: none; }
+.moments > li { min-width: 0; }
+.momentMarker { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--editorial-rule); }
+.momentMarker > span { display: grid; place-items: center; width: 2.5rem; height: 2.5rem; border: 1px solid var(--color-luxe-gold-ink); border-radius: 50%; color: var(--color-luxe-gold-ink); font-size: .75rem; letter-spacing: .08em; }
+.momentMarker svg { width: 3rem; height: 3rem; color: var(--color-luxe-gold-ink); }
+.moments h3 { margin: .75rem 0 1rem; font-size: clamp(1.5rem, 2.5vw, 2.5rem); line-height: 1.15; }
+.moments > li > p:last-child { max-width: 70ch; }
+.momentsNote { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: 1.5rem; width: min(100%, 62rem); margin: 2.5rem auto 0; padding: 1.75rem 2rem; background: var(--surface-chapter-soft); }
+.momentsNote > svg { width: 3rem; color: var(--color-luxe-gold-ink); }
+.momentsNote h3 { margin-bottom: .5rem; font-size: 1.25rem; }
+.momentsNote p { max-width: 90ch; font-size: .9375rem; }
+.combinations { background: var(--surface-chapter-soft); box-shadow: 0 0 0 100vmax var(--surface-chapter-soft); clip-path: inset(0 -100vmax); }
+.combinations > .sectionHeader { container-type: inline-size; width: 100%; min-width: 0; }
+:global(.foundation-shell) :global(main.bridal-page) .section.combinations .sectionHeader h2:global(#bridal-combinations-title.foundation-wide-heading) {
+  --luxe-type-h2: clamp(.875rem, 5.8cqi, 3.25rem);
+  width: 100%;
+  min-width: 0;
+  max-width: none !important;
+  white-space: nowrap;
+}
+.combinationGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+.combinationGrid > article { display: flex; flex-direction: column; align-items: flex-start; padding: clamp(1.5rem, 3vw, 2.5rem); border: 1px solid var(--editorial-rule); background: var(--color-luxe-ivory); }
+.serviceIcons { display: flex; gap: .75rem; margin-bottom: 1.25rem; color: var(--color-luxe-gold-ink); }
+.serviceIcons svg { width: 2.75rem; height: 2.75rem; }
+.combinationGrid h3 { max-width: 25ch; margin-bottom: 1rem; }
+.combinationGrid p { max-width: 58ch; }
+.combinationAction { display: flex; justify-content: center; margin-top: 2rem; }
+.combinationAction :global(.process-start-action) { margin: 0; }
+.personalizationLayout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.brandingExamples { width: 100%; min-width: 0; }
+.brandingPhotos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 1rem; }
+.brandingPhotos { min-width: 0; }
+.brandingPhotos > figure { position: relative; min-width: 0; aspect-ratio: 9 / 16; overflow: hidden; }
+.brandingPhotos > figure:nth-child(2) { margin-top: 2.5rem; aspect-ratio: 1073 / 1466; }
+.brandingControls { display: none; }
+:global(.foundation-shell main.bridal-page .signature-selector-bridal .signature-section-heading) { width: 100%; min-width: 0; container-type: inline-size; }
+:global(.foundation-shell main.bridal-page .signature-selector-bridal .signature-section-heading h2#signature-selector-title.foundation-wide-heading) {
+  --luxe-type-h2: clamp(1rem, 5.8cqi, 3rem);
+  width: min(100%, 42rem);
+  min-width: 0;
+  max-width: 100% !important;
+  line-height: 1.12 !important;
+}
+.stylingGroups { display: grid; gap: 1.5rem; }
+.stylingGroups article { padding-top: 1.5rem; border-top: 1px solid var(--editorial-rule); }
+.stylingGroups h3 { margin-bottom: .85rem; }
+.stylingGroups .finePrint { margin-top: 1rem; font-size: .8125rem; }
+.planning { --color-luxe-gold-ink: #695438; background: var(--surface-chapter-taupe); color: var(--color-luxe-black); box-shadow: 0 0 0 100vmax var(--surface-chapter-taupe); clip-path: inset(0 -100vmax); }
+.planningLayout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2rem; align-items: start; width: min(100%, 64rem); margin-inline: auto; }
+.planningIntro { display: grid; justify-items: center; gap: 1rem; text-align: center; }
+.planningIntro h2 { margin: 0; text-align: center !important; }
+.planningIntro > p:not(.eyebrow) { color: var(--color-text-secondary); max-width: 60ch; margin: 0; }
+.checklist { --color-luxe-gold-ink: #695438; display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; padding: clamp(1.5rem, 3vw, 2.5rem); border-top: 3px solid var(--color-luxe-gold); background-color: var(--color-luxe-ivory); background-image: radial-gradient(rgb(23 22 20 / 5.3%) .55px, transparent .7px); background-size: 4px 4px; color: var(--color-luxe-black); }
+.checklist .checklistLabel { display: flex; align-items: center; gap: 1rem; padding-bottom: 1.5rem; color: var(--color-luxe-gold-ink); font-size: .6875rem; text-transform: uppercase; letter-spacing: .14em; }
+.checklistLabel::after { content: ''; flex: 1; height: 1px; background: var(--editorial-rule); }
+.checklist article { display: grid; grid-template-columns: 3rem minmax(0, .65fr) minmax(0, 1.35fr); align-items: start; gap: 1.75rem; min-width: 0; padding: 1.75rem 0; border: 0; border-top: 1px solid var(--editorial-rule); background: transparent; }
+.checklist article:last-child { padding-bottom: 0; }
+.checklistMarker { display: flex; flex-direction: column; align-items: center; gap: 1rem; margin: 0; color: var(--color-luxe-gold-ink); }
+.checklistMarker > span { display: grid; place-items: center; width: 2.25rem; height: 2.25rem; border: 1px solid currentColor; border-radius: 50%; font-size: .6875rem; letter-spacing: .08em; }
+.checklistMarker svg { width: 2.5rem; height: 2.5rem; }
+:global(.foundation-shell) .section .checklist article h3 { margin: 0; font-size: 1.375rem !important; line-height: 1.2 !important; }
+.checklist .bullets { color: #595650; }
+.planningAction { display: flex; justify-content: center; }
+.planningAction :global(.process-start-action) { margin: 0; }
+@media (min-width: 701px) and (max-width: 1366px) {
+  .moments { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .moments > li { display: grid; grid-template-columns: 4rem minmax(0, 1fr); gap: .75rem 1.75rem; padding: 1.75rem 0; border-top: 1px solid var(--editorial-rule); }
+  .momentMarker { grid-column: 1; grid-row: 1 / 4; display: grid; justify-items: center; align-content: start; gap: 1.25rem; margin: 0; padding: 0; border: 0; }
+  .momentMarker svg { width: 2.75rem; height: 2.75rem; }
+  .moments > li > .eyebrow { grid-column: 2; grid-row: 1; }
+  .moments h3 { grid-column: 2; grid-row: 2; margin: 0; font-size: 1.5rem; }
+  .moments > li > p:last-child { grid-column: 2; grid-row: 3; }
+  .momentsNote { margin-top: 1rem; }
+}
+@media (min-width: 701px) and (max-width: 1100px) {
+  .overviewLayout { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 2rem; }
+  .overviewPhoto { aspect-ratio: 9 / 16; }
+  .personalizationLayout { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .brandingExamples { width: min(100%, 34rem); justify-self: center; }
+  .stylingGroups { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 2rem; }
+  .stylingGroups article:nth-child(2) { grid-row: span 2; }
+}
+@media (max-width: 700px) {
+  .section h2 { --luxe-type-h2: clamp(1.8rem, 7.5vw, 2.35rem); }
+  .sectionHeader { gap: 1rem; margin-bottom: 2rem !important; }
+  .overviewLayout { display: flex; flex-direction: column-reverse; gap: 2rem; }
+  .overviewPhoto { max-width: 26rem; aspect-ratio: 4 / 5; }
+  .overviewCopy h2 { text-align: left; }
+  .moments { grid-template-columns: minmax(0, 1fr); }
+  .moments { gap: 2rem; }
+  .moments > li { position: relative; padding-left: 3.5rem; }
+  .momentMarker { position: absolute; left: 0; top: 0; margin: 0; padding: 0; border: 0; }
+  .momentMarker svg { display: none; }
+  .moments h3 { margin-top: .75rem; }
+  .momentsNote { grid-template-columns: minmax(0, 1fr); gap: 1rem; padding: 1.5rem; margin-top: 2rem; }
+  .combinationGrid { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .personalizationLayout, .planningLayout { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .brandingExamples { width: min(100%, 28rem); justify-self: center; }
+  .brandingPhotos { display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none; }
+  .brandingPhotos::-webkit-scrollbar { display: none; }
+  .brandingPhotos > figure, .brandingPhotos > figure:nth-child(2) { flex: 0 0 100%; height: min(68svh, 34rem); margin: 0; aspect-ratio: auto; scroll-snap-align: start; scroll-snap-stop: always; background: var(--surface-chapter-soft); }
+  .brandingPhotos > figure img { object-fit: contain !important; }
+  .brandingControls { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-top: .75rem; color: var(--color-text-secondary); font-size: .75rem; }
+  .brandingControls button { display: grid; place-items: center; flex: 0 0 2.75rem; width: 2.75rem; height: 2.75rem; padding: 0; border: 1px solid var(--color-luxe-gold-ink); background: transparent; color: var(--color-luxe-black); font: inherit; font-size: 1.25rem; cursor: pointer; }
+  .brandingControls button:disabled { opacity: .35; cursor: default; }
+  .brandingControls button:focus-visible, .brandingPhotos:focus-visible { outline: 2px solid var(--color-luxe-gold-ink); outline-offset: 4px; }
+  .checklist { padding: 1.25rem; }
+  .checklist article { grid-template-columns: 2.25rem minmax(0, 1fr); gap: 1rem; padding-block: 1.5rem; }
+  .checklistMarker { display: contents; }
+  .checklistMarker > span { grid-column: 1; grid-row: 1; }
+  .checklistMarker svg { display: none; }
+  .checklist article h3 { grid-column: 2; grid-row: 1; align-self: center; }
+  .checklist .bullets { grid-column: 1 / -1; grid-row: 2; }
+}
