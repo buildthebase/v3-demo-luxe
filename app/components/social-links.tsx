@@ -9,6 +9,19 @@ const instagramLinks = [
   { href: siteConfig.socialProfiles.seatingRentals, label: "Luxe Event Rentals" },
 ] as const;
 
+function keepPickerOnScreen(disclosure: HTMLDetailsElement | null) {
+  if (!disclosure?.open) return;
+  const menu = disclosure.querySelector<HTMLElement>(".instagram-picker-menu");
+  if (!menu) return;
+  menu.style.translate = "none";
+  const bounds = menu.getBoundingClientRect();
+  const viewportWidth = document.documentElement.clientWidth;
+  const offset = bounds.left < 16
+    ? 16 - bounds.left
+    : Math.min(0, viewportWidth - 16 - bounds.right);
+  menu.style.translate = `${offset}px 0`;
+}
+
 export function InstagramLinks({ className }: { className: string }) {
   const disclosureRef = useRef<HTMLDetailsElement>(null);
 
@@ -28,9 +41,15 @@ export function InstagramLinks({ className }: { className: string }) {
       }
     }
 
+    const repositionPicker = () => keepPickerOnScreen(disclosure);
+    repositionPicker();
+    disclosure?.addEventListener("toggle", repositionPicker);
+    window.addEventListener("resize", repositionPicker);
     document.addEventListener("pointerdown", closePicker);
     document.addEventListener("keydown", closeWithEscape);
     return () => {
+      disclosure?.removeEventListener("toggle", repositionPicker);
+      window.removeEventListener("resize", repositionPicker);
       document.removeEventListener("pointerdown", closePicker);
       document.removeEventListener("keydown", closeWithEscape);
     };

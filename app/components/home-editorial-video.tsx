@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { MediaControlIcon } from "./media-control-icon";
 import { optimizedPosterSource, responsiveImageSources } from "../responsive-image-sources";
 
 export function HomeEditorialVideo({
@@ -141,7 +142,7 @@ export function HomeEditorialVideo({
         aria-label={hasEnded ? `Replay ${label}` : isPlaying ? `Pause ${label}` : `Play ${label}`}
         onClick={togglePlayback}
       >
-        <span aria-hidden="true">{hasEnded ? "↻ Replay" : isPlaying ? "Ⅱ" : "▶"}</span>
+        <span aria-hidden="true"><MediaControlIcon action={hasEnded ? "replay" : isPlaying ? "pause" : "play"} />{hasEnded ? " Replay" : null}</span>
       </button>
     </>
   );

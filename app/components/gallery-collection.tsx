@@ -265,7 +265,6 @@ export function GalleryCollection() {
               key={group.id}
             >
               <header>
-                <p>{group.context} <span className="gallery-collection-count">/ {group.media.length} {group.media.length === 1 ? "moment" : "moments"}</span></p>
                 <h2 className="foundation-wide-heading">
                   <button type="button" className="gallery-group-toggle" aria-expanded={open} aria-controls={`gallery-content-${group.id}`}
                     onClick={() => setOpenGroups(current => {
@@ -274,7 +273,7 @@ export function GalleryCollection() {
                       else next.add(group.id);
                       return next;
                     })}>
-                    <span className="gallery-group-title">{group.title}</span>
+                    <span className="gallery-group-title">{group.context}</span>
                     {!open ? <span className="gallery-group-previews" aria-hidden="true">
                       {group.media.filter(item => isPublishableImage(item)).slice(0, 3).map(item => <span className="gallery-group-preview" key={item.id}>
                         <ResponsiveImage asset={{ ...item, src: item.previewSrc, unoptimized: true, alt: "", priority: false, sizes: "(max-width: 700px) 64px, 88px" }} fill />

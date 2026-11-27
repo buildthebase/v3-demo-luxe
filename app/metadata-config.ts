@@ -12,9 +12,9 @@ type PageMetadataDefinition = {
 
 export const pageMetadata = {
   "/": {
-    title: "Experiences by Luxe | Mobile Coffee Bar, Live Desserts & Event Rentals Toronto",
+    title: "Coffee, Desserts & Event Rentals Toronto | Experiences by Luxe",
     description:
-      "Experiences by Luxe provides mobile coffee bars, live desserts, and chair, table and tent rentals for weddings and private celebrations across Toronto and the GTA.",
+      "Bring mobile coffee bars, live desserts, and event rentals to weddings, corporate events, and private celebrations across Toronto and the GTA.",
   },
   "/experiences": {
     title: "Coffee, Dessert & Event Rentals Toronto | Experiences by Luxe",
@@ -24,7 +24,7 @@ export const pageMetadata = {
   "/experiences/coffee-bar": {
     title: "Mobile Coffee Bar in Toronto | Luxe Coffee Bar",
     description:
-      "Bring a complete mobile café to Toronto and GTA events with barista-served specialty coffee, Premium Matcha, two service formats, and tailored presentation.",
+      "Bring a complete mobile café to Toronto and GTA events with barista-served specialty coffee, premium matcha, two service formats, and tailored presentation.",
   },
   "/experiences/sweet-cart": {
     title: "Dessert Cart Experiences in Toronto | Luxe Sweet Cart",
@@ -34,7 +34,7 @@ export const pageMetadata = {
   "/experiences/seating-rentals": {
     title: "Chair, Table & Tent Rentals Toronto | Luxe Event Rentals",
     description:
-      "Rent white resin chairs, tables, tents and linens for weddings, showers, birthdays, engagements, backyard events and private celebrations. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service. Dance-floor configurations available up to 18' × 18'.",
+      "Rent white resin chairs, tables, tents, linens, and dance floors for weddings, showers, backyard events, and private celebrations in Toronto and the GTA.",
   },
   "/events": {
     title: "Toronto Event Services | Coffee, Dessert & Rentals | Luxe",
@@ -47,7 +47,7 @@ export const pageMetadata = {
       "See where coffee, live dessert, and refined rentals can support a Toronto or GTA wedding, from cocktail hour through the late-night celebration.",
   },
   "/events/corporate-events": {
-    title: "Corporate Coffee & Event Experiences | Experiences by Luxe",
+    title: "Corporate Coffee Catering Toronto | Experiences by Luxe",
     description:
       "Plan scalable coffee, matcha and live dessert service for Toronto and GTA office events, conferences, employee appreciation, and client hospitality.",
   },
@@ -57,24 +57,24 @@ export const pageMetadata = {
       "Turn coffee, matcha, dessert, cups, signage, and cart styling into a cohesive branded activation for launches and campaigns in Toronto and the GTA.",
   },
   "/events/baby-showers": {
-    title: "Baby Shower Dessert Carts, Coffee Bars & Event Rentals Toronto | Luxe",
+    title: "Baby Shower Coffee, Desserts & Rentals Toronto | Luxe",
     description:
       "Create a welcoming Toronto baby shower with premium coffee and matcha service, interactive live desserts and select event rentals, booked individually or together.",
   },
   "/events/bridal-showers": {
-    title: "Bridal Shower Coffee Cart Toronto: Experiences by Luxe",
+    title: "Bridal Shower Coffee Cart Toronto | Experiences by Luxe",
     description:
       "Plan a Toronto or GTA bridal shower with a coffee cart, dessert cart, matcha, signage, seating, and event rentals in one cohesive setting.",
   },
   "/events/birthdays": {
-    title: "Birthday Dessert Catering & Coffee Bar Toronto: Luxe",
+    title: "Birthday Dessert Catering & Coffee Bar Toronto | Luxe",
     description:
       "Plan Toronto and GTA birthday dessert catering with live dessert carts, mobile coffee and matcha bars, seating, and rentals for milestone celebrations.",
   },
   "/events/private-events": {
-    title: "Private Event Coffee, Dessert & Rentals Toronto: Luxe",
+    title: "Private Event Coffee, Dessert & Rentals Toronto | Luxe",
     description:
-      "Plan a private event in Toronto or the GTA with staffed coffee service, live dessert carts, personalized signage, seating, tents and linens. Tent lighting is available with Luxe tent rentals.",
+      "Plan Toronto and GTA private events with staffed coffee bars, live dessert carts, personalized signage, and event rentals, booked individually or together.",
   },
   "/gallery": {
     title: "Experiences by Luxe Gallery | Toronto Events",
@@ -84,17 +84,17 @@ export const pageMetadata = {
   "/faq": {
     title: "Event Planning & Booking FAQs | Experiences by Luxe",
     description:
-      "Get clear answers about Experiences by Luxe pricing factors, booking terms, travel, setup, venue requirements, and cross-service customization before you inquire.",
+      "Find answers about Luxe event pricing, booking terms, travel, setup, venue requirements, and personalized coffee, dessert, and rental experiences.",
   },
   "/blog": {
     title: "Event Planning Blog Toronto | Experiences by Luxe",
     description:
-      "Planning guidance for mobile coffee catering, live dessert, event rentals, weddings, corporate events, brand activations, and private celebrations across Toronto and the GTA.",
+      "Explore Toronto and GTA event planning ideas for mobile coffee bars, live desserts, and rentals, from weddings and showers to corporate celebrations.",
   },
   "/contact": {
-    title: "Contact Experiences by Luxe: Toronto Event Services",
+    title: "Request an Event Quote Toronto | Experiences by Luxe",
     description:
-      "Contact Experiences by Luxe to plan a mobile coffee bar, live dessert experience, or event rentals for weddings and events across Toronto and the GTA.",
+      "Request a personalized quote for mobile coffee bars, live desserts, and event rentals in Toronto and the GTA. Share your date, location, and guest count.",
   },
 } as const satisfies Record<string, PageMetadataDefinition>;
 

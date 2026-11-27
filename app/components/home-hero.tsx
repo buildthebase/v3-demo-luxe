@@ -3,6 +3,7 @@
 import { optimizedPosterSource } from "../responsive-image-sources";
 
 import { useEffect, useRef, useState } from "react";
+import { preload } from "react-dom";
 import { homeHeroMedia, homeHeroTimeline } from "../home-hero-media";
 import { CredibilityStrip } from "./signature-elements";
 import { QuoteModalTrigger } from "./quote-modal-trigger";
@@ -15,6 +16,8 @@ type NavigatorWithConnection = Navigator & {
 };
 
 export function HomeHero() {
+  const firstPoster = optimizedPosterSource(homeHeroMedia[0].poster);
+  if (firstPoster) preload(firstPoster, { as: "image", fetchPriority: "high" });
   const [phase, setPhase] = useState(0);
   const [introReady, setIntroReady] = useState(false);
   const [mobileClip, setMobileClip] = useState(0);
@@ -294,8 +297,8 @@ export function HomeHero() {
                       autoPlay={layerIndex === 0 && (active || (finalState && index === mobileClip))}
                       loop={!finalState}
                       playsInline
-                      preload={index < 3 ? "auto" : "none"}
-                      poster={optimizedPosterSource(media.poster)}
+                      preload={layerIndex === 0 && index === 0 ? "auto" : "metadata"}
+                      poster={layerIndex === 0 ? optimizedPosterSource(media.poster) : undefined}
                       onError={() => markMediaFailed(media.id)}
                       key={`${media.id}-${layerIndex}`}
                     >

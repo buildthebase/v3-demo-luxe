@@ -74,7 +74,7 @@ export const structuredDataDecisions = {
   organizationSameAs:
     "The parent Organization does not claim the three division Instagram profiles as sameAs identities. Each division Organization owns its corresponding profile instead.",
   serviceImages:
-    "Service image properties remain omitted until approved, representative service photography is published on the corresponding page. Social cards and decorative CSS compositions are not treated as event proof.",
+    "Service and WebPage entities reference approved, representative photographs rendered on the corresponding pages through ImageObject nodes. Social cards and decorative CSS compositions are not treated as event proof.",
   serviceMarkup:
     "Service entities provide machine-readable context and are not presented as Google rich-result features.",
   faqMarkup:

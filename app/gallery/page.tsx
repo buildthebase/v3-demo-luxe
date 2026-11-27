@@ -63,7 +63,11 @@ function GalleryHero() {
           moments and creations from celebrations across Toronto and the GTA.
         </p>
         <div className="gallery-hero-actions">
-          <a href="#gallery-collections">Explore the Gallery</a>
+          <a href="#gallery-collections" className="gallery-hero-scroll" aria-label="Explore the gallery">
+            <svg width="28" height="32" viewBox="0 0 24 28" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
+              <path d="M12 3v21M5 17l7 7 7-7" />
+            </svg>
+          </a>
         </div>
       </div>
     </header>

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import type { ResponsiveImageAsset } from "../image-system";
+import { MediaControlIcon } from "./media-control-icon";
 import { ResponsiveImage } from "./responsive-image";
 
 export function ExperienceImageCarousel({ images, href }: { images: readonly ResponsiveImageAsset[]; href: string }) {
@@ -38,10 +39,10 @@ export function ExperienceImageCarousel({ images, href }: { images: readonly Res
         </Link>
       ))}
       <div className="experience-image-controls">
-        <button type="button" aria-label="Previous Coffee Bar photo" onClick={() => move(-1)}>←</button>
+        <button type="button" aria-label="Previous Coffee Bar photo" onClick={() => move(-1)}><MediaControlIcon action="previous" /></button>
         <span aria-live={paused ? "polite" : "off"}>{active + 1} / {images.length}</span>
-        <button type="button" aria-label="Next Coffee Bar photo" onClick={() => move(1)}>→</button>
-        <button type="button" aria-label={paused ? "Play Coffee Bar slideshow" : "Pause Coffee Bar slideshow"} onClick={() => setPaused(value => !value)}>{paused ? "▶" : "Ⅱ"}</button>
+        <button type="button" aria-label="Next Coffee Bar photo" onClick={() => move(1)}><MediaControlIcon action="next" /></button>
+        <button type="button" aria-label={paused ? "Play Coffee Bar slideshow" : "Pause Coffee Bar slideshow"} onClick={() => setPaused(value => !value)}><MediaControlIcon action={paused ? "play" : "pause"} /></button>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ScrollHeader } from "./scroll-header";
 import { siteConfig } from "../site-config";
 import { PageBreadcrumbs } from "./breadcrumb-navigation";
 import { MobileNavigation, PrimaryNavigation } from "./site-navigation";
@@ -16,7 +17,7 @@ export function SiteShell({
       <a className="foundation-skip-link" href="#main-content">
         Skip to main content
       </a>
-      <header className="foundation-header">
+      <ScrollHeader>
         <Link href="/" className="foundation-wordmark" aria-label={`${siteConfig.name} home`}>
           <small>Experiences by</small>
           <span>Luxe</span>
@@ -26,7 +27,7 @@ export function SiteShell({
           <InstagramLinks className="foundation-header-socials" />
         </div>
         <MobileNavigation />
-      </header>
+      </ScrollHeader>
       <div className="foundation-main-target" id="main-content" tabIndex={-1}>
         {breadcrumbPath && <PageBreadcrumbs path={breadcrumbPath} />}
         {children}

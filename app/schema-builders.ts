@@ -1,3 +1,5 @@
+import { isPublishableImage } from "./image-system";
+import { serviceSchemaImages } from "./service-schema-images";
 import { getBreadcrumbItems } from "./navigation-config";
 import type { BlogArticle } from "./blog/content";
 import { approvedBusinessIdentity } from "./local-seo";
@@ -368,6 +370,9 @@ export function createServicePageSchema({
 }: ServicePageSchemaInput) {
   const pageUrl = absoluteUrl(path);
   const resolvedServiceId = serviceId ?? pageEntityId(path, "service");
+  const image = serviceSchemaImages[path];
+  const imageId = pageEntityId(path, "service-image");
+  const hasImage = image && isPublishableImage(image);
   const webpageId = pageEntityId(path, "webpage");
   const divisionId =
     resolvedServiceId === divisionServiceIds.coffee
@@ -388,6 +393,7 @@ export function createServicePageSchema({
       provider: { "@id": organizationId },
       areaServed,
       mainEntityOfPage: { "@id": webpageId },
+      ...(hasImage ? { image: { "@id": imageId } } : {}),
       ...(divisionId ? { brand: { "@id": divisionId } } : {}),
     },
     {
@@ -399,11 +405,24 @@ export function createServicePageSchema({
       isPartOf: { "@id": websiteId },
       about: { "@id": organizationId },
       mainEntity: { "@id": resolvedServiceId },
+      ...(hasImage ? { primaryImageOfPage: { "@id": imageId } } : {}),
       breadcrumb: { "@id": pageEntityId(path, "breadcrumb") },
       inLanguage: siteConfig.language,
     },
     createBreadcrumbSchema(path),
   ];
+
+  if (hasImage) {
+    graph.push({
+      "@type": "ImageObject",
+      "@id": imageId,
+      url: absoluteUrl(image.src!),
+      contentUrl: absoluteUrl(image.src!),
+      width: image.width,
+      height: image.height,
+      caption: image.alt,
+    });
+  }
 
   if (faqs?.length) {
     graph.push({

@@ -195,3 +195,19 @@
     width: 100%;
   }
 }
+
+/* A quiet directional cue keeps the hero focused on its introduction. */
+.foundation-shell .gallery-page .gallery-hero-actions a.gallery-hero-scroll {
+  width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-luxe-black);
+  justify-content: center;
+  text-decoration: none;
+}
+.gallery-hero-scroll:focus-visible {
+  outline: 2px solid var(--color-luxe-gold-ink);
+  outline-offset: 4px;
+}
