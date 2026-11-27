@@ -12,7 +12,7 @@ export function FlashquotesEmbed({ inline = false }: { inline?: boolean }) {
   return (
     <>
       <iframe className={`flashquotes-form-frame${inline ? " flashquotes-form-frame-inline" : ""}`} title="Experiences by Luxe event inquiry form" srcDoc={embedDocument} />
-      <p className="flashquotes-form-fallback">Having trouble loading the form? <a href={flashquotesFormUrl} target="_blank" rel="noopener noreferrer">Open it in a new tab ↗</a></p>
+      <p className="flashquotes-form-fallback">Having trouble loading the form? <a href={flashquotesFormUrl} target="_blank" rel="noopener noreferrer">Open it in a new tab</a></p>
     </>
   );
 }
@@ -23,7 +23,9 @@ export function FlashquotesForm({ titleId, onClose }: { titleId: string; onClose
       <header className="flashquotes-modal-header">
         <h2 id={titleId}>Plan your event</h2>
         <button className="home-quote-modal-close" type="button" aria-label="Close quote form" onClick={onClose}>
-          <span aria-hidden="true">×</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true" focusable="false">
+            <path d="m6 6 12 12M18 6 6 18" />
+          </svg>
         </button>
       </header>
       <FlashquotesEmbed />

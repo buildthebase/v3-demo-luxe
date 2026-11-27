@@ -26665,5 +26665,10 @@ transparent 0.7px);
   .flashquotes-modal-header { padding: .75rem; }
 }
 
-/* Match the organization strip’s monochrome styling and blend the white canvas. */
-.signature-organization-dupont-contracting-inc img { filter: grayscale(1) contrast(10); mix-blend-mode: multiply; }
+/* The SVG supplies transparent monochrome artwork on every strip background. */
+.signature-organization-dupont-contracting-inc .dupont-organization-artwork { display: block; width: 100%; height: 100%; }
+
+/* Its taller symbol needs more height to give the wordmark comparable presence. */
+.home-hero > .signature-credibility .signature-organization-dupont-contracting-inc .signature-organization-logo {
+  height: 64px;
+}

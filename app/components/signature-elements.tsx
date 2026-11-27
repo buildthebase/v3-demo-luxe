@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import {
   combinedExperiences,
@@ -346,6 +346,50 @@ export function CombinedExperienceFeature({
   );
 }
 
+// Keep the supplied symbol and wordmark; enlarge and strengthen only the descriptor.
+function DupontOrganizationLogo() {
+  const id = useId().replaceAll(":", "");
+  return (
+    <svg viewBox="0 0 1412 592" className="dupont-organization-artwork" aria-hidden="true" focusable="false">
+      <defs>
+        <filter id={`${id}-transparent`} x="0" y="0" width="100%" height="100%" colorInterpolationFilters="sRGB">
+          {/* Turn the white canvas into alpha while retaining the strip's black artwork. */}
+          <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -0.2126 -0.7152 -0.0722 0 1" />
+          <feComposite in2="SourceGraphic" operator="in" />
+        </filter>
+        <clipPath id={`${id}-descriptor`}>
+          <rect x="550" y="438" width="862" height="75" />
+        </clipPath>
+        <mask id={`${id}-wordmark`} maskUnits="userSpaceOnUse" x="0" y="0" width="1412" height="592">
+          <rect width="1412" height="592" fill="white" />
+          <rect x="550" y="438" width="862" height="75" fill="black" />
+        </mask>
+        <filter id={`${id}-weight`} colorInterpolationFilters="sRGB">
+          <feComponentTransfer>
+            <feFuncR type="table" tableValues="1 0" />
+            <feFuncG type="table" tableValues="1 0" />
+            <feFuncB type="table" tableValues="1 0" />
+          </feComponentTransfer>
+          <feMorphology operator="dilate" radius="1.4" />
+          <feComponentTransfer>
+            <feFuncR type="table" tableValues="1 0" />
+            <feFuncG type="table" tableValues="1 0" />
+            <feFuncB type="table" tableValues="1 0" />
+          </feComponentTransfer>
+        </filter>
+      </defs>
+      <g filter={`url(#${id}-transparent)`}>
+        <image href="/images/logo-dupont-contracting.png" width="1412" height="592" mask={`url(#${id}-wordmark)`} />
+        <g transform="translate(-29.25 -76) scale(1.03 1.16)">
+          <g clipPath={`url(#${id}-descriptor)`}>
+            <image href="/images/logo-dupont-contracting.png" width="1412" height="592" filter={`url(#${id}-weight)`} />
+          </g>
+        </g>
+      </g>
+    </svg>
+  );
+}
+
 export function CredibilityStrip({
   organizations = credibilityOrganizations,
   variant = "default",
@@ -394,7 +438,11 @@ export function CredibilityStrip({
               <>
                 <span className="signature-organization-logo" aria-hidden="true">
                   {organization.logo ? (
-                    <ResponsiveImage asset={organization.logo} />
+                    organization.logo.id === "organization-logo-dupont-contracting" ? (
+                      <DupontOrganizationLogo />
+                    ) : (
+                      <ResponsiveImage asset={organization.logo} />
+                    )
                   ) : null}
                 </span>
                 <span className="signature-organization-name">{organization.name}</span>
