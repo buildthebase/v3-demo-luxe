@@ -66,6 +66,17 @@ export const imageAssets = {
     },
   },
   credibilityLogos: {
+    dupontContracting: {
+      id: "organization-logo-dupont-contracting",
+      src: "/images/logo-dupont-contracting.png",
+      alt: "",
+      width: 1412,
+      height: 592,
+      sizes: "(max-width: 700px) 42vw, 220px",
+      unoptimized: true,
+      status: "approved",
+      format: "png",
+    },
     optrust: {
       id: "organization-logo-optrust",
       src: "/images/logo-optrust.png",

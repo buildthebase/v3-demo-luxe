@@ -171,6 +171,11 @@ export const credibilityOrganizations: CredibilityOrganization[] = [
     permission: "approved",
     logo: imageAssets.credibilityLogos.wasteConnectionsCanada,
   },
+  {
+    name: "Dupont Contracting Inc.",
+    permission: "approved",
+    logo: imageAssets.credibilityLogos.dupontContracting,
+  },
 ];
 
 export type InquiryContext = {

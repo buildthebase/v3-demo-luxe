@@ -158,7 +158,7 @@
 
 .trust :global(.signature-credibility) ul {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 0;
   align-items: center;
   justify-items: center;
@@ -575,7 +575,7 @@
     border-left: 0;
   }
 
-  .trust :global(.signature-credibility) li:nth-last-child(2) {
+  .trust :global(.signature-credibility) li:nth-last-child(2):nth-child(even) {
     grid-column: 2 / span 2;
   }
 

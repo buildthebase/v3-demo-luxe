@@ -1859,6 +1859,38 @@
       }
     ]
   },
+  "/images/logo-dupont-contracting.png": {
+    "width": 1412,
+    "height": 592,
+    "bytes": 108975,
+    "variants": [
+      {
+        "src": "/images/responsive/90c8359e51672a4e5f99-320.webp",
+        "width": 320,
+        "bytes": 5642
+      },
+      {
+        "src": "/images/responsive/90c8359e51672a4e5f99-480.webp",
+        "width": 480,
+        "bytes": 7886
+      },
+      {
+        "src": "/images/responsive/90c8359e51672a4e5f99-768.webp",
+        "width": 768,
+        "bytes": 12624
+      },
+      {
+        "src": "/images/responsive/90c8359e51672a4e5f99-1024.webp",
+        "width": 1024,
+        "bytes": 16650
+      },
+      {
+        "src": "/images/responsive/90c8359e51672a4e5f99-1412.webp",
+        "width": 1412,
+        "bytes": 22414
+      }
+    ]
+  },
   "/images/social/luxe-brand-activations.png": {
     "width": 1200,
     "height": 630,

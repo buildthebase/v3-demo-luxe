@@ -8,6 +8,15 @@ const embedDocument = `<!doctype html><html><head><meta name="viewport" content=
 html,body{margin:0;padding:0;width:100%;background:transparent}iframe{display:block;width:100%!important;min-width:0!important;max-width:100%!important;height:650px!important;min-height:650px!important;border:0}
 </style></head><body><script form-id="cmwm8ouxk000ejn08w92we5ed" src="https://app.flashquotes.com/embed.js"></script></body></html>`;
 
+export function FlashquotesEmbed({ inline = false }: { inline?: boolean }) {
+  return (
+    <>
+      <iframe className={`flashquotes-form-frame${inline ? " flashquotes-form-frame-inline" : ""}`} title="Experiences by Luxe event inquiry form" srcDoc={embedDocument} />
+      <p className="flashquotes-form-fallback">Having trouble loading the form? <a href={flashquotesFormUrl} target="_blank" rel="noopener noreferrer">Open it in a new tab ↗</a></p>
+    </>
+  );
+}
+
 export function FlashquotesForm({ titleId, onClose }: { titleId: string; onClose: () => void }) {
   return (
     <div className="home-quote-modal-inner flashquotes-modal-inner">
@@ -17,8 +26,7 @@ export function FlashquotesForm({ titleId, onClose }: { titleId: string; onClose
           <span aria-hidden="true">×</span>
         </button>
       </header>
-      <iframe className="flashquotes-form-frame" title="Experiences by Luxe event inquiry form" srcDoc={embedDocument} />
-      <p className="flashquotes-form-fallback">Having trouble loading the form? <a href={flashquotesFormUrl} target="_blank" rel="noopener noreferrer">Open it in a new tab ↗</a></p>
+      <FlashquotesEmbed />
     </div>
   );
 }

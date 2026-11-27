@@ -9165,7 +9165,7 @@ body .foundation-shell main:is(
 
 .home-hero > .signature-credibility ul {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 0;
   align-items: stretch;
 }
@@ -10925,7 +10925,7 @@ body .foundation-shell main:is(
     border-top: 0;
   }
 
-  .home-hero > .signature-credibility li:last-child {
+  .home-hero > .signature-credibility li:last-child:nth-child(odd) {
     grid-column: 1 / -1;
     border-left: 0;
   }
@@ -17824,7 +17824,7 @@ max-width: 36ch;
 
 .activation-trust .signature-credibility ul {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 0;
   margin-top: var(--space-5);
 }
@@ -18192,7 +18192,7 @@ max-width: 36ch;
     border-left: 1px solid var(--activation-rule);
   }
 
-  .activation-trust .signature-credibility li:last-child {
+  .activation-trust .signature-credibility li:last-child:nth-child(odd) {
     grid-column: 1 / -1;
   }
 
@@ -19034,7 +19034,7 @@ max-width: 36ch;
 
 .corporate-trust .signature-credibility ul {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 0;
   margin-top: var(--space-5);
 }
@@ -19409,7 +19409,7 @@ max-width: 36ch;
     border-left: 1px solid var(--corporate-rule);
   }
 
-  .corporate-trust .signature-credibility li:last-child {
+  .corporate-trust .signature-credibility li:last-child:nth-child(odd) {
     grid-column: 1 / -1;
   }
 
@@ -26664,3 +26664,6 @@ transparent 0.7px);
   .home-quote-modal.flashquotes-modal { width: calc(100% - 1rem); max-height: calc(100dvh - 1rem); }
   .flashquotes-modal-header { padding: .75rem; }
 }
+
+/* Match the organization strip’s monochrome styling and blend the white canvas. */
+.signature-organization-dupont-contracting-inc img { filter: grayscale(1) contrast(10); mix-blend-mode: multiply; }
