@@ -1,5 +1,5 @@
 /* Homepage editorial compositions for tablets only. */
-@media (min-width: 701px) and (max-width: 1366px) {
+@media (min-width: 701px) and (max-width: 1023px) {
   .foundation-shell .home-page .home-event-groups {
     width: min(100%, 68rem);
     margin: 2.75rem auto 0;

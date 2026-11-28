@@ -1,5 +1,5 @@
 /* Events hub refinements for iPad/tablet only. */
-@media (min-width: 701px) and (max-width: 1366px) {
+@media (min-width: 701px) and (max-width: 1023px) {
   .foundation-shell .events-page .events-hero {
     align-items: center;
     gap: 2rem;

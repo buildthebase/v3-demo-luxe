@@ -1,5 +1,5 @@
 /* Consistent hero proof strips, without changing page-specific facts. */
-@media (min-width: 701px) and (max-width: 1366px) {
+@media (min-width: 701px) and (max-width: 1023px) {
   .foundation-shell main[class] dl:is([class$="-hero-proof"], .sweet-hero-proof, .home-hero-proof-points) {
     --color-rule: color-mix(in srgb, var(--color-luxe-black) 18%, transparent);
     display: grid;

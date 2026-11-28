@@ -191,7 +191,7 @@ function WeddingGallery() {
     <section className="wedding-gallery" aria-labelledby="wedding-gallery-title">
       <header>
         <p className="foundation-label">Wedding gallery</p>
-        <h2 id="wedding-gallery-title">Real Moments. Thoughtful Hospitality.</h2>
+        <h2 id="wedding-gallery-title"><span>Real moments.</span>{" "}<span>Thoughtful hospitality.</span></h2>
         <p>Explore how Luxe Coffee Bar, Luxe Sweet Cart, and Luxe Seating Rentals complement wedding celebrations through personalized service and presentation.</p>
       </header>
       <div className="wedding-gallery-grid">

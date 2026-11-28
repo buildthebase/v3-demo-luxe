@@ -1,5 +1,5 @@
 /* Bridal Shower compositions: tablet/iPad only. */
-@media (min-width: 701px) and (max-width: 1366px) {
+@media (min-width: 701px) and (max-width: 1023px) {
   .foundation-shell main.bridal-page > :is(.bridal-host-overview, .bridal-moments, .signature-selector-bridal, .bridal-personalization, .bridal-planning) {
     padding-block: 3.5rem;
   }

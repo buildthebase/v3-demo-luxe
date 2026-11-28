@@ -1,5 +1,5 @@
 /* Event Rentals: tablet-only editorial layouts. */
-@media (min-width: 701px) and (max-width: 1366px) {
+@media (min-width: 701px) and (max-width: 1023px) {
   .foundation-shell .seating-page .seating-overview {
     grid-template-columns: minmax(0, 1fr);
     gap: 2rem;
@@ -178,7 +178,7 @@
   .foundation-shell .seating-page .seating-overview .seating-overview-copy { grid-template-columns: minmax(0, 1fr); }
 }
 
-@media (min-width: 701px) and (max-width: 1366px) {
+@media (min-width: 701px) and (max-width: 1023px) {
   .foundation-shell .seating-page .seating-inventory > header { margin-bottom: 2rem; padding-bottom: 0; }
   .foundation-shell .seating-page .seating-inventory > header .seating-inventory-subtitle { margin-top: 1rem; }
   .foundation-shell .seating-page .seating-inventory-grid { margin-top: 0; }
@@ -194,7 +194,7 @@
   .foundation-shell .seating-page .seating-inventory-grid article > p { min-height: 0; margin-top: 1rem; }
 }
 
-@media (min-width: 701px) and (max-width: 1366px) {
+@media (min-width: 701px) and (max-width: 1023px) {
   .foundation-shell .seating-page .experience-context.seating-overview .experience-context-copy > p:not(.seating-overview-handoff) + p:not(.seating-overview-handoff) {
     margin-top: 0;
   }

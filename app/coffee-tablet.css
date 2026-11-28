@@ -1,5 +1,5 @@
 /* Coffee Bar editorial refinement, limited to tablet widths. */
-@media (min-width: 701px) and (max-width: 1366px) {
+@media (min-width: 701px) and (max-width: 1023px) {
   .foundation-shell .coffee-page .coffee-overview {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
@@ -295,7 +295,7 @@
   .foundation-shell .coffee-page .coffee-branding-copy > .coffee-branding-link { order: 4; align-self: flex-start; margin-top: 0; }
 }
 
-@media (min-width: 701px) and (max-width: 1366px) {
+@media (min-width: 701px) and (max-width: 1023px) {
   /* One centered axis for the stacked overview introduction. */
   .foundation-shell .coffee-page .coffee-overview .coffee-overview-intro {
     grid-template-columns: minmax(0, 1fr);
@@ -383,7 +383,7 @@
 }
 
 /* Override the retired overview's !important grid only inside tablet widths. */
-@media (min-width: 701px) and (max-width: 1366px) {
+@media (min-width: 701px) and (max-width: 1023px) {
   .foundation-shell .coffee-page .experience-context.coffee-overview {
     grid-template-columns: minmax(0, 1fr) !important;
     gap: 2rem !important;
@@ -409,7 +409,7 @@
   }
 }
 
-@media (min-width: 701px) and (max-width: 1366px) {
+@media (min-width: 701px) and (max-width: 1023px) {
   .foundation-shell .coffee-page .coffee-inclusions > header > .coffee-inclusions-intro p:first-child {
     color: var(--color-luxe-ivory);
     font-size: 1.25rem !important;

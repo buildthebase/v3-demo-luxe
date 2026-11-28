@@ -1,0 +1,50 @@
+/* Larger iPads share desktop compositions, with room for readable copy. */
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .foundation-shell {
+    --space-section: clamp(4rem, 6vw, 5rem);
+    --luxe-compact-section-space: clamp(4rem, 6vw, 5rem);
+  }
+  .foundation-shell main:not(.home-page):not(.coffee-page) h1 span {
+    white-space: normal !important;
+  }
+  .foundation-shell main > .experience-context { column-gap: 2.5rem; }
+  .foundation-shell .experience-context-content { padding-left: 2rem; }
+  .foundation-shell .seating-overview > .experience-context-intro { display: contents; }
+  .foundation-shell #seating-overview-title { grid-column: 1 / -1; }
+  .foundation-shell .seating-overview .experience-context-art {
+    grid-column: 1;
+    grid-row: 2;
+    margin-top: 0;
+  }
+  .foundation-shell .seating-overview > .experience-context-content {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  /* A wide title, then supporting copy beside the action. */
+  .foundation-shell main > .signature-inquiry {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    gap: 1.25rem 2rem !important;
+    align-items: end !important;
+  }
+  .foundation-shell main > .signature-inquiry .signature-inquiry-copy { display: contents; }
+  .foundation-shell main > .signature-inquiry .signature-inquiry-copy h2 {
+    grid-column: 1 / -1;
+    margin-top: 0;
+  }
+  .foundation-shell main > .signature-inquiry .signature-inquiry-copy > p {
+    grid-column: 1;
+    max-width: 58ch;
+    margin: 0;
+  }
+  .foundation-shell main > .signature-inquiry > a {
+    grid-column: 2;
+    grid-row: auto;
+    margin-top: 0;
+  }
+  .foundation-shell .signature-selector-copy { padding: 1.25rem; }
+  .foundation-shell .signature-selector-copy .signature-selector-heading {
+    font-size: clamp(1.25rem, 2vw, 1.7rem);
+  }
+}

@@ -1,5 +1,5 @@
 /* Give desktop section titles room; tablet and mobile keep their existing flow. */
-@media (min-width: 1100px) {
+@media (min-width: 1024px) {
   .foundation-shell main :is(header, .signature-inquiry-copy):has(> :is(
     #signature-pathway-title, #home-events-title, #home-imagery-title,
     #experiences-gallery-title, #signature-inquiry-experiences,

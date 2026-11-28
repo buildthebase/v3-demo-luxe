@@ -1,5 +1,5 @@
 /* Tablet editorial refinement only. Keep phone and wide-desktop compositions. */
-@media (min-width: 701px) and (max-width: 1366px) {
+@media (min-width: 701px) and (max-width: 1023px) {
   .foundation-shell .foundation-header {
     background: var(--color-luxe-ivory);
     backdrop-filter: none;

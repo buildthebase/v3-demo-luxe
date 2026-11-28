@@ -1,5 +1,5 @@
 /* One tablet planning journey for every page using EventPlanningPathway. */
-@media (min-width: 701px) and (max-width: 1366px) {
+@media (min-width: 701px) and (max-width: 1023px) {
   .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway {
     --color-luxe-gold-ink: #695438;
     --gold-text: var(--color-luxe-gold-ink);

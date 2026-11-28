@@ -59,6 +59,8 @@ import "./desktop-heading-layout.css";
 import "./coffee-layout-refinements.css";
 import "./sweet-cart-refinements.css";
 import "./mobile-hero-headings.css";
+import "./tablet-heading-refinements.css";
+import "./large-tablet-layout.css";
 import { siteConfig } from "./site-config";
 import { Analytics } from "./analytics";
 

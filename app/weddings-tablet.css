@@ -1,5 +1,5 @@
 /* Wedding-page compositions for tablet/iPad only. */
-@media (min-width: 701px) and (max-width: 1366px) {
+@media (min-width: 701px) and (max-width: 1023px) {
   .foundation-shell .wedding-page .wedding-hero {
     grid-template-columns: minmax(0, 1.04fr) minmax(0, .96fr);
     align-items: center;
