@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Fragment } from "react";
 import { HomeEditorialVideo } from "./home-editorial-video";
+import { ServiceAreaMap } from "./service-area-map";
 import { QuoteModalTrigger } from "./quote-modal-trigger";
 import { ResponsiveImage } from "./responsive-image";
 import {
@@ -8,7 +9,6 @@ import {
   homeEventImageGroups,
   homeImageSlots,
   homeProofPoints,
-  homeServiceAreaGroups,
   homeWorkingImage,
   homeWorkingPrinciples,
 } from "../home-content";
@@ -249,7 +249,8 @@ export function HomeServiceArea() {
       aria-labelledby="home-service-area-title"
       data-evidence-status="confirmed-first-party"
     >
-      <div>
+      <ServiceAreaMap introduction={
+      <div className="luxe-service-intro">
         <p className="foundation-label">Service area</p>
         <h2
           id="home-service-area-title"
@@ -269,14 +270,7 @@ export function HomeServiceArea() {
           events available throughout Southern Ontario.
         </p>
       </div>
-      <dl>
-        {homeServiceAreaGroups.map((group) => (
-          <div key={group.label}>
-            <dt>{group.label}</dt>
-            <dd>{group.places.join(" · ")}</dd>
-          </div>
-        ))}
-      </dl>
+      } />
     </section>
   );
 }
