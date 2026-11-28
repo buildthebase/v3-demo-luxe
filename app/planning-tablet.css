@@ -52,7 +52,7 @@
     gap: var(--trail-row-gap) var(--trail-column-gap);
     width: min(100%, 60rem);
     margin: 2rem auto 0;
-    padding: 0 var(--trail-turn-space) 0 0;
+    padding: 0;
     border: 0;
     overflow: visible;
     list-style: none;
@@ -64,41 +64,19 @@
     align-self: stretch;
     min-width: 0;
     min-height: 0;
-    padding: 0;
+    padding: 1.25rem 0 0;
     border: 0;
+    border-top: 1px solid var(--color-rule);
   }
   .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list > li:nth-child(1) { grid-area: 1 / 1; }
   .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list > li:nth-child(2) { grid-area: 1 / 2; }
-  .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list > li:nth-child(3) { grid-area: 2 / 2; }
-  .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list > li:nth-child(4) { grid-area: 2 / 1; }
-  .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list > li::before {
-    position: absolute;
-    z-index: -1;
-    inset: 1.25rem auto auto 50%;
-    width: auto;
-    height: auto;
-    border: 0;
-    border-radius: 0;
-    background: none;
-    box-shadow: none;
-    transform: none;
+  .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list > li:nth-child(3) { grid-area: 2 / 1; }
+  .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list > li:nth-child(4) { grid-area: 2 / 2; }
+  .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list > li::before,
+  .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list > li::after {
+    display: none;
     content: none;
-    pointer-events: none;
   }
-  .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list > li:is(:nth-child(1), :nth-child(4))::before {
-    width: calc(100% + var(--trail-column-gap));
-    border-top: 1px solid var(--trail-line);
-    content: "";
-  }
-  .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list > li:nth-child(2)::before {
-    right: calc(-1 * var(--trail-turn-space));
-    height: calc(100% + var(--trail-row-gap));
-    border: 1px solid var(--trail-line);
-    border-left: 0;
-    border-radius: 0 3rem 3rem 0;
-    content: "";
-  }
-  .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list > li::after { display: none; content: none; }
   .foundation-shell main:is(.home-page, .experiences-page, .events-page) > .signature-pathway .signature-pathway-list .signature-pathway-step {
     display: block;
     min-height: 0;
