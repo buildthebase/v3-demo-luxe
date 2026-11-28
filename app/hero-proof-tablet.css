@@ -1,5 +1,6 @@
-/* Consistent hero proof strips, without changing page-specific facts. */
-@media (min-width: 701px) and (max-width: 1023px) {
+/* Shared summary styling must remain active above the tablet layout breakpoint.
+   Otherwise the retired dark, fixed-height cells reappear at 1024–1120px. */
+@media (min-width: 701px) and (max-width: 1366px) {
   .foundation-shell main[class] dl:is([class$="-hero-proof"], .sweet-hero-proof, .home-hero-proof-points) {
     --color-rule: color-mix(in srgb, var(--color-luxe-black) 18%, transparent);
     display: grid;
@@ -75,6 +76,15 @@
   }
   .foundation-shell main[class] dl:is([class$="-hero-proof"], .sweet-hero-proof, .home-hero-proof-points) dd.coffee-proof-with-info { display: flex; justify-content: center; align-items: center; }
   .foundation-shell main[class] dl:is([class$="-hero-proof"], .sweet-hero-proof, .home-hero-proof-points) dd > span:not(.coffee-proof-info) { font-size: .75rem; line-height: 1.6; }
+}
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .foundation-shell :is(.coffee-hero, .sweet-hero, .seating-hero)
+    > :is(.sweet-hero-proof-heading, .coffee-hero-proof-heading, .seating-hero-proof-heading) {
+    min-height: 0;
+    height: auto;
+    margin-top: 1rem;
+    padding-block: 2rem;
+  }
 }
 @media (min-width: 701px) and (max-width: 1000px) {
   .foundation-shell main[class] dl:is([class$="-hero-proof"], .sweet-hero-proof, .home-hero-proof-points):has(> div:nth-child(4)):not(:has(> div:nth-child(5))) { grid-template-columns: repeat(2, minmax(0, 1fr)); }

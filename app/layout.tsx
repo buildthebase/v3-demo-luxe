@@ -61,6 +61,8 @@ import "./sweet-cart-refinements.css";
 import "./mobile-hero-headings.css";
 import "./tablet-heading-refinements.css";
 import "./large-tablet-layout.css";
+import "./signature-heading-style.css";
+import "./section-subcopy.css";
 import { siteConfig } from "./site-config";
 import { Analytics } from "./analytics";
 

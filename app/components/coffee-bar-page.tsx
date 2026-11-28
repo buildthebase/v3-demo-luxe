@@ -205,7 +205,6 @@ function CoffeeFormats() {
             </div>
             <div className="coffee-format-copy">
               <p className="coffee-format-label">{format.formatLabel}</p>
-              <h3>{format.displayName}</h3>
               <p className="coffee-format-description">
                 <strong>{format.statement}</strong>
               </p>

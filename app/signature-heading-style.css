@@ -1,0 +1,12 @@
+/* One prominent heading treatment for the signature service sections. */
+.foundation-shell main:is(.coffee-page, .sweet-page)
+  :is(#coffee-formats-title, #sweet-collections-title, #sweet-churro-title):not(#luxe-sitewide-h2-scale):not(#home-hero-seo-title):not(#signature-heading-scale) {
+  font-size: clamp(2.25rem, 3.8vw, 4.5rem) !important;
+  font-weight: 600 !important;
+  line-height: 1.05 !important;
+  letter-spacing: -.045em !important;
+  text-transform: none;
+  white-space: normal !important;
+  text-wrap: balance;
+  max-width: 100% !important;
+}

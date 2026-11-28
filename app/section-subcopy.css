@@ -1,0 +1,27 @@
+/* Section introductions share a scale independent of page-specific body copy. */
+.foundation-shell { --section-subcopy-size: 1rem; }
+@media (min-width: 701px) {
+  .foundation-shell { --section-subcopy-size: 1.125rem; }
+}
+@media (min-width: 1024px) {
+  .foundation-shell { --section-subcopy-size: 1.25rem; }
+}
+.foundation-shell main:not(.blog-index-page):not(.blog-article-page):not(#section-subcopy-scale):not(#section-subcopy-legacy)
+  :is(
+    section > header > p,
+    .signature-section-heading > p,
+    .signature-combinations-intro > p,
+    .signature-inquiry-copy > p,
+    .experience-context-lead,
+    .coffee-inclusions-intro > p,
+    .sweet-inclusions-intro > p,
+    .coffee-seasonal-subtitle,
+    .corporate-branding-intro,
+    .sweet-churro-feature-lead,
+    .luxe-service-intro > p,
+    section [class$="-copy"] > h2 ~ p,
+    section [class$="-intro"] > h2 ~ p
+  ):not(.foundation-label):not(.foundation-eyebrow):not([class$="-eyebrow"]):not([class$="-note"]) {
+  font-size: var(--section-subcopy-size) !important;
+  line-height: 1.65 !important;
+}
