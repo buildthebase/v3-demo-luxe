@@ -289,7 +289,7 @@
 .foundation-shell .home-page .home-review-launcher-button {
   display: grid;
   width: 100%;
-  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   gap: clamp(1rem, 2.5vw, 2rem);
   align-items: center;
   border: 1px solid color-mix(in srgb, var(--color-luxe-black) 22%, transparent);
@@ -366,10 +366,6 @@
   color: #f9ab00;
   font-size: clamp(0.85rem, 1.2vw, 1.05rem);
   letter-spacing: 0.08em;
-}
-
-.foundation-shell .home-page .home-review-launcher-arrow {
-  font-size: clamp(1.25rem, 2vw, 1.75rem);
 }
 
 .home-review-dialog {
@@ -786,18 +782,13 @@
   }
 
   .foundation-shell .home-page .home-review-launcher-button {
-    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-columns: auto minmax(0, 1fr);
     gap: var(--space-4);
   }
 
   .foundation-shell .home-page .home-review-rating {
     grid-column: 2;
     justify-self: start;
-  }
-
-  .foundation-shell .home-page .home-review-launcher-arrow {
-    grid-column: 3;
-    grid-row: 1 / span 2;
   }
 
   .foundation-shell .home-page > .home-editorial-review {

@@ -30,7 +30,7 @@ export const coffeeFormats = [
 ] as const;
 
 export const coffeeBookingIncludes = [
-  "Choice of Luxe Café Cart or Luxe Signature Coffee Bar",
+  "Luxe Signature Coffee Bar",
   "Barista-served specialty coffee",
   "Premium espresso equipment",
   "A curated selection of café classics, signature beverages and premium non-coffee options tailored to your selected experience.",

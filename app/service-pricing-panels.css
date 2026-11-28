@@ -25,7 +25,6 @@
   > .priority-answer {
   padding-top: 0;
   border-top: 0;
-  border-bottom: 1px solid var(--surface-dark-rule);
 }
 
 :is(.coffee-operations, .sweet-operations, .seating-pricing)
@@ -58,47 +57,9 @@
   letter-spacing: 0.12em;
 }
 
-:is(.coffee-operations, .sweet-operations, .seating-pricing) > aside {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-6);
-  padding-top: var(--space-6);
-  border-top: 0;
-}
-
-:is(.coffee-operations, .sweet-operations, .seating-pricing) > aside p {
-  max-width: 52rem;
-  margin: 0;
-  color: var(--surface-dark-copy-muted);
-  font-size: clamp(0.92rem, 0.88rem + 0.14vw, 1rem);
-  line-height: 1.6;
-}
-
-:is(.coffee-operations, .sweet-operations, .seating-pricing) > aside > div {
-  display: grid;
-  gap: var(--space-3);
-}
-
-:is(.coffee-operations, .sweet-operations, .seating-pricing) > aside > div > strong {
-  max-width: 52rem;
-  font-size: clamp(1rem, 0.94rem + 0.22vw, 1.15rem);
-  font-weight: 600;
-  line-height: 1.45;
-}
-
-:is(.coffee-operations, .sweet-operations, .seating-pricing) > aside a {
-  flex: none;
-  font-size: clamp(0.74rem, 0.7rem + 0.12vw, 0.82rem);
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
 :is(.coffee-operations, .sweet-operations, .seating-pricing)
   .priority-answer
-  a,
-:is(.coffee-operations, .sweet-operations, .seating-pricing) > aside a {
+  a {
   display: inline-flex;
   min-height: 2.75rem;
   align-items: center;
@@ -120,10 +81,6 @@
   a:hover,
 :is(.coffee-operations, .sweet-operations, .seating-pricing)
   .priority-answer
-  a:focus-visible,
-:is(.coffee-operations, .sweet-operations, .seating-pricing) > aside a:hover,
-:is(.coffee-operations, .sweet-operations, .seating-pricing)
-  > aside
   a:focus-visible {
   border-color: var(--color-luxe-gold);
   background: var(--color-luxe-gold);
@@ -135,10 +92,5 @@
     .priority-answer
     > div {
     padding-top: var(--space-3);
-  }
-
-  :is(.coffee-operations, .sweet-operations, .seating-pricing) > aside {
-    align-items: flex-start;
-    flex-direction: column;
   }
 }

@@ -6,7 +6,7 @@ import type { ResponsiveImageAsset } from "../image-system";
 import { MediaControlIcon } from "./media-control-icon";
 import { ResponsiveImage } from "./responsive-image";
 
-export function ExperienceImageCarousel({ images, href }: { images: readonly ResponsiveImageAsset[]; href: string }) {
+export function ExperienceImageCarousel({ className, images, href }: { className: string; images: readonly ResponsiveImageAsset[]; href: string }) {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
   const [inView, setInView] = useState(false);
@@ -28,7 +28,7 @@ export function ExperienceImageCarousel({ images, href }: { images: readonly Res
   }, [paused, inView, images.length]);
 
   return (
-    <div ref={container} className="signature-selector-art experience-image-carousel" role="region" aria-roledescription="carousel" aria-label="Luxe Coffee Bar event photos"
+    <div ref={container} className={`${className} experience-image-carousel`} data-service-media role="region" aria-roledescription="carousel" aria-label="Luxe Coffee Bar event photos"
       onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}
       onFocus={() => setPaused(true)} onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setPaused(false); }}
       onTouchStart={event => { touchStart.current = event.touches[0].clientX; }}

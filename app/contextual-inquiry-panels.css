@@ -49,8 +49,7 @@
   font-weight: 500;
   line-height: 1.02 !important;
   letter-spacing: var(--tracking-heading-md) !important;
-  text-wrap: nowrap;
-  white-space: nowrap;
+  text-wrap: balance;
 }
 
 .foundation-shell main > .signature-inquiry .signature-inquiry-copy > p:last-child {
@@ -161,12 +160,16 @@
 }
 
 @media (max-width: 700px) {
+  .foundation-shell main > .page-faq-section + .signature-inquiry {
+    --inquiry-mobile-top-space: 0px;
+  }
+
   .foundation-shell main > .signature-inquiry {
     grid-template-columns: minmax(0, 1fr) !important;
     width: calc(100% - (2 * var(--space-4))) !important;
     padding: clamp(24px, 5vw, 32px) !important;
     row-gap: 24px !important;
-    margin-top: 48px !important;
+    margin-top: var(--inquiry-mobile-top-space, 48px) !important;
     margin-bottom: 48px !important;
   }
 
@@ -180,8 +183,9 @@
   }
 
   .foundation-shell main > .signature-inquiry .signature-inquiry-copy h2:not(#luxe-sitewide-h2-scale):not(#home-hero-seo-title) {
-    font-size: clamp(1.75rem, 6vw, 2.25rem) !important;
-    text-wrap: pretty;
+    --luxe-type-h2: clamp(1.5rem, 7.2vw, 2.25rem);
+    font-size: var(--luxe-type-h2) !important;
+    text-wrap: balance;
   }
 
   .foundation-shell main > .signature-inquiry .signature-inquiry-copy > p:last-child {

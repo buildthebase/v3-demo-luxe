@@ -8,6 +8,10 @@
   color: var(--color-luxe-black);
 }
 
+.experience-context:is(.coffee-overview, .sweet-positioning) {
+  --experience-overview-heading-gap: clamp(3.5rem, 4.5vw, 5rem);
+}
+
 .experience-context-intro,
 .experience-context-content {
   min-width: 0;
@@ -66,14 +70,14 @@
 }
 
 .experience-context-lead {
-  max-width: 36ch;
+  max-width: var(--experience-context-lead-measure, 36ch);
   margin: 0;
   color: var(--color-luxe-black) !important;
   font-size: clamp(1.65rem, 2.1vw, 2.35rem) !important;
   font-weight: 400;
   line-height: 1.12 !important;
   letter-spacing: -0.04em;
-  text-wrap: balance;
+  text-wrap: var(--experience-context-lead-wrap, balance);
 }
 
 .experience-context-rule {
@@ -393,7 +397,7 @@
   .experience-context-art {
     width: 100%;
     min-height: min(72vw, 18rem);
-    margin-top: var(--space-7);
+    margin-top: var(--experience-overview-heading-gap, var(--space-7));
   }
 
   .experience-context-content {
@@ -401,7 +405,7 @@
   }
 
   .experience-context-lead {
-    max-width: 24ch;
+    max-width: var(--experience-context-lead-measure, 24ch);
     font-size: clamp(1.75rem, 7.5vw, 2.4rem) !important;
   }
 

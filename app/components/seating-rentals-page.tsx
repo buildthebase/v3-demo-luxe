@@ -97,10 +97,10 @@ function SeatingHero() {
         </p>
         <div className="seating-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">
-            Plan Your Event <span aria-hidden="true">↗︎</span>
+            Plan Your Event
           </QuoteModalTrigger>
           <a href="#rental-categories">
-            EXPLORE RENTAL OPTIONS <span aria-hidden="true">↓︎</span>
+            EXPLORE RENTAL OPTIONS
           </a>
         </div>
       </div>
@@ -436,7 +436,7 @@ function RentalCombinations() {
             Add a staffed mobile coffee experience to your rental plan through the same
             Luxe inquiry, with placement coordinated around tables, tents, and guests.
           </p>
-          <b aria-hidden="true">Explore Coffee Bar ↗︎</b>
+          <b aria-hidden="true">Explore Coffee Bar</b>
         </Link>
         <Link href="/experiences/sweet-cart">
           <h3>Luxe Sweet Cart</h3>
@@ -444,7 +444,7 @@ function RentalCombinations() {
             Add a live dessert cart to a shower, birthday, backyard event, or intimate
             wedding without coordinating a separate company.
           </p>
-          <b aria-hidden="true">Explore Sweet Cart ↗︎</b>
+          <b aria-hidden="true">Explore Sweet Cart</b>
         </Link>
       </div>
     </section>
@@ -460,7 +460,7 @@ function RentalFaq() {
       </header>
       <FaqAccordion items={rentalContextualFaqs} showNumbers={false} />
       <Link href="/faq">
-        Review all Luxe booking questions <span aria-hidden="true">↗︎</span>
+        Review all Luxe booking questions
       </Link>
     </section>
   );

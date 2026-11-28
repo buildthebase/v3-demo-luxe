@@ -52,10 +52,10 @@ function PrivateEventsHero() {
         </p>
         <div className="private-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">
-            Plan Your Event <span aria-hidden="true">↗︎</span>
+            Plan Your Event
           </QuoteModalTrigger>
           <a href="#private-occasions">
-            Explore the Occasions <span aria-hidden="true">↓︎</span>
+            Explore the Occasions
           </a>
         </div>
       </div>
@@ -205,7 +205,7 @@ function PrivateEventFaq() {
     <section className={`private-faq ${styles.chapter} ${styles.faq} page-faq-section`} aria-labelledby="private-faq-title">
       <header><h2 className="foundation-wide-heading" id="private-faq-title">Private event FAQs.</h2></header>
       <FaqAccordion items={privateEventFaqs} showNumbers={false} />
-      <Link href="/faq">Review Luxe Booking FAQs <span aria-hidden="true">↗︎</span></Link>
+      <Link href="/faq">Review Luxe Booking FAQs</Link>
     </section>
   );
 }

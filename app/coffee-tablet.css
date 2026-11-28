@@ -31,11 +31,9 @@
     border: 0;
   }
   .foundation-shell .coffee-page .coffee-overview-lead {
-    max-width: 48ch;
     font-size: clamp(1.5rem, 2.5vw, 1.875rem) !important;
     line-height: 1.25 !important;
   }
-  .foundation-shell .coffee-page .coffee-overview-rule { margin: 1.5rem 0; }
   .foundation-shell .coffee-page .coffee-overview-copy {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -300,7 +298,7 @@
   .foundation-shell .coffee-page .coffee-overview .coffee-overview-intro {
     grid-template-columns: minmax(0, 1fr);
     justify-items: center;
-    gap: 1.5rem;
+    gap: var(--experience-overview-heading-gap);
   }
   .foundation-shell .coffee-page h2#coffee-overview-title {
     text-align: center !important;
@@ -312,7 +310,6 @@
     padding: 0;
     border: 0;
   }
-  .foundation-shell .coffee-page .coffee-overview .experience-context-rule { height: 1px; margin: 1.5rem 0; }
   .foundation-shell .coffee-page .coffee-inclusions > header { justify-items: center; text-align: center; }
   .foundation-shell .coffee-page .coffee-inclusions > header::after,
   .foundation-shell .coffee-page .coffee-inclusions::after { content: none; }

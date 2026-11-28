@@ -329,7 +329,6 @@
   }
   .foundation-shell .sweet-page .sweet-operations .priority-answer h3 {
     width: auto;
-    max-width: 30ch;
     margin: 0;
     font-size: clamp(1.75rem, 3vw, 2.25rem);
     line-height: 1.15;

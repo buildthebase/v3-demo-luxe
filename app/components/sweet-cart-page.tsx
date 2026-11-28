@@ -71,11 +71,11 @@ const sweetCartSchema = createServicePageSchema({
 function SweetHero() {
   return (
     <header className="sweet-hero" id="page-overview">
-      <h1 aria-label="Toronto dessert cart catering, made in the moment.">
+      <div className="sweet-hero-copy">
+        <h1 aria-label="Toronto dessert cart catering, made in the moment.">
           <span>Toronto dessert cart catering,</span>{" "}
           <span>made in the moment.</span>
-      </h1>
-      <div className="sweet-hero-copy">
+        </h1>
         <p>
           A live, made-to-order dessert experience where interactive preparation,
           warm cart styling, and final presentation become a memorable part of your
@@ -83,10 +83,10 @@ function SweetHero() {
         </p>
         <div className="sweet-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">
-            Plan Your Event <span aria-hidden="true">↗︎</span>
+            Plan Your Event
           </QuoteModalTrigger>
           <a href="#dessert-experiences">
-            Explore the Dessert Menu <span aria-hidden="true">↓︎</span>
+            Explore the Dessert Menu
           </a>
         </div>
       </div>
@@ -273,7 +273,7 @@ function ChurroBarFeature() {
           className="sweet-churro-feature-action"
           data-event-name="inquiry_start"
         >
-          Plan Your Event <span aria-hidden="true">↗︎</span>
+          Plan Your Event
         </QuoteModalTrigger>
       </div>
     </section>
@@ -414,13 +414,6 @@ function SweetOperations() {
         href="/contact"
         linkLabel="Plan Your Event"
       />
-      <aside>
-        <p>
-          Luxe serves Toronto and the GTA, with select destination events available
-          throughout Southern Ontario. Travel fees may apply.
-        </p>
-        <Link href="/faq">Review booking and logistics questions <span aria-hidden="true">↗︎</span></Link>
-      </aside>
     </section>
   );
 }
@@ -481,7 +474,7 @@ function SweetGallery() {
           </figure>
         ))}
       </div>
-      <Link href="/gallery">Explore the Luxe event gallery <span aria-hidden="true">↗︎</span></Link>
+      <Link href="/gallery">Explore the Luxe event gallery</Link>
     </section>
   );
 }
@@ -494,23 +487,18 @@ function SweetCombinations() {
     >
       <header>
         <p className="foundation-label">Within the Luxe family</p>
-        <h2 id="sweet-combinations-title">
-          <span className="sweet-combinations-title">
-            Bring coffee, dessert,<br className="sweet-combinations-title-break" />
-            and seating together.
-          </span>
-        </h2>
+        <h2 id="sweet-combinations-title">Bring coffee, dessert, and seating together.</h2>
       </header>
       <div>
         <Link href="/experiences/coffee-bar">
           <h3>Luxe Coffee Bar</h3>
           <p>Pair crafted beverages with live dessert preparation through one coordinated inquiry.</p>
-          <b aria-hidden="true">Explore Coffee Bar ↗︎</b>
+          <b aria-hidden="true">Explore Coffee Bar</b>
         </Link>
         <Link href="/experiences/seating-rentals">
           <h3>Luxe Event Rentals</h3>
           <p>Connect the dessert moment with seating, tables, tents or linens. Tent Lighting is available with Luxe tent rentals and is not offered as a standalone service.</p>
-          <b aria-hidden="true">Explore Event Rentals ↗︎</b>
+          <b aria-hidden="true">Explore Event Rentals</b>
         </Link>
       </div>
     </section>
@@ -526,7 +514,7 @@ function SweetFaq() {
       </header>
       <FaqAccordion items={sweetContextualFaqs} showNumbers={false} />
       <Link href="/faq">
-        Review all Luxe booking questions <span aria-hidden="true">↗︎</span>
+        Review all Luxe booking questions
       </Link>
     </section>
   );

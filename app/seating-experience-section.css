@@ -219,31 +219,25 @@
 /* Center the operational section's editorial introduction like the other
    centered section headers on the experience pages. */
 .seating-page .seating-operations > header {
-  grid-template-columns: 1fr;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
   justify-items: center;
   text-align: center;
 }
 
 .seating-page .seating-operations > header h2 {
   grid-column: 1;
-  width: min(100%, 64rem);
-  max-width: none;
+  width: 100%;
   text-align: center;
   text-wrap: balance;
 }
 
 .seating-page .seating-operations > header .seating-operations-subtitle {
-  width: min(100%, 64rem);
+  width: 100%;
   margin: clamp(1.5rem, 2.5vw, 2.5rem) auto 0;
   color: var(--surface-dark-copy-muted);
   font-size: clamp(1rem, 1.4vw, 1.25rem);
   line-height: 1.5;
-  text-align: center;
-}
-
-.seating-page .seating-operations > header > p:last-child {
-  width: min(100%, 64rem);
-  margin: clamp(1.5rem, 2.5vw, 2.5rem) auto 0;
   text-align: center;
 }
 
@@ -254,7 +248,6 @@
 
 .seating-page .seating-operations > header {
   position: relative;
-  max-width: 76rem;
   margin: 0 auto clamp(3rem, 5vw, 5rem);
   padding-bottom: clamp(2rem, 3vw, 3rem);
 }
@@ -282,28 +275,23 @@
 }
 
 .seating-page .seating-operations > header h2 {
-  max-width: 14ch;
   font-size: clamp(3rem, 5vw, 5.8rem);
   line-height: 0.94;
   letter-spacing: -0.06em;
 }
 
 .seating-page .seating-operations > header .seating-operations-subtitle {
-  max-width: 46rem;
   margin-top: clamp(1.25rem, 2vw, 1.8rem);
   color: var(--color-luxe-ivory);
   font-size: clamp(1.1rem, 1.35vw, 1.3rem);
   line-height: 1.45;
-  text-wrap: balance;
 }
 
 .seating-page .seating-operations > header > p:last-child {
-  max-width: 48rem;
   margin-top: 0.85rem;
   color: var(--surface-dark-copy-muted);
   font-size: clamp(0.95rem, 0.35vw + 0.88rem, 1.05rem);
   line-height: 1.65;
-  text-wrap: pretty;
 }
 
 .seating-page .seating-operation-grid {
@@ -443,19 +431,16 @@
   }
 
   .seating-page .seating-operations > header h2 {
-    max-width: 11ch;
     font-size: clamp(2.55rem, 12vw, 4rem);
     line-height: 0.95;
   }
 
   .seating-page .seating-operations > header .seating-operations-subtitle {
-    max-width: 30ch;
     margin-top: var(--space-5);
     font-size: 1.05rem;
   }
 
   .seating-page .seating-operations > header > p:last-child {
-    max-width: 34ch;
     margin-top: var(--space-3);
     font-size: 0.94rem;
     line-height: 1.6;

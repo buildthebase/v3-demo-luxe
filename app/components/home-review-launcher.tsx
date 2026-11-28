@@ -33,7 +33,6 @@ export function HomeReviewLauncher() {
           <strong>5.0</strong>
           <span aria-label="Five out of five stars">★★★★★</span>
         </span>
-        <span className="home-review-launcher-arrow" aria-hidden="true">↗︎</span>
       </button>
 
       <dialog

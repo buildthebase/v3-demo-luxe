@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { CategoryArrow } from "./category-arrow";
 import {
   experienceGalleryPreview,
   experienceHubFeatures,
@@ -34,10 +33,10 @@ export function ExperiencesHero({
         </p>
         <div className="experiences-hero-actions">
           <a href="#experience-coffee" data-event-name="experience_select">
-            Explore Experiences <span aria-hidden="true">↓︎</span>
+            Explore Experiences
           </a>
           <QuoteModalTrigger data-event-name="inquiry_start">
-            Plan Your Event <span aria-hidden="true">↗︎</span>
+            Plan Your Event
           </QuoteModalTrigger>
         </div>
       </div>
@@ -45,6 +44,14 @@ export function ExperiencesHero({
         <ResponsiveImage asset={imageAssets.experiences.experiencesHero} fill />
       </div>
     </header>
+  );
+}
+
+function BookingChevron() {
+  return (
+    <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <path d="m3 6 5 5 5-5" stroke="currentColor" strokeWidth="1.5" />
+    </svg>
   );
 }
 
@@ -59,26 +66,24 @@ export function ExperiencesBookingClarity() {
         <p className="foundation-label">Independent or combined</p>
         <h2 id="experiences-booking-title" className="foundation-wide-heading">Begin with what the event needs.</h2>
       </header>
-      <dl>
-        <div>
-          <dt>Can each experience be booked independently?</dt>
-          <dd>
+      <div className="experiences-booking-questions">
+        <details>
+          <summary>Can each experience be booked independently? <BookingChevron /></summary>
+          <p>
             Absolutely. Luxe Coffee Bar, Luxe Sweet Cart and Luxe Event Rentals can
             each be booked individually, or combined to create a complete event
             experience.
-          </dd>
-        </div>
-        <div>
-          <dt>Can coffee, dessert, and rentals be coordinated through one provider?</dt>
-          <dd className="experiences-booking-answer">
+          </p>
+        </details>
+        <details>
+          <summary>Can coffee, dessert, and rentals be coordinated through one provider? <BookingChevron /></summary>
             <p>
               Yes. Coffee, dessert and rentals can all be coordinated through one
               inquiry, creating a simpler planning process and a cohesive experience
               for your event.
             </p>
-          </dd>
-        </div>
-      </dl>
+        </details>
+      </div>
       <ul
         className="experiences-booking-proof"
         aria-label="Experiences by Luxe operational credentials"
@@ -171,7 +176,7 @@ function ExperienceFeature({ feature }: { feature: ExperienceHubFeature }) {
             data-event-name="experience_select"
             data-experience={feature.id}
           >
-            {feature.cta} <span className="mobile-category-arrow" aria-hidden="true">↗︎</span>
+            {feature.cta}
           </Link>
         </div>
       </div>
@@ -204,14 +209,14 @@ export function ExperienceNeedComparison() {
       <span className="experiences-comparison-cta-arrow" aria-hidden="true" />
       <div className="experiences-comparison-cta-copy">
         <p>
-          <span>Begin with one experience, or bring them together.</span>
+          <span>Begin with one experience, or bring them together.</span>{" "}
           <span>Create an event your guests will remember.</span>
         </p>
         <QuoteModalTrigger
           className="experiences-comparison-cta-link"
           data-event-name="inquiry_start"
         >
-          Plan Your Event <span aria-hidden="true">↗︎</span>
+          Plan Your Event
         </QuoteModalTrigger>
       </div>
     </section>
@@ -238,7 +243,6 @@ export function ExperiencesEventTypes() {
               <small>{event.summary}</small>
               <b className="experiences-occasion-action" aria-hidden="true">
                 <span className="category-explore-label">Explore {event.name}</span>
-                <CategoryArrow />
               </b>
             </div>
           </Link>
@@ -300,7 +304,7 @@ Each experience, in its element.
         })}
       </div>
       <Link href="/gallery" className="experiences-text-link">
-        Explore the Luxe event gallery <span aria-hidden="true">↗︎</span>
+        Explore the Luxe event gallery
       </Link>
     </section>
   );

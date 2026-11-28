@@ -19,6 +19,7 @@ import { ResponsiveImage } from "./responsive-image";
 import { QuoteModalTrigger } from "./quote-modal-trigger";
 import { ProcessStartAction } from "./process-start-action";
 import { ExperienceImageCarousel } from "./experience-image-carousel";
+import cardStyles from "./experience-selector-cards.module.css";
 import { experienceCardMedia } from "../experience-card-media";
 import { ExperienceLineIcon } from "./experience-line-icon";
 
@@ -135,8 +136,7 @@ export function ExperienceSelector({
           <p>{description}</p>
         ) : null}
       </header>
-      <div className="signature-selector-world">
-        <div className="signature-selector-line" aria-hidden="true" />
+      <div className={cardStyles.grid} data-service-card-grid>
         {experiences.map((configuredExperience) => {
           const experience: SignatureExperience = {
             ...configuredExperience,
@@ -154,39 +154,44 @@ export function ExperienceSelector({
           ) : experience.name;
 
           const copy = (
-              <div className="signature-selector-copy">
-                <span className="signature-selector-label">{experience.label}</span>
-                {useItemHeadings ? (
-                  <h3 className="signature-selector-heading">{heading}</h3>
-                ) : (
-                  <strong className="signature-selector-heading">{heading}</strong>
-                )}
-                {experience.tagline ? (
-                  <em className="signature-selector-tagline">{experience.tagline}</em>
-                ) : null}
-                <span>{experience.description}</span>
-                {experience.supportingNote ? <small className="signature-selector-supporting-note">{experience.supportingNote}</small> : null}
-                <b aria-hidden="true">
-                  {experienceSelectorActions[experience.id] ?? "Explore"} ↗︎
-                </b>
-              </div>
+            <div className={cardStyles.copy} data-service-copy>
+              <span className={cardStyles.label}>{experience.label}</span>
+              {useItemHeadings ? (
+                <h3 className={cardStyles.heading}>{heading}</h3>
+              ) : (
+                <strong className={cardStyles.heading}>{heading}</strong>
+              )}
+              {experience.tagline ? (
+                <em className={cardStyles.tagline}>{experience.tagline}</em>
+              ) : null}
+              <span className={cardStyles.description} data-service-description>{experience.description}</span>
+              {experience.supportingNote ? <small className={cardStyles.note}>{experience.supportingNote}</small> : null}
+              <b className={cardStyles.action} aria-hidden="true">
+                {experienceSelectorActions[experience.id] ?? "Explore"}
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor">
+                  <path d="M2 14 14 2M8 2h6v6" />
+                </svg>
+              </b>
+            </div>
           );
           if (experience.carouselImages && !experience.hideMedia) {
             return (
-              <div className={`signature-selector-choice signature-selector-${experience.id}`} id={`experience-selector-${experience.id}`} key={experience.id}>
-                <ExperienceImageCarousel images={experience.carouselImages} href={experience.href} />
-                <Link href={experience.href} className="experience-selector-copy-link">{copy}</Link>
+              <div className={cardStyles.card} data-service-card id={`experience-selector-${experience.id}`} key={experience.id}>
+                <ExperienceImageCarousel className={cardStyles.media} images={experience.carouselImages} href={experience.href} />
+                <Link href={experience.href} className={cardStyles.copyLink}>{copy}</Link>
               </div>
             );
           }
           return (
             <Link
-              className={`signature-selector-choice signature-selector-${experience.id}${experience.hideMedia ? " signature-selector-without-media" : ""}`}
+              className={cardStyles.card}
+              data-service-card
+              data-without-media={experience.hideMedia || undefined}
               href={experience.href}
               id={`experience-selector-${experience.id}`}
               key={experience.id}
             >
-              {!experience.hideMedia ? <span className="signature-selector-art">
+              {!experience.hideMedia ? <span className={cardStyles.media} data-service-media>
                 {experience.video ? (
                   <SignatureSelectorVideo video={experience.video} />
                 ) : (
@@ -337,7 +342,6 @@ export function CombinedExperienceFeature({
                 useLineIcons ? <ExperienceLineIcon type={experienceId} key={experienceId} /> : <i className={`signature-node-${experienceId}`} key={experienceId} />
               ))}
             </span>
-            {useLineIcons ? null : <b aria-hidden="true">↗︎</b>}
           </QuoteModalTrigger>
         ))}
       </div>
@@ -487,7 +491,6 @@ export function ContextualInquiryPanel({
       </div>
       <QuoteModalTrigger>
         {resolvedContext.cta}
-        <span aria-hidden="true">↗︎</span>
       </QuoteModalTrigger>
     </section>
   );

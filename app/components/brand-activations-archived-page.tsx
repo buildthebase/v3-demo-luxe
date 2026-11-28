@@ -44,10 +44,10 @@ function ActivationHero() {
         </p>
         <div className="activation-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">
-            Plan Your Event <span aria-hidden="true">↗︎</span>
+            Plan Your Event
           </QuoteModalTrigger>
           <a href="#activation-system">
-            Explore Brand Possibilities <span aria-hidden="true">↓︎</span>
+            Explore Brand Possibilities
           </a>
         </div>
       </div>
@@ -293,7 +293,7 @@ function ActivationGallery() {
         ))}
       </div>
       <Link href="/gallery">
-        Explore the Luxe event gallery <span aria-hidden="true">↗︎</span>
+        Explore the Luxe event gallery
       </Link>
     </section>
   );
@@ -352,7 +352,7 @@ function ActivationFaq() {
       </header>
       <FaqAccordion items={activationFaqs} showNumbers={false} />
       <Link href="/faq">
-        Review all Luxe booking questions <span aria-hidden="true">↗︎</span>
+        Review all Luxe booking questions
       </Link>
     </section>
   );

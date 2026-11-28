@@ -41,7 +41,7 @@
   --type-display-lg: clamp(3rem, 6.4vw, 7rem);
   --type-internal-page-h1: clamp(2.75rem, 4vw, 3.9rem);
   --type-internal-page-h1-mobile: clamp(1.52rem, 7.65vw, 3rem);
-  --luxe-type-h2: clamp(2.45rem, 3.1vw, 3.7rem);
+  --luxe-type-h2: clamp(clamp(1.625rem, 7.4vw, 2.45rem), 3.1vw, 3.7rem);
   --type-heading-lg: var(--luxe-type-h2);
   --type-heading-md: clamp(1.75rem, 3vw, 3rem);
   --type-heading-sm: clamp(1.35rem, 1.8vw, 1.8rem);
@@ -669,10 +669,6 @@
     grid-column: 1;
     align-self: center;
   }
-}
-
-.sweet-combinations-title-break {
-  display: block;
 }
 
 @media (max-width: 700px) {
@@ -3273,13 +3269,16 @@
 .baby-gallery h2,
 .baby-planning h2,
 .baby-faq h2 {
-  max-width: 13ch;
   margin: 0;
   font-size: var(--type-internal-page-h1);
   font-weight: 400;
   letter-spacing: -0.065em;
   line-height: 0.88;
   text-wrap: balance;
+}
+
+.baby-page :is(.baby-overview, .baby-styling, .baby-settings, .baby-gallery, .baby-faq) h2 {
+  max-width: 13ch;
 }
 
 .baby-overview-header {
@@ -3647,7 +3646,6 @@
 }
 
 .baby-page > .signature-combinations .signature-combinations-intro h2 {
-  max-width: 13ch;
   margin: 0;
   font-size: var(--type-internal-page-h1);
   font-weight: 400;
@@ -6462,7 +6460,6 @@ a {
   }
 
   .foundation-shell main:not(.blog-index-page):not(.blog-article-page) h2:not(.foundation-wide-heading):not(#wedding-overview-title) {
-    max-width: 18ch;
     text-wrap: balance;
   }
 }
@@ -6930,7 +6927,6 @@ a {
       #coffee-formats-title,
       #home-hero-seo-title
     )) {
-    max-width: 20ch !important;
     font-size: clamp(2.25rem, 3vw, 3rem) !important;
     line-height: 1 !important;
     letter-spacing: -.05em !important;
@@ -6953,7 +6949,6 @@ a {
     > header:has(> h2):not(:has(> p:not(.foundation-label)))
     > :where(.foundation-label, h2):not(.foundation-wide-heading) {
     grid-column: 1 !important;
-    width: min(100%, 20ch);
     margin-inline: auto !important;
   }
 }
@@ -6973,8 +6968,7 @@ a {
     letter-spacing: -.045em !important;
   }
 
-  .foundation-shell main:not(.home-page):not(.blog-index-page):not(.blog-article-page) h2:not(#wedding-overview-title) {
-    max-width: 21ch !important;
+  .foundation-shell main:not(.home-page):not(.blog-index-page):not(.blog-article-page) h2 {
     text-wrap: balance;
   }
 }
@@ -7047,7 +7041,6 @@ a {
 
 .signature-section-heading h2 {
   grid-column: 2;
-  max-width: 14ch;
   margin: 0;
   font-size: var(--type-heading-lg);
   font-weight: 500;
@@ -7323,7 +7316,6 @@ body .foundation-shell main:is(
 }
 
 .signature-selector-copy > span:nth-of-type(2) {
-  max-width: 31ch;
   margin-top: var(--space-3);
   color: var(--color-text-secondary);
   font-size: var(--type-body-lead);
@@ -7359,7 +7351,6 @@ body .foundation-shell main:is(
 }
 
 .signature-combinations-intro h2 {
-  max-width: 12ch;
   margin: var(--space-5) 0 0;
   font-size: var(--type-heading-lg);
   font-weight: 500;
@@ -8072,16 +8063,11 @@ body .foundation-shell main:is(
 
 .experiences-booking-clarity h2,
 .experiences-comparison h2 {
-  max-width: 12ch;
   margin: var(--space-4) 0 0;
   font-size: clamp(2.8rem, 5vw, 5.7rem);
   font-weight: 400;
   line-height: 0.98;
   letter-spacing: -0.05em;
-}
-
-.experiences-booking-clarity h2 {
-  max-width: 18ch;
 }
 
 .experiences-booking-clarity dl {
@@ -8359,10 +8345,17 @@ body .foundation-shell main:is(
 
 .experiences-feature-footer {
   display: flex;
+  flex-wrap: wrap;
+  white-space: nowrap;
   align-items: end;
   justify-content: space-between;
   gap: var(--space-5);
   margin-top: var(--space-6);
+}
+
+.experiences-feature-coffee .experiences-feature-footer {
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .experiences-feature-footer p {
@@ -8414,7 +8407,7 @@ body .foundation-shell main:is(
 }
 
 .experiences-comparison-cta h2 {
-  max-width: 13ch;
+  text-wrap: balance;
   margin: 0;
   font-size: clamp(2.5rem, 4.6vw, 5rem);
   line-height: 0.96;
@@ -8774,8 +8767,6 @@ body .foundation-shell main:is(
     grid-template-columns: 1fr;
   }
 
-  .experiences-booking-clarity h2,
-  .experiences-comparison h2,
   .experiences-events header h2,
   .experiences-gallery header h2 {
     max-width: 17ch;
@@ -8863,14 +8854,6 @@ body .foundation-shell main:is(
 
   .experiences-comparison-cta-copy {
     gap: var(--space-5);
-  }
-
-  .experiences-comparison-cta-copy p span {
-    display: inline;
-  }
-
-  .experiences-comparison-cta-copy p span + span::before {
-    content: " ";
   }
 
   .experiences-comparison-cta-link {
@@ -12736,8 +12719,7 @@ body .foundation-shell main:is(
 
 .coffee-formats > header h2,
 .coffee-menu > header h2,
-.coffee-operations > header h2,
-.coffee-related > header h2 {
+.coffee-operations > header h2 {
   max-width: 14ch;
 }
 
@@ -12781,6 +12763,7 @@ body .foundation-shell main:is(
 }
 
 .coffee-format-cta {
+  container-type: inline-size;
   display: flex;
   justify-content: space-between;
   gap: var(--space-6);
@@ -12793,7 +12776,6 @@ body .foundation-shell main:is(
 }
 
 .coffee-format-cta p {
-  max-width: 24ch;
   margin: 0;
   font-size: clamp(1.5rem, 2.6vw, 2.8rem);
   line-height: 1.05;
@@ -12806,8 +12788,9 @@ body .foundation-shell main:is(
   padding: 0.95rem 1.25rem;
   border: 1px solid var(--color-luxe-black);
   align-items: center;
-  justify-content: space-between;
-  gap: var(--space-6);
+  justify-content: center;
+  flex-shrink: 0;
+  white-space: nowrap;
   color: inherit;
   font-size: 0.72rem;
   font-weight: 600;
@@ -13482,10 +13465,6 @@ body .foundation-shell main:is(
   color: var(--color-luxe-ivory);
 }
 
-.coffee-related > header h2 {
-  max-width: 14ch;
-}
-
 .coffee-related > div {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -13735,7 +13714,7 @@ body .foundation-shell main:is(
     display: none;
   }
 
-  .coffee-overview-copy {
+  .coffee-overview-copy:not(.experience-context-copy) {
     margin-top: var(--space-7);
     padding-top: var(--space-7);
     padding-left: 0;
@@ -13750,8 +13729,6 @@ body .foundation-shell main:is(
   .coffee-customization > header h2,
   .coffee-operations > header h2,
   .coffee-events > header h2,
-  .coffee-gallery > header h2,
-  .coffee-related > header h2,
   .coffee-faq > header h2 {
     max-width: 17ch;
   }
@@ -14012,7 +13989,7 @@ body .foundation-shell main:is(
   }
 
   .coffee-format-cta p {
-    max-width: 18ch;
+    font-size: clamp(1rem, 5.9cqi, 1.5rem);
   }
 
   .coffee-format-cta a {
@@ -14717,10 +14694,6 @@ max-width: 36ch;
   padding-block: var(--space-section);
 }
 
-.sweet-desserts > header h2 {
-  max-width: 15ch;
-}
-
 .sweet-dessert-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -15312,7 +15285,6 @@ max-width: 36ch;
   border-left: 0;
 }
   .sweet-collections > header h2,
-  .sweet-desserts > header h2,
   .sweet-inclusions > header h2,
   .sweet-pantry > header h2,
   .sweet-customization > header h2,
@@ -15913,7 +15885,6 @@ max-width: 36ch;
 
 .seating-inventory > header,
 .seating-studies > header,
-.seating-operations > header,
 .seating-applications > header,
 .seating-quote > header,
 .seating-events > header,
@@ -15929,7 +15900,6 @@ max-width: 36ch;
 
 .seating-inventory > header h2,
 .seating-studies > header h2,
-.seating-operations > header h2,
 .seating-applications > header h2,
 .seating-quote > header h2,
 .seating-events > header h2,
@@ -16328,7 +16298,6 @@ max-width: 36ch;
 }
 
 .priority-answer header :is(h2, h3) {
-  max-width: 20ch;
   margin-top: var(--space-4);
   font-size: clamp(2rem, 3vw, 3.25rem);
   font-weight: 400;
@@ -16676,7 +16645,6 @@ max-width: 36ch;
   .seating-overview h2,
   .seating-inventory > header h2,
   .seating-studies > header h2,
-  .seating-operations > header h2,
   .seating-applications > header h2,
   .seating-quote > header h2,
   .seating-events > header h2,
@@ -18595,7 +18563,6 @@ max-width: 36ch;
 }
 
 .corporate-overview h2,
-.corporate-capabilities h2,
 .corporate-experiences h2,
 .corporate-branding h2,
 .corporate-scale h2,
@@ -18603,7 +18570,6 @@ max-width: 36ch;
 .corporate-gallery h2,
 .corporate-planning h2,
 .corporate-faq h2 {
-  max-width: 14ch;
   margin: var(--space-4) 0 0;
   font-size: clamp(2.45rem, 4.8vw, 5.25rem);
   font-weight: 400;
@@ -18655,13 +18621,11 @@ max-width: 36ch;
   margin-bottom: clamp(3rem, 7vw, 7rem);
 }
 
-.corporate-capabilities > header h2,
 .corporate-experiences > header h2,
 .corporate-branding > header h2,
 .corporate-scale > header h2,
 .corporate-trust > header h2,
 .corporate-gallery > header h2,
-.corporate-planning > header h2,
 .corporate-faq > header h2 {
   max-width: 17ch;
 }
@@ -22909,49 +22873,6 @@ max-width: 36ch;
   }
 }
 
-@media (min-width: 1101px) {
-  .foundation-shell :is(
-    .experiences-hero-copy,
-    .events-hero-copy,
-    .coffee-hero-copy,
-    .sweet-hero-copy,
-    .seating-hero-copy,
-    .wedding-hero-copy,
-    .corporate-hero-copy,
-    .activation-hero-copy,
-    .baby-hero-copy,
-    .bridal-hero-copy,
-    .birthday-hero-copy,
-    .private-hero-copy,
-    .gallery-hero-copy,
-    .faq-hub-hero-copy,
-    .inquire-hero-copy
-  ) h1 span {
-    display: block;
-    white-space: nowrap;
-  }
-
-  .foundation-shell :is(
-    .experiences-hero-copy,
-    .events-hero-copy,
-    .coffee-hero-copy,
-    .sweet-hero-copy,
-    .seating-hero-copy,
-    .wedding-hero-copy,
-    .corporate-hero-copy,
-    .activation-hero-copy,
-    .baby-hero-copy,
-    .bridal-hero-copy,
-    .birthday-hero-copy,
-    .private-hero-copy,
-    .gallery-hero-copy,
-    .faq-hub-hero-copy,
-    .inquire-hero-copy
-  ) h1 span + span::before {
-    content: none;
-  }
-}
-
 @media (max-width: 700px) {
   .priority-answer {
     grid-template-columns: 1fr;
@@ -22960,7 +22881,6 @@ max-width: 36ch;
   }
 
   .priority-answer header :is(h2, h3) {
-    max-width: 18ch;
     font-size: clamp(1.7rem, 8vw, 2.4rem);
   }
 }
@@ -22997,7 +22917,7 @@ max-width: 36ch;
 .foundation-shell
   main:not(.blog-index-page):not(.blog-article-page)
   h2:not(.foundation-wide-heading):not(#events-directory-title):not(#sweet-positioning-title):not(#sweet-inclusions-title):not(#coffee-overview-title):not(#seating-overview-title):not(#coffee-events-title):not(#sweet-combinations-title):not(#coffee-hero-proof-title):not(#seating-hero-proof-title):not(#corporate-planning-title):not(#events-approach-title):not(#coffee-formats-title):not(#home-hero-seo-title):not(#wedding-overview-title):not(#coffee-branding-title):not(:where(#corporate-branding-title)) {
-    max-width: var(--section-heading-measure, 18ch) !important;
+    max-width: var(--section-heading-measure, none) !important;
     font-size: var(--luxe-type-h2) !important;
     line-height: var(--section-heading-leading, .98) !important;
     letter-spacing: -.055em !important;
@@ -23230,7 +23150,7 @@ font-size: var(--type-body);;
 .coffee-inclusions-groups article li:nth-child(even) {
   display: block;
   min-height: 0;
-  padding: 0.75rem 0.9rem;
+  padding: 0.75rem var(--coffee-inclusion-item-inset, 0.9rem);
   border: 0;
   border-left: 1px solid rgb(112 71 47 / 38%);
   background: linear-gradient(90deg, rgb(112 71 47 / 5%), transparent 85%);
@@ -23944,6 +23864,11 @@ font-size: var(--type-body);;
     border-bottom: 1px solid rgb(140 111 72 / 25%);
   }
 
+  .coffee-inclusions-groups article:nth-child(2) {
+    --coffee-inclusion-item-inset: .55rem;
+    padding-inline: clamp(.875rem, 3.2vw, 1.4rem);
+  }
+
   .coffee-inclusions-groups article:last-child {
     border-bottom: 0;
   }
@@ -24402,11 +24327,6 @@ transparent 0.7px
   text-align: center;
 }
 
-.sweet-combinations-title {
-  display: block;
-  white-space: nowrap;
-}
-
 @media (min-width: 961px) {
   .sweet-combinations > header {
     grid-template-columns: 1fr;
@@ -24432,7 +24352,6 @@ transparent 0.7px
 .sweet-desserts > header h2 {
   grid-column: 1 / -1;
   justify-self: center;
-  max-width: 15ch !important;
   margin: 0;
   text-align: center;
   text-wrap: balance;
@@ -24921,11 +24840,13 @@ background: color-mix(
 }
 
 .sweet-operations > .priority-answer {
+  grid-template-columns: minmax(0, 1fr);
   border-block: 1px solid var(--surface-dark-rule);
 }
 
-.sweet-operations aside {
-  border-top: 1px solid var(--surface-dark-rule);
+.sweet-operations > .priority-answer > header {
+  container-type: inline-size;
+  --luxe-type-feature-heading-mobile: clamp(1rem, 6.1cqi, 2rem);
 }
 
 
@@ -25065,7 +24986,6 @@ background: color-mix(
 
 .sweet-desserts > header h2 {
   grid-column: 1;
-  max-width: 12ch !important;
 }
 
 .sweet-desserts > header > p:not(.foundation-label) {
@@ -25401,7 +25321,6 @@ transparent 0.7px);
 
 .seating-inventory > header,
 .seating-studies > header,
-.seating-operations > header,
 .seating-applications > header,
 .seating-quote > header,
 .seating-events > header,
@@ -26516,9 +26435,11 @@ transparent 0.7px);
 /* Final guard: the shared Coffee Bar experience section must not inherit the
    retired twelve-column overview layout. */
 .coffee-page .experience-context.coffee-overview {
+  --experience-context-lead-measure: none;
+  --experience-context-lead-wrap: wrap;
   display: grid !important;
-  grid-template-columns: minmax(20rem, 0.82fr) minmax(0, 1.18fr) !important;
-  gap: clamp(4rem, 8vw, 9rem) !important;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr) !important;
+  gap: clamp(1.5rem, 3vw, 3rem) !important;
   align-items: start !important;
 }
 
@@ -26533,13 +26454,12 @@ transparent 0.7px);
   display: grid !important;
   grid-template-columns: 1fr !important;
   align-content: start !important;
-  padding-left: clamp(2rem, 4vw, 4rem) !important;
+  padding-left: clamp(1rem, 2vw, 1.75rem) !important;
   border-left: 1px solid color-mix(in srgb, var(--color-luxe-gold) 55%, transparent) !important;
 }
 
-/* The Coffee Bar version keeps only the main panel divider. */
 .coffee-page .experience-context.coffee-overview .experience-context-rule {
-  display: none !important;
+  margin: 1rem 0 1.25rem;
 }
 
 .coffee-page .experience-context.coffee-overview > .experience-context-content > .experience-context-copy {
@@ -26550,6 +26470,7 @@ transparent 0.7px);
 @media (max-width: 960px) {
   .coffee-page .experience-context.coffee-overview {
     grid-template-columns: 1fr !important;
+    gap: var(--experience-overview-heading-gap) !important;
   }
 
   .coffee-page .experience-context.coffee-overview > .experience-context-intro,

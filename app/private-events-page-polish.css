@@ -191,15 +191,6 @@
   margin-top: 0;
 }
 
-.foundation-shell .private-page > #private-experiences .signature-selector-world {
-  margin-top: 64px;
-}
-
-.foundation-shell .private-page > #private-experiences .signature-selector-copy > span:nth-of-type(2) {
-  font-size: var(--type-body);
-  line-height: 1.65;
-}
-
 @media (min-width: 781px) {
   .foundation-shell .private-page > #private-experiences .signature-section-heading h2 span {
     display: block;
@@ -392,12 +383,6 @@
 }
 
 @media (max-width: 780px) {
-  .foundation-shell .private-page > #private-experiences
-    .signature-selector-copy > span:nth-of-type(2) {
-    width: 100%;
-    max-width: none;
-  }
-
   .foundation-shell .private-page .private-overview {
     grid-template-columns: minmax(0, 1fr);
     gap: 40px;
@@ -472,7 +457,6 @@
     margin-top: 0;
   }
 
-  .foundation-shell .private-page > #private-experiences .signature-selector-world,
   .foundation-shell .private-page .private-planning > ol {
     margin-top: 48px;
   }

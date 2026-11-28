@@ -51,10 +51,10 @@ function BabyShowerHero() {
         </p>
         <div className="baby-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">
-            Plan Your Event <span aria-hidden="true">↗︎</span>
+            Plan Your Event
           </QuoteModalTrigger>
           <a href="#baby-overview">
-            Explore the Experience <span aria-hidden="true">↓︎</span>
+            Explore the Experience
           </a>
         </div>
       </div>
@@ -113,7 +113,7 @@ function BabyShowerOverview() {
       </div>
       <div className="baby-overview-quote">
         <QuoteModalTrigger>
-          Get a baby shower quote <span aria-hidden="true">↗︎</span>
+          Get a baby shower quote
         </QuoteModalTrigger>
       </div>
     </section>
@@ -151,7 +151,6 @@ function BabyShowerCombinations() {
     <CombinedExperienceFeature
       combinations={babyShowerCombinations}
       cardTitlesAsHeadings
-      description="Flexible service combinations tailored around your venue, guest count, event schedule, and desired atmosphere."
       heading="Ways the experiences can come together"
       id="baby-combinations"
       showGridSurface
@@ -191,7 +190,7 @@ function BabyShowerFaq() {
       <span className="luxe-section-grid" aria-hidden="true" />
       <header><h2 id="baby-faq-title">Baby shower planning questions, answered.</h2></header>
       <FaqAccordion items={babyShowerFaqs} showNumbers={false} />
-      <Link href="/faq">Review Luxe Booking FAQs <span aria-hidden="true">↗︎</span></Link>
+      <Link href="/faq">Review Luxe Booking FAQs</Link>
     </section>
   );
 }

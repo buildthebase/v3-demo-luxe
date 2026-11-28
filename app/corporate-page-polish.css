@@ -40,6 +40,7 @@
 }
 
 .foundation-shell .corporate-page .corporate-overview {
+  --event-overview-heading-measure: none;
   --overview-frame: color-mix(in srgb, var(--color-luxe-gold-ink) 48%, transparent);
   grid-template-columns: minmax(0, 1fr);
   gap: clamp(2rem, 3vw, 3rem);
@@ -66,7 +67,7 @@
 
 .foundation-shell .corporate-page .corporate-overview #corporate-overview-title {
   width: 100%;
-  max-width: 66rem !important;
+  --luxe-type-h2: clamp(1.25rem, 2.6vw, 2.4rem);
   margin: 0 auto;
   text-wrap: balance;
 }
@@ -107,6 +108,14 @@
     padding: 1.5rem 0 0;
     border-top: 1px solid var(--overview-frame);
     border-left: 0;
+  }
+
+  .foundation-shell .corporate-page .corporate-capabilities > header h2 {
+    --luxe-type-h2: clamp(1.5rem, 6.8vw, 2.45rem);
+  }
+
+  .foundation-shell .corporate-page #corporate-experiences .signature-selector-copy {
+    padding-inline: clamp(1rem, 4vw, 1.5rem);
   }
 }
 
@@ -251,7 +260,7 @@
 
 .foundation-shell .corporate-page #corporate-experiences
   .signature-section-heading h2 {
-  width: min(100%, 25ch);
+  width: 100%;
   max-width: none;
   margin-inline: auto;
   text-align: center;
@@ -338,11 +347,16 @@
 }
 
 .foundation-shell .corporate-page .corporate-planning > header > div {
+  container-type: inline-size;
   display: grid;
   width: 100%;
   justify-items: center;
 }
 
+.foundation-shell .corporate-page .corporate-planning > header h2 {
+  --luxe-type-h2: clamp(1rem, 7.1cqi, 3.7rem);
+  width: 100%;
+}
 .foundation-shell .corporate-page .corporate-planning > header > p:last-child {
   width: min(100%, 70rem);
   max-width: none;
@@ -485,18 +499,9 @@
 }
 
 @media (min-width: 961px) {
-  .foundation-shell .corporate-page .corporate-planning h2 {
-    width: 100% !important;
-    max-width: none !important;
-  }
-
   .foundation-shell .corporate-page .corporate-branding h2 span {
     display: block;
     white-space: nowrap;
-  }
-
-  .foundation-shell .corporate-page .corporate-planning h2 {
-    white-space: nowrap !important;
   }
 }
 
@@ -508,9 +513,5 @@
 
   .foundation-shell .corporate-page .corporate-branding h2 span + span::before {
     content: " ";
-  }
-
-  .foundation-shell .corporate-page .corporate-planning h2 {
-    white-space: normal;
   }
 }

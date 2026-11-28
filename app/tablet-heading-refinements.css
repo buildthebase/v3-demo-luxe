@@ -10,7 +10,7 @@
     --luxe-type-h2: clamp(1.75rem, 3.1vw, 2.6rem);
     width: 100% !important;
     max-width: none !important;
-    white-space: nowrap !important;
+    white-space: normal !important;
   }
   .foundation-shell .experiences-page .experiences-gallery > header {
     width: 100%;
@@ -39,8 +39,8 @@
     --luxe-type-h2: clamp(1.5rem, 3vw, 2.5rem) !important;
     font-size: clamp(1.5rem, 3vw, 2.5rem) !important;
     line-height: 1.12 !important;
-    white-space: nowrap !important;
-    text-wrap: nowrap;
+    white-space: normal;
+    text-wrap: balance;
   }
   .foundation-shell main > .signature-inquiry > a {
     display: inline-flex;
@@ -54,7 +54,7 @@
   .foundation-shell main h2#faq-inquiry-title:not(#luxe-sitewide-h2-scale):not(#home-hero-seo-title) {
     --section-heading-measure: none;
     max-width: none !important;
-    white-space: nowrap;
+    white-space: normal;
   }
   .foundation-shell .faq-hub-inquiry > a { display: inline-flex; margin-top: 1.5rem; }
   .foundation-shell main .popular-combinations h2#signature-combinations-title:not(#luxe-sitewide-h2-scale):not(#home-hero-seo-title):not(#tablet-heading-width) {
@@ -62,7 +62,7 @@
     --luxe-type-h2: clamp(1.75rem, 3.1vw, 2.6rem);
     width: 100% !important;
     max-width: none !important;
-    white-space: nowrap !important;
+    white-space: normal !important;
   }
   .foundation-shell main .signature-combinations:not(.popular-combinations) h2#signature-combinations-title { white-space: normal !important; }
 
@@ -87,7 +87,7 @@
     width: 100% !important;
     max-width: none !important;
     font-size: var(--luxe-type-h2) !important;
-    white-space: nowrap !important;
+    white-space: normal !important;
   }
   .foundation-shell .sweet-page #sweet-inclusions-title > span { display: inline !important; }
   .foundation-shell .sweet-page #sweet-inclusions-title > span + span::before { content: " "; }
@@ -101,7 +101,7 @@
     --luxe-type-h2: clamp(1.5rem, 3.1vw, 2.8rem);
     width: 100% !important;
     max-width: none !important;
-    white-space: nowrap !important;
+    white-space: normal !important;
   }
 
   /* The Coffee Bar title has its own row above the copy/photo columns. */
@@ -112,17 +112,17 @@
     width: 100%;
     max-width: none !important;
     font-size: clamp(1.75rem, 3.6vw, 3rem) !important;
-    white-space: nowrap !important;
+    white-space: normal !important;
     margin-bottom: 0;
   }
-  .foundation-shell .coffee-page .coffee-hero-copy h1 > span { display: inline !important; white-space: nowrap !important; }
+  .foundation-shell .coffee-page .coffee-hero-copy h1 > span { display: inline !important; white-space: normal !important; }
   .foundation-shell .coffee-page .coffee-hero-copy > p { grid-column: 1; grid-row: 2; align-self: start; }
   .foundation-shell .coffee-page .coffee-hero-actions { grid-column: 1; grid-row: 3; align-self: start; }
   .foundation-shell .coffee-page .coffee-hero-art { grid-column: 2; grid-row: 2 / 4; }
   .foundation-shell .coffee-page .coffee-hero { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
 
   /* Give the Sweet Cart introduction more presence above its editorial copy. */
-  .foundation-shell .sweet-page .sweet-positioning { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .foundation-shell .sweet-page .sweet-positioning { grid-template-columns: minmax(0, 1fr); gap: var(--experience-overview-heading-gap) 2rem; }
   .foundation-shell .sweet-page .sweet-positioning-intro { width: 100%; max-width: none; }
   .foundation-shell .sweet-page h2#sweet-positioning-title:not(#luxe-sitewide-h2-scale):not(#home-hero-seo-title) {
     --luxe-type-h2: clamp(2.25rem, 4.2vw, 3.5rem);
@@ -149,7 +149,7 @@
 }
 .foundation-shell .wedding-page #wedding-gallery-title > span {
   display: block !important;
-  white-space: nowrap !important;
+  white-space: normal !important;
 }
 @media (max-width: 700px) {
   .foundation-shell .wedding-page h2#wedding-gallery-title:not(#luxe-sitewide-h2-scale):not(#home-hero-seo-title) {

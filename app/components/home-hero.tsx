@@ -355,7 +355,6 @@ export function HomeHero() {
             tabIndex={finalState ? 0 : -1}
           >
             PLAN YOUR EVENT
-            <span aria-hidden="true">↗︎</span>
           </QuoteModalTrigger>
         </div>
 

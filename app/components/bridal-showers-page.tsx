@@ -1,5 +1,6 @@
 import { ResponsiveHeroText } from "./responsive-hero-text";
 import Link from "next/link";
+import { Fragment } from "react";
 import styles from "./bridal-editorial.module.css";
 import { ExperienceLineIcon } from "./experience-line-icon";
 import { BridalBrandingGallery } from "./bridal-branding-gallery";
@@ -81,10 +82,10 @@ function BridalHero() {
         </p>
         <div className="bridal-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">
-            Plan Your Event <span aria-hidden="true">↗︎</span>
+            Plan Your Event
           </QuoteModalTrigger>
           <a href="#bridal-experiences">
-            EXPLORE THE EXPERIENCE <span aria-hidden="true">↓︎</span>
+            EXPLORE THE EXPERIENCE
           </a>
         </div>
       </div>
@@ -211,7 +212,15 @@ function BridalServiceCombinations() {
       <div className={styles.combinationGrid}>
         {bridalShowerCombinations.map((combination, index) => <article key={combination.number}>
           <div className={styles.serviceIcons} aria-hidden="true">{combinationServices[index].map(service => <ExperienceLineIcon key={service.type} type={service.type} />)}</div>
-          <h3>{combination.title}</h3><p>{combination.description}</p>
+          <h3>
+            {combination.title.split(" + ").map((service, serviceIndex) => (
+              <Fragment key={service}>
+                {serviceIndex > 0 && " "}
+                <span>{serviceIndex > 0 && "+ "}{service}</span>
+              </Fragment>
+            ))}
+          </h3>
+          <p>{combination.description}</p>
         </article>)}
       </div>
       <div className={styles.combinationAction}><ProcessStartAction /></div>
@@ -261,7 +270,7 @@ function BridalFaq() {
         </h2>
       </header>
       <FaqAccordion items={bridalShowerFaqs} showNumbers={false} />
-      <Link href="/faq">Review Luxe Booking FAQs <span aria-hidden="true">↗︎</span></Link>
+      <Link href="/faq">Review Luxe Booking FAQs</Link>
     </section>
   );
 }

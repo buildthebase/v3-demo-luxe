@@ -231,6 +231,14 @@
   max-width: 56ch;
 }
 
+.servicesHeading {
+  container-type: inline-size;
+}
+
+.servicesHeading h2 {
+  --luxe-type-h2: clamp(1rem, 7cqi, 3.7rem);
+}
+
 .services {
   display: grid;
   grid-template-columns: 1fr 1fr;

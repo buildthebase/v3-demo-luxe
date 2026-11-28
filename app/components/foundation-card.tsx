@@ -6,7 +6,7 @@ export function ExperienceRouteCard({ slug, number, name, summary, accent }: { s
     <Link href={`/experiences/${slug}`} className={`foundation-card foundation-card-${accent}`}>
       <span className="foundation-card-number">{number}</span>
       <span className="foundation-card-art" aria-hidden="true"><i /><i /><i /></span>
-      <span className="foundation-card-copy"><strong>{name}</strong><span>{summary}</span><b aria-hidden="true">↗︎</b></span>
+      <span className="foundation-card-copy"><strong>{name}</strong><span>{summary}</span></span>
     </Link>
   );
 }

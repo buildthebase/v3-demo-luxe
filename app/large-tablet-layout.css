@@ -16,13 +16,14 @@
 @media (min-width: 701px) {
   .foundation-shell main.sweet-page .experience-context.sweet-positioning {
     grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
-    gap: 2rem 2.5rem;
+    gap: var(--experience-overview-heading-gap) 2.5rem;
   }
   .foundation-shell main.sweet-page .sweet-positioning > .experience-context-intro { display: contents; }
   .foundation-shell .sweet-page #sweet-positioning-title { grid-column: 1 / -1; grid-row: 1; }
   .foundation-shell main.sweet-page .sweet-positioning .experience-context-art {
     grid-column: 1;
     grid-row: 2;
+    align-self: center;
     width: 100%;
     margin: 0;
     height: auto;
@@ -32,11 +33,15 @@
   .foundation-shell main.sweet-page .sweet-positioning > .experience-context-content {
     grid-column: 2;
     grid-row: 2;
+    align-self: center;
     padding-top: 0;
     margin-top: 0;
   }
 }
 @media (min-width: 701px) and (max-width: 1023px) {
+  .foundation-shell main.sweet-page .sweet-positioning :is(.experience-context-art, .experience-context-content) {
+    align-self: start;
+  }
   .foundation-shell .sweet-positioning .experience-context-copy { grid-template-columns: minmax(0, 1fr); }
 }
 /* Keep rental-category headings, copy and cards on the same section rhythm. */
@@ -76,7 +81,7 @@
   .foundation-shell .experience-context-content { padding-left: 2rem; }
   .foundation-shell .sweet-page .sweet-positioning {
     grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
-    gap: 2rem 2.5rem;
+    gap: var(--experience-overview-heading-gap) 2.5rem;
   }
   .foundation-shell .seating-overview > .experience-context-intro { display: contents; }
   .foundation-shell #seating-overview-title { grid-column: 1 / -1; }
@@ -93,7 +98,7 @@
   /* Lift the Sweet Cart heading out of the image column. */
   .foundation-shell .sweet-page .experience-context.sweet-positioning {
     grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
-    gap: 2rem 2.5rem;
+    gap: var(--experience-overview-heading-gap) 2.5rem;
     align-items: start;
   }
   .foundation-shell .sweet-page .sweet-positioning > .experience-context-intro {
@@ -106,6 +111,7 @@
   .foundation-shell .sweet-page .sweet-positioning .experience-context-art {
     grid-column: 1;
     grid-row: 2;
+    align-self: center;
     width: 100%;
     height: auto;
     min-height: 0;
@@ -117,7 +123,7 @@
     grid-row: 2;
     min-width: 0;
     margin-top: 0;
-    align-self: start;
+    align-self: center;
     padding-top: 0;
   }
 

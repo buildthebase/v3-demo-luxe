@@ -158,7 +158,7 @@ export function HomeEventCategories() {
       <div className="home-events-planning-cta">
         <h3>Personalize Your Celebration.</h3>
         <p>Make your experience uniquely yours with custom cart signage, branded cups, personalized menus, and styling details designed around your event or brand.</p>
-        <QuoteModalTrigger><span>PLAN YOUR EVENT ↗︎</span></QuoteModalTrigger>
+        <QuoteModalTrigger><span>PLAN YOUR EVENT</span></QuoteModalTrigger>
       </div>
     </section>
   );

@@ -28,10 +28,10 @@ export function EventsHero({
         </p>
         <div className="events-hero-actions">
           <a href="#event-pathways" data-event-name="event_type_select">
-            Find Your Event Experience <span aria-hidden="true">↓︎</span>
+            Find Your Event Experience
           </a>
           <Link href="/experiences">
-            Explore Experiences <span aria-hidden="true">↗︎</span>
+            Explore Experiences
           </Link>
         </div>
       </div>

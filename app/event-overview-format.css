@@ -37,7 +37,7 @@
     .bridal-overview,
     .private-overview
   ) h2 {
-  max-width: 15ch;
+  max-width: var(--event-overview-heading-measure, 15ch);
   margin: 0;
   font-size: clamp(3.15rem, 5.8vw, 6.4rem);
   font-weight: 400;

@@ -53,9 +53,9 @@ function BirthdayHero() {
         </p>
         <div className="birthday-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">
-            Plan Your Event <span aria-hidden="true">↗︎</span>
+            Plan Your Event
           </QuoteModalTrigger>
-          <a href="#birthday-contexts">Explore Birthday Experiences <span aria-hidden="true">↓︎</span></a>
+          <a href="#birthday-contexts">Explore Birthday Experiences</a>
         </div>
       </div>
       <div className="birthday-hero-photo">
@@ -218,7 +218,7 @@ function BirthdayFaq() {
     <section className="birthday-faq page-faq-section" aria-labelledby="birthday-faq-title">
       <header><h2 className="foundation-wide-heading" id="birthday-faq-title">Birthday planning questions.</h2></header>
       <FaqAccordion items={birthdayFaqs} showNumbers={false} />
-      <Link href="/faq">Review Luxe Booking FAQs <span aria-hidden="true">↗︎</span></Link>
+      <Link href="/faq">Review Luxe Booking FAQs</Link>
     </section>
   );
 }

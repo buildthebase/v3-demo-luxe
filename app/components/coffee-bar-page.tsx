@@ -73,10 +73,10 @@ const coffeeBarSchema = createServicePageSchema({
 function CoffeeHero() {
   return (
     <header className="coffee-hero" id="page-overview">
-      <h1 aria-label="Mobile coffee bar catering in Toronto &amp; the GTA.">
-          <span>Mobile coffee bar catering</span>{" "}<span>in Toronto &amp; the GTA.</span>
-      </h1>
       <div className="coffee-hero-copy">
+        <h1 aria-label="Mobile coffee bar catering in Toronto &amp; the GTA.">
+          <span>Mobile coffee bar catering</span>{" "}<span>in Toronto &amp; the GTA.</span>
+        </h1>
         <p>
           A complete mobile café experience shaped around the event, with professional
           baristas, premium coffee and matcha service, intentional presentation, and hospitality
@@ -84,10 +84,10 @@ function CoffeeHero() {
         </p>
         <div className="coffee-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">
-            Plan Your Event <span aria-hidden="true">↗︎</span>
+            Plan Your Event
           </QuoteModalTrigger>
           <a href="#coffee-formats">
-            Explore Signature Coffee Bar <span aria-hidden="true">↓︎</span>
+            Explore Signature Coffee Bar
           </a>
         </div>
       </div>
@@ -229,7 +229,7 @@ function CoffeeFormats() {
       <div className="coffee-format-cta">
         <p>Bring the Signature Coffee Bar experience to your event.</p>
         <QuoteModalTrigger data-event-name="inquiry_start">
-          Plan Your Event <span aria-hidden="true">↗︎</span>
+          Plan Your Event
         </QuoteModalTrigger>
       </div>
     </section>
@@ -375,20 +375,6 @@ function CoffeeOperations() {
         linkLabel="Plan Your Event"
         headingId="coffee-pricing-question"
       />
-      <aside>
-        <div>
-          <strong>
-            Serving Toronto, the Greater Toronto Area &amp; Destination Events Across
-            Southern Ontario.
-          </strong>
-          <p>
-            Based in Toronto, Experiences by Luxe provides mobile coffee bar catering across
-            York Region, Peel, Halton, Durham, and select destination venues throughout
-            Southern Ontario.
-          </p>
-        </div>
-        <Link href="/faq">Review booking and logistics questions <span aria-hidden="true">↗︎</span></Link>
-      </aside>
     </section>
   );
 }
@@ -425,11 +411,9 @@ function CoffeeEvents() {
 function CoffeeGallery() {
   return (
     <section className="coffee-gallery" aria-labelledby="coffee-gallery-title">
-<header>
-  <h2 id="coffee-gallery-title">
-    Mobile coffee bar service, crafted live at your event.
-  </h2>
-</header>
+      <header>
+        <h2 id="coffee-gallery-title">Mobile coffee bar service, crafted live at your event.</h2>
+      </header>
 
       <div
         className="coffee-gallery-grid"
@@ -458,7 +442,7 @@ function CoffeeGallery() {
       </div>
 
       <Link href="/gallery">
-        Explore the Luxe event gallery <span aria-hidden="true">↗︎</span>
+        Explore the Luxe event gallery
       </Link>
     </section>
   );
@@ -475,12 +459,12 @@ function CoffeeRelated() {
         <Link href="/experiences/sweet-cart">
           <h3>Luxe Sweet Cart</h3>
           <p>Pair crafted drinks with a live, made-to-order dessert experience.</p>
-          <b aria-hidden="true">Explore Sweet Cart ↗︎</b>
+          <b aria-hidden="true">Explore Sweet Cart</b>
         </Link>
         <Link href="/experiences/seating-rentals">
           <h3>Luxe Event Rentals</h3>
           <p>Connect café hospitality with the structure and setting around it.</p>
-          <b aria-hidden="true">Explore Event Rentals ↗︎</b>
+          <b aria-hidden="true">Explore Event Rentals</b>
         </Link>
       </div>
     </section>
@@ -496,7 +480,7 @@ function CoffeeFaq() {
       </header>
       <FaqAccordion items={coffeeContextualFaqs} showNumbers={false} />
       <Link href="/faq">
-        Review all Luxe booking questions <span aria-hidden="true">↗︎</span>
+        Review all Luxe booking questions
       </Link>
     </section>
   );

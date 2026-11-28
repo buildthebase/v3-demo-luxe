@@ -52,10 +52,10 @@ function WeddingHero() {
         </p>
         <div className="wedding-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">
-            Plan Your Event <span aria-hidden="true">↗︎</span>
+            Plan Your Event
           </QuoteModalTrigger>
           <a href="#wedding-day">
-            Explore the Wedding Day <span aria-hidden="true">↓︎</span>
+            Explore the Wedding Day
           </a>
         </div>
       </div>
@@ -166,7 +166,7 @@ function WeddingCoordination() {
       <header>
         <p className="foundation-label">Planning and logistics</p>
         <h2 id="wedding-coordination-title">
-          The Details We Plan With You.
+          The details we plan with you.
         </h2>
       </header>
       <ol>
@@ -216,7 +216,7 @@ function WeddingGallery() {
         ))}
       </div>
       <Link href="/gallery">
-        Explore the Luxe event gallery <span aria-hidden="true">↗︎</span>
+        Explore the Luxe event gallery
       </Link>
     </section>
   );
@@ -231,7 +231,7 @@ function WeddingFaq() {
       </header>
       <FaqAccordion items={weddingFaqs} showNumbers={false} />
       <Link href="/faq">
-        Review all Luxe booking questions <span aria-hidden="true">↗︎</span>
+        Review all Luxe booking questions
       </Link>
     </section>
   );

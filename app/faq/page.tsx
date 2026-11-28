@@ -62,7 +62,7 @@ function FaqInquiry() {
         </p>
       </div>
       <Link href="/contact" data-event-name="inquiry_start">
-        Plan Your Event <span aria-hidden="true">↗︎</span>
+        Plan Your Event
       </Link>
     </section>
   );

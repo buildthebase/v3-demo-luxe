@@ -21,7 +21,7 @@
     .luxe-service-intro > p,
     section [class$="-copy"] > h2 ~ p,
     section [class$="-intro"] > h2 ~ p
-  ):not(.foundation-label):not(.foundation-eyebrow):not([class$="-eyebrow"]):not([class$="-note"]) {
+  ):not(.foundation-label):not(.foundation-eyebrow):not([class$="-eyebrow"]):not([class$="-note"]):not(:where(.experiences-feature-footnote)) {
   font-size: var(--section-subcopy-size) !important;
   line-height: 1.65 !important;
 }

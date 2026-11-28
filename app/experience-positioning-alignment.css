@@ -119,7 +119,7 @@
   border-left: 1px solid color-mix(in srgb, var(--color-luxe-gold) 55%, transparent);
 }
 
-.coffee-overview-copy::before {
+.coffee-overview-copy:not(.experience-context-copy)::before {
   grid-column: 1 / -1;
   order: 2;
   width: 100%;
@@ -228,7 +228,7 @@
     margin-top: 0;
   }
 
-  .coffee-overview-copy {
+  .coffee-overview-copy:not(.experience-context-copy) {
     padding: var(--space-8) 0 0;
     border-top: 1px solid color-mix(in srgb, var(--color-luxe-gold) 55%, transparent);
     border-left: 0;
@@ -268,7 +268,6 @@
   .coffee-overview-copy {
     grid-template-columns: 1fr;
     gap: 0;
-    padding-top: var(--space-7);
     border-top: 0;
   }
 
@@ -277,7 +276,7 @@
     font-size: clamp(1.75rem, 7.5vw, 2.4rem) !important;
   }
 
-  .coffee-overview-copy::before {
+  .coffee-overview-copy:not(.experience-context-copy)::before {
     display: none;
     margin-block: var(--space-7) var(--space-6);
   }

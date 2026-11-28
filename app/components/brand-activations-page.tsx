@@ -145,7 +145,7 @@ export function BrandActivationsPage({ comparison = false }: { comparison?: bool
 
         <section className={`${styles.section} ${styles.dark}`} id="activation-experiences" aria-labelledby="activation-experiences-title">
           <div className={styles.container}>
-            <header className={styles.centerHeading}>
+            <header className={`${styles.centerHeading} ${styles.servicesHeading}`}>
               <h2 id="activation-experiences-title">Choose your guest experience.</h2>
               <p>Book either service or bring both together through one inquiry.</p>
             </header>

@@ -14,18 +14,13 @@
 
 /* Pricing and logistics actions use labels only, without decorative arrows. */
 @media (max-width: 700px) {
-  .foundation-shell .coffee-page .coffee-operations .priority-answer > div > a,
-  .foundation-shell .coffee-page .coffee-operations > aside > a {
+  .foundation-shell .coffee-page .coffee-operations .priority-answer > div > a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     padding-block: .7rem;
     line-height: 1.4;
   }
-}
-.coffee-operations .priority-answer > div > a > span[aria-hidden="true"],
-.coffee-operations > aside > a > span[aria-hidden="true"] {
-  display: none;
 }
 
 /* Menu introduction shares one page-centered axis at every screen size. */
@@ -92,12 +87,6 @@
 .foundation-shell .coffee-page .coffee-overview-media img {
   object-fit: cover !important;
   object-position: center;
-}
-
-@media (min-width: 1121px) {
-  .foundation-shell .coffee-page .coffee-overview .experience-context-content {
-    margin-top: 3.5rem;
-  }
 }
 
 .foundation-shell .coffee-page .coffee-gallery-cart > div img {
@@ -326,12 +315,6 @@
 
 .coffee-menu > header .coffee-menu-intro {
   align-self: end;
-}
-
-@media (min-width: 901px) {
-  .coffee-formats > header h2#coffee-formats-title {
-    white-space: nowrap !important;
-  }
 }
 
 @media (max-width: 700px) {

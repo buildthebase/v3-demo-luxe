@@ -14,9 +14,7 @@
   --luxe-type-supporting: clamp(0.92rem, 0.18vw + 0.88rem, 1rem);
 }
 
-/* A selector without supporting copy is a standalone heading, not the shared
-   label-and-copy two-column composition. Keep its wrapper on the full section
-   axis and use the H2 max-width only to control line wrapping. */
+/* Give standalone selector headings the full width of their section. */
 .foundation-shell .signature-selector
   .signature-section-heading-standalone {
   grid-template-columns: minmax(0, 1fr);
@@ -360,7 +358,7 @@
       .inquire-page
     ) article h3,
   .foundation-shell :is(.inquire-brief, .inquire-after) h3 {
-    font-size: clamp(1.45rem, 7vw, 2rem) !important;
+    font-size: var(--luxe-type-feature-heading-mobile, clamp(1.45rem, 7vw, 2rem)) !important;
   }
 
   .foundation-shell :is(

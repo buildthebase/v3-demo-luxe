@@ -17,22 +17,12 @@
 }
 
 :is(.coffee-related, .related-experiences) > header h2 {
-  max-width: 14ch;
   margin-inline: auto;
+  text-wrap: balance;
 }
 
 .sweet-combinations.related-experiences > header h2 {
   max-width: none !important;
-}
-
-.sweet-combinations.related-experiences > header h2 > span {
-  display: block;
-}
-
-@media (min-width: 701px) {
-  .sweet-combinations.related-experiences > header h2 > span {
-    white-space: nowrap;
-  }
 }
 
 :is(.coffee-related, .related-experiences) > div {

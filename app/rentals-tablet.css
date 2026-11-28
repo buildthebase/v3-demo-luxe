@@ -72,18 +72,15 @@
   /* A continuous numbered sequence replaces the oversized two-plus-one cards. */
   .foundation-shell .seating-page .seating-operations { padding-block: 3.5rem; }
   .foundation-shell .seating-page .seating-operations > header {
-    width: min(100%, 52rem);
     margin: 0 auto 1.5rem;
     padding: 0;
   }
   .foundation-shell .seating-page .seating-operations > header::after { content: none; }
   .foundation-shell .seating-page h2#seating-operations-title {
-    max-width: 28ch;
     font-size: clamp(2rem, 3.5vw, 2.625rem) !important;
     line-height: 1.12;
   }
   .foundation-shell .seating-page .seating-operations .seating-operations-subtitle {
-    max-width: 45rem;
     margin: 1rem auto 0;
     font-size: 1rem;
     line-height: 1.65;

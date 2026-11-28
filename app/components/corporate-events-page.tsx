@@ -64,10 +64,10 @@ function CorporateHero() {
         </p>
         <div className="corporate-hero-actions">
           <QuoteModalTrigger data-event-name="inquiry_start">
-            Plan Your Event <span aria-hidden="true">↗︎</span>
+            Plan Your Event
           </QuoteModalTrigger>
           <a href="#corporate-capabilities">
-            Explore Corporate Capabilities <span aria-hidden="true">↓︎</span>
+            Explore Corporate Capabilities
           </a>
         </div>
       </div>
@@ -321,7 +321,7 @@ function CorporateFaq() {
       </header>
       <FaqAccordion items={corporateFaqs} showNumbers={false} />
       <Link href="/faq">
-        Review all Luxe booking questions <span aria-hidden="true">↗︎</span>
+        Review all Luxe booking questions
       </Link>
     </section>
   );

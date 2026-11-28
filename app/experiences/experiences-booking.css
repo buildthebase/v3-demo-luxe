@@ -1,105 +1,123 @@
-/* Booking-section refinements; preserve the hub's existing dark chapter. */
 .foundation-shell main.experiences-page > #booking-approach {
+  --booking-rule: color-mix(in srgb, var(--color-luxe-gold) 32%, transparent);
   container-type: inline-size;
-  padding-block: clamp(40px, 5vw, 64px);
-}
-.foundation-shell main.experiences-page > #booking-approach > header {
-  display: block;
-  padding-bottom: 32px;
-  text-align: center;
-}
-.foundation-shell main.experiences-page > #booking-approach > header .foundation-label {
-  width: auto;
-  max-width: none;
-  margin: 0 0 16px;
-}
-.foundation-shell main.experiences-page #experiences-booking-title:not(#luxe-sitewide-h2-scale):not(#home-hero-seo-title) {
-  width: auto;
-  max-width: none !important;
-  margin: 0 !important;
-  font-size: clamp(1rem, 5.6cqi, 2.75rem) !important;
-  line-height: 1.2 !important;
-  letter-spacing: -.045em !important;
-  white-space: nowrap;
-  text-wrap: nowrap;
-}
-.foundation-shell main.experiences-page > #booking-approach dl {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: clamp(32px, 5vw, 64px);
-  row-gap: 16px;
-  margin: 0;
-  padding-block: 28px;
-  border-block: 1px solid var(--surface-dark-rule);
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  row-gap: clamp(24px, 4vw, 52px);
+  padding-block: clamp(36px, 6vw, 84px);
 }
-.foundation-shell main.experiences-page > #booking-approach dl > div {
-  display: grid;
-  grid-template-rows: subgrid;
-  grid-row: span 2;
-  min-width: 0;
+
+#booking-approach > header {
+  justify-items: start;
   padding: 0;
-  border: 0;
+  text-align: left;
 }
-.foundation-shell main.experiences-page > #booking-approach dt {
-  max-width: none;
-  min-height: 0;
-  margin: 0;
-  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
-  line-height: 1.45;
-  font-weight: 500;
-  letter-spacing: -.025em;
+
+#booking-approach > header .foundation-label {
+  margin: 0 0 12px;
 }
-.foundation-shell main.experiences-page > #booking-approach dd,
-.foundation-shell main.experiences-page > #booking-approach dd p {
-  margin: 0;
-  max-width: 60ch;
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--surface-dark-copy-muted);
-}
-.foundation-shell main.experiences-page > #booking-approach .experiences-booking-proof {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 0;
-  margin: 0;
-  padding: 28px 0;
-  background: transparent;
-  border-bottom: 1px solid var(--surface-dark-rule);
-}
-.foundation-shell main.experiences-page > #booking-approach .experiences-booking-proof li {
-  min-height: 0;
-  padding: 4px 20px;
-  gap: 8px;
-  border: 0;
-  border-right: 1px solid var(--surface-dark-rule);
-  background: transparent;
-  order: initial;
-}
-.foundation-shell main.experiences-page > #booking-approach .experiences-booking-proof li:last-child { border-right: 0; }
-.foundation-shell main.experiences-page > #booking-approach .experiences-booking-proof strong { font-size: clamp(1.1rem, 1.5vw, 1.3rem); line-height: 1.3; }
-.foundation-shell main.experiences-page > #booking-approach .experiences-booking-proof span { font-size: .875rem; line-height: 1.5; }
-.foundation-shell main.experiences-page > #booking-approach .experiences-booking-shared {
+
+.foundation-shell main.experiences-page #experiences-booking-title:not(#luxe-sitewide-h2-scale):not(#home-hero-seo-title) {
   width: 100%;
-  max-width: 72ch;
-  margin: 24px auto 0;
+  margin: 0;
+  --luxe-type-h2: min(5.6cqi, clamp(2.25rem, 4.4vw, 4rem));
+  --section-heading-leading: 1.04;
+  text-align: left;
+}
+
+.experiences-booking-questions {
+  padding-inline: clamp(16px, 2.6vw, 32px);
+  border-top: 1px solid var(--booking-rule);
+  background: color-mix(in srgb, var(--color-luxe-ivory) 5%, transparent);
+}
+
+.experiences-booking-questions details + details {
+  border-top: 1px solid var(--surface-dark-rule);
+}
+
+.experiences-booking-questions summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: clamp(16px, 2vw, 26px);
+  font-size: clamp(1rem, 1.55vw, 1.25rem);
+  font-weight: 500;
+  line-height: 1.45;
+  cursor: pointer;
+}
+
+.experiences-booking-questions summary::-webkit-details-marker { display: none; }
+.experiences-booking-questions summary svg { flex: none; color: var(--color-luxe-gold); }
+.experiences-booking-questions details[open] summary svg { transform: rotate(180deg); }
+.experiences-booking-questions summary:focus-visible { outline: 2px solid var(--color-luxe-gold); outline-offset: 3px; }
+
+.experiences-booking-questions details > p {
+  max-width: 60ch;
+  margin: 0 0 20px;
+  color: var(--surface-dark-copy-muted);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+#booking-approach .experiences-booking-proof {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(12px, 2vw, 26px);
+  margin: 0;
+  padding: 22px 0 0;
+  border-top: 1px solid var(--booking-rule);
+  background: transparent;
+}
+
+#booking-approach .experiences-booking-proof li {
+  grid-row: span 2;
+  grid-template-rows: subgrid;
+  gap: 6px;
+  padding: 0;
+  background: transparent;
+}
+
+#booking-approach .experiences-booking-proof strong {
+  font-size: clamp(1rem, 1.6vw, 1.375rem);
+  line-height: 1.25;
+}
+
+#booking-approach .experiences-booking-proof span {
+  font-size: .9375rem;
+}
+
+#booking-approach .experiences-booking-shared {
+  width: auto;
+  max-width: 68ch;
+  margin: 0;
   padding: 0;
   border: 0;
   background: transparent;
   box-shadow: none;
-  text-align: center;
+  text-align: left;
 }
-.foundation-shell main.experiences-page > #booking-approach .experiences-booking-shared p { max-width: none; margin: 0; font-size: .95rem; line-height: 1.7; text-wrap: pretty; }
-@media (max-width: 900px) {
-  .foundation-shell main.experiences-page > #booking-approach .experiences-booking-proof { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 24px; }
-  .foundation-shell main.experiences-page > #booking-approach .experiences-booking-proof li:nth-child(3n) { border-right: 0; }
+
+#booking-approach .experiences-booking-shared p {
+  max-width: none;
+  margin: 0;
+  text-wrap: pretty;
 }
+
 @media (max-width: 700px) {
-  .foundation-shell main.experiences-page > #booking-approach > header { padding-bottom: 24px; }
-  .foundation-shell main.experiences-page > #booking-approach dl { grid-template-columns: minmax(0, 1fr); gap: 24px; padding-block: 24px; }
-  .foundation-shell main.experiences-page > #booking-approach dl > div { display: block; grid-row: auto; }
-  .foundation-shell main.experiences-page > #booking-approach dl > div + div { padding-top: 24px; border: 0; border-top: 1px solid var(--surface-dark-rule); }
-  .foundation-shell main.experiences-page > #booking-approach dt { margin-bottom: 12px; }
-  .foundation-shell main.experiences-page > #booking-approach .experiences-booking-proof { grid-template-columns: repeat(2, minmax(0, 1fr)); padding-block: 24px; }
-  .foundation-shell main.experiences-page > #booking-approach .experiences-booking-proof li { padding-inline: 12px; border-right: 0; }
-  .foundation-shell main.experiences-page > #booking-approach .experiences-booking-proof li:nth-child(odd):not(:last-child) { border-right: 1px solid var(--surface-dark-rule); }
-  .foundation-shell main.experiences-page > #booking-approach .experiences-booking-proof li:last-child { grid-column: 1 / -1; }
+  .experiences-booking-questions {
+    padding-inline-end: 34px;
+  }
+
+  #booking-approach .experiences-booking-proof {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  #booking-approach .experiences-booking-proof li {
+    grid-row: auto;
+    grid-template: auto / minmax(0, 8.5rem) minmax(0, 1fr);
+    align-items: baseline;
+    gap: 12px;
+  }
 }

@@ -6,7 +6,7 @@
 }
 
 .foundation-shell main :is(.sweet-positioning, .seating-overview) > .experience-context-content {
-  padding-top: 2rem !important;
+  padding-top: var(--overview-copy-top-inset, 2rem) !important;
   width: 100%;
   max-width: none;
   row-gap: 0 !important;
@@ -22,6 +22,11 @@
   max-width: none !important;
   margin: 0 !important;
   text-wrap: pretty;
+}
+@media (min-width: 701px) {
+  .sweet-positioning {
+    --overview-copy-top-inset: 0px;
+  }
 }
 @media (min-width: 1280px) {
   .foundation-shell main:is(.sweet-page, .seating-page) > :is(.sweet-positioning, .seating-overview) {

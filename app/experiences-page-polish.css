@@ -6,24 +6,30 @@
   min-width: 0;
 }
 .foundation-shell .experiences-page .experiences-comparison-cta-copy > p {
-  max-width: 42ch;
   font-size: var(--section-subcopy-size) !important;
   line-height: 1.65;
   text-align: left;
   text-wrap: pretty;
 }
-.foundation-shell .experiences-page .experiences-comparison-cta-copy > p > span {
-  display: inline;
+@media (961px <= width < 1280px) {
+  .foundation-shell .experiences-page .experiences-comparison-cta {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: var(--space-6);
+  }
+
+  .foundation-shell .experiences-page .experiences-comparison-cta-arrow {
+    display: none;
+  }
 }
-.foundation-shell .experiences-page .experiences-comparison-cta-copy > p > span + span::before { content: " "; }
-@media (min-width: 961px) {
+@media (min-width: 1280px) {
   .foundation-shell .experiences-page .experiences-comparison-cta-arrow {
     width: 100%;
     min-width: 0;
   }
   .foundation-shell .experiences-page .experiences-comparison-cta {
-    grid-template-columns: minmax(0, 1fr) clamp(2.5rem, 6vw, 6rem) minmax(0, 1.1fr);
-    column-gap: clamp(1.5rem, 3vw, 3rem);
+    --section-heading-measure: none;
+    grid-template-columns: minmax(0, 1fr) clamp(2rem, 3vw, 4rem) minmax(max-content, .66fr);
+    column-gap: 1.5rem;
   }
 }
 /* Hide the thin dark capture edge in the Sweet Cart source photo. */
@@ -36,13 +42,8 @@
   margin: .9rem 0 0;
   padding: 0;
   border: 0;
-  font-size: .875rem !important;
+  font-size: 1rem !important;
   line-height: 1.55;
-}
-@media (max-width: 700px) {
-  .foundation-shell .experiences-page .experiences-feature-copy > .experiences-feature-footnote {
-    font-size: .8125rem !important;
-  }
 }
 
 /* Mobile-only editorial heading alignment; preserve desktop composition. */
@@ -79,12 +80,6 @@
     display: block;
     text-align: center;
   }
-}
-
-.foundation-shell .experiences-page .experiences-booking-proof li {
-  text-align: center;
-  justify-items: center;
-  align-content: center;
 }
 
 /* Service details: a quiet vertical list rather than a ruled comparison grid. */
@@ -201,26 +196,6 @@
   .foundation-shell .experiences-page
     .experiences-feature-copy h2:not(.experiences-feature-title):not(#luxe-sitewide-h2-scale) {
     font-size: var(--type-heading-sm) !important;
-  }
-
-  .foundation-shell .experiences-page .experiences-booking-proof > li:nth-child(1) {
-    order: 1;
-  }
-
-  .foundation-shell .experiences-page .experiences-booking-proof > li:nth-child(4) {
-    order: 2;
-  }
-
-  .foundation-shell .experiences-page .experiences-booking-proof > li:nth-child(3) {
-    order: 3;
-  }
-
-  .foundation-shell .experiences-page .experiences-booking-proof > li:nth-child(2) {
-    order: 4;
-  }
-
-  .foundation-shell .experiences-page .experiences-booking-proof > li:nth-child(5) {
-    order: 5;
   }
 
   .foundation-shell .experiences-page > .signature-combinations {

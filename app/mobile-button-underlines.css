@@ -42,7 +42,7 @@
       .inquire-context-links a,
       .blog-featured strong,
       .blog-context-links a
-    ) {
+    ):not(:where(.page-faq-section > a)) {
     padding-bottom: 0.12em;
   }
 }
