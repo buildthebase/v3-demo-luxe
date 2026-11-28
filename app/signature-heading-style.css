@@ -10,3 +10,9 @@
   text-wrap: balance;
   max-width: 100% !important;
 }
+/* Fit the cart name to its own column rather than allowing a second line. */
+.foundation-shell main.sweet-page .sweet-collection-copy h2#sweet-collections-title:not(#luxe-sitewide-h2-scale):not(#home-hero-seo-title):not(#signature-heading-scale) {
+  font-size: min(clamp(2.25rem, 3.8vw, 4.5rem), 8cqi) !important;
+  white-space: nowrap !important;
+  text-wrap: nowrap;
+}

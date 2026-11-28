@@ -67,7 +67,7 @@
   .foundation-shell main h2#seating-overview-title:not(#luxe-sitewide-h2-scale):not(#home-hero-seo-title) {
     --section-heading-measure: 27ch;
     max-width: 27ch !important;
-    font-size: 2.25rem !important;
+    font-size: var(--luxe-type-h2) !important;
     text-wrap: balance;
   }
 }

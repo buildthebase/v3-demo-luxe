@@ -1,3 +1,31 @@
+/* Let the invitation copy read as a clear block beside the headline. */
+.foundation-shell .experiences-page .experiences-comparison-cta-copy {
+  justify-items: start;
+  text-align: left;
+  gap: 1.5rem;
+  min-width: 0;
+}
+.foundation-shell .experiences-page .experiences-comparison-cta-copy > p {
+  max-width: 42ch;
+  font-size: var(--section-subcopy-size) !important;
+  line-height: 1.65;
+  text-align: left;
+  text-wrap: pretty;
+}
+.foundation-shell .experiences-page .experiences-comparison-cta-copy > p > span {
+  display: inline;
+}
+.foundation-shell .experiences-page .experiences-comparison-cta-copy > p > span + span::before { content: " "; }
+@media (min-width: 961px) {
+  .foundation-shell .experiences-page .experiences-comparison-cta-arrow {
+    width: 100%;
+    min-width: 0;
+  }
+  .foundation-shell .experiences-page .experiences-comparison-cta {
+    grid-template-columns: minmax(0, 1fr) clamp(2.5rem, 6vw, 6rem) minmax(0, 1.1fr);
+    column-gap: clamp(1.5rem, 3vw, 3rem);
+  }
+}
 /* Hide the thin dark capture edge in the Sweet Cart source photo. */
 .foundation-shell .experiences-page .experiences-feature-dessert .experiences-feature-art img {
   transform: scale(1.025);

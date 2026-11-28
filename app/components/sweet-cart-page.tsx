@@ -71,11 +71,11 @@ const sweetCartSchema = createServicePageSchema({
 function SweetHero() {
   return (
     <header className="sweet-hero" id="page-overview">
-      <div className="sweet-hero-copy">
-        <h1 aria-label="Toronto dessert cart catering, made in the moment.">
+      <h1 aria-label="Toronto dessert cart catering, made in the moment.">
           <span>Toronto dessert cart catering,</span>{" "}
           <span>made in the moment.</span>
-        </h1>
+      </h1>
+      <div className="sweet-hero-copy">
         <p>
           A live, made-to-order dessert experience where interactive preparation,
           warm cart styling, and final presentation become a memorable part of your

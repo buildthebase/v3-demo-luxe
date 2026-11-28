@@ -73,10 +73,10 @@ const coffeeBarSchema = createServicePageSchema({
 function CoffeeHero() {
   return (
     <header className="coffee-hero" id="page-overview">
-      <div className="coffee-hero-copy">
-        <h1 aria-label="Mobile coffee bar catering in Toronto &amp; the GTA.">
+      <h1 aria-label="Mobile coffee bar catering in Toronto &amp; the GTA.">
           <span>Mobile coffee bar catering</span>{" "}<span>in Toronto &amp; the GTA.</span>
-        </h1>
+      </h1>
+      <div className="coffee-hero-copy">
         <p>
           A complete mobile café experience shaped around the event, with professional
           baristas, premium coffee and matcha service, intentional presentation, and hospitality
