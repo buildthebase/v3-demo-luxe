@@ -18,12 +18,14 @@
   text-align: left !important;
 }
 .foundation-shell main.experiences-page > .experiences-occasions h2:not(#luxe-sitewide-h2-scale):not(#home-hero-seo-title) {
-  max-width: 25ch;
+  max-width: none;
   margin: 0 !important;
   justify-self: start !important;
   text-align: left !important;
 }
-.foundation-shell main.experiences-page > .experiences-occasions h2 > span { display: inline; }
+.foundation-shell main.experiences-page > .experiences-occasions h2 > span {
+  display: block;
+}
 .foundation-shell main.experiences-page > .experiences-occasions .experiences-event-list {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
