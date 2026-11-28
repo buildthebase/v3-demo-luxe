@@ -25961,7 +25961,7 @@ transparent 0.7px);
   }
 }
 @media (max-width: 700px) {
-  :is(.sweet-page, .coffee-page) .sweet-hero-proof {
+  :is(.sweet-page, .coffee-page, .experiences-booking-section) .sweet-hero-proof {
     display: grid;
     width: 100%;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -25980,8 +25980,8 @@ transparent 0.7px);
     color: var(--color-luxe-black);
   }
 
-  :is(.sweet-page, .coffee-page) .sweet-hero-proof > div,
-  :is(.sweet-page, .coffee-page) .sweet-hero-proof > div:last-child {
+  :is(.sweet-page, .coffee-page, .experiences-booking-section) .sweet-hero-proof > div,
+  :is(.sweet-page, .coffee-page, .experiences-booking-section) .sweet-hero-proof > div:last-child {
     display: grid;
     min-width: 0;
     min-height: 0;
@@ -25997,19 +25997,19 @@ transparent 0.7px);
     text-align: center;
   }
 
-  :is(.sweet-page, .coffee-page)
+  :is(.sweet-page, .coffee-page, .experiences-booking-section)
     .sweet-hero-proof
     > div:nth-child(odd):not(:last-child) {
     border-right: 1px solid var(--color-rule);
   }
 
-  :is(.sweet-page, .coffee-page) .sweet-hero-proof > div:last-child {
+  :is(.sweet-page, .coffee-page, .experiences-booking-section) .sweet-hero-proof > div:last-child {
     grid-column: 1 / -1;
     border-right: 0;
     border-bottom: 0;
   }
 
-  :is(.sweet-page, .coffee-page) .sweet-hero-proof dt {
+  :is(.sweet-page, .coffee-page, .experiences-booking-section) .sweet-hero-proof dt {
     display: block;
     width: 100%;
     min-height: 0;
@@ -26022,7 +26022,7 @@ transparent 0.7px);
     text-align: center;
   }
 
-  :is(.sweet-page, .coffee-page) .sweet-hero-proof dd {
+  :is(.sweet-page, .coffee-page, .experiences-booking-section) .sweet-hero-proof dd {
     display: block;
     width: 100%;
     min-width: 0;
@@ -26030,7 +26030,7 @@ transparent 0.7px);
     text-align: center;
   }
 
-  :is(.sweet-page, .coffee-page) .sweet-hero-proof dd strong {
+  :is(.sweet-page, .coffee-page, .experiences-booking-section) .sweet-hero-proof dd strong {
     display: block;
     width: 100%;
     min-height: 0;

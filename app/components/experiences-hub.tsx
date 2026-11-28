@@ -6,6 +6,7 @@ import {
 } from "../experiences/content";
 import { imageAssets, type ResponsiveImageAsset } from "../image-system";
 import { eventTypes } from "../site-config";
+import { FaqAccordion } from "./faq-accordion";
 import { QuoteModalTrigger } from "./quote-modal-trigger";
 import { ResponsiveImage } from "./responsive-image";
 
@@ -47,78 +48,52 @@ export function ExperiencesHero({
   );
 }
 
-function BookingChevron() {
-  return (
-    <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none">
-      <path d="m3 6 5 5 5-5" stroke="currentColor" strokeWidth="1.5" />
-    </svg>
-  );
-}
+const bookingQuestions = [
+  {
+    question: "Can each experience be booked independently?",
+    answer: "Absolutely. Luxe Coffee Bar, Luxe Sweet Cart and Luxe Event Rentals can each be booked individually, or combined to create a complete event experience.",
+  },
+  {
+    question: "Can coffee, dessert, and rentals be coordinated through one provider?",
+    answer: "Yes. Coffee, dessert and rentals can all be coordinated through one inquiry, creating a simpler planning process and a cohesive experience for your event.",
+  },
+];
+
+const bookingFacts = [
+  { value: "$5 million", label: "liability insurance" },
+  { value: "250+", label: "coffee-service guests" },
+  { value: "Up to 400", label: "dessert-service guests" },
+  { value: "Multiple", label: "service setups available for select events" },
+  { value: "Southern Ontario", label: "select destination events" },
+];
 
 export function ExperiencesBookingClarity() {
   return (
     <section
       id="booking-approach"
-      className="experiences-booking-clarity surface-chapter surface-chapter-dark"
+      className="experiences-booking-section page-faq-section"
       aria-labelledby="experiences-booking-title"
     >
       <header>
         <p className="foundation-label">Independent or combined</p>
-        <h2 id="experiences-booking-title" className="foundation-wide-heading">Begin with what the event needs.</h2>
+        <h2 id="experiences-booking-title">Begin with what the event needs.</h2>
       </header>
-      <div className="experiences-booking-questions">
-        <details>
-          <summary>Can each experience be booked independently? <BookingChevron /></summary>
-          <p>
-            Absolutely. Luxe Coffee Bar, Luxe Sweet Cart and Luxe Event Rentals can
-            each be booked individually, or combined to create a complete event
-            experience.
-          </p>
-        </details>
-        <details>
-          <summary>Can coffee, dessert, and rentals be coordinated through one provider? <BookingChevron /></summary>
-            <p>
-              Yes. Coffee, dessert and rentals can all be coordinated through one
-              inquiry, creating a simpler planning process and a cohesive experience
-              for your event.
-            </p>
-        </details>
-      </div>
-      <ul
-        className="experiences-booking-proof"
-        aria-label="Experiences by Luxe operational credentials"
-      >
-        <li>
-          <strong>$5 million{" "}</strong>
-          <span>liability insurance</span>
-        </li>
-        <li>
-          <strong>250+{" "}</strong>
-          <span>coffee-service guests</span>
-        </li>
-        <li>
-          <strong>Up to 400{" "}</strong>
-          <span>dessert-service guests</span>
-        </li>
-        <li>
-          <strong>Multiple{" "}</strong>
-          <span>service setups available for select events</span>
-        </li>
-        <li>
-          <strong>Southern Ontario{" "}</strong>
-          <span>select destination events</span>
-        </li>
-      </ul>
-      <aside
-        className="experiences-booking-shared"
-        aria-label="Shared booking guidance"
-      >
+      <FaqAccordion items={bookingQuestions} showNumbers={false} />
+      <div className="experiences-booking-facts">
+        <dl className="sweet-hero-proof" aria-label="Experiences by Luxe operational credentials">
+          {bookingFacts.map(({ value, label }) => (
+            <div key={value}>
+              <dt>{value}</dt>
+              <dd><strong>{label}</strong></dd>
+            </div>
+          ))}
+        </dl>
         <p>
           Every event is different. We’ll help you choose the right mix of services
           and coordinate the details, creating a smoother planning experience from
           start to finish.
         </p>
-      </aside>
+      </div>
     </section>
   );
 }
